@@ -1,0 +1,88 @@
+baseURL: 'https://john4web.github.io/blog/'
+title: johndoe
+theme: hugo-coder
+languageCode: en
+defaultContentLanguage: en
+paginate: 6
+enableEmoji: true
+markup:
+  highlight:
+    noClasses: false
+params:
+  author: John Doe
+  description: John Doe's personal website
+  keywords: 'blog,developer,personal'
+  info:
+    - Full Stack DevOps
+    - Magician
+  avatarURL: images/avatar.jpg
+  dateFormat: 'January 2, 2006'
+  since: 2019
+  commit: 'https://github.com/luizdepra/hugo-coder/tree/'
+  rtl: false
+  colorScheme: auto
+  hideColorSchemeToggle: false
+  maxSeeAlsoItems: 5
+  customCSS: []
+  customSCSS: []
+  customJS: []
+  customRemoteJS: []
+  social:
+    - name: Github
+      icon: fa fa-2x fa-github
+      weight: 1
+      url: 'https://github.com/johndoe/'
+    - name: LinkedIn
+      icon: fa fa-2x fa-linkedin
+      weight: 4
+      url: 'https://www.linkedin.com/in/johndoe/'
+    - name: RSS
+      icon: fa fa-2x fa-rss
+      weight: 6
+      url: 'https://myhugosite.com/index.xml'
+      rel: alternate
+      type: application/rss+xml
+taxonomies:
+  category: categories
+  series: series
+  tag: tags
+  author: authors
+languages:
+  en:
+    languageName: ':uk:'
+    menu:
+      main:
+        - name: About
+          weight: 1
+          url: about/
+        - name: Blog
+          weight: 2
+          url: posts/
+        - name: Projects
+          weight: 3
+          url: projects/
+        - name: Contact me
+          weight: 5
+          url: contact/
+  pt-br:
+    languageName: ':brazil:'
+    title: João Ninguém
+    params:
+      author: João Ninguém
+      info: Full Stack DevOps e Mágico
+      description: Sítio pessoal de João Ninguém
+      keywords: 'blog,desenvolvedor,pessoal'
+    menu:
+      main:
+        - name: Sobre
+          weight: 1
+          url: about/
+        - name: Blog
+          weight: 2
+          url: posts/
+        - name: Projetos
+          weight: 3
+          url: projects/
+        - name: Contato
+          weight: 5
+          url: contact/

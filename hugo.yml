@@ -9,16 +9,14 @@ markup:
   highlight:
     noClasses: false
 params:
-  author: John Doe
-  description: John Doe's personal website
-  keywords: 'blog,developer,personal'
+  author: Johannes Gerstbauer
+  description: Johannes Gerstbauer's personal website
+  keywords: 'blog,developer,personal, software,engineer'
   info:
-    - Full Stack DevOps
-    - Magician
+    - Software Engineer
   avatarURL: images/avatar.jpg
   dateFormat: 'January 2, 2006'
-  since: 2019
-  commit: 'https://github.com/luizdepra/hugo-coder/tree/'
+  since: 2024
   rtl: false
   colorScheme: auto
   hideColorSchemeToggle: false
@@ -31,17 +29,11 @@ params:
     - name: Github
       icon: fa fa-2x fa-github
       weight: 1
-      url: 'https://github.com/johndoe/'
+      url: 'https://github.com/john4web/'
     - name: LinkedIn
       icon: fa fa-2x fa-linkedin
-      weight: 4
-      url: 'https://www.linkedin.com/in/johndoe/'
-    - name: RSS
-      icon: fa fa-2x fa-rss
-      weight: 6
-      url: 'https://myhugosite.com/index.xml'
-      rel: alternate
-      type: application/rss+xml
+      weight: 2
+      url: 'https://at.linkedin.com/in/jgerstbauer/'
 taxonomies:
   category: categories
   series: series

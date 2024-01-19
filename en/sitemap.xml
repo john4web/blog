@@ -3,6 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://john4web.github.io/blog/authors/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -15,6 +16,7 @@
                 />
   </url><url>
     <loc>https://john4web.github.io/blog/categories/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -26,7 +28,47 @@
                 href="https://john4web.github.io/blog/categories/"
                 />
   </url><url>
+    <loc>https://john4web.github.io/blog/tags/css/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="https://john4web.github.io/blog/pt-br/tags/css/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://john4web.github.io/blog/tags/css/"
+                />
+  </url><url>
+    <loc>https://john4web.github.io/blog/tags/html/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="https://john4web.github.io/blog/pt-br/tags/html/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://john4web.github.io/blog/tags/html/"
+                />
+  </url><url>
+    <loc>https://john4web.github.io/blog/tags/hugo/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="https://john4web.github.io/blog/pt-br/tags/hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://john4web.github.io/blog/tags/hugo/"
+                />
+  </url><url>
     <loc>https://john4web.github.io/blog/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -38,7 +80,50 @@
                 href="https://john4web.github.io/blog/"
                 />
   </url><url>
+    <loc>https://john4web.github.io/blog/authors/lone-coder/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/tags/markdown/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="https://john4web.github.io/blog/pt-br/tags/markdown/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://john4web.github.io/blog/tags/markdown/"
+                />
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/markdown-syntax/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="https://john4web.github.io/blog/pt-br/posts/markdown-syntax/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://john4web.github.io/blog/posts/markdown-syntax/"
+                />
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="https://john4web.github.io/blog/pt-br/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://john4web.github.io/blog/posts/"
+                />
+  </url><url>
     <loc>https://john4web.github.io/blog/series/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -50,7 +135,11 @@
                 href="https://john4web.github.io/blog/series/"
                 />
   </url><url>
+    <loc>https://john4web.github.io/blog/categories/syntax/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://john4web.github.io/blog/tags/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -61,5 +150,11 @@
                 hreflang="en"
                 href="https://john4web.github.io/blog/tags/"
                 />
+  </url><url>
+    <loc>https://john4web.github.io/blog/categories/theme-demo/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/series/theme-demo/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url>
 </urlset>

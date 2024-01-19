@@ -5,6 +5,43 @@
     <link>https://john4web.github.io/blog/pt-br/tags/</link>
     <description>Recent content in Tags on João Ninguém</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://john4web.github.io/blog/pt-br/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://john4web.github.io/blog/pt-br/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>css</title>
+      <link>https://john4web.github.io/blog/pt-br/tags/css/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/pt-br/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
+      <link>https://john4web.github.io/blog/pt-br/tags/html/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/pt-br/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://john4web.github.io/blog/pt-br/tags/hugo/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/pt-br/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://john4web.github.io/blog/pt-br/tags/markdown/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/pt-br/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

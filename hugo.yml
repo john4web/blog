@@ -11,7 +11,7 @@ markup:
 params:
   author: Johannes Gerstbauer
   description: Johannes Gerstbauer's personal website
-  keywords: 'blog,developer,personal, software,engineer'
+  keywords: 'blog, developer, software, engineer'
   info:
     - Software Engineer
   avatarURL: images/avatar.jpg
@@ -44,37 +44,25 @@ languages:
     languageName: ':uk:'
     menu:
       main:
-        - name: About
-          weight: 1
-          url: about/
         - name: Blog
-          weight: 2
+          weight: 1
           url: posts/
-        - name: Projects
-          weight: 3
-          url: projects/
-        - name: Contact me
-          weight: 5
-          url: contact/
-  pt-br:
-    languageName: ':brazil:'
-    title: João Ninguém
+        - name: About
+          weight: 2
+          url: about/
+  de:
+    languageName: ':de:'
+    title: Johannes Gerstbauer
     params:
-      author: João Ninguém
-      info: Full Stack DevOps e Mágico
-      description: Sítio pessoal de João Ninguém
-      keywords: 'blog,desenvolvedor,pessoal'
+      author: Johannes Gerstbauer
+      info: Full Stack Software Engineer
+      description: Johannes Gerstbauer's persönliche Webseite
+      keywords: 'blog, developer, software, engineer'
     menu:
       main:
-        - name: Sobre
-          weight: 1
-          url: about/
         - name: Blog
-          weight: 2
+          weight: 1
           url: posts/
-        - name: Projetos
-          weight: 3
-          url: projects/
-        - name: Contato
-          weight: 5
-          url: contact/
+        - name: Über mich
+          weight: 2
+          url: about/

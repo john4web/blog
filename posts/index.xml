@@ -6,14 +6,15 @@
     <description>Recent content in Posts on johndoe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://john4web.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://john4web.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Markdown Syntax Guide</title>
-      <link>https://john4web.github.io/blog/posts/markdown-syntax/</link>
-      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      <title>Liskov substitution principle in depth</title>
+      <link>https://john4web.github.io/blog/posts/liskov-substitution-principle/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/markdown-syntax/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+      <guid>https://john4web.github.io/blog/posts/liskov-substitution-principle/</guid>
+      <description>This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code.
+Overview Link to heading The Liskov Substitution Principle (LSP) was first introduced by Barbara Liskov in 1987 in her article &amp;ldquo;Data Abstraction and Hierarchy&amp;rdquo; and is one of the five SOLID design principles of object-oriented programming.</description>
     </item>
     
   </channel>

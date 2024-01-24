@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://john4web.github.io/blog/de/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Guia de Sintaxe Markdown</title>
-      <link>https://john4web.github.io/blog/de/posts/markdown-syntax/</link>
+      <link>https://john4web.github.io/blog/de/posts/liskov-substitution-principle/</link>
       <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/de/posts/markdown-syntax/</guid>
+      <guid>https://john4web.github.io/blog/de/posts/liskov-substitution-principle/</guid>
       <description>&lt;p&gt;Esse artigo é um exemplo básico para mostrar a sintaxe Markdown que é usada nos arquivos de conteúdo do Hugo. Ele também mostrar como cada elemento básico HTML é estilizado com CSS com os temas do Hugo.&lt;/p&gt;</description>
     </item>
     

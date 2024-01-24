@@ -5,16 +5,6 @@
     <link>https://john4web.github.io/blog/authors/</link>
     <description>Recent content in Authors on johndoe</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://john4web.github.io/blog/authors/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Lone Coder</title>
-      <link>https://john4web.github.io/blog/authors/lone-coder/</link>
-      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://john4web.github.io/blog/authors/lone-coder/</guid>
-      <description></description>
-    </item>
-    
+    <language>en</language><atom:link href="https://john4web.github.io/blog/authors/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

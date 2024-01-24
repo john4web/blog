@@ -30,16 +30,6 @@
   </url><url>
     <loc>https://john4web.github.io/blog/de/tags/css/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://john4web.github.io/blog/tags/css/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://john4web.github.io/blog/de/tags/css/"
-                />
   </url><url>
     <loc>https://john4web.github.io/blog/de/categories/demonstra%C3%A7%C3%A3o-do-tema/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
@@ -47,44 +37,24 @@
     <loc>https://john4web.github.io/blog/de/series/demonstra%C3%A7%C3%A3o-do-tema/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/de/posts/markdown-syntax/</loc>
+    <loc>https://john4web.github.io/blog/de/posts/liskov-substitution-principle/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/posts/markdown-syntax/"
+                href="https://john4web.github.io/blog/posts/liskov-substitution-principle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/posts/markdown-syntax/"
+                href="https://john4web.github.io/blog/de/posts/liskov-substitution-principle/"
                 />
   </url><url>
     <loc>https://john4web.github.io/blog/de/tags/html/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://john4web.github.io/blog/tags/html/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://john4web.github.io/blog/de/tags/html/"
-                />
   </url><url>
     <loc>https://john4web.github.io/blog/de/tags/hugo/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://john4web.github.io/blog/tags/hugo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://john4web.github.io/blog/de/tags/hugo/"
-                />
   </url><url>
     <loc>https://john4web.github.io/blog/de/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
@@ -101,16 +71,6 @@
   </url><url>
     <loc>https://john4web.github.io/blog/de/tags/markdown/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://john4web.github.io/blog/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://john4web.github.io/blog/de/tags/markdown/"
-                />
   </url><url>
     <loc>https://john4web.github.io/blog/de/posts/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>

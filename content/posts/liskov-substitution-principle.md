@@ -1,29 +1,16 @@
 +++
-authors = ["Lone Coder"]
-title = "Markdown Syntax Guide"
-date = "2023-07-13"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
-tags = [
-    "hugo",
-    "markdown",
-    "css",
-    "html",
-]
-categories = [
-    "theme demo",
-    "syntax",
-]
-series = ["Theme Demo"]
-aliases = ["migrate-from-jekyl"]
+title = "Liskov substitution principle in depth"
+date = "2024-01-24"
+description = "Article explaining the liskov substitution principle in depth."
 +++
 
-This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
+This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code.
 
-<!--more-->
+## Overview
 
-## Headings
+The Liskov Substitution Principle (LSP) was first introduced by Barbara Liskov in 1987 in her article "Data Abstraction and Hierarchy" and is one of the five SO**L**ID design principles of object-oriented programming.
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+
 
 # H1
 

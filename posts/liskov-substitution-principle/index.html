@@ -160,7 +160,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              3-minute read
+              5-minute read
             </span>
           </div>
           
@@ -171,7 +171,7 @@
 
       <div class="post-content">
         
-        <p>This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code.</p>
+        <p>This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some <a href="#reference" >sources</a> I have read however also includes my own opinion on that topic. Code examples are written in Java.</p>
 <h2 id="overview">
   Overview
   <a class="heading-link" href="#overview">
@@ -179,7 +179,55 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>The Liskov Substitution Principle (LSP) was first introduced by Barbara Liskov in 1987 in her article &ldquo;Data Abstraction and Hierarchy&rdquo; and is one of the five SO<strong>L</strong>ID design principles of object-oriented programming.</p>
+<p>The Liskov Substitution Principle (LSP) was first introduced by <a href="https://en.wikipedia.org/wiki/Barbara_Liskov"  class="external-link" target="_blank" rel="noopener">Barbara Liskov</a> in 1987 in her article <a href="https://www.cs.tufts.edu/~nr/cs257/archive/barbara-liskov/data-abstraction-and-hierarchy.pdf"  class="external-link" target="_blank" rel="noopener">&ldquo;Data Abstraction and Hierarchy&rdquo;</a> and is one of the five SO<strong>L</strong>ID design principles of object-oriented programming.</p>
+<figure><img src="/blog/images/liskov-substitution-principle/barbara_liskov.jpg"
+         alt="Barbara Liskov (Source: Wikipedia)" width="200" height="300"/><figcaption>
+            <p>Barbara Liskov (Source: <a href="https://commons.wikimedia.org/wiki/File:Barbara_Liskov_computer_scientist_2010.jpg"  class="external-link" target="_blank" rel="noopener">Wikipedia</a>)</p>
+        </figcaption>
+</figure>
+
+<p>The original definition of this principle is as follows:<br>
+<strong><em>If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2, then S is a subtype of T.</em></strong></p>
+<p>Ok, that sounds very complicated. So what does that even mean?</p>
+<p>The LSP states that a program using objects of a base class T should be able to work correctly with objects of its derived class S without altering the program. In other words, all subclasses must behave in the same way as the base class.</p>
+<p>Simply put:
+If S is a Subtype of T, then objects of type T may be replaced by objects of type S.</p>
+<p>Wherever you are using the base type, you should be able to use the subtype instead without causing any unwanted behavior in the program. That means: <em>&ldquo;Subtypes must be <strong>substitutable</strong> for their base types.&rdquo;</em></p>
+<p>Let&rsquo;s take a closer look at that concept with an example:<br>
+Assume that class S inherits from class T.</p>
+<figure><img src="/blog/images/liskov-substitution-principle/UML1.svg"
+         alt="Class S inherits from class T." width="200" height="300"/><figcaption>
+            <p>Class S inherits from class T.</p>
+        </figcaption>
+</figure>
+
+<p>And then, let&rsquo;s imagine that we&rsquo;ve written a program where we&rsquo;ve used class T in multiple places in the code and created instances of it (T t = new T();). Now, we need to ensure that we can replace instances of class T with instances of class S at all these points without changing the program&rsquo;s behavior.</p>
+<p>So instead of</p>
+<p>T t = new T();</p>
+<p>you should be able to use</p>
+<p>T t = new S();</p>
+<p>and then the program should behave exactly the same way as before.
+S was substituted for T.</p>
+<h2 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><a href="https://de.wikipedia.org/wiki/Design_by_Contract"  class="external-link" target="_blank" rel="noopener">https://de.wikipedia.org/wiki/Design_by_Contract</a></p>
+<p>Design By Contract in Java - Seminarbericht WS06/07 - Matthias Hausherr</p>
+<p>Program Development in Java: Abstraction, Specification, and Object-Oriented Design,</p>
+<p>Clean Architecture: A Craftsman&rsquo;s Guide to Software Structure and Design: A Craftsman&rsquo;s Guide to Software Structure and Design (Robert C. Martin Series)</p>
+<p><a href="https://www.baeldung.com/java-liskov-substitution-principle"  class="external-link" target="_blank" rel="noopener">https://www.baeldung.com/java-liskov-substitution-principle</a></p>
+<p><a href="https://www.baeldung.com/java-method-overload-override"  class="external-link" target="_blank" rel="noopener">https://www.baeldung.com/java-method-overload-override</a></p>
+<p>University Lecture called “Software Design Methods” by
+Ing. Dr. Hans J. Prüller, B.Sc.
+Personal website: <a href="https://hansprueller.lbs-logics.com/"  class="external-link" target="_blank" rel="noopener">https://hansprueller.lbs-logics.com/</a></p>
+<p><a href="https://www.youtube.com/watch?v=ObHQHszbIcE"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ObHQHszbIcE</a></p>
+<p><a href="https://www.youtube.com/watch?v=dJQMqNOC4Pc&amp;t=176s"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=dJQMqNOC4Pc&t=176s</a></p>
+<p><a href="https://www.youtube.com/watch?v=bVwZquRH1Vk&amp;t=144s"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=bVwZquRH1Vk&t=144s</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_%28computer_science%29#Covariant_method_return_type"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)#Covariant_method_return_type</a></p>
 <h1 id="h1">
   H1
   <a class="heading-link" href="#h1">

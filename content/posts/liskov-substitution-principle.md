@@ -4,11 +4,70 @@ date = "2024-01-24"
 description = "Article explaining the liskov substitution principle in depth."
 +++
 
-This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code.
+This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some [sources](#reference) I have read however also includes my own opinion on that topic. Code examples are written in Java.
 
 ## Overview
 
-The Liskov Substitution Principle (LSP) was first introduced by Barbara Liskov in 1987 in her article "Data Abstraction and Hierarchy" and is one of the five SO**L**ID design principles of object-oriented programming.
+The Liskov Substitution Principle (LSP) was first introduced by [Barbara Liskov](https://en.wikipedia.org/wiki/Barbara_Liskov) in 1987 in her article ["Data Abstraction and Hierarchy"](https://www.cs.tufts.edu/~nr/cs257/archive/barbara-liskov/data-abstraction-and-hierarchy.pdf) and is one of the five SO**L**ID design principles of object-oriented programming.
+
+{{< figure src="/blog/images/liskov-substitution-principle/barbara_liskov.jpg" caption="Barbara Liskov (Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Barbara_Liskov_computer_scientist_2010.jpg))" width="200" height="300" >}}
+
+The original definition of this principle is as follows:  
+**_If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2, then S is a subtype of T._**
+
+Ok, that sounds very complicated. So what does that even mean?
+
+The LSP states that a program using objects of a base class T should be able to work correctly with objects of its derived class S without altering the program. In other words, all subclasses must behave in the same way as the base class.
+
+Simply put:
+If S is a Subtype of T, then objects of type T may be replaced by objects of type S.
+
+Wherever you are using the base type, you should be able to use the subtype instead without causing any unwanted behavior in the program. That means: _"Subtypes must be **substitutable** for their base types."_
+
+Let's take a closer look at that concept with an example:  
+Assume that class S inherits from class T.
+
+{{< figure src="/blog/images/liskov-substitution-principle/UML1.svg" caption="Class S inherits from class T." width="200" height="300" >}}
+
+And then, let's imagine that we've written a program where we've used class T in multiple places in the code and created instances of it (T t = new T();). Now, we need to ensure that we can replace instances of class T with instances of class S at all these points without changing the program's behavior.
+
+So instead of
+
+T t = new T();
+
+you should be able to use
+
+T t = new S();
+
+and then the program should behave exactly the same way as before.
+S was substituted for T.
+
+
+## Reference
+https://de.wikipedia.org/wiki/Design_by_Contract
+
+Design By Contract in Java - Seminarbericht WS06/07 - Matthias Hausherr
+
+Program Development in Java: Abstraction, Specification, and Object-Oriented Design,
+
+Clean Architecture: A Craftsman's Guide to Software Structure and Design: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series)
+
+https://www.baeldung.com/java-liskov-substitution-principle
+
+https://www.baeldung.com/java-method-overload-override 
+
+University Lecture called “Software Design Methods” by
+Ing. Dr. Hans J. Prüller, B.Sc.
+Personal website: https://hansprueller.lbs-logics.com/ 
+
+https://www.youtube.com/watch?v=ObHQHszbIcE 
+
+https://www.youtube.com/watch?v=dJQMqNOC4Pc&t=176s 
+
+https://www.youtube.com/watch?v=bVwZquRH1Vk&t=144s 
+
+https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)#Covariant_method_return_type 
+
 
 
 

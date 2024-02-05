@@ -160,7 +160,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              5-minute read
+              6-minute read
             </span>
           </div>
           
@@ -181,33 +181,51 @@
 </h2>
 <p>The Liskov Substitution Principle (LSP) was first introduced by <a href="https://en.wikipedia.org/wiki/Barbara_Liskov"  class="external-link" target="_blank" rel="noopener">Barbara Liskov</a> in 1987 in her article <a href="https://www.cs.tufts.edu/~nr/cs257/archive/barbara-liskov/data-abstraction-and-hierarchy.pdf"  class="external-link" target="_blank" rel="noopener">&ldquo;Data Abstraction and Hierarchy&rdquo;</a> and is one of the five SO<strong>L</strong>ID design principles of object-oriented programming.</p>
 <figure><img src="/blog/images/liskov-substitution-principle/barbara_liskov.jpg"
-         alt="Barbara Liskov (Source: Wikipedia)" width="200" height="300"/><figcaption>
-            <p>Barbara Liskov (Source: <a href="https://commons.wikimedia.org/wiki/File:Barbara_Liskov_computer_scientist_2010.jpg"  class="external-link" target="_blank" rel="noopener">Wikipedia</a>)</p>
+         alt="Barbara Liskov (Source: Wikipedia)." width="200" height="300"/><figcaption>
+            <p>Barbara Liskov (Source: <a href="https://commons.wikimedia.org/wiki/File:Barbara_Liskov_computer_scientist_2010.jpg"  class="external-link" target="_blank" rel="noopener">Wikipedia</a>).</p>
         </figcaption>
 </figure>
 
 <p>The original definition of this principle is as follows:<br>
 <strong><em>If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2, then S is a subtype of T.</em></strong></p>
-<p>Ok, that sounds very complicated. So what does that even mean?</p>
-<p>The LSP states that a program using objects of a base class T should be able to work correctly with objects of its derived class S without altering the program. In other words, all subclasses must behave in the same way as the base class.</p>
+<p>Ok, that sounds pretty complicated. So what does that even mean?</p>
+<p>The LSP states that a program using objects of a base class <code>T</code> should be able to work correctly with objects of its derived class <code>S</code> without altering the program. In other words, all subclasses must behave in the same way as the base class.</p>
 <p>Simply put:
-If S is a Subtype of T, then objects of type T may be replaced by objects of type S.</p>
+If <code>S</code> is a Subtype of <code>T</code>, then objects of type <code>T</code> may be replaced by objects of type <code>S</code>.</p>
 <p>Wherever you are using the base type, you should be able to use the subtype instead without causing any unwanted behavior in the program. That means: <em>&ldquo;Subtypes must be <strong>substitutable</strong> for their base types.&rdquo;</em></p>
 <p>Let&rsquo;s take a closer look at that concept with an example:<br>
-Assume that class S inherits from class T.</p>
-<figure><img src="/blog/images/liskov-substitution-principle/UML1.svg"
+Assume that class S inherits from class <code>T</code>.</p>
+<figure><img src="/blog/images/liskov-substitution-principle/inheritance_1.svg"
          alt="Class S inherits from class T." width="200" height="300"/><figcaption>
             <p>Class S inherits from class T.</p>
         </figcaption>
 </figure>
 
-<p>And then, let&rsquo;s imagine that we&rsquo;ve written a program where we&rsquo;ve used class T in multiple places in the code and created instances of it (T t = new T();). Now, we need to ensure that we can replace instances of class T with instances of class S at all these points without changing the program&rsquo;s behavior.</p>
+<p>And then, let&rsquo;s imagine that we have written a program where we have used class <code>T</code> in multiple places in the code and created instances of it <code>T t = new T()</code>. Now, we need to ensure that we can replace instances of class <code>T</code> with instances of class <code>S</code> at all these points without changing the program&rsquo;s behavior.</p>
 <p>So instead of</p>
-<p>T t = new T();</p>
+<p><code>T t = new T()</code></p>
 <p>you should be able to use</p>
-<p>T t = new S();</p>
-<p>and then the program should behave exactly the same way as before.
-S was substituted for T.</p>
+<p><code>T t = new S()</code></p>
+<p>and then the program should behave exactly the same way as before.<br>
+If this is the case, then the LSP holds. <code>S</code> was substituted for <code>T</code>!</p>
+<h2 id="animals-cats-dogs-and-tables">
+  Animals, Cats, Dogs and Tables
+  <a class="heading-link" href="#animals-cats-dogs-and-tables">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Let&rsquo;s take a step back and address a more fundamental question:<br>
+<em>How should you actually use inheritance in programming?</em></p>
+<p>Consider a classic example where the subclass <code>Cat</code> extends the base class <code>Animal</code>.</p>
+<figure><img src="/blog/images/liskov-substitution-principle/inheritance_2.svg"
+         alt="Class Cat inherits from class Animal." width="200" height="300"/><figcaption>
+            <p>Class Cat inherits from class Animal.</p>
+        </figcaption>
+</figure>
+
+<p>If the Animal can do certain things, then the Cat must also be able to do all these things. All subclasses of Animal must be able to do these things.
+But the subclasses may also be able to do more things than the base class. And by more things, I mean more <strong>specific</strong> things. The Cat class may contain the <code>meow()</code> method. But the Animal class does not contain the <code>meow()</code> method because it is a specific behavior of a cat. But that&rsquo;s not a problem, because the Cat class can still be used instead of the Animal class without changing the behavior of the program. Because a cat can do everything that an animal can do in exactly the same way. So the LSP holds.</p>
 <h2 id="reference">
   Reference
   <a class="heading-link" href="#reference">

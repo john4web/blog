@@ -10,37 +10,48 @@ This blog post offers a detailed explanation of the liskov substitution principl
 
 The Liskov Substitution Principle (LSP) was first introduced by [Barbara Liskov](https://en.wikipedia.org/wiki/Barbara_Liskov) in 1987 in her article ["Data Abstraction and Hierarchy"](https://www.cs.tufts.edu/~nr/cs257/archive/barbara-liskov/data-abstraction-and-hierarchy.pdf) and is one of the five SO**L**ID design principles of object-oriented programming.
 
-{{< figure src="/blog/images/liskov-substitution-principle/barbara_liskov.jpg" caption="Barbara Liskov (Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Barbara_Liskov_computer_scientist_2010.jpg))" width="200" height="300" >}}
+{{< figure src="/blog/images/liskov-substitution-principle/barbara_liskov.jpg" caption="Barbara Liskov (Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Barbara_Liskov_computer_scientist_2010.jpg))." width="200" height="300" >}}
 
 The original definition of this principle is as follows:  
 **_If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2, then S is a subtype of T._**
 
-Ok, that sounds very complicated. So what does that even mean?
+Ok, that sounds pretty complicated. So what does that even mean?
 
-The LSP states that a program using objects of a base class T should be able to work correctly with objects of its derived class S without altering the program. In other words, all subclasses must behave in the same way as the base class.
+The LSP states that a program using objects of a base class ``T`` should be able to work correctly with objects of its derived class ``S`` without altering the program. In other words, all subclasses must behave in the same way as the base class.
 
 Simply put:
-If S is a Subtype of T, then objects of type T may be replaced by objects of type S.
+If ``S`` is a Subtype of ``T``, then objects of type ``T`` may be replaced by objects of type ``S``.
 
 Wherever you are using the base type, you should be able to use the subtype instead without causing any unwanted behavior in the program. That means: _"Subtypes must be **substitutable** for their base types."_
 
 Let's take a closer look at that concept with an example:  
-Assume that class S inherits from class T.
+Assume that class S inherits from class ``T``.
 
-{{< figure src="/blog/images/liskov-substitution-principle/UML1.svg" caption="Class S inherits from class T." width="200" height="300" >}}
+{{< figure src="/blog/images/liskov-substitution-principle/inheritance_1.svg" caption="Class S inherits from class T." width="200" height="300" >}}
 
-And then, let's imagine that we've written a program where we've used class T in multiple places in the code and created instances of it (T t = new T();). Now, we need to ensure that we can replace instances of class T with instances of class S at all these points without changing the program's behavior.
+And then, let's imagine that we have written a program where we have used class ``T`` in multiple places in the code and created instances of it ``T t = new T()``. Now, we need to ensure that we can replace instances of class ``T`` with instances of class ``S`` at all these points without changing the program's behavior.
 
 So instead of
 
-T t = new T();
+``T t = new T()``
 
 you should be able to use
 
-T t = new S();
+``T t = new S()``
 
-and then the program should behave exactly the same way as before.
-S was substituted for T.
+and then the program should behave exactly the same way as before.  
+If this is the case, then the LSP holds. ``S`` was substituted for ``T``!
+
+## Animals, Cats, Dogs and Tables
+Let's take a step back and address a more fundamental question:  
+_How should you actually use inheritance in programming?_
+
+Consider a classic example where the subclass ``Cat`` extends the base class ``Animal``.
+
+{{< figure src="/blog/images/liskov-substitution-principle/inheritance_2.svg" caption="Class Cat inherits from class Animal." width="200" height="300" >}}
+
+If the Animal can do certain things, then the Cat must also be able to do all these things. All subclasses of Animal must be able to do these things.
+But the subclasses may also be able to do more things than the base class. And by more things, I mean more **specific** things. The Cat class may contain the ``meow()`` method. But the Animal class does not contain the ``meow()`` method because it is a specific behavior of a cat. But that's not a problem, because the Cat class can still be used instead of the Animal class without changing the behavior of the program. Because a cat can do everything that an animal can do in exactly the same way. So the LSP holds.
 
 
 ## Reference

@@ -160,7 +160,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              6-minute read
+              7-minute read
             </span>
           </div>
           
@@ -224,8 +224,52 @@ If this is the case, then the LSP holds. <code>S</code> was substituted for <cod
         </figcaption>
 </figure>
 
-<p>If the Animal can do certain things, then the Cat must also be able to do all these things. All subclasses of Animal must be able to do these things.
-But the subclasses may also be able to do more things than the base class. And by more things, I mean more <strong>specific</strong> things. The Cat class may contain the <code>meow()</code> method. But the Animal class does not contain the <code>meow()</code> method because it is a specific behavior of a cat. But that&rsquo;s not a problem, because the Cat class can still be used instead of the Animal class without changing the behavior of the program. Because a cat can do everything that an animal can do in exactly the same way. So the LSP holds.</p>
+<p>If the <code>Animal</code> can do certain things, then the <code>Cat</code> must also be able to do all these things. All subclasses of Animal must be able to do these things.
+But the subclasses may also be able to do more things than the base class. And by more things, I mean more <strong>specific</strong> things. The <code>Cat</code> class may contain the <code>meow()</code> method. But the <code>Animal</code> class does not contain the <code>meow()</code> method because it is a specific behavior of a cat. But that&rsquo;s not a problem, because the <code>Cat</code> class can still be used instead of the Animal class without changing the behavior of the program. Because a cat can do everything that an animal can do in exactly the same way. So the LSP holds.</p>
+<ul>
+<li>This means: a <code>Cat</code> is a subset of an <code>Animal</code>.</li>
+<li>This means: a <code>Cat</code> <strong>IS</strong> an <code>Animal</code>.</li>
+<li>This means: an <code>Animal</code> is not necessarily a <code>Cat</code>. An <code>Animal</code> can also be a dog, for example.</li>
+</ul>
+<p>This is why we speak of an <em>is-a</em> relation in programming when we talk about inheritance.</p>
+<p>For example: a table is not an animal and therefore does not inherit from animal and therefore is not a subset of <code>Animal</code>.</p>
+<figure><img src="/blog/images/liskov-substitution-principle/circle.svg"
+         alt="Cat is a subset of Animal because it can do everything an animal can do (and more). Table is not a subset of Animal."/><figcaption>
+            <p>Cat is a subset of Animal because it can do everything an animal can do (and more). Table is not a subset of Animal.</p>
+        </figcaption>
+</figure>
+
+<h2 id="lsp-definition">
+  LSP Definition
+  <a class="heading-link" href="#lsp-definition">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Let&rsquo;s take a closer look at the original definition from Barbara Liskov (slightly simplified):</p>
+<p><em>If for each object Os of type S there is an object Ot of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when Os is substituted for Ot, then S is a subtype of T.</em></p>
+<p>The following diagram tries to explain this definition in a visual way:</p>
+<figure><img src="/blog/images/liskov-substitution-principle/definition.svg"
+         alt="LSP definition explained as a diagram."/><figcaption>
+            <p>LSP definition explained as a diagram.</p>
+        </figcaption>
+</figure>
+
+<ul>
+<li>Os is an instance of class S.</li>
+<li>Ot is an instance of class T.</li>
+<li>The program P uses Os.</li>
+<li>The Program P&rsquo; uses Ot.<br>
+If you use Os instead of Ot in Program P, and the behaviour of Program P is unchanged, then the LSP holds.<br>
+That means P&rsquo; must behave exactly like P.</li>
+</ul>
+<h2 id="practical-example-violated-lsp">
+  Practical Example: Violated LSP
+  <a class="heading-link" href="#practical-example-violated-lsp">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
 <h2 id="reference">
   Reference
   <a class="heading-link" href="#reference">

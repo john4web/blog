@@ -50,9 +50,36 @@ Consider a classic example where the subclass ``Cat`` extends the base class ``A
 
 {{< figure src="/blog/images/liskov-substitution-principle/inheritance_2.svg" caption="Class Cat inherits from class Animal." width="200" height="300" >}}
 
-If the Animal can do certain things, then the Cat must also be able to do all these things. All subclasses of Animal must be able to do these things.
-But the subclasses may also be able to do more things than the base class. And by more things, I mean more **specific** things. The Cat class may contain the ``meow()`` method. But the Animal class does not contain the ``meow()`` method because it is a specific behavior of a cat. But that's not a problem, because the Cat class can still be used instead of the Animal class without changing the behavior of the program. Because a cat can do everything that an animal can do in exactly the same way. So the LSP holds.
+If the ``Animal`` can do certain things, then the ``Cat`` must also be able to do all these things. All subclasses of Animal must be able to do these things.
+But the subclasses may also be able to do more things than the base class. And by more things, I mean more **specific** things. The ``Cat`` class may contain the ``meow()`` method. But the ``Animal`` class does not contain the ``meow()`` method because it is a specific behavior of a cat. But that's not a problem, because the ``Cat`` class can still be used instead of the Animal class without changing the behavior of the program. Because a cat can do everything that an animal can do in exactly the same way. So the LSP holds.
 
+* This means: a ``Cat`` is a subset of an ``Animal``.
+* This means: a ``Cat`` **IS** an ``Animal``.
+* This means: an ``Animal`` is not necessarily a ``Cat``. An ``Animal`` can also be a dog, for example.
+
+This is why we speak of an _is-a_ relation in programming when we talk about inheritance.
+
+For example: a table is not an animal and therefore does not inherit from animal and therefore is not a subset of ``Animal``.
+
+{{< figure src="/blog/images/liskov-substitution-principle/circle.svg" caption="Cat is a subset of Animal because it can do everything an animal can do (and more). Table is not a subset of Animal.">}}
+
+## LSP Definition
+Let's take a closer look at the original definition from Barbara Liskov (slightly simplified):
+
+_If for each object Os of type S there is an object Ot of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when Os is substituted for Ot, then S is a subtype of T._
+
+The following diagram tries to explain this definition in a visual way:
+
+{{< figure src="/blog/images/liskov-substitution-principle/definition.svg" caption="LSP definition explained as a diagram." >}}
+
+* Os is an instance of class S.  
+* Ot is an instance of class T.  
+* The program P uses Os.  
+* The Program P' uses Ot.  
+If you use Os instead of Ot in Program P, and the behaviour of Program P is unchanged, then the LSP holds.  
+That means P' must behave exactly like P.
+
+## Practical Example: Violated LSP
 
 ## Reference
 https://de.wikipedia.org/wiki/Design_by_Contract

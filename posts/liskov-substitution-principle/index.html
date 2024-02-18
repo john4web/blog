@@ -160,7 +160,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              7-minute read
+              9-minute read
             </span>
           </div>
           
@@ -270,6 +270,83 @@ That means P&rsquo; must behave exactly like P.</li>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<p>When is the LSP actually violated?<br>
+<em>If you are inheriting from the base class without making the subclass substitutable for the base class, then you are breaking the LSP.</em><br>
+In the following, a classic example of a program with violated LSP is shown. Consider we have a class Rectangle ad a class Square where Square extends Rectangle.</p>
+<figure><img src="/blog/images/liskov-substitution-principle/rectangle.svg"
+         alt="Class Square inherits from class Rectangle."/><figcaption>
+            <p>Class Square inherits from class Rectangle.</p>
+        </figcaption>
+</figure>
+
+<p>In this example, square is not a proper subtype of rectangle, because the height and width of the rectangle are independently mutable. In contrast the height and width of the square must change together. Since the user believes it is communicating with a rectangle, it could easily get confused.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">r</span> <span class="o">=</span> <span class="n">_________</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="na">setHeight</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="na">setWidth</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">assert</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">area</span><span class="o">()</span> <span class="o">==</span> <span class="mi">10</span><span class="o">)</span>
+</span></span></code></pre></div><p>If the blank line above produced a square, then the assertion would fail.</p>
+<p>However let’s take a deeper look into the java code of this example. A rectangle can set its width and height independently. In contrast, whenever the width/height of a square is set, the height/width is changed accordingly.
+the setWidth() and setHeight() functions are inappropriate for a Square, since the width and height of a square are identical. So we notice that something goes wrong here. However let’s ignore this indication that there is a problem and sidestep this problem by overriding the setWidth and setHeight methods.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Rectangle</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">width</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">height</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">setHeight</span><span class="o">(</span><span class="n">height</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span> <span class="n">height</span> <span class="o">=</span> <span class="n">height</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">setWidth</span><span class="o">(</span><span class="n">width</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="n">width</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">area</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Square</span> <span class="kd">extends</span> <span class="n">Rectangle</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">  <span class="n">setHeight</span><span class="o">(</span><span class="n">height</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span> <span class="n">height</span> <span class="o">=</span> <span class="n">height</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="n">height</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">  <span class="n">setWidth</span><span class="o">(</span><span class="n">width</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="n">width</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="o">.</span> <span class="n">height</span> <span class="o">=</span> <span class="n">width</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>When using the code now, there is unexpected behaviour when using the square instead of the rectangle. Hence, the LSP breaks! You should never receive anything unexpected from a subclass.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="na">setHeight</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="na">setWidth</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">area</span><span class="o">());</span> <span class="c1">// 10
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Square</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="na">setHeight</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="na">setWidth</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">area</span><span class="o">());</span> <span class="c1">// 4
+</span></span></span></code></pre></div><p>A solution to this problem could be introducing a Shape class, where Rectangle and square are inheriting from:</p>
+<figure><img src="/blog/images/liskov-substitution-principle/shape.svg"
+         alt="Square and Rectangle both inherit from Shape."/><figcaption>
+            <p>Square and Rectangle both inherit from Shape.</p>
+        </figcaption>
+</figure>
+
+<p>Or an even better solution: <strong>use composition instead of inheritance</strong>.</p>
+<h2 id="method-overriding">
+  Method Overriding
+  <a class="heading-link" href="#method-overriding">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In the previous example, the LSP was violated because the methods setWidth() and setHeight() were overwritten in the subclass. As the two methods in the subclass behaved differently, Square could no longer be used instead of Rectangle without changing the behaviour of the program. You may be asking yourself:</p>
+<p><strong>Is method overriding always a violation of Liskov Substitution Principle?</strong><br>
+-&gt; Answer: &ldquo;it depends!&rdquo;</p>
 <h2 id="reference">
   Reference
   <a class="heading-link" href="#reference">

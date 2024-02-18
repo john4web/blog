@@ -81,6 +81,95 @@ That means P' must behave exactly like P.
 
 ## Practical Example: Violated LSP
 
+When is the LSP actually violated?  
+_If you are inheriting from the base class without making the subclass substitutable for the base class, then you are breaking the LSP._  
+In the following, a classic example of a program with violated LSP is shown. Consider we have a class Rectangle ad a class Square where Square extends Rectangle.
+
+{{< figure src="/blog/images/liskov-substitution-principle/rectangle.svg" caption="Class Square inherits from class Rectangle." >}}
+
+In this example, square is not a proper subtype of rectangle, because the height and width of the rectangle are independently mutable. In contrast the height and width of the square must change together. Since the user believes it is communicating with a rectangle, it could easily get confused.
+
+```java
+Rectangle r = _________
+r.setHeight(5);
+r.setWidth(2);
+assert(r.area() == 10)
+```
+
+If the blank line above produced a square, then the assertion would fail.
+
+However let’s take a deeper look into the java code of this example. A rectangle can set its width and height independently. In contrast, whenever the width/height of a square is set, the height/width is changed accordingly. 
+the setWidth() and setHeight() functions are inappropriate for a Square, since the width and height of a square are identical. So we notice that something goes wrong here. However let’s ignore this indication that there is a problem and sidestep this problem by overriding the setWidth and setHeight methods.
+
+```java
+class Rectangle{
+
+  int width;
+  int height;
+
+  setHeight(height){
+    this. height = height;
+  }
+
+  setWidth(width){
+    this.width = width;
+  }
+
+  area(){
+    return width * height;
+  }
+
+}
+```
+
+```java
+class Square extends Rectangle{
+
+  @Override
+  setHeight(height){
+    this. height = height;
+    this.width = height;
+  }
+
+  @Override
+  setWidth(width){
+    this.width = width;
+    this. height = width;
+  }
+
+}
+```
+
+When using the code now, there is unexpected behaviour when using the square instead of the rectangle. Hence, the LSP breaks! You should never receive anything unexpected from a subclass.
+
+```java
+Rectangle r = new Rectangle()
+r.setHeight(5);
+r.setWidth(2);
+System.out.println(r.area()); // 10
+```
+
+```java
+Rectangle r = new Square()
+r.setHeight(5);
+r.setWidth(2);
+System.out.println(r.area()); // 4
+```
+
+A solution to this problem could be introducing a Shape class, where Rectangle and square are inheriting from:
+
+{{< figure src="/blog/images/liskov-substitution-principle/shape.svg" caption="Square and Rectangle both inherit from Shape." >}}
+
+Or an even better solution: **use composition instead of inheritance**.
+
+## Method Overriding
+
+In the previous example, the LSP was violated because the methods setWidth() and setHeight() were overwritten in the subclass. As the two methods in the subclass behaved differently, Square could no longer be used instead of Rectangle without changing the behaviour of the program. You may be asking yourself:
+
+**Is method overriding always a violation of Liskov Substitution Principle?**  
+-> Answer: "it depends!"
+
+
 ## Reference
 https://de.wikipedia.org/wiki/Design_by_Contract
 

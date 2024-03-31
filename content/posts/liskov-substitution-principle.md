@@ -74,8 +74,9 @@ The following diagram tries to explain this definition in a visual way:
 
 * Os is an instance of class S.  
 * Ot is an instance of class T.  
-* The program P uses Os.  
-* The Program P' uses Ot.  
+* The program P uses Ot.  
+* The program P' uses Os.  
+
 If you use Os instead of Ot in Program P, and the behaviour of Program P is unchanged, then the LSP holds.  
 That means P' must behave exactly like P.
 
@@ -167,7 +168,7 @@ Or an even better solution: **use composition instead of inheritance**.
 The previous example showed a violation of the LSP. The LSP was violated because the methods setWidth() and setHeight() were overwritten in the subclass. As the two methods in the subclass behaved differently, Square could no longer be used instead of Rectangle without changing the behaviour of the program. You may be asking yourself:
 
 **Does that mean method overriding is always a violation of Liskov Substitution Principle?**  
--> Answer: "it depends!"
+-> Answer: _"it depends!"_
 
 
 The biggest problem with method overriding is that some specific method implementations in the derived classes might not fully adhere to the LSP and therefore fail to preserve type substitutability. Of course, it's valid to make an overridden method to accept arguments of different types and return a different type as well, but with full adherence to the following five rules:
@@ -195,9 +196,130 @@ The credo: _"If we don't state what a module should do, there is little likeliho
 
 One of the main goals of DbC is increasing software quality (reliability). The smooth interaction between program modules is achieved through a contract that must be adhered to when using a method, for example. This contract consists of preconditions, postconditions and class invariants.
 
-## Preconditions
+### Preconditions
 
+Preconditions are assurances that the caller must adhere to.  
+Preconditions determine under what circumstances a method should be callable.  
+Preconditions are requirements that must be met before calling a method. These conditions describe the expected state of the system or input before the method is executed. If the preconditions are not met, the method may either throw an exception or handle the error in another way.
 
+The following Code example shows a method with the defined **Precondition: 0 < num <= 5**.
+
+```java
+public class Foo {
+
+    public void doStuff(int num) {
+
+        // precondition: 0 < num <= 5
+
+        if (num <= 0 || num > 5) {
+            throw new IllegalArgumentException(
+              "Invalid Precondition: Input out of range 1 – 5"
+            );
+        }
+
+        // perform some operations here…
+
+  }
+
+}
+```
+
+In this example, the precondition for the ``doStuff`` method states that the ``num`` parameter value must be in the range 1 to 5. This precondition is enforced with a range check inside the method. If the precondition is not met, an IllegalArgument exception is thrown.
+When the precondition is not met (i.e. its evaluation results in false), then the code that is calling the method is wrong. The caller has to ensure that the precondition is met beforehand.
+
+### Postconditions
+Postconditions are assurances that the callee will uphold.  
+Postconditions specify the conditions that must be met after the completion of the method call.  
+Postconditions are requirements that should apply after the execution of a method. These conditions describe the expected state of the system or return values after the method has been successfully completed.
+
+The following Code example shows a method with the defined **Postcondition: newNum > num**.
+
+```java
+public class Foo {
+
+    public int doStuff(int num) {
+
+        // perform operation
+
+        int newNum = num + 1;
+
+        // postcondition:  newNum must be greater than num
+        
+        if (newNum <= num) {
+            throw new IllegalStateException(
+              "Invalid Postcondition: newNum must be greater than num"
+            );
+        }
+
+        return newNum;
+
+    }
+
+}
+```
+In this example, the postcondition for the doStuff method states that the ``newNum`` value must be bigger than the ``num`` value at the end of the method execution. This postcondition is enforced with a check after the performed operation and before the value gets returned. If the postcondition is not met, an IllegalState exception is thrown. If a postcondition is not fulfilled, there is an error in the subroutine itself (i.e. in the operations within the method): The subroutine should have ensured that the postcondition is fulfilled.
+
+To sum up, preconditions and postconditions form a kind of contract: If the calling code fulfills the precondition, then the subroutine is obliged to fulfill the postcondition.
+
+### Class Invariants
+
+Invariants are **immutable** basic assumptions that apply across all instances of a class.
+Invariants ensure, that certain conditions (or states) are met at entry **and** exit point of methods.
+Therefore, Invariants are a combination of pre- and postconditions together.
+In Java, invariants refer to conditions or properties that should remain unchanged throughout the entire life cycle of an object. Invariants play an important role in ensuring the consistency and validity of objects. _A class invariant is an assertion concerning object properties that must be true for all valid states of the object._
+
+The following Code example shows a method with the defined **Invariant: num < limit**.
+
+```java
+public class Foo {
+    
+    // invariant: num < limit (should apply in every state)
+    
+    private int limit;
+
+    public void doStuff(int num) {
+        
+        //precondition:  num < limit
+        if (num >= limit) {
+            throw new IllegalArgumentException(
+              "Invalid Precondition: num must be below limit"
+            );
+        }
+
+        // perform operation
+        int newNum = num + 1;
+
+        // postcondition:  num < limit
+        if (num >= limit) {
+            throw new IllegalStateException(
+              "Invalid Postcondition: num must be below limit"
+            );
+        }
+
+        return newNum;
+
+    }
+
+}
+```
+
+The Foo class specifies a class invariant that ``num`` must always be below the limit. This rule should apply for every state in which the program may be. In the code example the invariant is enforced with a check before and after the performed operation. If the invariant is violated, an exception is thrown.
+
+As illustrated in the previous three code examples, preconditions, postconditions and invariants are usually formulated as Boolean expressions.
+* Precondition: Is checked before the method is executed.
+* Postcondition: Is checked after the method is executed.
+* Invariant: Is checked before and after the execution of the method.
+
+If every code adheres to the contract, no errors can occur and the method is guaranteed not to deliver unexpected results. The use of DbC creates a chain of contracts that ultimately ensures more robust software. If every single element in the chain can guarantee to fulfill the postcondition when the precondition has been met beforehand, fewer errors occur due to incorrect assumptions of developers.
+
+**But what does this have to do with the LSP?**  
+-> By defining class invariants, preconditions and postconditions, a module can be replaced by any other module if it fulfills the same "contract". And that is exactly what the LSP is all about.
+
+## Three rules to create well-behaved subtypes
+
+In their book _"Program Development in Java: Abstraction, Specification, and Object-Oriented Design"_, Barbara Liskov and John Guttag formulated three rules to create subtypes that adhere to the LSP – the signature rule, the properties rule, and the methods rule.
+
+### The methods rule
 
 
 ## Reference

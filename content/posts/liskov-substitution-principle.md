@@ -10,7 +10,7 @@ This blog post offers a detailed explanation of the liskov substitution principl
 
 The Liskov Substitution Principle (LSP) was first introduced by [Barbara Liskov](https://en.wikipedia.org/wiki/Barbara_Liskov) in 1987 in her article ["Data Abstraction and Hierarchy"](https://www.cs.tufts.edu/~nr/cs257/archive/barbara-liskov/data-abstraction-and-hierarchy.pdf) and is one of the five SO**L**ID design principles of object-oriented programming.
 
-{{< figure src="/blog/images/liskov-substitution-principle/barbara_liskov.jpg" caption="Barbara Liskov (Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Barbara_Liskov_computer_scientist_2010.jpg))." width="200" height="300" >}}
+{{< figure src="/blog/images/liskov-substitution-principle/barbara_liskov.jpg" caption="Barbara Liskov (Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Barbara_Liskov_computer_scientist_2010.jpg))." width="200">}}
 
 The original definition of this principle is as follows:  
 **_If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2, then S is a subtype of T._**
@@ -108,7 +108,7 @@ class Rectangle{
   int height;
 
   setHeight(height){
-    this. height = height;
+    this.height = height;
   }
 
   setWidth(width){
@@ -127,20 +127,20 @@ class Square extends Rectangle{
 
   @Override
   setHeight(height){
-    this. height = height;
+    this.height = height;
     this.width = height;
   }
 
   @Override
   setWidth(width){
     this.width = width;
-    this. height = width;
+    this.height = width;
   }
 
 }
 ```
 
-When using the code now, there is unexpected behaviour when using the square instead of the rectangle. Hence, the LSP breaks! You should never receive anything unexpected from a subclass.
+When using the code now, there is unexpected behaviour when using the square instead of the rectangle. Hence, the LSP breaks! Note: _You should never receive anything unexpected from a subclass._
 
 ```java
 Rectangle r = new Rectangle()
@@ -164,10 +164,40 @@ Or an even better solution: **use composition instead of inheritance**.
 
 ## Method Overriding
 
-In the previous example, the LSP was violated because the methods setWidth() and setHeight() were overwritten in the subclass. As the two methods in the subclass behaved differently, Square could no longer be used instead of Rectangle without changing the behaviour of the program. You may be asking yourself:
+The previous example showed a violation of the LSP. The LSP was violated because the methods setWidth() and setHeight() were overwritten in the subclass. As the two methods in the subclass behaved differently, Square could no longer be used instead of Rectangle without changing the behaviour of the program. You may be asking yourself:
 
-**Is method overriding always a violation of Liskov Substitution Principle?**  
+**Does that mean method overriding is always a violation of Liskov Substitution Principle?**  
 -> Answer: "it depends!"
+
+
+The biggest problem with method overriding is that some specific method implementations in the derived classes might not fully adhere to the LSP and therefore fail to preserve type substitutability. Of course, it's valid to make an overridden method to accept arguments of different types and return a different type as well, but with full adherence to the following five rules:
+
+**1.** If a method in the base class takes argument(s) of a given type, the overridden method should take the same type or a supertype (A.K.A. [contravariant method arguments](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)#Contravariant_method_parameter_type)).
+
+**2.** If a method in the base class returns void, the overridden method should return void as well.
+
+**3.** If a method in the base class returns a primitive, the overridden method should return the same primitive.
+
+**4.** If a method in the base class returns a certain type, the overridden method should return the same type or a subtype (A.K.A. [covariant return type](https://en.wikipedia.org/wiki/Covariant_return_type)).
+
+**5.** If a method in the base class throws an exception, the overridden method must throw the same exception or a subtype of the base class exception.
+
+## Design by Contract (Preconditions, Postconditions, Invariants)
+It is well known that "contracts" are an important concept in software development. Modules must be able to rely on each other by adhering to "rules" that have been agreed on in advance. Design by Contract (DbC) is an approach to designing software in this way. The aim is to ensure the smooth interaction of individual program modules by defining formal contracts.
+
+DbC was developed and introduced by [Bertrand Meyer](https://en.wikipedia.org/wiki/Bertrand_Meyer) with the development of the programming language [Eiffel](https://en.wikipedia.org/wiki/Eiffel_(programming_language)).
+
+{{< figure src="/blog/images/liskov-substitution-principle/bertrand_meyer.jpg" caption="Bertrand Meyer (Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Bertrand_Meyer_recent.jpg))." width="200" >}}
+
+The idea of DbC is to define as precisely as possible what a software module should do.
+
+The credo: _"If we don't state what a module should do, there is little likelihood that it will do it."_
+
+One of the main goals of DbC is increasing software quality (reliability). The smooth interaction between program modules is achieved through a contract that must be adhered to when using a method, for example. This contract consists of preconditions, postconditions and class invariants.
+
+## Preconditions
+
+
 
 
 ## Reference
@@ -193,8 +223,7 @@ https://www.youtube.com/watch?v=dJQMqNOC4Pc&t=176s
 
 https://www.youtube.com/watch?v=bVwZquRH1Vk&t=144s 
 
-https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)#Covariant_method_return_type 
-
+https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
 
 
 

@@ -317,15 +317,289 @@ If every code adheres to the contract, no errors can occur and the method is gua
 
 ## Three rules to create well-behaved subtypes
 
-In their book _"Program Development in Java: Abstraction, Specification, and Object-Oriented Design"_, Barbara Liskov and John Guttag formulated three rules to create subtypes that adhere to the LSP – the signature rule, the properties rule, and the methods rule.
+In their book _["Program Development in Java: Abstraction, Specification, and Object-Oriented Design"](https://www.oreilly.com/library/view/program-development-in/9780768685299/)_, Barbara Liskov and John Guttag formulated three rules to create subtypes that adhere to the LSP – the signature rule, the properties rule, and the methods rule.
 
 ### The methods rule
+Definition:  
+_Calls of subtype methods must "behave like" calls to the corresponding supertype methods. A subtype method can **weaken the precondition** and can **strengthen the postcondition**. Both conditions must be satisfied to achieve compatibility between the sub- and supertype methods._
+
+#### Weaken the precondition by example
+A subtype can weaken (but not strengthen) the precondition for a method it overrides. When a subtype weakens the precondition, it relaxes the constraints imposed by the supertype method.
+ 
+Example: the ``doStuff()`` method in the ``Foo`` class defines that the method input ``num`` must have a value in between 0 and 6 (0 < num <= 5).
+
+ ```java
+public class Foo {
+    
+    public void doStuff(int num) {
+        // precondition: 0 < num <= 5
+        // perform some operations here…
+    }
+
+}
+
+```
+
+Let's now override the doStuff method with a weakened precondition:
+
+ ```java
+public class Bar extends Foo {
+        
+    @Override
+    public void doStuff(int num) {
+        // precondition: 0 < num <= 10
+        // perform some operations here…
+    }
+
+}
+```
+
+Here, the precondition is weakened in the overridden doStuff method to 0 < num <= 10, allowing a wider range of values for num. All values of num that are valid for Foo.doStuff are valid for Bar.doStuff as well. Consequently, a client of Foo.doStuff doesn’t notice a difference when it replaces Foo with Bar.
+Conversely, when a subtype strengthens the precondition (e.g. 0 < num <= 3 in our example), it applies more stringent restrictions than the supertype (and this is not allowed). For example, values 4 & 5 for num are valid for Foo.doStuff, but are no longer valid for Bar.doStuff. This would break the client code that does not expect this new tighter constraint.
+
+#### Strengthen the postcondition by example
+The subtype can strengthen (but not weaken) the postcondition for a method it overrides. When a subtype strengthens the postcondition, it provides more than the supertype method.
+
+Example: the ``doStuff()`` method in the ``Foo`` class defines the postcondition newNum > num.
+
+ ```java
+public class Foo {
+
+    public int doStuff(int num) {
+        // perform operation
+        // postcondition:  newNum > num
+    }
+
+}
+```
+
+Let's now override the ``doStuff()`` method with a strengthened postcondition:
+
+
+ ```java
+public class Bar extends Foo{
+    
+    // Some properties and other methods...
+    
+    @Override
+    public int doStuff(int num) {
+        // perform operation
+        // postcondition 1: newNum > num
+        // postcondition 2: newColor.equals(“blue”)
+    }
+
+}
+```
+
+The overridden ``doStuff`` method in Bar strengthens the postcondition by additionally ensuring that after the performed operations the ``newColor`` equals to “blue” as well. Consequently, any client code relying on the postcondition of the ``doStuff()`` method in the ``Foo`` class notices no difference when it substitutes ``Bar`` for ``Foo``. Because postcondition 1 is met as well in the subclass.  
+Conversely, if ``Bar`` were to weaken the postcondition of the overridden ``doStuff()`` method (which is not allowed), it would no longer guarantee that newNum > num. This might break client code given a Bar as a substitute for Foo.
+
+### The properties rule
+Definition:  
+_"The subtype must preserve all properties that can be proved about supertype objects." This rule states that all subtype methods (inherited and new) must maintain or strengthen the supertype’s class invariants._
+
+Example: the ``Foo`` class defines a class invariant num < upperLimit.
+
+ ```java
+public class Foo {
+    
+    // invariant: num < upperLimit (should apply in every state)
+    
+    private int upperLimit;
+
+    public void doStuff(int num) {
+        // perform some operations
+    }
+
+}
+```
+
+Let's now override the ``doStuff()`` method with a maintained/strengthened invariant:
+
+ ```java
+public class Bar extends Foo{
+
+    private int lowerLimit;
+
+    @Override
+    public void doStuff(int num) {
+        // this method content has to maintain or strengthen the supertype’s class invariants
+        // Maintain-Example: ensuring that num < upperLimit
+        // Strengthen-Example: ensuring that (num < upperLimit) && (num > lowerLimit)
+    }
+
+}
+```
+
+In this example, the class invariant in ``Foo`` is preserved/strengthened by the overridden doStuff method in Bar. Conversely, if the class invariant is not preserved by the subtype (which is not allowed), it breaks any client code that relies on the supertype.
+
+#### The History Constraint
+The history constraint states that the subclass methods (inherited or new) shouldn’t allow state changes that the base class didn’t allow. History constraints describe the "historical evolution" (=the state changes).
+
+ ```java
+public abstract class Car {
+
+    // mileage allowed to be set once at the time of creation.
+    // mileage value can only increment thereafter.
+    // mileage value cannot be reset.
+    protected int mileage;
+
+    public Car(int mileage) {
+        this.mileage = mileage;
+    }
+
+    // Other properties and methods...
+
+}
+```
+The Car class specifies a constraint on the mileage property. The mileage property can be set only once at the time of creation and cannot be reset thereafter.  
+Let’s now define a ToyCar that extends Car:
+
+ ```java
+public class ToyCar extends Car {
+
+    public void reset() {
+        mileage = 0;
+    }
+
+    // Other properties and methods
+
+}
+```
+
+The ToyCar has an extra method reset that resets the mileage property. In doing so, the ToyCar ignored the constraint imposed by its parent on the mileage property. This breaks any client code that relies on the constraint. So, ToyCar is **not** substitutable for Car.
+
+### The Signature Rule
+Definition:  
+_"The subtype objects must have all the methods of the supertype, and the signatures of the subtype methods must be compatible with the signatures of the corresponding supertype methods."_
+
+To recap:
+The signature of a method is defined by:
+* its name
+* the number of parameters
+* the type of parameters
+* the sequence/order of parameters
+
+#### Method argument types
+The rule states that the overridden subtype method argument types can be identical or wider than the supertype method argument types.
+Java’s method overriding rules support this rule by enforcing that the overridden method argument types match exactly with the supertype method.
+
+* _If a method in the base class takes argument(s) of a given type, the overridden method should take the same type or a supertype (= contravariant method arguments)._
+
+#### Return types
+The return type of the subtype method can be narrower than the return type of the supertype method. This is called covariance of the return types. Covariance indicates when a subtype is accepted in place of a supertype. Java supports the covariance of return types. Let’s look at an example:
+
+ ```java
+public abstract class Foo {
+
+    public abstract Number generateNumber();    
+    
+    // Other Methods
+
+}
+```
+
+The ``generateNumber()`` method in ``Foo`` has defined the return type as ``Number``. Let’s now override this method by returning a narrower type of e.g. ``Integer``:
+
+ ```java
+public class Bar extends Foo {
+    
+    @Override
+    public Integer generateNumber() {
+        return new Integer(10);
+    }
+    
+    // Other Methods
+
+}
+
+```
+
+Because ``Integer`` IS-A ``Number``, a client code that expects ``Number`` can replace ``Foo`` with ``Bar`` without any problems.
+On the other hand, if the overridden method in ``Bar`` were to return a wider type than ``Number``, e.g. ``Object``, that might include any subtype of Object e.g. a Truck. Any client code that relied on the return type of Number could not handle a Truck!
+Fortunately, Java’s method overriding rules prevent an override method returning a wider type.
+
+* If a method in the base class returns void, the overridden method should return void
+* If a method in the base class returns a primitive, the overridden method should return the same primitive
+* If a method in the base class returns a certain type, the overridden method should return the same type or a subtype (= covariant return type)
+
+#### Exceptions
+
+The subtype method can throw fewer or narrower (but not any additional or broader) exceptions than the supertype method.
+This is understandable because when the client code substitutes a subtype, it can handle the method throwing fewer exceptions than the supertype method. However, if the subtype’s method throws new or broader checked exceptions, it would break the client code.
+Java’s method overriding rules already enforce this rule for checked exceptions. However, overriding methods in Java CAN THROW any RuntimeException regardless of whether the overridden method declares the exception.  
+
+* _If a method in the base class throws an exception, the overridden method must throw the same exception or a subtype of the base class exception._
+
+## Summary of rules:
+
+* Preconditions cannot be strengthened in a subtype.
+* Postconditions cannot be weakened in a subtype.
+* Invariants of the supertype must be preserved (or strengthened) in a subtype.
+* History constraint: subclass methods shouldn’t allow state changes that the base class didn’t allow.
+* Subtype method argument types can be identical or wider than the supertype method argument types(= contravariant method arguments)
+* The return type of the subtype method can be narrower than the return type of the supertype method
+* If a method in the base class returns void, the overridden method should return void as well
+* If a method in the base class returns a primitive, the overridden method should return the same primitive
+* If a method in the base class returns a certain type, the overridden method should return the same type or a subtype (= covariant return type)
+
+This is a lot to think about. How are you supposed to remember all this and apply it in your daily life as a software developer?
+In my opinion, there are two options:
+
+1. You use inheritance in your code. However then you have to apply all these rules and think about all the mentioned stuff. If you don't, then your Code is bad and breaks the LSP!
+
+2. Don't use inheritance at all! Use composition instead! In this case you don't have to think about all the mentioned stuff. And your code is clean as well! 
+
+ I would go with option 2! 😉
+
+## Why is LSP so important?
+
+I think LSP is so important because it ensures that no unexpected behaviour happens in the program. Therefore it is easier to maintain and easier to debug.
+Furthermore by following the LSP you can ensure that the building blocks of your application are more flexible and  can be swapped out easily without having to fear that something breaks. For instance can a ``Cat`` be used instead of an ``Animal`` without any problems. We all know that changing and swapping things out are important things in software development. That's what also the "Dependency Inversion Principle" teaches us. Would you solder a lamp directly to the electrical wiring in a wall? Or would you use a plug instead?
+
+{{< figure src="/blog/images/liskov-substitution-principle/dip.jpg" caption="Dependency Inversion Principle (Source: [Stack Overflow](https://stackoverflow.com/questions/26447502/explain-this-motivational-poster-about-dependency-inversion-principle))." width="400">}}
+
+
+// ToDo: refactor this:
+Verhaltenskonsistenz: Das LSP stellt sicher, dass ein Objekt eines abgeleiteten Typs sich genauso verhält wie ein Objekt des Basistyps. Dies ermöglicht es, Objekte beliebig auszutauschen, ohne dass sich das Programmverhalten ändert. Dies ist wichtig für die Konsistenz und Vorhersagbarkeit des Codes.
+Interoperabilität: Durch das LSP können verschiedene Klassen, die denselben Basistyp implementieren, nahtlos miteinander interagieren. Das erleichtert die Integration von neuen Klassen in bestehende Systeme, ohne dass bestehender Code geändert werden muss.
+Erweiterbarkeit: Neue abgeleitete Klassen können problemlos hinzugefügt werden, ohne dass bestehender Code modifiziert werden muss. Dies fördert die Erweiterbarkeit des Systems und macht es einfacher, Funktionen hinzuzufügen oder das System zu verbessern, ohne vorhandenen Code zu brechen.
+Dokumentation und Verständlichkeit: Das LSP trägt zur besseren Verständlichkeit des Codes bei. Wenn Entwickler wissen, dass sie Objekte austauschen können, ohne unerwartete Nebenwirkungen zu verursachen, wird der Code transparenter und leichter zu verstehen.
+Testbarkeit: Klassen, die das LSP einhalten, sind in der Regel besser testbar. Tests, die für den Basistyp geschrieben wurden, können auch für abgeleitete Typen verwendet werden, ohne dass spezifische Anpassungen erforderlich sind.
+Insgesamt trägt das Liskov Substitution Principle dazu bei, die Qualität, Wartbarkeit und Erweiterbarkeit von Software zu verbessern, indem es klare Verhaltensregeln für abgeleitete Klassen festlegt.
+
+
+
+Conclusion
+I don’t think LSP is difficult to understand. However I think it is difficult to actually follow it. Most of the time subclassing is done wrong.
+Most of the time subclassing is used too much or it is used in situations where it should not be used. In general: Inheritance should not be overused!
+
+A fundamental Rule in OOP states:
+Favor composition over inheritance!
+
+So maybe in the next situation where you think about using inheritance to solve a problem, you should ask yourself the question: “How could I solve the problem by using composition?”. I would argue most of the time composition would lead to a better solution than inheritance.Ich würde sogar noch einen Schritt weitergehen: am besten sollte man vererbung nirgendwo im code verwenden. Jetzt fragt ihr euch vielleicht: wofür war dann dieser Artikel gut, wenn man eh Vererbung nicht verwenden sollte. Naja - es wird leider immer noch sehr sehr oft verwendet. in Java z.b. ist es ein fundamentales Konzept auf dem die ganze Sprache aufgebaut ist.
+
+Learning:
+While programming you should ask yourself:
+ist meine subklasse substitutable for the base class without breaking the program?
+steht meine subklasse in einer is-a relationship zur basisklasse? Is my cat an animal? is my dog an animal? is my table an animal?
+What are my preconditions, postconditions and invariants?
+Do I break the signature-, properties- or method rule?
+could the problem be solved better by using composition?
+
+
+
+
+
+
+
+
 
 
 ## Reference
 https://de.wikipedia.org/wiki/Design_by_Contract
 
-Design By Contract in Java - Seminarbericht WS06/07 - Matthias Hausherr
+[Design By Contract in Java - Seminarbericht WS06/07 - Matthias Hausherr](https://docplayer.org/4165643-Design-by-contract-in-java.html)
 
 Program Development in Java: Abstraction, Specification, and Object-Oriented Design,
 
@@ -347,6 +621,7 @@ https://www.youtube.com/watch?v=bVwZquRH1Vk&t=144s
 
 https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
 
+https://vowi.fsinf.at/wiki/TU_Wien:Fortgeschrittene_objektorientierte_Programmierung_VU_(Puntigam)/Mitschrift_SS17 
 
 
 # H1

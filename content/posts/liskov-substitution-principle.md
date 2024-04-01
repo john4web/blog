@@ -554,47 +554,37 @@ In my opinion, there are two options:
 
 ## Why is LSP so important?
 
-I think LSP is so important because it ensures that no unexpected behaviour happens in the program. Therefore it is easier to maintain and easier to debug.
-Furthermore by following the LSP you can ensure that the building blocks of your application are more flexible and  can be swapped out easily without having to fear that something breaks. For instance can a ``Cat`` be used instead of an ``Animal`` without any problems. We all know that changing and swapping things out are important things in software development. That's what also the "Dependency Inversion Principle" teaches us. Would you solder a lamp directly to the electrical wiring in a wall? Or would you use a plug instead?
+I think LSP is so important because it ensures that no unexpected behaviour happens in the program. Therefore it is easier to maintain and easier to debug.  
+Furthermore by following the LSP you can ensure that the building blocks of your application are more flexible and can be swapped out easily without having to fear that something breaks. For instance a ``Cat`` can be used instead of an ``Animal`` without any problems. We all know that changing and swapping things out are important things in software development. That's what also the "Dependency Inversion Principle" teaches us. Would you solder a lamp directly to the electrical wiring in a wall? Or would you use a plug instead?
 
 {{< figure src="/blog/images/liskov-substitution-principle/dip.jpg" caption="Dependency Inversion Principle (Source: [Stack Overflow](https://stackoverflow.com/questions/26447502/explain-this-motivational-poster-about-dependency-inversion-principle))." width="400">}}
 
+**Behavioral consistency:**   
+The LSP ensures that an object of a derived type behaves exactly like an object of the base type. This allows objects to be exchanged arbitrarily without changing the program's behavior. This is important for the consistency and predictability of the code.
 
-// ToDo: refactor this:
-Verhaltenskonsistenz: Das LSP stellt sicher, dass ein Objekt eines abgeleiteten Typs sich genauso verhält wie ein Objekt des Basistyps. Dies ermöglicht es, Objekte beliebig auszutauschen, ohne dass sich das Programmverhalten ändert. Dies ist wichtig für die Konsistenz und Vorhersagbarkeit des Codes.
-Interoperabilität: Durch das LSP können verschiedene Klassen, die denselben Basistyp implementieren, nahtlos miteinander interagieren. Das erleichtert die Integration von neuen Klassen in bestehende Systeme, ohne dass bestehender Code geändert werden muss.
-Erweiterbarkeit: Neue abgeleitete Klassen können problemlos hinzugefügt werden, ohne dass bestehender Code modifiziert werden muss. Dies fördert die Erweiterbarkeit des Systems und macht es einfacher, Funktionen hinzuzufügen oder das System zu verbessern, ohne vorhandenen Code zu brechen.
-Dokumentation und Verständlichkeit: Das LSP trägt zur besseren Verständlichkeit des Codes bei. Wenn Entwickler wissen, dass sie Objekte austauschen können, ohne unerwartete Nebenwirkungen zu verursachen, wird der Code transparenter und leichter zu verstehen.
-Testbarkeit: Klassen, die das LSP einhalten, sind in der Regel besser testbar. Tests, die für den Basistyp geschrieben wurden, können auch für abgeleitete Typen verwendet werden, ohne dass spezifische Anpassungen erforderlich sind.
-Insgesamt trägt das Liskov Substitution Principle dazu bei, die Qualität, Wartbarkeit und Erweiterbarkeit von Software zu verbessern, indem es klare Verhaltensregeln für abgeleitete Klassen festlegt.
+**Interoperability and Extensibility:**  
+By following the LSP, different classes that implement the same base type can seamlessly interact with each other. This facilitates the integration of new classes into existing systems without requiring changes to existing code (See: Open Closed Principle).
 
+**Documentation and Understandability:**  
+The LSP contributes to better code understandability. When developers know that they can exchange objects without causing unexpected side effects, the code becomes more transparent and easier to understand.
 
+**Testability:**  
+Classes that adhere to the LSP are generally more testable. Tests written for the base type can also be used for derived types without requiring specific adjustments.
 
-Conclusion
-I don’t think LSP is difficult to understand. However I think it is difficult to actually follow it. Most of the time subclassing is done wrong.
-Most of the time subclassing is used too much or it is used in situations where it should not be used. In general: Inheritance should not be overused!
+## Conclusion
+I don’t think LSP is difficult to understand. However I think it is difficult to actually follow it. Most of the time subclassing is done wrong. Most of the time subclassing is used too much or it is used in situations where it should not be used. Inheritance should not be overused!  
 
-A fundamental Rule in OOP states:
-Favor composition over inheritance!
+A fundamental Rule in OOP states: _**"Favor composition over inheritance!"**_  
 
-So maybe in the next situation where you think about using inheritance to solve a problem, you should ask yourself the question: “How could I solve the problem by using composition?”. I would argue most of the time composition would lead to a better solution than inheritance.Ich würde sogar noch einen Schritt weitergehen: am besten sollte man vererbung nirgendwo im code verwenden. Jetzt fragt ihr euch vielleicht: wofür war dann dieser Artikel gut, wenn man eh Vererbung nicht verwenden sollte. Naja - es wird leider immer noch sehr sehr oft verwendet. in Java z.b. ist es ein fundamentales Konzept auf dem die ganze Sprache aufgebaut ist.
+So maybe in the next situation where you think about using inheritance to solve a problem, you should ask yourself the question: “How could I solve the problem by using composition?”. I would argue most of the time composition would lead to a better solution than inheritance.  
+I would even go one step further: Ideally, inheritance should not be used anywhere in your code. Now you might be wondering: what was the point of this article then if inheritance shouldn't be used anyway? Well, unfortunately, inheritance is still used very often. In Java, for example, it is a fundamental concept on which the entire language is built on.
 
-Learning:
-While programming you should ask yourself:
-ist meine subklasse substitutable for the base class without breaking the program?
-steht meine subklasse in einer is-a relationship zur basisklasse? Is my cat an animal? is my dog an animal? is my table an animal?
-What are my preconditions, postconditions and invariants?
-Do I break the signature-, properties- or method rule?
-could the problem be solved better by using composition?
-
-
-
-
-
-
-
-
-
+While programming you should ask yourself the questions:
+* Could the problem be solved better by using composition?
+* Is my subclass substitutable for the base class without breaking the program?
+* Is my subclass in an "is-a" relationship to the base class? Is my cat an animal? is my dog an animal? is my table an animal?
+* What are my preconditions, postconditions and invariants?
+* Do I break the signature-, properties- or method rule?
 
 ## Reference
 https://de.wikipedia.org/wiki/Design_by_Contract

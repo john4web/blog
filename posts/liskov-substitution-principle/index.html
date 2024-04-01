@@ -160,7 +160,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              15-minute read
+              25-minute read
             </span>
           </div>
           
@@ -494,7 +494,7 @@ In Java, invariants refer to conditions or properties that should remain unchang
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>In their book <em>&ldquo;Program Development in Java: Abstraction, Specification, and Object-Oriented Design&rdquo;</em>, Barbara Liskov and John Guttag formulated three rules to create subtypes that adhere to the LSP – the signature rule, the properties rule, and the methods rule.</p>
+<p>In their book <em><a href="https://www.oreilly.com/library/view/program-development-in/9780768685299/"  class="external-link" target="_blank" rel="noopener">&ldquo;Program Development in Java: Abstraction, Specification, and Object-Oriented Design&rdquo;</a></em>, Barbara Liskov and John Guttag formulated three rules to create subtypes that adhere to the LSP – the signature rule, the properties rule, and the methods rule.</p>
 <h3 id="the-methods-rule">
   The methods rule
   <a class="heading-link" href="#the-methods-rule">
@@ -502,6 +502,278 @@ In Java, invariants refer to conditions or properties that should remain unchang
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
+<p>Definition:<br>
+<em>Calls of subtype methods must &ldquo;behave like&rdquo; calls to the corresponding supertype methods. A subtype method can <strong>weaken the precondition</strong> and can <strong>strengthen the postcondition</strong>. Both conditions must be satisfied to achieve compatibility between the sub- and supertype methods.</em></p>
+<h4 id="weaken-the-precondition-by-example">
+  Weaken the precondition by example
+  <a class="heading-link" href="#weaken-the-precondition-by-example">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>A subtype can weaken (but not strengthen) the precondition for a method it overrides. When a subtype weakens the precondition, it relaxes the constraints imposed by the supertype method.</p>
+<p>Example: the <code>doStuff()</code> method in the <code>Foo</code> class defines that the method input <code>num</code> must have a value in between 0 and 6 (0 &lt; num &lt;= 5).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doStuff</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">// precondition: 0 &lt; num &lt;= 5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>       <span class="c1">// perform some operations here…
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Let&rsquo;s now override the doStuff method with a weakened precondition:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bar</span> <span class="kd">extends</span> <span class="n">Foo</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">       
+</span></span><span class="line"><span class="cl">   <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doStuff</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">// precondition: 0 &lt; num &lt;= 10
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>       <span class="c1">// perform some operations here…
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Here, the precondition is weakened in the overridden doStuff method to 0 &lt; num &lt;= 10, allowing a wider range of values for num. All values of num that are valid for Foo.doStuff are valid for Bar.doStuff as well. Consequently, a client of Foo.doStuff doesn’t notice a difference when it replaces Foo with Bar.
+Conversely, when a subtype strengthens the precondition (e.g. 0 &lt; num &lt;= 3 in our example), it applies more stringent restrictions than the supertype (and this is not allowed). For example, values 4 &amp; 5 for num are valid for Foo.doStuff, but are no longer valid for Bar.doStuff. This would break the client code that does not expect this new tighter constraint.</p>
+<h4 id="strengthen-the-postcondition-by-example">
+  Strengthen the postcondition by example
+  <a class="heading-link" href="#strengthen-the-postcondition-by-example">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The subtype can strengthen (but not weaken) the postcondition for a method it overrides. When a subtype strengthens the postcondition, it provides more than the supertype method.</p>
+<p>Example: the <code>doStuff()</code> method in the <code>Foo</code> class defines the postcondition newNum &gt; num.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">doStuff</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">// perform operation
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>       <span class="c1">// postcondition:  newNum &gt; num
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Let&rsquo;s now override the <code>doStuff()</code> method with a strengthened postcondition:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bar</span> <span class="kd">extends</span> <span class="n">Foo</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="c1">// Some properties and other methods...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   
+</span></span><span class="line"><span class="cl">   <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">doStuff</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">// perform operation
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>       <span class="c1">// postcondition 1: newNum &gt; num
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>       <span class="c1">// postcondition 2: newColor.equals(“blue”)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>The overridden <code>doStuff</code> method in Bar strengthens the postcondition by additionally ensuring that after the performed operations the <code>newColor</code> equals to “blue” as well. Consequently, any client code relying on the postcondition of the <code>doStuff()</code> method in the <code>Foo</code> class notices no difference when it substitutes <code>Bar</code> for <code>Foo</code>. Because postcondition 1 is met as well in the subclass.<br>
+Conversely, if <code>Bar</code> were to weaken the postcondition of the overridden <code>doStuff()</code> method (which is not allowed), it would no longer guarantee that newNum &gt; num. This might break client code given a Bar as a substitute for Foo.</p>
+<h3 id="the-properties-rule">
+  The properties rule
+  <a class="heading-link" href="#the-properties-rule">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Definition:<br>
+<em>&ldquo;The subtype must preserve all properties that can be proved about supertype objects.&rdquo; This rule states that all subtype methods (inherited and new) must maintain or strengthen the supertype’s class invariants.</em></p>
+<p>Example: the <code>Foo</code> class defines a class invariant num &lt; upperLimit.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="c1">// invariant: num &lt; upperLimit (should apply in every state)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   
+</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="kt">int</span> <span class="n">upperLimit</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doStuff</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">// perform some operations
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Let&rsquo;s now override the <code>doStuff()</code> method with a maintained/strengthened invariant:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bar</span> <span class="kd">extends</span> <span class="n">Foo</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">private</span> <span class="kt">int</span> <span class="n">lowerLimit</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doStuff</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">// this method content has to maintain or strengthen the supertype’s class invariants
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>       <span class="c1">// Maintain-Example: ensuring that num &lt; upperLimit
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>       <span class="c1">// Strengthen-Example: ensuring that (num &lt; upperLimit) &amp;&amp; (num &gt; lowerLimit)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>In this example, the class invariant in <code>Foo</code> is preserved/strengthened by the overridden doStuff method in Bar. Conversely, if the class invariant is not preserved by the subtype (which is not allowed), it breaks any client code that relies on the supertype.</p>
+<h4 id="the-history-constraint">
+  The History Constraint
+  <a class="heading-link" href="#the-history-constraint">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The history constraint states that the subclass methods (inherited or new) shouldn’t allow state changes that the base class didn’t allow. History constraints describe the &ldquo;historical evolution&rdquo; (=the state changes).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1">// mileage allowed to be set once at the time of creation.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="c1">// mileage value can only increment thereafter.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="c1">// mileage value cannot be reset.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="kd">protected</span> <span class="kt">int</span> <span class="n">mileage</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="kt">int</span> <span class="n">mileage</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">       <span class="k">this</span><span class="o">.</span><span class="na">mileage</span> <span class="o">=</span> <span class="n">mileage</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1">// Other properties and methods...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>The Car class specifies a constraint on the mileage property. The mileage property can be set only once at the time of creation and cannot be reset thereafter.<br>
+Let’s now define a ToyCar that extends Car:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ToyCar</span> <span class="kd">extends</span> <span class="n">Car</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reset</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">       <span class="n">mileage</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1">// Other properties and methods
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>The ToyCar has an extra method reset that resets the mileage property. In doing so, the ToyCar ignored the constraint imposed by its parent on the mileage property. This breaks any client code that relies on the constraint. So, ToyCar is <strong>not</strong> substitutable for Car.</p>
+<h3 id="the-signature-rule">
+  The Signature Rule
+  <a class="heading-link" href="#the-signature-rule">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Definition:<br>
+<em>&ldquo;The subtype objects must have all the methods of the supertype, and the signatures of the subtype methods must be compatible with the signatures of the corresponding supertype methods.&rdquo;</em></p>
+<p>To recap:
+The signature of a method is defined by:</p>
+<ul>
+<li>its name</li>
+<li>the number of parameters</li>
+<li>the type of parameters</li>
+<li>the sequence/order of parameters</li>
+</ul>
+<h4 id="method-argument-types">
+  Method argument types
+  <a class="heading-link" href="#method-argument-types">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The rule states that the overridden subtype method argument types can be identical or wider than the supertype method argument types.
+Java’s method overriding rules support this rule by enforcing that the overridden method argument types match exactly with the supertype method.</p>
+<ul>
+<li><em>If a method in the base class takes argument(s) of a given type, the overridden method should take the same type or a supertype (= contravariant method arguments).</em></li>
+</ul>
+<h4 id="return-types">
+  Return types
+  <a class="heading-link" href="#return-types">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The return type of the subtype method can be narrower than the return type of the supertype method. This is called covariance of the return types. Covariance indicates when a subtype is accepted in place of a supertype. Java supports the covariance of return types. Let’s look at an example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">Number</span> <span class="nf">generateNumber</span><span class="o">();</span>    
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="c1">// Other Methods
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>The <code>generateNumber()</code> method in <code>Foo</code> has defined the return type as <code>Number</code>. Let’s now override this method by returning a narrower type of e.g. <code>Integer</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bar</span> <span class="kd">extends</span> <span class="n">Foo</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">public</span> <span class="n">Integer</span> <span class="nf">generateNumber</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">       <span class="k">return</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="c1">// Other Methods
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Because <code>Integer</code> IS-A <code>Number</code>, a client code that expects <code>Number</code> can replace <code>Foo</code> with <code>Bar</code> without any problems.
+On the other hand, if the overridden method in <code>Bar</code> were to return a wider type than <code>Number</code>, e.g. <code>Object</code>, that might include any subtype of Object e.g. a Truck. Any client code that relied on the return type of Number could not handle a Truck!
+Fortunately, Java’s method overriding rules prevent an override method returning a wider type.</p>
+<ul>
+<li>If a method in the base class returns void, the overridden method should return void</li>
+<li>If a method in the base class returns a primitive, the overridden method should return the same primitive</li>
+<li>If a method in the base class returns a certain type, the overridden method should return the same type or a subtype (= covariant return type)</li>
+</ul>
+<h4 id="exceptions">
+  Exceptions
+  <a class="heading-link" href="#exceptions">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The subtype method can throw fewer or narrower (but not any additional or broader) exceptions than the supertype method.
+This is understandable because when the client code substitutes a subtype, it can handle the method throwing fewer exceptions than the supertype method. However, if the subtype’s method throws new or broader checked exceptions, it would break the client code.
+Java’s method overriding rules already enforce this rule for checked exceptions. However, overriding methods in Java CAN THROW any RuntimeException regardless of whether the overridden method declares the exception.</p>
+<ul>
+<li><em>If a method in the base class throws an exception, the overridden method must throw the same exception or a subtype of the base class exception.</em></li>
+</ul>
+<h2 id="summary-of-rules">
+  Summary of rules:
+  <a class="heading-link" href="#summary-of-rules">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Preconditions cannot be strengthened in a subtype.</li>
+<li>Postconditions cannot be weakened in a subtype.</li>
+<li>Invariants of the supertype must be preserved (or strengthened) in a subtype.</li>
+<li>History constraint: subclass methods shouldn’t allow state changes that the base class didn’t allow.</li>
+<li>Subtype method argument types can be identical or wider than the supertype method argument types(= contravariant method arguments)</li>
+<li>The return type of the subtype method can be narrower than the return type of the supertype method</li>
+<li>If a method in the base class returns void, the overridden method should return void as well</li>
+<li>If a method in the base class returns a primitive, the overridden method should return the same primitive</li>
+<li>If a method in the base class returns a certain type, the overridden method should return the same type or a subtype (= covariant return type)</li>
+</ul>
+<p>This is a lot to think about. How are you supposed to remember all this and apply it in your daily life as a software developer?
+In my opinion, there are two options:</p>
+<ol>
+<li>
+<p>You use inheritance in your code. However then you have to apply all these rules and think about all the mentioned stuff. If you don&rsquo;t, then your Code is bad and breaks the LSP!</p>
+</li>
+<li>
+<p>Don&rsquo;t use inheritance at all! Use composition instead! In this case you don&rsquo;t have to think about all the mentioned stuff. And your code is clean as well!</p>
+</li>
+</ol>
+<p>I would go with option 2! 😉</p>
+<h2 id="why-is-lsp-so-important">
+  Why is LSP so important?
+  <a class="heading-link" href="#why-is-lsp-so-important">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>I think LSP is so important because it ensures that no unexpected behaviour happens in the program. Therefore it is easier to maintain and easier to debug.
+Furthermore by following the LSP you can ensure that the building blocks of your application are more flexible and  can be swapped out easily without having to fear that something breaks. For instance can a <code>Cat</code> be used instead of an <code>Animal</code> without any problems. We all know that changing and swapping things out are important things in software development. That&rsquo;s what also the &ldquo;Dependency Inversion Principle&rdquo; teaches us. Would you solder a lamp directly to the electrical wiring in a wall? Or would you use a plug instead?</p>
+<figure><img src="/blog/images/liskov-substitution-principle/dip.jpg"
+         alt="Dependency Inversion Principle (Source: Stack Overflow)." width="400"/><figcaption>
+            <p>Dependency Inversion Principle (Source: <a href="https://stackoverflow.com/questions/26447502/explain-this-motivational-poster-about-dependency-inversion-principle"  class="external-link" target="_blank" rel="noopener">Stack Overflow</a>).</p>
+        </figcaption>
+</figure>
+
+<p>// ToDo: refactor this:
+Verhaltenskonsistenz: Das LSP stellt sicher, dass ein Objekt eines abgeleiteten Typs sich genauso verhält wie ein Objekt des Basistyps. Dies ermöglicht es, Objekte beliebig auszutauschen, ohne dass sich das Programmverhalten ändert. Dies ist wichtig für die Konsistenz und Vorhersagbarkeit des Codes.
+Interoperabilität: Durch das LSP können verschiedene Klassen, die denselben Basistyp implementieren, nahtlos miteinander interagieren. Das erleichtert die Integration von neuen Klassen in bestehende Systeme, ohne dass bestehender Code geändert werden muss.
+Erweiterbarkeit: Neue abgeleitete Klassen können problemlos hinzugefügt werden, ohne dass bestehender Code modifiziert werden muss. Dies fördert die Erweiterbarkeit des Systems und macht es einfacher, Funktionen hinzuzufügen oder das System zu verbessern, ohne vorhandenen Code zu brechen.
+Dokumentation und Verständlichkeit: Das LSP trägt zur besseren Verständlichkeit des Codes bei. Wenn Entwickler wissen, dass sie Objekte austauschen können, ohne unerwartete Nebenwirkungen zu verursachen, wird der Code transparenter und leichter zu verstehen.
+Testbarkeit: Klassen, die das LSP einhalten, sind in der Regel besser testbar. Tests, die für den Basistyp geschrieben wurden, können auch für abgeleitete Typen verwendet werden, ohne dass spezifische Anpassungen erforderlich sind.
+Insgesamt trägt das Liskov Substitution Principle dazu bei, die Qualität, Wartbarkeit und Erweiterbarkeit von Software zu verbessern, indem es klare Verhaltensregeln für abgeleitete Klassen festlegt.</p>
+<p>Conclusion
+I don’t think LSP is difficult to understand. However I think it is difficult to actually follow it. Most of the time subclassing is done wrong.
+Most of the time subclassing is used too much or it is used in situations where it should not be used. In general: Inheritance should not be overused!</p>
+<p>A fundamental Rule in OOP states:
+Favor composition over inheritance!</p>
+<p>So maybe in the next situation where you think about using inheritance to solve a problem, you should ask yourself the question: “How could I solve the problem by using composition?”. I would argue most of the time composition would lead to a better solution than inheritance.Ich würde sogar noch einen Schritt weitergehen: am besten sollte man vererbung nirgendwo im code verwenden. Jetzt fragt ihr euch vielleicht: wofür war dann dieser Artikel gut, wenn man eh Vererbung nicht verwenden sollte. Naja - es wird leider immer noch sehr sehr oft verwendet. in Java z.b. ist es ein fundamentales Konzept auf dem die ganze Sprache aufgebaut ist.</p>
+<p>Learning:
+While programming you should ask yourself:
+ist meine subklasse substitutable for the base class without breaking the program?
+steht meine subklasse in einer is-a relationship zur basisklasse? Is my cat an animal? is my dog an animal? is my table an animal?
+What are my preconditions, postconditions and invariants?
+Do I break the signature-, properties- or method rule?
+could the problem be solved better by using composition?</p>
 <h2 id="reference">
   Reference
   <a class="heading-link" href="#reference">
@@ -510,7 +782,7 @@ In Java, invariants refer to conditions or properties that should remain unchang
   </a>
 </h2>
 <p><a href="https://de.wikipedia.org/wiki/Design_by_Contract"  class="external-link" target="_blank" rel="noopener">https://de.wikipedia.org/wiki/Design_by_Contract</a></p>
-<p>Design By Contract in Java - Seminarbericht WS06/07 - Matthias Hausherr</p>
+<p><a href="https://docplayer.org/4165643-Design-by-contract-in-java.html"  class="external-link" target="_blank" rel="noopener">Design By Contract in Java - Seminarbericht WS06/07 - Matthias Hausherr</a></p>
 <p>Program Development in Java: Abstraction, Specification, and Object-Oriented Design,</p>
 <p>Clean Architecture: A Craftsman&rsquo;s Guide to Software Structure and Design: A Craftsman&rsquo;s Guide to Software Structure and Design (Robert C. Martin Series)</p>
 <p><a href="https://www.baeldung.com/java-liskov-substitution-principle"  class="external-link" target="_blank" rel="noopener">https://www.baeldung.com/java-liskov-substitution-principle</a></p>
@@ -522,6 +794,7 @@ Personal website: <a href="https://hansprueller.lbs-logics.com/"  class="externa
 <p><a href="https://www.youtube.com/watch?v=dJQMqNOC4Pc&amp;t=176s"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=dJQMqNOC4Pc&t=176s</a></p>
 <p><a href="https://www.youtube.com/watch?v=bVwZquRH1Vk&amp;t=144s"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=bVwZquRH1Vk&t=144s</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_%28computer_science%29"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)</a></p>
+<p><a href="https://vowi.fsinf.at/wiki/TU_Wien:Fortgeschrittene_objektorientierte_Programmierung_VU_%28Puntigam%29/Mitschrift_SS17"  class="external-link" target="_blank" rel="noopener">https://vowi.fsinf.at/wiki/TU_Wien:Fortgeschrittene_objektorientierte_Programmierung_VU_(Puntigam)/Mitschrift_SS17</a></p>
 <h1 id="h1">
   H1
   <a class="heading-link" href="#h1">

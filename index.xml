@@ -18,6 +18,18 @@ Overview Link to heading The Liskov Substitution Principle (LSP) was first intro
     </item>
     
     <item>
+      <title>The Builder Pattern</title>
+      <link>https://john4web.github.io/blog/posts/builder-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/builder-pattern/</guid>
+      <description>This blog post offers an explanation of Builder Design Pattern by Gang of Four. The examples are written in java.
+Intent Link to heading &amp;ldquo;Separate the construction of a complex object from its representation so that the same construction process can create different representations.&amp;rdquo;
+Visualization of the Builder Pattern (Source: Refactoring-Guru)
+Overview Link to heading The builder pattern is classified as &amp;ldquo;creational pattern&amp;rdquo; which means that it deals with the creation of an object.</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://john4web.github.io/blog/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

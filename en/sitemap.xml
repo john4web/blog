@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://john4web.github.io/blog/posts/variable-names/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/dry-principle/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/elasticsearch-basics/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/favor-composition-over-inheritance/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/java-21-whats-new/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://john4web.github.io/blog/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -15,6 +30,9 @@
                 href="https://john4web.github.io/blog/"
                 />
   </url><url>
+    <loc>https://john4web.github.io/blog/posts/kiss-principle/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://john4web.github.io/blog/posts/liskov-substitution-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -27,6 +45,12 @@
                 hreflang="en"
                 href="https://john4web.github.io/blog/posts/liskov-substitution-principle/"
                 />
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/multithreading/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/polymorphism/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://john4web.github.io/blog/posts/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
@@ -42,6 +66,12 @@
                 />
   </url><url>
     <loc>https://john4web.github.io/blog/posts/builder-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/strategy-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/yagni-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://john4web.github.io/blog/about/</loc>

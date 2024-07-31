@@ -8,6 +8,61 @@
     <language>en</language>
     <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://john4web.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Different variables and their names</title>
+      <link>https://john4web.github.io/blog/posts/variable-names/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/variable-names/</guid>
+      <description>Overview Link to heading Unterschiedliche Variablennamen erklären: Instanzvariable Membervariable Klassenvariable Objektvariable Primitive Variable Statische Variable etc.</description>
+    </item>
+    
+    <item>
+      <title>DRY Principle</title>
+      <link>https://john4web.github.io/blog/posts/dry-principle/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/dry-principle/</guid>
+      <description>Overview Link to heading With examples</description>
+    </item>
+    
+    <item>
+      <title>ElasticSearch Basics</title>
+      <link>https://john4web.github.io/blog/posts/elasticsearch-basics/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/elasticsearch-basics/</guid>
+      <description>Overview Link to heading With examples</description>
+    </item>
+    
+    <item>
+      <title>Favor Composition Over Inheritance!</title>
+      <link>https://john4web.github.io/blog/posts/favor-composition-over-inheritance/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/favor-composition-over-inheritance/</guid>
+      <description>Overview Link to heading With examples</description>
+    </item>
+    
+    <item>
+      <title>Java21: What&#39;s new?</title>
+      <link>https://john4web.github.io/blog/posts/java-21-whats-new/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/java-21-whats-new/</guid>
+      <description>Records (Java 14 - Java 16) Link to heading Sealed Classes (Java 15 - Java 17) Link to heading Pattern Matching Link to heading String Templates Link to heading Virtual Threads Link to heading Sequenced Collections Link to heading Key Encapsulation Mechanism API Link to heading Scoped Values Link to heading Record Patterns Link to heading Simplified Main Method Link to heading https://medium.com/@aydinserbest34/a-look-at-java-21s-simplified-main-method-684a2cd2e6b5
+Reference Link to heading https://www.baeldung.com/java-lts-21-new-features</description>
+    </item>
+    
+    <item>
+      <title>KISS Principle</title>
+      <link>https://john4web.github.io/blog/posts/kiss-principle/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/kiss-principle/</guid>
+      <description>Overview Link to heading With examples</description>
+    </item>
+    
+    <item>
       <title>Liskov substitution principle in depth</title>
       <link>https://john4web.github.io/blog/posts/liskov-substitution-principle/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -15,6 +70,24 @@
       <guid>https://john4web.github.io/blog/posts/liskov-substitution-principle/</guid>
       <description>This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some sources I have read however also includes my own opinion on that topic. Code examples are written in Java.
 Overview Link to heading The Liskov Substitution Principle (LSP) was first introduced by Barbara Liskov in 1987 in her article &amp;ldquo;Data Abstraction and Hierarchy&amp;rdquo; and is one of the five SOLID design principles of object-oriented programming.</description>
+    </item>
+    
+    <item>
+      <title>Multithreading</title>
+      <link>https://john4web.github.io/blog/posts/multithreading/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/multithreading/</guid>
+      <description> Overview Link to heading </description>
+    </item>
+    
+    <item>
+      <title>Polymorphie und dynamische Bindung</title>
+      <link>https://john4web.github.io/blog/posts/polymorphism/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/polymorphism/</guid>
+      <description>Overview Link to heading With examples</description>
     </item>
     
     <item>
@@ -27,6 +100,27 @@ Overview Link to heading The Liskov Substitution Principle (LSP) was first intro
 Intent Link to heading &amp;ldquo;Separate the construction of a complex object from its representation so that the same construction process can create different representations.&amp;rdquo;
 Visualization of the Builder Pattern (Source: Refactoring-Guru)
 Overview Link to heading The builder pattern is classified as &amp;ldquo;creational pattern&amp;rdquo; which means that it deals with the creation of an object.</description>
+    </item>
+    
+    <item>
+      <title>The Strategy Pattern</title>
+      <link>https://john4web.github.io/blog/posts/strategy-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/strategy-pattern/</guid>
+      <description>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in java.
+A duck can fly and swim (and probably much more things). Image-Source: Pixabay
+Intent Link to heading &amp;ldquo;Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.&amp;rdquo;
+Note! In this original intent the term &amp;ldquo;family of algorithms&amp;rdquo; mean the same as &amp;ldquo;Strategy&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>YAGNI Principle</title>
+      <link>https://john4web.github.io/blog/posts/yagni-principle/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/yagni-principle/</guid>
+      <description>Overview Link to heading With examples</description>
     </item>
     
     <item>

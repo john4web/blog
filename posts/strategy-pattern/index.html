@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  The Strategy Pattern · johndoe
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Johannes Gerstbauer">
+<meta name="description" content="Article explaining the Strategy Design Pattern by Gang of Four.">
+<meta name="keywords" content="blog, developer, software, engineer">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Strategy Pattern"/>
+<meta name="twitter:description" content="Article explaining the Strategy Design Pattern by Gang of Four."/>
+
+<meta property="og:title" content="The Strategy Pattern" />
+<meta property="og:description" content="Article explaining the Strategy Design Pattern by Gang of Four." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://john4web.github.io/blog/posts/strategy-pattern/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-24T00:00:00+00:00" />
+
+
+
+
+<link rel="canonical" href="https://john4web.github.io/blog/posts/strategy-pattern/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/blog/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/blog">
+      johndoe
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/blog/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/blog/about/">About</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/blog/de/">🇩🇪</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://john4web.github.io/blog/posts/strategy-pattern/">
+              The Strategy Pattern
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-01-24T00:00:00Z">
+                January 24, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in java.</p>
+<figure><img src="/blog/images/strategy-pattern/duck.jpg"
+         alt="A duck can fly and swim (and probably much more things). Image-Source: Pixabay"/><figcaption>
+            <p>A duck can fly and swim (and probably much more things). <a href="https://pixabay.com/photos/duck-mallard-bird-pond-plumage-8510483/"  class="external-link" target="_blank" rel="noopener">Image-Source: Pixabay</a></p>
+        </figcaption>
+</figure>
+
+<h2 id="intent">
+  Intent
+  <a class="heading-link" href="#intent">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><em>&ldquo;Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.&rdquo;</em></p>
+<p>Note! In this original intent the term  <em>&ldquo;family of algorithms&rdquo;</em> mean the same as &ldquo;Strategy&rdquo;. In the following, the word strategy is mainly used instead of <em>&ldquo;family of algorithms&rdquo;</em>.</p>
+<p><em>&ldquo;Family of algorithms&rdquo;</em>: in diesem Beispiel sind die Familien IFlyBehavior und IQuackBehavior</p>
+<p><em>&ldquo;algorithms&rdquo;</em>: Sind in diesem Fall die Verhaltensweisen (= konkreten implementierungen der Strategy). Das sind LowFlying, Highflying, LoudQuacking, QuietQuacking.  LowFlying und Highflying gehören zur Familie IFlyBehavior. LoudQuacking und QuietQuacking gehören zur Familie IQuackBehavior.</p>
+<p><em>&ldquo;Strategy lets the algorithm vary independently from clients that use it&rdquo;</em>: Jede &ldquo;concrete Strategy Class&rdquo; hat ihr eigenes, unabhängiges Verhalten. Diese konkreten implementierungen der Familien IFlyBehavior und IQuackBehavior können komplett unterschiedlich zueinander sein.</p>
+<p><em>&ldquo;make them interchangeable&rdquo;</em>:
+Konkrete Behaviors können ganz leicht ausgetauscht werden (solange sie dasselbe Interface implementieren).
+z.B. kann man eine neue Klasse &ldquo;FastFlying&rdquo; einführen, die &ldquo;IFlyBehavior&rdquo; implementiert. Und schon kann man der duck1 das Verhalten <code>new FastFlying()</code> anstatt dem Verhalten <code>new LowFlying()</code> übergeben. We decouple the algorithm from the one that is using the algorithm. Whoever is using the algorithm is not forced to change when you are changing one of the algorithms.</p>
+<h2 id="overview">
+  Overview
+  <a class="heading-link" href="#overview">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Verhaltensweisen werden aus einer Klasse (Context) ausgelagert in andere Klassen (Concrete Strategies) und via Interfaces lose an die Klasse (Context) gekoppelt. Die Kontext Klasse ruft dann lediglich den Code der konkreten Strategies auf. Dadurch können Objekte und deren Verhaltensweisen komplett easy zusammengebaut werden:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> 
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Duck</span> <span class="n">duck1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Duck</span><span class="o">(</span><span class="k">new</span> <span class="n">LowFlying</span><span class="o">(),</span> <span class="k">new</span> <span class="n">LoudQuacking</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">	<span class="n">duck1</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span> <span class="c1">// prints &#34;Low Flying&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">duck1</span><span class="o">.</span><span class="na">quack</span><span class="o">();</span> <span class="c1">// prints &#34;Loud Quacking&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="n">Duck</span> <span class="n">duck2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Duck</span><span class="o">(</span><span class="k">new</span> <span class="n">HighFlying</span><span class="o">(),</span> <span class="k">new</span> <span class="n">QuietQuacking</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">	<span class="n">duck2</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span> <span class="c1">// prints &#34;High Flying&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">duck2</span><span class="o">.</span><span class="na">quack</span><span class="o">();</span> <span class="c1">// prints &#34;Quiet Quacking&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span></code></pre></div><p>Die Verhaltensweisen werden den Enten via Dependency Injection übergeben.</p>
+<figure><img src="/blog/images/strategy-pattern/strategy.jpg"
+         alt="Objekte werden mit Verhaltensweisen zusammengebaut (lose gekoppelt)"/><figcaption>
+            <p>Objekte werden mit Verhaltensweisen zusammengebaut (lose gekoppelt)</p>
+        </figcaption>
+</figure>
+
+<p>Das Strategy-Pattern ist ein Paradebeispiel dafür, dass Composition besser ist als Inheritance. We need Inheritance much much less than we believe.</p>
+<p>The concrete implementations (LoudQuacking, QuietQuacking, etc.) can vary just as much as they want - without having to change the code of the context Class (Duck). And that is the power of the strategy pattern!</p>
+<h2 id="the-problem-that-the-strategy-pattern-solves">
+  The Problem that the strategy pattern solves
+  <a class="heading-link" href="#the-problem-that-the-strategy-pattern-solves">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Let&rsquo;s say we have a duck class. And then we have a City Duck (living in the city) and a Wild Duck (living in the forest).
+We use inheritance. The subclasses are responsible for implementing their own version of the display() method. Wild ducks can display differently than city ducks for instance. So they have to override the display method. But the quack method is shared amongst all these subclasses. Inheritance is used here for code reuse.</p>
+<p>What is the problem? The problem is change. (Which happens everytime). The only constant in Software development is Change! When requirements change our curren software design may not necessarily be appropriete for the incoming requirements.</p>
+<figure><img src="/blog/images/strategy-pattern/1.jpg"/>
+</figure>
+
+<p>What if we have another method like fly()? Because ducks can fly. We add the method to the base class Duck. But then you want to introduce a new class called rubberduck which inherits from duck. rubberduck has its own display method. But rubberducks can&rsquo;t fly. Now we have a problem. Problem 1!!!</p>
+<figure><img src="/blog/images/strategy-pattern/2.jpg"/>
+</figure>
+
+<p>And what if we wanna add a new class called MountainDuck (which lives in the mountains). This duck implements its own display method. But it implements also his own fly method because the duck has a specific way to fly (ultrafast for instance).
+And then we add a new class called CloudDuck. this duck also overrides display and fly methods. But the CloudDuck flys EXACTLY the same as the Mountain duck. What are we doing now? We cannot reuse the same code from the mountain duck. So we have to Copy and paste. And that is very, very bad. (See: DRY Principle)
+Problem 2!!!</p>
+<figure><img src="/blog/images/strategy-pattern/4.jpg"/>
+</figure>
+
+<p>Some might say you could solve some of these problems with &ldquo;more inheritance&rdquo;. You could for instance introduce a new base class just for mountain and cloud duck where the both ducks are inheriting from. But the more classes you create and inherit from, the more &ldquo;inflexible&rdquo; all of that gets.</p>
+<p>The problem is, that you can&rsquo;t share behaviour over classes that are in the same hierarchy (horizontally):
+<figure><img src="/blog/images/strategy-pattern/3.jpg"/>
+</figure>
+
+Inheritance only works by sharing code from top to bottom.</p>
+<p>The solution to problems with inheritance is not &ldquo;more inheritance&rdquo;. The solution is composition! And that&rsquo;s exactly what the strategy pattern does.</p>
+<p>Please help us Strategy Pattern!!!!</p>
+<h2 id="the-pattern-itself">
+  The Pattern itself
+  <a class="heading-link" href="#the-pattern-itself">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>sdsdfsdf</p>
+<figure><img src="/blog/images/strategy-pattern/5.jpg"/>
+</figure>
+
+<figure><img src="/blog/images/strategy-pattern/6.jpg"/>
+</figure>
+
+<h2 id="the-code-one-by-one">
+  The Code one by one
+  <a class="heading-link" href="#the-code-one-by-one">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>sdfdf</p>
+<h2 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>
+<p>Big Shout out to Christopher Okhravi who has explained the strategy pattern so easily, that everybody can understand it:
+<a href="https://www.youtube.com/watch?v=v9ejT8FO-7I"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=v9ejT8FO-7I</a></p>
+</li>
+<li>
+<p>Book: Design Patterns - Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by
+Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</p>
+</li>
+<li>
+<p><a href="https://refactoring.guru/design-patterns/strategy"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/strategy</a></p>
+</li>
+<li>
+<p><a href="https://refactoring.guru/design-patterns/strategy/java/example"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/strategy/java/example</a></p>
+</li>
+<li>
+<p>Head First Design Patterns Book</p>
+</li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2024
+     Johannes Gerstbauer 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/blog/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

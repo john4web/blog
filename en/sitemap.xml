@@ -65,7 +65,37 @@
                 href="https://john4web.github.io/blog/posts/"
                 />
   </url><url>
+    <loc>https://john4web.github.io/blog/posts/abstract-factory-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/adapter-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://john4web.github.io/blog/posts/builder-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/command-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/decorator-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/facade-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/factory-method-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/iterator-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/observer-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/proxy-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://john4web.github.io/blog/posts/singleton-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://john4web.github.io/blog/posts/strategy-pattern/</loc>

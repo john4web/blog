@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  The Adapter Pattern · johndoe
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Johannes Gerstbauer">
+<meta name="description" content="Article explaining the Adapter Design Pattern by Gang of Four.">
+<meta name="keywords" content="blog, developer, software, engineer">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Adapter Pattern"/>
+<meta name="twitter:description" content="Article explaining the Adapter Design Pattern by Gang of Four."/>
+
+<meta property="og:title" content="The Adapter Pattern" />
+<meta property="og:description" content="Article explaining the Adapter Design Pattern by Gang of Four." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://john4web.github.io/blog/posts/adapter-pattern/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-24T00:00:00+00:00" />
+
+
+
+
+<link rel="canonical" href="https://john4web.github.io/blog/posts/adapter-pattern/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/blog/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/blog">
+      johndoe
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/blog/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/blog/about/">About</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/blog/de/">🇩🇪</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://john4web.github.io/blog/posts/adapter-pattern/">
+              The Adapter Pattern
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-01-24T00:00:00Z">
+                January 24, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <figure><img src="/blog/images/adapter-pattern/adapter.png"
+         alt="Visualization of the Adapter Pattern (Source: Refactoring-Guru)"/><figcaption>
+            <p>Visualization of the Adapter Pattern (Source: <a href="https://refactoring.guru/design-patterns/adapter"  class="external-link" target="_blank" rel="noopener">Refactoring-Guru</a>)</p>
+        </figcaption>
+</figure>
+
+<h1 id="intent">
+  Intent
+  <a class="heading-link" href="#intent">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&rsquo;t otherwise because of incompatible interfaces.</p>
+<p>In other words: Making two interfaces compatible, that aren&rsquo;t compatible.</p>
+<h1 id="the-problem">
+  The Problem
+  <a class="heading-link" href="#the-problem">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>The behaviour of the Adaptee is the actual behavior that I want. But I cant get to that behavior using the actual interface that I have.</p>
+<h1 id="the-pattern">
+  The pattern
+  <a class="heading-link" href="#the-pattern">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<figure><img src="/blog/images/adapter-pattern/adapter1.jpg"/>
+</figure>
+
+<figure><img src="/blog/images/adapter-pattern/adapter2.jpg"/>
+</figure>
+
+<p>In this example, the method <code>request()</code> is the method that the client <strong>expects</strong>. This method has a signature and the client expect to call that signature. The Adapter is taking in a <code>request()</code> call but it delegates it to another class (Adaptee) that follows a completely different contract.</p>
+<p>The client (=user of the code) has something of a type <code>ITarget</code>. And this ITarget has a method called <code>request</code>. And request is the standard that the client is used to using. But because the client wants to use something that has a completely different interface (the Adaptee), we can&rsquo;t just call <code>request()</code> because Adaptee does not have a method called <code>request()</code>. Adaptee has a method called <code>specificRequest()</code>. So what we do is to invoke the <code>request()</code> method but we invoke it on an Adapter so the Adapter follows the signature (<code>request()</code>) that we are used to using. So we can call request() and then count on the adapter to call the adaptee because the adapter has an adaptee so it is responsible for delegating the request down to the adaptee and then the adaptee can perform that specific action that we were originally interested in.</p>
+<p>So the client for some reason wants to call this method specificRequest() but for some other reason it wants to call it using this particular signature of request().</p>
+<p>The client wants to call the method specificRequest but it wants to do so by using the signature request().</p>
+<p>The client couples to an interface called ITarget that follows the particular signature of request(). And then we have a concrete implementation of this interface called Adapter which follows this signature and when this method <code>request()</code> is called, then we call (stupidly and blindly) the method <code>specificRequest</code> and then use this other signature. So we Stick the Adapter in between the Client and the adaptee so that they are compatible.</p>
+<p>The Client calls the specificRequest method <strong>via</strong> the request method.</p>
+<p>We call the method request() on the adapter but eventually that means that we&rsquo;ll call the method specificRequest() on the Adaptee.</p>
+<h1 id="intention">
+  Intention
+  <a class="heading-link" href="#intention">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>the intention of the Adapter pattern is to not change the underlying behaviour. The intention is not to add behaviour or remove behaviour or alter behavior. The intention is to somewhat blindly pass on the request. You have two different types of signatures/interfaces and they do not connect. The intention is to make them interoperable.</p>
+<p>This design pattern does not have intelligent logic. It just stupidly delegates the calls. It is kinda like a &ldquo;Vermittler&rdquo; or &ldquo;Nachrichtenüberbringer&rdquo; that delegates the messages 1:1.</p>
+<h1 id="a-simple-wrapper">
+  A simple wrapper
+  <a class="heading-link" href="#a-simple-wrapper">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>An Adapter is also known as a wrapper.
+It wraps something so that you can adapt to a different interface.</p>
+<p>Why it is a wrapper? You can see it perfectly in the code of the client who uses the adapter to execute the behaviour of the adaptee:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Client</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ITarget</span> <span class="n">target</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adapter</span><span class="o">(</span><span class="k">new</span> <span class="n">Adaptee</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="n">target</span><span class="o">.</span><span class="na">request</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Here in the second line, the Adapter wraps the Adaptee.</p>
+<h1 id="a-practical-example">
+  A practical example
+  <a class="heading-link" href="#a-practical-example">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Let&rsquo;s imagine in one of your projects, you are using a third-party library. In your code your are calling a specific method of that library with some specific method parameters. Suddenly the library gets updated and in the new version of the library, the order of the method parameters is changed. What you could do now is to write an adapter. You don&rsquo;t have to use the new method parameters order in your code. But you can use an adapter that calls the method with the new parameter order. In this way the client code does not have to change. (Btw. this reminds me of the open-closed principle).</p>
+<p>Think of the word indirection. The adapter pattern is introducing a level of indirection. Instead of calling the thing that we want to call directly, we call a thing that calls the thing.</p>
+<h1 id="ein-dolmetscher">
+  Ein Dolmetscher
+  <a class="heading-link" href="#ein-dolmetscher">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Man kann das Adapter Pattern auch mit einem Dolmetscher oder Vermittler vergleichen. Nehmen wir an, es gibt zwei personen, die unterschiedliche Sprachen sprechen. Dadurch können sie sich gegenseitig nicht verstehen. Wenn man aber einen Dolmetscher dazwischen schaltet, dann kann er die Sprachen übersetzen, sodass die beiden Parteien miteinander kommunizieren können. In diesem Szenario wäre der Übersetzer der Adapter, und die beiden Personen die unterschiedliche Sprachen sprechen sind der Client und der Adaptee.</p>
+<h1 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p><a href="https://www.youtube.com/watch?v=2PKQtcJjYvc"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=2PKQtcJjYvc</a></p>
+<p><a href="https://refactoring.guru/design-patterns/adapter"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/adapter</a></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2024
+     Johannes Gerstbauer 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/blog/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

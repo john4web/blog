@@ -194,7 +194,9 @@ Intent Link to heading Define an interface for creating an object, but let subcl
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://john4web.github.io/blog/posts/singleton-pattern/</guid>
-      <description></description>
+      <description>Many people argue that Singleton is an anti pattern. That it is a code smell.
+A comic depicting the Singleton Pattern (Source: Refactoring-Guru). Singleton ensures that there is only ONE single instance of an Object. Clients may not even realize that they’re working with the same object all the time.
+Intent Link to heading Das Singleton Pattern wird dann verwendet, wenn man von einer Klasse nur eine einzige Instanz erzeugen möchte.</description>
     </item>
     
     <item>

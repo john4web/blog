@@ -162,7 +162,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              0-minute read
+              2-minute read
             </span>
           </div>
           
@@ -173,7 +173,98 @@
 
       <div class="post-content">
         
-        
+        <p>Many people argue that Singleton is an anti pattern. That it is a code smell.</p>
+<figure><img src="/blog/images/singleton-pattern/singleton-comic.png"
+         alt="A comic depicting the Singleton Pattern (Source: Refactoring-Guru). Singleton ensures that there is only ONE single instance of an Object. Clients may not even realize that they’re working with the same object all the time."/><figcaption>
+            <p>A comic depicting the Singleton Pattern (Source: <a href="https://refactoring.guru/design-patterns/singleton"  class="external-link" target="_blank" rel="noopener">Refactoring-Guru</a>). Singleton ensures that there is only ONE single instance of an Object. Clients may not even realize that they’re working with the same object all the time.</p>
+        </figcaption>
+</figure>
+
+<h1 id="intent">
+  Intent
+  <a class="heading-link" href="#intent">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Das Singleton Pattern wird dann verwendet, wenn man von einer Klasse <strong>nur eine einzige</strong> Instanz erzeugen möchte. Man möchte also verbieten, mehrere Instanzen einer Klasse zu erzeugen.</p>
+<p>You have a class and singleton pattern helps you to make it impossible to instantiate that class except for a single time and whenerver you want an instance, you would inevitably have to use that instance. Whenever you ask for an instance, you always get the same instance.</p>
+<h1 id="main-critique-points">
+  Main critique points:
+  <a class="heading-link" href="#main-critique-points">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ol>
+<li>
+<p>it is important to avoid globals. Whenever something is globally accessible, it is difficult to control and it might change without you knowing it. Anybody in the whole program could change it.</p>
+</li>
+<li>
+<p>The assumption: You are assuming that in the future you are only ever ever need a single instance of that particular class. That is not necessarily true. Especially when your applications are growing.</p>
+</li>
+</ol>
+<p>it is completely fine to only have a single object within your application. But its not fine to force, to make it impossible to create a second instance.Because you don&rsquo;t know if you (at some point) will need a second instance.</p>
+<p>Das Singleton Pattern wird deshalb von vielen als Code-Smell angesehen und sollte daher eher nicht verwendet werden. &ldquo;Bad practice!&rdquo;</p>
+<h1 id="pattern">
+  Pattern
+  <a class="heading-link" href="#pattern">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Singleton</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">instance</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">(){</span> <span class="o">...</span> <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="o">.</span><span class="na">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">instance</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// hier kommen noch andere Funktionalitäten hin,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// wofür die Singleton-Klasse verantwortlich ist.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Der Konstruktor ist private. D.h. man kann von außerhalb der Klasse keine Instanz erstellen.</p>
+<p>Die statische Methode getInstance() kann von außen aufgerufen werden. Beim ersten Aufruf wird eine neue Singleton Instanz erzeugt. Um sicherzustellen, dass immer diese eine Instanz verwendet wird, wird sie in der Variable „instance“ gespeichert. Diese ist statisch.</p>
+<p>In der Main-Methode kann man dann folgendes machen:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Singleton</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Singleton</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+</span></span></code></pre></div><figure><img src="/blog/images/singleton-pattern/singleton2.jpg"/>
+</figure>
+
+<h1 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=hUE_j6q0LTQ"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hUE_j6q0LTQ</a></p>
+</li>
+<li>
+<p>Head First Design Patterns Book</p>
+</li>
+<li>
+<p>Book: Design Patterns - Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by
+Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</p>
+</li>
+<li>
+<p><a href="https://refactoring.guru/design-patterns/singleton"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/singleton</a></p>
+</li>
+</ul>
+<p>Interesting Talk about Singletons:
+<a href="https://www.youtube.com/watch?v=-FRm3VPhseI"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=-FRm3VPhseI</a></p>
+
       </div>
 
 

@@ -9,7 +9,9 @@ description = "Article explaining the Factory Method Design Pattern by Gang of F
 The Factory Method Design Pattern is oftentimes just called "Factory Pattern". However to be specific, it is called "Factory Method design Pattern" in the original GoF Book.
 
 
-{{< figure src="/blog/images/factory-method-pattern/factory-method-image.png" caption="Visualization of the Factory Method Pattern (Source: [Refactoring-Guru](https://refactoring.guru/design-patterns/factory-method))" >}}
+{{< figure src="/blog/images/factory-method-pattern/factory-method-image.png" caption="A sketch depicting an example of the Factory Method Pattern (Source: [Refactoring-Guru](https://refactoring.guru/design-patterns/factory-method)). We have a LogisticsFactory that creates logistics. It has two Subfactories. The one factory creates Trucks and the other factory creates ships." >}}
+
+ 
 
 # Intent
 _Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses._
@@ -34,6 +36,23 @@ Structure described (similar) as in the original GoF Design Patterns Book by Eri
 
 Note: Statt den Interfaces Product und Factory können auch abstrakte Klassen oder "normale" Klassen verwendet werden, von denen dann jeweils die anderen Klassen erben. Es kommt immer auf die jeweilige Situation an, was besser passt.
 
+Wie verwendet der Client das Factory-Method Pattern? Hier ein Beispiel für die Instantiierung einer Form:
+
+Anstatt
+
+```java
+Shape shape1 = new Circle();
+```
+
+kann man mithilfe des Factory-Method Patterns
+
+```java
+Shape shape1 = shapeFactory.getShape("circle");
+```
+
+machen.
+
+Wie die Objekte erstellt werden, also die Logik, kann somit versteckt werden.
 
 # The Problem
 
@@ -66,18 +85,7 @@ The Factory is responsible for holding "the business Logic of creation" of somet
 
 
 
-Anstatt
-```java
-Shape shape1 = new Circle();
-```
 
-kann man
-```java
-Shape shape1 = shapeFactory.getShape("circle");
-```
-machen.
-
-Wie die Objekte erstellt werden, also die Logik, kann somit versteckt werden.
 
 Zum gezeichneten Beispiel:
 

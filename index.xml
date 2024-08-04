@@ -156,7 +156,10 @@ Overview Link to heading The builder pattern is classified as &amp;ldquo;creatio
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://john4web.github.io/blog/posts/factory-method-pattern/</guid>
-      <description></description>
+      <description>Overview Link to heading The Factory Method Design Pattern is oftentimes just called &amp;ldquo;Factory Pattern&amp;rdquo;. However to be specific, it is called &amp;ldquo;Factory Method design Pattern&amp;rdquo; in the original GoF Book.
+Visualization of the Factory Method Pattern (Source: Refactoring-Guru)
+Intent Link to heading Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+Simply put: In the end, i want to have an object created.</description>
     </item>
     
     <item>

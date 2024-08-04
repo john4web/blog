@@ -162,7 +162,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              4-minute read
+              5-minute read
             </span>
           </div>
           
@@ -182,8 +182,8 @@
 </h1>
 <p>The Factory Method Design Pattern is oftentimes just called &ldquo;Factory Pattern&rdquo;. However to be specific, it is called &ldquo;Factory Method design Pattern&rdquo; in the original GoF Book.</p>
 <figure><img src="/blog/images/factory-method-pattern/factory-method-image.png"
-         alt="Visualization of the Factory Method Pattern (Source: Refactoring-Guru)"/><figcaption>
-            <p>Visualization of the Factory Method Pattern (Source: <a href="https://refactoring.guru/design-patterns/factory-method"  class="external-link" target="_blank" rel="noopener">Refactoring-Guru</a>)</p>
+         alt="A sketch depicting an example of the Factory Method Pattern (Source: Refactoring-Guru). We have a LogisticsFactory that creates logistics. It has two Subfactories. The one factory creates Trucks and the other factory creates ships."/><figcaption>
+            <p>A sketch depicting an example of the Factory Method Pattern (Source: <a href="https://refactoring.guru/design-patterns/factory-method"  class="external-link" target="_blank" rel="noopener">Refactoring-Guru</a>). We have a LogisticsFactory that creates logistics. It has two Subfactories. The one factory creates Trucks and the other factory creates ships.</p>
         </figcaption>
 </figure>
 
@@ -223,6 +223,13 @@ In the end, i want to have an object created. However I don&rsquo;t necessarily 
 <li><strong>Concrete Factory</strong>: A class that implements/overrides the factory method to return an instance of a Concrete Product.</li>
 </ul>
 <p>Note: Statt den Interfaces Product und Factory können auch abstrakte Klassen oder &ldquo;normale&rdquo; Klassen verwendet werden, von denen dann jeweils die anderen Klassen erben. Es kommt immer auf die jeweilige Situation an, was besser passt.</p>
+<p>Wie verwendet der Client das Factory-Method Pattern? Hier ein Beispiel für die Instantiierung einer Form:</p>
+<p>Anstatt</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Shape</span> <span class="n">shape1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="o">();</span>
+</span></span></code></pre></div><p>kann man mithilfe des Factory-Method Patterns</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Shape</span> <span class="n">shape1</span> <span class="o">=</span> <span class="n">shapeFactory</span><span class="o">.</span><span class="na">getShape</span><span class="o">(</span><span class="s">&#34;circle&#34;</span><span class="o">);</span>
+</span></span></code></pre></div><p>machen.</p>
+<p>Wie die Objekte erstellt werden, also die Logik, kann somit versteckt werden.</p>
 <h1 id="the-problem">
   The Problem
   <a class="heading-link" href="#the-problem">
@@ -257,12 +264,6 @@ In the end, i want to have an object created. However I don&rsquo;t necessarily 
 </figure>
 
 <p>&hellip; Hier das Beispiel auf dem Bild erklären &hellip;</p>
-<p>Anstatt</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Shape</span> <span class="n">shape1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="o">();</span>
-</span></span></code></pre></div><p>kann man</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Shape</span> <span class="n">shape1</span> <span class="o">=</span> <span class="n">shapeFactory</span><span class="o">.</span><span class="na">getShape</span><span class="o">(</span><span class="s">&#34;circle&#34;</span><span class="o">);</span>
-</span></span></code></pre></div><p>machen.</p>
-<p>Wie die Objekte erstellt werden, also die Logik, kann somit versteckt werden.</p>
 <p>Zum gezeichneten Beispiel:</p>
 <p>BlueShapeFactory und RedShapeFactory sind zwei versschiedene ShapeFactories, die Shapes erzeugen. Sie erzeugen die Shapes auf unterschiedliche Weise.
 In der Main-Methode könnte dann z.b. soetwas stehen:</p>

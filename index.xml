@@ -8,6 +8,17 @@
     <language>en</language>
     <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://john4web.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Cohesion vs. Coupling</title>
+      <link>https://john4web.github.io/blog/posts/cohesion-and-coupling/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/cohesion-and-coupling/</guid>
+      <description>Overview Link to heading https://en.wikipedia.org/wiki/Coupling_%28computer_programming%29
+https://jesusgilhernandez.com/2012/11/28/cohesion-and-coupling/
+https://www.linkedin.com/pulse/why-product-development-design-needs-sushant-randive</description>
+    </item>
+    
+    <item>
       <title>Different variables and their names</title>
       <link>https://john4web.github.io/blog/posts/variable-names/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -96,7 +107,9 @@ Overview Link to heading The Liskov Substitution Principle (LSP) was first intro
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://john4web.github.io/blog/posts/abstract-factory-pattern/</guid>
-      <description></description>
+      <description>an abstract factory is a set of factory methods. an abstract factory makes use of multiple factory methods.
+The single difference between the factory method pattern and the abstract factory pattern is that the factory method pattern constructs a single object and the abstract factory constructs multiple objects.
+Bei dem Factory Method Pattern erzeugt jede konkrete Factory jeweils nur ein Objekt. Das ist der Unterschied zum Abstract-Factory-Pattern. Beim Abstract-Factory-Pattern erzeugt jede konkrete Factory mehrere unterschiedliche Objekte.</description>
     </item>
     
     <item>
@@ -147,7 +160,9 @@ Overview Link to heading The builder pattern is classified as &amp;ldquo;creatio
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://john4web.github.io/blog/posts/facade-pattern/</guid>
-      <description></description>
+      <description>plumbing , isolation, foundation, wiring, electricity, pipes, etc.
+underneath the facade of a house we have a lot of complex, difficult to understand stuff happening. But we dont want to deal with all that stuff. That&amp;rsquo;s why we are creating a facade.
+Law of demeter Link to heading </description>
     </item>
     
     <item>

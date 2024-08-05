@@ -7,3 +7,9 @@ description = "Multithreading simplified"
 ## Overview
 
 With examples
+
+Folgende Videos unbedingt anschauen:
+
+https://www.youtube.com/watch?v=YaSMkzmc_sA
+
+

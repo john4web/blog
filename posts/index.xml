@@ -19,6 +19,16 @@ https://www.linkedin.com/pulse/why-product-development-design-needs-sushant-rand
     </item>
     
     <item>
+      <title>Dependency Inversion Principle</title>
+      <link>https://john4web.github.io/blog/posts/dependency-inversion-principle/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://john4web.github.io/blog/posts/dependency-inversion-principle/</guid>
+      <description>Overview Link to heading https://www.youtube.com/watch?v=TkUhAbbRCAE
+https://www.youtube.com/watch?v=SeN1s65tRHY</description>
+    </item>
+    
+    <item>
       <title>Different variables and their names</title>
       <link>https://john4web.github.io/blog/posts/variable-names/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -51,7 +61,10 @@ https://www.linkedin.com/pulse/why-product-development-design-needs-sushant-rand
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://john4web.github.io/blog/posts/favor-composition-over-inheritance/</guid>
-      <description>Overview Link to heading With examples</description>
+      <description>Overview Link to heading https://www.youtube.com/watch?v=C3B5IIlt4-0
+https://www.youtube.com/watch?v=7hXi0N1oWFU
+https://www.youtube.com/watch?v=J9WZ4xs4Tkc
+https://www.youtube.com/watch?v=FdFBYUQCuHQ</description>
     </item>
     
     <item>
@@ -98,7 +111,9 @@ Overview Link to heading The Liskov Substitution Principle (LSP) was first intro
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://john4web.github.io/blog/posts/polymorphism/</guid>
-      <description>Overview Link to heading With examples</description>
+      <description>Overview Link to heading With examples
+Folgende Videos unbedingt anschauen:
+https://www.youtube.com/watch?v=YaSMkzmc_sA</description>
     </item>
     
     <item>

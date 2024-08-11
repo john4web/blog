@@ -2,176 +2,176 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://john4web.github.io/blog/posts/cohesion-and-coupling/</loc>
+    <loc>https://gersti.at/posts/cohesion-and-coupling/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/dependency-inversion-principle/</loc>
+    <loc>https://gersti.at/posts/dependency-inversion-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/variable-names/</loc>
+    <loc>https://gersti.at/posts/variable-names/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/dry-principle/</loc>
+    <loc>https://gersti.at/posts/dry-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/elasticsearch-basics/</loc>
+    <loc>https://gersti.at/posts/elasticsearch-basics/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/favor-composition-over-inheritance/</loc>
+    <loc>https://gersti.at/posts/favor-composition-over-inheritance/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/java-21-whats-new/</loc>
-    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://john4web.github.io/blog/</loc>
+    <loc>https://gersti.at/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/"
+                href="https://gersti.at/de/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/"
+                href="https://gersti.at/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/kiss-principle/</loc>
+    <loc>https://gersti.at/posts/java-21-whats-new/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/liskov-substitution-principle/</loc>
+    <loc>https://gersti.at/posts/kiss-principle/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/posts/liskov-substitution-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/posts/liskov-substitution-principle/"
+                href="https://gersti.at/de/posts/liskov-substitution-principle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/posts/liskov-substitution-principle/"
+                href="https://gersti.at/posts/liskov-substitution-principle/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/multithreading/</loc>
+    <loc>https://gersti.at/posts/multithreading/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/polymorphism/</loc>
+    <loc>https://gersti.at/posts/polymorphism/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/</loc>
+    <loc>https://gersti.at/posts/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/posts/"
+                href="https://gersti.at/de/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/posts/"
+                href="https://gersti.at/posts/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/abstract-factory-pattern/</loc>
+    <loc>https://gersti.at/posts/abstract-factory-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/adapter-pattern/</loc>
+    <loc>https://gersti.at/posts/adapter-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/billion-dollar-mistake/</loc>
+    <loc>https://gersti.at/posts/billion-dollar-mistake/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/builder-pattern/</loc>
+    <loc>https://gersti.at/posts/builder-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/command-pattern/</loc>
+    <loc>https://gersti.at/posts/command-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/decorator-pattern/</loc>
+    <loc>https://gersti.at/posts/decorator-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/facade-pattern/</loc>
+    <loc>https://gersti.at/posts/facade-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/factory-method-pattern/</loc>
+    <loc>https://gersti.at/posts/factory-method-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/iterator-pattern/</loc>
+    <loc>https://gersti.at/posts/iterator-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/observer-pattern/</loc>
+    <loc>https://gersti.at/posts/observer-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/proxy-pattern/</loc>
+    <loc>https://gersti.at/posts/proxy-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/singleton-pattern/</loc>
+    <loc>https://gersti.at/posts/singleton-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/strategy-pattern/</loc>
+    <loc>https://gersti.at/posts/strategy-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/posts/yagni-principle/</loc>
+    <loc>https://gersti.at/posts/yagni-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/about/</loc>
+    <loc>https://gersti.at/about/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/about/"
+                href="https://gersti.at/de/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/about/"
+                href="https://gersti.at/about/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/authors/</loc>
+    <loc>https://gersti.at/authors/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/authors/"
+                href="https://gersti.at/de/authors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/authors/"
+                href="https://gersti.at/authors/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/categories/</loc>
+    <loc>https://gersti.at/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/categories/"
+                href="https://gersti.at/de/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/categories/"
+                href="https://gersti.at/categories/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/series/</loc>
+    <loc>https://gersti.at/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/series/"
+                href="https://gersti.at/de/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/series/"
+                href="https://gersti.at/series/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/tags/</loc>
+    <loc>https://gersti.at/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/tags/"
+                href="https://gersti.at/de/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/tags/"
+                href="https://gersti.at/tags/"
                 />
   </url>
 </urlset>

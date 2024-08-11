@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Johannes Gerstbauer</title>
-    <link>https://john4web.github.io/blog/de/tags/</link>
-    <description>Recent content in Tags on Johannes Gerstbauer</description>
+    <title>Tags on gersti.at</title>
+    <link>https://gersti.at/de/tags/</link>
+    <description>Recent content in Tags on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://john4web.github.io/blog/de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>css</title>
-      <link>https://john4web.github.io/blog/de/tags/css/</link>
+      <link>https://gersti.at/de/tags/css/</link>
       <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/de/tags/css/</guid>
+      <guid>https://gersti.at/de/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>html</title>
-      <link>https://john4web.github.io/blog/de/tags/html/</link>
+      <link>https://gersti.at/de/tags/html/</link>
       <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/de/tags/html/</guid>
+      <guid>https://gersti.at/de/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://john4web.github.io/blog/de/tags/hugo/</link>
+      <link>https://gersti.at/de/tags/hugo/</link>
       <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/de/tags/hugo/</guid>
+      <guid>https://gersti.at/de/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>markdown</title>
-      <link>https://john4web.github.io/blog/de/tags/markdown/</link>
+      <link>https://gersti.at/de/tags/markdown/</link>
       <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/de/tags/markdown/</guid>
+      <guid>https://gersti.at/de/tags/markdown/</guid>
       <description></description>
     </item>
     

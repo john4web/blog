@@ -2,132 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://john4web.github.io/blog/de/authors/</loc>
+    <loc>https://gersti.at/de/authors/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/authors/"
+                href="https://gersti.at/authors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/authors/"
+                href="https://gersti.at/de/authors/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/de/categories/</loc>
+    <loc>https://gersti.at/de/categories/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/categories/"
+                href="https://gersti.at/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/categories/"
+                href="https://gersti.at/de/categories/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/de/tags/css/</loc>
+    <loc>https://gersti.at/de/tags/css/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/de/categories/demonstra%C3%A7%C3%A3o-do-tema/</loc>
+    <loc>https://gersti.at/de/categories/demonstra%C3%A7%C3%A3o-do-tema/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/de/series/demonstra%C3%A7%C3%A3o-do-tema/</loc>
+    <loc>https://gersti.at/de/series/demonstra%C3%A7%C3%A3o-do-tema/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/de/posts/liskov-substitution-principle/</loc>
+    <loc>https://gersti.at/de/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/posts/liskov-substitution-principle/"
+                href="https://gersti.at/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/posts/liskov-substitution-principle/"
+                href="https://gersti.at/de/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/de/tags/html/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://john4web.github.io/blog/de/tags/hugo/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://john4web.github.io/blog/de/</loc>
+    <loc>https://gersti.at/de/posts/liskov-substitution-principle/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/"
+                href="https://gersti.at/posts/liskov-substitution-principle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/"
+                href="https://gersti.at/de/posts/liskov-substitution-principle/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/de/tags/markdown/</loc>
+    <loc>https://gersti.at/de/tags/html/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/de/posts/</loc>
+    <loc>https://gersti.at/de/tags/hugo/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/de/tags/markdown/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/de/posts/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/posts/"
+                href="https://gersti.at/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/posts/"
+                href="https://gersti.at/de/posts/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/de/authors/programador-solit%C3%A1rio/</loc>
+    <loc>https://gersti.at/de/authors/programador-solit%C3%A1rio/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/de/series/</loc>
+    <loc>https://gersti.at/de/series/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/series/"
+                href="https://gersti.at/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/series/"
+                href="https://gersti.at/de/series/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/de/categories/sintaxe/</loc>
+    <loc>https://gersti.at/de/categories/sintaxe/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://john4web.github.io/blog/de/tags/</loc>
+    <loc>https://gersti.at/de/tags/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/tags/"
+                href="https://gersti.at/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/tags/"
+                href="https://gersti.at/de/tags/"
                 />
   </url><url>
-    <loc>https://john4web.github.io/blog/de/about/</loc>
+    <loc>https://gersti.at/de/about/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://john4web.github.io/blog/about/"
+                href="https://gersti.at/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://john4web.github.io/blog/de/about/"
+                href="https://gersti.at/de/about/"
                 />
   </url>
 </urlset>

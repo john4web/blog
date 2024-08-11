@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>johndoe</title>
-    <link>https://john4web.github.io/blog/</link>
-    <description>Recent content on johndoe</description>
+    <title>gersti.at</title>
+    <link>https://gersti.at/</link>
+    <description>Recent content on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://john4web.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cohesion vs. Coupling</title>
-      <link>https://john4web.github.io/blog/posts/cohesion-and-coupling/</link>
+      <link>https://gersti.at/posts/cohesion-and-coupling/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/cohesion-and-coupling/</guid>
+      <guid>https://gersti.at/posts/cohesion-and-coupling/</guid>
       <description>Overview Link to heading https://en.wikipedia.org/wiki/Coupling_%28computer_programming%29
 https://jesusgilhernandez.com/2012/11/28/cohesion-and-coupling/
 https://www.linkedin.com/pulse/why-product-development-design-needs-sushant-randive</description>
@@ -20,47 +20,47 @@ https://www.linkedin.com/pulse/why-product-development-design-needs-sushant-rand
     
     <item>
       <title>Dependency Inversion Principle</title>
-      <link>https://john4web.github.io/blog/posts/dependency-inversion-principle/</link>
+      <link>https://gersti.at/posts/dependency-inversion-principle/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/dependency-inversion-principle/</guid>
+      <guid>https://gersti.at/posts/dependency-inversion-principle/</guid>
       <description>Overview Link to heading https://www.youtube.com/watch?v=TkUhAbbRCAE
 https://www.youtube.com/watch?v=SeN1s65tRHY</description>
     </item>
     
     <item>
       <title>Different variables and their names</title>
-      <link>https://john4web.github.io/blog/posts/variable-names/</link>
+      <link>https://gersti.at/posts/variable-names/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/variable-names/</guid>
+      <guid>https://gersti.at/posts/variable-names/</guid>
       <description>Overview Link to heading Unterschiedliche Variablennamen erklären: Instanzvariable Membervariable Klassenvariable Objektvariable Primitive Variable Statische Variable etc.</description>
     </item>
     
     <item>
       <title>DRY Principle</title>
-      <link>https://john4web.github.io/blog/posts/dry-principle/</link>
+      <link>https://gersti.at/posts/dry-principle/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/dry-principle/</guid>
+      <guid>https://gersti.at/posts/dry-principle/</guid>
       <description>Overview Link to heading With examples</description>
     </item>
     
     <item>
       <title>ElasticSearch Basics</title>
-      <link>https://john4web.github.io/blog/posts/elasticsearch-basics/</link>
+      <link>https://gersti.at/posts/elasticsearch-basics/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/elasticsearch-basics/</guid>
+      <guid>https://gersti.at/posts/elasticsearch-basics/</guid>
       <description>Overview Link to heading With examples</description>
     </item>
     
     <item>
       <title>Favor Composition Over Inheritance!</title>
-      <link>https://john4web.github.io/blog/posts/favor-composition-over-inheritance/</link>
+      <link>https://gersti.at/posts/favor-composition-over-inheritance/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/favor-composition-over-inheritance/</guid>
+      <guid>https://gersti.at/posts/favor-composition-over-inheritance/</guid>
       <description>Overview Link to heading https://www.youtube.com/watch?v=C3B5IIlt4-0
 https://www.youtube.com/watch?v=7hXi0N1oWFU
 https://www.youtube.com/watch?v=J9WZ4xs4Tkc
@@ -69,48 +69,48 @@ https://www.youtube.com/watch?v=FdFBYUQCuHQ</description>
     
     <item>
       <title>Java21: What&#39;s new?</title>
-      <link>https://john4web.github.io/blog/posts/java-21-whats-new/</link>
+      <link>https://gersti.at/posts/java-21-whats-new/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/java-21-whats-new/</guid>
+      <guid>https://gersti.at/posts/java-21-whats-new/</guid>
       <description>Records (Java 14 - Java 16) Link to heading Sealed Classes (Java 15 - Java 17) Link to heading Pattern Matching Link to heading String Templates Link to heading Virtual Threads Link to heading Sequenced Collections Link to heading Key Encapsulation Mechanism API Link to heading Scoped Values Link to heading Record Patterns Link to heading Simplified Main Method Link to heading https://medium.com/@aydinserbest34/a-look-at-java-21s-simplified-main-method-684a2cd2e6b5
 Reference Link to heading https://www.baeldung.com/java-lts-21-new-features</description>
     </item>
     
     <item>
       <title>KISS Principle</title>
-      <link>https://john4web.github.io/blog/posts/kiss-principle/</link>
+      <link>https://gersti.at/posts/kiss-principle/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/kiss-principle/</guid>
+      <guid>https://gersti.at/posts/kiss-principle/</guid>
       <description>Overview Link to heading With examples</description>
     </item>
     
     <item>
       <title>Liskov substitution principle in depth</title>
-      <link>https://john4web.github.io/blog/posts/liskov-substitution-principle/</link>
+      <link>https://gersti.at/posts/liskov-substitution-principle/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/liskov-substitution-principle/</guid>
+      <guid>https://gersti.at/posts/liskov-substitution-principle/</guid>
       <description>This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some sources I have read however also includes my own opinion on that topic. Code examples are written in Java.
 Overview Link to heading The Liskov Substitution Principle (LSP) was first introduced by Barbara Liskov in 1987 in her article &amp;ldquo;Data Abstraction and Hierarchy&amp;rdquo; and is one of the five SOLID design principles of object-oriented programming.</description>
     </item>
     
     <item>
       <title>Multithreading</title>
-      <link>https://john4web.github.io/blog/posts/multithreading/</link>
+      <link>https://gersti.at/posts/multithreading/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/multithreading/</guid>
+      <guid>https://gersti.at/posts/multithreading/</guid>
       <description> Overview Link to heading </description>
     </item>
     
     <item>
       <title>Polymorphie und dynamische Bindung</title>
-      <link>https://john4web.github.io/blog/posts/polymorphism/</link>
+      <link>https://gersti.at/posts/polymorphism/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/polymorphism/</guid>
+      <guid>https://gersti.at/posts/polymorphism/</guid>
       <description>Overview Link to heading With examples
 Folgende Videos unbedingt anschauen:
 https://www.youtube.com/watch?v=YaSMkzmc_sA</description>
@@ -118,10 +118,10 @@ https://www.youtube.com/watch?v=YaSMkzmc_sA</description>
     
     <item>
       <title>The Abstract Factory Pattern</title>
-      <link>https://john4web.github.io/blog/posts/abstract-factory-pattern/</link>
+      <link>https://gersti.at/posts/abstract-factory-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/abstract-factory-pattern/</guid>
+      <guid>https://gersti.at/posts/abstract-factory-pattern/</guid>
       <description>an abstract factory is a set of factory methods. an abstract factory makes use of multiple factory methods.
 The single difference between the factory method pattern and the abstract factory pattern is that the factory method pattern constructs a single object and the abstract factory constructs multiple objects.
 Bei dem Factory Method Pattern erzeugt jede konkrete Factory jeweils nur ein Objekt. Das ist der Unterschied zum Abstract-Factory-Pattern. Beim Abstract-Factory-Pattern erzeugt jede konkrete Factory mehrere unterschiedliche Objekte.</description>
@@ -129,10 +129,10 @@ Bei dem Factory Method Pattern erzeugt jede konkrete Factory jeweils nur ein Obj
     
     <item>
       <title>The Adapter Pattern</title>
-      <link>https://john4web.github.io/blog/posts/adapter-pattern/</link>
+      <link>https://gersti.at/posts/adapter-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/adapter-pattern/</guid>
+      <guid>https://gersti.at/posts/adapter-pattern/</guid>
       <description>Visualization of the Adapter Pattern (Source: Refactoring-Guru)
 Intent Link to heading Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.
 In other words: Making two interfaces compatible, that aren&amp;rsquo;t compatible.
@@ -141,20 +141,20 @@ The Problem Link to heading The behaviour of the Adaptee is the actual behavior 
     
     <item>
       <title>The Billion Dollar Mistake: NULL</title>
-      <link>https://john4web.github.io/blog/posts/billion-dollar-mistake/</link>
+      <link>https://gersti.at/posts/billion-dollar-mistake/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/billion-dollar-mistake/</guid>
+      <guid>https://gersti.at/posts/billion-dollar-mistake/</guid>
       <description>Overview Link to heading Zusammenfassung aus diesem Video schreiben: https://www.youtube.com/watch?v=o3aNJX7AP3M
 The billion dollar mistake (Tony Hoare) https://www.youtube.com/watch?v=YYkOWzrO3xg</description>
     </item>
     
     <item>
       <title>The Builder Pattern</title>
-      <link>https://john4web.github.io/blog/posts/builder-pattern/</link>
+      <link>https://gersti.at/posts/builder-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/builder-pattern/</guid>
+      <guid>https://gersti.at/posts/builder-pattern/</guid>
       <description>This blog post offers an explanation of Builder Design Pattern by Gang of Four. The examples are written in java.
 Intent Link to heading &amp;ldquo;Separate the construction of a complex object from its representation so that the same construction process can create different representations.&amp;rdquo;
 Visualization of the Builder Pattern (Source: Refactoring-Guru)
@@ -163,28 +163,28 @@ Overview Link to heading The builder pattern is classified as &amp;ldquo;creatio
     
     <item>
       <title>The Command Pattern</title>
-      <link>https://john4web.github.io/blog/posts/command-pattern/</link>
+      <link>https://gersti.at/posts/command-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/command-pattern/</guid>
+      <guid>https://gersti.at/posts/command-pattern/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Decorator Pattern</title>
-      <link>https://john4web.github.io/blog/posts/decorator-pattern/</link>
+      <link>https://gersti.at/posts/decorator-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/decorator-pattern/</guid>
+      <guid>https://gersti.at/posts/decorator-pattern/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Facade Pattern</title>
-      <link>https://john4web.github.io/blog/posts/facade-pattern/</link>
+      <link>https://gersti.at/posts/facade-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/facade-pattern/</guid>
+      <guid>https://gersti.at/posts/facade-pattern/</guid>
       <description>plumbing , isolation, foundation, wiring, electricity, pipes, etc.
 underneath the facade of a house we have a lot of complex, difficult to understand stuff happening. But we dont want to deal with all that stuff. That&amp;rsquo;s why we are creating a facade.
 Law of demeter Link to heading </description>
@@ -192,10 +192,10 @@ Law of demeter Link to heading </description>
     
     <item>
       <title>The Factory Method Pattern</title>
-      <link>https://john4web.github.io/blog/posts/factory-method-pattern/</link>
+      <link>https://gersti.at/posts/factory-method-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/factory-method-pattern/</guid>
+      <guid>https://gersti.at/posts/factory-method-pattern/</guid>
       <description>Overview Link to heading The Factory Method Design Pattern is oftentimes just called &amp;ldquo;Factory Pattern&amp;rdquo;. However to be specific, it is called &amp;ldquo;Factory Method design Pattern&amp;rdquo; in the original GoF Book.
 A sketch depicting an example of the Factory Method Pattern (Source: Refactoring-Guru). We have a LogisticsFactory that creates logistics. It has two Subfactories. The one factory creates Trucks and the other factory creates ships.
 Intent Link to heading Define an interface for creating an object, but let subclasses decide which class to instantiate.</description>
@@ -203,37 +203,37 @@ Intent Link to heading Define an interface for creating an object, but let subcl
     
     <item>
       <title>The Iterator Pattern</title>
-      <link>https://john4web.github.io/blog/posts/iterator-pattern/</link>
+      <link>https://gersti.at/posts/iterator-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/iterator-pattern/</guid>
+      <guid>https://gersti.at/posts/iterator-pattern/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Observer Pattern</title>
-      <link>https://john4web.github.io/blog/posts/observer-pattern/</link>
+      <link>https://gersti.at/posts/observer-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/observer-pattern/</guid>
+      <guid>https://gersti.at/posts/observer-pattern/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Proxy Pattern</title>
-      <link>https://john4web.github.io/blog/posts/proxy-pattern/</link>
+      <link>https://gersti.at/posts/proxy-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/proxy-pattern/</guid>
+      <guid>https://gersti.at/posts/proxy-pattern/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Singleton Pattern</title>
-      <link>https://john4web.github.io/blog/posts/singleton-pattern/</link>
+      <link>https://gersti.at/posts/singleton-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/singleton-pattern/</guid>
+      <guid>https://gersti.at/posts/singleton-pattern/</guid>
       <description>Many people argue that Singleton is an anti pattern. That it is a code smell.
 A comic depicting the Singleton Pattern (Source: Refactoring-Guru). Singleton ensures that there is only ONE single instance of an Object. Clients may not even realize that they’re working with the same object all the time.
 Intent Link to heading Das Singleton Pattern wird dann verwendet, wenn man von einer Klasse nur eine einzige Instanz erzeugen möchte.</description>
@@ -241,10 +241,10 @@ Intent Link to heading Das Singleton Pattern wird dann verwendet, wenn man von e
     
     <item>
       <title>The Strategy Pattern</title>
-      <link>https://john4web.github.io/blog/posts/strategy-pattern/</link>
+      <link>https://gersti.at/posts/strategy-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/strategy-pattern/</guid>
+      <guid>https://gersti.at/posts/strategy-pattern/</guid>
       <description>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in java.
 A duck can fly and swim (and probably much more things). Image-Source: Pixabay
 Intent Link to heading &amp;ldquo;Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.&amp;rdquo;
@@ -253,19 +253,19 @@ Note! In this original intent the term &amp;ldquo;family of algorithms&amp;rdquo
     
     <item>
       <title>YAGNI Principle</title>
-      <link>https://john4web.github.io/blog/posts/yagni-principle/</link>
+      <link>https://gersti.at/posts/yagni-principle/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/posts/yagni-principle/</guid>
+      <guid>https://gersti.at/posts/yagni-principle/</guid>
       <description>Overview Link to heading With examples</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://john4web.github.io/blog/about/</link>
+      <link>https://gersti.at/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/about/</guid>
+      <guid>https://gersti.at/about/</guid>
       <description>hello</description>
     </item>
     

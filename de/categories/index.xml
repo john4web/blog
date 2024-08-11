@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Johannes Gerstbauer</title>
-    <link>https://john4web.github.io/blog/de/categories/</link>
-    <description>Recent content in Categories on Johannes Gerstbauer</description>
+    <title>Categories on gersti.at</title>
+    <link>https://gersti.at/de/categories/</link>
+    <description>Recent content in Categories on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://john4web.github.io/blog/de/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>demonstração do tema</title>
-      <link>https://john4web.github.io/blog/de/categories/demonstra%C3%A7%C3%A3o-do-tema/</link>
+      <link>https://gersti.at/de/categories/demonstra%C3%A7%C3%A3o-do-tema/</link>
       <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/de/categories/demonstra%C3%A7%C3%A3o-do-tema/</guid>
+      <guid>https://gersti.at/de/categories/demonstra%C3%A7%C3%A3o-do-tema/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sintaxe</title>
-      <link>https://john4web.github.io/blog/de/categories/sintaxe/</link>
+      <link>https://gersti.at/de/categories/sintaxe/</link>
       <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://john4web.github.io/blog/de/categories/sintaxe/</guid>
+      <guid>https://gersti.at/de/categories/sintaxe/</guid>
       <description></description>
     </item>
     

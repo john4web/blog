@@ -180,7 +180,7 @@
   </a>
 </h2>
 <p>The Liskov Substitution Principle (LSP) was first introduced by <a href="https://en.wikipedia.org/wiki/Barbara_Liskov"  class="external-link" target="_blank" rel="noopener">Barbara Liskov</a> in 1987 in her article <a href="https://www.cs.tufts.edu/~nr/cs257/archive/barbara-liskov/data-abstraction-and-hierarchy.pdf"  class="external-link" target="_blank" rel="noopener">&ldquo;Data Abstraction and Hierarchy&rdquo;</a> and is one of the five SO<strong>L</strong>ID design principles of object-oriented programming.</p>
-<figure><img src="/blog/images/liskov-substitution-principle/barbara_liskov.jpg"
+<figure><img src="/images/liskov-substitution-principle/barbara_liskov.jpg"
          alt="Barbara Liskov (Source: Wikipedia)." width="200"/><figcaption>
             <p>Barbara Liskov (Source: <a href="https://commons.wikimedia.org/wiki/File:Barbara_Liskov_computer_scientist_2010.jpg"  class="external-link" target="_blank" rel="noopener">Wikipedia</a>).</p>
         </figcaption>
@@ -195,7 +195,7 @@ If <code>S</code> is a Subtype of <code>T</code>, then objects of type <code>T</
 <p>Wherever you are using the base type, you should be able to use the subtype instead without causing any unwanted behavior in the program. That means: <em>&ldquo;Subtypes must be <strong>substitutable</strong> for their base types.&rdquo;</em></p>
 <p>Let&rsquo;s take a closer look at that concept with an example:<br>
 Assume that class S inherits from class <code>T</code>.</p>
-<figure><img src="/blog/images/liskov-substitution-principle/inheritance_1.svg"
+<figure><img src="/images/liskov-substitution-principle/inheritance_1.svg"
          alt="Class S inherits from class T." width="200" height="300"/><figcaption>
             <p>Class S inherits from class T.</p>
         </figcaption>
@@ -218,7 +218,7 @@ If this is the case, then the LSP holds. <code>S</code> was substituted for <cod
 <p>Let&rsquo;s take a step back and address a more fundamental question:<br>
 <em>How should you actually use inheritance in programming?</em></p>
 <p>Consider a classic example where the subclass <code>Cat</code> extends the base class <code>Animal</code>.</p>
-<figure><img src="/blog/images/liskov-substitution-principle/inheritance_2.svg"
+<figure><img src="/images/liskov-substitution-principle/inheritance_2.svg"
          alt="Class Cat inherits from class Animal." width="200" height="300"/><figcaption>
             <p>Class Cat inherits from class Animal.</p>
         </figcaption>
@@ -233,7 +233,7 @@ But the subclasses may also be able to do more things than the base class. And b
 </ul>
 <p>This is why we speak of an <em>is-a</em> relation in programming when we talk about inheritance.</p>
 <p>For example: a table is not an animal and therefore does not inherit from animal and therefore is not a subset of <code>Animal</code>.</p>
-<figure><img src="/blog/images/liskov-substitution-principle/circle.svg"
+<figure><img src="/images/liskov-substitution-principle/circle.svg"
          alt="Cat is a subset of Animal because it can do everything an animal can do (and more). Table is not a subset of Animal."/><figcaption>
             <p>Cat is a subset of Animal because it can do everything an animal can do (and more). Table is not a subset of Animal.</p>
         </figcaption>
@@ -249,7 +249,7 @@ But the subclasses may also be able to do more things than the base class. And b
 <p>Let&rsquo;s take a closer look at the original definition from Barbara Liskov (slightly simplified):</p>
 <p><em>If for each object Os of type S there is an object Ot of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when Os is substituted for Ot, then S is a subtype of T.</em></p>
 <p>The following diagram tries to explain this definition in a visual way:</p>
-<figure><img src="/blog/images/liskov-substitution-principle/definition.svg"
+<figure><img src="/images/liskov-substitution-principle/definition.svg"
          alt="LSP definition explained as a diagram."/><figcaption>
             <p>LSP definition explained as a diagram.</p>
         </figcaption>
@@ -273,7 +273,7 @@ That means P&rsquo; must behave exactly like P.</p>
 <p>When is the LSP actually violated?<br>
 <em>If you are inheriting from the base class without making the subclass substitutable for the base class, then you are breaking the LSP.</em><br>
 In the following, a classic example of a program with violated LSP is shown. Consider we have a class Rectangle ad a class Square where Square extends Rectangle.</p>
-<figure><img src="/blog/images/liskov-substitution-principle/rectangle.svg"
+<figure><img src="/images/liskov-substitution-principle/rectangle.svg"
          alt="Class Square inherits from class Rectangle."/><figcaption>
             <p>Class Square inherits from class Rectangle.</p>
         </figcaption>
@@ -330,7 +330,7 @@ the setWidth() and setHeight() functions are inappropriate for a Square, since t
 </span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="na">setWidth</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">area</span><span class="o">());</span> <span class="c1">// 4
 </span></span></span></code></pre></div><p>A solution to this problem could be introducing a Shape class, where Rectangle and square are inheriting from:</p>
-<figure><img src="/blog/images/liskov-substitution-principle/shape.svg"
+<figure><img src="/images/liskov-substitution-principle/shape.svg"
          alt="Square and Rectangle both inherit from Shape."/><figcaption>
             <p>Square and Rectangle both inherit from Shape.</p>
         </figcaption>
@@ -362,7 +362,7 @@ the setWidth() and setHeight() functions are inappropriate for a Square, since t
 </h2>
 <p>It is well known that &ldquo;contracts&rdquo; are an important concept in software development. Modules must be able to rely on each other by adhering to &ldquo;rules&rdquo; that have been agreed on in advance. Design by Contract (DbC) is an approach to designing software in this way. The aim is to ensure the smooth interaction of individual program modules by defining formal contracts.</p>
 <p>DbC was developed and introduced by <a href="https://en.wikipedia.org/wiki/Bertrand_Meyer"  class="external-link" target="_blank" rel="noopener">Bertrand Meyer</a> with the development of the programming language <a href="https://en.wikipedia.org/wiki/Eiffel_%28programming_language%29"  class="external-link" target="_blank" rel="noopener">Eiffel</a>.</p>
-<figure><img src="/blog/images/liskov-substitution-principle/bertrand_meyer.jpg"
+<figure><img src="/images/liskov-substitution-principle/bertrand_meyer.jpg"
          alt="Bertrand Meyer (Source: Wikipedia)." width="200"/><figcaption>
             <p>Bertrand Meyer (Source: <a href="https://commons.wikimedia.org/wiki/File:Bertrand_Meyer_recent.jpg"  class="external-link" target="_blank" rel="noopener">Wikipedia</a>).</p>
         </figcaption>
@@ -748,7 +748,7 @@ In my opinion, there are two options:</p>
 </h2>
 <p>I think LSP is so important because it ensures that no unexpected behaviour happens in the program. Therefore it is easier to maintain and easier to debug.<br>
 Furthermore by following the LSP you can ensure that the building blocks of your application are more flexible and can be swapped out easily without having to fear that something breaks. For instance a <code>Cat</code> can be used instead of an <code>Animal</code> without any problems. We all know that changing and swapping things out are important things in software development. That&rsquo;s what also the &ldquo;Dependency Inversion Principle&rdquo; teaches us. Would you solder a lamp directly to the electrical wiring in a wall? Or would you use a plug instead?</p>
-<figure><img src="/blog/images/liskov-substitution-principle/dip.jpg"
+<figure><img src="/images/liskov-substitution-principle/dip.jpg"
          alt="Dependency Inversion Principle (Source: Stack Overflow)." width="400"/><figcaption>
             <p>Dependency Inversion Principle (Source: <a href="https://stackoverflow.com/questions/26447502/explain-this-motivational-poster-about-dependency-inversion-principle"  class="external-link" target="_blank" rel="noopener">Stack Overflow</a>).</p>
         </figcaption>

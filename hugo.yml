@@ -1,4 +1,4 @@
-baseURL: 'https://gersti.at'
+baseURL: 'https://gersti.at/'
 title: gersti.at
 theme: hugo-coder
 languageCode: en

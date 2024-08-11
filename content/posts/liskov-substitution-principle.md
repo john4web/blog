@@ -10,7 +10,7 @@ This blog post offers a detailed explanation of the liskov substitution principl
 
 The Liskov Substitution Principle (LSP) was first introduced by [Barbara Liskov](https://en.wikipedia.org/wiki/Barbara_Liskov) in 1987 in her article ["Data Abstraction and Hierarchy"](https://www.cs.tufts.edu/~nr/cs257/archive/barbara-liskov/data-abstraction-and-hierarchy.pdf) and is one of the five SO**L**ID design principles of object-oriented programming.
 
-{{< figure src="/blog/images/liskov-substitution-principle/barbara_liskov.jpg" caption="Barbara Liskov (Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Barbara_Liskov_computer_scientist_2010.jpg))." width="200">}}
+{{< figure src="/images/liskov-substitution-principle/barbara_liskov.jpg" caption="Barbara Liskov (Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Barbara_Liskov_computer_scientist_2010.jpg))." width="200">}}
 
 The original definition of this principle is as follows:  
 **_If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2, then S is a subtype of T._**
@@ -27,7 +27,7 @@ Wherever you are using the base type, you should be able to use the subtype inst
 Let's take a closer look at that concept with an example:  
 Assume that class S inherits from class ``T``.
 
-{{< figure src="/blog/images/liskov-substitution-principle/inheritance_1.svg" caption="Class S inherits from class T." width="200" height="300" >}}
+{{< figure src="/images/liskov-substitution-principle/inheritance_1.svg" caption="Class S inherits from class T." width="200" height="300" >}}
 
 And then, let's imagine that we have written a program where we have used class ``T`` in multiple places in the code and created instances of it ``T t = new T()``. Now, we need to ensure that we can replace instances of class ``T`` with instances of class ``S`` at all these points without changing the program's behavior.
 
@@ -48,7 +48,7 @@ _How should you actually use inheritance in programming?_
 
 Consider a classic example where the subclass ``Cat`` extends the base class ``Animal``.
 
-{{< figure src="/blog/images/liskov-substitution-principle/inheritance_2.svg" caption="Class Cat inherits from class Animal." width="200" height="300" >}}
+{{< figure src="/images/liskov-substitution-principle/inheritance_2.svg" caption="Class Cat inherits from class Animal." width="200" height="300" >}}
 
 If the ``Animal`` can do certain things, then the ``Cat`` must also be able to do all these things. All subclasses of Animal must be able to do these things.
 But the subclasses may also be able to do more things than the base class. And by more things, I mean more **specific** things. The ``Cat`` class may contain the ``meow()`` method. But the ``Animal`` class does not contain the ``meow()`` method because it is a specific behavior of a cat. But that's not a problem, because the ``Cat`` class can still be used instead of the Animal class without changing the behavior of the program. Because a cat can do everything that an animal can do in exactly the same way. So the LSP holds.
@@ -61,7 +61,7 @@ This is why we speak of an _is-a_ relation in programming when we talk about inh
 
 For example: a table is not an animal and therefore does not inherit from animal and therefore is not a subset of ``Animal``.
 
-{{< figure src="/blog/images/liskov-substitution-principle/circle.svg" caption="Cat is a subset of Animal because it can do everything an animal can do (and more). Table is not a subset of Animal.">}}
+{{< figure src="/images/liskov-substitution-principle/circle.svg" caption="Cat is a subset of Animal because it can do everything an animal can do (and more). Table is not a subset of Animal.">}}
 
 ## LSP Definition
 Let's take a closer look at the original definition from Barbara Liskov (slightly simplified):
@@ -70,7 +70,7 @@ _If for each object Os of type S there is an object Ot of type T such that for a
 
 The following diagram tries to explain this definition in a visual way:
 
-{{< figure src="/blog/images/liskov-substitution-principle/definition.svg" caption="LSP definition explained as a diagram." >}}
+{{< figure src="/images/liskov-substitution-principle/definition.svg" caption="LSP definition explained as a diagram." >}}
 
 * Os is an instance of class S.  
 * Ot is an instance of class T.  
@@ -86,7 +86,7 @@ When is the LSP actually violated?
 _If you are inheriting from the base class without making the subclass substitutable for the base class, then you are breaking the LSP._  
 In the following, a classic example of a program with violated LSP is shown. Consider we have a class Rectangle ad a class Square where Square extends Rectangle.
 
-{{< figure src="/blog/images/liskov-substitution-principle/rectangle.svg" caption="Class Square inherits from class Rectangle." >}}
+{{< figure src="/images/liskov-substitution-principle/rectangle.svg" caption="Class Square inherits from class Rectangle." >}}
 
 In this example, square is not a proper subtype of rectangle, because the height and width of the rectangle are independently mutable. In contrast the height and width of the square must change together. Since the user believes it is communicating with a rectangle, it could easily get confused.
 
@@ -159,7 +159,7 @@ System.out.println(r.area()); // 4
 
 A solution to this problem could be introducing a Shape class, where Rectangle and square are inheriting from:
 
-{{< figure src="/blog/images/liskov-substitution-principle/shape.svg" caption="Square and Rectangle both inherit from Shape." >}}
+{{< figure src="/images/liskov-substitution-principle/shape.svg" caption="Square and Rectangle both inherit from Shape." >}}
 
 Or an even better solution: **use composition instead of inheritance**.
 
@@ -188,7 +188,7 @@ It is well known that "contracts" are an important concept in software developme
 
 DbC was developed and introduced by [Bertrand Meyer](https://en.wikipedia.org/wiki/Bertrand_Meyer) with the development of the programming language [Eiffel](https://en.wikipedia.org/wiki/Eiffel_(programming_language)).
 
-{{< figure src="/blog/images/liskov-substitution-principle/bertrand_meyer.jpg" caption="Bertrand Meyer (Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Bertrand_Meyer_recent.jpg))." width="200" >}}
+{{< figure src="/images/liskov-substitution-principle/bertrand_meyer.jpg" caption="Bertrand Meyer (Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Bertrand_Meyer_recent.jpg))." width="200" >}}
 
 The idea of DbC is to define as precisely as possible what a software module should do.
 
@@ -557,7 +557,7 @@ In my opinion, there are two options:
 I think LSP is so important because it ensures that no unexpected behaviour happens in the program. Therefore it is easier to maintain and easier to debug.  
 Furthermore by following the LSP you can ensure that the building blocks of your application are more flexible and can be swapped out easily without having to fear that something breaks. For instance a ``Cat`` can be used instead of an ``Animal`` without any problems. We all know that changing and swapping things out are important things in software development. That's what also the "Dependency Inversion Principle" teaches us. Would you solder a lamp directly to the electrical wiring in a wall? Or would you use a plug instead?
 
-{{< figure src="/blog/images/liskov-substitution-principle/dip.jpg" caption="Dependency Inversion Principle (Source: [Stack Overflow](https://stackoverflow.com/questions/26447502/explain-this-motivational-poster-about-dependency-inversion-principle))." width="400">}}
+{{< figure src="/images/liskov-substitution-principle/dip.jpg" caption="Dependency Inversion Principle (Source: [Stack Overflow](https://stackoverflow.com/questions/26447502/explain-this-motivational-poster-about-dependency-inversion-principle))." width="400">}}
 
 **Behavioral consistency:**   
 The LSP ensures that an object of a derived type behaves exactly like an object of the base type. This allows objects to be exchanged arbitrarily without changing the program's behavior. This is important for the consistency and predictability of the code.

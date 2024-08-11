@@ -7,7 +7,7 @@ description = "Article explaining the Adapter Design Pattern by Gang of Four."
 
 
 
-{{< figure src="/blog/images/adapter-pattern/adapter.png" caption="Visualization of the Adapter Pattern (Source: [Refactoring-Guru](https://refactoring.guru/design-patterns/adapter))" >}}
+{{< figure src="/images/adapter-pattern/adapter.png" caption="Visualization of the Adapter Pattern (Source: [Refactoring-Guru](https://refactoring.guru/design-patterns/adapter))" >}}
 
 # Intent
 Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
@@ -23,9 +23,9 @@ The behaviour of the Adaptee is the actual behavior that I want. But I cant get 
 # The pattern
 
 
-{{< figure src="/blog/images/adapter-pattern/adapter1.jpg" caption="" >}}
+{{< figure src="/images/adapter-pattern/adapter1.jpg" caption="" >}}
 
-{{< figure src="/blog/images/adapter-pattern/adapter2.jpg" caption="" >}}
+{{< figure src="/images/adapter-pattern/adapter2.jpg" caption="" >}}
 
 
 

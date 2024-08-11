@@ -8,7 +8,7 @@ description = "Article explaining the Singleton Design Pattern by Gang of Four."
 
 Many people argue that Singleton is an anti pattern. That it is a code smell.
 
-{{< figure src="/blog/images/singleton-pattern/singleton-comic.png" caption="A comic depicting the Singleton Pattern (Source: [Refactoring-Guru](https://refactoring.guru/design-patterns/singleton)). Singleton ensures that there is only ONE single instance of an Object. Clients may not even realize that they’re working with the same object all the time." >}}
+{{< figure src="/images/singleton-pattern/singleton-comic.png" caption="A comic depicting the Singleton Pattern (Source: [Refactoring-Guru](https://refactoring.guru/design-patterns/singleton)). Singleton ensures that there is only ONE single instance of an Object. Clients may not even realize that they’re working with the same object all the time." >}}
 
 # Intent
 
@@ -70,7 +70,7 @@ Singleton s = Singleton.getInstance();
 
 
 
-{{< figure src="/blog/images/singleton-pattern/singleton2.jpg" caption="" >}}
+{{< figure src="/images/singleton-pattern/singleton2.jpg" caption="" >}}
 
 
 

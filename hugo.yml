@@ -3,7 +3,7 @@ title: gersti.at
 theme: hugo-coder
 languageCode: en
 defaultContentLanguage: en
-paginate: 6
+paginate: 8
 enableEmoji: true
 markup:
   highlight:
@@ -55,7 +55,7 @@ languages:
     title: gersti.at
     params:
       author: Johannes Gerstbauer
-      info: Full Stack Software Engineer
+      info: Software Engineer
       description: Johannes Gerstbauer's persönliche Webseite
       keywords: 'blog, developer, software, engineer'
     menu:

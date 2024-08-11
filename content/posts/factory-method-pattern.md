@@ -9,7 +9,7 @@ description = "Article explaining the Factory Method Design Pattern by Gang of F
 The Factory Method Design Pattern is oftentimes just called "Factory Pattern". However to be specific, it is called "Factory Method design Pattern" in the original GoF Book.
 
 
-{{< figure src="/blog/images/factory-method-pattern/factory-method-image.png" caption="A sketch depicting an example of the Factory Method Pattern (Source: [Refactoring-Guru](https://refactoring.guru/design-patterns/factory-method)). We have a LogisticsFactory that creates logistics. It has two Subfactories. The one factory creates Trucks and the other factory creates ships." >}}
+{{< figure src="/images/factory-method-pattern/factory-method-image.png" caption="A sketch depicting an example of the Factory Method Pattern (Source: [Refactoring-Guru](https://refactoring.guru/design-patterns/factory-method)). We have a LogisticsFactory that creates logistics. It has two Subfactories. The one factory creates Trucks and the other factory creates ships." >}}
 
  
 
@@ -26,7 +26,7 @@ Das Factory-Method Pattern fällt unter die Kategorie "Creational Pattern", weil
 
 Structure described (similar) as in the original GoF Design Patterns Book by Erich Gamma et. al (S. 108)
 
-{{< figure src="/blog/images/factory-method-pattern/factory-method.png" caption="" >}}
+{{< figure src="/images/factory-method-pattern/factory-method.png" caption="" >}}
 
 
 * __Product__: Defines the interface of objects the factory method creates.
@@ -75,7 +75,7 @@ The Factory is responsible for holding "the business Logic of creation" of somet
 # An example for the Pattern
 
 
-{{< figure src="/blog/images/factory-method-pattern/factory-method-detail.jpg" caption="" >}}
+{{< figure src="/images/factory-method-pattern/factory-method-detail.jpg" caption="" >}}
 
 
 

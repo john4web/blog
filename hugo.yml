@@ -1,5 +1,5 @@
-baseURL: 'https://john4web.github.io/blog/'
-title: johndoe
+baseURL: 'https://gersti.at'
+title: gersti.at
 theme: hugo-coder
 languageCode: en
 defaultContentLanguage: en
@@ -52,7 +52,7 @@ languages:
           url: about/
   de:
     languageName: ':de:'
-    title: Johannes Gerstbauer
+    title: gersti.at
     params:
       author: Johannes Gerstbauer
       info: Full Stack Software Engineer

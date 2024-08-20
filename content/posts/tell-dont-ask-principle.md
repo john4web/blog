@@ -1,0 +1,5 @@
++++
+title = "Tell Don't Ask Principle"
+date = "2024-01-24"
+description = ""
++++

@@ -11,3 +11,5 @@ https://www.youtube.com/watch?v=o3aNJX7AP3M
 
 The billion dollar mistake (Tony Hoare)
 https://www.youtube.com/watch?v=YYkOWzrO3xg 
+
+Da passt auch recht gut das Kapitel "Dead programs tell no lies" dazu vom Buch "The pragmatic programmer".

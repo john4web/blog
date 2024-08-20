@@ -3,7 +3,7 @@ title: gersti.at
 theme: hugo-coder
 languageCode: en
 defaultContentLanguage: en
-paginate: 8
+paginate: 10
 enableEmoji: true
 markup:
   highlight:

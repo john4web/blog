@@ -1,5 +1,5 @@
 +++
-title = "Liskov substitution principle in depth"
+title = "Liskov substitution principle and DbC in depth"
 date = "2024-01-24"
 description = "Article explaining the liskov substitution principle in depth."
 +++

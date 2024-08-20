@@ -8,6 +8,33 @@
     <language>en</language>
     <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>5 best OOP principles</title>
+      <link>https://gersti.at/posts/top-oop-principles/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/top-oop-principles/</guid>
+      <description> 1. Encapsulate what Varies! Link to heading 2. Program to an interface, not to an implementation! Link to heading 3. Favor composition over inheritance! Link to heading 4. Don&amp;rsquo;t call us! We&amp;rsquo;ll call you! (Hollywood Principle) Link to heading 5. Increase cohesion and decrease coupling! Link to heading 6. Don&amp;rsquo;t depend on volatile things! Link to heading </description>
+    </item>
+    
+    <item>
+      <title>Arrange - Act - Assert</title>
+      <link>https://gersti.at/posts/arrange-act-assert/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/arrange-act-assert/</guid>
+      <description>Testing Paradigma</description>
+    </item>
+    
+    <item>
+      <title>Aspect Oriented Programming</title>
+      <link>https://gersti.at/posts/aop/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/aop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cohesion vs. Coupling</title>
       <link>https://gersti.at/posts/cohesion-and-coupling/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -19,12 +46,60 @@ https://www.linkedin.com/pulse/why-product-development-design-needs-sushant-rand
     </item>
     
     <item>
+      <title>Command-Query-Responsibility-Segregation (CQRS)</title>
+      <link>https://gersti.at/posts/cqrs/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/cqrs/</guid>
+      <description>Command and Query Separation Principle
+Idempotent and Unidempotent Endpoints</description>
+    </item>
+    
+    <item>
+      <title>Component Principles</title>
+      <link>https://gersti.at/posts/component-principles/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/component-principles/</guid>
+      <description>Aus dem Buch &amp;ldquo;Clean Architecture&amp;rdquo;
+CRP: The Common Reuse Principle Link to heading CCP: The Common Closure Principle Link to heading ADP: Acyclic Dependencies Principle Link to heading SDP: Stable Dependencies Principle Link to heading SAP: Stable Abstractions Principle Link to heading </description>
+    </item>
+    
+    <item>
+      <title>Controlling Flow via Try-Catch</title>
+      <link>https://gersti.at/posts/controlling-flow-via-try-catch/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/controlling-flow-via-try-catch/</guid>
+      <description>Explain why it is not a good idea</description>
+    </item>
+    
+    <item>
+      <title>Conways Law</title>
+      <link>https://gersti.at/posts/conways-law/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/conways-law/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deadlocks</title>
+      <link>https://gersti.at/posts/deadlocks/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/deadlocks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Dependency Inversion Principle</title>
       <link>https://gersti.at/posts/dependency-inversion-principle/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/dependency-inversion-principle/</guid>
-      <description>Overview Link to heading https://www.youtube.com/watch?v=TkUhAbbRCAE
+      <description>Overview Link to heading auch über inversion of control und dependency injection schreiben.
+https://www.youtube.com/watch?v=TkUhAbbRCAE
 https://www.youtube.com/watch?v=SeN1s65tRHY</description>
     </item>
     
@@ -38,6 +113,24 @@ https://www.youtube.com/watch?v=SeN1s65tRHY</description>
     </item>
     
     <item>
+      <title>Divide and Conquer</title>
+      <link>https://gersti.at/posts/divide-and-conquer/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/divide-and-conquer/</guid>
+      <description>Evtl. mit merge Sort erklären</description>
+    </item>
+    
+    <item>
+      <title>Domain Driven Design (DDD)</title>
+      <link>https://gersti.at/posts/domain-driven-design/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/domain-driven-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>DRY Principle</title>
       <link>https://gersti.at/posts/dry-principle/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -47,12 +140,21 @@ https://www.youtube.com/watch?v=SeN1s65tRHY</description>
     </item>
     
     <item>
+      <title>Duck Typing</title>
+      <link>https://gersti.at/posts/duck-typing/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/duck-typing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ElasticSearch Basics</title>
       <link>https://gersti.at/posts/elasticsearch-basics/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/elasticsearch-basics/</guid>
-      <description>Overview Link to heading With examples</description>
+      <description>Overview Link to heading Hier die Inhalte meines Word Dokuments reinkopieren</description>
     </item>
     
     <item>
@@ -64,7 +166,37 @@ https://www.youtube.com/watch?v=SeN1s65tRHY</description>
       <description>Overview Link to heading https://www.youtube.com/watch?v=C3B5IIlt4-0
 https://www.youtube.com/watch?v=7hXi0N1oWFU
 https://www.youtube.com/watch?v=J9WZ4xs4Tkc
-https://www.youtube.com/watch?v=FdFBYUQCuHQ</description>
+https://www.youtube.com/watch?v=FdFBYUQCuHQ
+https://www.youtube.com/watch?v=OMPfEXIlTVE</description>
+    </item>
+    
+    <item>
+      <title>Heisenbug!</title>
+      <link>https://gersti.at/posts/heisenbug/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/heisenbug/</guid>
+      <description>https://de.wikipedia.org/wiki/Heisenbug
+https://thedailyomnivore.net/2012/11/30/heisenbug/
+This is what a classic Heisenbug looks like (Source: The Daily Omnivore).</description>
+    </item>
+    
+    <item>
+      <title>How does the JVM work?</title>
+      <link>https://gersti.at/posts/jvm-explained/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/jvm-explained/</guid>
+      <description>Also explain how kotlin gets compiled to java class files</description>
+    </item>
+    
+    <item>
+      <title>Interface Segregation Principle</title>
+      <link>https://gersti.at/posts/interface-segregation-principle/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/interface-segregation-principle/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -87,7 +219,16 @@ Reference Link to heading https://www.baeldung.com/java-lts-21-new-features</des
     </item>
     
     <item>
-      <title>Liskov substitution principle in depth</title>
+      <title>Later is the day that never comes!</title>
+      <link>https://gersti.at/posts/later/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/later/</guid>
+      <description>Fixing stuff later in Software Engineering (Source: Twitter Post from Vlad Mihalcea).</description>
+    </item>
+    
+    <item>
+      <title>Liskov substitution principle and DbC in depth</title>
       <link>https://gersti.at/posts/liskov-substitution-principle/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
@@ -97,12 +238,78 @@ Overview Link to heading The Liskov Substitution Principle (LSP) was first intro
     </item>
     
     <item>
-      <title>Multithreading</title>
+      <title>Multithreading methods in depth</title>
       <link>https://gersti.at/posts/multithreading/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/multithreading/</guid>
-      <description> Overview Link to heading </description>
+      <description>Overview Link to heading CompletableFutures and Threadpools in Java explained
+Threadpools and ThreadPoolTaskExecutor() explained
+Java CompletableFuture vs. Java Future
+Spring WebFlux
+Java ExecutorService
+Java Multithreading
+Java Virtual Threads
+https://www.youtube.com/watch?v=xpjvY45Hbyg</description>
+    </item>
+    
+    <item>
+      <title>My personal GIT Cheatsheet</title>
+      <link>https://gersti.at/posts/git-cheatsheet/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/git-cheatsheet/</guid>
+      <description>sachen hier rauskopieren: nobledesktop.com/learn/git/undo-changes</description>
+    </item>
+    
+    <item>
+      <title>My personal REGEX Cheatsheet</title>
+      <link>https://gersti.at/posts/regex-cheatsheet/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/regex-cheatsheet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL Best practices</title>
+      <link>https://gersti.at/posts/mysql-best-practices/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/mysql-best-practices/</guid>
+      <description>Hier einfach diesen kostenlosen Videokurs zusammenfassen von: https://planetscale.com/learn/courses/mysql-for-developers
+und dann auch noch meine Mitschriften aus dem Studium einfließen lassen.</description>
+    </item>
+    
+    <item>
+      <title>Open Closed Principle</title>
+      <link>https://gersti.at/posts/open-closed-principle/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/open-closed-principle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Optimistic vs. Pessimistic Locking</title>
+      <link>https://gersti.at/posts/optimistic-pessimistic-locking/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/optimistic-pessimistic-locking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pair Programming: The right way</title>
+      <link>https://gersti.at/posts/pair-programming/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/pair-programming/</guid>
+      <description>https://martinfowler.com/articles/on-pair-programming.html?ref=simplermachines.com
+https://martinfowler.com/articles/rotate-pairs-experiment.html
+https://martinfowler.com/bliki/PairProgramming.html
+https://www.martinfowler.com/bliki/PairProgrammingMisconceptions.html
+Über Driver und Navigator Role schreiben</description>
     </item>
     
     <item>
@@ -111,9 +318,122 @@ Overview Link to heading The Liskov Substitution Principle (LSP) was first intro
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/polymorphism/</guid>
-      <description>Overview Link to heading With examples
+      <description>Overview Link to heading Unbedingt meine Mitschrift aus dem Studium hier rein geben!
+With examples
 Folgende Videos unbedingt anschauen:
-https://www.youtube.com/watch?v=YaSMkzmc_sA</description>
+https://www.youtube.com/watch?v=YaSMkzmc_sA
+Auch schreiben über &amp;ldquo;Static polymorphism vs. dynamic polymorphism&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Principle of least astonishment</title>
+      <link>https://gersti.at/posts/pola/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/pola/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Public constructors vs. Static Factory Methods</title>
+      <link>https://gersti.at/posts/public-constructors-static-factory-methods/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/public-constructors-static-factory-methods/</guid>
+      <description>Aus dem Buch Effective Java von Joshua Bloch</description>
+    </item>
+    
+    <item>
+      <title>Rubber Duck Debugging</title>
+      <link>https://gersti.at/posts/rubber-duck-debugging/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/rubber-duck-debugging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rule of Ten</title>
+      <link>https://gersti.at/posts/rule-of-ten/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/rule-of-ten/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Separation of Concerns</title>
+      <link>https://gersti.at/posts/separation-of-concerns/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/separation-of-concerns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sharding</title>
+      <link>https://gersti.at/posts/sharding/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/sharding/</guid>
+      <description>Sharding (Servers, Databases, etc.)</description>
+    </item>
+    
+    <item>
+      <title>Single Responsibility Principle</title>
+      <link>https://gersti.at/posts/single-responsibility-principle/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/single-responsibility-principle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Strangler Fig Pattern</title>
+      <link>https://gersti.at/posts/strangler-fig-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/strangler-fig-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>strategic-, functional and object-oriented programming</title>
+      <link>https://gersti.at/posts/strategic-functional-object/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/strategic-functional-object/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stream API</title>
+      <link>https://gersti.at/posts/stream-api/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/stream-api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TDD Basics</title>
+      <link>https://gersti.at/posts/tdd-basics/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/tdd-basics/</guid>
+      <description>First make it work (you are out of business if it does not work)
+Then make it right (refactor the code so that you and others can understand it and evolve it as needs change or are better understood)
+Then make it fast (Refactor the code for needed performance)
+Inhalte vom Buch TDD vom Kent Beck hier einfließen lassen.</description>
+    </item>
+    
+    <item>
+      <title>Tell Don&#39;t Ask Principle</title>
+      <link>https://gersti.at/posts/tell-dont-ask-principle/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/tell-dont-ask-principle/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -146,7 +466,18 @@ The Problem Link to heading The behaviour of the Adaptee is the actual behavior 
       
       <guid>https://gersti.at/posts/billion-dollar-mistake/</guid>
       <description>Overview Link to heading Zusammenfassung aus diesem Video schreiben: https://www.youtube.com/watch?v=o3aNJX7AP3M
-The billion dollar mistake (Tony Hoare) https://www.youtube.com/watch?v=YYkOWzrO3xg</description>
+The billion dollar mistake (Tony Hoare) https://www.youtube.com/watch?v=YYkOWzrO3xg
+Da passt auch recht gut das Kapitel &amp;ldquo;Dead programs tell no lies&amp;rdquo; dazu vom Buch &amp;ldquo;The pragmatic programmer&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>The Broken Windows Theory in Software Engineering</title>
+      <link>https://gersti.at/posts/broken-windows/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/broken-windows/</guid>
+      <description>Wird im Buch &amp;ldquo;Pragmatic Programmer&amp;rdquo; erklärt.
+Auch drüber schreiben, dass man &amp;ldquo;Fenster&amp;rdquo;, die man nicht sofort fixen kann, auch mit einem TODO kommentar versehen kann. Also ein &amp;ldquo;Achtung&amp;rdquo; schild markiert, das anzeigt dass es bald gefixt wird. Aber: nur todo kommentare mit Ticketnummern sind erlaubt.</description>
     </item>
     
     <item>
@@ -159,6 +490,15 @@ The billion dollar mistake (Tony Hoare) https://www.youtube.com/watch?v=YYkOWzrO
 Intent Link to heading &amp;ldquo;Separate the construction of a complex object from its representation so that the same construction process can create different representations.&amp;rdquo;
 Visualization of the Builder Pattern (Source: Refactoring-Guru)
 Overview Link to heading The builder pattern is classified as &amp;ldquo;creational pattern&amp;rdquo; which means that it deals with the creation of an object.</description>
+    </item>
+    
+    <item>
+      <title>The Clean Architecture</title>
+      <link>https://gersti.at/posts/clean-architecture/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/clean-architecture/</guid>
+      <description>Über Seiten 201 - 210 und S. 303 - 322 im Buch &amp;ldquo;Clean Architecture&amp;rdquo; schreiben.</description>
     </item>
     
     <item>
@@ -211,6 +551,16 @@ Intent Link to heading Define an interface for creating an object, but let subcl
     </item>
     
     <item>
+      <title>The law of demeter</title>
+      <link>https://gersti.at/posts/law-of-demeter/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/law-of-demeter/</guid>
+      <description>Principle of least knowledge - only talk to your immediate friends
+Shy code -&amp;gt; don&amp;rsquo;t reveal yourself to others and don&amp;rsquo;t interact with too many people</description>
+    </item>
+    
+    <item>
       <title>The Observer Pattern</title>
       <link>https://gersti.at/posts/observer-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -220,11 +570,38 @@ Intent Link to heading Define an interface for creating an object, but let subcl
     </item>
     
     <item>
+      <title>The only constant in Software Engineering</title>
+      <link>https://gersti.at/posts/only-constant/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/only-constant/</guid>
+      <description>&amp;hellip; is CHANGE</description>
+    </item>
+    
+    <item>
       <title>The Proxy Pattern</title>
       <link>https://gersti.at/posts/proxy-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/proxy-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Robustness Principle</title>
+      <link>https://gersti.at/posts/robustness-principle/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/robustness-principle/</guid>
+      <description>&amp;ldquo;be conservative in what you do, be liberal in what you accept from others&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>The Service Layer Pattern</title>
+      <link>https://gersti.at/posts/service-layer-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/service-layer-pattern/</guid>
       <description></description>
     </item>
     
@@ -249,6 +626,33 @@ Intent Link to heading Das Singleton Pattern wird dann verwendet, wenn man von e
 A duck can fly and swim (and probably much more things). Image-Source: Pixabay
 Intent Link to heading &amp;ldquo;Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.&amp;rdquo;
 Note! In this original intent the term &amp;ldquo;family of algorithms&amp;rdquo; mean the same as &amp;ldquo;Strategy&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Tracer Bullets</title>
+      <link>https://gersti.at/posts/tracer-bullets/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/tracer-bullets/</guid>
+      <description>Über Tracer bullets schreiben vom Buch: Pragmatic Programmer</description>
+    </item>
+    
+    <item>
+      <title>UML Basics</title>
+      <link>https://gersti.at/posts/uml-basics/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/uml-basics/</guid>
+      <description>Overview Link to heading UML basics explained and shown in images (associations, composition, etc.)</description>
+    </item>
+    
+    <item>
+      <title>What is an abstraction?</title>
+      <link>https://gersti.at/posts/abstraction/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/abstraction/</guid>
+      <description></description>
     </item>
     
     <item>

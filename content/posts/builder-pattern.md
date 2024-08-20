@@ -12,7 +12,7 @@ _"Separate the construction of a complex object from its representation so that 
 
 {{< figure src="/images/builder-pattern/builder.png" caption="Visualization of the Builder Pattern (Source: [Refactoring-Guru](https://refactoring.guru/design-patterns/builder))" >}}
 
-## Overview
+## Overview 
 
 The builder pattern is classified as "creational pattern" which means that it deals with the creation of an object. Creational design patterns abstract the instantiation process. They help to make a system independent of how its objects are created, composed and represented.
 

@@ -73,7 +73,7 @@ Singleton s = Singleton.getInstance();
 {{< figure src="/images/singleton-pattern/singleton2.jpg" caption="" >}}
 
 
-
+ 
 # Reference
 
 - https://www.youtube.com/watch?v=hUE_j6q0LTQ

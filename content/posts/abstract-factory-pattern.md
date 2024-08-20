@@ -15,7 +15,7 @@ Bei dem Factory Method Pattern erzeugt jede konkrete Factory jeweils nur ein Obj
 DAs Abstract Factory Pattern verwendet mehrere Factory methods. Das heißt jede Factory Method kann mehrere verschiedene Objekte erzeugen. Das heißt man kann Objekte in "Familien" gruppieren.
 
 
-
+ 
 
 https://www.youtube.com/watch?v=v-GiuMmsXj4
 

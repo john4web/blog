@@ -5,3 +5,4 @@ description = "Article explaining the Observer Design Pattern by Gang of Four."
 +++
 
 
+

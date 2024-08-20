@@ -11,7 +11,7 @@ The Factory Method Design Pattern is oftentimes just called "Factory Pattern". H
 
 {{< figure src="/images/factory-method-pattern/factory-method-image.png" caption="A sketch depicting an example of the Factory Method Pattern (Source: [Refactoring-Guru](https://refactoring.guru/design-patterns/factory-method)). We have a LogisticsFactory that creates logistics. It has two Subfactories. The one factory creates Trucks and the other factory creates ships." >}}
 
- 
+  
 
 # Intent
 _Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses._

@@ -154,7 +154,8 @@ https://www.youtube.com/watch?v=SeN1s65tRHY</description>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/elasticsearch-basics/</guid>
-      <description>Overview Link to heading Hier die Inhalte meines Word Dokuments reinkopieren</description>
+      <description>Overview Link to heading Hier die Inhalte meines Word Dokuments reinkopieren (im Ordner images/elasticsearch)
+Reference Link to heading Frank Kane: Elasticsearch 8 and the Elastic Stack: In-Depth and Hands-On https://www.oreilly.com/library/view/elasticsearch-8-and/9781788995122/</description>
     </item>
     
     <item>
@@ -471,6 +472,15 @@ Da passt auch recht gut das Kapitel &amp;ldquo;Dead programs tell no lies&amp;rd
     </item>
     
     <item>
+      <title>The Bridge Pattern</title>
+      <link>https://gersti.at/posts/bridge-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/bridge-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>The Broken Windows Theory in Software Engineering</title>
       <link>https://gersti.at/posts/broken-windows/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -493,6 +503,15 @@ Overview Link to heading The builder pattern is classified as &amp;ldquo;creatio
     </item>
     
     <item>
+      <title>The Chain of Responsibility Pattern</title>
+      <link>https://gersti.at/posts/chain-of-responsibility-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/chain-of-responsibility-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>The Clean Architecture</title>
       <link>https://gersti.at/posts/clean-architecture/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -507,6 +526,15 @@ Overview Link to heading The builder pattern is classified as &amp;ldquo;creatio
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/command-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Composite Pattern</title>
+      <link>https://gersti.at/posts/composite-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/composite-pattern/</guid>
       <description></description>
     </item>
     
@@ -542,6 +570,24 @@ Intent Link to heading Define an interface for creating an object, but let subcl
     </item>
     
     <item>
+      <title>The Flyweight Pattern</title>
+      <link>https://gersti.at/posts/flyweight-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/flyweight-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Interpreter Pattern</title>
+      <link>https://gersti.at/posts/interpreter-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/interpreter-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>The Iterator Pattern</title>
       <link>https://gersti.at/posts/iterator-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -561,6 +607,24 @@ Shy code -&amp;gt; don&amp;rsquo;t reveal yourself to others and don&amp;rsquo;t
     </item>
     
     <item>
+      <title>The Mediator Pattern</title>
+      <link>https://gersti.at/posts/mediator-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/mediator-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Memento Pattern</title>
+      <link>https://gersti.at/posts/memento-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/memento-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>The Observer Pattern</title>
       <link>https://gersti.at/posts/observer-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -576,6 +640,15 @@ Shy code -&amp;gt; don&amp;rsquo;t reveal yourself to others and don&amp;rsquo;t
       
       <guid>https://gersti.at/posts/only-constant/</guid>
       <description>&amp;hellip; is CHANGE</description>
+    </item>
+    
+    <item>
+      <title>The Prototype Pattern</title>
+      <link>https://gersti.at/posts/prototype-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/prototype-pattern/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -617,6 +690,15 @@ Intent Link to heading Das Singleton Pattern wird dann verwendet, wenn man von e
     </item>
     
     <item>
+      <title>The State Pattern</title>
+      <link>https://gersti.at/posts/state-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/state-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>The Strategy Pattern</title>
       <link>https://gersti.at/posts/strategy-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -626,6 +708,24 @@ Intent Link to heading Das Singleton Pattern wird dann verwendet, wenn man von e
 A duck can fly and swim (and probably much more things). Image-Source: Pixabay
 Intent Link to heading &amp;ldquo;Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.&amp;rdquo;
 Note! In this original intent the term &amp;ldquo;family of algorithms&amp;rdquo; mean the same as &amp;ldquo;Strategy&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>The Template Method Pattern</title>
+      <link>https://gersti.at/posts/template-method-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/template-method-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Visitor Pattern</title>
+      <link>https://gersti.at/posts/visitor-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/visitor-pattern/</guid>
+      <description></description>
     </item>
     
     <item>

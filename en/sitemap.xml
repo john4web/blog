@@ -179,16 +179,25 @@
     <loc>https://gersti.at/posts/billion-dollar-mistake/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gersti.at/posts/bridge-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gersti.at/posts/broken-windows/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/posts/builder-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gersti.at/posts/chain-of-responsibility-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gersti.at/posts/clean-architecture/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/posts/command-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/posts/composite-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/posts/decorator-pattern/</loc>
@@ -200,16 +209,31 @@
     <loc>https://gersti.at/posts/factory-method-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gersti.at/posts/flyweight-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/posts/interpreter-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gersti.at/posts/iterator-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/posts/law-of-demeter/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gersti.at/posts/mediator-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/posts/memento-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gersti.at/posts/observer-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/posts/only-constant/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/posts/prototype-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/posts/proxy-pattern/</loc>
@@ -224,7 +248,16 @@
     <loc>https://gersti.at/posts/singleton-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gersti.at/posts/state-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gersti.at/posts/strategy-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/posts/template-method-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/posts/visitor-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/posts/tracer-bullets/</loc>

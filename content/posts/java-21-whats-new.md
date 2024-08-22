@@ -8,9 +8,9 @@ description = "Article explaining which new features are in the Java 21 release.
 
 ## Sealed Classes (Java 15 - Java 17)
 
-## Pattern Matching
+## String Templates (Java 21 preview feature)
 
-## String Templates
+## Pattern Matching
 
 ## Virtual Threads
 

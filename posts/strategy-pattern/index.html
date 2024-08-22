@@ -162,7 +162,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              4-minute read
+              5-minute read
             </span>
           </div>
           
@@ -173,16 +173,52 @@
 
       <div class="post-content">
         
-        <p>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in java.</p>
+        <p>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in Java.</p>
 <figure><img src="/images/strategy-pattern/duck.jpg"
-         alt="A duck can fly and swim (and probably much more things). Image-Source: Pixabay"/><figcaption>
-            <p>A duck can fly and swim (and probably much more things). <a href="https://pixabay.com/photos/duck-mallard-bird-pond-plumage-8510483/"  class="external-link" target="_blank" rel="noopener">Image-Source: Pixabay</a></p>
+         alt="A duck can fly and quack (and can do probably much more things). Image-Source: Pixabay"/><figcaption>
+            <p>A duck can fly and quack (and can do probably much more things). <a href="https://pixabay.com/photos/duck-mallard-bird-pond-plumage-8510483/"  class="external-link" target="_blank" rel="noopener">Image-Source: Pixabay</a></p>
         </figcaption>
 </figure>
 
-<h2 id="intent">
-  Intent
-  <a class="heading-link" href="#intent">
+<h2 id="the-problem-that-the-strategy-pattern-solves">
+  The Problem that the strategy pattern solves
+  <a class="heading-link" href="#the-problem-that-the-strategy-pattern-solves">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Let&rsquo;s say we have a <code>Duck</code> class. And then we have a <code>CityDuck</code> (living in the city) and a <code>WildDuck</code> (living in the forest). We use inheritance - so <code>CityDuck</code> and <code>WildDuck</code> inherit from <code>Duck</code>. The subclasses are responsible for implementing their own version of the display() method. Wild ducks can display differently than city ducks for instance. So they have to override the display() method. But the quack() method is shared amongst all these subclasses. Inheritance is used here for code reuse.</p>
+<figure><img src="/images/strategy-pattern/1.svg"
+         alt="CityDuck and WildDuck inherit from Duck"/><figcaption>
+            <p><code>CityDuck</code> and <code>WildDuck</code> inherit from <code>Duck</code></p>
+        </figcaption>
+</figure>
+
+<p>What is the problem? The problem is <strong>change</strong> (which happens everytime). The only constant in software development is change! When requirements change, our current software design may not necessarily be appropriate for the incoming requirements. An example for such a change could be the following.</p>
+<p>What if we have another method, for example fly()? Because ducks can fly. We add the method to the base class <code>Duck</code>. But then you want to introduce a new class called <code>RubberDuck</code> which inherits from <code>Duck</code>. <code>RubberDuck</code> has its own display() method. But rubber ducks can&rsquo;t fly. Now we have a problem! rubber ducks can&rsquo;t fly however they inherit the fly() method from their parent class <code>Duck</code> -&gt; which is wrong! ⚠️</p>
+<figure><img src="/images/strategy-pattern/2.svg"
+         alt="RubberDuck inherits the fly() method! Now everyone who is using a RubberDuck object can call the fly() method on it which should not be possible because RubberDucks can&amp;rsquo;t fly.⚠️"/><figcaption>
+            <p><code>RubberDuck</code> inherits the fly() method! Now everyone who is using a <code>RubberDuck</code> object can call the fly() method on it which should not be possible because RubberDucks can&rsquo;t fly.⚠️</p>
+        </figcaption>
+</figure>
+
+<p>And what if we wanna add a new class called MountainDuck (which lives in the mountains). This duck implements its own display method. But it implements also its own fly() method because the duck has a specific way to fly (ultrafast for instance).
+And then we add a new class called CloudDuck. this duck also overrides display and fly methods. But the CloudDuck flys EXACTLY the same as the Mountain duck. What are we doing now? We cannot reuse the same code from the mountain duck. So we have to copy and paste. And that is very, very bad ⚠️ (cf. DRY Principle)!</p>
+<figure><img src="/images/strategy-pattern/3.svg"/>
+</figure>
+
+<p>Some might say you could solve some of these problems with &ldquo;more inheritance&rdquo;. You could for instance introduce a new base class just for mountain and cloud duck where the both ducks are inheriting from. But the more classes you create and inherit from, the more &ldquo;inflexible&rdquo; all of that gets.</p>
+<p>The problem is, that you can&rsquo;t share behaviour over classes that are in the same hierarchy (horizontally). Inheritance only works by sharing code from top to bottom.
+<figure><img src="/images/strategy-pattern/4.svg"
+         alt="When it comes to inheritance, code cannot be shared between classes which are in the same hierarchy."/><figcaption>
+            <p>When it comes to inheritance, code cannot be shared between classes which are in the same hierarchy.</p>
+        </figcaption>
+</figure>
+</p>
+<p>The solution to problems with inheritance is not &ldquo;more inheritance&rdquo;. The solution is composition! And that&rsquo;s exactly what the strategy pattern does.</p>
+<h2 id="intent-of-the-strategy-pattern">
+  Intent of the strategy pattern
+  <a class="heading-link" href="#intent-of-the-strategy-pattern">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
@@ -222,37 +258,6 @@ z.B. kann man eine neue Klasse &ldquo;FastFlying&rdquo; einführen, die &ldquo;I
 
 <p>Das Strategy-Pattern ist ein Paradebeispiel dafür, dass Composition besser ist als Inheritance. We need Inheritance much much less than we believe.</p>
 <p>The concrete implementations (LoudQuacking, QuietQuacking, etc.) can vary just as much as they want - without having to change the code of the context Class (Duck). And that is the power of the strategy pattern!</p>
-<h2 id="the-problem-that-the-strategy-pattern-solves">
-  The Problem that the strategy pattern solves
-  <a class="heading-link" href="#the-problem-that-the-strategy-pattern-solves">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>Let&rsquo;s say we have a duck class. And then we have a City Duck (living in the city) and a Wild Duck (living in the forest).
-We use inheritance. The subclasses are responsible for implementing their own version of the display() method. Wild ducks can display differently than city ducks for instance. So they have to override the display method. But the quack method is shared amongst all these subclasses. Inheritance is used here for code reuse.</p>
-<p>What is the problem? The problem is change. (Which happens everytime). The only constant in Software development is Change! When requirements change our curren software design may not necessarily be appropriete for the incoming requirements.</p>
-<figure><img src="/images/strategy-pattern/1.svg"/>
-</figure>
-
-<p>What if we have another method like fly()? Because ducks can fly. We add the method to the base class Duck. But then you want to introduce a new class called rubberduck which inherits from duck. rubberduck has its own display method. But rubberducks can&rsquo;t fly. Now we have a problem. Problem 1!!!</p>
-<figure><img src="/images/strategy-pattern/2.svg"/>
-</figure>
-
-<p>And what if we wanna add a new class called MountainDuck (which lives in the mountains). This duck implements its own display method. But it implements also his own fly method because the duck has a specific way to fly (ultrafast for instance).
-And then we add a new class called CloudDuck. this duck also overrides display and fly methods. But the CloudDuck flys EXACTLY the same as the Mountain duck. What are we doing now? We cannot reuse the same code from the mountain duck. So we have to Copy and paste. And that is very, very bad. (See: DRY Principle)
-Problem 2!!!</p>
-<figure><img src="/images/strategy-pattern/3.svg"/>
-</figure>
-
-<p>Some might say you could solve some of these problems with &ldquo;more inheritance&rdquo;. You could for instance introduce a new base class just for mountain and cloud duck where the both ducks are inheriting from. But the more classes you create and inherit from, the more &ldquo;inflexible&rdquo; all of that gets.</p>
-<p>The problem is, that you can&rsquo;t share behaviour over classes that are in the same hierarchy (horizontally):
-<figure><img src="/images/strategy-pattern/4.svg"/>
-</figure>
-
-Inheritance only works by sharing code from top to bottom.</p>
-<p>The solution to problems with inheritance is not &ldquo;more inheritance&rdquo;. The solution is composition! And that&rsquo;s exactly what the strategy pattern does.</p>
-<p>Please help us Strategy Pattern!!!!</p>
 <h2 id="the-pattern-itself">
   The Pattern itself
   <a class="heading-link" href="#the-pattern-itself">
@@ -260,21 +265,22 @@ Inheritance only works by sharing code from top to bottom.</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>sdsdfsdf</p>
+<p>Lorem Ipsum</p>
 <figure><img src="/images/strategy-pattern/5.svg"/>
 </figure>
 
+<p>Lorem Ipsum</p>
 <figure><img src="/images/strategy-pattern/6.svg"/>
 </figure>
 
-<h2 id="the-code-one-by-one">
-  The Code one by one
-  <a class="heading-link" href="#the-code-one-by-one">
+<h2 id="when-should-you-use-this-pattern">
+  When should you use this pattern?
+  <a class="heading-link" href="#when-should-you-use-this-pattern">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>sdfdf</p>
+<p>Lorem Ipsum</p>
 <h2 id="reference">
   Reference
   <a class="heading-link" href="#reference">

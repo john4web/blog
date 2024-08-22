@@ -206,8 +206,8 @@ This is what a classic Heisenbug looks like (Source: The Daily Omnivore).</descr
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/java-21-whats-new/</guid>
-      <description>Records (Java 14 - Java 16) Link to heading Sealed Classes (Java 15 - Java 17) Link to heading Pattern Matching Link to heading String Templates Link to heading Virtual Threads Link to heading Sequenced Collections Link to heading Key Encapsulation Mechanism API Link to heading Scoped Values Link to heading Record Patterns Link to heading Simplified Main Method Link to heading https://medium.com/@aydinserbest34/a-look-at-java-21s-simplified-main-method-684a2cd2e6b5
-Reference Link to heading https://www.baeldung.com/java-lts-21-new-features</description>
+      <description>Records (Java 14 - Java 16) Link to heading Sealed Classes (Java 15 - Java 17) Link to heading String Templates (Java 21 preview feature) Link to heading Pattern Matching Link to heading Virtual Threads Link to heading Sequenced Collections Link to heading Key Encapsulation Mechanism API Link to heading Scoped Values Link to heading Record Patterns Link to heading Simplified Main Method Link to heading https://medium.com/@aydinserbest34/a-look-at-java-21s-simplified-main-method-684a2cd2e6b5
+Reference Link to heading https://www.</description>
     </item>
     
     <item>
@@ -704,10 +704,9 @@ Intent Link to heading Das Singleton Pattern wird dann verwendet, wenn man von e
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/strategy-pattern/</guid>
-      <description>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in java.
-A duck can fly and swim (and probably much more things). Image-Source: Pixabay
-Intent Link to heading &amp;ldquo;Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.&amp;rdquo;
-Note! In this original intent the term &amp;ldquo;family of algorithms&amp;rdquo; mean the same as &amp;ldquo;Strategy&amp;rdquo;.</description>
+      <description>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in Java.
+A duck can fly and quack (and can do probably much more things). Image-Source: Pixabay
+The Problem that the strategy pattern solves Link to heading Let&amp;rsquo;s say we have a Duck class. And then we have a CityDuck (living in the city) and a WildDuck (living in the forest). We use inheritance - so CityDuck and WildDuck inherit from Duck.</description>
     </item>
     
     <item>

@@ -57,23 +57,23 @@ We use inheritance. The subclasses are responsible for implementing their own ve
 What is the problem? The problem is change. (Which happens everytime). The only constant in Software development is Change! When requirements change our curren software design may not necessarily be appropriete for the incoming requirements. 
 
 
-{{< figure src="/images/strategy-pattern/1.jpg" caption="" >}}
+{{< figure src="/images/strategy-pattern/1.svg" caption="" >}}
 
 What if we have another method like fly()? Because ducks can fly. We add the method to the base class Duck. But then you want to introduce a new class called rubberduck which inherits from duck. rubberduck has its own display method. But rubberducks can't fly. Now we have a problem. Problem 1!!!
 
 
-{{< figure src="/images/strategy-pattern/2.jpg" caption="" >}}
+{{< figure src="/images/strategy-pattern/2.svg" caption="" >}}
 
 And what if we wanna add a new class called MountainDuck (which lives in the mountains). This duck implements its own display method. But it implements also his own fly method because the duck has a specific way to fly (ultrafast for instance).
 And then we add a new class called CloudDuck. this duck also overrides display and fly methods. But the CloudDuck flys EXACTLY the same as the Mountain duck. What are we doing now? We cannot reuse the same code from the mountain duck. So we have to Copy and paste. And that is very, very bad. (See: DRY Principle)
 Problem 2!!!
 
-{{< figure src="/images/strategy-pattern/4.jpg" caption="" >}}
+{{< figure src="/images/strategy-pattern/3.svg" caption="" >}}
 
 Some might say you could solve some of these problems with "more inheritance". You could for instance introduce a new base class just for mountain and cloud duck where the both ducks are inheriting from. But the more classes you create and inherit from, the more "inflexible" all of that gets. 
 
 The problem is, that you can't share behaviour over classes that are in the same hierarchy (horizontally):
-{{< figure src="/images/strategy-pattern/3.jpg" caption="" >}}
+{{< figure src="/images/strategy-pattern/4.svg" caption="" >}}
 Inheritance only works by sharing code from top to bottom.
 
 
@@ -86,9 +86,9 @@ Please help us Strategy Pattern!!!!
 ## The Pattern itself
 sdsdfsdf
 
-{{< figure src="/images/strategy-pattern/5.jpg" caption="" >}}
+{{< figure src="/images/strategy-pattern/5.svg" caption="" >}}
 
-{{< figure src="/images/strategy-pattern/6.jpg" caption="" >}}
+{{< figure src="/images/strategy-pattern/6.svg" caption="" >}}
 
 ## The Code one by one
 

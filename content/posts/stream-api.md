@@ -98,8 +98,6 @@ Sometimes your values are dependent on the earlier operation. In that case: don‚
 # List of most important stream api methods
 
 
-
-
 ## sorted()
 `sorted()` is an intermediate operation!
 
@@ -113,6 +111,7 @@ List<String> sortedNames = names1.stream()
 
 ```java
 List<Integer> numbers = List.of(5, 3, 8, 1, 4);
+
 List<Integer> sortedNumbers = numbers.stream()
                               .sorted()
                               .collect(Collectors.toList()); // sorted ascending
@@ -124,49 +123,145 @@ List<Integer> sortedNumbers = numbers.stream()
 Performs a certain operation on each item: 
 
 ```java
-data.map(n -> n*2)
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5);
+
+        List<Integer> multipliedNumbers = numbers.stream()
+                                             .map(n -> n*2)
+                                             .collect(Collectors.toList());
+// Output: [2, 4, 6, 8, 10]
+
 ```
 
 ## mapToInt()
 `mapToInt()` is an intermediate operation!
 
-## limit(5)
-`limit()` is an intermediate operation!
 
 ## flatMap()
 `flatMap()` is an intermediate operation!
 
+
+## limit(5)
+`limit()` is an intermediate operation!
+Restricts the number of elements in a stream to a specified number:
+
+```java
+List<Integer> numbers = List.of(1, 2, 3, 4, 5);
+
+        List<Integer> firstThreeNumbers = numbers.stream()
+                                                 .limit(3)  // Limit the stream to the first 3 elements
+                                                 .collect(Collectors.toList());  // Output: 1, 2, 3
+```
+
 ## distinct()
 `distinct()` is an intermediate operation!
+
+Removes duplicate elements from a stream and retain only unique elements:
+
+```java
+List<Integer> numbers = List.of(1, 2, 3, 2, 4, 5, 1, 6, 4);
+
+        List<Integer> uniqueNumbers = numbers.stream()
+                                             .distinct()
+                                             .collect(Collectors.toList()); // Output: [1, 2, 3, 4, 5, 6]
+```
 
 ## skip()
 `skip()` is an intermediate operation!
 
+Skips a specified number of elements at the beginning of a stream:
+
+```java
+List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        List<Integer> result = numbers.stream()
+                                      .skip(3)
+                                      .collect(Collectors.toList());
+                                      // Output: [4, 5, 6, 7, 8, 9, 10]
+```
+
 ## peek()
 `peek()` is an intermediate operation!
 
+ is used to apply an operation to each element of a stream without modifying the stream itself. It is especially useful for debugging or logging, allowing you to inspect the state of elements during stream processing.
+
+This method exists mainly to support debugging, where you want to see the elements as they flow past a certain point in a pipeline. Since Java 9, if the number of elements is known in advance and unchanged in the stream, the `.peek ()` statement will not be executed due to performance optimization. Using peek without any terminal operation does nothing.
+
+```java
+ List<Integer> numbers = List.of(1, 2, 3, 4, 5);
+
+// Create a stream, apply the Peek operator to each element, and collect the processed elements
+List<Integer> result = numbers.stream()
+                              .peek(n -> System.out.println("Processing: " + n))
+                              .map(n -> n * 2)
+                              .peek(n -> System.out.println("Doubled: " + n))
+                              .collect(Collectors.toList());
+
+```
+Output:
+
+```yaml
+Processing: 1
+Doubled: 2
+Processing: 2
+Doubled: 4
+Processing: 3
+Doubled: 6
+Processing: 4
+Doubled: 8
+Processing: 5
+Doubled: 10
+
+Result List: [2, 4, 6, 8, 10]
+```
+
 ## boxed()
 `boxed()` is an intermediate operation!
+
+The method boxed() is designed only for streams of some primitive types (IntStream, DoubleStream, and LongStream) to box each primitive value of the stream into the corresponding wrapper class (Integer, Double, and Long respectively).
+
+This throws an Exception:
+```java
+IntStream.of(1, 2, 3, 4, 5)
+.collect(Collectors.toList()); // Compilation Error!
+```
+
+This works:
+```java
+IntStream.of(1, 2, 3, 4, 5)
+.boxed()
+.collect(Collectors.toList());
+```
 
 
 
 ## filter()
 `filter()` is an intermediate operation!
 
-data.filter() filters out some items Data.filter(n  ->  n%2==1)
+Filters out items based on a given criteria:
+
+```java
+List<Integer> numbers = List.of(1, 2, 3, 4, 5);
+
+        List<Integer> filteredNumbers = numbers.stream()
+                                             .filter(n  ->  n > 3)
+                                             .collect(Collectors.toList()); // Output: [4, 5]
+```
 
 Creating the filter predicate with an anonymous inner class:
 
+```java
 Predicate<Integer> predi = (Integer n) -> {
-	return n%2==1;
+	return n > 3;
 }
 
-Ums.stream().filter(predi)
-
+List<Integer> filteredNumbers = numbers.stream()
+                                             .filter(predi)
+                                             .collect(Collectors.toList());
+```
 
 ## reduce()
 `reduce()` is a terminal operation!
-Data.reduce() will reduce the values
+
 
 ## collect()
 `collect()` is a terminal operation!
@@ -237,10 +332,18 @@ erkl√§ren
 
 # Reference
 
-https://www.youtube.com/watch?v=FWoYpM-E3EQ&t=25s
+- https://www.youtube.com/watch?v=FWoYpM-E3EQ&t=25s
 
-https://www.youtube.com/watch?v=tklkyVa7KZo 
+- https://www.youtube.com/watch?v=tklkyVa7KZo 
 
-https://www.youtube.com/watch?v=E-8qMRqRQ_A 
+- https://www.youtube.com/watch?v=E-8qMRqRQ_A 
 
-https://www.geeksforgeeks.org/stream-in-java/ 
+- https://www.geeksforgeeks.org/stream-in-java/ 
+
+- https://www.geeksforgeeks.org/stream-peek-method-in-java-with-examples/
+
+- https://dev.to/imanuel/the-java-boxed-method-571n
+
+- https://www.youtube.com/watch?v=Nz6TdVivRVA&t=38s
+
+- ChatGPT

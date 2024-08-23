@@ -165,7 +165,7 @@ Streams do all the heavy lifting for you. -&gt; They &ldquo;streamline&rdquo; th
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              5-minute read
+              7-minute read
             </span>
           </div>
           
@@ -292,6 +292,7 @@ Sometimes your values are dependent on the earlier operation. In that case: donâ
 </span></span><span class="line"><span class="cl"><span class="o">.</span><span class="na">sorted</span><span class="o">()</span>
 </span></span><span class="line"><span class="cl"><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span> <span class="c1">// sorted alphabetically
 </span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">sortedNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
 </span></span><span class="line"><span class="cl">                              <span class="o">.</span><span class="na">sorted</span><span class="o">()</span>
 </span></span><span class="line"><span class="cl">                              <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span> <span class="c1">// sorted ascending
@@ -304,8 +305,13 @@ Sometimes your values are dependent on the earlier operation. In that case: donâ
 </h2>
 <p><code>map()</code> is an intermediate operation!</p>
 <p>Performs a certain operation on each item:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span><span class="o">*</span><span class="mi">2</span><span class="o">)</span>
-</span></span></code></pre></div><h2 id="maptoint">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">multipliedNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span><span class="o">*</span><span class="mi">2</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Output: [2, 4, 6, 8, 10]
+</span></span></span></code></pre></div><h2 id="maptoint">
   mapToInt()
   <a class="heading-link" href="#maptoint">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -313,14 +319,6 @@ Sometimes your values are dependent on the earlier operation. In that case: donâ
   </a>
 </h2>
 <p><code>mapToInt()</code> is an intermediate operation!</p>
-<h2 id="limit5">
-  limit(5)
-  <a class="heading-link" href="#limit5">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p><code>limit()</code> is an intermediate operation!</p>
 <h2 id="flatmap">
   flatMap()
   <a class="heading-link" href="#flatmap">
@@ -329,7 +327,21 @@ Sometimes your values are dependent on the earlier operation. In that case: donâ
   </a>
 </h2>
 <p><code>flatMap()</code> is an intermediate operation!</p>
-<h2 id="distinct">
+<h2 id="limit5">
+  limit(5)
+  <a class="heading-link" href="#limit5">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>limit()</code> is an intermediate operation!
+Restricts the number of elements in a stream to a specified number:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">firstThreeNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                                                 <span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>  <span class="c1">// Limit the stream to the first 3 elements
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                 <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>  <span class="c1">// Output: 1, 2, 3
+</span></span></span></code></pre></div><h2 id="distinct">
   distinct()
   <a class="heading-link" href="#distinct">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -337,7 +349,13 @@ Sometimes your values are dependent on the earlier operation. In that case: donâ
   </a>
 </h2>
 <p><code>distinct()</code> is an intermediate operation!</p>
-<h2 id="skip">
+<p>Removes duplicate elements from a stream and retain only unique elements:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">uniqueNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">distinct</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span> <span class="c1">// Output: [1, 2, 3, 4, 5, 6]
+</span></span></span></code></pre></div><h2 id="skip">
   skip()
   <a class="heading-link" href="#skip">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -345,7 +363,14 @@ Sometimes your values are dependent on the earlier operation. In that case: donâ
   </a>
 </h2>
 <p><code>skip()</code> is an intermediate operation!</p>
-<h2 id="peek">
+<p>Skips a specified number of elements at the beginning of a stream:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                                      <span class="o">.</span><span class="na">skip</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                                      <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">                                      <span class="c1">// Output: [4, 5, 6, 7, 8, 9, 10]
+</span></span></span></code></pre></div><h2 id="peek">
   peek()
   <a class="heading-link" href="#peek">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -353,7 +378,30 @@ Sometimes your values are dependent on the earlier operation. In that case: donâ
   </a>
 </h2>
 <p><code>peek()</code> is an intermediate operation!</p>
-<h2 id="boxed">
+<p>is used to apply an operation to each element of a stream without modifying the stream itself. It is especially useful for debugging or logging, allowing you to inspect the state of elements during stream processing.</p>
+<p>This method exists mainly to support debugging, where you want to see the elements as they flow past a certain point in a pipeline. Since Java 9, if the number of elements is known in advance and unchanged in the stream, the <code>.peek ()</code> statement will not be executed due to performance optimization. Using peek without any terminal operation does nothing.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"> <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Create a stream, apply the Peek operator to each element, and collect the processed elements
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                              <span class="o">.</span><span class="na">peek</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Processing: &#34;</span> <span class="o">+</span> <span class="n">n</span><span class="o">))</span>
+</span></span><span class="line"><span class="cl">                              <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                              <span class="o">.</span><span class="na">peek</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Doubled: &#34;</span> <span class="o">+</span> <span class="n">n</span><span class="o">))</span>
+</span></span><span class="line"><span class="cl">                              <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span></code></pre></div><p>Output:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Processing</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Doubled</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Processing</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Doubled</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Processing</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Doubled</span><span class="p">:</span><span class="w"> </span><span class="m">6</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Processing</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Doubled</span><span class="p">:</span><span class="w"> </span><span class="m">8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Processing</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Doubled</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Result List</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">]</span><span class="w">
+</span></span></span></code></pre></div><h2 id="boxed">
   boxed()
   <a class="heading-link" href="#boxed">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -361,7 +409,15 @@ Sometimes your values are dependent on the earlier operation. In that case: donâ
   </a>
 </h2>
 <p><code>boxed()</code> is an intermediate operation!</p>
-<h2 id="filter">
+<p>The method boxed() is designed only for streams of some primitive types (IntStream, DoubleStream, and LongStream) to box each primitive value of the stream into the corresponding wrapper class (Integer, Double, and Long respectively).</p>
+<p>This throws an Exception:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">IntStream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span> <span class="c1">// Compilation Error!
+</span></span></span></code></pre></div><p>This works:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">IntStream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">.</span><span class="na">boxed</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span></code></pre></div><h2 id="filter">
   filter()
   <a class="heading-link" href="#filter">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -369,21 +425,28 @@ Sometimes your values are dependent on the earlier operation. In that case: donâ
   </a>
 </h2>
 <p><code>filter()</code> is an intermediate operation!</p>
-<p>data.filter() filters out some items Data.filter(n  -&gt;  n%2==1)</p>
-<p>Creating the filter predicate with an anonymous inner class:</p>
-<p>Predicate<!-- raw HTML omitted --> predi = (Integer n) -&gt; {
-return n%2==1;
-}</p>
-<p>Ums.stream().filter(predi)</p>
-<h2 id="reduce">
+<p>Filters out items based on a given criteria:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">filteredNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">n</span>  <span class="o">-&gt;</span>  <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span> <span class="c1">// Output: [4, 5]
+</span></span></span></code></pre></div><p>Creating the filter predicate with an anonymous inner class:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">predi</span> <span class="o">=</span> <span class="o">(</span><span class="n">Integer</span> <span class="n">n</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">filteredNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">predi</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span></code></pre></div><h2 id="reduce">
   reduce()
   <a class="heading-link" href="#reduce">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p><code>reduce()</code> is a terminal operation!
-Data.reduce() will reduce the values</p>
+<p><code>reduce()</code> is a terminal operation!</p>
 <h2 id="collect">
   collect()
   <a class="heading-link" href="#collect">
@@ -541,10 +604,32 @@ Will return a new list z.B. .collect(Collectors.toList())</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
+<ul>
+<li>
 <p><a href="https://www.youtube.com/watch?v=FWoYpM-E3EQ&amp;t=25s"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=FWoYpM-E3EQ&t=25s</a></p>
+</li>
+<li>
 <p><a href="https://www.youtube.com/watch?v=tklkyVa7KZo"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=tklkyVa7KZo</a></p>
+</li>
+<li>
 <p><a href="https://www.youtube.com/watch?v=E-8qMRqRQ_A"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=E-8qMRqRQ_A</a></p>
+</li>
+<li>
 <p><a href="https://www.geeksforgeeks.org/stream-in-java/"  class="external-link" target="_blank" rel="noopener">https://www.geeksforgeeks.org/stream-in-java/</a></p>
+</li>
+<li>
+<p><a href="https://www.geeksforgeeks.org/stream-peek-method-in-java-with-examples/"  class="external-link" target="_blank" rel="noopener">https://www.geeksforgeeks.org/stream-peek-method-in-java-with-examples/</a></p>
+</li>
+<li>
+<p><a href="https://dev.to/imanuel/the-java-boxed-method-571n"  class="external-link" target="_blank" rel="noopener">https://dev.to/imanuel/the-java-boxed-method-571n</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=Nz6TdVivRVA&amp;t=38s"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Nz6TdVivRVA&t=38s</a></p>
+</li>
+<li>
+<p>ChatGPT</p>
+</li>
+</ul>
 
       </div>
 

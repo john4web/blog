@@ -413,7 +413,8 @@ Auch schreiben über &amp;ldquo;Static polymorphism vs. dynamic polymorphism&amp
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/stream-api/</guid>
-      <description></description>
+      <description>Overview Link to heading Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow us to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.
+Streams do all the heavy lifting for you. -&amp;gt; They &amp;ldquo;streamline&amp;rdquo; the process for you.</description>
     </item>
     
     <item>

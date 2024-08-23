@@ -13,15 +13,18 @@
 
 
 <meta name="author" content="Johannes Gerstbauer">
-<meta name="description" content="Johannes Gerstbauer&#39;s personal website">
+<meta name="description" content="Overview Link to heading Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow us to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.
+Streams do all the heavy lifting for you. -&gt; They &ldquo;streamline&rdquo; the process for you.">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Stream API"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Overview Link to heading Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow us to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.
+Streams do all the heavy lifting for you. -&gt; They &ldquo;streamline&rdquo; the process for you."/>
 
 <meta property="og:title" content="Stream API" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Overview Link to heading Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow us to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.
+Streams do all the heavy lifting for you. -&gt; They &ldquo;streamline&rdquo; the process for you." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gersti.at/posts/stream-api/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-01-24T00:00:00+00:00" />
@@ -162,7 +165,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              0-minute read
+              5-minute read
             </span>
           </div>
           
@@ -173,7 +176,376 @@
 
       <div class="post-content">
         
-        
+        <h1 id="overview">
+  Overview
+  <a class="heading-link" href="#overview">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow us to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.</p>
+<p>Streams do all the heavy lifting for you.
+-&gt; They &ldquo;streamline&rdquo; the process for you.</p>
+<p>⚠️ Note: this article is about <a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html"  class="external-link" target="_blank" rel="noopener">java.util.stream</a>. Do not confuse it with input and output streams (<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/package-summary.html"  class="external-link" target="_blank" rel="noopener">java.io</a>). That&rsquo;s a totally different concept!</p>
+<h1 id="how-to-work-with-streams">
+  How to work with streams
+  <a class="heading-link" href="#how-to-work-with-streams">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ol>
+<li>Open the stream with the method <code>.stream()</code>.</li>
+<li>Chain as many operations as you like.</li>
+<li>Convert the stream back into a list (if you need that).</li>
+</ol>
+<p>The following example filters out all people that are younger as 10 and return them as a list:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">people</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">people</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">person</span> <span class="o">-&gt;</span> <span class="n">person</span><span class="o">.</span><span class="na">age</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">())</span>
+</span></span></code></pre></div><p>Basically, there are two types of operations when working with streams - <strong>intermediate</strong> and <strong>terminal</strong> operations.</p>
+<ul>
+<li>
+<p>Intermediate operations return a stream again (e.g., the methods .filter() or .map()).</p>
+</li>
+<li>
+<p>Terminal operations process the stream to perform functions on the individual elements (e.g., to return a specific value). After that, the stream is closed, and no further operations can be performed on it until a new stream is opened (e.g., the methods .collect or .forEach).&quot;</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>On the website &ldquo;GeeksForGeeks&rdquo;, I found a very nice image, explaining that concept:</p>
+<figure><img src="/images/stream-api/1.png"
+         alt="Intermediate Operations are the types of operations in which multiple methods are chained in a row. Source: geeksforgeeks.org"/><figcaption>
+            <p>Intermediate Operations are the types of operations in which multiple methods are chained in a row. Source: <a href="https://www.geeksforgeeks.org/stream-in-java/"  class="external-link" target="_blank" rel="noopener">geeksforgeeks.org</a></p>
+        </figcaption>
+</figure>
+
+<h1 id="advantages-of-using-stream-api">
+  Advantages of using stream api
+  <a class="heading-link" href="#advantages-of-using-stream-api">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>When working with data, an important rule is:
+<em>Don&rsquo;t change the existing value (original data)! Instead, create a new variable with the changed data!</em>
+This is a concept that streams embrace. When working with streams, you are not working with the existing list. If you change the values of the stream, it will not affect the original data.</p>
+<p>Once you consume the stream, you cannot reuse it:
+e.g.</p>
+<p>The following code works:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">nums</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">stream</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="c1">// closes stream (forEach is a terminal operation)
+</span></span></span></code></pre></div><p>The following code throws an exception:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">nums</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">stream</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="c1">// closes stream
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">data</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="c1">// Exception: &#34;Stream has already been operated upon or closed&#34;.
+</span></span></span></code></pre></div><p>Another advantage: intermediate stream methods return a new stream so you can chain (as many as you want) together.
+(Reminds me in some kind of way on the builder pattern).</p>
+<h1 id="examples">
+  Examples
+  <a class="heading-link" href="#examples">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>The following code sorts the array, multiplies every number with 2 and prints them to the console:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">nums</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nums</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">sorted</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span><span class="o">*</span><span class="mi">2</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Output: 2, 4, 6, 8, 10
+</span></span></span></code></pre></div><h1 id="stream-vs-parallelstream">
+  stream() vs. parallelStream()
+  <a class="heading-link" href="#stream-vs-parallelstream">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>When working with streams you can also use the method <code>parallelStream()</code> instead of <code>stream()</code>. What is the difference?
+As the name suggests, <code>parallelStream()</code> will do the operations in parallel. It will use multiple threads to do this.
+Sometimes your values are dependent on the earlier operation. In that case: don’t use parallel streams.</p>
+<h1 id="list-of-most-important-stream-api-methods">
+  List of most important stream api methods
+  <a class="heading-link" href="#list-of-most-important-stream-api-methods">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="sorted">
+  sorted()
+  <a class="heading-link" href="#sorted">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>sorted()</code> is an intermediate operation!</p>
+<p>Sorts your stream:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">names1</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Charlie&#34;</span><span class="o">,</span> <span class="s">&#34;Alice&#34;</span><span class="o">,</span> <span class="s">&#34;David&#34;</span><span class="o">,</span> <span class="s">&#34;Bob&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">sortedNames</span> <span class="o">=</span> <span class="n">names1</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">.</span><span class="na">sorted</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span> <span class="c1">// sorted alphabetically
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">sortedNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                              <span class="o">.</span><span class="na">sorted</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                              <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span> <span class="c1">// sorted ascending
+</span></span></span></code></pre></div><h2 id="map">
+  map()
+  <a class="heading-link" href="#map">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>map()</code> is an intermediate operation!</p>
+<p>Performs a certain operation on each item:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span><span class="o">*</span><span class="mi">2</span><span class="o">)</span>
+</span></span></code></pre></div><h2 id="maptoint">
+  mapToInt()
+  <a class="heading-link" href="#maptoint">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>mapToInt()</code> is an intermediate operation!</p>
+<h2 id="limit5">
+  limit(5)
+  <a class="heading-link" href="#limit5">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>limit()</code> is an intermediate operation!</p>
+<h2 id="flatmap">
+  flatMap()
+  <a class="heading-link" href="#flatmap">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>flatMap()</code> is an intermediate operation!</p>
+<h2 id="distinct">
+  distinct()
+  <a class="heading-link" href="#distinct">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>distinct()</code> is an intermediate operation!</p>
+<h2 id="skip">
+  skip()
+  <a class="heading-link" href="#skip">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>skip()</code> is an intermediate operation!</p>
+<h2 id="peek">
+  peek()
+  <a class="heading-link" href="#peek">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>peek()</code> is an intermediate operation!</p>
+<h2 id="boxed">
+  boxed()
+  <a class="heading-link" href="#boxed">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>boxed()</code> is an intermediate operation!</p>
+<h2 id="filter">
+  filter()
+  <a class="heading-link" href="#filter">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>filter()</code> is an intermediate operation!</p>
+<p>data.filter() filters out some items Data.filter(n  -&gt;  n%2==1)</p>
+<p>Creating the filter predicate with an anonymous inner class:</p>
+<p>Predicate<!-- raw HTML omitted --> predi = (Integer n) -&gt; {
+return n%2==1;
+}</p>
+<p>Ums.stream().filter(predi)</p>
+<h2 id="reduce">
+  reduce()
+  <a class="heading-link" href="#reduce">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>reduce()</code> is a terminal operation!
+Data.reduce() will reduce the values</p>
+<h2 id="collect">
+  collect()
+  <a class="heading-link" href="#collect">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>collect()</code> is a terminal operation!
+Data.collect()
+Will return a new list z.B. .collect(Collectors.toList())</p>
+<h2 id="count">
+  count()
+  <a class="heading-link" href="#count">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>count()</code> is a terminal operation!</p>
+<p>Gives you the size of the stream:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">,</span> <span class="s">&#34;Bob&#34;</span><span class="o">,</span> <span class="s">&#34;Charlie&#34;</span><span class="o">,</span> <span class="s">&#34;David&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kt">long</span> <span class="n">count</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">count</span><span class="o">();</span> <span class="c1">// 4
+</span></span></span></code></pre></div><h2 id="sum">
+  sum()
+  <a class="heading-link" href="#sum">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>sum()</code> is a terminal operation!</p>
+<h2 id="groupby">
+  groupBy()
+  <a class="heading-link" href="#groupby">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>groupBy()</code> is a terminal operation! (usually used with <code>Collectors.groupingBy()</code>)</p>
+<h2 id="partitionby">
+  partitionBy()
+  <a class="heading-link" href="#partitionby">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>partitionBy()</code> is a terminal operation! (usually used with <code>Collectors.partitioningBy()</code>)</p>
+<h2 id="allmatch">
+  allMatch()
+  <a class="heading-link" href="#allmatch">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>allMatch()</code> is a terminal operation!</p>
+<h2 id="anymatch">
+  anyMatch()
+  <a class="heading-link" href="#anymatch">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>anyMatch()</code> is a terminal operation!</p>
+<h2 id="nonematch">
+  noneMatch()
+  <a class="heading-link" href="#nonematch">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>noneMatch()</code> is a terminal operation!</p>
+<h2 id="findfirst">
+  findFirst()
+  <a class="heading-link" href="#findfirst">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>findFirst()</code> is a terminal operation!</p>
+<h2 id="findany">
+  findAny()
+  <a class="heading-link" href="#findany">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>findAny()</code> is a terminal operation!</p>
+<h2 id="max">
+  max()
+  <a class="heading-link" href="#max">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>max()</code> is a terminal operation!</p>
+<h2 id="min">
+  min()
+  <a class="heading-link" href="#min">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>min()</code> is a terminal operation!</p>
+<h2 id="toarray">
+  toArray()
+  <a class="heading-link" href="#toarray">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>toArray()</code> is a terminal operation!</p>
+<h2 id="generate">
+  generate()
+  <a class="heading-link" href="#generate">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>generate()</code> is a static factory method! (used to create streams; not an operation on streams themselves)</p>
+<h2 id="iterate">
+  iterate()
+  <a class="heading-link" href="#iterate">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>iterate()</code> is a static factory method! (used to create streams; not an operation on streams themselves)</p>
+<h2 id="range">
+  range()
+  <a class="heading-link" href="#range">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>range()</code> is a static factory method! (used to create streams; not an operation on streams themselves)</p>
+<h2 id="parallel">
+  parallel()
+  <a class="heading-link" href="#parallel">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>erklären</p>
+<h2 id="unordered">
+  unordered()
+  <a class="heading-link" href="#unordered">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>erklären</p>
+<h1 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p><a href="https://www.youtube.com/watch?v=FWoYpM-E3EQ&amp;t=25s"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=FWoYpM-E3EQ&t=25s</a></p>
+<p><a href="https://www.youtube.com/watch?v=tklkyVa7KZo"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=tklkyVa7KZo</a></p>
+<p><a href="https://www.youtube.com/watch?v=E-8qMRqRQ_A"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=E-8qMRqRQ_A</a></p>
+<p><a href="https://www.geeksforgeeks.org/stream-in-java/"  class="external-link" target="_blank" rel="noopener">https://www.geeksforgeeks.org/stream-in-java/</a></p>
+
       </div>
 
 

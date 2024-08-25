@@ -139,8 +139,29 @@ Performs a certain operation on each item:
 ## flatMap()
 `flatMap()` is an intermediate operation!
 
+Is used to transform each element of a stream into another stream and then flatten those streams into a single stream. It is particularly useful when dealing with collections of collections, such as a list of lists, and you want to create a single unified stream of elements.
 
-## limit(5)
+```java
+List<List<Integer>> listOfLists = Arrays.asList(
+            Arrays.asList(1, 2, 3),
+            Arrays.asList(4, 5),
+            Arrays.asList(6, 7, 8, 9)
+        );
+
+        List<Integer> allNumbers = listOfLists.stream()
+            .flatMap(list -> list.stream()) // Jeden Unterlisten-Stream zu einem einzigen Stream zusammenführen
+            .collect(Collectors.toList());
+
+            // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+```
+
+In simple terms, flatMap allows you to:
+
+1. Transform: Convert each element of a stream into another stream.
+2. Flatten: Merge all those generated streams into a single continuous stream.
+
+## limit()
 `limit()` is an intermediate operation!
 Restricts the number of elements in a stream to a specified number:
 
@@ -232,8 +253,6 @@ IntStream.of(1, 2, 3, 4, 5)
 .collect(Collectors.toList());
 ```
 
-
-
 ## filter()
 `filter()` is an intermediate operation!
 
@@ -259,17 +278,6 @@ List<Integer> filteredNumbers = numbers.stream()
                                              .collect(Collectors.toList());
 ```
 
-## reduce()
-`reduce()` is a terminal operation!
-
-
-## collect()
-`collect()` is a terminal operation!
-Data.collect()
-Will return a new list z.B. .collect(Collectors.toList())
-
-
-
 ## count()
 `count()` is a terminal operation!
 
@@ -284,20 +292,72 @@ List<String> names = List.of("Alice", "Bob", "Charlie", "David");
 ## sum()
 `sum()` is a terminal operation!
 
-## groupBy()
-`groupBy()` is a terminal operation! (usually used with `Collectors.groupingBy()`)
+ Is used to calculate the sum of elements in a stream. This function is available in the primitive streams like IntStream, LongStream, and DoubleStream. The sum() method returns the sum of the elements as a primitive value (int, long, or double depending on the stream type).
 
-## partitionBy()
-`partitionBy()` is a terminal operation! (usually used with `Collectors.partitioningBy()`)
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+// Use mapToInt to convert List<Integer> to IntStream and then sum all the numbers
+int sum = numbers.stream()
+        .mapToInt(Integer::intValue) // Convert Integer to int
+        .sum(); // Sum all the int values
+// Output: 15
+```
+
 
 ## allMatch()
 `allMatch()` is a terminal operation!
 
+checks if all elements in a stream match a given predicate. The method returns a boolean value:
+
+- true if all elements satisfy the provided predicate.
+- false if at least one element does not satisfy the predicate.
+
+```java
+List<Integer> numbers = Arrays.asList(3, 7, 10, 15, 2);
+
+        // Check if all numbers in the list are positive
+        boolean allPositive = numbers.stream()
+                                     .allMatch(num -> num > 0); // Predicate: Check if all numbers are positive
+```
+
+This output is `true` because all the numbers in the list are positive. If any number in the list was negative or zero, the result would be `false`.
+
 ## anyMatch()
 `anyMatch()` is a terminal operation!
 
+checks if at least one element in the stream matches a given predicate. It returns a boolean value:
+
+- true if at least one element in the stream satisfies the provided predicate.
+- false if no elements match the predicate.
+
+```java
+List<Integer> numbers = Arrays.asList(3, 7, 10, 15, 2);
+
+        // Check if any number in the list is greater than 10
+        boolean anyGreaterThanTen = numbers.stream()
+                                           .anyMatch(num -> num > 10); // Predicate: Check if any number is greater than 10
+```
+
+This output is `true` because there is at least one number (15) in the list that is greater than 10.
+
 ## noneMatch()
 `noneMatch()` is a terminal operation!
+
+checks if no elements in the stream match a given predicate. It returns a boolean value:
+
+- true if no elements in the stream satisfy the provided predicate.
+- false if at least one element matches the predicate.
+
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+// Check if none of the numbers in the list are negative
+boolean noneNegative = numbers.stream()
+        .noneMatch(num -> num < 0); // Predicate: Check if each number is negative
+```
+
+This output is `true` because none of the numbers in the list is negative.
 
 ## findFirst()
 `findFirst()` is a terminal operation!
@@ -322,6 +382,27 @@ List<String> names = List.of("Alice", "Bob", "Charlie", "David");
 
 ## range()
 `range()` is a static factory method! (used to create streams; not an operation on streams themselves)
+
+
+
+
+## groupBy()
+`groupBy()` is a terminal operation! (usually used with `Collectors.groupingBy()`)
+
+## partitionBy()
+`partitionBy()` is a terminal operation! (usually used with `Collectors.partitioningBy()`)
+
+## reduce()
+`reduce()` is a terminal operation!
+
+
+## collect()
+`collect()` is a terminal operation!
+Data.collect()
+Will return a new list z.B. .collect(Collectors.toList())
+
+
+
 
 
 ## parallel()

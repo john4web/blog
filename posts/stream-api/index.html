@@ -165,7 +165,7 @@ Streams do all the heavy lifting for you. -&gt; They &ldquo;streamline&rdquo; th
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              7-minute read
+              9-minute read
             </span>
           </div>
           
@@ -327,9 +327,26 @@ Sometimes your values are dependent on the earlier operation. In that case: don‚
   </a>
 </h2>
 <p><code>flatMap()</code> is an intermediate operation!</p>
-<h2 id="limit5">
-  limit(5)
-  <a class="heading-link" href="#limit5">
+<p>Is used to transform each element of a stream into another stream and then flatten those streams into a single stream. It is particularly useful when dealing with collections of collections, such as a list of lists, and you want to create a single unified stream of elements.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">listOfLists</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">allNumbers</span> <span class="o">=</span> <span class="n">listOfLists</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">list</span> <span class="o">-&gt;</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">())</span> <span class="c1">// Jeden Unterlisten-Stream zu einem einzigen Stream zusammenf√ºhren
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</span></span></span></code></pre></div><p>In simple terms, flatMap allows you to:</p>
+<ol>
+<li>Transform: Convert each element of a stream into another stream.</li>
+<li>Flatten: Merge all those generated streams into a single continuous stream.</li>
+</ol>
+<h2 id="limit">
+  limit()
+  <a class="heading-link" href="#limit">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
@@ -439,25 +456,7 @@ Restricts the number of elements in a stream to a specified number:</p>
 </span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">filteredNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
 </span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">predi</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-</span></span></code></pre></div><h2 id="reduce">
-  reduce()
-  <a class="heading-link" href="#reduce">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p><code>reduce()</code> is a terminal operation!</p>
-<h2 id="collect">
-  collect()
-  <a class="heading-link" href="#collect">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p><code>collect()</code> is a terminal operation!
-Data.collect()
-Will return a new list z.B. .collect(Collectors.toList())</p>
-<h2 id="count">
+</span></span></code></pre></div><h2 id="count">
   count()
   <a class="heading-link" href="#count">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -477,23 +476,15 @@ Will return a new list z.B. .collect(Collectors.toList())</p>
   </a>
 </h2>
 <p><code>sum()</code> is a terminal operation!</p>
-<h2 id="groupby">
-  groupBy()
-  <a class="heading-link" href="#groupby">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p><code>groupBy()</code> is a terminal operation! (usually used with <code>Collectors.groupingBy()</code>)</p>
-<h2 id="partitionby">
-  partitionBy()
-  <a class="heading-link" href="#partitionby">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p><code>partitionBy()</code> is a terminal operation! (usually used with <code>Collectors.partitioningBy()</code>)</p>
-<h2 id="allmatch">
+<p>Is used to calculate the sum of elements in a stream. This function is available in the primitive streams like IntStream, LongStream, and DoubleStream. The sum() method returns the sum of the elements as a primitive value (int, long, or double depending on the stream type).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Use mapToInt to convert List&lt;Integer&gt; to IntStream and then sum all the numbers
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="na">mapToInt</span><span class="o">(</span><span class="n">Integer</span><span class="o">::</span><span class="n">intValue</span><span class="o">)</span> <span class="c1">// Convert Integer to int
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">.</span><span class="na">sum</span><span class="o">();</span> <span class="c1">// Sum all the int values
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Output: 15
+</span></span></span></code></pre></div><h2 id="allmatch">
   allMatch()
   <a class="heading-link" href="#allmatch">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -501,6 +492,17 @@ Will return a new list z.B. .collect(Collectors.toList())</p>
   </a>
 </h2>
 <p><code>allMatch()</code> is a terminal operation!</p>
+<p>checks if all elements in a stream match a given predicate. The method returns a boolean value:</p>
+<ul>
+<li>true if all elements satisfy the provided predicate.</li>
+<li>false if at least one element does not satisfy the predicate.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">15</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// Check if all numbers in the list are positive
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">boolean</span> <span class="n">allPositive</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                                     <span class="o">.</span><span class="na">allMatch</span><span class="o">(</span><span class="n">num</span> <span class="o">-&gt;</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">);</span> <span class="c1">// Predicate: Check if all numbers are positive
+</span></span></span></code></pre></div><p>This output is <code>true</code> because all the numbers in the list are positive. If any number in the list was negative or zero, the result would be <code>false</code>.</p>
 <h2 id="anymatch">
   anyMatch()
   <a class="heading-link" href="#anymatch">
@@ -509,6 +511,17 @@ Will return a new list z.B. .collect(Collectors.toList())</p>
   </a>
 </h2>
 <p><code>anyMatch()</code> is a terminal operation!</p>
+<p>checks if at least one element in the stream matches a given predicate. It returns a boolean value:</p>
+<ul>
+<li>true if at least one element in the stream satisfies the provided predicate.</li>
+<li>false if no elements match the predicate.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">15</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// Check if any number in the list is greater than 10
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">boolean</span> <span class="n">anyGreaterThanTen</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                                           <span class="o">.</span><span class="na">anyMatch</span><span class="o">(</span><span class="n">num</span> <span class="o">-&gt;</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">);</span> <span class="c1">// Predicate: Check if any number is greater than 10
+</span></span></span></code></pre></div><p>This output is <code>true</code> because there is at least one number (15) in the list that is greater than 10.</p>
 <h2 id="nonematch">
   noneMatch()
   <a class="heading-link" href="#nonematch">
@@ -517,6 +530,17 @@ Will return a new list z.B. .collect(Collectors.toList())</p>
   </a>
 </h2>
 <p><code>noneMatch()</code> is a terminal operation!</p>
+<p>checks if no elements in the stream match a given predicate. It returns a boolean value:</p>
+<ul>
+<li>true if no elements in the stream satisfy the provided predicate.</li>
+<li>false if at least one element matches the predicate.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Check if none of the numbers in the list are negative
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">boolean</span> <span class="n">noneNegative</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="na">noneMatch</span><span class="o">(</span><span class="n">num</span> <span class="o">-&gt;</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">);</span> <span class="c1">// Predicate: Check if each number is negative
+</span></span></span></code></pre></div><p>This output is <code>true</code> because none of the numbers in the list is negative.</p>
 <h2 id="findfirst">
   findFirst()
   <a class="heading-link" href="#findfirst">
@@ -581,6 +605,40 @@ Will return a new list z.B. .collect(Collectors.toList())</p>
   </a>
 </h2>
 <p><code>range()</code> is a static factory method! (used to create streams; not an operation on streams themselves)</p>
+<h2 id="groupby">
+  groupBy()
+  <a class="heading-link" href="#groupby">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>groupBy()</code> is a terminal operation! (usually used with <code>Collectors.groupingBy()</code>)</p>
+<h2 id="partitionby">
+  partitionBy()
+  <a class="heading-link" href="#partitionby">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>partitionBy()</code> is a terminal operation! (usually used with <code>Collectors.partitioningBy()</code>)</p>
+<h2 id="reduce">
+  reduce()
+  <a class="heading-link" href="#reduce">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>reduce()</code> is a terminal operation!</p>
+<h2 id="collect">
+  collect()
+  <a class="heading-link" href="#collect">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>collect()</code> is a terminal operation!
+Data.collect()
+Will return a new list z.B. .collect(Collectors.toList())</p>
 <h2 id="parallel">
   parallel()
   <a class="heading-link" href="#parallel">

@@ -149,13 +149,13 @@ https://www.youtube.com/watch?v=SeN1s65tRHY</description>
     </item>
     
     <item>
-      <title>ElasticSearch Basics</title>
+      <title>Elasticsearch Basics</title>
       <link>https://gersti.at/posts/elasticsearch-basics/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/elasticsearch-basics/</guid>
-      <description>Overview Link to heading Hier die Inhalte meines Word Dokuments reinkopieren (im Ordner images/elasticsearch)
-Reference Link to heading Frank Kane: Elasticsearch 8 and the Elastic Stack: In-Depth and Hands-On https://www.oreilly.com/library/view/elasticsearch-8-and/9781788995122/</description>
+      <description>What is Elasticsearch? Link to heading Elasticsearch is a search engine written in java. You can think of it as a very fast/performant database, which is specialized on search capabilities (full-text search) and indexing large volumes of data. It allows users to perform complex queries, filter and aggregate data
+Why using Elasticsearch? Link to heading Why do people use Elasticsearch at all instead of a relational database like MySQL? Because Elasticsearch is much more performant and optimized for search functionalities.</description>
     </item>
     
     <item>

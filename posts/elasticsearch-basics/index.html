@@ -3,7 +3,7 @@
 
 <head>
   <title>
-  ElasticSearch Basics · gersti.at
+  Elasticsearch Basics · gersti.at
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,18 +13,18 @@
 
 
 <meta name="author" content="Johannes Gerstbauer">
-<meta name="description" content="Overview Link to heading Hier die Inhalte meines Word Dokuments reinkopieren (im Ordner images/elasticsearch)
-Reference Link to heading Frank Kane: Elasticsearch 8 and the Elastic Stack: In-Depth and Hands-On https://www.oreilly.com/library/view/elasticsearch-8-and/9781788995122/">
+<meta name="description" content="What is Elasticsearch? Link to heading Elasticsearch is a search engine written in java. You can think of it as a very fast/performant database, which is specialized on search capabilities (full-text search) and indexing large volumes of data. It allows users to perform complex queries, filter and aggregate data
+Why using Elasticsearch? Link to heading Why do people use Elasticsearch at all instead of a relational database like MySQL? Because Elasticsearch is much more performant and optimized for search functionalities.">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ElasticSearch Basics"/>
-<meta name="twitter:description" content="Overview Link to heading Hier die Inhalte meines Word Dokuments reinkopieren (im Ordner images/elasticsearch)
-Reference Link to heading Frank Kane: Elasticsearch 8 and the Elastic Stack: In-Depth and Hands-On https://www.oreilly.com/library/view/elasticsearch-8-and/9781788995122/"/>
+<meta name="twitter:title" content="Elasticsearch Basics"/>
+<meta name="twitter:description" content="What is Elasticsearch? Link to heading Elasticsearch is a search engine written in java. You can think of it as a very fast/performant database, which is specialized on search capabilities (full-text search) and indexing large volumes of data. It allows users to perform complex queries, filter and aggregate data
+Why using Elasticsearch? Link to heading Why do people use Elasticsearch at all instead of a relational database like MySQL? Because Elasticsearch is much more performant and optimized for search functionalities."/>
 
-<meta property="og:title" content="ElasticSearch Basics" />
-<meta property="og:description" content="Overview Link to heading Hier die Inhalte meines Word Dokuments reinkopieren (im Ordner images/elasticsearch)
-Reference Link to heading Frank Kane: Elasticsearch 8 and the Elastic Stack: In-Depth and Hands-On https://www.oreilly.com/library/view/elasticsearch-8-and/9781788995122/" />
+<meta property="og:title" content="Elasticsearch Basics" />
+<meta property="og:description" content="What is Elasticsearch? Link to heading Elasticsearch is a search engine written in java. You can think of it as a very fast/performant database, which is specialized on search capabilities (full-text search) and indexing large volumes of data. It allows users to perform complex queries, filter and aggregate data
+Why using Elasticsearch? Link to heading Why do people use Elasticsearch at all instead of a relational database like MySQL? Because Elasticsearch is much more performant and optimized for search functionalities." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gersti.at/posts/elasticsearch-basics/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-01-24T00:00:00+00:00" />
@@ -151,7 +151,7 @@ Reference Link to heading Frank Kane: Elasticsearch 8 and the Elastic Stack: In-
         <div class="post-title">
           <h1 class="title">
             <a class="title-link" href="https://gersti.at/posts/elasticsearch-basics/">
-              ElasticSearch Basics
+              Elasticsearch Basics
             </a>
           </h1>
         </div>
@@ -165,7 +165,7 @@ Reference Link to heading Frank Kane: Elasticsearch 8 and the Elastic Stack: In-
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              One-minute read
+              3-minute read
             </span>
           </div>
           
@@ -176,14 +176,107 @@ Reference Link to heading Frank Kane: Elasticsearch 8 and the Elastic Stack: In-
 
       <div class="post-content">
         
-        <h2 id="overview">
-  Overview
-  <a class="heading-link" href="#overview">
+        <h2 id="what-is-elasticsearch">
+  What is Elasticsearch?
+  <a class="heading-link" href="#what-is-elasticsearch">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Hier die Inhalte meines Word Dokuments reinkopieren (im Ordner images/elasticsearch)</p>
+<p>Elasticsearch is a search engine written in java. You can think of it as a very fast/performant database, which is specialized on search capabilities (full-text search) and indexing large volumes of data. It allows users to perform complex queries, filter and aggregate data</p>
+<h2 id="why-using-elasticsearch">
+  Why using Elasticsearch?
+  <a class="heading-link" href="#why-using-elasticsearch">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Why do people use Elasticsearch at all instead of a relational database like MySQL? Because Elasticsearch is much more performant and optimized for search functionalities. Typically, data is &ldquo;copied&rdquo; from a database into an Elasticsearch index because it is much faster and more performant when accessed there. This high performance is achieved, among other things, through the &ldquo;inverted index.&rdquo; You can then communicate with this Elasticsearch index via a REST interface, which is precisely optimized for tasks like &ldquo;searching&rdquo; in applications. However Elasticsearch has several other advantages.</p>
+<h2 id="documents-and-indices">
+  Documents and Indices
+  <a class="heading-link" href="#documents-and-indices">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>When thinking about a relational database schema, we have tables and rows. In Elasticsearch we kinda have the same concept. However in Elasticsearch they are called <strong>indices and documents</strong>.</p>
+<h3 id="indices">
+  indices
+  <a class="heading-link" href="#indices">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Indices are like tables in SQL. An index powers search into all documents within a collection of types. They contain inverted indices that let you search across everything within them at once, and mappings that define schemas for the data within.</p>
+<h3 id="documents">
+  documents
+  <a class="heading-link" href="#documents">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Documents are like records in an SQL table. Documents are the things you&rsquo;re searching for. They can be more than text – any structured JSON data works. Every document has a unique ID, and a type.</p>
+<h2 id="inverted-index">
+  Inverted Index
+  <a class="heading-link" href="#inverted-index">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Elasticsearch&rsquo;s high performance is largely due to its use of an inverted index. An inverted index is a data structure used to enable fast full-text searches. It maps terms to the documents that contain them, allowing Elasticsearch to quickly retrieve and rank documents based on search queries. This is particularly efficient for searching large volumes of data, as the inverted index allows Elasticsearch to quickly locate and retrieve the relevant documents without scanning the entire dataset.</p>
+<p><strong>&ldquo;The inverted index quickly maps search terms to documents&rdquo;</strong></p>
+<p>How does this work? Let&rsquo;s take a look at an example. In the following, you can see two documents with some text in it:</p>
+<ul>
+<li><strong>Document 1:</strong> <em>The final frontier. These are the voyages&hellip;</em></li>
+<li><strong>Document 2:</strong> <em>He&rsquo;s bad, he&rsquo;s number one. He&rsquo;s the space cowboy with the laser gun!</em></li>
+</ul>
+<p>Elasticsearch now takes a look at all the search terms and &ldquo;remembers&rdquo;, in which documents they occur. As shown in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Search Term</th>
+<th>Documents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>space</td>
+<td>1, 2</td>
+</tr>
+<tr>
+<td>the</td>
+<td>1, 2</td>
+</tr>
+<tr>
+<td>final</td>
+<td>1</td>
+</tr>
+<tr>
+<td>frontier</td>
+<td>1</td>
+</tr>
+<tr>
+<td>he</td>
+<td>2</td>
+</tr>
+<tr>
+<td>bad</td>
+<td>2</td>
+</tr>
+<tr>
+<td>&hellip;</td>
+<td>&hellip;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="elasticsearchs-rest-interface">
+  ElasticSearch&rsquo;s REST Interface
+  <a class="heading-link" href="#elasticsearchs-rest-interface">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>You can communicate with Elasticsearch via REST i.e. (GET, POST, PUT, DELETE).</p>
 <h2 id="reference">
   Reference
   <a class="heading-link" href="#reference">

@@ -707,7 +707,7 @@ Intent Link to heading Das Singleton Pattern wird dann verwendet, wenn man von e
       <guid>https://gersti.at/posts/strategy-pattern/</guid>
       <description>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in Java.
 A duck can fly and quack (and can do probably much more things). Image-Source: Pixabay
-The Problem that the strategy pattern solves Link to heading Let&amp;rsquo;s say we have a Duck class. And then we have a CityDuck (living in the city) and a WildDuck (living in the forest). We use inheritance - so CityDuck and WildDuck inherit from Duck.</description>
+The Problem that the strategy pattern solves Link to heading Let&amp;rsquo;s say we have a Duck class. And then we have a CityDuck (living in the city) and a WildDuck (living in the forest). We use inheritance – so CityDuck and WildDuck inherit from Duck.</description>
     </item>
     
     <item>

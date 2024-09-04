@@ -35,7 +35,7 @@ The problem is, that you can't share behaviour over classes that are in the same
 The solution to problems with inheritance is not "more inheritance". The solution is **composition**! And that's exactly what the strategy pattern does.
 
 ## Overview
-Verhaltensweisen werden aus einer Klasse (Context) ausgelagert in andere Klassen (Concrete Strategies) und via Interfaces lose an die Klasse (Context) gekoppelt. Die Kontext Klasse ruft dann lediglich den Code der konkreten Strategies auf. Dadurch können Objekte und deren Verhaltensweisen komplett easy zusammengebaut werden:
+Warum ist das Strategy Pattern so nützlich? Wegen der Flexibilität! Bei diesem Pattern werden Verhaltensweisen aus einer Klasse (Context) in andere Klassen (Concrete Strategies) ausgelagert und via Interfaces lose an die Klasse (Context) gekoppelt. Die Kontext Klasse ruft dann lediglich den Code der konkreten Strategies auf. Dadurch können Objekte und deren Verhaltensweisen komplett easy zusammengebaut werden. Hier ein Beispiel, wie ein Client das Strategy Pattern verwenden könnte:
 
 ```java
 public static void main(String[] args) 
@@ -52,54 +52,64 @@ public static void main(String[] args)
 
 Die Verhaltensweisen werden den Enten via Dependency Injection übergeben.
 
-{{< figure src="/images/strategy-pattern/strategy.jpg" caption="Objekte werden mit Verhaltensweisen zusammengebaut (lose gekoppelt)" >}}
+{{< figure src="/images/strategy-pattern/strategy.jpg" caption="Objekte werden mit Verhaltensweisen zusammengebaut (lose gekoppelt)." >}}
 
 Das Strategy-Pattern ist ein Paradebeispiel dafür, dass Composition besser ist als Inheritance. We need Inheritance much much less than we believe.
 
-The concrete implementations (LoudQuacking, QuietQuacking, etc.) can vary just as much as they want - without having to change the code of the context Class (Duck). And that is the power of the strategy pattern!
+The concrete implementations (LoudQuacking, QuietQuacking, etc.) can vary just as much as they want – without having to change the code of the context class (Duck). And that is the power of the strategy pattern!
 
 
 ## The Pattern itself
-Lorem Ipsum
+This is how the full pattern looks like in UML (Unified Modeling Language):
 
-{{< figure src="/images/strategy-pattern/5.svg" caption="" >}}
+{{< figure src="/images/strategy-pattern/5.svg" caption="UML Diagram of the Strategy Pattern." >}}
 
-Lorem Ipsum
+In the following, the full duck example is displayed in UML. 
 
-{{< figure src="/images/strategy-pattern/6.svg" caption="" >}}
+{{< figure src="/images/strategy-pattern/6.svg" caption="One example of the strategy pattern in action. " >}}
 
 
 ## Intent of the strategy pattern
 
-_"Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it."_
+The original GoF Design-Pattern Book states the intent as follows:  
+**_"Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it."_**
 
-Note! In this original intent the term  _"family of algorithms"_ mean the same as "Strategy". In the following, the word strategy is mainly used instead of _"family of algorithms"_.
+In the following, I will try to explain each phrase of the intent individually. Note! In this original intent the term  _"family of algorithms"_ means the same as "strategy". In the following, the word strategy is mainly used instead of _"family of algorithms"_.
 
-_"Family of algorithms"_: in diesem Beispiel sind die Familien IFlyBehavior und IQuackBehavior
+**_"Family of algorithms"_:**  
+in diesem Beispiel sind die Familien IFlyBehavior und IQuackBehavior
 
-_"algorithms"_: Sind in diesem Fall die Verhaltensweisen (= konkreten implementierungen der Strategy). Das sind LowFlying, Highflying, LoudQuacking, QuietQuacking.  LowFlying und Highflying gehören zur Familie IFlyBehavior. LoudQuacking und QuietQuacking gehören zur Familie IQuackBehavior.
+**_"Algorithms"_:**  
+Sind in diesem Fall die Verhaltensweisen (= konkreten implementierungen der Strategy). Das sind LowFlying, Highflying, LoudQuacking und QuietQuacking. LowFlying und Highflying gehören zur Familie IFlyBehavior. LoudQuacking und QuietQuacking gehören zur Familie IQuackBehavior.
 
-_"Strategy lets the algorithm vary independently from clients that use it"_: Jede "concrete Strategy Class" hat ihr eigenes, unabhängiges Verhalten. Diese konkreten implementierungen der Familien IFlyBehavior und IQuackBehavior können komplett unterschiedlich zueinander sein.
+**_"Strategy lets the algorithm vary independently from clients that use it"_:**    
+Jede "concrete Strategy Class" hat ihr eigenes, unabhängiges Verhalten. Diese konkreten implementierungen der Familien IFlyBehavior und IQuackBehavior können komplett unterschiedlich zueinander sein.
 
-_"make them interchangeable"_:
+**_"make them interchangeable"_:**  
 Konkrete Behaviors können ganz leicht ausgetauscht werden (solange sie dasselbe Interface implementieren).
 z.B. kann man eine neue Klasse "FastFlying" einführen, die "IFlyBehavior" implementiert. Und schon kann man der duck1 das Verhalten `new FastFlying()` anstatt dem Verhalten `new LowFlying()` übergeben. We decouple the algorithm from the one that is using the algorithm. Whoever is using the algorithm is not forced to change when you are changing one of the algorithms.
 
 
 ## When should you use this pattern?
 
-Lorem Ipsum
+- Use the Strategy pattern when you want to use different variants of an algorithm within an object and be able to switch from one algorithm to another during runtime.
+
+- Use the Strategy when you have a lot of similar classes that only differ in the way they execute some behavior.
+
+- Use the pattern to isolate the business logic of a class from the implementation details of algorithms that may not be as important in the context of that logic.
+
+- Use the pattern when your class has a massive conditional statement that switches between different variants of the same algorithm.
 
 ## Reference
 
-- Big Shout out to Christopher Okhravi who has explained the strategy pattern so easily, that everybody can understand it:
+- Video from Christopher Okhravi:
 https://www.youtube.com/watch?v=v9ejT8FO-7I
 
-- Book: Design Patterns - Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by 
-Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- Book: Design Patterns – Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by 
+Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides
 
-- https://refactoring.guru/design-patterns/strategy
+- Refactoring Guru Website: https://refactoring.guru/design-patterns/strategy
 
-- https://refactoring.guru/design-patterns/strategy/java/example
+- Refactoring Guru Website: https://refactoring.guru/design-patterns/strategy/java/example
 
-- Head First Design Patterns Book
+- Book: Head First Design Patterns – Building Extensible & Maintainable Object-Oriented Software (2021 O'REILLY) by Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates

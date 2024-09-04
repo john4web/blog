@@ -2,6 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gersti.at/de/posts/strategy-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/posts/strategy-pattern/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/posts/strategy-pattern/"
+                />
+  </url><url>
+    <loc>https://gersti.at/de/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/"
+                />
+  </url><url>
+    <loc>https://gersti.at/de/posts/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/posts/"
+                />
+  </url><url>
     <loc>https://gersti.at/de/authors/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -37,19 +76,6 @@
     <loc>https://gersti.at/de/series/demonstra%C3%A7%C3%A3o-do-tema/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/de/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/"
-                />
-  </url><url>
     <loc>https://gersti.at/de/posts/liskov-substitution-principle/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -71,19 +97,6 @@
   </url><url>
     <loc>https://gersti.at/de/tags/markdown/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gersti.at/de/posts/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/posts/"
-                />
   </url><url>
     <loc>https://gersti.at/de/authors/programador-solit%C3%A1rio/</loc>
     <lastmod>2023-07-13T00:00:00+00:00</lastmod>

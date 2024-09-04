@@ -253,6 +253,16 @@
   </url><url>
     <loc>https://gersti.at/posts/strategy-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/posts/strategy-pattern/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/posts/strategy-pattern/"
+                />
   </url><url>
     <loc>https://gersti.at/posts/template-method-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>

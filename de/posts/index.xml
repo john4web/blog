@@ -6,7 +6,18 @@
     <description>Recent content in Posts on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Das Strategy Pattern</title>
+      <link>https://gersti.at/de/posts/strategy-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/de/posts/strategy-pattern/</guid>
+      <description>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in Java.
+A duck can fly and quack (and can do probably much more things). Image-Source: Pixabay
+The Problem that the strategy pattern solves Link to heading Let&amp;rsquo;s say we have a Duck class. And then we have a CityDuck (living in the city) and a WildDuck (living in the forest). We use inheritance – so CityDuck and WildDuck inherit from Duck.</description>
+    </item>
+    
     <item>
       <title>Guia de Sintaxe Markdown</title>
       <link>https://gersti.at/de/posts/liskov-substitution-principle/</link>

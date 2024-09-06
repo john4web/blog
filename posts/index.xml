@@ -42,7 +42,9 @@
       <guid>https://gersti.at/posts/cohesion-and-coupling/</guid>
       <description>Overview Link to heading https://en.wikipedia.org/wiki/Coupling_%28computer_programming%29
 https://jesusgilhernandez.com/2012/11/28/cohesion-and-coupling/
-https://www.linkedin.com/pulse/why-product-development-design-needs-sushant-randive</description>
+https://www.linkedin.com/pulse/why-product-development-design-needs-sushant-randive
+Pragmatic programmer schreibt in mehreren Kapiteln darüber. insbesondere auf seite 138
+meinen blog beitrag namens &amp;ldquo;law of demeter&amp;rdquo; hier verlinken</description>
     </item>
     
     <item>
@@ -136,7 +138,8 @@ https://www.youtube.com/watch?v=SeN1s65tRHY</description>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/dry-principle/</guid>
-      <description>Overview Link to heading With examples</description>
+      <description>Overview Link to heading With examples
+Pragmatic programmer auf S.26 und vielen anderen seiten auch.</description>
     </item>
     
     <item>
@@ -604,7 +607,8 @@ Intent Link to heading Define an interface for creating an object, but let subcl
       
       <guid>https://gersti.at/posts/law-of-demeter/</guid>
       <description>Principle of least knowledge - only talk to your immediate friends
-Shy code -&amp;gt; don&amp;rsquo;t reveal yourself to others and don&amp;rsquo;t interact with too many people</description>
+Shy code -&amp;gt; don&amp;rsquo;t reveal yourself to others and don&amp;rsquo;t interact with too many people
+Pragmatic programmer schreibt in mehreren Kapiteln darüber. insbesondere auf seite 138</description>
     </item>
     
     <item>

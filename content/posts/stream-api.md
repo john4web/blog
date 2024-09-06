@@ -349,6 +349,23 @@ List<Integer> filteredNumbers = numbers.stream()
                                              .collect(Collectors.toList());
 ```
 
+
+## iterate()
+`iterate()` is an intermediate operation!
+
+allows you to create an infinite stream by repeatedly applying a function to generate the next element. The method takes an initial seed value and a unary operator (a function that takes one argument and produces a result) to generate the next value in the sequence.
+
+```java
+// Generate an infinite stream of even numbers starting from 0
+        Stream.iterate(0, n -> n + 2)
+              .limit(5) // Limit the stream to 5 elements
+              .forEach(System.out::println);
+// Output: [0, 2, 4, 6, 8]
+```
+
+More detailed examples and explanations to the `iterate()` functions can be found in [a blog article of "Neesri"](https://neesri.medium.com/about-stream-iterate-e2984e87caea).
+
+
 ## unordered()
 `unordered()` is an intermediate operation!
 
@@ -546,6 +563,69 @@ List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         Integer[] numberArray = numbers.stream().toArray(Integer[]::new);
         
 ```
+## collect()
+`collect()` is a terminal operation!
+
+transforms the elements of a stream into a different form, typically a collection like a List, Set, or Map, or even a custom result, such as a concatenated string or a summary object. It's a flexible and powerful way to accumulate the results of a stream processing pipeline.  
+.collect(Collectors.toList()) will return a new list for example.
+
+Example:
+```java
+List<String> list = Stream.of("apple", "banana", "cherry")
+                          .collect(Collectors.toList());
+```
+
+Java provides several predefined collectors in the Collectors utility class. Here are some common ones:
+
+- `toList()`: Collects elements into a List.
+- `toSet()`: Collects elements into a Set.
+- `toMap()`: Collects elements into a Map.
+- `joining()`: Concatenates the elements of a stream into a single String.
+- `groupingBy()`: Groups the elements by a classifier function.
+- `partitioningBy()`: Partitions the elements into two groups based on a predicate.
+
+```java
+List<String> words = Arrays.asList("apple", "banana", "cherry");
+
+String result = words.stream()
+                     .collect(Collectors.joining());
+
+System.out.println(result);  // Output: applebananacherry
+```
+
+```java
+List<String> names = Arrays.asList("apple", "banana", "cherry", "apricot", "blueberry");
+
+Map<Integer, List<String>> groupedByLength = names.stream()
+    .collect(Collectors.groupingBy(String::length));
+
+System.out.println(groupedByLength);
+{5=[apple], 6=[banana, cherry], 7=[apricot], 9=[blueberry]}
+```
+
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 6, 7, 8);
+
+Map<Boolean, List<Integer>> partitioned = numbers.stream()
+    .collect(Collectors.partitioningBy(n -> n > 5));
+
+System.out.println(partitioned);
+{false=[1, 2, 3], true=[6, 7, 8]}
+```
+
+## reduce()
+`reduce()` is a terminal operation!
+
+used to combine all the elements of a stream into a single result. It applies a binary operator to the elements of the stream, accumulating them into a single value. This method is particularly useful for performing aggregations or reductions on a collection of data.
+
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+int sum = numbers.stream()
+    .reduce(0, Integer::sum);
+
+System.out.println(sum);  // Output: 15
+```
 
 ## generate()
 `generate()` is a static factory method! (used to create streams; not an operation on streams themselves)
@@ -595,32 +675,29 @@ class Counter implements java.util.function.Supplier<Integer> {
 }
 ```
 
-## iterate()
-`iterate()` is a static factory method! (used to create streams; not an operation on streams themselves)
-
-
-
-
 ## range()
 `range()` is a static factory method! (used to create streams; not an operation on streams themselves)
 
 
+ is used to generate a stream of numbers within a specific range. This function is particularly useful for working with sequences of integers or long values in a concise and efficient way. There are two variants of the `range()` function, one for IntStream and one for LongStream. Both work similarly but operate on different types of numbers (int and long).
 
+```java
+IntStream.range(1, 5)
+         .forEach(System.out::println);
+[1, 2, 3, 4]
+```
 
-## groupBy()
-`groupBy()` is a terminal operation! (usually used with `Collectors.groupingBy()`)
+```java
+LongStream.range(1L, 5L)
+          .forEach(System.out::println);
+[1, 2, 3, 4]
+```
 
-## partitionBy()
-`partitionBy()` is a terminal operation! (usually used with `Collectors.partitioningBy()`)
-
-## reduce()
-`reduce()` is a terminal operation!
-
-
-## collect()
-`collect()` is a terminal operation!
-Data.collect()
-Will return a new list z.B. .collect(Collectors.toList())
+```java
+IntStream.rangeClosed(1, 5)
+         .forEach(System.out::println);
+[1, 2, 3, 4, 5]
+```
 
 
 # Reference
@@ -642,5 +719,7 @@ Will return a new list z.B. .collect(Collectors.toList())
 - https://stackoverflow.com/questions/73235495/why-does-streamfindany-exist 
 
 - https://www.baeldung.com/java-stream-findfirst-vs-findany
+
+- https://neesri.medium.com/about-stream-iterate-e2984e87caea
 
 - ChatGPT

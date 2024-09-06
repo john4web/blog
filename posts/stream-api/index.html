@@ -165,7 +165,7 @@ Streams do all the heavy lifting for you. -&gt; They &ldquo;streamline&rdquo; th
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              12-minute read
+              14-minute read
             </span>
           </div>
           
@@ -269,8 +269,9 @@ e.g.</p>
   </a>
 </h1>
 <p>When working with streams you can also use the method <code>parallelStream()</code> instead of <code>stream()</code>. What is the difference?
-As the name suggests, <code>parallelStream()</code> will do the operations in parallel. It will use multiple threads to do this.
-Sometimes your values are dependent on the earlier operation. In that case: don’t use parallel streams.</p>
+As the name suggests, <code>parallelStream()</code> will do the operations in parallel. It will use multiple threads to do this.</p>
+<p>Sometimes your values are dependent on the earlier operation. In that case: don’t use parallel streams.</p>
+<p>Note: <code>numbers.parallelStream()</code> is the shorthand for <code>numbers.stream().parallel()</code>. Essentially, it does the same.</p>
 <h1 id="list-of-most-important-stream-api-methods">
   List of most important stream api methods
   <a class="heading-link" href="#list-of-most-important-stream-api-methods">
@@ -319,7 +320,63 @@ Sometimes your values are dependent on the earlier operation. In that case: don�
   </a>
 </h2>
 <p><code>mapToInt()</code> is an intermediate operation!</p>
-<h2 id="flatmap">
+<p>is used to transform elements of a stream into an IntStream, which is a specialized stream for handling primitive int values. It applies a mapping function to each element of the stream and converts the result into an <code>int</code>. This is particularly useful for performing numerical operations, like summing, averaging, or counting, without the overhead of boxing and unboxing to Integer.</p>
+<p>Example 1: Convert a list of objects to their integer property
+Let’s say you have a list of strings, and you want to map them to their lengths.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&#34;apple&#34;</span><span class="o">,</span> <span class="s">&#34;banana&#34;</span><span class="o">,</span> <span class="s">&#34;cherry&#34;</span><span class="o">,</span> <span class="s">&#34;date&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// Convert the list to a stream and map each string to its length
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">int</span> <span class="n">stringLengths</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                               <span class="o">.</span><span class="na">mapToInt</span><span class="o">(</span><span class="n">String</span><span class="o">::</span><span class="n">length</span><span class="o">):</span>  <span class="c1">// Map to the length of each string
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                              
+</span></span><span class="line"><span class="cl">                              <span class="c1">// Output: [5, 6, 6, 4]
+</span></span></span></code></pre></div><p>Example 2: Mapping object properties to int
+Consider a list of objects where you want to map to a specific integer field, like age from a list of Person objects.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MapToIntPersonExample</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Create a list of people
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="n">people</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span>
+</span></span><span class="line"><span class="cl">            <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">&#34;John&#34;</span><span class="o">,</span> <span class="mi">25</span><span class="o">),</span>
+</span></span><span class="line"><span class="cl">            <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">&#34;Jane&#34;</span><span class="o">,</span> <span class="mi">30</span><span class="o">),</span>
+</span></span><span class="line"><span class="cl">            <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">&#34;Tom&#34;</span><span class="o">,</span> <span class="mi">35</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// Map to the age of each person and print the ages
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">people</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">              <span class="o">.</span><span class="na">mapToInt</span><span class="o">(</span><span class="n">Person</span><span class="o">::</span><span class="n">getAge</span><span class="o">)</span>  <span class="c1">// Map each person to their age
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>              <span class="c1">// Output: [25, 30, 35]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Simple Person class with name and age
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAge</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">age</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Example 3: Summing values using mapToInt()</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">        <span class="c1">// Create a list of integers
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// Use mapToInt to convert Integer to int and calculate the sum
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                         <span class="o">.</span><span class="na">mapToInt</span><span class="o">(</span><span class="n">Integer</span><span class="o">::</span><span class="n">intValue</span><span class="o">)</span>  <span class="c1">// Unbox Integer to int
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                         <span class="o">.</span><span class="na">sum</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Sum of numbers: &#34;</span> <span class="o">+</span> <span class="n">sum</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Output: &#34;Sum of numbers: 15&#34;
+</span></span></span></code></pre></div><h2 id="flatmap">
   flatMap()
   <a class="heading-link" href="#flatmap">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -456,7 +513,23 @@ Restricts the number of elements in a stream to a specified number:</p>
 </span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">filteredNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
 </span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">predi</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-</span></span></code></pre></div><h2 id="count">
+</span></span></code></pre></div><h2 id="unordered">
+  unordered()
+  <a class="heading-link" href="#unordered">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>unordered()</code> is an intermediate operation!</p>
+<p>is used to indicate that the stream&rsquo;s order does not matter, potentially enabling performance optimizations for certain operations. This can be particularly useful when dealing with parallel streams, where maintaining order can be costly. By calling <code>unordered()</code>, you signal to the Stream API that the ordering of elements is not important. This allows the implementation to use optimizations that might improve performance. In the context of parallel streams, maintaining order can be expensive due to the need for synchronization and merging of results. Marking a stream as unordered can reduce these overheads.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">numbers</span><span class="o">.</span><span class="na">parallelStream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">               <span class="o">.</span><span class="na">unordered</span><span class="o">()</span>           <span class="c1">// Indicate that the order does not matter
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>               <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="c1">// Filter even numbers
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>               <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="c1">// Print each even number
+</span></span></span></code></pre></div><h2 id="count">
   count()
   <a class="heading-link" href="#count">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -738,22 +811,6 @@ The IntFunction generates the array with the correct size. For example, Integer[
 <p><code>collect()</code> is a terminal operation!
 Data.collect()
 Will return a new list z.B. .collect(Collectors.toList())</p>
-<h2 id="parallel">
-  parallel()
-  <a class="heading-link" href="#parallel">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>erklären</p>
-<h2 id="unordered">
-  unordered()
-  <a class="heading-link" href="#unordered">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>erklären</p>
 <h1 id="reference">
   Reference
   <a class="heading-link" href="#reference">

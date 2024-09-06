@@ -92,8 +92,11 @@ nums.stream()
 # stream() vs. parallelStream()
 
 When working with streams you can also use the method `parallelStream()` instead of `stream()`. What is the difference?
-As the name suggests, `parallelStream()` will do the operations in parallel. It will use multiple threads to do this.
+As the name suggests, `parallelStream()` will do the operations in parallel. It will use multiple threads to do this.  
+
 Sometimes your values are dependent on the earlier operation. In that case: don’t use parallel streams.
+
+Note: `numbers.parallelStream()` is the shorthand for `numbers.stream().parallel()`. Essentially, it does the same.
 
 # List of most important stream api methods
 
@@ -135,6 +138,74 @@ Performs a certain operation on each item:
 ## mapToInt()
 `mapToInt()` is an intermediate operation!
 
+is used to transform elements of a stream into an IntStream, which is a specialized stream for handling primitive int values. It applies a mapping function to each element of the stream and converts the result into an `int`. This is particularly useful for performing numerical operations, like summing, averaging, or counting, without the overhead of boxing and unboxing to Integer.
+
+Example 1: Convert a list of objects to their integer property
+Let’s say you have a list of strings, and you want to map them to their lengths.
+
+```java
+List<String> words = Arrays.asList("apple", "banana", "cherry", "date");
+        
+        // Convert the list to a stream and map each string to its length
+        int stringLengths = words.stream()
+                               .mapToInt(String::length):  // Map to the length of each string
+                              
+                              // Output: [5, 6, 6, 4]
+```
+
+Example 2: Mapping object properties to int
+Consider a list of objects where you want to map to a specific integer field, like age from a list of Person objects.
+
+```java
+import java.util.Arrays;
+import java.util.List;
+
+public class MapToIntPersonExample {
+    public static void main(String[] args) {
+        // Create a list of people
+        List<Person> people = Arrays.asList(
+            new Person("John", 25),
+            new Person("Jane", 30),
+            new Person("Tom", 35)
+        );
+        
+        // Map to the age of each person and print the ages
+        people.stream()
+              .mapToInt(Person::getAge)  // Map each person to their age
+              // Output: [25, 30, 35]
+    }
+}
+
+// Simple Person class with name and age
+class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+```
+
+Example 3: Summing values using mapToInt()
+```java
+        // Create a list of integers
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        
+        // Use mapToInt to convert Integer to int and calculate the sum
+        int sum = numbers.stream()
+                         .mapToInt(Integer::intValue)  // Unbox Integer to int
+                         .sum();
+
+        System.out.println("Sum of numbers: " + sum);
+        // Output: "Sum of numbers: 15"
+
+```
 
 ## flatMap()
 `flatMap()` is an intermediate operation!
@@ -276,6 +347,21 @@ Predicate<Integer> predi = (Integer n) -> {
 List<Integer> filteredNumbers = numbers.stream()
                                              .filter(predi)
                                              .collect(Collectors.toList());
+```
+
+## unordered()
+`unordered()` is an intermediate operation!
+
+is used to indicate that the stream's order does not matter, potentially enabling performance optimizations for certain operations. This can be particularly useful when dealing with parallel streams, where maintaining order can be costly. By calling `unordered()`, you signal to the Stream API that the ordering of elements is not important. This allows the implementation to use optimizations that might improve performance. In the context of parallel streams, maintaining order can be expensive due to the need for synchronization and merging of results. Marking a stream as unordered can reduce these overheads.
+
+Example:
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        
+        numbers.parallelStream()
+               .unordered()           // Indicate that the order does not matter
+               .filter(n -> n % 2 == 0) // Filter even numbers
+               .forEach(System.out::println); // Print each even number
 ```
 
 ## count()
@@ -536,12 +622,6 @@ class Counter implements java.util.function.Supplier<Integer> {
 Data.collect()
 Will return a new list z.B. .collect(Collectors.toList())
 
-
-## parallel()
-erklären
-
-## unordered()
-erklären
 
 # Reference
 

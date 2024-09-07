@@ -272,6 +272,22 @@ e.g.</p>
 As the name suggests, <code>parallelStream()</code> will do the operations in parallel. It will use multiple threads to do this.</p>
 <p>Sometimes your values are dependent on the earlier operation. In that case: don’t use parallel streams.</p>
 <p>Note: <code>numbers.parallelStream()</code> is the shorthand for <code>numbers.stream().parallel()</code>. Essentially, it does the same.</p>
+<h1 id="performance">
+  Performance
+  <a class="heading-link" href="#performance">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>In this <a href="https://entwickler.de/reader/reading/java-magazin/10.2015/63b193980dc2cbde35123730"  class="external-link" target="_blank" rel="noopener">article</a> of the magazine &lsquo;Entwickler.de&rsquo;, the performance of sequential and parallel streams has been tested and compared with the performance of regular for-loops. The finding of this article is that sequential streams are slower than for-loops, and parallel streams can indeed be faster than for-loops. Whether they are actually faster depends on the circumstances. As a rule of thumb: parallel streams are faster than sequential streams and even faster than for-loops when</p>
+<ol>
+<li>the sequence is large and</li>
+<li>processing the elements is CPU-intensive and</li>
+<li>the stream operation is stateless.
+Whether the rule of thumb applies in a specific context can only be determined through benchmarking. Measure, don’t guess!&quot;</li>
+</ol>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h1 id="list-of-most-important-stream-api-methods">
   List of most important stream api methods
   <a class="heading-link" href="#list-of-most-important-stream-api-methods">
@@ -888,6 +904,12 @@ The IntFunction generates the array with the correct size. For example, Integer[
 </li>
 <li>
 <p><a href="https://neesri.medium.com/about-stream-iterate-e2984e87caea"  class="external-link" target="_blank" rel="noopener">https://neesri.medium.com/about-stream-iterate-e2984e87caea</a></p>
+</li>
+<li>
+<p><a href="https://entwickler.de/reader/reading/java-magazin/10.2015/63b193980dc2cbde35123730"  class="external-link" target="_blank" rel="noopener">https://entwickler.de/reader/reading/java-magazin/10.2015/63b193980dc2cbde35123730</a></p>
+</li>
+<li>
+<p><a href="https://entwickler.de/reader/reading/java-magazin/8.2015/ecb97857226038366d603428"  class="external-link" target="_blank" rel="noopener">https://entwickler.de/reader/reading/java-magazin/8.2015/ecb97857226038366d603428</a></p>
 </li>
 <li>
 <p>ChatGPT</p>

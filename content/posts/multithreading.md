@@ -8,6 +8,8 @@ description = "Multithreading simplified"
 
 CompletableFutures and Threadpools in Java explained
 
+https://entwickler.de/reader/reading/java-magazin/4.2015/22da1a0ef7024ddb436dd9e6 
+
 Threadpools and ThreadPoolTaskExecutor() explained
 
 Java CompletableFuture vs. Java Future

@@ -98,6 +98,18 @@ Sometimes your values are dependent on the earlier operation. In that case: don�
 
 Note: `numbers.parallelStream()` is the shorthand for `numbers.stream().parallel()`. Essentially, it does the same.
 
+
+# Performance
+
+In this [article](https://entwickler.de/reader/reading/java-magazin/10.2015/63b193980dc2cbde35123730) of the magazine 'Entwickler.de', the performance of sequential and parallel streams has been tested and compared with the performance of regular for-loops. The finding of this article is that sequential streams are slower than for-loops, and parallel streams can indeed be faster than for-loops. Whether they are actually faster depends on the circumstances. As a rule of thumb: parallel streams are faster than sequential streams and even faster than for-loops when 
+1. the sequence is large and
+2. processing the elements is CPU-intensive and
+3. the stream operation is stateless.
+Whether the rule of thumb applies in a specific context can only be determined through benchmarking. Measure, don’t guess!"
+
+<!-- 
+Wir haben uns angesehen, ob Streams schneller sind als for-Schleifen. Die Erkenntnis ist, dass sequenzielle Streams langsamer sind als for-Schleifen und dass parallele Streams durchaus schneller sein können als for-Schleifen. Ob sie tatsächlich schneller sind, hängt von den Umständen ab. Als Faustregel gilt: Parallele Streams sind schneller als sequenzielle Streams und sogar schneller als for-Schleifen, wenn a) die Sequenz groß ist, b) die Verarbeitung auf den Elementen CPU-intensiv ist und c) die Streamoperation zustandslos ist. Ob die Faustregel in einem bestimmten Kontext zutrifft oder nicht, bekommt man nur durch Benchmarking raus. Measure, don’t guess! -->
+
 # List of most important stream api methods
 
 
@@ -721,5 +733,9 @@ IntStream.rangeClosed(1, 5)
 - https://www.baeldung.com/java-stream-findfirst-vs-findany
 
 - https://neesri.medium.com/about-stream-iterate-e2984e87caea
+
+- https://entwickler.de/reader/reading/java-magazin/10.2015/63b193980dc2cbde35123730
+
+- https://entwickler.de/reader/reading/java-magazin/8.2015/ecb97857226038366d603428
 
 - ChatGPT

@@ -7,21 +7,19 @@ description = ""
 
 # Overview
 
-Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow us to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.
+Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow you to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.
 
-Streams do all the heavy lifting for you.
--> They "streamline" the process for you.
+Streams do all the heavy lifting for you.  
+→ They "streamline" the process for you.
 
 ⚠️ Note: this article is about [java.util.stream](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html). Do not confuse it with input and output streams ([java.io](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/package-summary.html)). That's a totally different concept!
-
-
 
 # How to work with streams
 1.	Open the stream with the method `.stream()`.
 2.	Chain as many operations as you like.
-3.	Convert the stream back into a list (if you need that).
+3.	Convert the stream back into a list (if necessary).
 
-The following example filters out all people that are younger as 10 and return them as a list:
+The following example filters out all people that are younger than 10 and return them as a list:
 ```java
 List<Person> people = new ArrayList<>();
 
@@ -30,11 +28,11 @@ people.stream()
     .collect(Collectors.toList())
 ```
 
-Basically, there are two types of operations when working with streams - **intermediate** and **terminal** operations. 
+Basically, there are two types of operations when working with streams – **intermediate** and **terminal** operations. 
 
-* Intermediate operations return a stream again (e.g., the methods .filter() or .map()).
+* Intermediate operations return a stream again (e.g., the methods `.filter()` or `.map()`).
 
-* Terminal operations process the stream to perform functions on the individual elements (e.g., to return a specific value). After that, the stream is closed, and no further operations can be performed on it until a new stream is opened (e.g., the methods .collect or .forEach)."
+* Terminal operations process the stream to perform functions on the individual elements (e.g., to return a specific value). After that, the stream is closed, and no further operations can be performed on it until a new stream is opened (e.g., the methods `.collect()` or `.forEach()`).
 
 <!-- 
 Grundsätzlich unterscheidet man bei streams zwischen intermediate und terminal operations.
@@ -45,22 +43,21 @@ Terminal operations durchlaufen den Stream um Funktionen auf den Einzelelementen
 
 On the website "GeeksForGeeks", I found a very nice image, explaining that concept: 
 
-{{< figure src="/images/stream-api/1.png" caption="Intermediate Operations are the types of operations in which multiple methods are chained in a row. Source: [geeksforgeeks.org](https://www.geeksforgeeks.org/stream-in-java/)" >}}
+{{< figure src="/images/stream-api/1.png" caption="Intermediate Operations are the types of operations in which multiple methods are chained in a row. (Source: [geeksforgeeks.org](https://www.geeksforgeeks.org/stream-in-java/)") >}}
 
 # Advantages of using stream api
 
 When working with data, an important rule is:
-_Don't change the existing value (original data)! Instead, create a new variable with the changed data!_
+_"Don't change the existing value (= original data)! Instead, create a new variable with the changed data!"_
 This is a concept that streams embrace. When working with streams, you are not working with the existing list. If you change the values of the stream, it will not affect the original data.
 
-Once you consume the stream, you cannot reuse it:
-e.g.
+This also means: Once you consume the stream, you cannot reuse it:
 
 The following code works:
 ```java
 List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5);
 Stream<Integer> data = nums.stream();
-data.forEach(n -> System.out.println(n)) // closes stream (forEach is a terminal operation)
+data.forEach(n -> System.out.println(n)) // closes stream (.forEach() is a terminal operation)
 ```
 
 The following code throws an exception:
@@ -72,8 +69,8 @@ data.forEach(n -> System.out.println(n)) // closes stream
 data.forEach(n -> System.out.println(n)) // Exception: "Stream has already been operated upon or closed".
 ```
 
-Another advantage: intermediate stream methods return a new stream so you can chain (as many as you want) together.
-(Reminds me in some kind of way on the builder pattern).
+Another advantage: intermediate stream methods return a new stream so you can chain (as many operations as you want) together.
+This reminds me in some kind of way on the builder pattern.
 
 # Examples
 
@@ -91,8 +88,8 @@ nums.stream()
 
 # stream() vs. parallelStream()
 
-When working with streams you can also use the method `parallelStream()` instead of `stream()`. What is the difference?
-As the name suggests, `parallelStream()` will do the operations in parallel. It will use multiple threads to do this.  
+When working with streams you can also use the method `.parallelStream()` instead of `.stream()`. What is the difference?
+As the name suggests, `.parallelStream()` will do the operations in parallel. It will use multiple threads to do this.  
 
 Sometimes your values are dependent on the earlier operation. In that case: don’t use parallel streams.
 
@@ -101,10 +98,11 @@ Note: `numbers.parallelStream()` is the shorthand for `numbers.stream().parallel
 
 # Performance
 
-In this [article](https://entwickler.de/reader/reading/java-magazin/10.2015/63b193980dc2cbde35123730) of the magazine 'Entwickler.de', the performance of sequential and parallel streams has been tested and compared with the performance of regular for-loops. The finding of this article is that sequential streams are slower than for-loops, and parallel streams can indeed be faster than for-loops. Whether they are actually faster depends on the circumstances. As a rule of thumb: parallel streams are faster than sequential streams and even faster than for-loops when 
+In this [article](https://entwickler.de/reader/reading/java-magazin/10.2015/63b193980dc2cbde35123730) of the magazine 'Entwickler.de', the performance of sequential and parallel streams has been tested and compared with the performance of regular for-loops. The finding of this article is that sequential streams are slower than for-loops, and parallel streams can indeed be faster than for-loops. Whether they are actually faster depends on the circumstances. As a rule of thumb: parallel streams are faster than sequential streams and even faster than for-loops, in case 
 1. the sequence is large and
 2. processing the elements is CPU-intensive and
-3. the stream operation is stateless.
+3. the stream operation is stateless.  
+
 Whether the rule of thumb applies in a specific context can only be determined through benchmarking. Measure, don’t guess!"
 
 <!-- 
@@ -112,61 +110,67 @@ Wir haben uns angesehen, ob Streams schneller sind als for-Schleifen. Die Erkenn
 
 # List of most important stream api methods
 
-
 ## sorted()
 `sorted()` is an intermediate operation!
 
-Sorts your stream:
+It sorts your stream:
+
 ```java
 List<String> names1 = List.of("Charlie", "Alice", "David", "Bob");
-List<String> sortedNames = names1.stream()
-.sorted()
-.collect(Collectors.toList()); // sorted alphabetically
+
+List<String> sortedNames = 
+    names1.stream()
+    .sorted()
+    .collect(Collectors.toList());
+    // sorted alphabetically
 ```
 
 ```java
 List<Integer> numbers = List.of(5, 3, 8, 1, 4);
 
-List<Integer> sortedNumbers = numbers.stream()
-                              .sorted()
-                              .collect(Collectors.toList()); // sorted ascending
+List<Integer> sortedNumbers = 
+    numbers.stream()
+    .sorted()
+    .collect(Collectors.toList());
+    // sorted ascending
 ```
 
 ## map()
 `map()` is an intermediate operation!
 
-Performs a certain operation on each item: 
+It performs a certain operation on each item: 
 
 ```java
         List<Integer> numbers = List.of(1, 2, 3, 4, 5);
 
-        List<Integer> multipliedNumbers = numbers.stream()
-                                             .map(n -> n*2)
-                                             .collect(Collectors.toList());
-// Output: [2, 4, 6, 8, 10]
-
+        List<Integer> multipliedNumbers = 
+            numbers.stream()
+            .map(n -> n*2)
+            .collect(Collectors.toList());
+            // Output: [2, 4, 6, 8, 10]
 ```
 
 ## mapToInt()
 `mapToInt()` is an intermediate operation!
 
-is used to transform elements of a stream into an IntStream, which is a specialized stream for handling primitive int values. It applies a mapping function to each element of the stream and converts the result into an `int`. This is particularly useful for performing numerical operations, like summing, averaging, or counting, without the overhead of boxing and unboxing to Integer.
+It is used to transform elements of a stream into an `IntStream`, which is a specialized stream for handling primitive int values. It applies a mapping function to each element of the stream and converts the result into an `int`. This is particularly useful for performing numerical operations, like summing, averaging, or counting, without the overhead of boxing and unboxing to Integer.
 
-Example 1: Convert a list of objects to their integer property
+**Example 1: Convert a list of objects to their integer property**  
+
 Let’s say you have a list of strings, and you want to map them to their lengths.
 
 ```java
 List<String> words = Arrays.asList("apple", "banana", "cherry", "date");
         
-        // Convert the list to a stream and map each string to its length
-        int stringLengths = words.stream()
-                               .mapToInt(String::length):  // Map to the length of each string
-                              
-                              // Output: [5, 6, 6, 4]
+// Convert the list to a stream and map each string to its length
+int stringLengths = 
+    words.stream()
+    .mapToInt(String::length); // Map to the length of each string
+    // Output: [5, 6, 6, 4]
 ```
 
-Example 2: Mapping object properties to int
-Consider a list of objects where you want to map to a specific integer field, like age from a list of Person objects.
+**Example 2: Mapping object properties to int**  
+Consider a list of objects where you want to map to a specific integer field, like age from a list of `Person` objects.
 
 ```java
 import java.util.Arrays;
@@ -181,10 +185,10 @@ public class MapToIntPersonExample {
             new Person("Tom", 35)
         );
         
-        // Map to the age of each person and print the ages
+        // Map each person to their age
         people.stream()
-              .mapToInt(Person::getAge)  // Map each person to their age
-              // Output: [25, 30, 35]
+            .mapToInt(Person::getAge)
+            // Output: [25, 30, 35]
     }
 }
 
@@ -204,19 +208,19 @@ class Person {
 }
 ```
 
-Example 3: Summing values using mapToInt()
+**Example 3: Summing values using mapToInt()**
+
 ```java
-        // Create a list of integers
-        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
-        
-        // Use mapToInt to convert Integer to int and calculate the sum
-        int sum = numbers.stream()
-                         .mapToInt(Integer::intValue)  // Unbox Integer to int
-                         .sum();
+    // Create a list of integers
+    List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+    
+    // Use mapToInt to convert Integer to int and calculate the sum
+    int sum = numbers.stream()
+        .mapToInt(Integer::intValue) // Unbox Integer to int
+        .sum();
 
-        System.out.println("Sum of numbers: " + sum);
-        // Output: "Sum of numbers: 15"
-
+    System.out.println("Sum of numbers: " + sum);
+    // Output: "Sum of numbers: 15"
 ```
 
 ## flatMap()

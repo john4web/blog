@@ -28,7 +28,7 @@ people.stream()
     .collect(Collectors.toList())
 ```
 
-Basically, there are two types of operations when working with streams – **intermediate** and **terminal** operations. 
+Basically, there are two types of operations when working with streams → **intermediate** and **terminal** operations. 
 
 * Intermediate operations return a stream again (e.g., the methods `.filter()` or `.map()`).
 
@@ -43,7 +43,7 @@ Terminal operations durchlaufen den Stream um Funktionen auf den Einzelelementen
 
 On the website "GeeksForGeeks", I found a very nice image, explaining that concept: 
 
-{{< figure src="/images/stream-api/1.png" caption="Intermediate Operations are the types of operations in which multiple methods are chained in a row. (Source: [geeksforgeeks.org](https://www.geeksforgeeks.org/stream-in-java/)") >}}
+{{< figure src="/images/stream-api/1.png" caption="Intermediate Operations are the types of operations in which multiple methods are chained in a row. Source: ([geeksforgeeks.org](https://www.geeksforgeeks.org/stream-in-java/))" >}}
 
 # Advantages of using stream api
 

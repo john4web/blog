@@ -10,7 +10,7 @@ description = ""
 Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow you to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.
 
 Streams do all the heavy lifting for you.  
-→ They "streamline" the process for you.
+-> They "streamline" the process for you.
 
 ⚠️ Note: this article is about [java.util.stream](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html). Do not confuse it with input and output streams ([java.io](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/package-summary.html)). That's a totally different concept!
 
@@ -28,7 +28,7 @@ people.stream()
     .collect(Collectors.toList())
 ```
 
-Basically, there are two types of operations when working with streams → **intermediate** and **terminal** operations. 
+Basically, there are two types of operations when working with streams -> **intermediate** and **terminal** operations. 
 
 * Intermediate operations return a stream again (e.g., the methods `.filter()` or `.map()`).
 
@@ -226,21 +226,20 @@ class Person {
 ## flatMap()
 `flatMap()` is an intermediate operation!
 
-Is used to transform each element of a stream into another stream and then flatten those streams into a single stream. It is particularly useful when dealing with collections of collections, such as a list of lists, and you want to create a single unified stream of elements.
+It is used to transform each element of a stream into another stream and then flatten those streams into a single stream. It is particularly useful when dealing with collections of collections, such as a list of lists, and you want to create a single unified stream of elements.
 
 ```java
-List<List<Integer>> listOfLists = Arrays.asList(
-            Arrays.asList(1, 2, 3),
-            Arrays.asList(4, 5),
-            Arrays.asList(6, 7, 8, 9)
-        );
+List<List<Integer>> listOfLists =
+    Arrays.asList(
+        Arrays.asList(1, 2, 3),
+        Arrays.asList(4, 5),
+        Arrays.asList(6, 7, 8, 9)
+    );
 
-        List<Integer> allNumbers = listOfLists.stream()
-            .flatMap(list -> list.stream()) // Jeden Unterlisten-Stream zu einem einzigen Stream zusammenführen
-            .collect(Collectors.toList());
-
-            // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
+List<Integer> allNumbers = listOfLists.stream()
+    .flatMap(list -> list.stream())
+    .collect(Collectors.toList());
+    // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
 In simple terms, flatMap allows you to:
@@ -250,60 +249,61 @@ In simple terms, flatMap allows you to:
 
 ## limit()
 `limit()` is an intermediate operation!
-Restricts the number of elements in a stream to a specified number:
+
+It restricts the number of elements in a stream to a specified number:
 
 ```java
 List<Integer> numbers = List.of(1, 2, 3, 4, 5);
 
-        List<Integer> firstThreeNumbers = numbers.stream()
-                                                 .limit(3)  // Limit the stream to the first 3 elements
-                                                 .collect(Collectors.toList());  // Output: 1, 2, 3
+List<Integer> firstThreeNumbers = numbers.stream()
+    .limit(3)  // Limit the stream to the first 3 elements
+    .collect(Collectors.toList());  // Output: 1, 2, 3
 ```
 
 ## distinct()
 `distinct()` is an intermediate operation!
 
-Removes duplicate elements from a stream and retain only unique elements:
+It removes duplicate elements from a stream and retain only unique elements:
 
 ```java
 List<Integer> numbers = List.of(1, 2, 3, 2, 4, 5, 1, 6, 4);
 
-        List<Integer> uniqueNumbers = numbers.stream()
-                                             .distinct()
-                                             .collect(Collectors.toList()); // Output: [1, 2, 3, 4, 5, 6]
+List<Integer> uniqueNumbers = numbers.stream()
+    .distinct()
+    .collect(Collectors.toList());
+    // Output: [1, 2, 3, 4, 5, 6]
 ```
 
 ## skip()
 `skip()` is an intermediate operation!
 
-Skips a specified number of elements at the beginning of a stream:
+It skips a specified number of elements at the beginning of a stream:
 
 ```java
 List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-        List<Integer> result = numbers.stream()
-                                      .skip(3)
-                                      .collect(Collectors.toList());
-                                      // Output: [4, 5, 6, 7, 8, 9, 10]
+List<Integer> result = numbers.stream()
+    .skip(3)
+    .collect(Collectors.toList());
+    // Output: [4, 5, 6, 7, 8, 9, 10]
 ```
 
 ## peek()
 `peek()` is an intermediate operation!
 
- is used to apply an operation to each element of a stream without modifying the stream itself. It is especially useful for debugging or logging, allowing you to inspect the state of elements during stream processing.
+ It is used to apply an operation to each element of a stream without modifying the stream itself. It is especially useful for debugging or logging, allowing you to inspect the state of elements during stream processing.
 
-This method exists mainly to support debugging, where you want to see the elements as they flow past a certain point in a pipeline. Since Java 9, if the number of elements is known in advance and unchanged in the stream, the `.peek ()` statement will not be executed due to performance optimization. Using peek without any terminal operation does nothing.
+This method exists mainly to support debugging, where you want to see the elements as they flow past a certain point in a pipeline. Since Java 9, if the number of elements is known in advance and unchanged in the stream, the `.peek()` statement will not be executed due to performance optimization. Using `peek()` without any terminal operation does nothing.
 
 ```java
  List<Integer> numbers = List.of(1, 2, 3, 4, 5);
 
-// Create a stream, apply the Peek operator to each element, and collect the processed elements
+// Create a stream, apply the peek operator to each element, and collect the processed elements
 List<Integer> result = numbers.stream()
-                              .peek(n -> System.out.println("Processing: " + n))
-                              .map(n -> n * 2)
-                              .peek(n -> System.out.println("Doubled: " + n))
-                              .collect(Collectors.toList());
-
+    .peek(n -> System.out.println("Processing: " + n))
+    .map(n -> n * 2)
+    .peek(n -> System.out.println("Doubled: " + n))
+    .collect(Collectors.toList());
 ```
 Output:
 
@@ -325,7 +325,7 @@ Result List: [2, 4, 6, 8, 10]
 ## boxed()
 `boxed()` is an intermediate operation!
 
-The method boxed() is designed only for streams of some primitive types (IntStream, DoubleStream, and LongStream) to box each primitive value of the stream into the corresponding wrapper class (Integer, Double, and Long respectively).
+The method `boxed()` is designed only for streams of some primitive types (IntStream, DoubleStream, and LongStream) to box each primitive value of the stream into the corresponding wrapper class (Integer, Double, and Long respectively).
 
 This throws an Exception:
 ```java
@@ -343,14 +343,15 @@ IntStream.of(1, 2, 3, 4, 5)
 ## filter()
 `filter()` is an intermediate operation!
 
-Filters out items based on a given criteria:
+It filters out items based on a given criteria:
 
 ```java
 List<Integer> numbers = List.of(1, 2, 3, 4, 5);
 
-        List<Integer> filteredNumbers = numbers.stream()
-                                             .filter(n  ->  n > 3)
-                                             .collect(Collectors.toList()); // Output: [4, 5]
+List<Integer> filteredNumbers = numbers.stream()
+    .filter(n  ->  n > 3)
+    .collect(Collectors.toList());
+    // Output: [4, 5]
 ```
 
 Creating the filter predicate with an anonymous inner class:
@@ -361,73 +362,75 @@ Predicate<Integer> predi = (Integer n) -> {
 }
 
 List<Integer> filteredNumbers = numbers.stream()
-                                             .filter(predi)
-                                             .collect(Collectors.toList());
+    .filter(predi)
+    .collect(Collectors.toList());
 ```
 
 
 ## iterate()
 `iterate()` is an intermediate operation!
 
-allows you to create an infinite stream by repeatedly applying a function to generate the next element. The method takes an initial seed value and a unary operator (a function that takes one argument and produces a result) to generate the next value in the sequence.
+It allows you to create an infinite stream by repeatedly applying a function to generate the next element. The method takes an initial seed value and a unary operator (a function that takes one argument and produces a result) to generate the next value in the sequence.
 
 ```java
 // Generate an infinite stream of even numbers starting from 0
-        Stream.iterate(0, n -> n + 2)
-              .limit(5) // Limit the stream to 5 elements
-              .forEach(System.out::println);
+Stream.iterate(0, n -> n + 2)
+    .limit(5) // Limit the stream to 5 elements
+    .forEach(System.out::println);
 // Output: [0, 2, 4, 6, 8]
 ```
 
-More detailed examples and explanations to the `iterate()` functions can be found in [a blog article of "Neesri"](https://neesri.medium.com/about-stream-iterate-e2984e87caea).
-
+More detailed examples and explanations to the `iterate()` functions can be found in a [medium blog article of "Neesri"](https://neesri.medium.com/about-stream-iterate-e2984e87caea).
 
 ## unordered()
 `unordered()` is an intermediate operation!
 
-is used to indicate that the stream's order does not matter, potentially enabling performance optimizations for certain operations. This can be particularly useful when dealing with parallel streams, where maintaining order can be costly. By calling `unordered()`, you signal to the Stream API that the ordering of elements is not important. This allows the implementation to use optimizations that might improve performance. In the context of parallel streams, maintaining order can be expensive due to the need for synchronization and merging of results. Marking a stream as unordered can reduce these overheads.
+It is used to indicate that the stream's order does not matter, potentially enabling performance optimizations for certain operations. This can be particularly useful when dealing with parallel streams, where maintaining order can be costly. By calling `unordered()`, you signal to the Stream API that the ordering of elements is not important. This allows the implementation to use optimizations that might improve performance. In the context of parallel streams, maintaining order can be expensive due to the need for synchronization and merging of results. Marking a stream as unordered can reduce these overheads.
 
 Example:
 ```java
 List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        
-        numbers.parallelStream()
-               .unordered()           // Indicate that the order does not matter
-               .filter(n -> n % 2 == 0) // Filter even numbers
-               .forEach(System.out::println); // Print each even number
+
+numbers.parallelStream()
+    .unordered() // Indicate that the order does not matter
+    .filter(n -> n % 2 == 0) // Filter even numbers
+    .forEach(System.out::println); // Print each even number
 ```
+Since it's parallel, the exact order of numbers may vary each time you run the code.
+The output could be any permutation of the even numbers:
+
+Possible output 1: [6, 2, 8, 10, 4]
+Possible output 2: [4, 6, 2, 10, 8]
 
 ## count()
 `count()` is a terminal operation!
 
-Gives you the size of the stream:
+It gives you the size of the stream:
 ```java
 List<String> names = List.of("Alice", "Bob", "Charlie", "David");
 
-        long count = names.stream().count(); // 4
+long count = names.stream().count(); // 4
 ```
-
 
 ## sum()
 `sum()` is a terminal operation!
 
- Is used to calculate the sum of elements in a stream. This function is available in the primitive streams like IntStream, LongStream, and DoubleStream. The sum() method returns the sum of the elements as a primitive value (int, long, or double depending on the stream type).
+ It is used to calculate the sum of elements in a stream. This function is available in the primitive streams like IntStream, LongStream, and DoubleStream. The `sum()` method returns the sum of the elements as a primitive value (int, long, or double depending on the stream type).
 
 ```java
 List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 
 // Use mapToInt to convert List<Integer> to IntStream and then sum all the numbers
 int sum = numbers.stream()
-        .mapToInt(Integer::intValue) // Convert Integer to int
-        .sum(); // Sum all the int values
+    .mapToInt(Integer::intValue) // Convert Integer to int
+    .sum(); // Sum all the int values
 // Output: 15
 ```
-
 
 ## allMatch()
 `allMatch()` is a terminal operation!
 
-checks if all elements in a stream match a given predicate. The method returns a boolean value:
+It checks if all elements in a stream match a given predicate. The method returns a boolean value:
 
 - true if all elements satisfy the provided predicate.
 - false if at least one element does not satisfy the predicate.
@@ -435,17 +438,17 @@ checks if all elements in a stream match a given predicate. The method returns a
 ```java
 List<Integer> numbers = Arrays.asList(3, 7, 10, 15, 2);
 
-        // Check if all numbers in the list are positive
-        boolean allPositive = numbers.stream()
-                                     .allMatch(num -> num > 0); // Predicate: Check if all numbers are positive
+// Check if all numbers in the list are positive
+boolean allPositive = numbers.stream()
+    .allMatch(num -> num > 0); // Predicate: Check if all numbers are positive
 ```
 
-This output is `true` because all the numbers in the list are positive. If any number in the list was negative or zero, the result would be `false`.
+This output is `true` because all the numbers in the list are positive. If any number in the list would be negative or zero, the result would be `false`.
 
 ## anyMatch()
 `anyMatch()` is a terminal operation!
 
-checks if at least one element in the stream matches a given predicate. It returns a boolean value:
+It checks if at least one element in the stream matches a given predicate. It returns a boolean value:
 
 - true if at least one element in the stream satisfies the provided predicate.
 - false if no elements match the predicate.
@@ -453,9 +456,9 @@ checks if at least one element in the stream matches a given predicate. It retur
 ```java
 List<Integer> numbers = Arrays.asList(3, 7, 10, 15, 2);
 
-        // Check if any number in the list is greater than 10
-        boolean anyGreaterThanTen = numbers.stream()
-                                           .anyMatch(num -> num > 10); // Predicate: Check if any number is greater than 10
+// Check if any number in the list is greater than 10
+boolean anyGreaterThanTen = numbers.stream()
+    .anyMatch(num -> num > 10); // Predicate: Check if any number is greater than 10
 ```
 
 This output is `true` because there is at least one number (15) in the list that is greater than 10.
@@ -463,7 +466,7 @@ This output is `true` because there is at least one number (15) in the list that
 ## noneMatch()
 `noneMatch()` is a terminal operation!
 
-checks if no elements in the stream match a given predicate. It returns a boolean value:
+It checks if no elements in the stream match a given predicate. It returns a boolean value:
 
 - true if no elements in the stream satisfy the provided predicate.
 - false if at least one element matches the predicate.
@@ -473,7 +476,7 @@ List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 
 // Check if none of the numbers in the list are negative
 boolean noneNegative = numbers.stream()
-        .noneMatch(num -> num < 0); // Predicate: Check if each number is negative
+    .noneMatch(num -> num < 0); // Predicate: Check if each number is negative
 ```
 
 This output is `true` because none of the numbers in the list is negative.
@@ -481,54 +484,53 @@ This output is `true` because none of the numbers in the list is negative.
 ## findFirst()
 `findFirst()` is a terminal operation!
 
-
- is used to find the first element of a stream. It returns an Optional that may contain the first element, or be empty if the stream has no elements.
+ It is used to find the first element of a stream. It returns an Optional that may contain the first element, or be empty if the stream has no elements.
 
 ```java
 List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50);
         
-        Optional<Integer> firstNumber = numbers.stream().findFirst();
-        
-        if (firstNumber.isPresent()) {
-            System.out.println("First number in the list: " + firstNumber.get());
-        } else {
-            System.out.println("List is empty.");
-        }
-        // prints "First number in the list: 10"
-```
+Optional<Integer> firstNumber = numbers.stream().findFirst();
 
+if (firstNumber.isPresent()) {
+    System.out.println("First number in the list: " + firstNumber.get());
+} else {
+    System.out.println("List is empty.");
+}
+// prints "First number in the list: 10"
+```
 
 ## findAny()
 `findAny()` is a terminal operation!
 
-is similar to findFirst(), but it may return any element from the stream. It also returns an Optional.
-The findAny() method allows us to find any element from a Stream. We use it when we’re looking for an element without paying an attention to the encounter order. It is particularly useful in parallel streams where non-deterministic behavior can occur.
+It is similar to `findFirst()`, but it may return any element from the stream. It also returns an Optional.
+The `findAny()` method allows you to find any element from a Stream. You can use it when you are looking for an element without paying attention to the encounter order. It is particularly useful in parallel streams where non-deterministic behavior can occur.
 
 ```java
 List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50);
         
-        Optional<Integer> anyNumber = numbers.stream().findAny();
-        
-        if (anyNumber.isPresent()) {
-            System.out.println("Found a number: " + anyNumber.get());
-            // prints any number of the stream. "Found a number: 10"
-        }
+Optional<Integer> anyNumber = numbers.stream().findAny();
+
+if (anyNumber.isPresent()) {
+    System.out.println("Found a number: " + anyNumber.get());
+    // prints any number of the stream. "Found a number: 10"
+}
 ```
 
 ## max()
 `max()` is a terminal operation!
 
-finds the maximum element in a stream based on a given comparator. It returns an Optional containing the maximum element if the stream is not empty.
+It finds the maximum element in a stream based on a given comparator. It returns an Optional containing the maximum element if the stream is not empty.
 
 ```java
  List<Integer> numbers = Arrays.asList(10, 40, 30, 50, 20);
         
-        Optional<Integer> maxNumber = numbers.stream().max(Comparator.naturalOrder());
-        
-        if (maxNumber.isPresent()) {
-            System.out.println("Maximum number in the list: " + maxNumber.get());
-            // prints: "Maximum number in the list: 50"
-        }
+Optional<Integer> maxNumber = numbers.stream()
+    .max(Comparator.naturalOrder());
+
+if (maxNumber.isPresent()) {
+    System.out.println("Maximum number in the list: " + maxNumber.get());
+    // prints: "Maximum number in the list: 50"
+}
 ```
 
 Many comparators exist that can be used here. Two examples are the following. But there are many more:
@@ -536,62 +538,61 @@ Many comparators exist that can be used here. Two examples are the following. Bu
 - `Comparator.naturalOrder()` -> ascending
 - `Comparator.reverseOrder()` -> descending
 
-
 ## min()
 `min()` is a terminal operation!
 
-is used to find the minimum element in a stream based on a comparator. It returns an Optional containing the minimum element if the stream is not empty.
+It is used to find the minimum element in a stream based on a comparator. It returns an Optional containing the minimum element if the stream is not empty.
 
 ```java
 List<Integer> numbers = Arrays.asList(40, 10, 30, 50, 20);
         
-        Optional<Integer> minNumber = numbers.stream().min(Comparator.naturalOrder());
-        
-        if (minNumber.isPresent()) {
-            System.out.println("Minimum number in the list: " + minNumber.get());
-            // prints: "Minimum number in the list: 10"
-        }
+Optional<Integer> minNumber = numbers.stream().min(Comparator.naturalOrder());
+
+if (minNumber.isPresent()) {
+    System.out.println("Minimum number in the list: " + minNumber.get());
+    // prints: "Minimum number in the list: 10"
+}
 ```
 
 ## toArray()
 `toArray()` is a terminal operation!
 
-converts the elements of a stream into an array. There are two common variants of this method:
+It converts the elements of a stream into an array. There are two common variants of this method:
 
-- `toArray()`:Converts the stream to an array of Object[]. Can be useful when you're working with objects and don't need to specify the array type.
+- `toArray()`: Converts the stream to an array of Object[]. Can be useful when you're working with objects and don't need to specify the array type.
 
 - `toArray(IntFunction<A[]> generator)`: Allows you to create an array of a specific type, e.g., String[], Integer[], etc.
 The IntFunction generates the array with the correct size. For example, Integer[]::new creates an Integer[] array of the appropriate size.
 
 Example 1:
 ```java
-        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
-        
-        // Convert the stream to an Object[] array
-        Object[] numberArray = numbers.stream().toArray();
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+// Convert the stream to an Object[] array
+Object[] numberArray = numbers.stream().toArray();
 ```
 
 Example 2:
 ```java
 List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         
-        // Convert the stream to an Integer[] array
-        Integer[] numberArray = numbers.stream().toArray(Integer[]::new);
-        
+// Convert the stream to an Integer[] array
+Integer[] numberArray = numbers.stream().toArray(Integer[]::new);     
 ```
+
 ## collect()
 `collect()` is a terminal operation!
 
-transforms the elements of a stream into a different form, typically a collection like a List, Set, or Map, or even a custom result, such as a concatenated string or a summary object. It's a flexible and powerful way to accumulate the results of a stream processing pipeline.  
-.collect(Collectors.toList()) will return a new list for example.
+It transforms the elements of a stream into a different form, typically a collection like a List, Set, or Map, or even a custom result, such as a concatenated string or a summary object. It's a flexible and powerful way to accumulate the results of a stream processing pipeline.  
+`.collect(Collectors.toList())` will return a new list for example.
 
 Example:
 ```java
 List<String> list = Stream.of("apple", "banana", "cherry")
-                          .collect(Collectors.toList());
+    .collect(Collectors.toList());
 ```
 
-Java provides several predefined collectors in the Collectors utility class. Here are some common ones:
+Java provides several predefined collectors in the `Collectors` utility class. Here are some common ones:
 
 - `toList()`: Collects elements into a List.
 - `toSet()`: Collects elements into a Set.
@@ -604,9 +605,10 @@ Java provides several predefined collectors in the Collectors utility class. Her
 List<String> words = Arrays.asList("apple", "banana", "cherry");
 
 String result = words.stream()
-                     .collect(Collectors.joining());
+    .collect(Collectors.joining());
 
-System.out.println(result);  // Output: applebananacherry
+System.out.println(result);
+// Output: applebananacherry
 ```
 
 ```java
@@ -616,7 +618,7 @@ Map<Integer, List<String>> groupedByLength = names.stream()
     .collect(Collectors.groupingBy(String::length));
 
 System.out.println(groupedByLength);
-{5=[apple], 6=[banana, cherry], 7=[apricot], 9=[blueberry]}
+// Output: {5=[apple], 6=[banana, cherry], 7=[apricot], 9=[blueberry]}
 ```
 
 ```java
@@ -626,13 +628,13 @@ Map<Boolean, List<Integer>> partitioned = numbers.stream()
     .collect(Collectors.partitioningBy(n -> n > 5));
 
 System.out.println(partitioned);
-{false=[1, 2, 3], true=[6, 7, 8]}
+// Output: {false=[1, 2, 3], true=[6, 7, 8]}
 ```
 
 ## reduce()
 `reduce()` is a terminal operation!
 
-used to combine all the elements of a stream into a single result. It applies a binary operator to the elements of the stream, accumulating them into a single value. This method is particularly useful for performing aggregations or reductions on a collection of data.
+It is used to combine all the elements of a stream into a single result. It applies a binary operator to the elements of the stream, accumulating them into a single value. This method is particularly useful for performing aggregations or reductions on a collection of data.
 
 ```java
 List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
@@ -646,21 +648,21 @@ System.out.println(sum);  // Output: 15
 ## generate()
 `generate()` is a static factory method! (used to create streams; not an operation on streams themselves)
 
-creates an infinite sequential stream where each element is generated by a Supplier. It's often used when you need to create streams with repeated or dynamically generated values.
+It creates an infinite sequential stream where each element is generated by a Supplier. It's often used when you need to create streams with repeated or dynamically generated values.
 
-Since generate() produces an infinite stream, it's typically paired with methods like limit() to create a finite number of elements.
+Since `generate()` produces an infinite stream, it's typically paired with methods like `limit()` to create a finite number of elements.
 
-Example 1: Using Stream.generate() to create a finite stream of random numbers
+Example 1: Using `Stream.generate()` to create a finite stream of random numbers
 ```java
 // Create a stream of 3 random numbers
-        Stream<Double> randomNumbers = Stream.generate(Math::random).limit(3);
+Stream<Double> randomNumbers = Stream.generate(Math::random).limit(3);
 // [0.2493885034549821, 0.7938434107875401, 0.2372843984052291]
 ```
 
 Example 2: Generate a sequence of fixed values
 ```java
 // Generate a stream of 3 "Hello" strings
-        Stream<String> helloStream = Stream.generate(() -> "Hello").limit(3);
+Stream<String> helloStream = Stream.generate(() -> "Hello").limit(3);
 // ["Hello", "Hello", "Hello"]
 ```
 
@@ -673,10 +675,8 @@ public class SequentialNumbersExample {
         // Generate a stream of 5 sequential numbers starting from 1
         Stream<Integer> numberStream = Stream.generate(new Counter()).limit(5);
         
-        // Print the numbers
         numberStream.forEach(System.out::println);
-// [1, 2, 3, 4, 5]
-
+        // [1, 2, 3, 4, 5]
     }
 }
 
@@ -694,27 +694,25 @@ class Counter implements java.util.function.Supplier<Integer> {
 ## range()
 `range()` is a static factory method! (used to create streams; not an operation on streams themselves)
 
-
- is used to generate a stream of numbers within a specific range. This function is particularly useful for working with sequences of integers or long values in a concise and efficient way. There are two variants of the `range()` function, one for IntStream and one for LongStream. Both work similarly but operate on different types of numbers (int and long).
+ It is used to generate a stream of numbers within a specific range. This function is particularly useful for working with sequences of integers or long values in a concise and efficient way. There are two variants of the `range()` function, one for IntStream and one for LongStream. Both work similarly but operate on different types of numbers (`int` and `long`).
 
 ```java
 IntStream.range(1, 5)
-         .forEach(System.out::println);
-[1, 2, 3, 4]
+    .forEach(System.out::println);
+// Output: [1, 2, 3, 4]
 ```
 
 ```java
 LongStream.range(1L, 5L)
-          .forEach(System.out::println);
-[1, 2, 3, 4]
+    .forEach(System.out::println);
+// Output: [1, 2, 3, 4]
 ```
 
 ```java
 IntStream.rangeClosed(1, 5)
-         .forEach(System.out::println);
-[1, 2, 3, 4, 5]
+    .forEach(System.out::println);
+// Output: [1, 2, 3, 4, 5]
 ```
-
 
 # Reference
 

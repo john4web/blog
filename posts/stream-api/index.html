@@ -165,7 +165,7 @@ Streams do all the heavy lifting for you." />
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              16-minute read
+              17-minute read
             </span>
           </div>
           
@@ -185,7 +185,7 @@ Streams do all the heavy lifting for you." />
 </h1>
 <p>Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow you to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.</p>
 <p>Streams do all the heavy lifting for you.<br>
-→ They &ldquo;streamline&rdquo; the process for you.</p>
+-&gt; They &ldquo;streamline&rdquo; the process for you.</p>
 <p>⚠️ Note: this article is about <a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html"  class="external-link" target="_blank" rel="noopener">java.util.stream</a>. Do not confuse it with input and output streams (<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/package-summary.html"  class="external-link" target="_blank" rel="noopener">java.io</a>). That&rsquo;s a totally different concept!</p>
 <h1 id="how-to-work-with-streams">
   How to work with streams
@@ -205,7 +205,7 @@ Streams do all the heavy lifting for you." />
 </span></span><span class="line"><span class="cl"><span class="n">people</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
 </span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">person</span> <span class="o">-&gt;</span> <span class="n">person</span><span class="o">.</span><span class="na">age</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">())</span>
-</span></span></code></pre></div><p>Basically, there are two types of operations when working with streams → <strong>intermediate</strong> and <strong>terminal</strong> operations.</p>
+</span></span></code></pre></div><p>Basically, there are two types of operations when working with streams -&gt; <strong>intermediate</strong> and <strong>terminal</strong> operations.</p>
 <ul>
 <li>
 <p>Intermediate operations return a stream again (e.g., the methods <code>.filter()</code> or <code>.map()</code>).</p>
@@ -405,18 +405,18 @@ Consider a list of objects where you want to map to a specific integer field, li
   </a>
 </h2>
 <p><code>flatMap()</code> is an intermediate operation!</p>
-<p>Is used to transform each element of a stream into another stream and then flatten those streams into a single stream. It is particularly useful when dealing with collections of collections, such as a list of lists, and you want to create a single unified stream of elements.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">listOfLists</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">        <span class="o">);</span>
+<p>It is used to transform each element of a stream into another stream and then flatten those streams into a single stream. It is particularly useful when dealing with collections of collections, such as a list of lists, and you want to create a single unified stream of elements.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">listOfLists</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">allNumbers</span> <span class="o">=</span> <span class="n">listOfLists</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">list</span> <span class="o">-&gt;</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">())</span> <span class="c1">// Jeden Unterlisten-Stream zu einem einzigen Stream zusammenführen
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="c1">// Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">allNumbers</span> <span class="o">=</span> <span class="n">listOfLists</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">list</span> <span class="o">-&gt;</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 </span></span></span></code></pre></div><p>In simple terms, flatMap allows you to:</p>
 <ol>
 <li>Transform: Convert each element of a stream into another stream.</li>
@@ -429,13 +429,13 @@ Consider a list of objects where you want to map to a specific integer field, li
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p><code>limit()</code> is an intermediate operation!
-Restricts the number of elements in a stream to a specified number:</p>
+<p><code>limit()</code> is an intermediate operation!</p>
+<p>It restricts the number of elements in a stream to a specified number:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">firstThreeNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                                                 <span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>  <span class="c1">// Limit the stream to the first 3 elements
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                                                 <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>  <span class="c1">// Output: 1, 2, 3
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">firstThreeNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>  <span class="c1">// Limit the stream to the first 3 elements
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>  <span class="c1">// Output: 1, 2, 3
 </span></span></span></code></pre></div><h2 id="distinct">
   distinct()
   <a class="heading-link" href="#distinct">
@@ -444,12 +444,13 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>distinct()</code> is an intermediate operation!</p>
-<p>Removes duplicate elements from a stream and retain only unique elements:</p>
+<p>It removes duplicate elements from a stream and retain only unique elements:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">uniqueNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">distinct</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span> <span class="c1">// Output: [1, 2, 3, 4, 5, 6]
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">uniqueNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">distinct</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Output: [1, 2, 3, 4, 5, 6]
 </span></span></span></code></pre></div><h2 id="skip">
   skip()
   <a class="heading-link" href="#skip">
@@ -458,13 +459,13 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>skip()</code> is an intermediate operation!</p>
-<p>Skips a specified number of elements at the beginning of a stream:</p>
+<p>It skips a specified number of elements at the beginning of a stream:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                                      <span class="o">.</span><span class="na">skip</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                                      <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">                                      <span class="c1">// Output: [4, 5, 6, 7, 8, 9, 10]
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">skip</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Output: [4, 5, 6, 7, 8, 9, 10]
 </span></span></span></code></pre></div><h2 id="peek">
   peek()
   <a class="heading-link" href="#peek">
@@ -473,16 +474,16 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>peek()</code> is an intermediate operation!</p>
-<p>is used to apply an operation to each element of a stream without modifying the stream itself. It is especially useful for debugging or logging, allowing you to inspect the state of elements during stream processing.</p>
-<p>This method exists mainly to support debugging, where you want to see the elements as they flow past a certain point in a pipeline. Since Java 9, if the number of elements is known in advance and unchanged in the stream, the <code>.peek ()</code> statement will not be executed due to performance optimization. Using peek without any terminal operation does nothing.</p>
+<p>It is used to apply an operation to each element of a stream without modifying the stream itself. It is especially useful for debugging or logging, allowing you to inspect the state of elements during stream processing.</p>
+<p>This method exists mainly to support debugging, where you want to see the elements as they flow past a certain point in a pipeline. Since Java 9, if the number of elements is known in advance and unchanged in the stream, the <code>.peek()</code> statement will not be executed due to performance optimization. Using <code>peek()</code> without any terminal operation does nothing.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"> <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Create a stream, apply the Peek operator to each element, and collect the processed elements
+</span></span><span class="line"><span class="cl"><span class="c1">// Create a stream, apply the peek operator to each element, and collect the processed elements
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                              <span class="o">.</span><span class="na">peek</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Processing: &#34;</span> <span class="o">+</span> <span class="n">n</span><span class="o">))</span>
-</span></span><span class="line"><span class="cl">                              <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                              <span class="o">.</span><span class="na">peek</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Doubled: &#34;</span> <span class="o">+</span> <span class="n">n</span><span class="o">))</span>
-</span></span><span class="line"><span class="cl">                              <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">peek</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Processing: &#34;</span> <span class="o">+</span> <span class="n">n</span><span class="o">))</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">peek</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Doubled: &#34;</span> <span class="o">+</span> <span class="n">n</span><span class="o">))</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
 </span></span></code></pre></div><p>Output:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">Processing</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">Doubled</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
@@ -504,7 +505,7 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>boxed()</code> is an intermediate operation!</p>
-<p>The method boxed() is designed only for streams of some primitive types (IntStream, DoubleStream, and LongStream) to box each primitive value of the stream into the corresponding wrapper class (Integer, Double, and Long respectively).</p>
+<p>The method <code>boxed()</code> is designed only for streams of some primitive types (IntStream, DoubleStream, and LongStream) to box each primitive value of the stream into the corresponding wrapper class (Integer, Double, and Long respectively).</p>
 <p>This throws an Exception:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">IntStream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span> <span class="c1">// Compilation Error!
@@ -520,20 +521,21 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>filter()</code> is an intermediate operation!</p>
-<p>Filters out items based on a given criteria:</p>
+<p>It filters out items based on a given criteria:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">filteredNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">n</span>  <span class="o">-&gt;</span>  <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span> <span class="c1">// Output: [4, 5]
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">filteredNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">n</span>  <span class="o">-&gt;</span>  <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Output: [4, 5]
 </span></span></span></code></pre></div><p>Creating the filter predicate with an anonymous inner class:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">predi</span> <span class="o">=</span> <span class="o">(</span><span class="n">Integer</span> <span class="n">n</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">filteredNumbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">predi</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                                             <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">predi</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
 </span></span></code></pre></div><h2 id="iterate">
   iterate()
   <a class="heading-link" href="#iterate">
@@ -542,13 +544,13 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>iterate()</code> is an intermediate operation!</p>
-<p>allows you to create an infinite stream by repeatedly applying a function to generate the next element. The method takes an initial seed value and a unary operator (a function that takes one argument and produces a result) to generate the next value in the sequence.</p>
+<p>It allows you to create an infinite stream by repeatedly applying a function to generate the next element. The method takes an initial seed value and a unary operator (a function that takes one argument and produces a result) to generate the next value in the sequence.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Generate an infinite stream of even numbers starting from 0
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">Stream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">2</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">              <span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span> <span class="c1">// Limit the stream to 5 elements
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>              <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Stream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">2</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span> <span class="c1">// Limit the stream to 5 elements
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// Output: [0, 2, 4, 6, 8]
-</span></span></span></code></pre></div><p>More detailed examples and explanations to the <code>iterate()</code> functions can be found in <a href="https://neesri.medium.com/about-stream-iterate-e2984e87caea"  class="external-link" target="_blank" rel="noopener">a blog article of &ldquo;Neesri&rdquo;</a>.</p>
+</span></span></span></code></pre></div><p>More detailed examples and explanations to the <code>iterate()</code> functions can be found in a <a href="https://neesri.medium.com/about-stream-iterate-e2984e87caea"  class="external-link" target="_blank" rel="noopener">medium blog article of &ldquo;Neesri&rdquo;</a>.</p>
 <h2 id="unordered">
   unordered()
   <a class="heading-link" href="#unordered">
@@ -557,15 +559,19 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>unordered()</code> is an intermediate operation!</p>
-<p>is used to indicate that the stream&rsquo;s order does not matter, potentially enabling performance optimizations for certain operations. This can be particularly useful when dealing with parallel streams, where maintaining order can be costly. By calling <code>unordered()</code>, you signal to the Stream API that the ordering of elements is not important. This allows the implementation to use optimizations that might improve performance. In the context of parallel streams, maintaining order can be expensive due to the need for synchronization and merging of results. Marking a stream as unordered can reduce these overheads.</p>
+<p>It is used to indicate that the stream&rsquo;s order does not matter, potentially enabling performance optimizations for certain operations. This can be particularly useful when dealing with parallel streams, where maintaining order can be costly. By calling <code>unordered()</code>, you signal to the Stream API that the ordering of elements is not important. This allows the implementation to use optimizations that might improve performance. In the context of parallel streams, maintaining order can be expensive due to the need for synchronization and merging of results. Marking a stream as unordered can reduce these overheads.</p>
 <p>Example:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="n">numbers</span><span class="o">.</span><span class="na">parallelStream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">               <span class="o">.</span><span class="na">unordered</span><span class="o">()</span>           <span class="c1">// Indicate that the order does not matter
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>               <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="c1">// Filter even numbers
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>               <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="c1">// Print each even number
-</span></span></span></code></pre></div><h2 id="count">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">numbers</span><span class="o">.</span><span class="na">parallelStream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">unordered</span><span class="o">()</span> <span class="c1">// Indicate that the order does not matter
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="c1">// Filter even numbers
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="c1">// Print each even number
+</span></span></span></code></pre></div><p>Since it&rsquo;s parallel, the exact order of numbers may vary each time you run the code.
+The output could be any permutation of the even numbers:</p>
+<p>Possible output 1: [6, 2, 8, 10, 4]
+Possible output 2: [4, 6, 2, 10, 8]</p>
+<h2 id="count">
   count()
   <a class="heading-link" href="#count">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -573,10 +579,10 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>count()</code> is a terminal operation!</p>
-<p>Gives you the size of the stream:</p>
+<p>It gives you the size of the stream:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;Alice&#34;</span><span class="o">,</span> <span class="s">&#34;Bob&#34;</span><span class="o">,</span> <span class="s">&#34;Charlie&#34;</span><span class="o">,</span> <span class="s">&#34;David&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="kt">long</span> <span class="n">count</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">count</span><span class="o">();</span> <span class="c1">// 4
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">count</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">count</span><span class="o">();</span> <span class="c1">// 4
 </span></span></span></code></pre></div><h2 id="sum">
   sum()
   <a class="heading-link" href="#sum">
@@ -585,13 +591,13 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>sum()</code> is a terminal operation!</p>
-<p>Is used to calculate the sum of elements in a stream. This function is available in the primitive streams like IntStream, LongStream, and DoubleStream. The sum() method returns the sum of the elements as a primitive value (int, long, or double depending on the stream type).</p>
+<p>It is used to calculate the sum of elements in a stream. This function is available in the primitive streams like IntStream, LongStream, and DoubleStream. The <code>sum()</code> method returns the sum of the elements as a primitive value (int, long, or double depending on the stream type).</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Use mapToInt to convert List&lt;Integer&gt; to IntStream and then sum all the numbers
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="na">mapToInt</span><span class="o">(</span><span class="n">Integer</span><span class="o">::</span><span class="n">intValue</span><span class="o">)</span> <span class="c1">// Convert Integer to int
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">.</span><span class="na">sum</span><span class="o">();</span> <span class="c1">// Sum all the int values
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">mapToInt</span><span class="o">(</span><span class="n">Integer</span><span class="o">::</span><span class="n">intValue</span><span class="o">)</span> <span class="c1">// Convert Integer to int
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">.</span><span class="na">sum</span><span class="o">();</span> <span class="c1">// Sum all the int values
 </span></span></span><span class="line"><span class="cl"><span class="c1">// Output: 15
 </span></span></span></code></pre></div><h2 id="allmatch">
   allMatch()
@@ -601,17 +607,17 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>allMatch()</code> is a terminal operation!</p>
-<p>checks if all elements in a stream match a given predicate. The method returns a boolean value:</p>
+<p>It checks if all elements in a stream match a given predicate. The method returns a boolean value:</p>
 <ul>
 <li>true if all elements satisfy the provided predicate.</li>
 <li>false if at least one element does not satisfy the predicate.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">15</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1">// Check if all numbers in the list are positive
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">boolean</span> <span class="n">allPositive</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                                     <span class="o">.</span><span class="na">allMatch</span><span class="o">(</span><span class="n">num</span> <span class="o">-&gt;</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">);</span> <span class="c1">// Predicate: Check if all numbers are positive
-</span></span></span></code></pre></div><p>This output is <code>true</code> because all the numbers in the list are positive. If any number in the list was negative or zero, the result would be <code>false</code>.</p>
+</span></span><span class="line"><span class="cl"><span class="c1">// Check if all numbers in the list are positive
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">boolean</span> <span class="n">allPositive</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">allMatch</span><span class="o">(</span><span class="n">num</span> <span class="o">-&gt;</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">);</span> <span class="c1">// Predicate: Check if all numbers are positive
+</span></span></span></code></pre></div><p>This output is <code>true</code> because all the numbers in the list are positive. If any number in the list would be negative or zero, the result would be <code>false</code>.</p>
 <h2 id="anymatch">
   anyMatch()
   <a class="heading-link" href="#anymatch">
@@ -620,16 +626,16 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>anyMatch()</code> is a terminal operation!</p>
-<p>checks if at least one element in the stream matches a given predicate. It returns a boolean value:</p>
+<p>It checks if at least one element in the stream matches a given predicate. It returns a boolean value:</p>
 <ul>
 <li>true if at least one element in the stream satisfies the provided predicate.</li>
 <li>false if no elements match the predicate.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">15</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1">// Check if any number in the list is greater than 10
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">boolean</span> <span class="n">anyGreaterThanTen</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                                           <span class="o">.</span><span class="na">anyMatch</span><span class="o">(</span><span class="n">num</span> <span class="o">-&gt;</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">);</span> <span class="c1">// Predicate: Check if any number is greater than 10
+</span></span><span class="line"><span class="cl"><span class="c1">// Check if any number in the list is greater than 10
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">boolean</span> <span class="n">anyGreaterThanTen</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">anyMatch</span><span class="o">(</span><span class="n">num</span> <span class="o">-&gt;</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">);</span> <span class="c1">// Predicate: Check if any number is greater than 10
 </span></span></span></code></pre></div><p>This output is <code>true</code> because there is at least one number (15) in the list that is greater than 10.</p>
 <h2 id="nonematch">
   noneMatch()
@@ -639,7 +645,7 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>noneMatch()</code> is a terminal operation!</p>
-<p>checks if no elements in the stream match a given predicate. It returns a boolean value:</p>
+<p>It checks if no elements in the stream match a given predicate. It returns a boolean value:</p>
 <ul>
 <li>true if no elements in the stream satisfy the provided predicate.</li>
 <li>false if at least one element matches the predicate.</li>
@@ -648,7 +654,7 @@ Restricts the number of elements in a stream to a specified number:</p>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Check if none of the numbers in the list are negative
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">boolean</span> <span class="n">noneNegative</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="na">noneMatch</span><span class="o">(</span><span class="n">num</span> <span class="o">-&gt;</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">);</span> <span class="c1">// Predicate: Check if each number is negative
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">noneMatch</span><span class="o">(</span><span class="n">num</span> <span class="o">-&gt;</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">);</span> <span class="c1">// Predicate: Check if each number is negative
 </span></span></span></code></pre></div><p>This output is <code>true</code> because none of the numbers in the list is negative.</p>
 <h2 id="findfirst">
   findFirst()
@@ -658,17 +664,17 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>findFirst()</code> is a terminal operation!</p>
-<p>is used to find the first element of a stream. It returns an Optional that may contain the first element, or be empty if the stream has no elements.</p>
+<p>It is used to find the first element of a stream. It returns an Optional that may contain the first element, or be empty if the stream has no elements.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">20</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">40</span><span class="o">,</span> <span class="mi">50</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="n">Optional</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">firstNumber</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">findFirst</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">firstNumber</span><span class="o">.</span><span class="na">isPresent</span><span class="o">())</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;First number in the list: &#34;</span> <span class="o">+</span> <span class="n">firstNumber</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;List is empty.&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// prints &#34;First number in the list: 10&#34;
+</span></span><span class="line"><span class="cl"><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">firstNumber</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">findFirst</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">firstNumber</span><span class="o">.</span><span class="na">isPresent</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;First number in the list: &#34;</span> <span class="o">+</span> <span class="n">firstNumber</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;List is empty.&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// prints &#34;First number in the list: 10&#34;
 </span></span></span></code></pre></div><h2 id="findany">
   findAny()
   <a class="heading-link" href="#findany">
@@ -677,16 +683,16 @@ Restricts the number of elements in a stream to a specified number:</p>
   </a>
 </h2>
 <p><code>findAny()</code> is a terminal operation!</p>
-<p>is similar to findFirst(), but it may return any element from the stream. It also returns an Optional.
-The findAny() method allows us to find any element from a Stream. We use it when we’re looking for an element without paying an attention to the encounter order. It is particularly useful in parallel streams where non-deterministic behavior can occur.</p>
+<p>It is similar to <code>findFirst()</code>, but it may return any element from the stream. It also returns an Optional.
+The <code>findAny()</code> method allows you to find any element from a Stream. You can use it when you are looking for an element without paying attention to the encounter order. It is particularly useful in parallel streams where non-deterministic behavior can occur.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">20</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">40</span><span class="o">,</span> <span class="mi">50</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="n">Optional</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">anyNumber</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">findAny</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">anyNumber</span><span class="o">.</span><span class="na">isPresent</span><span class="o">())</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Found a number: &#34;</span> <span class="o">+</span> <span class="n">anyNumber</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">            <span class="c1">// prints any number of the stream. &#34;Found a number: 10&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">anyNumber</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">findAny</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">anyNumber</span><span class="o">.</span><span class="na">isPresent</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Found a number: &#34;</span> <span class="o">+</span> <span class="n">anyNumber</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// prints any number of the stream. &#34;Found a number: 10&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
 </span></span></code></pre></div><h2 id="max">
   max()
   <a class="heading-link" href="#max">
@@ -695,15 +701,16 @@ The findAny() method allows us to find any element from a Stream. We use it when
   </a>
 </h2>
 <p><code>max()</code> is a terminal operation!</p>
-<p>finds the maximum element in a stream based on a given comparator. It returns an Optional containing the maximum element if the stream is not empty.</p>
+<p>It finds the maximum element in a stream based on a given comparator. It returns an Optional containing the maximum element if the stream is not empty.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"> <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">40</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">20</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="n">Optional</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">maxNumber</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">max</span><span class="o">(</span><span class="n">Comparator</span><span class="o">.</span><span class="na">naturalOrder</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">maxNumber</span><span class="o">.</span><span class="na">isPresent</span><span class="o">())</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Maximum number in the list: &#34;</span> <span class="o">+</span> <span class="n">maxNumber</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">            <span class="c1">// prints: &#34;Maximum number in the list: 50&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">maxNumber</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">Comparator</span><span class="o">.</span><span class="na">naturalOrder</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">maxNumber</span><span class="o">.</span><span class="na">isPresent</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Maximum number in the list: &#34;</span> <span class="o">+</span> <span class="n">maxNumber</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// prints: &#34;Maximum number in the list: 50&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
 </span></span></code></pre></div><p>Many comparators exist that can be used here. Two examples are the following. But there are many more:</p>
 <ul>
 <li><code>Comparator.naturalOrder()</code> -&gt; ascending</li>
@@ -717,15 +724,15 @@ The findAny() method allows us to find any element from a Stream. We use it when
   </a>
 </h2>
 <p><code>min()</code> is a terminal operation!</p>
-<p>is used to find the minimum element in a stream based on a comparator. It returns an Optional containing the minimum element if the stream is not empty.</p>
+<p>It is used to find the minimum element in a stream based on a comparator. It returns an Optional containing the minimum element if the stream is not empty.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">40</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">20</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="n">Optional</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">minNumber</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">min</span><span class="o">(</span><span class="n">Comparator</span><span class="o">.</span><span class="na">naturalOrder</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">minNumber</span><span class="o">.</span><span class="na">isPresent</span><span class="o">())</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Minimum number in the list: &#34;</span> <span class="o">+</span> <span class="n">minNumber</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
-</span></span><span class="line"><span class="cl">            <span class="c1">// prints: &#34;Minimum number in the list: 10&#34;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">minNumber</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">min</span><span class="o">(</span><span class="n">Comparator</span><span class="o">.</span><span class="na">naturalOrder</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">minNumber</span><span class="o">.</span><span class="na">isPresent</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Minimum number in the list: &#34;</span> <span class="o">+</span> <span class="n">minNumber</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// prints: &#34;Minimum number in the list: 10&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
 </span></span></code></pre></div><h2 id="toarray">
   toArray()
   <a class="heading-link" href="#toarray">
@@ -734,10 +741,10 @@ The findAny() method allows us to find any element from a Stream. We use it when
   </a>
 </h2>
 <p><code>toArray()</code> is a terminal operation!</p>
-<p>converts the elements of a stream into an array. There are two common variants of this method:</p>
+<p>It converts the elements of a stream into an array. There are two common variants of this method:</p>
 <ul>
 <li>
-<p><code>toArray()</code>:Converts the stream to an array of Object[]. Can be useful when you&rsquo;re working with objects and don&rsquo;t need to specify the array type.</p>
+<p><code>toArray()</code>: Converts the stream to an array of Object[]. Can be useful when you&rsquo;re working with objects and don&rsquo;t need to specify the array type.</p>
 </li>
 <li>
 <p><code>toArray(IntFunction&lt;A[]&gt; generator)</code>: Allows you to create an array of a specific type, e.g., String[], Integer[], etc.
@@ -745,16 +752,15 @@ The IntFunction generates the array with the correct size. For example, Integer[
 </li>
 </ul>
 <p>Example 1:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="c1">// Convert the stream to an Object[] array
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">Object</span><span class="o">[]</span> <span class="n">numberArray</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">toArray</span><span class="o">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Convert the stream to an Object[] array
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Object</span><span class="o">[]</span> <span class="n">numberArray</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">toArray</span><span class="o">();</span>
 </span></span></code></pre></div><p>Example 2:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="c1">// Convert the stream to an Integer[] array
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">Integer</span><span class="o">[]</span> <span class="n">numberArray</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">toArray</span><span class="o">(</span><span class="n">Integer</span><span class="o">[]::</span><span class="k">new</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl"><span class="c1">// Convert the stream to an Integer[] array
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Integer</span><span class="o">[]</span> <span class="n">numberArray</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">toArray</span><span class="o">(</span><span class="n">Integer</span><span class="o">[]::</span><span class="k">new</span><span class="o">);</span>     
 </span></span></code></pre></div><h2 id="collect">
   collect()
   <a class="heading-link" href="#collect">
@@ -763,12 +769,12 @@ The IntFunction generates the array with the correct size. For example, Integer[
   </a>
 </h2>
 <p><code>collect()</code> is a terminal operation!</p>
-<p>transforms the elements of a stream into a different form, typically a collection like a List, Set, or Map, or even a custom result, such as a concatenated string or a summary object. It&rsquo;s a flexible and powerful way to accumulate the results of a stream processing pipeline.<br>
-.collect(Collectors.toList()) will return a new list for example.</p>
+<p>It transforms the elements of a stream into a different form, typically a collection like a List, Set, or Map, or even a custom result, such as a concatenated string or a summary object. It&rsquo;s a flexible and powerful way to accumulate the results of a stream processing pipeline.<br>
+<code>.collect(Collectors.toList())</code> will return a new list for example.</p>
 <p>Example:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;apple&#34;</span><span class="o">,</span> <span class="s">&#34;banana&#34;</span><span class="o">,</span> <span class="s">&#34;cherry&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">                          <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-</span></span></code></pre></div><p>Java provides several predefined collectors in the Collectors utility class. Here are some common ones:</p>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+</span></span></code></pre></div><p>Java provides several predefined collectors in the <code>Collectors</code> utility class. Here are some common ones:</p>
 <ul>
 <li><code>toList()</code>: Collects elements into a List.</li>
 <li><code>toSet()</code>: Collects elements into a Set.</li>
@@ -780,24 +786,25 @@ The IntFunction generates the array with the correct size. For example, Integer[
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&#34;apple&#34;</span><span class="o">,</span> <span class="s">&#34;banana&#34;</span><span class="o">,</span> <span class="s">&#34;cherry&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
-</span></span><span class="line"><span class="cl">                     <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">());</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>  <span class="c1">// Output: applebananacherry
+</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Output: applebananacherry
 </span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&#34;apple&#34;</span><span class="o">,</span> <span class="s">&#34;banana&#34;</span><span class="o">,</span> <span class="s">&#34;cherry&#34;</span><span class="o">,</span> <span class="s">&#34;apricot&#34;</span><span class="o">,</span> <span class="s">&#34;blueberry&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">groupedByLength</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
 </span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">groupingBy</span><span class="o">(</span><span class="n">String</span><span class="o">::</span><span class="n">length</span><span class="o">));</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">groupedByLength</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="o">{</span><span class="mi">5</span><span class="o">=[</span><span class="n">apple</span><span class="o">],</span> <span class="mi">6</span><span class="o">=[</span><span class="n">banana</span><span class="o">,</span> <span class="n">cherry</span><span class="o">],</span> <span class="mi">7</span><span class="o">=[</span><span class="n">apricot</span><span class="o">],</span> <span class="mi">9</span><span class="o">=[</span><span class="n">blueberry</span><span class="o">]}</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Output: {5=[apple], 6=[banana, cherry], 7=[apricot], 9=[blueberry]}
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">partitioned</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
 </span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">partitioningBy</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="o">));</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">partitioned</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="o">{</span><span class="kc">false</span><span class="o">=[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">],</span> <span class="kc">true</span><span class="o">=[</span><span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">]}</span>
-</span></span></code></pre></div><h2 id="reduce">
+</span></span><span class="line"><span class="cl"><span class="c1">// Output: {false=[1, 2, 3], true=[6, 7, 8]}
+</span></span></span></code></pre></div><h2 id="reduce">
   reduce()
   <a class="heading-link" href="#reduce">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -805,7 +812,7 @@ The IntFunction generates the array with the correct size. For example, Integer[
   </a>
 </h2>
 <p><code>reduce()</code> is a terminal operation!</p>
-<p>used to combine all the elements of a stream into a single result. It applies a binary operator to the elements of the stream, accumulating them into a single value. This method is particularly useful for performing aggregations or reductions on a collection of data.</p>
+<p>It is used to combine all the elements of a stream into a single result. It applies a binary operator to the elements of the stream, accumulating them into a single value. This method is particularly useful for performing aggregations or reductions on a collection of data.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
@@ -820,15 +827,15 @@ The IntFunction generates the array with the correct size. For example, Integer[
   </a>
 </h2>
 <p><code>generate()</code> is a static factory method! (used to create streams; not an operation on streams themselves)</p>
-<p>creates an infinite sequential stream where each element is generated by a Supplier. It&rsquo;s often used when you need to create streams with repeated or dynamically generated values.</p>
-<p>Since generate() produces an infinite stream, it&rsquo;s typically paired with methods like limit() to create a finite number of elements.</p>
-<p>Example 1: Using Stream.generate() to create a finite stream of random numbers</p>
+<p>It creates an infinite sequential stream where each element is generated by a Supplier. It&rsquo;s often used when you need to create streams with repeated or dynamically generated values.</p>
+<p>Since <code>generate()</code> produces an infinite stream, it&rsquo;s typically paired with methods like <code>limit()</code> to create a finite number of elements.</p>
+<p>Example 1: Using <code>Stream.generate()</code> to create a finite stream of random numbers</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Create a stream of 3 random numbers
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">Stream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">randomNumbers</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">generate</span><span class="o">(</span><span class="n">Math</span><span class="o">::</span><span class="n">random</span><span class="o">).</span><span class="na">limit</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">randomNumbers</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">generate</span><span class="o">(</span><span class="n">Math</span><span class="o">::</span><span class="n">random</span><span class="o">).</span><span class="na">limit</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// [0.2493885034549821, 0.7938434107875401, 0.2372843984052291]
 </span></span></span></code></pre></div><p>Example 2: Generate a sequence of fixed values</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Generate a stream of 3 &#34;Hello&#34; strings
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">helloStream</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">generate</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="s">&#34;Hello&#34;</span><span class="o">).</span><span class="na">limit</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">helloStream</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">generate</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="s">&#34;Hello&#34;</span><span class="o">).</span><span class="na">limit</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// [&#34;Hello&#34;, &#34;Hello&#34;, &#34;Hello&#34;]
 </span></span></span></code></pre></div><p>Example 3: Generate a stream of sequential numbers</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.stream.Stream</span><span class="o">;</span>
@@ -838,11 +845,9 @@ The IntFunction generates the array with the correct size. For example, Integer[
 </span></span><span class="line"><span class="cl">        <span class="c1">// Generate a stream of 5 sequential numbers starting from 1
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">Stream</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numberStream</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">generate</span><span class="o">(</span><span class="k">new</span> <span class="n">Counter</span><span class="o">()).</span><span class="na">limit</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="c1">// Print the numbers
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">numberStream</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// [1, 2, 3, 4, 5]
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">numberStream</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// [1, 2, 3, 4, 5]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Custom Supplier that generates sequential numbers
@@ -862,17 +867,17 @@ The IntFunction generates the array with the correct size. For example, Integer[
   </a>
 </h2>
 <p><code>range()</code> is a static factory method! (used to create streams; not an operation on streams themselves)</p>
-<p>is used to generate a stream of numbers within a specific range. This function is particularly useful for working with sequences of integers or long values in a concise and efficient way. There are two variants of the <code>range()</code> function, one for IntStream and one for LongStream. Both work similarly but operate on different types of numbers (int and long).</p>
+<p>It is used to generate a stream of numbers within a specific range. This function is particularly useful for working with sequences of integers or long values in a concise and efficient way. There are two variants of the <code>range()</code> function, one for IntStream and one for LongStream. Both work similarly but operate on different types of numbers (<code>int</code> and <code>long</code>).</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">         <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">]</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">LongStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">1L</span><span class="o">,</span> <span class="mi">5L</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">          <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">]</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">IntStream</span><span class="o">.</span><span class="na">rangeClosed</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">         <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">]</span>
-</span></span></code></pre></div><h1 id="reference">
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Output: [1, 2, 3, 4]
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">LongStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">1L</span><span class="o">,</span> <span class="mi">5L</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Output: [1, 2, 3, 4]
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">IntStream</span><span class="o">.</span><span class="na">rangeClosed</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Output: [1, 2, 3, 4, 5]
+</span></span></span></code></pre></div><h1 id="reference">
   Reference
   <a class="heading-link" href="#reference">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>

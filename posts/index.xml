@@ -6,7 +6,17 @@
     <description>Recent content in Posts on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stream API</title>
+      <link>https://gersti.at/posts/stream-api/</link>
+      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/stream-api/</guid>
+      <description>Overview Link to heading Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow you to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.
+Streams do all the heavy lifting for you.</description>
+    </item>
+    
     <item>
       <title>5 best OOP principles</title>
       <link>https://gersti.at/posts/top-oop-principles/</link>
@@ -418,16 +428,6 @@ Auch schreiben über &amp;ldquo;Static polymorphism vs. dynamic polymorphism&amp
       
       <guid>https://gersti.at/posts/strategic-functional-object/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Stream API</title>
-      <link>https://gersti.at/posts/stream-api/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/posts/stream-api/</guid>
-      <description>Overview Link to heading Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow you to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.
-Streams do all the heavy lifting for you.</description>
     </item>
     
     <item>

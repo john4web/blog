@@ -2,6 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gersti.at/</loc>
+    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/"
+                />
+  </url><url>
+    <loc>https://gersti.at/posts/</loc>
+    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/posts/"
+                />
+  </url><url>
+    <loc>https://gersti.at/posts/stream-api/</loc>
+    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gersti.at/posts/top-oop-principles/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -52,19 +81,6 @@
   </url><url>
     <loc>https://gersti.at/posts/favor-composition-over-inheritance/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gersti.at/</loc>
-    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/"
-                />
   </url><url>
     <loc>https://gersti.at/posts/heisenbug/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
@@ -124,19 +140,6 @@
     <loc>https://gersti.at/posts/polymorphism/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/</loc>
-    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/posts/"
-                />
-  </url><url>
     <loc>https://gersti.at/posts/pola/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -162,9 +165,6 @@
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/posts/strategic-functional-object/</loc>
-    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gersti.at/posts/stream-api/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/posts/tdd-basics/</loc>

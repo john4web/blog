@@ -597,11 +597,23 @@ While programming you should ask yourself the questions:
 
 - https://de.wikipedia.org/wiki/Design_by_Contract
 
-- [Design By Contract in Java - Seminarbericht WS06/07 - Matthias Hausherr](https://docplayer.org/4165643-Design-by-contract-in-java.html)
+- Design By Contract in Java - Seminarbericht WS06/07  
+Author: Matthias Hausherr  
+Fachhochschule Nordwestschweiz (Hochschule für Technik - Studiengang Informatik)  
+Betreuender Dozent: Prof. Dr. Dominik Gruntz  
+Veröffentlicht: Windisch, 15. November 2006
 
-- Program Development in Java: Abstraction, Specification, and Object-Oriented Design,
+- Program Development in Java: Abstraction, Specification, and Object-Oriented Design.   
+Authors: Barbara Liskov (Author), John Guttag   
+Publisher: Addison-Wesley Professional  
+Year: 2000  
+ISBN-10: 0201657686
 
-- Clean Architecture: A Craftsman's Guide to Software Structure and Design: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series)
+- Clean Architecture: A Craftsman's Guide to Software Structure and Design: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series).  
+Author: Robert C. Martin  
+Publischer: Pearson  
+Year: 2017  
+ISBN-10: 0134494164  
 
 - https://www.baeldung.com/java-liskov-substitution-principle
 

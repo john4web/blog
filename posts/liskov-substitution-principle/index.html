@@ -13,19 +13,19 @@
 
 
 <meta name="author" content="Johannes Gerstbauer">
-<meta name="description" content="Article explaining the liskov substitution principle in depth.">
+<meta name="description" content="Article explaining the liskov substitution principle and Design by Contract in depth.">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Liskov substitution principle and DbC in depth"/>
-<meta name="twitter:description" content="Article explaining the liskov substitution principle in depth."/>
+<meta name="twitter:description" content="Article explaining the liskov substitution principle and Design by Contract in depth."/>
 
 <meta property="og:title" content="Liskov substitution principle and DbC in depth" />
-<meta property="og:description" content="Article explaining the liskov substitution principle in depth." />
+<meta property="og:description" content="Article explaining the liskov substitution principle and Design by Contract in depth." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gersti.at/posts/liskov-substitution-principle/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-01-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-01-24T00:00:00+00:00" />
+<meta property="article:published_time" content="2024-09-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-09-11T00:00:00+00:00" />
 
 
 
@@ -154,13 +154,13 @@
           <div class="date">
             <span class="posted-on">
               <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime="2024-01-24T00:00:00Z">
-                January 24, 2024
+              <time datetime="2024-09-11T00:00:00Z">
+                September 11, 2024
               </time>
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              25-minute read
+              22-minute read
             </span>
           </div>
           
@@ -225,14 +225,14 @@ If this is the case, then the LSP holds. <code>S</code> was substituted for <cod
 </figure>
 
 <p>If the <code>Animal</code> can do certain things, then the <code>Cat</code> must also be able to do all these things. All subclasses of Animal must be able to do these things.
-But the subclasses may also be able to do more things than the base class. And by more things, I mean more <strong>specific</strong> things. The <code>Cat</code> class may contain the <code>meow()</code> method. But the <code>Animal</code> class does not contain the <code>meow()</code> method because it is a specific behavior of a cat. But that&rsquo;s not a problem, because the <code>Cat</code> class can still be used instead of the Animal class without changing the behavior of the program. Because a cat can do everything that an animal can do in exactly the same way. So the LSP holds.</p>
+But the subclasses may also be able to do more things than the base class. And by more things, I mean more <strong>specific</strong> things. The Cat class may contain the <code>meow()</code> method. But the Animal class does not contain the <code>meow()</code> method because it is a specific behavior of a cat. But that&rsquo;s not a problem, because the Cat class can still be used instead of the Animal class without changing the behavior of the program. Because a cat can do everything that an animal can do in exactly the same way. So the LSP holds.</p>
 <ul>
-<li>This means: a <code>Cat</code> is a subset of an <code>Animal</code>.</li>
-<li>This means: a <code>Cat</code> <strong>IS</strong> an <code>Animal</code>.</li>
-<li>This means: an <code>Animal</code> is not necessarily a <code>Cat</code>. An <code>Animal</code> can also be a dog, for example.</li>
+<li>This means: a Cat is a subset of an Animal.</li>
+<li>This means: a Cat <strong>IS</strong> an Animal.</li>
+<li>This means: an Animal is not necessarily a Cat. An Animal can also be a dog, for example.</li>
 </ul>
 <p>This is why we speak of an <em>is-a</em> relation in programming when we talk about inheritance.</p>
-<p>For example: a table is not an animal and therefore does not inherit from animal and therefore is not a subset of <code>Animal</code>.</p>
+<p>For example: a table is not an animal and therefore does not inherit from animal and therefore is not a subset of Animal.</p>
 <figure><img src="/images/liskov-substitution-principle/circle.svg"
          alt="Cat is a subset of Animal because it can do everything an animal can do (and more). Table is not a subset of Animal."/><figcaption>
             <p>Cat is a subset of Animal because it can do everything an animal can do (and more). Table is not a subset of Animal.</p>
@@ -272,14 +272,14 @@ That means P&rsquo; must behave exactly like P.</p>
 </h2>
 <p>When is the LSP actually violated?<br>
 <em>If you are inheriting from the base class without making the subclass substitutable for the base class, then you are breaking the LSP.</em><br>
-In the following, a classic example of a program with violated LSP is shown. Consider we have a class Rectangle ad a class Square where Square extends Rectangle.</p>
+In the following, a classic example of a program with violated LSP is shown. Consider we have a class Rectangle and a class Square where Square extends Rectangle.</p>
 <figure><img src="/images/liskov-substitution-principle/rectangle.svg"
          alt="Class Square inherits from class Rectangle."/><figcaption>
             <p>Class Square inherits from class Rectangle.</p>
         </figcaption>
 </figure>
 
-<p>In this example, square is not a proper subtype of rectangle, because the height and width of the rectangle are independently mutable. In contrast the height and width of the square must change together. Since the user believes it is communicating with a rectangle, it could easily get confused.</p>
+<p>In this example, square is not a proper subtype of rectangle, because the height and width of the rectangle are independently mutable. In contrast, the height and width of the square must change together. Since the user believes it is communicating with a rectangle, it could easily get confused.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Rectangle</span> <span class="n">r</span> <span class="o">=</span> <span class="n">_________</span>
 </span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="na">setHeight</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="na">setWidth</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
@@ -344,7 +344,7 @@ the setWidth() and setHeight() functions are inappropriate for a Square, since t
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>The previous example showed a violation of the LSP. The LSP was violated because the methods setWidth() and setHeight() were overwritten in the subclass. As the two methods in the subclass behaved differently, Square could no longer be used instead of Rectangle without changing the behaviour of the program. You may be asking yourself:</p>
+<p>The previous example showed a violation of the LSP. The LSP was violated because the methods setWidth() and setHeight() were overridden in the subclass. As the two methods in the subclass behaved differently, Square could no longer be used instead of Rectangle without changing the behaviour of the program. You may be asking yourself:</p>
 <p><strong>Does that mean method overriding is always a violation of Liskov Substitution Principle?</strong><br>
 -&gt; Answer: <em>&ldquo;it depends!&rdquo;</em></p>
 <p>The biggest problem with method overriding is that some specific method implementations in the derived classes might not fully adhere to the LSP and therefore fail to preserve type substitutability. Of course, it&rsquo;s valid to make an overridden method to accept arguments of different types and return a different type as well, but with full adherence to the following five rules:</p>
@@ -360,7 +360,7 @@ the setWidth() and setHeight() functions are inappropriate for a Square, since t
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>It is well known that &ldquo;contracts&rdquo; are an important concept in software development. Modules must be able to rely on each other by adhering to &ldquo;rules&rdquo; that have been agreed on in advance. Design by Contract (DbC) is an approach to designing software in this way. The aim is to ensure the smooth interaction of individual program modules by defining formal contracts.</p>
+<p>It is well known that &ldquo;contracts&rdquo; are an important concept in software development. Modules must be able to rely on each other by adhering to &ldquo;rules&rdquo; that have been agreed on in advance. Design by Contract (DbC) is an approach to design software in this way. The aim is to ensure the smooth interaction of individual program modules by defining formal contracts.</p>
 <p>DbC was developed and introduced by <a href="https://en.wikipedia.org/wiki/Bertrand_Meyer"  class="external-link" target="_blank" rel="noopener">Bertrand Meyer</a> with the development of the programming language <a href="https://en.wikipedia.org/wiki/Eiffel_%28programming_language%29"  class="external-link" target="_blank" rel="noopener">Eiffel</a>.</p>
 <figure><img src="/images/liskov-substitution-principle/bertrand_meyer.jpg"
          alt="Bertrand Meyer (Source: Wikipedia)." width="200"/><figcaption>
@@ -399,7 +399,7 @@ Preconditions are requirements that must be met before calling a method. These c
 </span></span><span class="line"><span class="cl">  <span class="o">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><p>In this example, the precondition for the <code>doStuff</code> method states that the <code>num</code> parameter value must be in the range 1 to 5. This precondition is enforced with a range check inside the method. If the precondition is not met, an IllegalArgument exception is thrown.
+</span></span></code></pre></div><p>In this example, the precondition for the <code>doStuff</code> method states that the <code>num</code> parameter value must be in the range 1 to 5. This precondition is enforced with a range check inside the method. If the precondition is not met, an IllegalArgumentException is thrown.
 When the precondition is not met (i.e. its evaluation results in false), then the code that is calling the method is wrong. The caller has to ensure that the precondition is met beforehand.</p>
 <h3 id="postconditions">
   Postconditions
@@ -691,7 +691,7 @@ Java’s method overriding rules support this rule by enforcing that the overrid
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>Because <code>Integer</code> IS-A <code>Number</code>, a client code that expects <code>Number</code> can replace <code>Foo</code> with <code>Bar</code> without any problems.
 On the other hand, if the overridden method in <code>Bar</code> were to return a wider type than <code>Number</code>, e.g. <code>Object</code>, that might include any subtype of Object e.g. a Truck. Any client code that relied on the return type of Number could not handle a Truck!
-Fortunately, Java’s method overriding rules prevent an override method returning a wider type.</p>
+Fortunately, Java’s method overriding rules prevent an overridden method returning a wider type.</p>
 <ul>
 <li>If a method in the base class returns void, the overridden method should return void</li>
 <li>If a method in the base class returns a primitive, the overridden method should return the same primitive</li>
@@ -705,7 +705,7 @@ Fortunately, Java’s method overriding rules prevent an override method returni
   </a>
 </h4>
 <p>The subtype method can throw fewer or narrower (but not any additional or broader) exceptions than the supertype method.
-This is understandable because when the client code substitutes a subtype, it can handle the method throwing fewer exceptions than the supertype method. However, if the subtype’s method throws new or broader checked exceptions, it would break the client code.
+This is understandable because when the client code substitutes a subtype, it can handle, the method throwing fewer exceptions than the supertype method. However, if the subtype’s method throws new or broader checked exceptions, it would break the client code.
 Java’s method overriding rules already enforce this rule for checked exceptions. However, overriding methods in Java CAN THROW any RuntimeException regardless of whether the overridden method declares the exception.</p>
 <ul>
 <li><em>If a method in the base class throws an exception, the overridden method must throw the same exception or a subtype of the base class exception.</em></li>
@@ -718,21 +718,38 @@ Java’s method overriding rules already enforce this rule for checked exception
   </a>
 </h2>
 <ul>
-<li>Preconditions cannot be strengthened in a subtype.</li>
-<li>Postconditions cannot be weakened in a subtype.</li>
-<li>Invariants of the supertype must be preserved (or strengthened) in a subtype.</li>
-<li>History constraint: subclass methods shouldn’t allow state changes that the base class didn’t allow.</li>
-<li>Subtype method argument types can be identical or wider than the supertype method argument types(= contravariant method arguments)</li>
-<li>The return type of the subtype method can be narrower than the return type of the supertype method</li>
-<li>If a method in the base class returns void, the overridden method should return void as well</li>
-<li>If a method in the base class returns a primitive, the overridden method should return the same primitive</li>
-<li>If a method in the base class returns a certain type, the overridden method should return the same type or a subtype (= covariant return type)</li>
+<li>
+<p>Preconditions cannot be strengthened in a subtype.</p>
+</li>
+<li>
+<p>Postconditions cannot be weakened in a subtype.</p>
+</li>
+<li>
+<p>Invariants of the supertype must be preserved (or strengthened) in a subtype.</p>
+</li>
+<li>
+<p>History constraint: subclass methods shouldn’t allow state changes that the base class didn’t allow.</p>
+</li>
+<li>
+<p>Subtype method argument types can be identical or wider than the supertype method argument types(= contravariant method arguments)</p>
+</li>
+<li>
+<p>The return type of the subtype method can be narrower than the return type of the supertype method</p>
+</li>
+<li>
+<p>If a method in the base class returns void, the overridden method should return void as well</p>
+</li>
+<li>
+<p>If a method in the base class returns a primitive, the overridden method should return the same primitive</p>
+</li>
+<li>
+<p>If a method in the base class returns a certain type, the overridden method should return the same type or a subtype (= covariant return type)</p>
+</li>
 </ul>
-<p>This is a lot to think about. How are you supposed to remember all this and apply it in your daily life as a software developer?
-In my opinion, there are two options:</p>
+<p><strong>This is a lot to think about. How are you supposed to remember all this and apply it in your daily life as a software developer? In my opinion, there are two options:</strong></p>
 <ol>
 <li>
-<p>You use inheritance in your code. However then you have to apply all these rules and think about all the mentioned stuff. If you don&rsquo;t, then your Code is bad and breaks the LSP!</p>
+<p>You use inheritance in your code. However then you have to apply all these rules and think about all the mentioned stuff. If you don&rsquo;t, then your code is bad and breaks the LSP!</p>
 </li>
 <li>
 <p>Don&rsquo;t use inheritance at all! Use composition instead! In this case you don&rsquo;t have to think about all the mentioned stuff. And your code is clean as well!</p>
@@ -771,7 +788,7 @@ Classes that adhere to the LSP are generally more testable. Tests written for th
 </h2>
 <p>I don’t think LSP is difficult to understand. However I think it is difficult to actually follow it. Most of the time subclassing is done wrong. Most of the time subclassing is used too much or it is used in situations where it should not be used. Inheritance should not be overused!</p>
 <p>A fundamental Rule in OOP states: <em><strong>&ldquo;Favor composition over inheritance!&rdquo;</strong></em></p>
-<p>So maybe in the next situation where you think about using inheritance to solve a problem, you should ask yourself the question: “How could I solve the problem by using composition?”. I would argue most of the time composition would lead to a better solution than inheritance.<br>
+<p>So maybe in the next situation where you think about using inheritance to solve a problem, you should ask yourself the question: “How could I solve the problem by using composition?”. I would argue that most of the time composition would lead to a better solution than inheritance.<br>
 I would even go one step further: Ideally, inheritance should not be used anywhere in your code. Now you might be wondering: what was the point of this article then if inheritance shouldn&rsquo;t be used anyway? Well, unfortunately, inheritance is still used very often. In Java, for example, it is a fundamental concept on which the entire language is built on.</p>
 <p>While programming you should ask yourself the questions:</p>
 <ul>
@@ -788,307 +805,46 @@ I would even go one step further: Ideally, inheritance should not be used anywhe
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<ul>
+<li>
 <p><a href="https://de.wikipedia.org/wiki/Design_by_Contract"  class="external-link" target="_blank" rel="noopener">https://de.wikipedia.org/wiki/Design_by_Contract</a></p>
+</li>
+<li>
 <p><a href="https://docplayer.org/4165643-Design-by-contract-in-java.html"  class="external-link" target="_blank" rel="noopener">Design By Contract in Java - Seminarbericht WS06/07 - Matthias Hausherr</a></p>
+</li>
+<li>
 <p>Program Development in Java: Abstraction, Specification, and Object-Oriented Design,</p>
+</li>
+<li>
 <p>Clean Architecture: A Craftsman&rsquo;s Guide to Software Structure and Design: A Craftsman&rsquo;s Guide to Software Structure and Design (Robert C. Martin Series)</p>
+</li>
+<li>
 <p><a href="https://www.baeldung.com/java-liskov-substitution-principle"  class="external-link" target="_blank" rel="noopener">https://www.baeldung.com/java-liskov-substitution-principle</a></p>
+</li>
+<li>
 <p><a href="https://www.baeldung.com/java-method-overload-override"  class="external-link" target="_blank" rel="noopener">https://www.baeldung.com/java-method-overload-override</a></p>
-<p>University Lecture called “Software Design Methods” by
-Ing. Dr. Hans J. Prüller, B.Sc.
+</li>
+<li>
+<p>University Lecture called “Software Design Methods”
+by Ing. Dr. Hans J. Prüller, B.Sc.
 Personal website: <a href="https://hansprueller.lbs-logics.com/"  class="external-link" target="_blank" rel="noopener">https://hansprueller.lbs-logics.com/</a></p>
+</li>
+<li>
 <p><a href="https://www.youtube.com/watch?v=ObHQHszbIcE"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ObHQHszbIcE</a></p>
+</li>
+<li>
 <p><a href="https://www.youtube.com/watch?v=dJQMqNOC4Pc&amp;t=176s"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=dJQMqNOC4Pc&t=176s</a></p>
+</li>
+<li>
 <p><a href="https://www.youtube.com/watch?v=bVwZquRH1Vk&amp;t=144s"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=bVwZquRH1Vk&t=144s</a></p>
+</li>
+<li>
 <p><a href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_%28computer_science%29"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)</a></p>
+</li>
+<li>
 <p><a href="https://vowi.fsinf.at/wiki/TU_Wien:Fortgeschrittene_objektorientierte_Programmierung_VU_%28Puntigam%29/Mitschrift_SS17"  class="external-link" target="_blank" rel="noopener">https://vowi.fsinf.at/wiki/TU_Wien:Fortgeschrittene_objektorientierte_Programmierung_VU_(Puntigam)/Mitschrift_SS17</a></p>
-<h1 id="h1">
-  H1
-  <a class="heading-link" href="#h1">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h1>
-<h2 id="h2">
-  H2
-  <a class="heading-link" href="#h2">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<h3 id="h3">
-  H3
-  <a class="heading-link" href="#h3">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
-<h4 id="h4">
-  H4
-  <a class="heading-link" href="#h4">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<h5 id="h5">
-  H5
-  <a class="heading-link" href="#h5">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
-<h6 id="h6">
-  H6
-  <a class="heading-link" href="#h6">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h6>
-<h2 id="paragraph">
-  Paragraph
-  <a class="heading-link" href="#paragraph">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.</p>
-<p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.</p>
-<h2 id="links">
-  Links
-  <a class="heading-link" href="#links">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>This is a <a href="/posts/emoji-support" >internal link</a> to another page. <a href="https://www.gohugo.io"  class="external-link" target="_blank" rel="noopener">This one</a> points to a external page nad will be open in a new tag.</p>
-<h2 id="blockquotes">
-  Blockquotes
-  <a class="heading-link" href="#blockquotes">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a <code>footer</code> or <code>cite</code> element, and optionally with in-line changes such as annotations and abbreviations.</p>
-<h4 id="blockquote-without-attribution">
-  Blockquote without attribution
-  <a class="heading-link" href="#blockquote-without-attribution">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<blockquote>
-<p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-<strong>Note</strong> that you can use <em>Markdown syntax</em> within a blockquote.</p>
-</blockquote>
-<h4 id="blockquote-with-attribution">
-  Blockquote with attribution
-  <a class="heading-link" href="#blockquote-with-attribution">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<blockquote>
-<p>Don&rsquo;t communicate by sharing memory, share memory by communicating.<!-- raw HTML omitted -->
-— <!-- raw HTML omitted -->Rob Pike<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><!-- raw HTML omitted --></p>
-</blockquote>
-<h2 id="tables">
-  Tables
-  <a class="heading-link" href="#tables">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>Tables aren&rsquo;t part of the core Markdown spec, but Hugo supports them out-of-the-box.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Bob</td>
-<td>27</td>
-</tr>
-<tr>
-<td>Alice</td>
-<td>23</td>
-</tr>
-</tbody>
-</table>
-<h4 id="inline-markdown-within-tables">
-  Inline Markdown within tables
-  <a class="heading-link" href="#inline-markdown-within-tables">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<table>
-<thead>
-<tr>
-<th>Italics</th>
-<th>Bold</th>
-<th>Code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>italics</em></td>
-<td><strong>bold</strong></td>
-<td><code>code</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="code-blocks">
-  Code Blocks
-  <a class="heading-link" href="#code-blocks">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<h4 id="code-block-with-backticks">
-  Code block with backticks
-  <a class="heading-link" href="#code-block-with-backticks">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Example HTML5 Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Test<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</span></span></code></pre></div><h4 id="code-block-indented-with-four-spaces">
-  Code block indented with four spaces
-  <a class="heading-link" href="#code-block-indented-with-four-spaces">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<pre><code>&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;title&gt;Example HTML5 Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;p&gt;Test&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="code-block-with-hugos-internal-highlight-shortcode">
-  Code block with Hugo&rsquo;s internal highlight shortcode
-  <a class="heading-link" href="#code-block-with-hugos-internal-highlight-shortcode">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Example HTML5 Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Test<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></span></span></code></pre></div>
-<h2 id="list-types">
-  List Types
-  <a class="heading-link" href="#list-types">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<h4 id="ordered-list">
-  Ordered List
-  <a class="heading-link" href="#ordered-list">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<ol>
-<li>First item</li>
-<li>Second item</li>
-<li>Third item</li>
-</ol>
-<h4 id="unordered-list">
-  Unordered List
-  <a class="heading-link" href="#unordered-list">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<ul>
-<li>List item</li>
-<li>Another item</li>
-<li>And another item</li>
-</ul>
-<h4 id="nested-list">
-  Nested list
-  <a class="heading-link" href="#nested-list">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<ul>
-<li>Fruit
-<ul>
-<li>Apple</li>
-<li>Orange</li>
-<li>Banana</li>
-</ul>
-</li>
-<li>Dairy
-<ul>
-<li>Milk</li>
-<li>Cheese</li>
-</ul>
 </li>
 </ul>
-<h4 id="foot-notes">
-  Foot Notes
-  <a class="heading-link" href="#foot-notes">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<p>Check it<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> at the end<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> of this text<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
-<h2 id="other-elements--abbr-sub-sup-kbd-mark">
-  Other Elements — abbr, sub, sup, kbd, mark
-  <a class="heading-link" href="#other-elements--abbr-sub-sup-kbd-mark">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p><!-- raw HTML omitted -->GIF<!-- raw HTML omitted --> is a bitmap image format.</p>
-<p>H<!-- raw HTML omitted -->2<!-- raw HTML omitted -->O</p>
-<p>X<!-- raw HTML omitted -->n<!-- raw HTML omitted --> + Y<!-- raw HTML omitted -->n<!-- raw HTML omitted --> = Z<!-- raw HTML omitted -->n<!-- raw HTML omitted --></p>
-<p>Press <!-- raw HTML omitted --><!-- raw HTML omitted -->CTRL<!-- raw HTML omitted -->+<!-- raw HTML omitted -->ALT<!-- raw HTML omitted -->+<!-- raw HTML omitted -->Delete<!-- raw HTML omitted --><!-- raw HTML omitted --> to end the session.</p>
-<p>Most <!-- raw HTML omitted -->salamanders<!-- raw HTML omitted --> are nocturnal, and hunt for insects, worms, and other small creatures.</p>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p>The above quote is excerpted from Rob Pike&rsquo;s <a href="https://www.youtube.com/watch?v=PAAkCSZUG1c"  class="external-link" target="_blank" rel="noopener">talk</a> during Gopherfest, November 18, 2015.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2">
-<p>A footnote.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:3">
-<p>Another one.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:4">
-<p>Cool, right?&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
 
       </div>
 

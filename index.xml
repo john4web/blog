@@ -8,6 +8,16 @@
     <language>en</language>
     <lastBuildDate>Wed, 11 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Liskov substitution principle and DbC in depth</title>
+      <link>https://gersti.at/posts/liskov-substitution-principle/</link>
+      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/liskov-substitution-principle/</guid>
+      <description>This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some sources I have read however also includes my own opinion on that topic. Code examples are written in Java.
+Overview Link to heading The Liskov Substitution Principle (LSP) was first introduced by Barbara Liskov in 1987 in her article &amp;ldquo;Data Abstraction and Hierarchy&amp;rdquo; and is one of the five SOLID design principles of object-oriented programming.</description>
+    </item>
+    
+    <item>
       <title>Stream API</title>
       <link>https://gersti.at/posts/stream-api/</link>
       <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
@@ -15,6 +25,17 @@
       <guid>https://gersti.at/posts/stream-api/</guid>
       <description>Overview Link to heading Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow you to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.
 Streams do all the heavy lifting for you.</description>
+    </item>
+    
+    <item>
+      <title>The Strategy Pattern</title>
+      <link>https://gersti.at/posts/strategy-pattern/</link>
+      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/strategy-pattern/</guid>
+      <description>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in Java.
+A duck can fly and quack (and can do probably much more things). Image-Source: Pixabay
+The Problem that the strategy pattern solves Link to heading Let&amp;rsquo;s say we have a Duck class. And then we have a CityDuck (living in the city) and a WildDuck (living in the forest). We use inheritance – so CityDuck and WildDuck inherit from Duck.</description>
     </item>
     
     <item>
@@ -248,16 +269,6 @@ Reference Link to heading https://www.</description>
       
       <guid>https://gersti.at/posts/later/</guid>
       <description>Fixing stuff later in Software Engineering (Source: Twitter Post from Vlad Mihalcea).</description>
-    </item>
-    
-    <item>
-      <title>Liskov substitution principle and DbC in depth</title>
-      <link>https://gersti.at/posts/liskov-substitution-principle/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/posts/liskov-substitution-principle/</guid>
-      <description>This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some sources I have read however also includes my own opinion on that topic. Code examples are written in Java.
-Overview Link to heading The Liskov Substitution Principle (LSP) was first introduced by Barbara Liskov in 1987 in her article &amp;ldquo;Data Abstraction and Hierarchy&amp;rdquo; and is one of the five SOLID design principles of object-oriented programming.</description>
     </item>
     
     <item>
@@ -714,17 +725,6 @@ Intent Link to heading Das Singleton Pattern wird dann verwendet, wenn man von e
     </item>
     
     <item>
-      <title>The Strategy Pattern</title>
-      <link>https://gersti.at/posts/strategy-pattern/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/posts/strategy-pattern/</guid>
-      <description>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in Java.
-A duck can fly and quack (and can do probably much more things). Image-Source: Pixabay
-The Problem that the strategy pattern solves Link to heading Let&amp;rsquo;s say we have a Duck class. And then we have a CityDuck (living in the city) and a WildDuck (living in the forest). We use inheritance – so CityDuck and WildDuck inherit from Duck.</description>
-    </item>
-    
-    <item>
       <title>The Template Method Pattern</title>
       <link>https://gersti.at/posts/template-method-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -786,6 +786,16 @@ The Problem that the strategy pattern solves Link to heading Let&amp;rsquo;s say
       <guid>https://gersti.at/about/</guid>
       <description>Hello and welcome to my blog! 😄 Link to heading My name is Johannes Gerstbauer, and I am a passionate software developer from Vienna/Austria, with a special focus on object-oriented programming (OOP) in Java. For many years, I have been fascinated by the art of solving complex problems through elegant code, and I want to share this fascination with you here on my blog.
 My Job 🚀 Link to heading Currently, I work as a JVM Backend Developer at &amp;ldquo;Karriere.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gersti.at/posts/markdown-rules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/markdown-rules/</guid>
+      <description>Markdown Blog Article Rules
+H1 Link to heading H2 Link to heading H3 Link to heading H4 Link to heading H5 Link to heading H6 Link to heading Paragraph Link to heading Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur?</description>
     </item>
     
   </channel>

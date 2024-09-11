@@ -5,16 +5,6 @@
     <link>https://gersti.at/de/series/</link>
     <description>Recent content in Series on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/series/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Demonstração do Tema</title>
-      <link>https://gersti.at/de/series/demonstra%C3%A7%C3%A3o-do-tema/</link>
-      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/de/series/demonstra%C3%A7%C3%A3o-do-tema/</guid>
-      <description></description>
-    </item>
-    
+    <language>en</language><atom:link href="https://gersti.at/de/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

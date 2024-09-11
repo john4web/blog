@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gersti.at/de/posts/strategy-pattern/</loc>
-    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://gersti.at/de/</loc>
-    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -28,56 +28,8 @@
                 href="https://gersti.at/de/"
                 />
   </url><url>
-    <loc>https://gersti.at/de/posts/</loc>
-    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/posts/"
-                />
-  </url><url>
-    <loc>https://gersti.at/de/authors/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/authors/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/authors/"
-                />
-  </url><url>
-    <loc>https://gersti.at/de/categories/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/categories/"
-                />
-  </url><url>
-    <loc>https://gersti.at/de/tags/css/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gersti.at/de/categories/demonstra%C3%A7%C3%A3o-do-tema/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gersti.at/de/series/demonstra%C3%A7%C3%A3o-do-tema/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://gersti.at/de/posts/liskov-substitution-principle/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -89,45 +41,30 @@
                 href="https://gersti.at/de/posts/liskov-substitution-principle/"
                 />
   </url><url>
-    <loc>https://gersti.at/de/tags/html/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gersti.at/de/tags/hugo/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gersti.at/de/tags/markdown/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gersti.at/de/authors/programador-solit%C3%A1rio/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gersti.at/de/series/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+    <loc>https://gersti.at/de/posts/</loc>
+    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gersti.at/series/"
+                href="https://gersti.at/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://gersti.at/de/series/"
+                href="https://gersti.at/de/posts/"
                 />
   </url><url>
-    <loc>https://gersti.at/de/categories/sintaxe/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gersti.at/de/tags/</loc>
-    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+    <loc>https://gersti.at/de/posts/stream-api/</loc>
+    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gersti.at/tags/"
+                href="https://gersti.at/posts/stream-api/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://gersti.at/de/tags/"
+                href="https://gersti.at/de/posts/stream-api/"
                 />
   </url><url>
     <loc>https://gersti.at/de/about/</loc>
@@ -141,6 +78,54 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://gersti.at/de/about/"
+                />
+  </url><url>
+    <loc>https://gersti.at/de/authors/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/authors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/authors/"
+                />
+  </url><url>
+    <loc>https://gersti.at/de/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/categories/"
+                />
+  </url><url>
+    <loc>https://gersti.at/de/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/series/"
+                />
+  </url><url>
+    <loc>https://gersti.at/de/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/tags/"
                 />
   </url>
 </urlset>

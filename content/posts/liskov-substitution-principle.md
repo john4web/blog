@@ -1,7 +1,7 @@
 +++
 title = "Liskov substitution principle and DbC in depth"
-date = "2024-01-24"
-description = "Article explaining the liskov substitution principle in depth."
+date = "2024-09-11"
+description = "Article explaining the liskov substitution principle and Design by Contract in depth."
 +++
 
 This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some [sources](#reference) I have read however also includes my own opinion on that topic. Code examples are written in Java.
@@ -51,15 +51,15 @@ Consider a classic example where the subclass ``Cat`` extends the base class ``A
 {{< figure src="/images/liskov-substitution-principle/inheritance_2.svg" caption="Class Cat inherits from class Animal." width="200" height="300" >}}
 
 If the ``Animal`` can do certain things, then the ``Cat`` must also be able to do all these things. All subclasses of Animal must be able to do these things.
-But the subclasses may also be able to do more things than the base class. And by more things, I mean more **specific** things. The ``Cat`` class may contain the ``meow()`` method. But the ``Animal`` class does not contain the ``meow()`` method because it is a specific behavior of a cat. But that's not a problem, because the ``Cat`` class can still be used instead of the Animal class without changing the behavior of the program. Because a cat can do everything that an animal can do in exactly the same way. So the LSP holds.
+But the subclasses may also be able to do more things than the base class. And by more things, I mean more **specific** things. The Cat class may contain the ``meow()`` method. But the Animal class does not contain the ``meow()`` method because it is a specific behavior of a cat. But that's not a problem, because the Cat class can still be used instead of the Animal class without changing the behavior of the program. Because a cat can do everything that an animal can do in exactly the same way. So the LSP holds.
 
-* This means: a ``Cat`` is a subset of an ``Animal``.
-* This means: a ``Cat`` **IS** an ``Animal``.
-* This means: an ``Animal`` is not necessarily a ``Cat``. An ``Animal`` can also be a dog, for example.
+* This means: a Cat is a subset of an Animal.
+* This means: a Cat **IS** an Animal.
+* This means: an Animal is not necessarily a Cat. An Animal can also be a dog, for example.
 
 This is why we speak of an _is-a_ relation in programming when we talk about inheritance.
 
-For example: a table is not an animal and therefore does not inherit from animal and therefore is not a subset of ``Animal``.
+For example: a table is not an animal and therefore does not inherit from animal and therefore is not a subset of Animal.
 
 {{< figure src="/images/liskov-substitution-principle/circle.svg" caption="Cat is a subset of Animal because it can do everything an animal can do (and more). Table is not a subset of Animal.">}}
 
@@ -84,11 +84,11 @@ That means P' must behave exactly like P.
 
 When is the LSP actually violated?  
 _If you are inheriting from the base class without making the subclass substitutable for the base class, then you are breaking the LSP._  
-In the following, a classic example of a program with violated LSP is shown. Consider we have a class Rectangle ad a class Square where Square extends Rectangle.
+In the following, a classic example of a program with violated LSP is shown. Consider we have a class Rectangle and a class Square where Square extends Rectangle.
 
 {{< figure src="/images/liskov-substitution-principle/rectangle.svg" caption="Class Square inherits from class Rectangle." >}}
 
-In this example, square is not a proper subtype of rectangle, because the height and width of the rectangle are independently mutable. In contrast the height and width of the square must change together. Since the user believes it is communicating with a rectangle, it could easily get confused.
+In this example, square is not a proper subtype of rectangle, because the height and width of the rectangle are independently mutable. In contrast, the height and width of the square must change together. Since the user believes it is communicating with a rectangle, it could easily get confused.
 
 ```java
 Rectangle r = _________
@@ -165,7 +165,7 @@ Or an even better solution: **use composition instead of inheritance**.
 
 ## Method Overriding
 
-The previous example showed a violation of the LSP. The LSP was violated because the methods setWidth() and setHeight() were overwritten in the subclass. As the two methods in the subclass behaved differently, Square could no longer be used instead of Rectangle without changing the behaviour of the program. You may be asking yourself:
+The previous example showed a violation of the LSP. The LSP was violated because the methods setWidth() and setHeight() were overridden in the subclass. As the two methods in the subclass behaved differently, Square could no longer be used instead of Rectangle without changing the behaviour of the program. You may be asking yourself:
 
 **Does that mean method overriding is always a violation of Liskov Substitution Principle?**  
 -> Answer: _"it depends!"_
@@ -184,7 +184,7 @@ The biggest problem with method overriding is that some specific method implemen
 **5.** If a method in the base class throws an exception, the overridden method must throw the same exception or a subtype of the base class exception.
 
 ## Design by Contract (Preconditions, Postconditions, Invariants)
-It is well known that "contracts" are an important concept in software development. Modules must be able to rely on each other by adhering to "rules" that have been agreed on in advance. Design by Contract (DbC) is an approach to designing software in this way. The aim is to ensure the smooth interaction of individual program modules by defining formal contracts.
+It is well known that "contracts" are an important concept in software development. Modules must be able to rely on each other by adhering to "rules" that have been agreed on in advance. Design by Contract (DbC) is an approach to design software in this way. The aim is to ensure the smooth interaction of individual program modules by defining formal contracts.
 
 DbC was developed and introduced by [Bertrand Meyer](https://en.wikipedia.org/wiki/Bertrand_Meyer) with the development of the programming language [Eiffel](https://en.wikipedia.org/wiki/Eiffel_(programming_language)).
 
@@ -224,7 +224,7 @@ public class Foo {
 }
 ```
 
-In this example, the precondition for the ``doStuff`` method states that the ``num`` parameter value must be in the range 1 to 5. This precondition is enforced with a range check inside the method. If the precondition is not met, an IllegalArgument exception is thrown.
+In this example, the precondition for the ``doStuff`` method states that the ``num`` parameter value must be in the range 1 to 5. This precondition is enforced with a range check inside the method. If the precondition is not met, an IllegalArgumentException is thrown.
 When the precondition is not met (i.e. its evaluation results in false), then the code that is calling the method is wrong. The caller has to ensure that the precondition is met beforehand.
 
 ### Postconditions
@@ -517,7 +517,7 @@ public class Bar extends Foo {
 
 Because ``Integer`` IS-A ``Number``, a client code that expects ``Number`` can replace ``Foo`` with ``Bar`` without any problems.
 On the other hand, if the overridden method in ``Bar`` were to return a wider type than ``Number``, e.g. ``Object``, that might include any subtype of Object e.g. a Truck. Any client code that relied on the return type of Number could not handle a Truck!
-Fortunately, Java’s method overriding rules prevent an override method returning a wider type.
+Fortunately, Java’s method overriding rules prevent an overridden method returning a wider type.
 
 * If a method in the base class returns void, the overridden method should return void
 * If a method in the base class returns a primitive, the overridden method should return the same primitive
@@ -526,27 +526,34 @@ Fortunately, Java’s method overriding rules prevent an override method returni
 #### Exceptions
 
 The subtype method can throw fewer or narrower (but not any additional or broader) exceptions than the supertype method.
-This is understandable because when the client code substitutes a subtype, it can handle the method throwing fewer exceptions than the supertype method. However, if the subtype’s method throws new or broader checked exceptions, it would break the client code.
+This is understandable because when the client code substitutes a subtype, it can handle, the method throwing fewer exceptions than the supertype method. However, if the subtype’s method throws new or broader checked exceptions, it would break the client code.
 Java’s method overriding rules already enforce this rule for checked exceptions. However, overriding methods in Java CAN THROW any RuntimeException regardless of whether the overridden method declares the exception.  
 
 * _If a method in the base class throws an exception, the overridden method must throw the same exception or a subtype of the base class exception._
 
 ## Summary of rules:
 
-* Preconditions cannot be strengthened in a subtype.
-* Postconditions cannot be weakened in a subtype.
-* Invariants of the supertype must be preserved (or strengthened) in a subtype.
-* History constraint: subclass methods shouldn’t allow state changes that the base class didn’t allow.
-* Subtype method argument types can be identical or wider than the supertype method argument types(= contravariant method arguments)
-* The return type of the subtype method can be narrower than the return type of the supertype method
-* If a method in the base class returns void, the overridden method should return void as well
-* If a method in the base class returns a primitive, the overridden method should return the same primitive
-* If a method in the base class returns a certain type, the overridden method should return the same type or a subtype (= covariant return type)
+* Preconditions cannot be strengthened in a subtype.  
 
-This is a lot to think about. How are you supposed to remember all this and apply it in your daily life as a software developer?
-In my opinion, there are two options:
+* Postconditions cannot be weakened in a subtype.  
 
-1. You use inheritance in your code. However then you have to apply all these rules and think about all the mentioned stuff. If you don't, then your Code is bad and breaks the LSP!
+* Invariants of the supertype must be preserved (or strengthened) in a subtype.  
+
+* History constraint: subclass methods shouldn’t allow state changes that the base class didn’t allow.  
+
+* Subtype method argument types can be identical or wider than the supertype method argument types(= contravariant method arguments)  
+
+* The return type of the subtype method can be narrower than the return type of the supertype method  
+
+* If a method in the base class returns void, the overridden method should return void as well  
+
+* If a method in the base class returns a primitive, the overridden method should return the same primitive  
+
+* If a method in the base class returns a certain type, the overridden method should return the same type or a subtype (= covariant return type)  
+
+**This is a lot to think about. How are you supposed to remember all this and apply it in your daily life as a software developer? In my opinion, there are two options:**
+
+1. You use inheritance in your code. However then you have to apply all these rules and think about all the mentioned stuff. If you don't, then your code is bad and breaks the LSP!
 
 2. Don't use inheritance at all! Use composition instead! In this case you don't have to think about all the mentioned stuff. And your code is clean as well! 
 
@@ -576,7 +583,7 @@ I don’t think LSP is difficult to understand. However I think it is difficult 
 
 A fundamental Rule in OOP states: _**"Favor composition over inheritance!"**_  
 
-So maybe in the next situation where you think about using inheritance to solve a problem, you should ask yourself the question: “How could I solve the problem by using composition?”. I would argue most of the time composition would lead to a better solution than inheritance.  
+So maybe in the next situation where you think about using inheritance to solve a problem, you should ask yourself the question: “How could I solve the problem by using composition?”. I would argue that most of the time composition would lead to a better solution than inheritance.  
 I would even go one step further: Ideally, inheritance should not be used anywhere in your code. Now you might be wondering: what was the point of this article then if inheritance shouldn't be used anyway? Well, unfortunately, inheritance is still used very often. In Java, for example, it is a fundamental concept on which the entire language is built on.
 
 While programming you should ask yourself the questions:
@@ -587,171 +594,29 @@ While programming you should ask yourself the questions:
 * Do I break the signature-, properties- or method rule?
 
 ## Reference
-https://de.wikipedia.org/wiki/Design_by_Contract
 
-[Design By Contract in Java - Seminarbericht WS06/07 - Matthias Hausherr](https://docplayer.org/4165643-Design-by-contract-in-java.html)
+- https://de.wikipedia.org/wiki/Design_by_Contract
 
-Program Development in Java: Abstraction, Specification, and Object-Oriented Design,
+- [Design By Contract in Java - Seminarbericht WS06/07 - Matthias Hausherr](https://docplayer.org/4165643-Design-by-contract-in-java.html)
 
-Clean Architecture: A Craftsman's Guide to Software Structure and Design: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series)
+- Program Development in Java: Abstraction, Specification, and Object-Oriented Design,
 
-https://www.baeldung.com/java-liskov-substitution-principle
+- Clean Architecture: A Craftsman's Guide to Software Structure and Design: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series)
 
-https://www.baeldung.com/java-method-overload-override 
+- https://www.baeldung.com/java-liskov-substitution-principle
 
-University Lecture called “Software Design Methods” by
-Ing. Dr. Hans J. Prüller, B.Sc.
+- https://www.baeldung.com/java-method-overload-override 
+
+- University Lecture called “Software Design Methods”
+by Ing. Dr. Hans J. Prüller, B.Sc.
 Personal website: https://hansprueller.lbs-logics.com/ 
 
-https://www.youtube.com/watch?v=ObHQHszbIcE 
+- https://www.youtube.com/watch?v=ObHQHszbIcE 
 
-https://www.youtube.com/watch?v=dJQMqNOC4Pc&t=176s 
+- https://www.youtube.com/watch?v=dJQMqNOC4Pc&t=176s 
 
-https://www.youtube.com/watch?v=bVwZquRH1Vk&t=144s 
+- https://www.youtube.com/watch?v=bVwZquRH1Vk&t=144s 
 
-https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
+- https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
 
-https://vowi.fsinf.at/wiki/TU_Wien:Fortgeschrittene_objektorientierte_Programmierung_VU_(Puntigam)/Mitschrift_SS17 
-
-
-# H1
-
-## H2
-
-### H3
-
-#### H4
-
-##### H5
-
-###### H6
-
-## Paragraph
-
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
-
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
-
-## Links
-
-This is a [internal link](/posts/emoji-support) to another page. [This one](https://www.gohugo.io) points to a external page nad will be open in a new tag.
-
-## Blockquotes
-
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
-
-#### Blockquote without attribution
-
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-
-#### Blockquote with attribution
-
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-
-## Tables
-
-Tables aren't part of the core Markdown spec, but Hugo supports them out-of-the-box.
-
-| Name  | Age |
-| ----- | --- |
-| Bob   | 27  |
-| Alice | 23  |
-
-#### Inline Markdown within tables
-
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-
-## Code Blocks
-
-#### Code block with backticks
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Example HTML5 Document</title>
-    </head>
-    <body>
-        <p>Test</p>
-    </body>
-</html>
-```
-
-#### Code block indented with four spaces
-
-    <!doctype html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <title>Example HTML5 Document</title>
-    </head>
-    <body>
-      <p>Test</p>
-    </body>
-    </html>
-
-#### Code block with Hugo's internal highlight shortcode
-
-{{< highlight html >}}
-
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Example HTML5 Document</title>
-</head>
-<body>
-  <p>Test</p>
-</body>
-</html>
-{{< /highlight >}}
-
-## List Types
-
-#### Ordered List
-
-1. First item
-2. Second item
-3. Third item
-
-#### Unordered List
-
--   List item
--   Another item
--   And another item
-
-#### Nested list
-
--   Fruit
-    -   Apple
-    -   Orange
-    -   Banana
--   Dairy
-    -   Milk
-    -   Cheese
-
-#### Foot Notes
-
-Check it[^2] at the end[^3] of this text[^4].
-
-## Other Elements — abbr, sub, sup, kbd, mark
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-[^2]: A footnote.
-[^3]: Another one.
-[^4]: Cool, right?
+- https://vowi.fsinf.at/wiki/TU_Wien:Fortgeschrittene_objektorientierte_Programmierung_VU_(Puntigam)/Mitschrift_SS17 

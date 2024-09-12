@@ -21,19 +21,19 @@ Was ist, wenn wir eine weitere Methode hinzufügen, zum Beispiel `fly()`? Denn E
 
 {{< figure src="/images/strategy-pattern/2.svg" caption="`RubberDuck` erbt die `fly()`-Methode! Jetzt kann jeder, der ein `RubberDuck`-Objekt verwendet, die `fly()`-Methode auf diesem Objekt aufrufen, was nicht möglich sein sollte, da Gummienten ja nicht fliegen können.⚠️" >}}
 
-And what if we wanna add a new class called `MountainDuck` (which lives in the mountains). This duck implements its own `display()` method. But it implements also its own `fly()` method because the duck has a specific way to fly (ultrafast for instance).
-And then we add a new class called `CloudDuck`. This duck also overrides `display()` and `fly()` methods. But the cloud-duck flys EXACTLY the same as the mountain-duck. What are we doing now? We cannot reuse the same code from the mountain-duck. So we have to copy and paste. And that is very, very bad! ⚠️ (cf. DRY Principle)
+Und was, wenn wir eine neue Klasse namens `MountainDuck` (die in den Bergen lebt) hinzufügen wollen? Diese Ente implementiert ihre eigene `display()`-Methode. Aber sie implementiert auch ihre eigene `fly()`-Methode, weil diese Ente auf eine bestimmte Art fliegt (zum Beispiel ultraschnell). Und dann fügen wir eine neue Klasse namens `CloudDuck` hinzu. Diese Ente überschreibt ebenfalls die Methoden `display()` und `fly()`. Aber die `CloudDuck` fliegt EXAKT genauso wie die `MountainDuck`. Was machen wir jetzt? Wir können den gleichen Code der `MountainDuck` nicht wiederverwenden. Also müssen wir duplizieren (copy and paste). Und das ist sehr, sehr schlecht! ⚠️ (Vgl. DRY-Prinzip)
 
 {{< figure src="/images/strategy-pattern/3.svg" caption="" >}}
 
-Some might say you could solve some of these problems with "more inheritance". You could for instance introduce a new base class just for `MountainDuck` and `CloudDuck` where the both ducks are inheriting from. But the more classes you create and inherit from, the more "inflexible" all of that gets. 
+Manche würden wshl. an dieser Stelle sagen, dass man einige dieser Probleme mit "mehr Vererbung" lösen könnte. Zum Beispiel könnte man eine neue Basisklasse einführen, von der `MountainDuck` und `CloudDuck` erben. Aber je mehr Klassen man erstellt von denen wiederum andere erben, desto "unflexibler" wird das alles.
 
-The problem is, that you can't share behaviour over classes that are in the same hierarchy (horizontally). Inheritance only works by sharing code from top to bottom.
-{{< figure src="/images/strategy-pattern/4.svg" caption="When it comes to inheritance, code cannot be shared between classes which are in the same hierarchy." >}}
+Das Problem dabei ist, dass man kein Verhalten zwischen Klassen in derselben Hierarchie (horizontal) teilen kann. Vererbung funktioniert nur, indem Code von oben nach unten weitergegeben wird.
 
-The solution to problems with inheritance is not "more inheritance". The solution is **composition**! And that's exactly what the strategy pattern does.
+{{< figure src="/images/strategy-pattern/4.svg" caption="Wenn es um Vererbung geht, kann Code nicht zwischen Klassen geteilt werden, die sich in derselben Vererbungshierarchie befinden." >}}
 
-## Overview
+Die Lösung für Probleme mit Vererbung ist nicht "mehr Vererbung". Die Lösung ist **Composition**! Und genau das macht das Strategy-Pattern.
+
+## Überblick
 Warum ist das Strategy Pattern so nützlich? Wegen der Flexibilität! Bei diesem Pattern werden Verhaltensweisen aus einer Klasse (Context) in andere Klassen (Concrete Strategies) ausgelagert und via Interfaces lose an die Klasse (Context) gekoppelt. Die Kontext Klasse ruft dann lediglich den Code der konkreten Strategies auf. Dadurch können Objekte und deren Verhaltensweisen komplett easy zusammengebaut werden. Hier ein Beispiel, wie ein Client das Strategy Pattern verwenden könnte:
 
 ```java
@@ -53,31 +53,32 @@ Die Verhaltensweisen werden den Enten via Dependency Injection übergeben.
 
 {{< figure src="/images/strategy-pattern/strategy.jpg" caption="Objekte werden mit Verhaltensweisen zusammengebaut (lose gekoppelt)." >}}
 
-Das Strategy-Pattern ist ein Paradebeispiel dafür, dass Composition besser ist als Inheritance. We need Inheritance much much less than we believe.
+Das Strategy-Pattern ist ein Paradebeispiel dafür, dass Composition besser ist als Inheritance. Wir brauchen Vererbung viel weniger, als wir denken.
 
-The concrete implementations (LoudQuacking, QuietQuacking, etc.) can vary just as much as they want – without having to change the code of the context class (Duck). And that is the power of the strategy pattern!
+Die konkreten Implementierungen (LoudQuacking, QuietQuacking etc.) können sich beliebig voneinander unterscheiden, ohne dass der Code der Kontextklasse (Duck) geändert werden muss. Und genau das ist die Stärke des Strategy-Patterns!
 
+## Das Pattern selbst
+So sieht das vollständige Pattern in UML (Unified Modeling Language) aus:
 
-## The Pattern itself
-This is how the full pattern looks like in UML (Unified Modeling Language):
+{{< figure src="/images/strategy-pattern/5.svg" caption="UML Diagramm des Strategy Patterns." >}}
 
-{{< figure src="/images/strategy-pattern/5.svg" caption="UML Diagram of the Strategy Pattern." >}}
+Die `Context`-Klasse hat ein oder mehrere Objekte vom Typ Strategy als Membervariable. Die Membermethoden der `Context`-Klasse rufen dann einfach die `behaviour()`-Methoden auf, die in den `ConcreteStrategy`-Klassen implementiert sind.
 
-The `Context` class holds one or more objects of type Strategy as member variable. The member methods of the `Context` class then simply call the `behaviour()` methods implemented in the `ConcreteStrategy` classes.
+Im Folgenden wird das vollständige Enten-Beispiel in UML dargestellt. Im Gegensatz zum vorherigen UML-Diagramm zeigt dieses Beispiel, wie das Pattern mit mehreren Strategys (`IFlyBehaviour` und `IQuackBehaviour`) funktioniert:
 
-In the following, the full duck example is displayed in UML. In contrast to the UML above, the duck example shows how the pattern works with multiple Strategies (`IFlyBehaviour` and `IQuackBehaviour`):
+{{< figure src="/images/strategy-pattern/6.svg" caption="Ein Beispiel für das Strategy-Pattern in Action." >}}
 
-{{< figure src="/images/strategy-pattern/6.svg" caption="One example of the strategy pattern in action. " >}}
+## Definition des Strategy-Patterns
 
-## Intent of the strategy pattern
-
-The original GoF Design-Pattern Book states the intent of the strategy pattern as follows:  
+Das ursprüngliche GoF-Design-Pattern-Buch definiert das Strategy-Pattern wie folgt:
 **_"Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it."_**
 
 In the following, I will try to explain each phrase of the intent individually. Note! In this original intent the term  _"family of algorithms"_ means the same as "strategy". In the following, the word strategy is mainly used instead of _"family of algorithms"_.
 
+Im Folgenden werde ich versuchen, jede Phrase dieser Definition einzeln zu erklären. Hinweis: In dieser ursprünglichen Definition bedeutet der Begriff _"Familie von Algorithmen"_ dasselbe wie "Strategy". Im Folgenden wird hauptsächlich das Wort Strategy anstelle von _"Familie von Algorithmen"_ verwendet.
+
 **_"Family of algorithms"_:**  
-in diesem Beispiel können die Klassen IFlyBehavior und IQuackBehavior als "Familien" angesehen werden.
+In diesem Beispiel können die Klassen IFlyBehavior und IQuackBehavior als "Familien" angesehen werden.
 
 **_"Algorithms"_:**  
 Sind in diesem Fall die Verhaltensweisen (= konkreten implementierungen der Strategy). Das sind LowFlying, Highflying, LoudQuacking und QuietQuacking. LowFlying und Highflying gehören zur Familie IFlyBehavior. LoudQuacking und QuietQuacking gehören zur Familie IQuackBehavior.
@@ -87,27 +88,27 @@ Jede "Concrete Strategy Class" hat ihr eigenes, unabhängiges Verhalten. Diese k
 
 **_"make them interchangeable"_:**  
 Konkrete Behaviors können ganz leicht ausgetauscht werden (solange sie dasselbe Interface implementieren).
-z.B. kann man eine neue Klasse "FastFlying" einführen, die "IFlyBehavior" implementiert. Und schon kann man der `duck1` das Verhalten `new FastFlying()` anstatt dem Verhalten `new LowFlying()` übergeben. Here, the algorithm gets decoupled from the one that is using the algorithm. Whoever is using the algorithm is not forced to change when one of the algorithms is changed.
+z.B. kann man eine neue Klasse "FastFlying" einführen, die "IFlyBehavior" implementiert. Und schon kann man der `duck1` das Verhalten `new FastFlying()` anstatt dem Verhalten `new LowFlying()` übergeben. Hier wird der Algorithmus von demjenigen entkoppelt, der den Algorithmus verwendet. Wer auch immer den Algorithmus verwendet, ist nicht gezwungen, Änderungen vorzunehmen, wenn einer der Algorithmen geändert wird.
 
-## When should you use this pattern?
+## Wann sollte man das Strategy-Pattern verwenden?
 
-- Use the Strategy pattern when you want to use different variants of an algorithm within an object and be able to switch from one algorithm to another during runtime.
+- Verwende das Strategy-Pattern, wenn du unterschiedliche Varianten eines Algorithmus innerhalb eines Objekts nutzen und zur Laufzeit von einem Algorithmus zu einem anderen wechseln möchtest.
 
-- Use the Strategy when you have a lot of similar classes that only differ in the way they execute some behavior.
+- Verwende das Strategy-Pattern, wenn du viele ähnliche Klassen hast, die sich nur darin unterscheiden, wie sie ein bestimmtes Verhalten ausführen.
 
-- Use the pattern to isolate the business logic of a class from the implementation details of algorithms that may not be as important in the context of that logic.
+- Verwende das Pattern, um die Business-Logic einer Klasse von den Implementierungsdetails der Algorithmen zu isolieren, die im Kontext dieser Logik möglicherweise nicht so wichtig sind.
 
-- Use the pattern when your class has a massive conditional statement that switches between different variants of the same algorithm.
+- Verwende das Pattern, wenn deine Klasse ein riesiges "Conditional Statement" enthält, das zwischen verschiedenen Varianten desselben Algorithmus wechselt.
 
-## Reference
+## Quellen
 
-- Video from Christopher Okhravi: https://www.youtube.com/watch?v=v9ejT8FO-7I
+- Video von Christopher Okhravi: https://www.youtube.com/watch?v=v9ejT8FO-7I
 
-- Book: Design Patterns – Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by 
+- Buch: Design Patterns – Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by 
 Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides
+
+- Buch: Head First Design Patterns – Building Extensible & Maintainable Object-Oriented Software (2021 O'REILLY) by Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates
 
 - Refactoring Guru Website: https://refactoring.guru/design-patterns/strategy
 
 - Refactoring Guru Website: https://refactoring.guru/design-patterns/strategy/java/example
-
-- Book: Head First Design Patterns – Building Extensible & Maintainable Object-Oriented Software (2021 O'REILLY) by Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates

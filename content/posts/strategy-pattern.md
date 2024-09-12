@@ -17,13 +17,13 @@ Let's say we have a `Duck` class. And then we have a `CityDuck` (living in the c
 
 What is the problem here? The problem is **CHANGE** (which happens everytime). The only constant in software development is change! When requirements change, our current software design may not necessarily be appropriate for the incoming requirements. An example for such a change could be the following:
 
-What if we have another method, for example `fly()`? Because ducks can fly. We add the method to the base class `Duck`. But then you want to introduce a new class called `RubberDuck` which inherits from `Duck`. `RubberDuck` has its own `display()` method. But rubber-ducks can't fly. Now we have a problem! rubber-ducks can't fly however they inherit the `fly()` method from their parent class `Duck` → which is wrong! ⚠️
+What if we have another method, for example `fly()`? Because ducks can fly. We add the method to the base class `Duck`. But then you want to introduce a new class called `RubberDuck` which inherits from `Duck`. `RubberDuck` has its own `display()` method. But rubber-ducks can't fly. Now we have a problem! rubber-ducks can't fly however they inherit the `fly()` method from their parent class `Duck` -> which is wrong! ⚠️
 
 
 {{< figure src="/images/strategy-pattern/2.svg" caption="`RubberDuck` inherits the `fly()` method! Now everyone who is using a `RubberDuck` object can call the `fly()` method on it which should not be possible because rubber-ducks can't fly.⚠️ " >}}
 
 And what if we wanna add a new class called `MountainDuck` (which lives in the mountains). This duck implements its own `display()` method. But it implements also its own `fly()` method because the duck has a specific way to fly (ultrafast for instance).
-And then we add a new class called `CloudDuck`. this duck also overrides `display()` and `fly()` methods. But the cloud-duck flys EXACTLY the same as the mountain-duck. What are we doing now? We cannot reuse the same code from the mountain-duck. So we have to copy and paste. And that is very, very bad! ⚠️ (cf. DRY Principle)
+And then we add a new class called `CloudDuck`. This duck also overrides `display()` and `fly()` methods. But the cloud-duck flys EXACTLY the same as the mountain-duck. What are we doing now? We cannot reuse the same code from the mountain-duck. So we have to copy and paste. And that is very, very bad! ⚠️ (cf. DRY Principle)
 
 {{< figure src="/images/strategy-pattern/3.svg" caption="" >}}
 
@@ -35,7 +35,7 @@ The problem is, that you can't share behaviour over classes that are in the same
 The solution to problems with inheritance is not "more inheritance". The solution is **composition**! And that's exactly what the strategy pattern does.
 
 ## Overview
-Warum ist das Strategy Pattern so nützlich? Wegen der Flexibilität! Bei diesem Pattern werden Verhaltensweisen aus einer Klasse (Context) in andere Klassen (Concrete Strategies) ausgelagert und via Interfaces lose an die Klasse (Context) gekoppelt. Die Kontext Klasse ruft dann lediglich den Code der konkreten Strategies auf. Dadurch können Objekte und deren Verhaltensweisen komplett easy zusammengebaut werden. Hier ein Beispiel, wie ein Client das Strategy Pattern verwenden könnte:
+Why is the Strategy Pattern so useful? Because of its flexibility! In this pattern, behaviors are extracted from a class (called Context) into other classes (called Concrete Strategies) and loosely coupled to the class (Context) via interfaces. The context class then simply calls the code of the concrete strategies. This allows objects and their behaviors to be composed easily. Here’s an example of how a client might use the Strategy Pattern:
 
 ```java
 public static void main(String[] args) 
@@ -50,45 +50,43 @@ public static void main(String[] args)
 }
 ```
 
-Die Verhaltensweisen werden den Enten via Dependency Injection übergeben.
+The behaviors are passed to the ducks via dependency injection.
 
 {{< figure src="/images/strategy-pattern/strategy.jpg" caption="Objekte werden mit Verhaltensweisen zusammengebaut (lose gekoppelt)." >}}
 
-Das Strategy-Pattern ist ein Paradebeispiel dafür, dass Composition besser ist als Inheritance. We need Inheritance much much less than we believe.
+The Strategy Pattern is a prime example that composition is better than inheritance. We need Inheritance much much less than we believe.
 
 The concrete implementations (LoudQuacking, QuietQuacking, etc.) can vary just as much as they want – without having to change the code of the context class (Duck). And that is the power of the strategy pattern!
-
 
 ## The Pattern itself
 This is how the full pattern looks like in UML (Unified Modeling Language):
 
 {{< figure src="/images/strategy-pattern/5.svg" caption="UML Diagram of the Strategy Pattern." >}}
 
-In the following, the full duck example is displayed in UML. 
+The `Context` class holds one or more objects of type Strategy as member variable. The member methods of the `Context` class then simply call the `behaviour()` methods implemented in the `ConcreteStrategy` classes.
+
+In the following, the full duck example is displayed in UML. In contrast to the UML above, the duck example shows how the pattern works with multiple Strategies (`IFlyBehaviour` and `IQuackBehaviour`):
 
 {{< figure src="/images/strategy-pattern/6.svg" caption="One example of the strategy pattern in action. " >}}
 
-
 ## Intent of the strategy pattern
 
-The original GoF Design-Pattern Book states the intent as follows:  
+The original GoF Design-Pattern Book states the intent of the strategy pattern as follows:  
 **_"Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it."_**
 
 In the following, I will try to explain each phrase of the intent individually. Note! In this original intent the term  _"family of algorithms"_ means the same as "strategy". In the following, the word strategy is mainly used instead of _"family of algorithms"_.
 
 **_"Family of algorithms"_:**  
-in diesem Beispiel sind die Familien IFlyBehavior und IQuackBehavior
+In this example, the classes IFlyBehavior and IQuackBehavior can be seen as 'families'.
 
 **_"Algorithms"_:**  
-Sind in diesem Fall die Verhaltensweisen (= konkreten implementierungen der Strategy). Das sind LowFlying, Highflying, LoudQuacking und QuietQuacking. LowFlying und Highflying gehören zur Familie IFlyBehavior. LoudQuacking und QuietQuacking gehören zur Familie IQuackBehavior.
+Algorithms are the behaviors (i.e., concrete implementations of the Strategy). These are LowFlying, HighFlying, LoudQuacking, and QuietQuacking. LowFlying and HighFlying belong to the IFlyBehavior family. LoudQuacking and QuietQuacking belong to the IQuackBehavior family.
 
 **_"Strategy lets the algorithm vary independently from clients that use it"_:**    
-Jede "concrete Strategy Class" hat ihr eigenes, unabhängiges Verhalten. Diese konkreten implementierungen der Familien IFlyBehavior und IQuackBehavior können komplett unterschiedlich zueinander sein.
+Each "Concrete Strategy Class" has its own independent behavior. These concrete implementations of the IFlyBehavior and IQuackBehavior families can be completely different from one another.
 
 **_"make them interchangeable"_:**  
-Konkrete Behaviors können ganz leicht ausgetauscht werden (solange sie dasselbe Interface implementieren).
-z.B. kann man eine neue Klasse "FastFlying" einführen, die "IFlyBehavior" implementiert. Und schon kann man der duck1 das Verhalten `new FastFlying()` anstatt dem Verhalten `new LowFlying()` übergeben. We decouple the algorithm from the one that is using the algorithm. Whoever is using the algorithm is not forced to change when you are changing one of the algorithms.
-
+Concrete behaviors can be easily swapped out (as long as they implement the same interface). For example, you can introduce a new class FastFlying that implements IFlyBehavior. Then, you can simply assign the behavior new `FastFlying()` to `duck1` instead of the behaviour `new LowFlying()`. Here, the algorithm gets decoupled from the one that is using the algorithm. Whoever is using the algorithm is not forced to change when one of the algorithms is changed.
 
 ## When should you use this pattern?
 
@@ -102,8 +100,7 @@ z.B. kann man eine neue Klasse "FastFlying" einführen, die "IFlyBehavior" imple
 
 ## Reference
 
-- Video from Christopher Okhravi:
-https://www.youtube.com/watch?v=v9ejT8FO-7I
+- Video from Christopher Okhravi: https://www.youtube.com/watch?v=v9ejT8FO-7I
 
 - Book: Design Patterns – Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by 
 Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides

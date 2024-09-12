@@ -200,23 +200,22 @@
         </figcaption>
 </figure>
 
-<p>And what if we wanna add a new class called <code>MountainDuck</code> (which lives in the mountains). This duck implements its own <code>display()</code> method. But it implements also its own <code>fly()</code> method because the duck has a specific way to fly (ultrafast for instance).
-And then we add a new class called <code>CloudDuck</code>. This duck also overrides <code>display()</code> and <code>fly()</code> methods. But the cloud-duck flys EXACTLY the same as the mountain-duck. What are we doing now? We cannot reuse the same code from the mountain-duck. So we have to copy and paste. And that is very, very bad! ⚠️ (cf. DRY Principle)</p>
+<p>Und was, wenn wir eine neue Klasse namens <code>MountainDuck</code> (die in den Bergen lebt) hinzufügen wollen? Diese Ente implementiert ihre eigene <code>display()</code>-Methode. Aber sie implementiert auch ihre eigene <code>fly()</code>-Methode, weil diese Ente auf eine bestimmte Art fliegt (zum Beispiel ultraschnell). Und dann fügen wir eine neue Klasse namens <code>CloudDuck</code> hinzu. Diese Ente überschreibt ebenfalls die Methoden <code>display()</code> und <code>fly()</code>. Aber die <code>CloudDuck</code> fliegt EXAKT genauso wie die <code>MountainDuck</code>. Was machen wir jetzt? Wir können den gleichen Code der <code>MountainDuck</code> nicht wiederverwenden. Also müssen wir duplizieren (copy and paste). Und das ist sehr, sehr schlecht! ⚠️ (Vgl. DRY-Prinzip)</p>
 <figure><img src="/images/strategy-pattern/3.svg"/>
 </figure>
 
-<p>Some might say you could solve some of these problems with &ldquo;more inheritance&rdquo;. You could for instance introduce a new base class just for <code>MountainDuck</code> and <code>CloudDuck</code> where the both ducks are inheriting from. But the more classes you create and inherit from, the more &ldquo;inflexible&rdquo; all of that gets.</p>
-<p>The problem is, that you can&rsquo;t share behaviour over classes that are in the same hierarchy (horizontally). Inheritance only works by sharing code from top to bottom.
+<p>Manche würden wshl. an dieser Stelle sagen, dass man einige dieser Probleme mit &ldquo;mehr Vererbung&rdquo; lösen könnte. Zum Beispiel könnte man eine neue Basisklasse einführen, von der <code>MountainDuck</code> und <code>CloudDuck</code> erben. Aber je mehr Klassen man erstellt von denen wiederum andere erben, desto &ldquo;unflexibler&rdquo; wird das alles.</p>
+<p>Das Problem dabei ist, dass man kein Verhalten zwischen Klassen in derselben Hierarchie (horizontal) teilen kann. Vererbung funktioniert nur, indem Code von oben nach unten weitergegeben wird.</p>
 <figure><img src="/images/strategy-pattern/4.svg"
-         alt="When it comes to inheritance, code cannot be shared between classes which are in the same hierarchy."/><figcaption>
-            <p>When it comes to inheritance, code cannot be shared between classes which are in the same hierarchy.</p>
+         alt="Wenn es um Vererbung geht, kann Code nicht zwischen Klassen geteilt werden, die sich in derselben Vererbungshierarchie befinden."/><figcaption>
+            <p>Wenn es um Vererbung geht, kann Code nicht zwischen Klassen geteilt werden, die sich in derselben Vererbungshierarchie befinden.</p>
         </figcaption>
 </figure>
-</p>
-<p>The solution to problems with inheritance is not &ldquo;more inheritance&rdquo;. The solution is <strong>composition</strong>! And that&rsquo;s exactly what the strategy pattern does.</p>
-<h2 id="overview">
-  Overview
-  <a class="heading-link" href="#overview">
+
+<p>Die Lösung für Probleme mit Vererbung ist nicht &ldquo;mehr Vererbung&rdquo;. Die Lösung ist <strong>Composition</strong>! Und genau das macht das Strategy-Pattern.</p>
+<h2 id="überblick">
+  Überblick
+  <a class="heading-link" href="#%c3%bcberblick">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
@@ -239,93 +238,94 @@ And then we add a new class called <code>CloudDuck</code>. This duck also overri
         </figcaption>
 </figure>
 
-<p>Das Strategy-Pattern ist ein Paradebeispiel dafür, dass Composition besser ist als Inheritance. We need Inheritance much much less than we believe.</p>
-<p>The concrete implementations (LoudQuacking, QuietQuacking, etc.) can vary just as much as they want – without having to change the code of the context class (Duck). And that is the power of the strategy pattern!</p>
-<h2 id="the-pattern-itself">
-  The Pattern itself
-  <a class="heading-link" href="#the-pattern-itself">
+<p>Das Strategy-Pattern ist ein Paradebeispiel dafür, dass Composition besser ist als Inheritance. Wir brauchen Vererbung viel weniger, als wir denken.</p>
+<p>Die konkreten Implementierungen (LoudQuacking, QuietQuacking etc.) können sich beliebig voneinander unterscheiden, ohne dass der Code der Kontextklasse (Duck) geändert werden muss. Und genau das ist die Stärke des Strategy-Patterns!</p>
+<h2 id="das-pattern-selbst">
+  Das Pattern selbst
+  <a class="heading-link" href="#das-pattern-selbst">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>This is how the full pattern looks like in UML (Unified Modeling Language):</p>
+<p>So sieht das vollständige Pattern in UML (Unified Modeling Language) aus:</p>
 <figure><img src="/images/strategy-pattern/5.svg"
-         alt="UML Diagram of the Strategy Pattern."/><figcaption>
-            <p>UML Diagram of the Strategy Pattern.</p>
+         alt="UML Diagramm des Strategy Patterns."/><figcaption>
+            <p>UML Diagramm des Strategy Patterns.</p>
         </figcaption>
 </figure>
 
-<p>The <code>Context</code> class holds one or more objects of type Strategy as member variable. The member methods of the <code>Context</code> class then simply call the <code>behaviour()</code> methods implemented in the <code>ConcreteStrategy</code> classes.</p>
-<p>In the following, the full duck example is displayed in UML. In contrast to the UML above, the duck example shows how the pattern works with multiple Strategies (<code>IFlyBehaviour</code> and <code>IQuackBehaviour</code>):</p>
+<p>Die <code>Context</code>-Klasse hat ein oder mehrere Objekte vom Typ Strategy als Membervariable. Die Membermethoden der <code>Context</code>-Klasse rufen dann einfach die <code>behaviour()</code>-Methoden auf, die in den <code>ConcreteStrategy</code>-Klassen implementiert sind.</p>
+<p>Im Folgenden wird das vollständige Enten-Beispiel in UML dargestellt. Im Gegensatz zum vorherigen UML-Diagramm zeigt dieses Beispiel, wie das Pattern mit mehreren Strategys (<code>IFlyBehaviour</code> und <code>IQuackBehaviour</code>) funktioniert:</p>
 <figure><img src="/images/strategy-pattern/6.svg"
-         alt="One example of the strategy pattern in action."/><figcaption>
-            <p>One example of the strategy pattern in action.</p>
+         alt="Ein Beispiel für das Strategy-Pattern in Action."/><figcaption>
+            <p>Ein Beispiel für das Strategy-Pattern in Action.</p>
         </figcaption>
 </figure>
 
-<h2 id="intent-of-the-strategy-pattern">
-  Intent of the strategy pattern
-  <a class="heading-link" href="#intent-of-the-strategy-pattern">
+<h2 id="definition-des-strategy-patterns">
+  Definition des Strategy-Patterns
+  <a class="heading-link" href="#definition-des-strategy-patterns">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>The original GoF Design-Pattern Book states the intent of the strategy pattern as follows:<br>
+<p>Das ursprüngliche GoF-Design-Pattern-Buch definiert das Strategy-Pattern wie folgt:
 <strong><em>&ldquo;Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.&rdquo;</em></strong></p>
 <p>In the following, I will try to explain each phrase of the intent individually. Note! In this original intent the term  <em>&ldquo;family of algorithms&rdquo;</em> means the same as &ldquo;strategy&rdquo;. In the following, the word strategy is mainly used instead of <em>&ldquo;family of algorithms&rdquo;</em>.</p>
+<p>Im Folgenden werde ich versuchen, jede Phrase dieser Definition einzeln zu erklären. Hinweis: In dieser ursprünglichen Definition bedeutet der Begriff <em>&ldquo;Familie von Algorithmen&rdquo;</em> dasselbe wie &ldquo;Strategy&rdquo;. Im Folgenden wird hauptsächlich das Wort Strategy anstelle von <em>&ldquo;Familie von Algorithmen&rdquo;</em> verwendet.</p>
 <p><strong><em>&ldquo;Family of algorithms&rdquo;</em>:</strong><br>
-in diesem Beispiel können die Klassen IFlyBehavior und IQuackBehavior als &ldquo;Familien&rdquo; angesehen werden.</p>
+In diesem Beispiel können die Klassen IFlyBehavior und IQuackBehavior als &ldquo;Familien&rdquo; angesehen werden.</p>
 <p><strong><em>&ldquo;Algorithms&rdquo;</em>:</strong><br>
 Sind in diesem Fall die Verhaltensweisen (= konkreten implementierungen der Strategy). Das sind LowFlying, Highflying, LoudQuacking und QuietQuacking. LowFlying und Highflying gehören zur Familie IFlyBehavior. LoudQuacking und QuietQuacking gehören zur Familie IQuackBehavior.</p>
 <p><strong><em>&ldquo;Strategy lets the algorithm vary independently from clients that use it&rdquo;</em>:</strong> <br>
 Jede &ldquo;Concrete Strategy Class&rdquo; hat ihr eigenes, unabhängiges Verhalten. Diese konkreten implementierungen der Familien IFlyBehavior und IQuackBehavior können komplett unterschiedlich zueinander sein.</p>
 <p><strong><em>&ldquo;make them interchangeable&rdquo;</em>:</strong><br>
 Konkrete Behaviors können ganz leicht ausgetauscht werden (solange sie dasselbe Interface implementieren).
-z.B. kann man eine neue Klasse &ldquo;FastFlying&rdquo; einführen, die &ldquo;IFlyBehavior&rdquo; implementiert. Und schon kann man der <code>duck1</code> das Verhalten <code>new FastFlying()</code> anstatt dem Verhalten <code>new LowFlying()</code> übergeben. Here, the algorithm gets decoupled from the one that is using the algorithm. Whoever is using the algorithm is not forced to change when one of the algorithms is changed.</p>
-<h2 id="when-should-you-use-this-pattern">
-  When should you use this pattern?
-  <a class="heading-link" href="#when-should-you-use-this-pattern">
+z.B. kann man eine neue Klasse &ldquo;FastFlying&rdquo; einführen, die &ldquo;IFlyBehavior&rdquo; implementiert. Und schon kann man der <code>duck1</code> das Verhalten <code>new FastFlying()</code> anstatt dem Verhalten <code>new LowFlying()</code> übergeben. Hier wird der Algorithmus von demjenigen entkoppelt, der den Algorithmus verwendet. Wer auch immer den Algorithmus verwendet, ist nicht gezwungen, Änderungen vorzunehmen, wenn einer der Algorithmen geändert wird.</p>
+<h2 id="wann-sollte-man-das-strategy-pattern-verwenden">
+  Wann sollte man das Strategy-Pattern verwenden?
+  <a class="heading-link" href="#wann-sollte-man-das-strategy-pattern-verwenden">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
 <ul>
 <li>
-<p>Use the Strategy pattern when you want to use different variants of an algorithm within an object and be able to switch from one algorithm to another during runtime.</p>
+<p>Verwende das Strategy-Pattern, wenn du unterschiedliche Varianten eines Algorithmus innerhalb eines Objekts nutzen und zur Laufzeit von einem Algorithmus zu einem anderen wechseln möchtest.</p>
 </li>
 <li>
-<p>Use the Strategy when you have a lot of similar classes that only differ in the way they execute some behavior.</p>
+<p>Verwende das Strategy-Pattern, wenn du viele ähnliche Klassen hast, die sich nur darin unterscheiden, wie sie ein bestimmtes Verhalten ausführen.</p>
 </li>
 <li>
-<p>Use the pattern to isolate the business logic of a class from the implementation details of algorithms that may not be as important in the context of that logic.</p>
+<p>Verwende das Pattern, um die Business-Logic einer Klasse von den Implementierungsdetails der Algorithmen zu isolieren, die im Kontext dieser Logik möglicherweise nicht so wichtig sind.</p>
 </li>
 <li>
-<p>Use the pattern when your class has a massive conditional statement that switches between different variants of the same algorithm.</p>
+<p>Verwende das Pattern, wenn deine Klasse ein riesiges &ldquo;Conditional Statement&rdquo; enthält, das zwischen verschiedenen Varianten desselben Algorithmus wechselt.</p>
 </li>
 </ul>
-<h2 id="reference">
-  Reference
-  <a class="heading-link" href="#reference">
+<h2 id="quellen">
+  Quellen
+  <a class="heading-link" href="#quellen">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
 <ul>
 <li>
-<p>Video from Christopher Okhravi: <a href="https://www.youtube.com/watch?v=v9ejT8FO-7I"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=v9ejT8FO-7I</a></p>
+<p>Video von Christopher Okhravi: <a href="https://www.youtube.com/watch?v=v9ejT8FO-7I"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=v9ejT8FO-7I</a></p>
 </li>
 <li>
-<p>Book: Design Patterns – Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by
+<p>Buch: Design Patterns – Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by
 Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides</p>
+</li>
+<li>
+<p>Buch: Head First Design Patterns – Building Extensible &amp; Maintainable Object-Oriented Software (2021 O&rsquo;REILLY) by Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates</p>
 </li>
 <li>
 <p>Refactoring Guru Website: <a href="https://refactoring.guru/design-patterns/strategy"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/strategy</a></p>
 </li>
 <li>
 <p>Refactoring Guru Website: <a href="https://refactoring.guru/design-patterns/strategy/java/example"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/strategy/java/example</a></p>
-</li>
-<li>
-<p>Book: Head First Design Patterns – Building Extensible &amp; Maintainable Object-Oriented Software (2021 O&rsquo;REILLY) by Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates</p>
 </li>
 </ul>
 

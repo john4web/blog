@@ -67,232 +67,235 @@
                 href="https://gersti.at/posts/strategy-pattern/"
                 />
   </url><url>
-    <loc>https://gersti.at/posts/top-oop-principles/</loc>
+    <loc>https://gersti.at/todo/top-oop-principles/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/arrange-act-assert/</loc>
+    <loc>https://gersti.at/todo/arrange-act-assert/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/aop/</loc>
+    <loc>https://gersti.at/todo/aop/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/cohesion-and-coupling/</loc>
+    <loc>https://gersti.at/todo/cohesion-and-coupling/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/cqrs/</loc>
+    <loc>https://gersti.at/todo/cqrs/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/component-principles/</loc>
+    <loc>https://gersti.at/todo/component-principles/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/controlling-flow-via-try-catch/</loc>
+    <loc>https://gersti.at/todo/controlling-flow-via-try-catch/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/conways-law/</loc>
+    <loc>https://gersti.at/todo/conways-law/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/deadlocks/</loc>
+    <loc>https://gersti.at/todo/deadlocks/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/dependency-inversion-principle/</loc>
+    <loc>https://gersti.at/todo/dependency-inversion-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/variable-names/</loc>
+    <loc>https://gersti.at/todo/variable-names/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/divide-and-conquer/</loc>
+    <loc>https://gersti.at/todo/divide-and-conquer/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/domain-driven-design/</loc>
+    <loc>https://gersti.at/todo/domain-driven-design/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/dry-principle/</loc>
+    <loc>https://gersti.at/todo/dry-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/duck-typing/</loc>
+    <loc>https://gersti.at/todo/duck-typing/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/elasticsearch-basics/</loc>
+    <loc>https://gersti.at/todo/elasticsearch-basics/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/favor-composition-over-inheritance/</loc>
+    <loc>https://gersti.at/todo/favor-composition-over-inheritance/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/heisenbug/</loc>
+    <loc>https://gersti.at/todo/heisenbug/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/jvm-explained/</loc>
+    <loc>https://gersti.at/todo/jvm-explained/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/interface-segregation-principle/</loc>
+    <loc>https://gersti.at/todo/interface-segregation-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/java-21-whats-new/</loc>
+    <loc>https://gersti.at/todo/java-21-whats-new/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/junit-annotations/</loc>
+    <loc>https://gersti.at/todo/junit-annotations/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/kiss-principle/</loc>
+    <loc>https://gersti.at/todo/kiss-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/later/</loc>
+    <loc>https://gersti.at/todo/later/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/multithreading/</loc>
+    <loc>https://gersti.at/todo/multithreading/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/git-cheatsheet/</loc>
+    <loc>https://gersti.at/todo/git-cheatsheet/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/regex-cheatsheet/</loc>
+    <loc>https://gersti.at/todo/regex-cheatsheet/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/mysql-best-practices/</loc>
+    <loc>https://gersti.at/todo/mysql-best-practices/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/open-closed-principle/</loc>
+    <loc>https://gersti.at/todo/open-closed-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/optimistic-pessimistic-locking/</loc>
+    <loc>https://gersti.at/todo/optimistic-pessimistic-locking/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/pair-programming/</loc>
+    <loc>https://gersti.at/todo/pair-programming/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/polymorphism/</loc>
+    <loc>https://gersti.at/todo/polymorphism/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/pola/</loc>
+    <loc>https://gersti.at/todo/pola/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/public-constructors-static-factory-methods/</loc>
+    <loc>https://gersti.at/todo/public-constructors-static-factory-methods/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/rubber-duck-debugging/</loc>
+    <loc>https://gersti.at/todo/rubber-duck-debugging/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/rule-of-ten/</loc>
+    <loc>https://gersti.at/todo/rule-of-ten/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/separation-of-concerns/</loc>
+    <loc>https://gersti.at/todo/separation-of-concerns/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/sharding/</loc>
+    <loc>https://gersti.at/todo/sharding/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/single-responsibility-principle/</loc>
+    <loc>https://gersti.at/todo/single-responsibility-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/strangler-fig-pattern/</loc>
+    <loc>https://gersti.at/todo/strangler-fig-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/strategic-functional-object/</loc>
+    <loc>https://gersti.at/todo/strategic-functional-object/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/tdd-basics/</loc>
+    <loc>https://gersti.at/todo/tdd-basics/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/tell-dont-ask-principle/</loc>
+    <loc>https://gersti.at/todo/tell-dont-ask-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/abstract-factory-pattern/</loc>
+    <loc>https://gersti.at/todo/abstract-factory-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/adapter-pattern/</loc>
+    <loc>https://gersti.at/todo/adapter-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/billion-dollar-mistake/</loc>
+    <loc>https://gersti.at/todo/billion-dollar-mistake/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/bridge-pattern/</loc>
+    <loc>https://gersti.at/todo/bridge-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/broken-windows/</loc>
+    <loc>https://gersti.at/todo/broken-windows/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/builder-pattern/</loc>
+    <loc>https://gersti.at/todo/builder-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/chain-of-responsibility-pattern/</loc>
+    <loc>https://gersti.at/todo/chain-of-responsibility-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/clean-architecture/</loc>
+    <loc>https://gersti.at/todo/clean-architecture/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/command-pattern/</loc>
+    <loc>https://gersti.at/todo/command-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/composite-pattern/</loc>
+    <loc>https://gersti.at/todo/composite-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/decorator-pattern/</loc>
+    <loc>https://gersti.at/todo/decorator-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/facade-pattern/</loc>
+    <loc>https://gersti.at/todo/facade-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/factory-method-pattern/</loc>
+    <loc>https://gersti.at/todo/factory-method-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/flyweight-pattern/</loc>
+    <loc>https://gersti.at/todo/flyweight-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/interpreter-pattern/</loc>
+    <loc>https://gersti.at/todo/interpreter-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/iterator-pattern/</loc>
+    <loc>https://gersti.at/todo/iterator-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/law-of-demeter/</loc>
+    <loc>https://gersti.at/todo/law-of-demeter/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/mediator-pattern/</loc>
+    <loc>https://gersti.at/todo/mediator-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/memento-pattern/</loc>
+    <loc>https://gersti.at/todo/memento-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/observer-pattern/</loc>
+    <loc>https://gersti.at/todo/observer-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/only-constant/</loc>
+    <loc>https://gersti.at/todo/only-constant/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/prototype-pattern/</loc>
+    <loc>https://gersti.at/todo/prototype-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/proxy-pattern/</loc>
+    <loc>https://gersti.at/todo/proxy-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/robustness-principle/</loc>
+    <loc>https://gersti.at/todo/robustness-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/service-layer-pattern/</loc>
+    <loc>https://gersti.at/todo/service-layer-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/singleton-pattern/</loc>
+    <loc>https://gersti.at/todo/singleton-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/state-pattern/</loc>
+    <loc>https://gersti.at/todo/state-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/template-method-pattern/</loc>
+    <loc>https://gersti.at/todo/template-method-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/visitor-pattern/</loc>
+    <loc>https://gersti.at/todo/visitor-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/tracer-bullets/</loc>
+    <loc>https://gersti.at/todo/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/uml-basics/</loc>
+    <loc>https://gersti.at/todo/tracer-bullets/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/abstraction/</loc>
+    <loc>https://gersti.at/todo/uml-basics/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/yagni-principle/</loc>
+    <loc>https://gersti.at/todo/abstraction/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/todo/yagni-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/about/</loc>
@@ -308,7 +311,7 @@
                 href="https://gersti.at/about/"
                 />
   </url><url>
-    <loc>https://gersti.at/posts/markdown-rules/</loc>
+    <loc>https://gersti.at/todo/markdown-rules/</loc>
   </url><url>
     <loc>https://gersti.at/authors/</loc>
     <xhtml:link

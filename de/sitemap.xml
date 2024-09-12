@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gersti.at/de/posts/strategy-pattern/</loc>
-    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://gersti.at/de/</loc>
-    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -26,6 +26,19 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://gersti.at/de/"
+                />
+  </url><url>
+    <loc>https://gersti.at/de/posts/</loc>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/posts/"
                 />
   </url><url>
     <loc>https://gersti.at/de/posts/liskov-substitution-principle/</loc>
@@ -39,19 +52,6 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://gersti.at/de/posts/liskov-substitution-principle/"
-                />
-  </url><url>
-    <loc>https://gersti.at/de/posts/</loc>
-    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/posts/"
                 />
   </url><url>
     <loc>https://gersti.at/de/posts/stream-api/</loc>

@@ -6,14 +6,16 @@
     <description>Recent content in Posts on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Das Strategy Pattern</title>
       <link>https://gersti.at/de/posts/strategy-pattern/</link>
-      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/de/posts/strategy-pattern/</guid>
-      <description>Artikel derzeit nur auf Englisch verfügbar.</description>
+      <description>Dieser Blog Artikel erklärt das GoF Strategy Design Pattern. Die Beispiele wurden in Java verfasst.
+Eine Ente kann fliegen, quacken (und wahrscheinlich kann sie noch viele weitere Sachen). Image-Source: Pixabay
+Welches Problem löst das Strategy Pattern? Link to heading Angenommen, wir haben eine Duck-Klasse. Und dann haben wir eine CityDuck (die in der Stadt lebt) und eine WildDuck (die im Wald lebt). Wir verwenden Vererbung – also CityDuck und WildDuck erben von Duck.</description>
     </item>
     
     <item>

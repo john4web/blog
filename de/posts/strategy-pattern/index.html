@@ -13,19 +13,19 @@
 
 
 <meta name="author" content="Johannes Gerstbauer">
-<meta name="description" content="Artikel, der das Strategy Design Pattern der Gang of Four erklärt.">
+<meta name="description" content="Artikel, der das GoF Strategy Design Pattern erklärt.">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Das Strategy Pattern"/>
-<meta name="twitter:description" content="Artikel, der das Strategy Design Pattern der Gang of Four erklärt."/>
+<meta name="twitter:description" content="Artikel, der das GoF Strategy Design Pattern erklärt."/>
 
 <meta property="og:title" content="Das Strategy Pattern" />
-<meta property="og:description" content="Artikel, der das Strategy Design Pattern der Gang of Four erklärt." />
+<meta property="og:description" content="Artikel, der das GoF Strategy Design Pattern erklärt." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gersti.at/de/posts/strategy-pattern/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-09-11T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-09-11T00:00:00+00:00" /><meta property="og:site_name" content="gersti.at" />
+<meta property="article:published_time" content="2024-09-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-09-12T00:00:00+00:00" /><meta property="og:site_name" content="gersti.at" />
 
 
 
@@ -154,13 +154,13 @@
           <div class="date">
             <span class="posted-on">
               <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime="2024-09-11T00:00:00Z">
-                September 11, 2024
+              <time datetime="2024-09-12T00:00:00Z">
+                September 12, 2024
               </time>
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              Eine Minute Lesezeit
+              6 Minuten Lesezeit
             </span>
           </div>
           
@@ -171,7 +171,163 @@
 
       <div class="post-content">
         
-        <p>Artikel derzeit nur auf Englisch verfügbar.</p>
+        <p>Dieser Blog Artikel erklärt das GoF Strategy Design Pattern. Die Beispiele wurden in Java verfasst.</p>
+<figure><img src="/images/strategy-pattern/duck.jpg"
+         alt="Eine Ente kann fliegen, quacken (und wahrscheinlich kann sie noch viele weitere Sachen). Image-Source: Pixabay"/><figcaption>
+            <p>Eine Ente kann fliegen, quacken (und wahrscheinlich kann sie noch viele weitere Sachen). <a href="https://pixabay.com/photos/duck-mallard-bird-pond-plumage-8510483/"  class="external-link" target="_blank" rel="noopener">Image-Source: Pixabay</a></p>
+        </figcaption>
+</figure>
+
+<h2 id="welches-problem-löst-das-strategy-pattern">
+  Welches Problem löst das Strategy Pattern?
+  <a class="heading-link" href="#welches-problem-l%c3%b6st-das-strategy-pattern">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Angenommen, wir haben eine <code>Duck</code>-Klasse. Und dann haben wir eine <code>CityDuck</code> (die in der Stadt lebt) und eine <code>WildDuck</code> (die im Wald lebt). Wir verwenden Vererbung – also CityDuck und WildDuck erben von Duck. Die Unterklassen sind dafür verantwortlich, ihre eigene Version der <code>display()</code>-Methode zu implementieren. Wildenten können sich zum Beispiel anders anzeigen lassen als Stadtenten. Sie müssen also die <code>display()</code>-Methode überschreiben. Die <code>quack()</code>-Methode wird jedoch von allen diesen Unterklassen gemeinsam genutzt. Hier wird die Vererbung also zur Codewiederverwendung genutzt.</p>
+<figure><img src="/images/strategy-pattern/1.svg"
+         alt="CityDuck und WildDuck erben von Duck"/><figcaption>
+            <p><code>CityDuck</code> und <code>WildDuck</code> erben von <code>Duck</code></p>
+        </figcaption>
+</figure>
+
+<p>Was ist das Problem hier? Das Problem ist <strong>VERÄNDERUNG</strong> (die ständig passiert). Die einzige Konstante in der Softwareentwicklung ist &ldquo;Veränderung&rdquo;! Wenn sich Anforderungen ändern, ist unser aktuelles Softwaredesign möglicherweise nicht mehr für die neuen Anforderungen geeignet. Ein Beispiel für eine solche Änderung könnte das folgende sein:</p>
+<p>Was ist, wenn wir eine weitere Methode hinzufügen, zum Beispiel <code>fly()</code>? Denn Enten können fliegen. Wir fügen die Methode in der Elternklasse <code>Duck</code> hinzu. Aber dann möchten wir eine neue Klasse namens <code>RubberDuck</code> einführen, die von <code>Duck</code> erbt. <code>RubberDuck</code> hat ihre eigene <code>display()</code>-Methode. Aber Gummienten können nicht fliegen. Jetzt haben wir ein Problem! Gummienten können nicht fliegen, erben jedoch die <code>fly()</code>-Methode von ihrer Elternklasse <code>Duck</code> –&gt; das ist falsch! ⚠️</p>
+<figure><img src="/images/strategy-pattern/2.svg"
+         alt="RubberDuck erbt die fly()-Methode! Jetzt kann jeder, der ein RubberDuck-Objekt verwendet, die fly()-Methode auf diesem Objekt aufrufen, was nicht möglich sein sollte, da Gummienten ja nicht fliegen können.⚠️"/><figcaption>
+            <p><code>RubberDuck</code> erbt die <code>fly()</code>-Methode! Jetzt kann jeder, der ein <code>RubberDuck</code>-Objekt verwendet, die <code>fly()</code>-Methode auf diesem Objekt aufrufen, was nicht möglich sein sollte, da Gummienten ja nicht fliegen können.⚠️</p>
+        </figcaption>
+</figure>
+
+<p>And what if we wanna add a new class called <code>MountainDuck</code> (which lives in the mountains). This duck implements its own <code>display()</code> method. But it implements also its own <code>fly()</code> method because the duck has a specific way to fly (ultrafast for instance).
+And then we add a new class called <code>CloudDuck</code>. This duck also overrides <code>display()</code> and <code>fly()</code> methods. But the cloud-duck flys EXACTLY the same as the mountain-duck. What are we doing now? We cannot reuse the same code from the mountain-duck. So we have to copy and paste. And that is very, very bad! ⚠️ (cf. DRY Principle)</p>
+<figure><img src="/images/strategy-pattern/3.svg"/>
+</figure>
+
+<p>Some might say you could solve some of these problems with &ldquo;more inheritance&rdquo;. You could for instance introduce a new base class just for <code>MountainDuck</code> and <code>CloudDuck</code> where the both ducks are inheriting from. But the more classes you create and inherit from, the more &ldquo;inflexible&rdquo; all of that gets.</p>
+<p>The problem is, that you can&rsquo;t share behaviour over classes that are in the same hierarchy (horizontally). Inheritance only works by sharing code from top to bottom.
+<figure><img src="/images/strategy-pattern/4.svg"
+         alt="When it comes to inheritance, code cannot be shared between classes which are in the same hierarchy."/><figcaption>
+            <p>When it comes to inheritance, code cannot be shared between classes which are in the same hierarchy.</p>
+        </figcaption>
+</figure>
+</p>
+<p>The solution to problems with inheritance is not &ldquo;more inheritance&rdquo;. The solution is <strong>composition</strong>! And that&rsquo;s exactly what the strategy pattern does.</p>
+<h2 id="overview">
+  Overview
+  <a class="heading-link" href="#overview">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Warum ist das Strategy Pattern so nützlich? Wegen der Flexibilität! Bei diesem Pattern werden Verhaltensweisen aus einer Klasse (Context) in andere Klassen (Concrete Strategies) ausgelagert und via Interfaces lose an die Klasse (Context) gekoppelt. Die Kontext Klasse ruft dann lediglich den Code der konkreten Strategies auf. Dadurch können Objekte und deren Verhaltensweisen komplett easy zusammengebaut werden. Hier ein Beispiel, wie ein Client das Strategy Pattern verwenden könnte:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> 
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Duck</span> <span class="n">duck1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Duck</span><span class="o">(</span><span class="k">new</span> <span class="n">LowFlying</span><span class="o">(),</span> <span class="k">new</span> <span class="n">LoudQuacking</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">	<span class="n">duck1</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span> <span class="c1">// prints &#34;Low Flying&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">duck1</span><span class="o">.</span><span class="na">quack</span><span class="o">();</span> <span class="c1">// prints &#34;Loud Quacking&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="n">Duck</span> <span class="n">duck2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Duck</span><span class="o">(</span><span class="k">new</span> <span class="n">HighFlying</span><span class="o">(),</span> <span class="k">new</span> <span class="n">QuietQuacking</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">	<span class="n">duck2</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span> <span class="c1">// prints &#34;High Flying&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">duck2</span><span class="o">.</span><span class="na">quack</span><span class="o">();</span> <span class="c1">// prints &#34;Quiet Quacking&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span></code></pre></div><p>Die Verhaltensweisen werden den Enten via Dependency Injection übergeben.</p>
+<figure><img src="/images/strategy-pattern/strategy.jpg"
+         alt="Objekte werden mit Verhaltensweisen zusammengebaut (lose gekoppelt)."/><figcaption>
+            <p>Objekte werden mit Verhaltensweisen zusammengebaut (lose gekoppelt).</p>
+        </figcaption>
+</figure>
+
+<p>Das Strategy-Pattern ist ein Paradebeispiel dafür, dass Composition besser ist als Inheritance. We need Inheritance much much less than we believe.</p>
+<p>The concrete implementations (LoudQuacking, QuietQuacking, etc.) can vary just as much as they want – without having to change the code of the context class (Duck). And that is the power of the strategy pattern!</p>
+<h2 id="the-pattern-itself">
+  The Pattern itself
+  <a class="heading-link" href="#the-pattern-itself">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This is how the full pattern looks like in UML (Unified Modeling Language):</p>
+<figure><img src="/images/strategy-pattern/5.svg"
+         alt="UML Diagram of the Strategy Pattern."/><figcaption>
+            <p>UML Diagram of the Strategy Pattern.</p>
+        </figcaption>
+</figure>
+
+<p>The <code>Context</code> class holds one or more objects of type Strategy as member variable. The member methods of the <code>Context</code> class then simply call the <code>behaviour()</code> methods implemented in the <code>ConcreteStrategy</code> classes.</p>
+<p>In the following, the full duck example is displayed in UML. In contrast to the UML above, the duck example shows how the pattern works with multiple Strategies (<code>IFlyBehaviour</code> and <code>IQuackBehaviour</code>):</p>
+<figure><img src="/images/strategy-pattern/6.svg"
+         alt="One example of the strategy pattern in action."/><figcaption>
+            <p>One example of the strategy pattern in action.</p>
+        </figcaption>
+</figure>
+
+<h2 id="intent-of-the-strategy-pattern">
+  Intent of the strategy pattern
+  <a class="heading-link" href="#intent-of-the-strategy-pattern">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The original GoF Design-Pattern Book states the intent of the strategy pattern as follows:<br>
+<strong><em>&ldquo;Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.&rdquo;</em></strong></p>
+<p>In the following, I will try to explain each phrase of the intent individually. Note! In this original intent the term  <em>&ldquo;family of algorithms&rdquo;</em> means the same as &ldquo;strategy&rdquo;. In the following, the word strategy is mainly used instead of <em>&ldquo;family of algorithms&rdquo;</em>.</p>
+<p><strong><em>&ldquo;Family of algorithms&rdquo;</em>:</strong><br>
+in diesem Beispiel können die Klassen IFlyBehavior und IQuackBehavior als &ldquo;Familien&rdquo; angesehen werden.</p>
+<p><strong><em>&ldquo;Algorithms&rdquo;</em>:</strong><br>
+Sind in diesem Fall die Verhaltensweisen (= konkreten implementierungen der Strategy). Das sind LowFlying, Highflying, LoudQuacking und QuietQuacking. LowFlying und Highflying gehören zur Familie IFlyBehavior. LoudQuacking und QuietQuacking gehören zur Familie IQuackBehavior.</p>
+<p><strong><em>&ldquo;Strategy lets the algorithm vary independently from clients that use it&rdquo;</em>:</strong> <br>
+Jede &ldquo;Concrete Strategy Class&rdquo; hat ihr eigenes, unabhängiges Verhalten. Diese konkreten implementierungen der Familien IFlyBehavior und IQuackBehavior können komplett unterschiedlich zueinander sein.</p>
+<p><strong><em>&ldquo;make them interchangeable&rdquo;</em>:</strong><br>
+Konkrete Behaviors können ganz leicht ausgetauscht werden (solange sie dasselbe Interface implementieren).
+z.B. kann man eine neue Klasse &ldquo;FastFlying&rdquo; einführen, die &ldquo;IFlyBehavior&rdquo; implementiert. Und schon kann man der <code>duck1</code> das Verhalten <code>new FastFlying()</code> anstatt dem Verhalten <code>new LowFlying()</code> übergeben. Here, the algorithm gets decoupled from the one that is using the algorithm. Whoever is using the algorithm is not forced to change when one of the algorithms is changed.</p>
+<h2 id="when-should-you-use-this-pattern">
+  When should you use this pattern?
+  <a class="heading-link" href="#when-should-you-use-this-pattern">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>
+<p>Use the Strategy pattern when you want to use different variants of an algorithm within an object and be able to switch from one algorithm to another during runtime.</p>
+</li>
+<li>
+<p>Use the Strategy when you have a lot of similar classes that only differ in the way they execute some behavior.</p>
+</li>
+<li>
+<p>Use the pattern to isolate the business logic of a class from the implementation details of algorithms that may not be as important in the context of that logic.</p>
+</li>
+<li>
+<p>Use the pattern when your class has a massive conditional statement that switches between different variants of the same algorithm.</p>
+</li>
+</ul>
+<h2 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>
+<p>Video from Christopher Okhravi: <a href="https://www.youtube.com/watch?v=v9ejT8FO-7I"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=v9ejT8FO-7I</a></p>
+</li>
+<li>
+<p>Book: Design Patterns – Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by
+Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides</p>
+</li>
+<li>
+<p>Refactoring Guru Website: <a href="https://refactoring.guru/design-patterns/strategy"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/strategy</a></p>
+</li>
+<li>
+<p>Refactoring Guru Website: <a href="https://refactoring.guru/design-patterns/strategy/java/example"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/strategy/java/example</a></p>
+</li>
+<li>
+<p>Book: Head First Design Patterns – Building Extensible &amp; Maintainable Object-Oriented Software (2021 O&rsquo;REILLY) by Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates</p>
+</li>
+</ul>
 
       </div>
 

@@ -715,28 +715,35 @@ IntStream.rangeClosed(1, 5)
 
 # Reference
 
-- https://www.youtube.com/watch?v=FWoYpM-E3EQ&t=25s
+## Videos
 
-- https://www.youtube.com/watch?v=tklkyVa7KZo 
+- Video from "Keep On Coding": _Java Streams Tutorial_, URL: https://www.youtube.com/watch?v=FWoYpM-E3EQ&t=25s, Last Access: 13th September 2024.
 
-- https://www.youtube.com/watch?v=E-8qMRqRQ_A 
+- Video from "Navin Reddy": _Stream API in Java_, URL: https://www.youtube.com/watch?v=tklkyVa7KZo, Last Access: 13th September 2024.
 
-- https://www.geeksforgeeks.org/stream-in-java/ 
+- Video from "Franz Bernack": _Java Streams erklärt_, URL: https://www.youtube.com/watch?v=E-8qMRqRQ_A, Last Access: 13th September 2024.
 
-- https://www.geeksforgeeks.org/stream-peek-method-in-java-with-examples/
+- Video from "Interview DOT": _Java 8 Streams Boxed() Example | Why Do We Need Java 8 Boxed() API | Example Code | InterviewDOT_, URL: https://www.youtube.com/watch?v=Nz6TdVivRVA&t=38s, Last Access: 13th September 2024.
 
-- https://dev.to/imanuel/the-java-boxed-method-571n
+## Articles
 
-- https://www.youtube.com/watch?v=Nz6TdVivRVA&t=38s
+- Angelika Langer and Klaus Kreft: _Entwickler.de Article – Effective Java: Teil 12 – Java 8: Parallele Streams_, Java Magazin 8.2015, Entwickler.de, Published: 1st July 2015, URL: https://entwickler.de/java/java-8-parallele-streams, Last Access: 13th September 2024.
 
-- https://stackoverflow.com/questions/73235495/why-does-streamfindany-exist 
+- Angelika Langer and Klaus Kreft: _Entwickler.de Article – Effective Java: Teil 13 – Java 8: Stream Performance_, Java Magazin 10.2015, Entwickler.de, Published: 2nd September 2015, URL: https://entwickler.de/java/java-8-stream-performance, Last Access: 13th September 2024.
 
-- https://www.baeldung.com/java-stream-findfirst-vs-findany
+- Medium Blog-Article from "Neesri": _About Stream.iterate_, Published: Jan 30, 2024, URL: https://neesri.medium.com/about-stream-iterate-e2984e87caea, Last Access: 13th September 2024.
 
-- https://neesri.medium.com/about-stream-iterate-e2984e87caea
+## Websites
 
-- https://entwickler.de/reader/reading/java-magazin/10.2015/63b193980dc2cbde35123730
+- GeeksforGeeks-Article: _Stream in Java_, URL: https://www.geeksforgeeks.org/stream-in-java/, Last Access: 13th September 2024.
 
-- https://entwickler.de/reader/reading/java-magazin/8.2015/ecb97857226038366d603428
+- GeeksforGeeks-Article: _Stream peek method in java with examples_, URL: https://www.geeksforgeeks.org/stream-peek-method-in-java-with-examples/, Last Access: 13th September 2024.
 
-- ChatGPT
+- Blog-Article from Emmanuel Ogbinaka: _The Java .boxed() Method_, URL: https://dev.to/imanuel/the-java-boxed-method-571n, Posted on 19. Juni 2022, Last Access: 13th September 2024.
+
+- Stack-Overflow Article: _Why does Stream#findAny() exist?_, URL: https://stackoverflow.com/questions/73235495/why-does-streamfindany-exist, Last Access: 13th September 2024.
+
+- Baeldung-Article: _Java Stream findFirst() vs. findAny()_, URL: https://www.baeldung.com/java-stream-findfirst-vs-findany, Last Access: 13th September 2024.
+
+## AI
+- ChatGPT helped me a lot to understand how each stream api method works and provided me some useful examples (which I also included in this blog post).

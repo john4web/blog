@@ -100,13 +100,15 @@ Concrete behaviors can be easily swapped out (as long as they implement the same
 
 ## Reference
 
-- Video from Christopher Okhravi: https://www.youtube.com/watch?v=v9ejT8FO-7I
+### Books
+- Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides: _Design Patterns – Elements of Reusable Object-Oriented Software_, Publisher: Addison-Wesley, Year: 1995, ISBN: 0201633612
 
-- Book: Design Patterns – Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by 
-Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides
+- Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates: _Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software 2nd Edition_, Publisher: O'REILLY, Year: 2021, ISBN: 9781492078005
 
-- Refactoring Guru Website: https://refactoring.guru/design-patterns/strategy
+### Videos
+- Video from Christopher Okhravi: _Strategy Pattern – Design Patterns (ep 1)_, URL: https://www.youtube.com/watch?v=v9ejT8FO-7I, Last Access: 13th September 2024.
 
-- Refactoring Guru Website: https://refactoring.guru/design-patterns/strategy/java/example
+### Websites
+- Refactoring Guru Website: _Strategy_, URL: https://refactoring.guru/design-patterns/strategy, Last Access: 13th September 2024.
 
-- Book: Head First Design Patterns – Building Extensible & Maintainable Object-Oriented Software (2021 O'REILLY) by Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates
+- Refactoring Guru Website: _Strategy in Java_, URL: https://refactoring.guru/design-patterns/strategy/java/example, Last Access: 13th September 2024.

@@ -6,7 +6,7 @@ description = "Artikel, der das GoF Strategy Design Pattern erklärt."
 
 Dieser Blog Artikel erklärt das GoF Strategy Design Pattern. Die Beispiele wurden in Java verfasst.
 
-{{< figure src="/images/strategy-pattern/duck.jpg" caption="Eine Ente kann fliegen, quacken (und wahrscheinlich kann sie noch viele weitere Sachen). [Image-Source: Pixabay](https://pixabay.com/photos/duck-mallard-bird-pond-plumage-8510483/)" >}}
+{{< figure src="/images/strategy-pattern/duck.jpg" caption="Eine Ente kann fliegen, quacken (und wahrscheinlich kann sie noch viele andere Sachen). [Image-Source: Pixabay](https://pixabay.com/photos/duck-mallard-bird-pond-plumage-8510483/)" >}}
 
 
 ## Welches Problem löst das Strategy Pattern?
@@ -55,7 +55,7 @@ Die Verhaltensweisen werden den Enten via Dependency Injection übergeben.
 
 Das Strategy-Pattern ist ein Paradebeispiel dafür, dass Composition besser ist als Inheritance. Wir brauchen Vererbung viel weniger, als wir denken.
 
-Die konkreten Implementierungen (LoudQuacking, QuietQuacking etc.) können sich beliebig voneinander unterscheiden, ohne dass der Code der Kontextklasse (Duck) geändert werden muss. Und genau das ist die Stärke des Strategy-Patterns!
+Die konkreten Implementierungen (LoudQuacking, QuietQuacking etc.) können sich beliebig ändern, ohne dass der Code der Kontextklasse (Duck) geändert werden muss. Und genau das ist die Stärke des Strategy-Patterns!
 
 ## Das Pattern selbst
 So sieht das vollständige Pattern in UML (Unified Modeling Language) aus:
@@ -72,8 +72,6 @@ Im Folgenden wird das vollständige Enten-Beispiel in UML dargestellt. Im Gegens
 
 Das ursprüngliche GoF-Design-Pattern-Buch definiert das Strategy-Pattern wie folgt:
 **_"Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it."_**
-
-In the following, I will try to explain each phrase of the intent individually. Note! In this original intent the term  _"family of algorithms"_ means the same as "strategy". In the following, the word strategy is mainly used instead of _"family of algorithms"_.
 
 Im Folgenden werde ich versuchen, jede Phrase dieser Definition einzeln zu erklären. Hinweis: In dieser ursprünglichen Definition bedeutet der Begriff _"Familie von Algorithmen"_ dasselbe wie "Strategy". Im Folgenden wird hauptsächlich das Wort Strategy anstelle von _"Familie von Algorithmen"_ verwendet.
 
@@ -102,13 +100,15 @@ z.B. kann man eine neue Klasse "FastFlying" einführen, die "IFlyBehavior" imple
 
 ## Quellen
 
-- Video von Christopher Okhravi: https://www.youtube.com/watch?v=v9ejT8FO-7I
+### Bücher
+- Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides: _Design Patterns – Elements of Reusable Object-Oriented Software_, Verlag: Addison-Wesley, Jahr: 1995, ISBN: 0201633612
 
-- Buch: Design Patterns – Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by 
-Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides
+- Eric Freeman, Elisabeth Robson, Kathy Sierra und Bert Bates: _Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software 2nd Edition_, Verlag: O'REILLY, Jahr: 2021, ISBN: 9781492078005
 
-- Buch: Head First Design Patterns – Building Extensible & Maintainable Object-Oriented Software (2021 O'REILLY) by Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates
+### Videos
+- Video von Christopher Okhravi: _Strategy Pattern – Design Patterns (ep 1)_, URL: https://www.youtube.com/watch?v=v9ejT8FO-7I, Zuletzt aufgerufen: 13.09.2024.
 
-- Refactoring Guru Website: https://refactoring.guru/design-patterns/strategy
+### Webseiten
+- Refactoring Guru Webseite: _Strategy_, URL: https://refactoring.guru/design-patterns/strategy, Zuletzt aufgerufen: 13.09.2024.
 
-- Refactoring Guru Website: https://refactoring.guru/design-patterns/strategy/java/example
+- Refactoring Guru Webseite: _Strategy in Java_, URL: https://refactoring.guru/design-patterns/strategy/java/example, Zuletzt aufgerufen: 13.09.2024.

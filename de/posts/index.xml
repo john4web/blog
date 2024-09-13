@@ -14,7 +14,7 @@
       
       <guid>https://gersti.at/de/posts/strategy-pattern/</guid>
       <description>Dieser Blog Artikel erklärt das GoF Strategy Design Pattern. Die Beispiele wurden in Java verfasst.
-Eine Ente kann fliegen, quacken (und wahrscheinlich kann sie noch viele weitere Sachen). Image-Source: Pixabay
+Eine Ente kann fliegen, quacken (und wahrscheinlich kann sie noch viele andere Sachen). Image-Source: Pixabay
 Welches Problem löst das Strategy Pattern? Link to heading Angenommen, wir haben eine Duck-Klasse. Und dann haben wir eine CityDuck (die in der Stadt lebt) und eine WildDuck (die im Wald lebt). Wir verwenden Vererbung – also CityDuck und WildDuck erben von Duck.</description>
     </item>
     

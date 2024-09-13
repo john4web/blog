@@ -173,8 +173,8 @@
         
         <p>Dieser Blog Artikel erklärt das GoF Strategy Design Pattern. Die Beispiele wurden in Java verfasst.</p>
 <figure><img src="/images/strategy-pattern/duck.jpg"
-         alt="Eine Ente kann fliegen, quacken (und wahrscheinlich kann sie noch viele weitere Sachen). Image-Source: Pixabay"/><figcaption>
-            <p>Eine Ente kann fliegen, quacken (und wahrscheinlich kann sie noch viele weitere Sachen). <a href="https://pixabay.com/photos/duck-mallard-bird-pond-plumage-8510483/"  class="external-link" target="_blank" rel="noopener">Image-Source: Pixabay</a></p>
+         alt="Eine Ente kann fliegen, quacken (und wahrscheinlich kann sie noch viele andere Sachen). Image-Source: Pixabay"/><figcaption>
+            <p>Eine Ente kann fliegen, quacken (und wahrscheinlich kann sie noch viele andere Sachen). <a href="https://pixabay.com/photos/duck-mallard-bird-pond-plumage-8510483/"  class="external-link" target="_blank" rel="noopener">Image-Source: Pixabay</a></p>
         </figcaption>
 </figure>
 
@@ -239,7 +239,7 @@
 </figure>
 
 <p>Das Strategy-Pattern ist ein Paradebeispiel dafür, dass Composition besser ist als Inheritance. Wir brauchen Vererbung viel weniger, als wir denken.</p>
-<p>Die konkreten Implementierungen (LoudQuacking, QuietQuacking etc.) können sich beliebig voneinander unterscheiden, ohne dass der Code der Kontextklasse (Duck) geändert werden muss. Und genau das ist die Stärke des Strategy-Patterns!</p>
+<p>Die konkreten Implementierungen (LoudQuacking, QuietQuacking etc.) können sich beliebig ändern, ohne dass der Code der Kontextklasse (Duck) geändert werden muss. Und genau das ist die Stärke des Strategy-Patterns!</p>
 <h2 id="das-pattern-selbst">
   Das Pattern selbst
   <a class="heading-link" href="#das-pattern-selbst">
@@ -271,7 +271,6 @@
 </h2>
 <p>Das ursprüngliche GoF-Design-Pattern-Buch definiert das Strategy-Pattern wie folgt:
 <strong><em>&ldquo;Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.&rdquo;</em></strong></p>
-<p>In the following, I will try to explain each phrase of the intent individually. Note! In this original intent the term  <em>&ldquo;family of algorithms&rdquo;</em> means the same as &ldquo;strategy&rdquo;. In the following, the word strategy is mainly used instead of <em>&ldquo;family of algorithms&rdquo;</em>.</p>
 <p>Im Folgenden werde ich versuchen, jede Phrase dieser Definition einzeln zu erklären. Hinweis: In dieser ursprünglichen Definition bedeutet der Begriff <em>&ldquo;Familie von Algorithmen&rdquo;</em> dasselbe wie &ldquo;Strategy&rdquo;. Im Folgenden wird hauptsächlich das Wort Strategy anstelle von <em>&ldquo;Familie von Algorithmen&rdquo;</em> verwendet.</p>
 <p><strong><em>&ldquo;Family of algorithms&rdquo;</em>:</strong><br>
 In diesem Beispiel können die Klassen IFlyBehavior und IQuackBehavior als &ldquo;Familien&rdquo; angesehen werden.</p>
@@ -310,22 +309,44 @@ z.B. kann man eine neue Klasse &ldquo;FastFlying&rdquo; einführen, die &ldquo;I
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<h3 id="bücher">
+  Bücher
+  <a class="heading-link" href="#b%c3%bccher">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
 <ul>
 <li>
-<p>Video von Christopher Okhravi: <a href="https://www.youtube.com/watch?v=v9ejT8FO-7I"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=v9ejT8FO-7I</a></p>
+<p>Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides: <em>Design Patterns – Elements of Reusable Object-Oriented Software</em>, Verlag: Addison-Wesley, Jahr: 1995, ISBN: 0201633612</p>
 </li>
 <li>
-<p>Buch: Design Patterns – Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by
-Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides</p>
+<p>Eric Freeman, Elisabeth Robson, Kathy Sierra und Bert Bates: <em>Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software 2nd Edition</em>, Verlag: O&rsquo;REILLY, Jahr: 2021, ISBN: 9781492078005</p>
+</li>
+</ul>
+<h3 id="videos">
+  Videos
+  <a class="heading-link" href="#videos">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Video von Christopher Okhravi: <em>Strategy Pattern – Design Patterns (ep 1)</em>, URL: <a href="https://www.youtube.com/watch?v=v9ejT8FO-7I"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=v9ejT8FO-7I</a>, Zuletzt aufgerufen: 13.09.2024.</li>
+</ul>
+<h3 id="webseiten">
+  Webseiten
+  <a class="heading-link" href="#webseiten">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Refactoring Guru Webseite: <em>Strategy</em>, URL: <a href="https://refactoring.guru/design-patterns/strategy"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/strategy</a>, Zuletzt aufgerufen: 13.09.2024.</p>
 </li>
 <li>
-<p>Buch: Head First Design Patterns – Building Extensible &amp; Maintainable Object-Oriented Software (2021 O&rsquo;REILLY) by Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates</p>
-</li>
-<li>
-<p>Refactoring Guru Website: <a href="https://refactoring.guru/design-patterns/strategy"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/strategy</a></p>
-</li>
-<li>
-<p>Refactoring Guru Website: <a href="https://refactoring.guru/design-patterns/strategy/java/example"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/strategy/java/example</a></p>
+<p>Refactoring Guru Webseite: <em>Strategy in Java</em>, URL: <a href="https://refactoring.guru/design-patterns/strategy/java/example"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/strategy/java/example</a>, Zuletzt aufgerufen: 13.09.2024.</p>
 </li>
 </ul>
 

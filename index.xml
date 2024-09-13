@@ -13,7 +13,7 @@
       <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/liskov-substitution-principle/</guid>
-      <description>This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some sources I have read however also includes my own opinion on that topic. Code examples are written in Java.
+      <description>This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some sources I have read however also includes my own opinion and knowledge on that topic. Code examples are written in Java.
 Overview Link to heading The Liskov Substitution Principle (LSP) was first introduced by Barbara Liskov in 1987 in her article &amp;ldquo;Data Abstraction and Hierarchy&amp;rdquo; and is one of the five SOLID design principles of object-oriented programming.</description>
     </item>
     

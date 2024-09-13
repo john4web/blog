@@ -4,7 +4,7 @@ date = "2024-09-11"
 description = "Article explaining the liskov substitution principle and Design by Contract in depth."
 +++
 
-This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some [sources](#reference) I have read however also includes my own opinion on that topic. Code examples are written in Java.
+This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some [sources](#reference) I have read however also includes my own opinion and knowledge on that topic. Code examples are written in Java.
 
 ## Overview
 
@@ -595,40 +595,32 @@ While programming you should ask yourself the questions:
 
 ## Reference
 
-- https://de.wikipedia.org/wiki/Design_by_Contract
+### Books
 
-- Design By Contract in Java - Seminarbericht WS06/07  
-Author: Matthias Hausherr  
-Fachhochschule Nordwestschweiz (Hochschule für Technik - Studiengang Informatik)  
-Betreuender Dozent: Prof. Dr. Dominik Gruntz  
-Veröffentlicht: Windisch, 15. November 2006
+- Barbara Liskov and John Guttag: _Program Development in Java: Abstraction, Specification, and Object-Oriented Design._, Publisher: Addison-Wesley, Year: 2000, ISBN: 0201657686
 
-- Program Development in Java: Abstraction, Specification, and Object-Oriented Design.   
-Authors: Barbara Liskov (Author), John Guttag   
-Publisher: Addison-Wesley Professional  
-Year: 2000  
-ISBN-10: 0201657686
+- Robert C. Martin: _Clean Architecture: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series)_, Publisher: Pearson, Year: 2017, ISBN: 0134494164
 
-- Clean Architecture: A Craftsman's Guide to Software Structure and Design: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series).  
-Author: Robert C. Martin  
-Publischer: Pearson  
-Year: 2017  
-ISBN-10: 0134494164  
+### Academic publications
 
-- https://www.baeldung.com/java-liskov-substitution-principle
+- Matthias Hausherr: _Design By Contract in Java - Seminarbericht WS06/07_, Fachhochschule Nordwestschweiz (Hochschule für Technik – Studiengang Informatik), Betreuender Dozent: Prof. Dr. Dominik Gruntz, Veröffentlicht: Windisch, 15. November 2006, URL: https://silo.tips/download/design-by-contract-in-java, Last Access: 13th September 2024.
 
-- https://www.baeldung.com/java-method-overload-override 
+- [Ao.Univ.Prof. Dipl.-Ing. Dr.techn. Franz Puntigam](https://tiss.tuwien.ac.at/person/133843): _TU Wien:Fortgeschrittene objektorientierte Programmierung VU (Puntigam)/Mitschrift SS17_, Year: 2017, URL: https://vowi.fsinf.at/wiki/TU_Wien:Fortgeschrittene_objektorientierte_Programmierung_VU_(Puntigam)/Mitschrift_SS17, Last Access: 13th September 2024.
 
-- University Lecture called “Software Design Methods”
-by Ing. Dr. Hans J. Prüller, B.Sc.
-Personal website: https://hansprueller.lbs-logics.com/ 
+### Websites
 
-- https://www.youtube.com/watch?v=ObHQHszbIcE 
+- Wikipedia-Article: _Design by Contract_, URL: https://de.wikipedia.org/wiki/Design_by_Contract, Last Access: 13th September 2024.
 
-- https://www.youtube.com/watch?v=dJQMqNOC4Pc&t=176s 
+- Wikipedia-Article: _Covariance and contravariance (computer science)_, URL: https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science), Last Access: 13th September 2024.
 
-- https://www.youtube.com/watch?v=bVwZquRH1Vk&t=144s 
+- Baeldung-Article: _Liskov Substitution Principle in Java_, URL: https://www.baeldung.com/java-liskov-substitution-principle, Last Access: 13th September 2024.
 
-- https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
+- Baeldung-Article: _Method Overloading and Overriding in Java_, URL: https://www.baeldung.com/java-method-overload-override, Last Access: 13th September 2024.
 
-- https://vowi.fsinf.at/wiki/TU_Wien:Fortgeschrittene_objektorientierte_Programmierung_VU_(Puntigam)/Mitschrift_SS17 
+### Videos
+
+- Video from Christopher Okhravi: _Liskov's Substitution Principle | SOLID Design Principles (ep 1 part 1)_, URL: https://www.youtube.com/watch?v=ObHQHszbIcE, Last Access: 13th September 2024.
+
+- Video from Web Dev Simplified: _Liskov Substitution Principle Explained - SOLID Design Principles_, URL: https://www.youtube.com/watch?v=dJQMqNOC4Pc&t=176s, Last Access: 13th September 2024.
+
+- Video from Christopher Okhravi: _Liskov Substitution Principle (SOLID), The Robustness Principle, and DbC | Code Walks 018_, URL: https://www.youtube.com/watch?v=bVwZquRH1Vk&t=144s, Last Access: 13th September 2024.

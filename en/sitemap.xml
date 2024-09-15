@@ -162,6 +162,16 @@
   </url><url>
     <loc>https://gersti.at/todo/polymorphism/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/todo/polymorphism/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/todo/polymorphism/"
+                />
   </url><url>
     <loc>https://gersti.at/todo/pola/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
@@ -285,6 +295,16 @@
   </url><url>
     <loc>https://gersti.at/todo/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/todo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/todo/"
+                />
   </url><url>
     <loc>https://gersti.at/todo/tracer-bullets/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>

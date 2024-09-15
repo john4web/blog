@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TODoes on gersti.at</title>
+    <link>https://gersti.at/de/todo/</link>
+    <description>Recent content in TODoes on gersti.at</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/todo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Polymorphie und dynamische Bindung</title>
+      <link>https://gersti.at/de/todo/polymorphism/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/de/todo/polymorphism/</guid>
+      <description>Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten.
+In OOP ist jedes Objekt einer abgeleiteten Klasse auch gleichzeitig ein Objekt seiner Superklasse. Das heißt: Objektvariablen der Superklasse kann man Objekte der Subklasse zuweisen -&amp;gt; dadurch wird das Objekt &amp;ldquo;polymorph&amp;rdquo; (= Vielgestaltig).
+Das folgende Codebeispiel zeigt ein polymorphes Objekt:</description>
+    </item>
+    
+  </channel>
+</rss>

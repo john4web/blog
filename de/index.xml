@@ -37,6 +37,17 @@ Welches Problem löst das Strategy Pattern? Link to heading Angenommen, wir habe
     </item>
     
     <item>
+      <title>Polymorphie und dynamische Bindung</title>
+      <link>https://gersti.at/de/todo/polymorphism/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/de/todo/polymorphism/</guid>
+      <description>Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten.
+In OOP ist jedes Objekt einer abgeleiteten Klasse auch gleichzeitig ein Objekt seiner Superklasse. Das heißt: Objektvariablen der Superklasse kann man Objekte der Subklasse zuweisen -&amp;gt; dadurch wird das Objekt &amp;ldquo;polymorph&amp;rdquo; (= Vielgestaltig).
+Das folgende Codebeispiel zeigt ein polymorphes Objekt:</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://gersti.at/de/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

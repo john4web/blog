@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <title>
+  Polymorphie und dynamische Bindung · gersti.at
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Johannes Gerstbauer">
+<meta name="description" content="Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten.
+In OOP ist jedes Objekt einer abgeleiteten Klasse auch gleichzeitig ein Objekt seiner Superklasse. Das heißt: Objektvariablen der Superklasse kann man Objekte der Subklasse zuweisen -&gt; dadurch wird das Objekt &ldquo;polymorph&rdquo; (= Vielgestaltig).
+Das folgende Codebeispiel zeigt ein polymorphes Objekt:">
+<meta name="keywords" content="blog, developer, software, engineer">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Polymorphie und dynamische Bindung"/>
+<meta name="twitter:description" content="Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten.
+In OOP ist jedes Objekt einer abgeleiteten Klasse auch gleichzeitig ein Objekt seiner Superklasse. Das heißt: Objektvariablen der Superklasse kann man Objekte der Subklasse zuweisen -&gt; dadurch wird das Objekt &ldquo;polymorph&rdquo; (= Vielgestaltig).
+Das folgende Codebeispiel zeigt ein polymorphes Objekt:"/>
+
+<meta property="og:title" content="Polymorphie und dynamische Bindung" />
+<meta property="og:description" content="Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten.
+In OOP ist jedes Objekt einer abgeleiteten Klasse auch gleichzeitig ein Objekt seiner Superklasse. Das heißt: Objektvariablen der Superklasse kann man Objekte der Subklasse zuweisen -&gt; dadurch wird das Objekt &ldquo;polymorph&rdquo; (= Vielgestaltig).
+Das folgende Codebeispiel zeigt ein polymorphes Objekt:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gersti.at/de/todo/polymorphism/" /><meta property="article:section" content="TODO" />
+<meta property="article:published_time" content="2024-01-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-24T00:00:00+00:00" /><meta property="og:site_name" content="gersti.at" />
+
+
+
+
+<link rel="canonical" href="https://gersti.at/de/todo/polymorphism/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/de">
+      gersti.at
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/de/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/de/about/">Über mich</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/todo/polymorphism/">🇬🇧</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://gersti.at/de/todo/polymorphism/">
+          Polymorphie und dynamische Bindung
+        </a>
+      </h1>
+    </header>
+
+    <h2 id="überblick">
+  Überblick
+  <a class="heading-link" href="#%c3%bcberblick">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten.</p>
+<p>In OOP ist jedes Objekt einer abgeleiteten Klasse auch gleichzeitig ein Objekt seiner Superklasse. Das heißt: Objektvariablen der Superklasse kann man Objekte der Subklasse zuweisen -&gt; dadurch wird das Objekt &ldquo;polymorph&rdquo; (= Vielgestaltig).</p>
+<p>Das folgende Codebeispiel zeigt ein polymorphes Objekt:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Tier</span> <span class="n">meinTier</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hund</span><span class="o">();</span>
+</span></span></code></pre></div><p>In dieser Zeile wird ein Objekt der Klasse <code>Hund</code> erstellt, und in einer Objektvariable vom Typ <code>Tier</code> gespeichert. Dies ist möglich weil die Klasse Hund von der Klasse Tier erbt. Dementsprechend IST ein Hund auch ein Tier und die Variable vom Typ Tier kann auch ein Objekt vom Typ Hund enthalten. Dies nennt man Polymorphie, weil die Referenz vom Typ der Superklasse (Tier) auf ein Objekt der Subklasse (Hund) zeigt. Da meinTier zur Laufzeit sowohl ein Hund-Objekt als auch ein Katze-Objekt sein kann, ist es polymorph, also vielgestaltig.</p>
+<h2 id="objekte-umwandeln">
+  Objekte umwandeln
+  <a class="heading-link" href="#objekte-umwandeln">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Tier</span> <span class="n">meinTier</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hund</span><span class="o">();</span> <span class="c1">// meinTier ist ein Hund
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Hund</span> <span class="n">meinHund</span> <span class="o">=</span> <span class="o">(</span><span class="n">Hund</span><span class="o">)</span> <span class="n">meinTier</span><span class="o">;</span>  <span class="c1">// Casting von Tier zu Hund funktioniert
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Tier</span> <span class="n">meinTier</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Katze</span><span class="o">();</span> <span class="c1">// meinTier ist eine Katze
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Hund</span> <span class="n">meinHund</span> <span class="o">=</span> <span class="o">(</span><span class="n">Hund</span><span class="o">)</span> <span class="n">meinTier</span><span class="o">;</span>  <span class="c1">// Fehler! Das führt zu einer ClassCastException
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Dog</span> <span class="n">myDog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>      <span class="c1">// Ein Hund-Objekt
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Animal</span> <span class="n">myAnimal</span> <span class="o">=</span> <span class="n">myDog</span><span class="o">;</span>    <span class="c1">// Automatisch in die Oberklasse (Animal) konvertiert
+</span></span></span></code></pre></div><h2 id="upcasting-und-downcasting">
+  Upcasting und Downcasting
+  <a class="heading-link" href="#upcasting-und-downcasting">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><a href="https://www.youtube.com/watch?v=iAg3HIUHYx4"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=iAg3HIUHYx4</a>
+<a href="https://www.youtube.com/watch?v=Qpz2MA4KE9U"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Qpz2MA4KE9U</a>  &ndash;&gt; Bestes Video im Internet</p>
+<p><a href="https://www.youtube.com/watch?v=HpuH7n9VOYk&amp;pp=ygUXamF2YSBwb2x5bW9ycGhpZSBjYXN0ZW4%3D"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=HpuH7n9VOYk&pp=ygUXamF2YSBwb2x5bW9ycGhpZSBjYXN0ZW4%3D</a>
+<a href="https://www.youtube.com/watch?v=Qb3YVlxwZwY"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Qb3YVlxwZwY</a>
+<a href="https://www.youtube.com/watch?v=4yxtYwW2x4o"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=4yxtYwW2x4o</a>
+<a href="https://www.youtube.com/watch?v=zJjkyoeq9fg&amp;pp=ygUXamF2YSBwb2x5bW9ycGhpZSBjYXN0ZW4%3D"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=zJjkyoeq9fg&pp=ygUXamF2YSBwb2x5bW9ycGhpZSBjYXN0ZW4%3D</a>
+<a href="https://www.youtube.com/watch?v=FNJCSazPkrA"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=FNJCSazPkrA</a>
+<a href="https://www.youtube.com/watch?v=Q8cTydJSawQ"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Q8cTydJSawQ</a></p>
+<p>folgende zwei sachen aus meiner SDM-Mitschrift einbauen:</p>
+<ul>
+<li>Typecasting Zettel</li>
+<li>Which assignments are valid/invalid</li>
+</ul>
+<h2 id="polymorphie-auf-einem-blick">
+  Polymorphie auf einem Blick
+  <a class="heading-link" href="#polymorphie-auf-einem-blick">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Das folgende Bild beschreibt das gesamte Konzept der Polymorphie auf einem einzigen von mir angefertigten Bild:</p>
+<figure><img src="/images/polymorphism/polymorphie.jpg"
+         alt="Polymorphie auf einen Blick."/><figcaption>
+            <p>Polymorphie auf einen Blick.</p>
+        </figcaption>
+</figure>
+
+<h2 id="dynamische-bindung">
+  Dynamische Bindung
+  <a class="heading-link" href="#dynamische-bindung">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Es wird zur Laufzeit entschieden, welche der beiden Methoden (schreiben() der Superklasse oder schreiben() der Subklasse) aufgerufen werden soll.
+Die JVM entscheidet zur Laufzeit auf Basis des Objekttyps, welche Methode verwendet wird.</p>
+<h2 id="wann-sollte-man-polymorphen-code-verwenden">
+  Wann sollte man polymorphen Code verwenden?
+  <a class="heading-link" href="#wann-sollte-man-polymorphen-code-verwenden">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>With examples</p>
+<p>Folgende Videos unbedingt anschauen:</p>
+<p><a href="https://www.youtube.com/watch?v=YaSMkzmc_sA"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YaSMkzmc_sA</a></p>
+<p>Auch schreiben über &ldquo;Static polymorphism vs. dynamic polymorphism&rdquo;.</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2024
+     Johannes Gerstbauer 
+    ·
+    
+    Gestaltet mit <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -56,6 +56,7 @@ folgende zwei sachen aus meiner SDM-Mitschrift einbauen:
 - Typecasting Zettel
 - Which assignments are valid/invalid
 
+## Wenn ich ein Interface als Datentyp verwende und ein Objekt zuweise - ist das dann auch Polymorphie?
 
 ## Polymorphie auf einem Blick
 Das folgende Bild beschreibt das gesamte Konzept der Polymorphie auf einem einzigen von mir angefertigten Bild:

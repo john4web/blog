@@ -51,6 +51,12 @@ https://www.youtube.com/watch?v=zJjkyoeq9fg&pp=ygUXamF2YSBwb2x5bW9ycGhpZSBjYXN0Z
 https://www.youtube.com/watch?v=FNJCSazPkrA
 https://www.youtube.com/watch?v=Q8cTydJSawQ
 
+https://www.youtube.com/watch?v=j9QfB4Sf1pA
+
+https://www.youtube.com/watch?v=jhDUxynEQRI
+
+https://www.youtube.com/watch?v=1ONhXmQuWP8
+
 
 folgende zwei sachen aus meiner SDM-Mitschrift einbauen: 
 - Typecasting Zettel

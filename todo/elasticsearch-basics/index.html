@@ -171,14 +171,22 @@ Why using Elasticsearch? Link to heading Why do people use Elasticsearch at all 
   </a>
 </h2>
 <p>Why do people use Elasticsearch at all instead of a relational database like MySQL? Because Elasticsearch is much more performant and optimized for search functionalities. Typically, data is &ldquo;copied&rdquo; from a database into an Elasticsearch index because it is much faster and more performant when accessed there. This high performance is achieved, among other things, through the &ldquo;inverted index.&rdquo; You can then communicate with this Elasticsearch index via a REST interface, which is precisely optimized for tasks like &ldquo;searching&rdquo; in applications. However Elasticsearch has several other advantages.</p>
-<h2 id="documents-and-indices">
-  Documents and Indices
-  <a class="heading-link" href="#documents-and-indices">
+<h2 id="documents-indices-and-clusters">
+  Documents, Indices and clusters
+  <a class="heading-link" href="#documents-indices-and-clusters">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>When thinking about a relational database schema, we have tables and rows. In Elasticsearch we kinda have the same concept. However in Elasticsearch they are called <strong>indices and documents</strong>.</p>
+<p>When thinking about a relational database schema, we have databases, tables and rows. In Elasticsearch we kinda have the same concept. However in Elasticsearch they are called <strong>clusters, indices and documents</strong>.</p>
+<h3 id="cluster">
+  cluster
+  <a class="heading-link" href="#cluster">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>An ElasticSearch Cluster is the equivalent to a Database in SQL.</p>
 <h3 id="indices">
   indices
   <a class="heading-link" href="#indices">
@@ -195,6 +203,7 @@ Why using Elasticsearch? Link to heading Why do people use Elasticsearch at all 
   </a>
 </h3>
 <p>Documents are like records in an SQL table. Documents are the things you&rsquo;re searching for. They can be more than text – any structured JSON data works. Every document has a unique ID, and a type.</p>
+<p>The schema for your documents are defined by the index respectively the document type associated by the index.</p>
 <h2 id="inverted-index">
   Inverted Index
   <a class="heading-link" href="#inverted-index">
@@ -206,7 +215,7 @@ Why using Elasticsearch? Link to heading Why do people use Elasticsearch at all 
 <p><strong>&ldquo;The inverted index quickly maps search terms to documents&rdquo;</strong></p>
 <p>How does this work? Let&rsquo;s take a look at an example. In the following, you can see two documents with some text in it:</p>
 <ul>
-<li><strong>Document 1:</strong> <em>The final frontier. These are the voyages&hellip;</em></li>
+<li><strong>Document 1:</strong> <em>Space: The final frontier. These are the voyages&hellip;</em></li>
 <li><strong>Document 2:</strong> <em>He&rsquo;s bad, he&rsquo;s number one. He&rsquo;s the space cowboy with the laser gun!</em></li>
 </ul>
 <p>Elasticsearch now takes a look at all the search terms and &ldquo;remembers&rdquo;, in which documents they occur. As shown in the following table:</p>
@@ -248,6 +257,19 @@ Why using Elasticsearch? Link to heading Why do people use Elasticsearch at all 
 </tr>
 </tbody>
 </table>
+<h2 id="relevance">
+  Relevance
+  <a class="heading-link" href="#relevance">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>How to deal with the concept of relevance?
+TF-IDF means Term Frequency * Inverse Document Frequency</p>
+<p>Term Frequency is how often a term appears in a given document. If the term space appears very frequently in a given document, then it would have a high term frequency.</p>
+<p>Document Frequency is how often a term appears in all documents in your entire index</p>
+<p>If you divide the Term Frequency by the Document Frequency, you get the relevance of a term in a document (= we see how special this term is to the document).</p>
+<p>This is how search engines work. If you search for a given term, it will try to give you back results in the order of their relevance.</p>
 <h2 id="elasticsearchs-rest-interface">
   ElasticSearch&rsquo;s REST Interface
   <a class="heading-link" href="#elasticsearchs-rest-interface">
@@ -256,6 +278,128 @@ Why using Elasticsearch? Link to heading Why do people use Elasticsearch at all 
   </a>
 </h2>
 <p>You can communicate with Elasticsearch via REST i.e. (GET, POST, PUT, DELETE).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -XGET 127.0.0.1:9200/shakespeare/_search?pretty -d
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;{
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#34;query&#34;:{
+</span></span></span><span class="line"><span class="cl"><span class="s1">        &#34;match_phrase&#34;:{
+</span></span></span><span class="line"><span class="cl"><span class="s1">            &#34;text_entry&#34;: &#34;to be or not to be&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        }
+</span></span></span><span class="line"><span class="cl"><span class="s1">    }
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">}&#39;</span>
+</span></span></code></pre></div><p>In this example, we are querying the Shakespeare index for the phrase &ldquo;to be or not to be&rdquo;.
+&ldquo;_search&rdquo; means that we wanna search and &ldquo;pretty&rdquo; means that the result should be formatted.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -XPUT 127.0.0.1:9200/movies/movie/109487 -d
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;{
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#34;genre&#34;: [&#34;IMAX&#34;, &#34;Sci-Fi&#34;],
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#34;title&#34;: &#34;Interstellar&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#34;year&#34;: 2014
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">}&#39;</span>
+</span></span></code></pre></div><p>In this example we are inserting data into the index.
+&ldquo;-d&rdquo; -&gt; specifies the data that should be inserted<br>
+movies -&gt; this is the index name<br>
+movie -&gt; this is the data type<br>
+109487 -&gt; this is the unique identifier</p>
+<h2 id="mapping">
+  Mapping
+  <a class="heading-link" href="#mapping">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>A mapping is a schema definition. ElasticSearch has reasonable defaults, but sometimes you need to customize them. Mappings tell elasticsearch &ldquo;how&rdquo; to store the information. It tells elasticsearch what format to store the data in and how to index it and how to analyze it.</p>
+<p>Example of importing some movie data into elasticsearch where we want the year to be explicitely interpreted as a date-type field.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -XPUT 127.0.0.1:9200/movies/ -d
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;{
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#34;mappings&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="s1">        &#34;proterties&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="s1">            &#34;year&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="s1">                &#34;type&#34;: &#34;date&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s1">            }
+</span></span></span><span class="line"><span class="cl"><span class="s1">        }
+</span></span></span><span class="line"><span class="cl"><span class="s1">    }
+</span></span></span><span class="line"><span class="cl"><span class="s1">}&#39;</span>
+</span></span></code></pre></div><p>You can get the mapping information of an Index with the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -XGET <span class="s2">&#34;http://127.0.0.1:9200/demo-default/_mapping?pretty=true&#34;</span>
+</span></span></code></pre></div><p>This gets the mapping information of an Index called &ldquo;demo-default&rdquo;.</p>
+<p>mappings can define different things:</p>
+<h3 id="field-types">
+  Field types
+  <a class="heading-link" href="#field-types">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>These are types, that elastic search recognizes: string, byte, short, integer, long, float, double, boolean, date</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">    <span class="s2">&#34;proterties&#34;</span><span class="err">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;user_id&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;long&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><h3 id="field-index">
+  Field index
+  <a class="heading-link" href="#field-index">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Here you can specify whether you want this field indexed for full-text search or not.
+If you specify <code>&quot;index&quot;: &quot;not_analyzed&quot;</code>, then it won&rsquo;t be found.
+<code>&quot;index&quot;: &quot;analyzed&quot;</code>and <code>&quot;index&quot;: &quot;no&quot;</code> is also possible.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">    <span class="s2">&#34;proterties&#34;</span><span class="err">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;genre&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;index&#34;</span><span class="p">:</span> <span class="s2">&#34;not_analyzed&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><h3 id="field-analyzer">
+  Field Analyzer
+  <a class="heading-link" href="#field-analyzer">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Here you can define your tokenizer and token filter.</p>
+<p>You can specify the language for instance:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">    <span class="s2">&#34;proterties&#34;</span><span class="err">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;analyzer&#34;</span><span class="p">:</span> <span class="s2">&#34;english&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><p>There are three things an Analyzer can do:</p>
+<ol>
+<li>
+<p><strong>Character Filters:</strong> remove HTML encoding, convert <code>&amp;</code> to <code>and</code>
+for example: if someone searches for <code>and</code> or someone searches for <code>&amp;</code>, then in bot cases, the result with <code>&amp;</code> will be returned from the search. For example &ldquo;Kaffee&amp;Kuchen&rdquo;.</p>
+</li>
+<li>
+<p><strong>Tokenizer:</strong> split strings up in a certain way.
+You can define what is a word by splitting strings up by whitespace or punctuation or non-letters, etc.</p>
+</li>
+<li>
+<p><strong>Token Filter:</strong> can do lowercasing, stemming, synonyms and stopwords</p>
+</li>
+</ol>
+<p><strong>Lowercasing:</strong> The token filter converts everything to lowercase. When you want to do a case-insensitive search, then you can use that.</p>
+<p><strong>Stemming:</strong> When you search for box, then the search should also return all terms that contain the following: boxes, boxing, boxed, box</p>
+<p><strong>Synonyms:</strong> If you search for &ldquo;big&rdquo;, then the search should also return &ldquo;large&rdquo; in the result set.</p>
+<p><strong>Stopwords:</strong> If you want to save space and avoid storing insignificant words like &ldquo;and,&rdquo; &ldquo;the,&rdquo; &ldquo;a,&rdquo; etc. These words don&rsquo;t carry much information and are therefore not as important. However, there are also situations where you definately don&rsquo;t want to do that. So think wisely if you want to exclude such stopwords. Carefully consider whether you need them in your search. Stopwords can sometimes lead to unintended side effects.</p>
+<h3 id="choices-for-analyzers">
+  Choices for analyzers:
+  <a class="heading-link" href="#choices-for-analyzers">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>There are some predefined analyzers that you can use:</p>
+<p><strong>Standard</strong>
+Splits on word boundaries, removes punctuation, lowercases. Good choice if language is unknown.</p>
+<p><strong>Simple</strong>
+Splits on anything that isn&rsquo;t a letter, and lowercase</p>
+<p><strong>Whitespace</strong>
+Splits on whitespace but doesn&rsquo;t lowercase</p>
+<p><strong>Language (i.e. english)</strong>
+Accounts for language-specific stopwords and stemming</p>
 <h2 id="reference">
   Reference
   <a class="heading-link" href="#reference">

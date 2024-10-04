@@ -13,21 +13,18 @@
 
 
 <meta name="author" content="Johannes Gerstbauer">
-<meta name="description" content="Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten.
-In OOP ist jedes Objekt einer abgeleiteten Klasse auch gleichzeitig ein Objekt seiner Superklasse. Das heißt: Objektvariablen der Superklasse kann man Objekte der Subklasse zuweisen -&gt; dadurch wird das Objekt &ldquo;polymorph&rdquo; (= Vielgestaltig).
-Das folgende Codebeispiel zeigt ein polymorphes Objekt:">
+<meta name="description" content="Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynmaische Polymorphie.
+Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normales überladen von Methoden. Also wenn ich eine Klasse habe, in der ich zwei Methoden mit demselben Namen aber unterschiedlicher Parameterliste definiere, dann ist das &ldquo;Compile-Time Polymorphism&rdquo;.">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Polymorphie und dynamische Bindung"/>
-<meta name="twitter:description" content="Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten.
-In OOP ist jedes Objekt einer abgeleiteten Klasse auch gleichzeitig ein Objekt seiner Superklasse. Das heißt: Objektvariablen der Superklasse kann man Objekte der Subklasse zuweisen -&gt; dadurch wird das Objekt &ldquo;polymorph&rdquo; (= Vielgestaltig).
-Das folgende Codebeispiel zeigt ein polymorphes Objekt:"/>
+<meta name="twitter:description" content="Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynmaische Polymorphie.
+Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normales überladen von Methoden. Also wenn ich eine Klasse habe, in der ich zwei Methoden mit demselben Namen aber unterschiedlicher Parameterliste definiere, dann ist das &ldquo;Compile-Time Polymorphism&rdquo;."/>
 
 <meta property="og:title" content="Polymorphie und dynamische Bindung" />
-<meta property="og:description" content="Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten.
-In OOP ist jedes Objekt einer abgeleiteten Klasse auch gleichzeitig ein Objekt seiner Superklasse. Das heißt: Objektvariablen der Superklasse kann man Objekte der Subklasse zuweisen -&gt; dadurch wird das Objekt &ldquo;polymorph&rdquo; (= Vielgestaltig).
-Das folgende Codebeispiel zeigt ein polymorphes Objekt:" />
+<meta property="og:description" content="Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynmaische Polymorphie.
+Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normales überladen von Methoden. Also wenn ich eine Klasse habe, in der ich zwei Methoden mit demselben Namen aber unterschiedlicher Parameterliste definiere, dann ist das &ldquo;Compile-Time Polymorphism&rdquo;." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gersti.at/de/todo/polymorphism/" /><meta property="article:section" content="TODO" />
 <meta property="article:published_time" content="2024-01-24T00:00:00+00:00" />
@@ -163,62 +160,28 @@ Das folgende Codebeispiel zeigt ein polymorphes Objekt:" />
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten.</p>
-<p>In OOP ist jedes Objekt einer abgeleiteten Klasse auch gleichzeitig ein Objekt seiner Superklasse. Das heißt: Objektvariablen der Superklasse kann man Objekte der Subklasse zuweisen -&gt; dadurch wird das Objekt &ldquo;polymorph&rdquo; (= Vielgestaltig).</p>
+<p>Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynmaische Polymorphie.</p>
+<h2 id="statische-polymorphie-compile-time-polymorphism">
+  Statische Polymorphie (Compile-Time Polymorphism)
+  <a class="heading-link" href="#statische-polymorphie-compile-time-polymorphism">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Das ist normales überladen von Methoden. Also wenn ich eine Klasse habe, in der ich zwei Methoden mit demselben Namen aber unterschiedlicher Parameterliste definiere, dann ist das &ldquo;Compile-Time Polymorphism&rdquo;. Hier entscheidet der Compiler, welche der beiden Methoden aufgerufen werden soll. Der Compiler unterscheidet die verschiedenen Methodenvarianten anhand der Anzahl und der Typisierung ihrer Parameter.</p>
+<h2 id="dynamische-polymorphie-run-time-polymorphism">
+  Dynamische Polymorphie (Run-Time Polymorphism)
+  <a class="heading-link" href="#dynamische-polymorphie-run-time-polymorphism">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Bei der dynamischen Polymorphie kommt nun noch ein zweites Mittel zum Tragen - nämlich das überschreiben von Methoden von Superklassen in Subklassen. Aber starten wir mit einem Beispiel.</p>
+<p>In OOP ist jedes Objekt einer abgeleiteten Klasse auch gleichzeitig ein Objekt seiner Superklasse. Das heißt: Objektvariablen der Superklasse kann man Objekte der Subklasse zuweisen -&gt; dadurch wird das Objekt &ldquo;polymorph&rdquo; (= Vielgestaltig). Warum ist das möglich? Weil die Superklasse und die Subklasse sich das gleiche <em>&ldquo;Interface&rdquo;</em> teilen.</p>
 <p>Das folgende Codebeispiel zeigt ein polymorphes Objekt:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Tier</span> <span class="n">meinTier</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hund</span><span class="o">();</span>
-</span></span></code></pre></div><p>In dieser Zeile wird ein Objekt der Klasse <code>Hund</code> erstellt, und in einer Objektvariable vom Typ <code>Tier</code> gespeichert. Dies ist möglich weil die Klasse Hund von der Klasse Tier erbt. Dementsprechend IST ein Hund auch ein Tier und die Variable vom Typ Tier kann auch ein Objekt vom Typ Hund enthalten. Dies nennt man Polymorphie, weil die Referenz vom Typ der Superklasse (Tier) auf ein Objekt der Subklasse (Hund) zeigt. Da meinTier zur Laufzeit sowohl ein Hund-Objekt als auch ein Katze-Objekt sein kann, ist es polymorph, also vielgestaltig.</p>
-<h2 id="objekte-umwandeln">
-  Objekte umwandeln
-  <a class="heading-link" href="#objekte-umwandeln">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Tier</span> <span class="n">meinTier</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hund</span><span class="o">();</span> <span class="c1">// meinTier ist ein Hund
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Hund</span> <span class="n">meinHund</span> <span class="o">=</span> <span class="o">(</span><span class="n">Hund</span><span class="o">)</span> <span class="n">meinTier</span><span class="o">;</span>  <span class="c1">// Casting von Tier zu Hund funktioniert
-</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Tier</span> <span class="n">meinTier</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Katze</span><span class="o">();</span> <span class="c1">// meinTier ist eine Katze
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Hund</span> <span class="n">meinHund</span> <span class="o">=</span> <span class="o">(</span><span class="n">Hund</span><span class="o">)</span> <span class="n">meinTier</span><span class="o">;</span>  <span class="c1">// Fehler! Das führt zu einer ClassCastException
-</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Dog</span> <span class="n">myDog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>      <span class="c1">// Ein Hund-Objekt
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Animal</span> <span class="n">myAnimal</span> <span class="o">=</span> <span class="n">myDog</span><span class="o">;</span>    <span class="c1">// Automatisch in die Oberklasse (Animal) konvertiert
-</span></span></span></code></pre></div><h2 id="upcasting-und-downcasting">
-  Upcasting und Downcasting
-  <a class="heading-link" href="#upcasting-und-downcasting">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p><a href="https://www.youtube.com/watch?v=iAg3HIUHYx4"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=iAg3HIUHYx4</a>
-<a href="https://www.youtube.com/watch?v=Qpz2MA4KE9U"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Qpz2MA4KE9U</a>  &ndash;&gt; Bestes Video im Internet</p>
-<p><a href="https://www.youtube.com/watch?v=HpuH7n9VOYk&amp;pp=ygUXamF2YSBwb2x5bW9ycGhpZSBjYXN0ZW4%3D"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=HpuH7n9VOYk&pp=ygUXamF2YSBwb2x5bW9ycGhpZSBjYXN0ZW4%3D</a>
-<a href="https://www.youtube.com/watch?v=Qb3YVlxwZwY"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Qb3YVlxwZwY</a>
-<a href="https://www.youtube.com/watch?v=4yxtYwW2x4o"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=4yxtYwW2x4o</a>
-<a href="https://www.youtube.com/watch?v=zJjkyoeq9fg&amp;pp=ygUXamF2YSBwb2x5bW9ycGhpZSBjYXN0ZW4%3D"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=zJjkyoeq9fg&pp=ygUXamF2YSBwb2x5bW9ycGhpZSBjYXN0ZW4%3D</a>
-<a href="https://www.youtube.com/watch?v=FNJCSazPkrA"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=FNJCSazPkrA</a>
-<a href="https://www.youtube.com/watch?v=Q8cTydJSawQ"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Q8cTydJSawQ</a></p>
-<p><a href="https://www.youtube.com/watch?v=j9QfB4Sf1pA"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=j9QfB4Sf1pA</a></p>
-<p><a href="https://www.youtube.com/watch?v=jhDUxynEQRI"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=jhDUxynEQRI</a></p>
-<p><a href="https://www.youtube.com/watch?v=1ONhXmQuWP8"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=1ONhXmQuWP8</a></p>
-<p>folgende zwei sachen aus meiner SDM-Mitschrift einbauen:</p>
-<ul>
-<li>Typecasting Zettel</li>
-<li>Which assignments are valid/invalid</li>
-</ul>
-<h2 id="wenn-ich-ein-interface-als-datentyp-verwende-und-ein-objekt-zuweise---ist-das-dann-auch-polymorphie">
-  Wenn ich ein Interface als Datentyp verwende und ein Objekt zuweise - ist das dann auch Polymorphie?
-  <a class="heading-link" href="#wenn-ich-ein-interface-als-datentyp-verwende-und-ein-objekt-zuweise---ist-das-dann-auch-polymorphie">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<h2 id="polymorphie-auf-einem-blick">
-  Polymorphie auf einem Blick
-  <a class="heading-link" href="#polymorphie-auf-einem-blick">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>Das folgende Bild beschreibt das gesamte Konzept der Polymorphie auf einem einzigen von mir angefertigten Bild:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Animal</span> <span class="n">myAnimal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+</span></span></code></pre></div><p>In dieser Zeile wird ein Objekt der Klasse <code>Dog</code> erstellt, und in einer Objektvariable vom Typ <code>Animal</code> gespeichert. Dies ist möglich weil die Klasse Dog von der Klasse Animal erbt. Dementsprechend IST ein Dog auch ein Animal und die Variable vom Typ Animal kann auch ein Objekt vom Typ Dog enthalten. Dies nennt man Polymorphie, weil die Referenz vom Typ der Superklasse (Animal) auf ein Objekt der Subklasse (Dog) zeigt. Da myAnimal zur Laufzeit sowohl ein Dog-Objekt als auch ein Cat-Objekt sein kann, ist es polymorph, also vielgestaltig.</p>
+<p>Das folgende Bild beschreibt das gesamte Konzept der dynamischen Polymorphie auf einem einzigen von mir angefertigten Bild:</p>
 <figure><img src="/images/polymorphism/polymorphie.jpg"
          alt="Polymorphie auf einen Blick."/><figcaption>
             <p>Polymorphie auf einen Blick.</p>
@@ -232,19 +195,116 @@ Das folgende Codebeispiel zeigt ein polymorphes Objekt:" />
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Es wird zur Laufzeit entschieden, welche der beiden Methoden (schreiben() der Superklasse oder schreiben() der Subklasse) aufgerufen werden soll.
-Die JVM entscheidet zur Laufzeit auf Basis des Objekttyps, welche Methode verwendet wird.</p>
-<h2 id="wann-sollte-man-polymorphen-code-verwenden">
-  Wann sollte man polymorphen Code verwenden?
-  <a class="heading-link" href="#wann-sollte-man-polymorphen-code-verwenden">
+<p>Was bedeutet nun <em>&ldquo;Dynamische Bindung&rdquo;</em>? In dem vorher genannten Beispiel wird zur Laufzeit entschieden, welche der beiden Methoden (<code>schreiben()</code> der Superklasse oder <code>schreiben()</code> der Subklasse) aufgerufen werden soll. Die JVM entscheidet also zur Laufzeit auf Basis des Objekttyps, welche Methode verwendet wird. Das nennt man dynamische Bindung.</p>
+<h2 id="implizite-typumwandlung">
+  Implizite Typumwandlung
+  <a class="heading-link" href="#implizite-typumwandlung">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>With examples</p>
-<p>Folgende Videos unbedingt anschauen:</p>
-<p><a href="https://www.youtube.com/watch?v=YaSMkzmc_sA"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YaSMkzmc_sA</a></p>
-<p>Auch schreiben über &ldquo;Static polymorphism vs. dynamic polymorphism&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Mountainbike erbt von Object
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Mountainbike</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Mountainbike</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">m</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// primitive Datentypen
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+</span></span></code></pre></div><h2 id="explizite-typumwandlung">
+  Explizite Typumwandlung
+  <a class="heading-link" href="#explizite-typumwandlung">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Mountainbike erbt von Object
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">Mountainbike</span> <span class="n">bike</span> <span class="o">=</span> <span class="o">(</span><span class="n">Mountainbike</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// primitive Datentypen
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">7.321</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">d</span><span class="o">;</span>
+</span></span></code></pre></div><h2 id="upcasting-und-downcasting">
+  Upcasting und Downcasting
+  <a class="heading-link" href="#upcasting-und-downcasting">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Gehen wir davon aus die Klasse Dog erbt von der Klasse Animal.</p>
+<p>Der folgende Code beschreibt &ldquo;Upcasting&rdquo;. Dies funktioniert automatisch in Java. Es wird ein Objekt hergenommen und zur Superklasse &ldquo;hochgecastet&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Animal</span> <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+</span></span></code></pre></div><p>De folgende Code wirft einen Error, weil man nicht direkt eine Animal-Referenz einer Dog-Referenz zuweisen kann, ohne sie vorher downzucasten.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Dog</span> <span class="n">myDog</span> <span class="o">=</span> <span class="n">animal</span><span class="o">;</span> <span class="c1">// ERROR!
+</span></span></span></code></pre></div><p>Der folgende Code beschreibt &ldquo;Downcasting&rdquo;. Es wird ein Objekt hergenommen und zur Subklasse &ldquo;runtergecastet&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Dog</span> <span class="n">myDog</span> <span class="o">=</span> <span class="o">(</span><span class="n">Dog</span><span class="o">)</span> <span class="n">animal</span><span class="o">;</span>
+</span></span></code></pre></div><p>Es ist ratsam, vor dem Downcasting den instanceof-Operator zu verwenden, um sicherzustellen, dass animal tatsächlich ein Dog ist, um eine ClassCastException zur Laufzeit zu vermeiden:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">animal</span> <span class="k">instanceof</span> <span class="n">Dog</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Dog</span> <span class="n">myDog</span> <span class="o">=</span> <span class="o">(</span><span class="n">Dog</span><span class="o">)</span> <span class="n">animal</span><span class="o">;</span> <span class="c1">// Sicheres Downcasting
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span></code></pre></div><p>Manche Leute finden übrigens, dass Downcasting ein Code Smell ist. Das findet z.B. auch Christopher Okhravi, der ein interessantes Video zu diesem Thema gemacht hat: <a href="https://www.youtube.com/watch?v=ECTyHSZUv0c"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ECTyHSZUv0c</a> . Er argumentiert damit, dass Downcasting Verträge im Code verletzen könnte und auch das Open Closed Principle verletzt wird.</p>
+<h2 id="polymorphie-mittels-interfaces">
+  Polymorphie mittels Interfaces
+  <a class="heading-link" href="#polymorphie-mittels-interfaces">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>ToDo!!</p>
+<p>Die Anwendung der Polymorphie mittels interfaces ist wohl die bekannteste Methode.</p>
+<p>Wenn ich ein Interface als Datentyp verwende und ein Objekt zuweise - ist das dann auch Polymorphie?</p>
+<p>Wenn du ein Interface als Datentyp verwendest und einem Objekt eines Typs, der dieses Interface implementiert, einen Wert zuweist, nutzt du Polymorphie. Hier ist eine kurze Erklärung, wie das funktioniert:</p>
+<h2 id="die-3-grundeigenschaften-von-oop-oder-vielleicht-doch-nur-1">
+  Die 3 Grundeigenschaften von OOP (oder vielleicht doch nur 1?)
+  <a class="heading-link" href="#die-3-grundeigenschaften-von-oop-oder-vielleicht-doch-nur-1">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Man hört es überall - die 3 Grundeigenschaften der objektorientierten Programmierung sind Kapselung, Vererbung und Polymorphie. Ich weiß nicht wer das ursprünglich so definiert hat aber diese Aussage ist in aller Munde. Sogar während meinem Studium haben das die Professoren immer wieder gesagt und in der Software Engineering Community gilt dies mittlerweile als Standard-Aussage die glaube ich mittlerweile schon von vielen Leuten getroffen wird, ohne darüber wirklich nachzudenken. Oft wird auch auf die Frage: <em>&ldquo;Was ist OOP eigentlich?&rdquo;</em> die Antwort <em>&ldquo;OOP besteht aus Kapselung, Vererbung und Polymorphie.</em>&rdquo;. Auch ich dachte das viele Jahre, bevor ich das Buch &ldquo;Clean Architecture&rdquo; von Robert C. Martin gelesen habe. In Kapitel 5 des Buches (Object-Oriented Programming ab S. 33) beschreibt Martin, dass es die Konzepte Kapselung und Vererbung schon lange vor der Entwicklung von objektorientierten Sprachen gab. Er schreibt z.B. davon, dass Kapselung in einer perfekten Art und Weise bereits in der Programmiersprache C möglich war. In Sprachen wie Java oder C# ist Kapselung nur in einer abgeschwächten Art und Weise möglich, da es hier unmöglich ist, die Deklaration und die Definition einer Klasse voneinander zu trennen.
+Vererbung konnte man in C auch schon praktizieren (wenn zwar nur mit einem Trick). Durch objektorientierte Sprachen wurde Vererbung zwar simpler und angenehmer für die/den Programmierer/in gestaltet aber das Konzept war schon vorher da.
+Auch polymorphie konnte bereits in C praktiziert werden und ist nichts neues in objektorientierten Sprachen jedoch machen sie die Anwendung von Polymorphie sehr viel einfacher. Laut Robert C. Martin:</p>
+<p><em>Using an OO language makes polymorphism trivial. That fact provides an enormous power that old C programmers could only dream of. On this basis, we can conclude that OO imposes discipline on indirect transfer of control.</em></p>
+<p>Martin beschreibt Polymorphie als besonders mächtig, weil sie die Abhängigkeiten zwischen Komponenten entkoppelt und es ermöglicht, Systeme modularer und leichter erweiterbar zu gestalten. Stichwort: &ldquo;Plugin-Architecture&rdquo;.</p>
+<p>Laut Robert C. Martin:</p>
+<p>Clean-Architecture S. 47
+<em>OO is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system. It allows the architect to create a plugin architecture, in which modules that contain high-level policies are independent of modules that contain low-level details. The low-level details are relegated to plugin modules that can be deployed and developed independently from the modules that contain high-level policies.</em></p>
+<p>Aus diesem Zitat schließe ich, dass die simple Anwendung des Dependency-Inversion Principles (DIP) das fundamentalste Merkmal von objektorientierter Programmierung ist. Und dieses Principle baut auf der Verwendung von Polymorphie auf. Ohne Polymorphie gibt es kein DIP. Deshalb würde ich persönlich sagen es gibt nur eine einzige Grundeigenschaft von OOP. Und das ist Polymorphie.</p>
+<h1 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="books">
+  Books
+  <a class="heading-link" href="#books">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Robert C. Martin: <em>Clean Architecture: A Craftsman&rsquo;s Guide to Software Structure and Design (Robert C. Martin Series)</em>, Publisher: Pearson, Year: 2017, ISBN: 0134494164</li>
+</ul>
+<h2 id="videos">
+  Videos
+  <a class="heading-link" href="#videos">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=W2pTtlNaa6s"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=W2pTtlNaa6s</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=HpuH7n9VOYk"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=HpuH7n9VOYk</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=ECTyHSZUv0c"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ECTyHSZUv0c</a></p>
+</li>
+</ul>
 
   </article>
 </section>

@@ -13,9 +13,8 @@
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/de/todo/polymorphism/</guid>
-      <description>Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten.
-In OOP ist jedes Objekt einer abgeleiteten Klasse auch gleichzeitig ein Objekt seiner Superklasse. Das heißt: Objektvariablen der Superklasse kann man Objekte der Subklasse zuweisen -&amp;gt; dadurch wird das Objekt &amp;ldquo;polymorph&amp;rdquo; (= Vielgestaltig).
-Das folgende Codebeispiel zeigt ein polymorphes Objekt:</description>
+      <description>Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynmaische Polymorphie.
+Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normales überladen von Methoden. Also wenn ich eine Klasse habe, in der ich zwei Methoden mit demselben Namen aber unterschiedlicher Parameterliste definiere, dann ist das &amp;ldquo;Compile-Time Polymorphism&amp;rdquo;.</description>
     </item>
     
   </channel>

@@ -27,7 +27,7 @@ In dieser Zeile wird ein Objekt der Klasse `Dog` erstellt, und in einer Objektva
 
 Das folgende Bild beschreibt das gesamte Konzept der dynamischen Polymorphie auf einem einzigen von mir angefertigten Bild:
 
-{{< figure src="/images/polymorphism/Polymorphie.jpg" caption="Polymorphie auf einen Blick.">}}
+{{< figure src="/images/polymorphism/polymorphie.jpg" caption="Polymorphie auf einen Blick.">}}
 
 ## Dynamische Bindung
 

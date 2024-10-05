@@ -1,6 +1,6 @@
 +++
 title = "Polymorphie und dynamische Bindung"
-date = "2024-01-24"
+date = "2024-10-05"
 description = ""
 +++
 
@@ -138,7 +138,7 @@ void startMoving(Moveable moveableObject) {
 }
 ```
 
-## Die 3 Grundeigenschaften von OOP (oder vielleicht doch nur 1?)
+## Die Grundeigenschaften von OOP?
 
 Man hört es überall - die 3 Grundeigenschaften der objektorientierten Programmierung sind Kapselung, Vererbung und Polymorphie. Ich weiß nicht wer das ursprünglich so definiert hat aber diese Aussage ist in aller Munde. Sogar während meinem Studium haben das die Professoren immer wieder gesagt und in der Software Engineering Community gilt dies mittlerweile als Standard-Aussage, die glaube ich mittlerweile schon von vielen Leuten getroffen wird, ohne darüber wirklich nachzudenken. Oft wird auch auf die Frage: _"Was ist OOP eigentlich?"_ die Antwort _"OOP besteht aus Kapselung, Vererbung und Polymorphie._" gegeben. Vor kurzem las ich das Buch "Clean Architecture" von Robert C. Martin. In Kapitel 5 des Buches (ab S. 33) beschreibt Martin, dass es die Konzepte Kapselung und Vererbung schon lange vor der Entwicklung von objektorientierten Sprachen gab. Er schreibt z.B. davon, dass Kapselung in einer perfekten Art und Weise bereits in der Programmiersprache C möglich war. In Sprachen wie Java oder C# ist Kapselung nur in einer abgeschwächten Art und Weise möglich, da es hier unmöglich ist, die Deklaration und die Definition einer Klasse voneinander zu trennen.
 Vererbung konnte man laut ihm in C auch schon praktizieren (wenn zwar nur mit einem bestimmten Trick). Er hält fest, dass durch objektorientierte Sprachen Vererbung zwar simpler und angenehmer für den Programmierenden wurde aber das Konzept schon vorher da war.

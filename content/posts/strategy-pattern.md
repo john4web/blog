@@ -1,6 +1,6 @@
 +++
 title = "The Strategy Pattern"
-date = "2024-09-11"
+date = "2024-09-12"
 description = "Article explaining the Strategy Design Pattern by Gang of Four."
 +++
 

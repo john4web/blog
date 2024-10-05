@@ -1,6 +1,6 @@
 +++
-title = "Polymorphie und dynamische Bindung"
-date = "2024-01-24"
+title = "Polymorphism and dynamic binding"
+date = "2024-10-05"
 description = ""
 +++
 

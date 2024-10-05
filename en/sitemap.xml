@@ -160,17 +160,17 @@
     <loc>https://gersti.at/todo/pair-programming/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/todo/polymorphism/</loc>
+    <loc>https://gersti.at/posts/polymorphism/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://gersti.at/de/todo/polymorphism/"
+                href="https://gersti.at/de/posts/polymorphism/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gersti.at/todo/polymorphism/"
+                href="https://gersti.at/posts/polymorphism/"
                 />
   </url><url>
     <loc>https://gersti.at/todo/pola/</loc>
@@ -295,16 +295,6 @@
   </url><url>
     <loc>https://gersti.at/todo/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/todo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/todo/"
-                />
   </url><url>
     <loc>https://gersti.at/todo/tracer-bullets/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>

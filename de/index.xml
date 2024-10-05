@@ -6,7 +6,17 @@
     <description>Recent content on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Polymorphie und dynamische Bindung</title>
+      <link>https://gersti.at/de/posts/polymorphism/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/de/posts/polymorphism/</guid>
+      <description>Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Dieser Blog-Artikel versucht diese Frage zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynamische Polymorphie.
+Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normales überladen von Methoden. Also wenn ich eine Klasse habe, in der ich zwei Methoden mit demselben Namen aber unterschiedlicher Parameterliste definiere, dann ist das &amp;ldquo;Compile-Time Polymorphism&amp;rdquo;.</description>
+    </item>
+    
     <item>
       <title>Das Strategy Pattern</title>
       <link>https://gersti.at/de/posts/strategy-pattern/</link>
@@ -34,16 +44,6 @@ Welches Problem löst das Strategy Pattern? Link to heading Angenommen, wir habe
       
       <guid>https://gersti.at/de/posts/stream-api/</guid>
       <description>Dieser Artikel ist derzeit leider nur auf Englisch verfügbar! 😅 Klicke hier.</description>
-    </item>
-    
-    <item>
-      <title>Polymorphie und dynamische Bindung</title>
-      <link>https://gersti.at/de/posts/polymorphism/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/de/posts/polymorphism/</guid>
-      <description>Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Dieser Blog-Artikel versucht diese Frage zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynamische Polymorphie.
-Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normales überladen von Methoden. Also wenn ich eine Klasse habe, in der ich zwei Methoden mit demselben Namen aber unterschiedlicher Parameterliste definiere, dann ist das &amp;ldquo;Compile-Time Polymorphism&amp;rdquo;.</description>
     </item>
     
     <item>

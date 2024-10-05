@@ -6,7 +6,27 @@
     <description>Recent content in Posts on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Polymorphism and dynamic binding</title>
+      <link>https://gersti.at/posts/polymorphism/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/polymorphism/</guid>
+      <description>Overview Link to heading This article is currently only available in German! 😅 Click here.</description>
+    </item>
+    
+    <item>
+      <title>The Strategy Pattern</title>
+      <link>https://gersti.at/posts/strategy-pattern/</link>
+      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/strategy-pattern/</guid>
+      <description>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in Java.
+A duck can fly and quack (and can do probably much more things). Image-Source: Pixabay
+The Problem that the strategy pattern solves Link to heading Let&amp;rsquo;s say we have a Duck class. And then we have a CityDuck (living in the city) and a WildDuck (living in the forest). We use inheritance – so CityDuck and WildDuck inherit from Duck.</description>
+    </item>
+    
     <item>
       <title>Liskov substitution principle and DbC in depth</title>
       <link>https://gersti.at/posts/liskov-substitution-principle/</link>
@@ -25,26 +45,6 @@ Overview Link to heading The Liskov Substitution Principle (LSP) was first intro
       <guid>https://gersti.at/posts/stream-api/</guid>
       <description>Overview Link to heading Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow you to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.
 Streams do all the heavy lifting for you.</description>
-    </item>
-    
-    <item>
-      <title>The Strategy Pattern</title>
-      <link>https://gersti.at/posts/strategy-pattern/</link>
-      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/posts/strategy-pattern/</guid>
-      <description>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in Java.
-A duck can fly and quack (and can do probably much more things). Image-Source: Pixabay
-The Problem that the strategy pattern solves Link to heading Let&amp;rsquo;s say we have a Duck class. And then we have a CityDuck (living in the city) and a WildDuck (living in the forest). We use inheritance – so CityDuck and WildDuck inherit from Duck.</description>
-    </item>
-    
-    <item>
-      <title>Polymorphie und dynamische Bindung</title>
-      <link>https://gersti.at/posts/polymorphism/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/posts/polymorphism/</guid>
-      <description>Overview Link to heading This article is currently only available in German! 😅 Click here.</description>
     </item>
     
   </channel>

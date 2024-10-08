@@ -5,4 +5,4 @@ description = "Dieser Blogbeitrag erklärt, wie die Java Stream-API funktioniert
 +++
 
 Dieser Artikel ist derzeit leider nur auf Englisch verfügbar! 😅
-Klicke [hier](https://gersti.at/de/posts/stream-api).
+Klicke [hier](https://gersti.at/posts/stream-api).

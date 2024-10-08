@@ -5,4 +5,4 @@ description = "Artikel, der das Liskovsche Substitutionsprinzip und Design by Co
 +++
 
 Dieser Artikel ist derzeit leider nur auf Englisch verfügbar! 😅
-Klicke [hier](https://gersti.at/de/posts/liskov-substitution-principle/).
+Klicke [hier](https://gersti.at/posts/liskov-substitution-principle/).

@@ -4,6 +4,8 @@ date = "2024-10-05"
 description = "This article explains the concepts of polymorphism and dynamic binding in the Java programming language in detail."
 +++
 
+{{< figure src="/images/polymorphism/mystique.webp" caption="The mutant 'Mystique' in X-Men can take on different forms, just like an object in programming (Source: [X-Men Movies Wiki](https://xmenmovies.fandom.com/wiki/Mystique))." width="50%">}}
+
 ## Overview
 
 Polymorphism, along with encapsulation and inheritance, is a fundamental concept of object-oriented programming. But what exactly is polymorphism? This blog article aims to answer that question. Essentially, there are two types of polymorphism – static and dynamic polymorphism. 
@@ -24,7 +26,7 @@ The following code example shows a polymorphic object:
 Animal myAnimal = new Dog();
 ```
 
-In this line, an object of the class `Dog` is created and stored in an object variable of type `Animal`. This is possible because the class `Dog` inherits from the class `Animal`. Accordingly, a `Dog` **IS** also an `Animal`, and the variable of type `Animal` can contain an object of type `Dog`. This is called polymorphism because the reference of the superclass type (`Animal`) points to an object of the subclass (`Dog`). Since `myAnimal` can be either a `Dog` object or a `Cat` object at runtime, it is polymorphic, meaning it has multiple forms.
+In this line, an object of the class `Dog` is created and stored in an object variable of type `Animal`. This is possible because the class Dog inherits from the class Animal. Accordingly, a Dog **IS** also an Animal, and the variable of type Animal can contain an object of type Dog. This is called polymorphism because the reference of the superclass type (Animal) points to an object of the subclass (Dog). Since `myAnimal` can be either a Dog object or a Cat object at runtime, it is polymorphic, meaning it has multiple forms.
 
 The following image illustrates the entire concept of dynamic polymorphism in a single picture created by me:
 

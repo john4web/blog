@@ -4,6 +4,8 @@ date = "2024-10-05"
 description = "Dieser Artikel erklärt die Konzepte Polymorphie und dynamische Bindung in der Programmiersprache Java im Detail."
 +++
 
+{{< figure src="/images/polymorphism/mystique.webp" caption="Der Mutant 'Mystique' in X-Men kann verschiedene Gestalten annehmen. So wie auch ein Objekt in der Programmierung (Quelle: [X-Men Movies Wiki](https://xmenmovies.fandom.com/wiki/Mystique))." width="50%">}}
+
 ## Überblick
 
 Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Dieser Blog-Artikel versucht diese Frage zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynamische Polymorphie.

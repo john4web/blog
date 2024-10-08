@@ -4,6 +4,9 @@ date = "2024-09-11"
 description = "This blog post explains how the java stream api works and gives an overview on the most important methods."
 +++
 
+{{< figure src="/images/stream-api/stream.jpg" caption="A stream in a forest. Look at those beautiful cascades! (Source: [Pexels](https://www.pexels.com/photo/waterfall-cascading-down-the-hill-in-a-forest-18948334/)).">}}
+
+
 # Overview
 
 Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow you to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.

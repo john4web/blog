@@ -1,7 +1,7 @@
 +++
 title = "Polymorphie und dynamische Bindung"
 date = "2024-10-05"
-description = ""
+description = "Dieser Artikel erklärt die Konzepte Polymorphie und dynamische Bindung in der Programmiersprache Java im Detail."
 +++
 
 ## Überblick
@@ -140,9 +140,9 @@ void startMoving(Moveable moveableObject) {
 
 ## Die Grundeigenschaften von OOP?
 
-Man hört es überall - die 3 Grundeigenschaften der objektorientierten Programmierung sind Kapselung, Vererbung und Polymorphie. Ich weiß nicht wer das ursprünglich so definiert hat aber diese Aussage ist in aller Munde. Sogar während meinem Studium haben das die Professoren immer wieder gesagt und in der Software Engineering Community gilt dies mittlerweile als Standard-Aussage, die glaube ich mittlerweile schon von vielen Leuten getroffen wird, ohne darüber wirklich nachzudenken. Oft wird auch auf die Frage: _"Was ist OOP eigentlich?"_ die Antwort _"OOP besteht aus Kapselung, Vererbung und Polymorphie._" gegeben. Vor kurzem las ich das Buch "Clean Architecture" von Robert C. Martin. In Kapitel 5 des Buches (ab S. 33) beschreibt Martin, dass es die Konzepte Kapselung und Vererbung schon lange vor der Entwicklung von objektorientierten Sprachen gab. Er schreibt z.B. davon, dass Kapselung in einer perfekten Art und Weise bereits in der Programmiersprache C möglich war. In Sprachen wie Java oder C# ist Kapselung nur in einer abgeschwächten Art und Weise möglich, da es hier unmöglich ist, die Deklaration und die Definition einer Klasse voneinander zu trennen.
+Man hört es überall - die 3 Grundeigenschaften der objektorientierten Programmierung sind Kapselung, Vererbung und Polymorphie. Ich weiß nicht wer das ursprünglich so definiert hat aber diese Aussage ist in aller Munde. Sogar während meinem Studium haben das die Professoren immer wieder gesagt und in der Software Engineering Community gilt dies mittlerweile als Standard-Aussage, die glaube ich mittlerweile schon von vielen Leuten getroffen wird, ohne darüber wirklich nachzudenken. Oft wird auch auf die Frage: _"Was ist OOP eigentlich?"_ die Antwort _"OOP besteht aus Kapselung, Vererbung und Polymorphie._" gegeben. Vor kurzem las ich das Buch "Clean Architecture" von Robert C. Martin. In Kapitel 5 des Buches (ab S. 33) beschreibt Martin, dass es die Konzepte Kapselung, Vererbung und Polymorphie schon lange vor der Entwicklung von objektorientierten Sprachen gab. Er schreibt z.B. davon, dass Kapselung in einer perfekten Art und Weise bereits in der Programmiersprache C möglich war. In Sprachen wie Java oder C# ist Kapselung nur in einer abgeschwächten Art und Weise möglich, da es hier unmöglich ist, die Deklaration und die Definition einer Klasse voneinander zu trennen.
 Vererbung konnte man laut ihm in C auch schon praktizieren (wenn zwar nur mit einem bestimmten Trick). Er hält fest, dass durch objektorientierte Sprachen Vererbung zwar simpler und angenehmer für den Programmierenden wurde aber das Konzept schon vorher da war.
-In dem Buch wird auch beschrieben, dass polymorphie bereits in C praktiziert werden konnte und nichts Neues bei objektorientierten Sprachen war - jedoch wurde die Anwendung von Polymorphie in OO Sprachen sehr viel einfacher.
+In dem Buch wird auch beschrieben, dass Polymorphie bereits in C praktiziert werden konnte und nichts Neues bei objektorientierten Sprachen war - jedoch wurde die Anwendung von Polymorphie in OO Sprachen sehr viel einfacher.
 
 > Using an OO language makes polymorphism trivial. That fact provides an enormous power that old C programmers could only dream of. On this basis, we can conclude that OO imposes discipline on indirect transfer of control.<br>
 > — <cite>Robert C. Martin | Clean Architecture S. 42</cite>
@@ -152,11 +152,11 @@ Martin beschreibt Polymorphie als besonders mächtig, weil sie die Abhängigkeit
 > OO is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system. It allows the architect to create a plugin architecture, in which modules that contain high-level policies are independent of modules that contain low-level details. The low-level details are relegated to plugin modules that can be deployed and developed independently from the modules that contain high-level policies.<br>
 > — <cite>Robert C. Martin | Clean Architecture S. 47</cite>
 
-Aus diesem Zitat schließe ich, dass die Möglichkeit zur Anwendung des Dependency-Inversion Principles (DIP) in einfacher Art und Weise, das fundamentalste Merkmal von objektorientierter Programmierung ist. Und dieses Principle baut auf der Verwendung von Polymorphie auf. Ohne Polymorphie gibt es auch kein DIP. Deshalb würde ich persönlich sagen die Grundeigenschaft von OOP ist Polymorphie.
+Aus diesem Zitat schließe ich, dass die Möglichkeit zur Anwendung des Dependency-Inversion Principles (DIP) in einfacher Art und Weise, das fundamentalste Merkmal von objektorientierter Programmierung ist. Und dieses Principle baut auf der Verwendung von Polymorphie auf. Ohne Polymorphie gibt es auch kein DIP. Deshalb würde ich persönlich sagen die wichtigste Grundeigenschaft von OOP ist Polymorphie.
 
 ## Reference
 
-### Books
+### Bücher
 
 - Robert C. Martin: _Clean Architecture: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series)_, Publisher: Pearson, Year: 2017, ISBN: 0134494164
 

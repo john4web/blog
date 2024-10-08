@@ -13,15 +13,15 @@
 
 
 <meta name="author" content="Johannes Gerstbauer">
-<meta name="description" content="Overview Link to heading This article is currently only available in German! 😅 Click here.">
+<meta name="description" content="This article explains the concepts of polymorphism and dynamic binding in the Java programming language in detail.">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Polymorphism and dynamic binding"/>
-<meta name="twitter:description" content="Overview Link to heading This article is currently only available in German! 😅 Click here."/>
+<meta name="twitter:description" content="This article explains the concepts of polymorphism and dynamic binding in the Java programming language in detail."/>
 
 <meta property="og:title" content="Polymorphism and dynamic binding" />
-<meta property="og:description" content="Overview Link to heading This article is currently only available in German! 😅 Click here." />
+<meta property="og:description" content="This article explains the concepts of polymorphism and dynamic binding in the Java programming language in detail." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gersti.at/posts/polymorphism/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-10-05T00:00:00+00:00" />
@@ -160,7 +160,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              One-minute read
+              7-minute read
             </span>
           </div>
           
@@ -178,8 +178,203 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>This article is currently only available in German! 😅
-Click <a href="https://gersti.at/de/posts/polymorphism"  class="external-link" target="_blank" rel="noopener">here</a>.</p>
+<p>Polymorphism, along with encapsulation and inheritance, is a fundamental concept of object-oriented programming. But what exactly is polymorphism? This blog article aims to answer that question. Essentially, there are two types of polymorphism – static and dynamic polymorphism.</p>
+<h2 id="static-polymorphism-compile-time-polymorphism">
+  Static Polymorphism (Compile-Time Polymorphism)
+  <a class="heading-link" href="#static-polymorphism-compile-time-polymorphism">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This is normal method overloading. When you have a class with two methods that have the same name but different parameter lists, this is called &ldquo;Compile-Time Polymorphism&rdquo; or static polymorphism. Here, the compiler determines which of the methods will be called based on the number and types of parameters provided.</p>
+<h2 id="dynamic-polymorphism-run-time-polymorphism">
+  Dynamic Polymorphism (Run-Time Polymorphism)
+  <a class="heading-link" href="#dynamic-polymorphism-run-time-polymorphism">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In dynamic polymorphism, another mechanism comes into play – method overriding. But let&rsquo;s start with an example.</p>
+<p>In OOP, every object of a derived class is also an object of its superclass. This means: You can assign subclass objects to superclass object variables &ndash;&gt; thus, the object becomes &ldquo;polymorphic&rdquo; (= manifold). Why is this possible? Because the superclass and the subclass share the same interface. The same interface means, in this context, the same method signatures and public properties.</p>
+<p>The following code example shows a polymorphic object:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Animal</span> <span class="n">myAnimal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+</span></span></code></pre></div><p>In this line, an object of the class <code>Dog</code> is created and stored in an object variable of type <code>Animal</code>. This is possible because the class <code>Dog</code> inherits from the class <code>Animal</code>. Accordingly, a <code>Dog</code> <strong>IS</strong> also an <code>Animal</code>, and the variable of type <code>Animal</code> can contain an object of type <code>Dog</code>. This is called polymorphism because the reference of the superclass type (<code>Animal</code>) points to an object of the subclass (<code>Dog</code>). Since <code>myAnimal</code> can be either a <code>Dog</code> object or a <code>Cat</code> object at runtime, it is polymorphic, meaning it has multiple forms.</p>
+<p>The following image illustrates the entire concept of dynamic polymorphism in a single picture created by me:</p>
+<figure><img src="/images/polymorphism/polymorphism.jpg"
+         alt="Polymorphism at a glance."/><figcaption>
+            <p>Polymorphism at a glance.</p>
+        </figcaption>
+</figure>
+
+<h2 id="dynamic-binding">
+  Dynamic binding
+  <a class="heading-link" href="#dynamic-binding">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>What does <em>&ldquo;Dynamic Binding&rdquo;</em> mean? In the previously mentioned example, the decision of which method (<code>write()</code> of the superclass or <code>write()</code> of the subclass) to call is made at runtime. The JVM determines during runtime, based on the object type, which method to use. This is called dynamic binding.</p>
+<h2 id="type-conversion">
+  Type conversion
+  <a class="heading-link" href="#type-conversion">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Similar to primitive data types, implicit and explicit type conversion also works with objects. The class &ldquo;Object&rdquo; is used as an example here. Every object in Java automatically inherits from the class <code>java.lang.Object</code>.</p>
+<h3 id="implicit-type-conversion">
+  Implicit type conversion
+  <a class="heading-link" href="#implicit-type-conversion">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Mountainbike inherits from Object
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Mountainbike</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Mountainbike</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">m</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// primitive datatypes
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+</span></span></code></pre></div><h3 id="explicit-type-conversion">
+  Explicit type conversion
+  <a class="heading-link" href="#explicit-type-conversion">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Mountainbike inherits from Object
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">Mountainbike</span> <span class="n">bike</span> <span class="o">=</span> <span class="o">(</span><span class="n">Mountainbike</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// primitive datatypes
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">7.321</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">d</span><span class="o">;</span>
+</span></span></code></pre></div><h2 id="upcasting-and-downcasting">
+  Upcasting and Downcasting
+  <a class="heading-link" href="#upcasting-and-downcasting">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Let’s assume the class <code>Dog</code> inherits from the class <code>Animal</code>.</p>
+<p>The following code describes &ldquo;upcasting.&rdquo; This works automatically in Java. An object is taken and &ldquo;casted up&rdquo; to its superclass.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Animal</span> <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+</span></span></code></pre></div><p>The following code throws an error because you cannot directly assign an <code>Animal</code> reference to a <code>Dog</code> reference without casting it down first.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Dog</span> <span class="n">myDog</span> <span class="o">=</span> <span class="n">animal</span><span class="o">;</span> <span class="c1">// ERROR!
+</span></span></span></code></pre></div><p>The following code describes &ldquo;downcasting.&rdquo; An object is taken and &ldquo;casted down&rdquo; to the subclass.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Dog</span> <span class="n">myDog</span> <span class="o">=</span> <span class="o">(</span><span class="n">Dog</span><span class="o">)</span> <span class="n">animal</span><span class="o">;</span>
+</span></span></code></pre></div><p>It is advisable to use the <code>instanceof</code> operator before downcasting to ensure that the <code>Animal</code> is actually a <code>Dog</code>, in order to avoid a <code>ClassCastException</code> at runtime:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">animal</span> <span class="k">instanceof</span> <span class="n">Dog</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Dog</span> <span class="n">myDog</span> <span class="o">=</span> <span class="o">(</span><span class="n">Dog</span><span class="o">)</span> <span class="n">animal</span><span class="o">;</span> <span class="c1">// Safe Downcasting
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span></code></pre></div><p>Some people find that downcasting is a code smell. For example, Christopher Okhravi, who made an interesting <a href="https://www.youtube.com/watch?v=ECTyHSZUv0c"  class="external-link" target="_blank" rel="noopener">video</a> on this topic, argues that downcasting could violate contracts in the code and also violates the &ldquo;Open-Closed Principle&rdquo;.</p>
+<h2 id="polymorphism-via-interfaces">
+  Polymorphism via interfaces
+  <a class="heading-link" href="#polymorphism-via-interfaces">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The application of polymorphism through interfaces is probably the most well-known method. When an interface is used as the data type of an object variable and an object that implements the interface is assigned to it, polymorphism is utilized. Example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">interface</span> <span class="nc">Moveable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">move</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Car</span> <span class="kd">implements</span> <span class="n">Moveable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;The car is driving.&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Robot</span> <span class="kd">implements</span> <span class="n">Moveable</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;The robot is walking.&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Moveable</span> <span class="n">moveableObject</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">moveableObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">moveableObject</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>  <span class="c1">// The car is driving.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="n">moveableObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Robot</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">moveableObject</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>  <span class="c1">// The robot is walking.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>This is the great power of polymorphism &ndash;&gt; objects sharing the same interface can be easily exchanged (at runtime). Plug and Play! See: &ldquo;Dependency Inversion Principle&rdquo;.</p>
+<p>For example, you can now pass both a <code>Car</code> and a <code>Robot</code> object to the following method:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">startMoving</span><span class="o">(</span><span class="n">Moveable</span> <span class="n">moveableObject</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">moveableObject</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><h2 id="the-pillars-oop">
+  The pillars OOP?
+  <a class="heading-link" href="#the-pillars-oop">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>You hear it everywhere - the three pillars of object-oriented programming are encapsulation, inheritance, and polymorphism. I don&rsquo;t know who originally defined it this way, but this statement is on everyone&rsquo;s lips. Even during my studies, professors repeatedly said this, and in the software engineering community, this has now become a standard statement that many people make without really thinking about it. Often, when asked, <em>&ldquo;What is OOP anyway?&rdquo;</em>, the answer is <em>&ldquo;OOP consists of encapsulation, inheritance, and polymorphism.&rdquo;</em>.</p>
+<p>Recently, I read the book &ldquo;Clean Architecture&rdquo; by Robert C. Martin. In Chapter 5 of the book (starting on p. 33), Martin describes that the concepts of encapsulation, inheritance and polymorphism existed long before the development of object-oriented languages. He mentions, for example, that encapsulation was already perfectly implemented in the programming language C. In languages like Java or C#, encapsulation is only possible in a weakened form because it is impossible to separate the declaration and definition of a class.</p>
+<p>According to him, inheritance could also be practiced in C already (albeit with a specific trick). He notes that while object-oriented languages made inheritance simpler and more pleasant for programmers, the concept was already there before. The book also describes that polymorphism could already be practiced in C and was not something new in object-oriented languages. However, the application of polymorphism in OO languages became much easier.</p>
+<blockquote>
+<p>Using an OO language makes polymorphism trivial. That fact provides an enormous power that old C programmers could only dream of. On this basis, we can conclude that OO imposes discipline on indirect transfer of control.<!-- raw HTML omitted -->
+— <!-- raw HTML omitted -->Robert C. Martin | Clean Architecture S. 42<!-- raw HTML omitted --></p>
+</blockquote>
+<p>Martin describes polymorphism as particularly powerful because it decouples dependencies between components and allows systems to be designed in a more modular and easily extendable way. The keyword here is &ldquo;Plugin Architecture.&rdquo;</p>
+<blockquote>
+<p>OO is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system. It allows the architect to create a plugin architecture, in which modules that contain high-level policies are independent of modules that contain low-level details. The low-level details are relegated to plugin modules that can be deployed and developed independently from the modules that contain high-level policies.<!-- raw HTML omitted -->
+— <!-- raw HTML omitted -->Robert C. Martin | Clean Architecture S. 47<!-- raw HTML omitted --></p>
+</blockquote>
+<p>From this quote, I conclude that the ability to apply the Dependency Inversion Principle (DIP) in a straightforward way is the fundamental characteristic of object-oriented programming. This principle is based on the use of polymorphism. Without polymorphism, there is no DIP. Therefore, I would personally say that the most important foundational characteristic of OOP is polymorphism.</p>
+<h2 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="books">
+  Books
+  <a class="heading-link" href="#books">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Robert C. Martin: <em>Clean Architecture: A Craftsman&rsquo;s Guide to Software Structure and Design (Robert C. Martin Series)</em>, Publisher: Pearson, Year: 2017, ISBN: 0134494164</li>
+</ul>
+<h3 id="videos">
+  Videos
+  <a class="heading-link" href="#videos">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Video from Sriyank Siddhartha: <em>Java Polymorphism: Compile time vs. Run time. Method Overloading vs. Overriding</em>, URL: <a href="https://www.youtube.com/watch?v=W2pTtlNaa6s"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=W2pTtlNaa6s</a>, Last access: 05.10.2024.</p>
+</li>
+<li>
+<p>Video from &ldquo;CodingWithJohn&rdquo;: <em>Upcasting and Downcasting in Java - Full Tutorial</em>, URL: <a href="https://www.youtube.com/watch?v=HpuH7n9VOYk"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=HpuH7n9VOYk</a>, Last access: 05.10.2024.</p>
+</li>
+<li>
+<p>Video from Christopher Okhravi: <em>Downcasting Is A Code Smell | Code Walks 043</em>, URL: <a href="https://www.youtube.com/watch?v=ECTyHSZUv0c"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ECTyHSZUv0c</a>, Last access: 05.10.2024.</p>
+</li>
+</ul>
+<h3 id="ai">
+  AI
+  <a class="heading-link" href="#ai">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>ChatGPt</li>
+</ul>
 
       </div>
 

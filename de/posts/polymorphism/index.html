@@ -13,18 +13,15 @@
 
 
 <meta name="author" content="Johannes Gerstbauer">
-<meta name="description" content="Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Dieser Blog-Artikel versucht diese Frage zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynamische Polymorphie.
-Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normales überladen von Methoden. Also wenn ich eine Klasse habe, in der ich zwei Methoden mit demselben Namen aber unterschiedlicher Parameterliste definiere, dann ist das &ldquo;Compile-Time Polymorphism&rdquo;.">
+<meta name="description" content="Dieser Artikel erklärt die Konzepte Polymorphie und dynamische Bindung in der Programmiersprache Java im Detail.">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Polymorphie und dynamische Bindung"/>
-<meta name="twitter:description" content="Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Dieser Blog-Artikel versucht diese Frage zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynamische Polymorphie.
-Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normales überladen von Methoden. Also wenn ich eine Klasse habe, in der ich zwei Methoden mit demselben Namen aber unterschiedlicher Parameterliste definiere, dann ist das &ldquo;Compile-Time Polymorphism&rdquo;."/>
+<meta name="twitter:description" content="Dieser Artikel erklärt die Konzepte Polymorphie und dynamische Bindung in der Programmiersprache Java im Detail."/>
 
 <meta property="og:title" content="Polymorphie und dynamische Bindung" />
-<meta property="og:description" content="Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Dieser Blog-Artikel versucht diese Frage zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynamische Polymorphie.
-Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normales überladen von Methoden. Also wenn ich eine Klasse habe, in der ich zwei Methoden mit demselben Namen aber unterschiedlicher Parameterliste definiere, dann ist das &ldquo;Compile-Time Polymorphism&rdquo;." />
+<meta property="og:description" content="Dieser Artikel erklärt die Konzepte Polymorphie und dynamische Bindung in der Programmiersprache Java im Detail." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gersti.at/de/posts/polymorphism/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-10-05T00:00:00+00:00" />
@@ -320,9 +317,9 @@ Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normal
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Man hört es überall - die 3 Grundeigenschaften der objektorientierten Programmierung sind Kapselung, Vererbung und Polymorphie. Ich weiß nicht wer das ursprünglich so definiert hat aber diese Aussage ist in aller Munde. Sogar während meinem Studium haben das die Professoren immer wieder gesagt und in der Software Engineering Community gilt dies mittlerweile als Standard-Aussage, die glaube ich mittlerweile schon von vielen Leuten getroffen wird, ohne darüber wirklich nachzudenken. Oft wird auch auf die Frage: <em>&ldquo;Was ist OOP eigentlich?&rdquo;</em> die Antwort <em>&ldquo;OOP besteht aus Kapselung, Vererbung und Polymorphie.</em>&rdquo; gegeben. Vor kurzem las ich das Buch &ldquo;Clean Architecture&rdquo; von Robert C. Martin. In Kapitel 5 des Buches (ab S. 33) beschreibt Martin, dass es die Konzepte Kapselung und Vererbung schon lange vor der Entwicklung von objektorientierten Sprachen gab. Er schreibt z.B. davon, dass Kapselung in einer perfekten Art und Weise bereits in der Programmiersprache C möglich war. In Sprachen wie Java oder C# ist Kapselung nur in einer abgeschwächten Art und Weise möglich, da es hier unmöglich ist, die Deklaration und die Definition einer Klasse voneinander zu trennen.
+<p>Man hört es überall - die 3 Grundeigenschaften der objektorientierten Programmierung sind Kapselung, Vererbung und Polymorphie. Ich weiß nicht wer das ursprünglich so definiert hat aber diese Aussage ist in aller Munde. Sogar während meinem Studium haben das die Professoren immer wieder gesagt und in der Software Engineering Community gilt dies mittlerweile als Standard-Aussage, die glaube ich mittlerweile schon von vielen Leuten getroffen wird, ohne darüber wirklich nachzudenken. Oft wird auch auf die Frage: <em>&ldquo;Was ist OOP eigentlich?&rdquo;</em> die Antwort <em>&ldquo;OOP besteht aus Kapselung, Vererbung und Polymorphie.</em>&rdquo; gegeben. Vor kurzem las ich das Buch &ldquo;Clean Architecture&rdquo; von Robert C. Martin. In Kapitel 5 des Buches (ab S. 33) beschreibt Martin, dass es die Konzepte Kapselung, Vererbung und Polymorphie schon lange vor der Entwicklung von objektorientierten Sprachen gab. Er schreibt z.B. davon, dass Kapselung in einer perfekten Art und Weise bereits in der Programmiersprache C möglich war. In Sprachen wie Java oder C# ist Kapselung nur in einer abgeschwächten Art und Weise möglich, da es hier unmöglich ist, die Deklaration und die Definition einer Klasse voneinander zu trennen.
 Vererbung konnte man laut ihm in C auch schon praktizieren (wenn zwar nur mit einem bestimmten Trick). Er hält fest, dass durch objektorientierte Sprachen Vererbung zwar simpler und angenehmer für den Programmierenden wurde aber das Konzept schon vorher da war.
-In dem Buch wird auch beschrieben, dass polymorphie bereits in C praktiziert werden konnte und nichts Neues bei objektorientierten Sprachen war - jedoch wurde die Anwendung von Polymorphie in OO Sprachen sehr viel einfacher.</p>
+In dem Buch wird auch beschrieben, dass Polymorphie bereits in C praktiziert werden konnte und nichts Neues bei objektorientierten Sprachen war - jedoch wurde die Anwendung von Polymorphie in OO Sprachen sehr viel einfacher.</p>
 <blockquote>
 <p>Using an OO language makes polymorphism trivial. That fact provides an enormous power that old C programmers could only dream of. On this basis, we can conclude that OO imposes discipline on indirect transfer of control.<!-- raw HTML omitted -->
 — <!-- raw HTML omitted -->Robert C. Martin | Clean Architecture S. 42<!-- raw HTML omitted --></p>
@@ -332,7 +329,7 @@ In dem Buch wird auch beschrieben, dass polymorphie bereits in C praktiziert wer
 <p>OO is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system. It allows the architect to create a plugin architecture, in which modules that contain high-level policies are independent of modules that contain low-level details. The low-level details are relegated to plugin modules that can be deployed and developed independently from the modules that contain high-level policies.<!-- raw HTML omitted -->
 — <!-- raw HTML omitted -->Robert C. Martin | Clean Architecture S. 47<!-- raw HTML omitted --></p>
 </blockquote>
-<p>Aus diesem Zitat schließe ich, dass die Möglichkeit zur Anwendung des Dependency-Inversion Principles (DIP) in einfacher Art und Weise, das fundamentalste Merkmal von objektorientierter Programmierung ist. Und dieses Principle baut auf der Verwendung von Polymorphie auf. Ohne Polymorphie gibt es auch kein DIP. Deshalb würde ich persönlich sagen die Grundeigenschaft von OOP ist Polymorphie.</p>
+<p>Aus diesem Zitat schließe ich, dass die Möglichkeit zur Anwendung des Dependency-Inversion Principles (DIP) in einfacher Art und Weise, das fundamentalste Merkmal von objektorientierter Programmierung ist. Und dieses Principle baut auf der Verwendung von Polymorphie auf. Ohne Polymorphie gibt es auch kein DIP. Deshalb würde ich persönlich sagen die wichtigste Grundeigenschaft von OOP ist Polymorphie.</p>
 <h2 id="reference">
   Reference
   <a class="heading-link" href="#reference">
@@ -340,9 +337,9 @@ In dem Buch wird auch beschrieben, dass polymorphie bereits in C praktiziert wer
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<h3 id="books">
-  Books
-  <a class="heading-link" href="#books">
+<h3 id="bücher">
+  Bücher
+  <a class="heading-link" href="#b%c3%bccher">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>

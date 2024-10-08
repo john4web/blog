@@ -13,8 +13,9 @@
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/de/posts/polymorphism/</guid>
-      <description>Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Dieser Blog-Artikel versucht diese Frage zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynamische Polymorphie.
-Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normales überladen von Methoden. Also wenn ich eine Klasse habe, in der ich zwei Methoden mit demselben Namen aber unterschiedlicher Parameterliste definiere, dann ist das &amp;ldquo;Compile-Time Polymorphism&amp;rdquo;.</description>
+      <description>Der Mutant &amp;lsquo;Mystique&amp;rsquo; in X-Men kann verschiedene Gestalten annehmen. So wie auch ein Objekt in der Programmierung (Quelle: X-Men Movies Wiki).
+Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Dieser Blog-Artikel versucht diese Frage zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynamische Polymorphie.
+Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normales überladen von Methoden.</description>
     </item>
     
     <item>

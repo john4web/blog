@@ -171,7 +171,13 @@
 
       <div class="post-content">
         
-        <h2 id="overview">
+        <figure><img src="/images/polymorphism/mystique.webp"
+         alt="The mutant &amp;lsquo;Mystique&amp;rsquo; in X-Men can take on different forms, just like an object in programming (Source: X-Men Movies Wiki)." width="50%"/><figcaption>
+            <p>The mutant &lsquo;Mystique&rsquo; in X-Men can take on different forms, just like an object in programming (Source: <a href="https://xmenmovies.fandom.com/wiki/Mystique"  class="external-link" target="_blank" rel="noopener">X-Men Movies Wiki</a>).</p>
+        </figcaption>
+</figure>
+
+<h2 id="overview">
   Overview
   <a class="heading-link" href="#overview">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -198,7 +204,7 @@
 <p>In OOP, every object of a derived class is also an object of its superclass. This means: You can assign subclass objects to superclass object variables &ndash;&gt; thus, the object becomes &ldquo;polymorphic&rdquo; (= manifold). Why is this possible? Because the superclass and the subclass share the same interface. The same interface means, in this context, the same method signatures and public properties.</p>
 <p>The following code example shows a polymorphic object:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Animal</span> <span class="n">myAnimal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
-</span></span></code></pre></div><p>In this line, an object of the class <code>Dog</code> is created and stored in an object variable of type <code>Animal</code>. This is possible because the class <code>Dog</code> inherits from the class <code>Animal</code>. Accordingly, a <code>Dog</code> <strong>IS</strong> also an <code>Animal</code>, and the variable of type <code>Animal</code> can contain an object of type <code>Dog</code>. This is called polymorphism because the reference of the superclass type (<code>Animal</code>) points to an object of the subclass (<code>Dog</code>). Since <code>myAnimal</code> can be either a <code>Dog</code> object or a <code>Cat</code> object at runtime, it is polymorphic, meaning it has multiple forms.</p>
+</span></span></code></pre></div><p>In this line, an object of the class <code>Dog</code> is created and stored in an object variable of type <code>Animal</code>. This is possible because the class Dog inherits from the class Animal. Accordingly, a Dog <strong>IS</strong> also an Animal, and the variable of type Animal can contain an object of type Dog. This is called polymorphism because the reference of the superclass type (Animal) points to an object of the subclass (Dog). Since <code>myAnimal</code> can be either a Dog object or a Cat object at runtime, it is polymorphic, meaning it has multiple forms.</p>
 <p>The following image illustrates the entire concept of dynamic polymorphism in a single picture created by me:</p>
 <figure><img src="/images/polymorphism/polymorphism.jpg"
          alt="Polymorphism at a glance."/><figcaption>

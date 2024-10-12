@@ -6,7 +6,19 @@
     <description>Recent content in Posts on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Adapter Pattern</title>
+      <link>https://gersti.at/posts/adapter-pattern/</link>
+      <pubDate>Sat, 12 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/adapter-pattern/</guid>
+      <description>This blog post offers an explanation of Adapter Design Pattern by Gang of Four. The examples are written in Java.
+Visualization of the Adapter Pattern (Source: Refactoring-Guru)
+Intent Link to heading The original GoF Design Pattern book defines the Strategy Pattern as follows: Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.
+In other words: The adapter pattern is making two interfaces compatible, that aren&amp;rsquo;t compatible.</description>
+    </item>
+    
     <item>
       <title>Polymorphism and dynamic binding</title>
       <link>https://gersti.at/posts/polymorphism/</link>

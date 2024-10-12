@@ -24,8 +24,8 @@
 <meta property="og:description" content="Article explaining the Adapter Design Pattern by Gang of Four." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gersti.at/posts/adapter-pattern/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-01-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-01-24T00:00:00+00:00" />
+<meta property="article:published_time" content="2024-10-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-10-12T00:00:00+00:00" />
 
 
 
@@ -127,10 +127,8 @@
                 
               
               <li class="navigation-item">
-                <a href="/de/">🇩🇪</a>
+                <a href="/de/posts/adapter-pattern/">🇩🇪</a>
               </li>
-            
-          
             
           
         
@@ -156,13 +154,13 @@
           <div class="date">
             <span class="posted-on">
               <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime="2024-01-24T00:00:00Z">
-                January 24, 2024
+              <time datetime="2024-10-12T00:00:00Z">
+                October 12, 2024
               </time>
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              4-minute read
+              5-minute read
             </span>
           </div>
           
@@ -173,7 +171,8 @@
 
       <div class="post-content">
         
-        <figure><img src="/images/adapter-pattern/adapter.png"
+        <p>This blog post offers an explanation of Adapter Design Pattern by Gang of Four. The examples are written in Java.</p>
+<figure><img src="/images/adapter-pattern/adapter.png"
          alt="Visualization of the Adapter Pattern (Source: Refactoring-Guru)"/><figcaption>
             <p>Visualization of the Adapter Pattern (Source: <a href="https://refactoring.guru/design-patterns/adapter"  class="external-link" target="_blank" rel="noopener">Refactoring-Guru</a>)</p>
         </figcaption>
@@ -186,16 +185,16 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
-<p>Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&rsquo;t otherwise because of incompatible interfaces.</p>
-<p>In other words: Making two interfaces compatible, that aren&rsquo;t compatible.</p>
+<p>The original GoF Design Pattern book defines the Strategy Pattern as follows: <strong><em>Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&rsquo;t otherwise because of incompatible interfaces.</em></strong></p>
+<p><strong>In other words:</strong> The adapter pattern is making two interfaces compatible, that aren&rsquo;t compatible.</p>
 <h1 id="the-problem">
-  The Problem
+  The problem
   <a class="heading-link" href="#the-problem">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
-<p>The behaviour of the Adaptee is the actual behavior that I want. But I cant get to that behavior using the actual interface that I have.</p>
+<p>The behaviour of the Adaptee is the actual behavior that I want. But I cant get to that behavior using the actual interface that I have. How do I solve that?</p>
 <h1 id="the-pattern">
   The pattern
   <a class="heading-link" href="#the-pattern">
@@ -203,19 +202,24 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
-<figure><img src="/images/adapter-pattern/adapter1.jpg"/>
+<figure><img src="/images/adapter-pattern/plug.jpg"
+         alt="Sketch of the adapter pattern. Two interfaces (the plug and the wall outlet) are incompatible. An adapter is used to make them compatible."/><figcaption>
+            <p>Sketch of the adapter pattern. Two interfaces (the plug and the wall outlet) are incompatible. An adapter is used to make them compatible.</p>
+        </figcaption>
 </figure>
 
-<figure><img src="/images/adapter-pattern/adapter2.jpg"/>
+<figure><img src="/images/adapter-pattern/adapter_pattern.jpg"
+         alt="Example of the adapter pattern. The Client uses an Adapter to call the specificRequest() method of the Adaptee."/><figcaption>
+            <p>Example of the adapter pattern. The Client uses an Adapter to call the specificRequest() method of the Adaptee.</p>
+        </figcaption>
 </figure>
 
-<p>In this example, the method <code>request()</code> is the method that the client <strong>expects</strong>. This method has a signature and the client expect to call that signature. The Adapter is taking in a <code>request()</code> call but it delegates it to another class (Adaptee) that follows a completely different contract.</p>
-<p>The client (=user of the code) has something of a type <code>ITarget</code>. And this ITarget has a method called <code>request</code>. And request is the standard that the client is used to using. But because the client wants to use something that has a completely different interface (the Adaptee), we can&rsquo;t just call <code>request()</code> because Adaptee does not have a method called <code>request()</code>. Adaptee has a method called <code>specificRequest()</code>. So what we do is to invoke the <code>request()</code> method but we invoke it on an Adapter so the Adapter follows the signature (<code>request()</code>) that we are used to using. So we can call request() and then count on the adapter to call the adaptee because the adapter has an adaptee so it is responsible for delegating the request down to the adaptee and then the adaptee can perform that specific action that we were originally interested in.</p>
-<p>So the client for some reason wants to call this method specificRequest() but for some other reason it wants to call it using this particular signature of request().</p>
-<p>The client wants to call the method specificRequest but it wants to do so by using the signature request().</p>
-<p>The client couples to an interface called ITarget that follows the particular signature of request(). And then we have a concrete implementation of this interface called Adapter which follows this signature and when this method <code>request()</code> is called, then we call (stupidly and blindly) the method <code>specificRequest</code> and then use this other signature. So we Stick the Adapter in between the Client and the adaptee so that they are compatible.</p>
-<p>The Client calls the specificRequest method <strong>via</strong> the request method.</p>
-<p>We call the method request() on the adapter but eventually that means that we&rsquo;ll call the method specificRequest() on the Adaptee.</p>
+<p>In this example, the method <code>request()</code> is the method that the client <strong>expects</strong>. This method has a signature and the client expects to call that signature. The Adapter is taking in a <code>request()</code> call but it delegates it to another class (Adaptee) that follows a completely different contract.</p>
+<p>The client (=user of the code) has something of a type <code>ITarget</code>. And this ITarget has a method called <code>request()</code>. And request is the standard that the client is used to using. But because the client wants to use something that has a completely different interface (the Adaptee), we can&rsquo;t just call <code>request()</code> because Adaptee does not have a method called <code>request()</code>. Adaptee has a method called <code>specificRequest()</code>. So what we do is to invoke the <code>request()</code> method but we invoke it on an Adapter so the Adapter follows the signature <code>request()</code> that we are used to using. So we can call <code>request()</code> and then count on the adapter to call the adaptee because the adapter has an adaptee so it is responsible for delegating the request down to the adaptee and then the adaptee can perform that specific action that we were originally interested in.</p>
+<p>So in other words:<br>
+The client for some reason wants to call the method <code>specificRequest()</code> but for some other reason it wants to call it using the particular signature of <code>request()</code>.</p>
+<p>The client couples to an interface called <code>ITarget</code> that follows the particular signature of <code>request()</code>. And then we have a concrete implementation of this interface called Adapter which follows this signature and when the method <code>request()</code> is called, then we call (stupidly and blindly) the method <code>specificRequest</code> using this other signature. So we stick the Adapter in between the Client and the Adaptee so that they are compatible.</p>
+<p>The Client calls the <code>specificRequest()</code> method <strong>via</strong> the request method. We call the method <code>request()</code> on the adapter but eventually that means that we&rsquo;ll call the method <code>specificRequest()</code> on the Adaptee.</p>
 <h1 id="intention">
   Intention
   <a class="heading-link" href="#intention">
@@ -223,7 +227,8 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
-<p>the intention of the Adapter pattern is to not change the underlying behaviour. The intention is not to add behaviour or remove behaviour or alter behavior. The intention is to somewhat blindly pass on the request. You have two different types of signatures/interfaces and they do not connect. The intention is to make them interoperable.</p>
+<p>the intention of the Adapter pattern is to not change the underlying behaviour. The intention is not to add behaviour or remove behaviour or alter behavior. The intention is to somewhat <em>&ldquo;blindly&rdquo;</em> pass on the request.</p>
+<p>You have two different types of signatures/interfaces and they do not connect. The intention is to make them interoperable.</p>
 <p>This design pattern does not have intelligent logic. It just stupidly delegates the calls. It is kinda like a &ldquo;Vermittler&rdquo; or &ldquo;Nachrichtenüberbringer&rdquo; that delegates the messages 1:1.</p>
 <h1 id="a-simple-wrapper">
   A simple wrapper
@@ -239,7 +244,7 @@ It wraps something so that you can adapt to a different interface.</p>
 </span></span><span class="line"><span class="cl">    <span class="n">ITarget</span> <span class="n">target</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Adapter</span><span class="o">(</span><span class="k">new</span> <span class="n">Adaptee</span><span class="o">());</span>
 </span></span><span class="line"><span class="cl">    <span class="n">target</span><span class="o">.</span><span class="na">request</span><span class="o">();</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><p>Here in the second line, the Adapter wraps the Adaptee.</p>
+</span></span></code></pre></div><p>In the second line of the above code snippet, the Adapter wraps the Adaptee.</p>
 <h1 id="a-practical-example">
   A practical example
   <a class="heading-link" href="#a-practical-example">
@@ -247,16 +252,16 @@ It wraps something so that you can adapt to a different interface.</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
-<p>Let&rsquo;s imagine in one of your projects, you are using a third-party library. In your code your are calling a specific method of that library with some specific method parameters. Suddenly the library gets updated and in the new version of the library, the order of the method parameters is changed. What you could do now is to write an adapter. You don&rsquo;t have to use the new method parameters order in your code. But you can use an adapter that calls the method with the new parameter order. In this way the client code does not have to change. (Btw. this reminds me of the open-closed principle).</p>
-<p>Think of the word indirection. The adapter pattern is introducing a level of indirection. Instead of calling the thing that we want to call directly, we call a thing that calls the thing.</p>
-<h1 id="ein-dolmetscher">
-  Ein Dolmetscher
-  <a class="heading-link" href="#ein-dolmetscher">
+<p>Let&rsquo;s imagine in one of your projects, you are using a third-party library. In your code your are calling a specific method of that library with some specific method parameters. Suddenly the library gets updated and in the new version of the library, the order of the method parameters is changed. What you could do now is to write an adapter. You don&rsquo;t have to use the new method parameters order in your code. But you can use an adapter that calls the method with the new parameter order. In this way the client code does not have to change (btw. this reminds me on the open-closed principle).</p>
+<p>Think of the word <em>&ldquo;indirection&rdquo;</em>. The adapter pattern is introducing a level of indirection. Instead of calling the thing that we want to call directly, we call a thing that calls the thing.</p>
+<h1 id="an-interpreter">
+  An Interpreter
+  <a class="heading-link" href="#an-interpreter">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
-<p>Man kann das Adapter Pattern auch mit einem Dolmetscher oder Vermittler vergleichen. Nehmen wir an, es gibt zwei personen, die unterschiedliche Sprachen sprechen. Dadurch können sie sich gegenseitig nicht verstehen. Wenn man aber einen Dolmetscher dazwischen schaltet, dann kann er die Sprachen übersetzen, sodass die beiden Parteien miteinander kommunizieren können. In diesem Szenario wäre der Übersetzer der Adapter, und die beiden Personen die unterschiedliche Sprachen sprechen sind der Client und der Adaptee.</p>
+<p>The Adapter Pattern can also be compared to an interpreter or mediator. Let’s assume there are two people who speak different languages. Because of this, they cannot understand each other. However, if you insert an interpreter between them, he/she can translate the languages so that both parties can communicate with each other. In this scenario, the interpreter would be the adapter, and the two people (who speak different languages) represent the client and the adaptee.</p>
 <h1 id="reference">
   Reference
   <a class="heading-link" href="#reference">
@@ -264,8 +269,26 @@ It wraps something so that you can adapt to a different interface.</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
-<p><a href="https://www.youtube.com/watch?v=2PKQtcJjYvc"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=2PKQtcJjYvc</a></p>
-<p><a href="https://refactoring.guru/design-patterns/adapter"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/adapter</a></p>
+<h2 id="video">
+  Video
+  <a class="heading-link" href="#video">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Video from Christopher Okhravi: <em>Adapter Pattern – Design Patterns (ep 8)</em>, URL: <a href="https://www.youtube.com/watch?v=2PKQtcJjYvc"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=2PKQtcJjYvc</a>, Last Access: 12th October 2024.</li>
+</ul>
+<h2 id="website">
+  Website
+  <a class="heading-link" href="#website">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Refactoring Guru Website: <em>Adapter</em>, URL: <a href="https://refactoring.guru/design-patterns/adapter"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/adapter</a>, Last Access: 12th October 2024.</li>
+</ul>
 
       </div>
 

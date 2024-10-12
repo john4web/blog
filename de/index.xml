@@ -6,7 +6,20 @@
     <description>Recent content on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Das Adapter Pattern</title>
+      <link>https://gersti.at/de/posts/adapter-pattern/</link>
+      <pubDate>Sat, 12 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/de/posts/adapter-pattern/</guid>
+      <description>Dieser Blog Artikel erklärt das GoF Adapter Design Pattern. Die Beispiele wurden in Java verfasst.
+Visualisierung des Adapter-Patterns (Source: Refactoring-Guru)
+Definition Link to heading Das ursprüngliche GoF-Design-Pattern-Buch definiert das Strategy-Pattern wie folgt: &amp;ldquo;Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.&amp;rdquo;
+Mit anderen Worten: Das Adapter-Pattern macht zwei Schnittstellen kompatibel, die nicht kompatibel sind.
+Das Problem Link to heading Das Verhalten des Adaptees ist das eigentliche Verhalten, das ich haben möchte.</description>
+    </item>
+    
     <item>
       <title>Polymorphie und dynamische Bindung</title>
       <link>https://gersti.at/de/posts/polymorphism/</link>

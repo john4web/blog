@@ -439,18 +439,6 @@ Bei dem Factory Method Pattern erzeugt jede konkrete Factory jeweils nur ein Obj
     </item>
     
     <item>
-      <title>The Adapter Pattern</title>
-      <link>https://gersti.at/todo/adapter-pattern/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/todo/adapter-pattern/</guid>
-      <description>Visualization of the Adapter Pattern (Source: Refactoring-Guru)
-Intent Link to heading Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.
-In other words: Making two interfaces compatible, that aren&amp;rsquo;t compatible.
-The Problem Link to heading The behaviour of the Adaptee is the actual behavior that I want. But I cant get to that behavior using the actual interface that I have.</description>
-    </item>
-    
-    <item>
       <title>The Billion Dollar Mistake: NULL</title>
       <link>https://gersti.at/todo/billion-dollar-mistake/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>

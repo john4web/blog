@@ -13,7 +13,7 @@
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/polymorphism/</guid>
-      <description>The mutant &amp;lsquo;Mystique&amp;rsquo; in X-Men can take on different forms, just like an object in programming (Source: X-Men Movies Wiki).
+      <description>By changing its color, a chameleon can take on different states – similar to an object in programming (Source: Pexels).
 Overview Link to heading Polymorphism, along with encapsulation and inheritance, is a fundamental concept of object-oriented programming. But what exactly is polymorphism? This blog article aims to answer that question. Essentially, there are two types of polymorphism – static and dynamic polymorphism.
 Static Polymorphism (Compile-Time Polymorphism) Link to heading This is normal method overloading.</description>
     </item>
@@ -45,8 +45,9 @@ Overview Link to heading The Liskov Substitution Principle (LSP) was first intro
       <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/stream-api/</guid>
-      <description>A stream in a forest. Look at those beautiful cascades! (Source: Pexels).
-Overview Link to heading Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow you to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.</description>
+      <description>A stream in a forest (Source: Pexels).
+Overview Link to heading Java Streams were introduced in Java 8 and are a very powerful concept. They provide a set of functions that you can perform on certain data structures. They allow you to quickly and conveniently perform operations on them. Streams themselves are not data structures and they do not modify the underlying data structures they are operating on.
+Streams do all the heavy lifting for you.</description>
     </item>
     
   </channel>

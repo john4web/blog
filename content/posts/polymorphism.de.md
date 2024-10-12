@@ -156,7 +156,7 @@ Martin beschreibt Polymorphie als besonders mächtig, weil sie die Abhängigkeit
 
 Aus diesem Zitat schließe ich, dass die Möglichkeit zur Anwendung des Dependency-Inversion Principles (DIP) in einfacher Art und Weise, das fundamentalste Merkmal von objektorientierter Programmierung ist. Und dieses Principle baut auf der Verwendung von Polymorphie auf. Ohne Polymorphie gibt es auch kein DIP. Deshalb würde ich persönlich sagen die wichtigste Grundeigenschaft von OOP ist Polymorphie.
 
-## Reference
+## Quellen
 
 ### Bücher
 

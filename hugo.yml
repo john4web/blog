@@ -15,6 +15,9 @@ params:
   info:
     - Software Engineer
   avatarURL: images/avatar.jpg
+  favicon_32: images/favicon-32x32.png
+  favicon_16: images/favicon-16x16.png
+  touchIcon: images/apple-touch-icon.png
   dateFormat: 'January 2, 2006'
   since: 2024
   rtl: false

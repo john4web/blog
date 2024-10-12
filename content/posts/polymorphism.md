@@ -4,7 +4,7 @@ date = "2024-10-05"
 description = "This article explains the concepts of polymorphism and dynamic binding in the Java programming language in detail."
 +++
 
-{{< figure src="/images/polymorphism/mystique.webp" caption="The mutant 'Mystique' in X-Men can take on different forms, just like an object in programming (Source: [X-Men Movies Wiki](https://xmenmovies.fandom.com/wiki/Mystique))." width="50%">}}
+{{< figure src="/images/polymorphism/chameleon.jpg" caption="By changing its color, a chameleon can take on different states – similar to an object in programming (Source: [Pexels](https://www.pexels.com/photo/green-chameleon-in-nature-19730407/))." width="50%">}}
 
 ## Overview
 

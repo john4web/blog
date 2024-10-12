@@ -4,7 +4,7 @@ date = "2024-10-05"
 description = "Dieser Artikel erklärt die Konzepte Polymorphie und dynamische Bindung in der Programmiersprache Java im Detail."
 +++
 
-{{< figure src="/images/polymorphism/mystique.webp" caption="Der Mutant 'Mystique' in X-Men kann verschiedene Gestalten annehmen. So wie auch ein Objekt in der Programmierung (Quelle: [X-Men Movies Wiki](https://xmenmovies.fandom.com/wiki/Mystique))." width="50%">}}
+{{< figure src="/images/polymorphism/chameleon.jpg" caption="Durch seine Farbänderung kann ein Chamäleon unterschiedliche Zustände annehmen – ähnlich wie in der Programmierung ein Objekt (Quelle: [Pexels](https://www.pexels.com/photo/green-chameleon-in-nature-19730407/))." width="50%">}}
 
 ## Überblick
 

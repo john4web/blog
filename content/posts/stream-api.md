@@ -4,7 +4,7 @@ date = "2024-09-11"
 description = "This blog post explains how the java stream api works and gives an overview on the most important methods."
 +++
 
-{{< figure src="/images/stream-api/stream.jpg" caption="A stream in a forest. Look at those beautiful cascades! (Source: [Pexels](https://www.pexels.com/photo/waterfall-cascading-down-the-hill-in-a-forest-18948334/)).">}}
+{{< figure src="/images/stream-api/stream.jpg" caption="A stream in a forest (Source: [Pexels](https://www.pexels.com/photo/waterfall-cascading-down-the-hill-in-a-forest-18948334/)).">}}
 
 
 # Overview

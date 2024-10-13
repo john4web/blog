@@ -15,7 +15,7 @@
       <guid>https://gersti.at/posts/adapter-pattern/</guid>
       <description>This blog post offers an explanation of Adapter Design Pattern by Gang of Four. The examples are written in Java.
 Visualization of the Adapter Pattern (Source: Refactoring-Guru)
-Intent Link to heading The original GoF Design Pattern book defines the Strategy Pattern as follows: Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.
+Intent Link to heading The original GoF Design Pattern book defines the Adapter Pattern as follows: Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.
 In other words: The adapter pattern is making two interfaces compatible, that aren&amp;rsquo;t compatible.</description>
     </item>
     

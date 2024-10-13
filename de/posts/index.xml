@@ -15,7 +15,7 @@
       <guid>https://gersti.at/de/posts/adapter-pattern/</guid>
       <description>Dieser Blog Artikel erklärt das GoF Adapter Design Pattern. Die Beispiele wurden in Java verfasst.
 Visualisierung des Adapter-Patterns (Source: Refactoring-Guru)
-Definition Link to heading Das ursprüngliche GoF-Design-Pattern-Buch definiert das Strategy-Pattern wie folgt: &amp;ldquo;Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.&amp;rdquo;
+Definition Link to heading Das ursprüngliche GoF-Design-Pattern-Buch definiert das Adapter-Pattern wie folgt: &amp;ldquo;Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.&amp;rdquo;
 Mit anderen Worten: Das Adapter-Pattern macht zwei Schnittstellen kompatibel, die nicht kompatibel sind.
 Das Problem Link to heading Das Verhalten des Adaptees ist das eigentliche Verhalten, das ich haben möchte.</description>
     </item>

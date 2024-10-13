@@ -9,7 +9,7 @@ Dieser Blog Artikel erklärt das GoF Adapter Design Pattern. Die Beispiele wurde
 {{< figure src="/images/adapter-pattern/adapter.png" caption="Visualisierung des Adapter-Patterns (Source: [Refactoring-Guru](https://refactoring.guru/design-patterns/adapter))" >}}
 
 # Definition
-Das ursprüngliche GoF-Design-Pattern-Buch definiert das Strategy-Pattern wie folgt: **_"Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces."_**
+Das ursprüngliche GoF-Design-Pattern-Buch definiert das Adapter-Pattern wie folgt: **_"Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces."_**
 
 **Mit anderen Worten:** Das Adapter-Pattern macht zwei Schnittstellen kompatibel, die nicht kompatibel sind.
 

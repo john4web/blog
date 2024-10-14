@@ -152,10 +152,10 @@
       </h1>
     </header>
 
-    <p>Many people argue that Singleton is an anti pattern. That it is a code smell.</p>
+    <p>This blog post offers an explanation of Singleton Design Pattern by Gang of Four. The examples are written in Java.</p>
 <figure><img src="/images/singleton-pattern/singleton-comic.png"
-         alt="A comic depicting the Singleton Pattern (Source: Refactoring-Guru). Singleton ensures that there is only ONE single instance of an Object. Clients may not even realize that they’re working with the same object all the time."/><figcaption>
-            <p>A comic depicting the Singleton Pattern (Source: <a href="https://refactoring.guru/design-patterns/singleton"  class="external-link" target="_blank" rel="noopener">Refactoring-Guru</a>). Singleton ensures that there is only ONE single instance of an Object. Clients may not even realize that they’re working with the same object all the time.</p>
+         alt="A comic depicting the Singleton Pattern (Source: Refactoring-Guru). Singleton ensures that there is only ONE single instance of an object. Clients may not even realize that they’re working with the same object all the time."/><figcaption>
+            <p>A comic depicting the Singleton Pattern (Source: <a href="https://refactoring.guru/design-patterns/singleton"  class="external-link" target="_blank" rel="noopener">Refactoring-Guru</a>). Singleton ensures that there is only ONE single instance of an object. Clients may not even realize that they’re working with the same object all the time.</p>
         </figcaption>
 </figure>
 
@@ -166,8 +166,11 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
-<p>Das Singleton Pattern wird dann verwendet, wenn man von einer Klasse <strong>nur eine einzige</strong> Instanz erzeugen möchte. Man möchte also verbieten, mehrere Instanzen einer Klasse zu erzeugen.</p>
+<p>The original GoF Design Pattern book defines the Adapter Pattern as follows: <strong>Ensure a class only has one instance, and provide a global point of access to it.</strong></p>
+<p>In other words:
+Das Singleton Pattern wird dann verwendet, wenn man von einer Klasse <strong>nur eine einzige</strong> Instanz erzeugen möchte. Man möchte also verbieten, mehrere Instanzen einer Klasse zu erzeugen.</p>
 <p>You have a class and singleton pattern helps you to make it impossible to instantiate that class except for a single time and whenerver you want an instance, you would inevitably have to use that instance. Whenever you ask for an instance, you always get the same instance.</p>
+<p>Many people argue that Singleton is an &ldquo;anti pattern&rdquo; or &ldquo;code smell&rdquo;. But why?</p>
 <h1 id="main-critique-points">
   Main critique points:
   <a class="heading-link" href="#main-critique-points">
@@ -177,14 +180,19 @@
 </h1>
 <ol>
 <li>
-<p>it is important to avoid globals. Whenever something is globally accessible, it is difficult to control and it might change without you knowing it. Anybody in the whole program could change it.</p>
+<p>Singletons are globals and it is important to avoid globals in software engineering. Because whenever something is globally accessible, it is difficult to control and it might change without you knowing it. Anybody in the whole program could change it.</p>
 </li>
 <li>
-<p>The assumption: You are assuming that in the future you are only ever ever need a single instance of that particular class. That is not necessarily true. Especially when your applications are growing.</p>
+<p>The wrong assumption: You are assuming that in the future you are only ever ever need a single instance of that particular class. That is not necessarily true. Especially when your applications are growing.</p>
 </li>
 </ol>
-<p>it is completely fine to only have a single object within your application. But its not fine to force, to make it impossible to create a second instance.Because you don&rsquo;t know if you (at some point) will need a second instance.</p>
-<p>Das Singleton Pattern wird deshalb von vielen als Code-Smell angesehen und sollte daher eher nicht verwendet werden. &ldquo;Bad practice!&rdquo;</p>
+<p>it is completely fine to only have a single object of a class within your application. But its not fine to force, to make it impossible to create a second instance. Because you don&rsquo;t know if you (at some point) will need a second instance.</p>
+<p>There is an interesting <a href="https://www.youtube.com/watch?v=-FRm3VPhseI"  class="external-link" target="_blank" rel="noopener">Google TechTalk</a> by Miško Hevery (who is the creator of the AngularJS framework btw.) about Singletons and their global state. In his talk, he describes that Singletons are really a nightmare and justifies his opinion with code examples. To sum up the talk:</p>
+<ul>
+<li>Singletons make your code untestable.</li>
+<li>Each singleton generates an infinite number of additional global variables because everything that is accessible to a global variable is global as well.</li>
+</ul>
+<p>I also agree with these opinions and consider the singleton pattern more as a code smell than a pattern that should actually be used.</p>
 <h1 id="pattern">
   Pattern
   <a class="heading-link" href="#pattern">
@@ -216,7 +224,10 @@
 <p>Die statische Methode getInstance() kann von außen aufgerufen werden. Beim ersten Aufruf wird eine neue Singleton Instanz erzeugt. Um sicherzustellen, dass immer diese eine Instanz verwendet wird, wird sie in der Variable „instance“ gespeichert. Diese ist statisch.</p>
 <p>In der Main-Methode kann man dann folgendes machen:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Singleton</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Singleton</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
-</span></span></code></pre></div><figure><img src="/images/singleton-pattern/singleton2.jpg"/>
+</span></span></code></pre></div><figure><img src="/images/singleton-pattern/singleton2.jpg"
+         alt="The particular parts of a Singleton class described in detail."/><figcaption>
+            <p>The particular parts of a Singleton class described in detail.</p>
+        </figcaption>
 </figure>
 
 <h1 id="reference">
@@ -226,23 +237,49 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
+<h2 id="video">
+  Video
+  <a class="heading-link" href="#video">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Video from Christopher Okhravi: <em>Singleton Pattern – Design Patterns (ep 6)</em>, URL: <a href="https://www.youtube.com/watch?v=hUE_j6q0LTQ"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hUE_j6q0LTQ</a>, Last Access: 14th October 2024.</li>
+</ul>
+<h2 id="books">
+  Books
+  <a class="heading-link" href="#books">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
 <ul>
 <li>
-<p><a href="https://www.youtube.com/watch?v=hUE_j6q0LTQ"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hUE_j6q0LTQ</a></p>
+<p>Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides: <em>Design Patterns – Elements of Reusable Object-Oriented Software</em>, Publisher: Addison-Wesley, Year: 1995, ISBN: 0201633612</p>
 </li>
 <li>
-<p>Head First Design Patterns Book</p>
-</li>
-<li>
-<p>Book: Design Patterns - Elements of Reusable Object-Oriented Software (1995 Addison-Wesley) by
-Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</p>
-</li>
-<li>
-<p><a href="https://refactoring.guru/design-patterns/singleton"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/singleton</a></p>
+<p>Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates: <em>Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software 2nd Edition</em>, Publisher: O&rsquo;REILLY, Year: 2021, ISBN: 9781492078005</p>
 </li>
 </ul>
-<p>Interesting Talk about Singletons:
-<a href="https://www.youtube.com/watch?v=-FRm3VPhseI"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=-FRm3VPhseI</a></p>
+<h2 id="website">
+  Website
+  <a class="heading-link" href="#website">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Refactoring Guru Website: <em>Singleton</em>, URL: <a href="https://refactoring.guru/design-patterns/singleton"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/singleton</a>, Last Access: 14th October 2024.</li>
+</ul>
+<h2 id="talk">
+  Talk
+  <a class="heading-link" href="#talk">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Google TechTalk by Miško Hevery: <em>The Clean Code Talks: Global State and Singletons</em>, Talk-Date: November 13, 2008, URL: <a href="https://www.youtube.com/watch?v=-FRm3VPhseI"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=-FRm3VPhseI</a>, Last Access: 14th October 2024.</p>
 
   </article>
 </section>

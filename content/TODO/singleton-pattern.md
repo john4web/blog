@@ -89,5 +89,5 @@ Singleton s = Singleton.getInstance();
 
 ## Talk
 
-Google TechTalk by Miško Hevery: _The Clean Code Talks: Global State and Singletons_, Talk-Date: November 13, 2008, URL: https://www.youtube.com/watch?v=-FRm3VPhseI, Last Access: 14th October 2024.
+- Google TechTalk by Miško Hevery: _The Clean Code Talks: Global State and Singletons_, Talk-Date: November 13, 2008, URL: https://www.youtube.com/watch?v=-FRm3VPhseI, Last Access: 14th October 2024.
  

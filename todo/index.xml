@@ -465,7 +465,10 @@ Da passt auch recht gut das Kapitel &amp;ldquo;Dead programs tell no lies&amp;rd
       
       <guid>https://gersti.at/todo/broken-windows/</guid>
       <description>Wird im Buch &amp;ldquo;Pragmatic Programmer&amp;rdquo; erklärt.
-Auch drüber schreiben, dass man &amp;ldquo;Fenster&amp;rdquo;, die man nicht sofort fixen kann, auch mit einem TODO kommentar versehen kann. Also ein &amp;ldquo;Achtung&amp;rdquo; schild markiert, das anzeigt dass es bald gefixt wird. Aber: nur todo kommentare mit Ticketnummern sind erlaubt.</description>
+Auch drüber schreiben, dass man &amp;ldquo;Fenster&amp;rdquo;, die man nicht sofort fixen kann, auch mit einem TODO kommentar versehen kann. Also ein &amp;ldquo;Achtung&amp;rdquo; schild markiert, das anzeigt dass es bald gefixt wird. Aber: nur todo kommentare mit Ticketnummern sind erlaubt.
+In software development, later is the day that never comes.
+Fixing stuff later in Software Engineering (Source: Twitter Post from Vlad Mihalcea).
+Hier auch über &amp;ldquo;boiled frogs&amp;rdquo; vom Buch &amp;ldquo;Pragmatic Programmer&amp;rdquo; schreiben.</description>
     </item>
     
     <item>

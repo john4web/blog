@@ -294,8 +294,18 @@
     <loc>https://gersti.at/todo/service-layer-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/todo/singleton-pattern/</loc>
+    <loc>https://gersti.at/posts/singleton-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/posts/singleton-pattern/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/posts/singleton-pattern/"
+                />
   </url><url>
     <loc>https://gersti.at/todo/state-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>

@@ -61,6 +61,17 @@ Welches Problem löst das Strategy Pattern? Link to heading Angenommen, wir habe
     </item>
     
     <item>
+      <title>Das Singleton Pattern - Ein Code-Smell?</title>
+      <link>https://gersti.at/de/posts/singleton-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/de/posts/singleton-pattern/</guid>
+      <description>Dieser Blogbeitrag bietet eine Erklärung des Singleton-Entwurfsmusters der Gang of Four. Die Beispiele sind in Java geschrieben.
+Ein Comic, der das Singleton-Muster darstellt (Source: Refactoring-Guru). Das Singleton-Muster stellt sicher, dass es nur eine einzige Instanz eines Objekts gibt. Diejenigen, die darauf zugreifen, merken möglicherweise nicht einmal, dass sie ständig mit demselben Objekt arbeiten.
+Intent Link to heading Das ursprüngliche GoF-Designmusterbuch definiert das Singleton-Muster wie folgt: Ensure a class only has one instance, and provide a global point of access to it.</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://gersti.at/de/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -62,5 +62,16 @@ Overview Link to heading Java Streams were introduced in Java 8 and are a very p
 Streams do all the heavy lifting for you.</description>
     </item>
     
+    <item>
+      <title>The Singleton Pattern - A code smell?</title>
+      <link>https://gersti.at/posts/singleton-pattern/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/singleton-pattern/</guid>
+      <description>This blog post offers an explanation of Singleton Design Pattern by Gang of Four. The examples are written in Java.
+A comic depicting the Singleton Pattern (Source: Refactoring-Guru). Singleton ensures that there is only ONE single instance of an object. Clients may not even realize that they’re working with the same object all the time.
+Intent Link to heading The original GoF Design Pattern book defines the Singleton Pattern as follows: Ensure a class only has one instance, and provide a global point of access to it.</description>
+    </item>
+    
   </channel>
 </rss>

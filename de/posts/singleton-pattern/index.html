@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <title>
-  The Singleton Pattern - A code smell? · gersti.at
+  Das Singleton Pattern - Ein Code-Smell? · gersti.at
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,24 +13,24 @@
 
 
 <meta name="author" content="Johannes Gerstbauer">
-<meta name="description" content="Article explaining the Singleton Design Pattern by Gang of Four.">
+<meta name="description" content="Artikel, der das Singleton-Entwurfsmuster der Gang of Four erklärt.">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The Singleton Pattern - A code smell?"/>
-<meta name="twitter:description" content="Article explaining the Singleton Design Pattern by Gang of Four."/>
+<meta name="twitter:title" content="Das Singleton Pattern - Ein Code-Smell?"/>
+<meta name="twitter:description" content="Artikel, der das Singleton-Entwurfsmuster der Gang of Four erklärt."/>
 
-<meta property="og:title" content="The Singleton Pattern - A code smell?" />
-<meta property="og:description" content="Article explaining the Singleton Design Pattern by Gang of Four." />
+<meta property="og:title" content="Das Singleton Pattern - Ein Code-Smell?" />
+<meta property="og:description" content="Artikel, der das Singleton-Entwurfsmuster der Gang of Four erklärt." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gersti.at/posts/singleton-pattern/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://gersti.at/de/posts/singleton-pattern/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-01-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-01-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-24T00:00:00+00:00" /><meta property="og:site_name" content="gersti.at" />
 
 
 
 
-<link rel="canonical" href="https://gersti.at/posts/singleton-pattern/">
+<link rel="canonical" href="https://gersti.at/de/posts/singleton-pattern/">
 
 
 <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
@@ -95,7 +95,7 @@
   <main class="wrapper">
     <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="/">
+    <a class="navigation-title" href="/de">
       gersti.at
     </a>
     
@@ -107,11 +107,11 @@
         
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/posts/">Blog</a>
+              <a class="navigation-link" href="/de/posts/">Blog</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/about/">About</a>
+              <a class="navigation-link" href="/de/about/">Über mich</a>
             </li>
           
         
@@ -127,7 +127,7 @@
                 
               
               <li class="navigation-item">
-                <a href="/de/posts/singleton-pattern/">🇩🇪</a>
+                <a href="/posts/singleton-pattern/">🇬🇧</a>
               </li>
             
           
@@ -145,8 +145,8 @@
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="https://gersti.at/posts/singleton-pattern/">
-              The Singleton Pattern - A code smell?
+            <a class="title-link" href="https://gersti.at/de/posts/singleton-pattern/">
+              Das Singleton Pattern - Ein Code-Smell?
             </a>
           </h1>
         </div>
@@ -155,12 +155,12 @@
             <span class="posted-on">
               <i class="fa fa-calendar" aria-hidden="true"></i>
               <time datetime="2024-01-24T00:00:00Z">
-                January 24, 2024
+                Januar 24, 2024
               </time>
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              4-minute read
+              4 Minuten Lesezeit
             </span>
           </div>
           
@@ -171,10 +171,10 @@
 
       <div class="post-content">
         
-        <p>This blog post offers an explanation of Singleton Design Pattern by Gang of Four. The examples are written in Java.</p>
+        <p>Dieser Blogbeitrag bietet eine Erklärung des Singleton-Entwurfsmusters der Gang of Four. Die Beispiele sind in Java geschrieben.</p>
 <figure><img src="/images/singleton-pattern/singleton-comic.png"
-         alt="A comic depicting the Singleton Pattern (Source: Refactoring-Guru). Singleton ensures that there is only ONE single instance of an object. Clients may not even realize that they’re working with the same object all the time."/><figcaption>
-            <p>A comic depicting the Singleton Pattern (Source: <a href="https://refactoring.guru/design-patterns/singleton"  class="external-link" target="_blank" rel="noopener">Refactoring-Guru</a>). Singleton ensures that there is only ONE single instance of an object. Clients may not even realize that they’re working with the same object all the time.</p>
+         alt="Ein Comic, der das Singleton-Muster darstellt (Source: Refactoring-Guru). Das Singleton-Muster stellt sicher, dass es nur eine einzige Instanz eines Objekts gibt. Diejenigen, die darauf zugreifen, merken möglicherweise nicht einmal, dass sie ständig mit demselben Objekt arbeiten."/><figcaption>
+            <p>Ein Comic, der das Singleton-Muster darstellt (Source: <a href="https://refactoring.guru/design-patterns/singleton"  class="external-link" target="_blank" rel="noopener">Refactoring-Guru</a>). Das Singleton-Muster stellt sicher, dass es nur eine einzige Instanz eines Objekts gibt. Diejenigen, die darauf zugreifen, merken möglicherweise nicht einmal, dass sie ständig mit demselben Objekt arbeiten.</p>
         </figcaption>
 </figure>
 
@@ -185,33 +185,35 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
-<p>The original GoF Design Pattern book defines the Singleton Pattern as follows: <strong>Ensure a class only has one instance, and provide a global point of access to it.</strong></p>
-<p>In other words:</p>
-<p>The Singleton pattern is used when you want to create <strong>only a single instance</strong> of a class. The goal is to prevent the creation of multiple instances of the same class.</p>
+<p>Das ursprüngliche GoF-Designmusterbuch definiert das Singleton-Muster wie folgt: <strong>Ensure a class only has one instance, and provide a global point of access to it.</strong></p>
+<p>In anderen Worten:
+Das Singleton Pattern wird dann verwendet, wenn man von einer Klasse <strong>nur eine einzige</strong> Instanz erzeugen möchte. Man möchte also verbieten, mehrere Instanzen einer Klasse zu erzeugen.</p>
 <p>You have a class and singleton pattern helps you to make it impossible to instantiate that class except for a single time and whenever you want an instance, you would inevitably have to use that instance. Whenever you ask for an instance, you always get the same instance.</p>
 <p>Many people argue that Singleton is an &ldquo;anti pattern&rdquo; or &ldquo;code smell&rdquo;. But why?</p>
-<h1 id="main-critique-points">
-  Main critique points:
-  <a class="heading-link" href="#main-critique-points">
+<p>Sie haben eine Klasse, und das Singleton-Pattern hilft Ihnen, es unmöglich zu machen, diese Klasse mehr als einmal zu instanziieren. Wann auch immer Sie eine Instanz benötigen, müssen Sie zwangsläufig diese eine Instanz verwenden. Jedes Mal, wenn Sie nach einer Instanz fragen, erhalten Sie immer dieselbe Instanz.</p>
+<p>Viele Menschen argumentieren, dass das Singleton-Muster ein &ldquo;Anti-Pattern&rdquo; oder &ldquo;Code-Smell&rdquo; ist. Aber warum?</p>
+<h1 id="hauptkritikpunkte">
+  Hauptkritikpunkte:
+  <a class="heading-link" href="#hauptkritikpunkte">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
 <ol>
 <li>
-<p>Singletons are globals and it is important to avoid globals in software engineering. Because whenever something is globally accessible, it is difficult to control and it might change without you knowing it. Anybody in the whole program could change it.</p>
+<p>Singletons sind globale Variablen und es ist wichtig, globale Variablen in der Softwareentwicklung zu vermeiden. Denn wann immer etwas global zugänglich ist, ist es schwierig zu kontrollieren, und es könnte sich ändern, ohne dass man es weiß. Jeder im gesamten Programm könnte es ändern.</p>
 </li>
 <li>
-<p>&ldquo;The wrong assumption&rdquo;: You are assuming that in the future you are only ever ever need a single instance of that particular class. That is not necessarily true. Especially when your applications are growing.</p>
+<p><em>&ldquo;Die falsche Annahme&rdquo;</em>: Man geht davon aus, dass man in der Zukunft immer nur eine einzige Instanz dieser bestimmten Klasse benötigt. Das ist nicht unbedingt wahr, insbesondere wenn Ihre Anwendungen wachsen. Man kann das nicht im vorhinein sicher wissen.</p>
 </li>
 </ol>
-<p>It is completely fine to only have a single object of a class within your application. But its not fine to make it impossible to create a second instance. Because you don&rsquo;t know if you (at some point) will need a second instance.</p>
-<p>There is an interesting <a href="https://www.youtube.com/watch?v=-FRm3VPhseI"  class="external-link" target="_blank" rel="noopener">Google TechTalk</a> by Miško Hevery (who is the creator of the AngularJS framework btw.) about Singletons and their global state. In his talk, he describes that Singletons are really a nightmare and justifies his opinion with code examples. To sum up the talk:</p>
+<p>Es ist völlig in Ordnung, innerhalb einer Anwendung nur ein einziges Objekt einer Klasse zu haben. Aber es ist nicht in Ordnung, es unmöglich zu machen, eine zweite Instanz zu erstellen. Denn man weiß nicht, ob man (zu einem späteren Zeitpunkt) eine zweite Instanz benötigen wird.</p>
+<p>Es gibt einen interessanten <a href="https://www.youtube.com/watch?v=-FRm3VPhseI"  class="external-link" target="_blank" rel="noopener">Google TechTalk</a> von Miško Hevery (der übrigens der Schöpfer des AngularJS-Frameworks ist) über Singletons und ihren globalen Zustand. In seinem Vortrag beschreibt er, dass Singletons wirklich ein Albtraum sind, und begründet seine Meinung mit Codebeispielen. Um den Vortrag zusammenzufassen:</p>
 <ul>
-<li>Singletons make your code untestable.</li>
-<li>Each Singleton generates an infinite number of additional global variables because everything that is accessible to a global variable is global as well.</li>
+<li>Singletons machen Code untestbar.</li>
+<li>Jedes Singleton generiert eine unendliche Anzahl zusätzlicher globaler Variablen, weil alles, was für eine globale Variable zugänglich ist, ebenfalls global ist.</li>
 </ul>
-<p>I also agree with these opinions and consider the singleton pattern more as a code smell than a pattern that should actually be used. However, let&rsquo;s take a look at the pattern in detail:</p>
+<p>Ich teile ebenfalls diese Meinungen und betrachte das Singleton-Pattern eher als Code-Smell anstatt als Pattern, das tatsächlich verwendet werden sollte. Aber werfen wir einen genaueren Blick auf das Pattern:</p>
 <h1 id="pattern">
   Pattern
   <a class="heading-link" href="#pattern">
@@ -235,17 +237,17 @@
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">instance</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Additional functionalities will be added here,
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// for which the Singleton class is responsible.
+</span></span><span class="line"><span class="cl">    <span class="c1">// hier kommen noch andere Funktionalitäten hin,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// wofür die Singleton-Klasse verantwortlich ist.
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><p>The constructor is private, meaning that no instance can be created from outside the class.</p>
-<p>The static method <code>getInstance()</code> can be called externally. On the first call, it creates a new Singleton instance. To ensure that this single instance is always used, it is stored in the static variable <code>instance</code>.</p>
-<p>In the <code>main</code> method, you can then do the following:</p>
+</span></span></code></pre></div><p>Der Konstruktor ist private. D.h. man kann von außerhalb der Klasse keine Instanz erstellen.</p>
+<p>Die statische Methode <code>getInstance()</code> kann von außen aufgerufen werden. Beim ersten Aufruf wird eine neue Singleton Instanz erzeugt. Um sicherzustellen, dass immer diese eine Instanz verwendet wird, wird sie in der Variable <code>instance</code> gespeichert. Diese ist statisch.</p>
+<p>In der Main-Methode kann man dann folgendes machen:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Singleton</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Singleton</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
-</span></span></code></pre></div><h1 id="reference">
-  Reference
-  <a class="heading-link" href="#reference">
+</span></span></code></pre></div><h1 id="quellen">
+  Quellen
+  <a class="heading-link" href="#quellen">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
@@ -258,42 +260,42 @@
   </a>
 </h2>
 <ul>
-<li>Video from Christopher Okhravi: <em>Singleton Pattern – Design Patterns (ep 6)</em>, URL: <a href="https://www.youtube.com/watch?v=hUE_j6q0LTQ"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hUE_j6q0LTQ</a>, Last Access: 14th October 2024.</li>
+<li>Video von Christopher Okhravi: <em>Singleton Pattern – Design Patterns (ep 6)</em>, URL: <a href="https://www.youtube.com/watch?v=hUE_j6q0LTQ"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hUE_j6q0LTQ</a>, Letzter Aufruf: 14.10.2024.</li>
 </ul>
-<h2 id="books">
-  Books
-  <a class="heading-link" href="#books">
+<h2 id="bücher">
+  Bücher
+  <a class="heading-link" href="#b%c3%bccher">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
 <ul>
 <li>
-<p>Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides: <em>Design Patterns – Elements of Reusable Object-Oriented Software</em>, Publisher: Addison-Wesley, Year: 1995, ISBN: 0201633612</p>
+<p>Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides: <em>Design Patterns – Elements of Reusable Object-Oriented Software</em>, Verlag: Addison-Wesley, Jahr: 1995, ISBN: 0201633612</p>
 </li>
 <li>
-<p>Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates: <em>Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software 2nd Edition</em>, Publisher: O&rsquo;REILLY, Year: 2021, ISBN: 9781492078005</p>
+<p>Eric Freeman, Elisabeth Robson, Kathy Sierra and Bert Bates: <em>Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software 2nd Edition</em>, Verlag: O&rsquo;REILLY, Jahr: 2021, ISBN: 9781492078005</p>
 </li>
 </ul>
-<h2 id="website">
-  Website
-  <a class="heading-link" href="#website">
+<h2 id="webseite">
+  Webseite
+  <a class="heading-link" href="#webseite">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
 <ul>
-<li>Refactoring Guru Website: <em>Singleton</em>, URL: <a href="https://refactoring.guru/design-patterns/singleton"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/singleton</a>, Last Access: 14th October 2024.</li>
+<li>Refactoring Guru Webseite: <em>Singleton</em>, URL: <a href="https://refactoring.guru/design-patterns/singleton"  class="external-link" target="_blank" rel="noopener">https://refactoring.guru/design-patterns/singleton</a>, Letzter Aufruf: 14.10.2024.</li>
 </ul>
-<h2 id="talk">
-  Talk
-  <a class="heading-link" href="#talk">
+<h2 id="vortrag">
+  Vortrag
+  <a class="heading-link" href="#vortrag">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
 <ul>
-<li>Google TechTalk by Miško Hevery: <em>The Clean Code Talks: Global State and Singletons</em>, Talk-Date: November 13, 2008, URL: <a href="https://www.youtube.com/watch?v=-FRm3VPhseI"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=-FRm3VPhseI</a>, Last Access: 14th October 2024.</li>
+<li>Google TechTalk von Miško Hevery: <em>The Clean Code Talks: Global State and Singletons</em>, Talk-Datum: 13.11.2008, URL: <a href="https://www.youtube.com/watch?v=-FRm3VPhseI"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=-FRm3VPhseI</a>, Letzter Aufruf: 14.10.2024.</li>
 </ul>
 
       </div>
@@ -324,7 +326,7 @@
      Johannes Gerstbauer 
     ·
     
-    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    Gestaltet mit <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
     
   </section>
 </footer>

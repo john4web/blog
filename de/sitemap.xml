@@ -93,6 +93,19 @@
                 href="https://gersti.at/de/posts/stream-api/"
                 />
   </url><url>
+    <loc>https://gersti.at/de/posts/singleton-pattern/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/posts/singleton-pattern/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/posts/singleton-pattern/"
+                />
+  </url><url>
     <loc>https://gersti.at/de/about/</loc>
     <priority>0</priority>
     <xhtml:link

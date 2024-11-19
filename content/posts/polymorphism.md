@@ -142,7 +142,7 @@ void startMoving(Moveable moveableObject) {
 }
 ```
 
-## The pillars OOP?
+## The pillars of OOP?
 
 You hear it everywhere - the three pillars of object-oriented programming are encapsulation, inheritance, and polymorphism. I don't know who originally defined it this way, but this statement is on everyone's lips. Even during my studies, professors repeatedly said this, and in the software engineering community, this has now become a standard statement that many people make without really thinking about it. Often, when asked, _"What is OOP anyway?"_, the answer is _"OOP consists of encapsulation, inheritance, and polymorphism."_.
 

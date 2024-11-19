@@ -5,3 +5,5 @@ description = ""
 +++
 
 Sharding (Servers, Databases, etc.)
+
+also write about database replication (this is a kind of cqrs)

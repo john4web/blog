@@ -103,16 +103,6 @@ meinen blog beitrag namens &amp;ldquo;law of demeter&amp;rdquo; hier verlinken</
     </item>
     
     <item>
-      <title>Command-Query-Responsibility-Segregation (CQRS)</title>
-      <link>https://gersti.at/todo/cqrs/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/todo/cqrs/</guid>
-      <description>Command and Query Separation Principle
-Idempotent and Unidempotent Endpoints</description>
-    </item>
-    
-    <item>
       <title>Component Principles</title>
       <link>https://gersti.at/todo/component-principles/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -431,7 +421,8 @@ https://www.martinfowler.com/bliki/PairProgrammingMisconceptions.html
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/todo/sharding/</guid>
-      <description>Sharding (Servers, Databases, etc.)</description>
+      <description>Sharding (Servers, Databases, etc.)
+also write about database replication (this is a kind of cqrs)</description>
     </item>
     
     <item>

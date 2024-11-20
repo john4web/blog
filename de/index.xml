@@ -6,7 +6,17 @@
     <description>Recent content on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 12 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CQS und CQRS: Trennung von Lesen und Schreiben</title>
+      <link>https://gersti.at/de/todo/cqrs/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/de/todo/cqrs/</guid>
+      <description>CQS und REST Endpoints Link to heading Man kann dieses Konzept auch sehr gut auf die Arbeit mit REST-Endpoints ummünzen. Man könnte sagen, dass man sich an folgende Konvention hält: Man definiert nur Endpoints, die entweder eine query operation oder eine command operation ausführt aber nicht beides zusammen. Wenn man an CRUD-Funktionalitäten denkt, sind CREATE, UPDATE und DELETE Command Operationen. Hingegen wäre READ eine Query-Operation.
+Man könnte auch sagen, dass bei den folgenden HTTP-Methoden von REST</description>
+    </item>
+    
     <item>
       <title>Das Adapter Pattern</title>
       <link>https://gersti.at/de/posts/adapter-pattern/</link>

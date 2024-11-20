@@ -6,15 +6,15 @@
     <description>Recent content in TODoes on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/todo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/todo/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Polymorphie und dynamische Bindung</title>
-      <link>https://gersti.at/de/todo/polymorphism/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      <title>CQS und CQRS: Trennung von Lesen und Schreiben</title>
+      <link>https://gersti.at/de/todo/cqrs/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://gersti.at/de/todo/polymorphism/</guid>
-      <description>Überblick Link to heading Polymorphie ist neben Kapselung und Vererbung ein fundamentales Grundkonzept der objektorientierten Programmierung. Doch was ist Polymorphie genau? Und wann/wo sollte man polymorphen Code verwenden? Diese Blog-Artikel versucht diese Fragen zu beantworten. Grundsätzlich gibt es zwei Arten der Polymorphie - statische und dynmaische Polymorphie.
-Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normales überladen von Methoden. Also wenn ich eine Klasse habe, in der ich zwei Methoden mit demselben Namen aber unterschiedlicher Parameterliste definiere, dann ist das &amp;ldquo;Compile-Time Polymorphism&amp;rdquo;.</description>
+      <guid>https://gersti.at/de/todo/cqrs/</guid>
+      <description>CQS und REST Endpoints Link to heading Man kann dieses Konzept auch sehr gut auf die Arbeit mit REST-Endpoints ummünzen. Man könnte sagen, dass man sich an folgende Konvention hält: Man definiert nur Endpoints, die entweder eine query operation oder eine command operation ausführt aber nicht beides zusammen. Wenn man an CRUD-Funktionalitäten denkt, sind CREATE, UPDATE und DELETE Command Operationen. Hingegen wäre READ eine Query-Operation.
+Man könnte auch sagen, dass bei den folgenden HTTP-Methoden von REST</description>
     </item>
     
   </channel>

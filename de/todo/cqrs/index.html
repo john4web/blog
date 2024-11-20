@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <title>
+  CQS und CQRS: Trennung von Lesen und Schreiben · gersti.at
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Johannes Gerstbauer">
+<meta name="description" content="CQS und REST Endpoints Link to heading Man kann dieses Konzept auch sehr gut auf die Arbeit mit REST-Endpoints ummünzen. Man könnte sagen, dass man sich an folgende Konvention hält: Man definiert nur Endpoints, die entweder eine query operation oder eine command operation ausführt aber nicht beides zusammen. Wenn man an CRUD-Funktionalitäten denkt, sind CREATE, UPDATE und DELETE Command Operationen. Hingegen wäre READ eine Query-Operation.
+Man könnte auch sagen, dass bei den folgenden HTTP-Methoden von REST">
+<meta name="keywords" content="blog, developer, software, engineer">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CQS und CQRS: Trennung von Lesen und Schreiben"/>
+<meta name="twitter:description" content="CQS und REST Endpoints Link to heading Man kann dieses Konzept auch sehr gut auf die Arbeit mit REST-Endpoints ummünzen. Man könnte sagen, dass man sich an folgende Konvention hält: Man definiert nur Endpoints, die entweder eine query operation oder eine command operation ausführt aber nicht beides zusammen. Wenn man an CRUD-Funktionalitäten denkt, sind CREATE, UPDATE und DELETE Command Operationen. Hingegen wäre READ eine Query-Operation.
+Man könnte auch sagen, dass bei den folgenden HTTP-Methoden von REST"/>
+
+<meta property="og:title" content="CQS und CQRS: Trennung von Lesen und Schreiben" />
+<meta property="og:description" content="CQS und REST Endpoints Link to heading Man kann dieses Konzept auch sehr gut auf die Arbeit mit REST-Endpoints ummünzen. Man könnte sagen, dass man sich an folgende Konvention hält: Man definiert nur Endpoints, die entweder eine query operation oder eine command operation ausführt aber nicht beides zusammen. Wenn man an CRUD-Funktionalitäten denkt, sind CREATE, UPDATE und DELETE Command Operationen. Hingegen wäre READ eine Query-Operation.
+Man könnte auch sagen, dass bei den folgenden HTTP-Methoden von REST" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gersti.at/de/todo/cqrs/" /><meta property="article:section" content="TODO" />
+<meta property="article:published_time" content="2024-11-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-11-20T00:00:00+00:00" /><meta property="og:site_name" content="gersti.at" />
+
+
+
+
+<link rel="canonical" href="https://gersti.at/de/todo/cqrs/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/de">
+      gersti.at
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/de/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/de/about/">Über mich</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/todo/cqrs/">🇬🇧</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://gersti.at/de/todo/cqrs/">
+          CQS und CQRS: Trennung von Lesen und Schreiben
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="cqs-und-rest-endpoints">
+  CQS und REST Endpoints
+  <a class="heading-link" href="#cqs-und-rest-endpoints">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Man kann dieses Konzept auch sehr gut auf die Arbeit mit REST-Endpoints ummünzen. Man könnte sagen, dass man sich an folgende Konvention hält: Man definiert nur Endpoints, die entweder eine query operation oder eine command operation ausführt aber nicht beides zusammen. Wenn man an CRUD-Funktionalitäten denkt, sind CREATE, UPDATE und DELETE Command Operationen. Hingegen wäre READ eine Query-Operation.</p>
+<p>Man könnte auch sagen, dass bei den folgenden HTTP-Methoden von REST</p>
+<p>GET (Fordert Ressource vom Server an)
+POST (Erstellt neue Ressource am Server)
+PUT (Ändert die ganze Ressource am Server)
+DELETE (Löscht eine Ressource vom Server)
+PATCH (Ändert nur Teile der Ressource am Server)</p>
+<p>Lediglich die GET Methode der Query-Operation entspricht. Alle anderen Methoden wie POST, PUT, DELETE und PATCH sind Command-Operationen, weil sie den State der Applikation verändern. Wenn man also CQS auch für REST-Endpoints anwenden möchte, dann muss man gewährleisten, dass ein Endpoint nicht Daten zurückliefert und gleichzeitig auch den State in irgendeiner Weise verändert. Das sollte dann in zwei unterschiedliche Endpoints aufgesplittet werden.</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2024
+     Johannes Gerstbauer 
+    ·
+    
+    Gestaltet mit <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

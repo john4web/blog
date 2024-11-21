@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <title>
-  Posts · gersti.at
+  CQS und CQRS: Trennung von Lesen und Schreiben · gersti.at
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,22 +13,24 @@
 
 
 <meta name="author" content="Johannes Gerstbauer">
-<meta name="description" content="Johannes Gerstbauer&#39;s personal website">
+<meta name="description" content="Dieser Artikel ist derzeit leider nur auf Englisch verfügbar! 😅 Klicke hier.">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Johannes Gerstbauer&#39;s personal website"/>
+<meta name="twitter:title" content="CQS und CQRS: Trennung von Lesen und Schreiben"/>
+<meta name="twitter:description" content="Dieser Artikel ist derzeit leider nur auf Englisch verfügbar! 😅 Klicke hier."/>
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="Johannes Gerstbauer&#39;s personal website" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://gersti.at/posts/" />
+<meta property="og:title" content="CQS und CQRS: Trennung von Lesen und Schreiben" />
+<meta property="og:description" content="Dieser Artikel ist derzeit leider nur auf Englisch verfügbar! 😅 Klicke hier." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gersti.at/de/posts/cqrs/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-11-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-11-20T00:00:00+00:00" /><meta property="og:site_name" content="gersti.at" />
 
 
 
 
-<link rel="canonical" href="https://gersti.at/posts/">
+<link rel="canonical" href="https://gersti.at/de/posts/cqrs/">
 
 
 <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
@@ -67,7 +69,6 @@
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 
 
-<link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="gersti.at" />
 
 
 
@@ -94,7 +95,7 @@
   <main class="wrapper">
     <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="/">
+    <a class="navigation-title" href="/de">
       gersti.at
     </a>
     
@@ -106,11 +107,11 @@
         
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/posts/">Blog</a>
+              <a class="navigation-link" href="/de/posts/">Blog</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/about/">About</a>
+              <a class="navigation-link" href="/de/about/">Über mich</a>
             </li>
           
         
@@ -126,7 +127,7 @@
                 
               
               <li class="navigation-item">
-                <a href="/de/posts/">🇩🇪</a>
+                <a href="/posts/cqrs/">🇬🇧</a>
               </li>
             
           
@@ -139,52 +140,56 @@
 
     <div class="content">
       
-  <section class="container list">
-    <header>
-      <h1 class="title">
-        <a class="title-link" href="https://gersti.at/posts/">
-          Posts
-        </a>
-      </h1>
-    </header>
-    
-    <ul><li>
-  <span class="date">November 20, 2024</span>
-  <a class="title" href="/posts/cqrs/">CQS and CQRS principles: Splitting the read from the write</a>
-</li>
-<li>
-  <span class="date">October 12, 2024</span>
-  <a class="title" href="/posts/adapter-pattern/">The Adapter Pattern</a>
-</li>
-<li>
-  <span class="date">October 5, 2024</span>
-  <a class="title" href="/posts/polymorphism/">Polymorphism and dynamic binding</a>
-</li>
-<li>
-  <span class="date">September 12, 2024</span>
-  <a class="title" href="/posts/strategy-pattern/">The Strategy Pattern</a>
-</li>
-<li>
-  <span class="date">September 11, 2024</span>
-  <a class="title" href="/posts/liskov-substitution-principle/">Liskov substitution principle and DbC in depth</a>
-</li>
-<li>
-  <span class="date">September 11, 2024</span>
-  <a class="title" href="/posts/stream-api/">Stream API</a>
-</li>
-<li>
-  <span class="date">January 24, 2024</span>
-  <a class="title" href="/posts/singleton-pattern/">The Singleton Pattern - A code smell?</a>
-</li>
-</ul>
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://gersti.at/de/posts/cqrs/">
+              CQS und CQRS: Trennung von Lesen und Schreiben
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-11-20T00:00:00Z">
+                November 20, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              Eine Minute Lesezeit
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>Dieser Artikel ist derzeit leider nur auf Englisch verfügbar! 😅
+Klicke <a href="https://gersti.at/posts/cqrs/"  class="external-link" target="_blank" rel="noopener">hier</a>.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
 
     
-
-
-
-
-
-
   </section>
 
     </div>
@@ -197,7 +202,7 @@
      Johannes Gerstbauer 
     ·
     
-    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    Gestaltet mit <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
     
   </section>
 </footer>

@@ -27,7 +27,7 @@ Animal myAnimal = new Dog();
 ```
 In dieser Zeile wird ein Objekt der Klasse `Dog` erstellt, und in einer Objektvariable vom Typ `Animal` gespeichert. Dies ist möglich weil die Klasse Dog von der Klasse Animal erbt. Dementsprechend IST ein Dog auch ein Animal und die Variable vom Typ Animal kann auch ein Objekt vom Typ Dog enthalten. Dies nennt man Polymorphie, weil die Referenz vom Typ der Superklasse (Animal) auf ein Objekt der Subklasse (Dog) zeigt. Da ``myAnimal`` zur Laufzeit sowohl ein Dog-Objekt als auch ein Cat-Objekt sein kann, ist es polymorph, also vielgestaltig.
 
-Das folgende Bild beschreibt das gesamte Konzept der dynamischen Polymorphie auf einem einzigen von mir angefertigten Bild:
+Das folgende Bild beschreibt das gesamte Konzept der dynamischen Polymorphie auf einem einzigen von mir angefertigten Bild. Bitte beachten Sie die Farben, mit der die Methoden unterstrichen wurden. Sie geben Aufschluss darüber, welche Methode wo aufgerufen wird.
 
 {{< figure src="/images/polymorphism/polymorphie.jpg" caption="Polymorphie auf einen Blick.">}}
 

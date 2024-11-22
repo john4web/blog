@@ -8,14 +8,14 @@
     <language>en</language>
     <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CQS and CQRS principles: Splitting the read from the write</title>
+      <title>CQS and CQRS Principles: Splitting the Read from the Write</title>
       <link>https://gersti.at/posts/cqrs/</link>
       <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/cqrs/</guid>
-      <description>This blog article mainly explains the concept of two useful software design principles, namely Command and Query Separation Principle (CQS) and Command-Query-Responsibility-Segregation (CQRS).
-Separating Queries and Commands from each other. The left ATM can put money on your account and the right ATM can show you the current account balance.
-Command and Query Separation Principle (CQS) Link to heading CQS was first formulated by Bertrand Meyer in 1994. He is the creator of the programming language Eiffel and therefore inventor of &amp;ldquo;Design by Contract&amp;rdquo; (DbC).</description>
+      <description>In this blog article, we delve into two essential software design principles: Command and Query Separation (CQS) and Command-Query Responsibility Segregation (CQRS).
+An example of separating commands and queries: the left ATM allows you to deposit money (command), and the right one shows your current balance (query).
+Command and Query Separation Principle (CQS) Link to heading CQS was introduced by Bertrand Meyer in 1994. As the creator of the programming language Eiffel, he also pioneered the concept of &amp;ldquo;Design by Contract&amp;rdquo; (DbC), which I explored in greater detail in a recent blog post – See: Here.</description>
     </item>
     
     <item>

@@ -19,18 +19,6 @@ Command and Query Separation Principle (CQS) Link to heading CQS was introduced 
     </item>
     
     <item>
-      <title>The Adapter Pattern</title>
-      <link>https://gersti.at/posts/adapter-pattern/</link>
-      <pubDate>Sat, 12 Oct 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/posts/adapter-pattern/</guid>
-      <description>This blog post offers an explanation of Adapter Design Pattern by Gang of Four. The examples are written in Java.
-Visualization of the Adapter Pattern (Source: Refactoring-Guru)
-Intent Link to heading The original GoF Design Pattern book defines the Adapter Pattern as follows: Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.
-In other words: The adapter pattern is making two interfaces compatible, that aren&amp;rsquo;t compatible.</description>
-    </item>
-    
-    <item>
       <title>Polymorphism and dynamic binding</title>
       <link>https://gersti.at/posts/polymorphism/</link>
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
@@ -42,9 +30,31 @@ Static Polymorphism (Compile-Time Polymorphism) Link to heading This is normal m
     </item>
     
     <item>
+      <title>The Adapter Pattern</title>
+      <link>https://gersti.at/posts/adapter-pattern/</link>
+      <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/adapter-pattern/</guid>
+      <description>This blog post offers an explanation of Adapter Design Pattern by Gang of Four. The examples are written in Java.
+Visualization of the Adapter Pattern (Source: Refactoring-Guru)
+Intent Link to heading The original GoF Design Pattern book defines the Adapter Pattern as follows: Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.
+In other words: The adapter pattern is making two interfaces compatible, that aren&amp;rsquo;t compatible.</description>
+    </item>
+    
+    <item>
+      <title>Liskov substitution principle and DbC in depth</title>
+      <link>https://gersti.at/posts/liskov-substitution-principle/</link>
+      <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/liskov-substitution-principle/</guid>
+      <description>This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some sources I have read however also includes my own opinion and knowledge on that topic. Code examples are written in Java.
+Overview Link to heading The Liskov Substitution Principle (LSP) was first introduced by Barbara Liskov in 1987 in her article &amp;ldquo;Data Abstraction and Hierarchy&amp;rdquo; and is one of the five SOLID design principles of object-oriented programming.</description>
+    </item>
+    
+    <item>
       <title>The Strategy Pattern</title>
       <link>https://gersti.at/posts/strategy-pattern/</link>
-      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/strategy-pattern/</guid>
       <description>This blog post offers an explanation of Strategy Design Pattern by Gang of Four. The examples are written in Java.
@@ -53,19 +63,9 @@ The Problem that the strategy pattern solves Link to heading Let&amp;rsquo;s say
     </item>
     
     <item>
-      <title>Liskov substitution principle and DbC in depth</title>
-      <link>https://gersti.at/posts/liskov-substitution-principle/</link>
-      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/posts/liskov-substitution-principle/</guid>
-      <description>This blog post offers a detailed explanation of the liskov substitution principle and gives an overview of the rules you should follow as a software engineer when dealing with inheritance in object-oriented programming to produce clean code. The following is a summary of some sources I have read however also includes my own opinion and knowledge on that topic. Code examples are written in Java.
-Overview Link to heading The Liskov Substitution Principle (LSP) was first introduced by Barbara Liskov in 1987 in her article &amp;ldquo;Data Abstraction and Hierarchy&amp;rdquo; and is one of the five SOLID design principles of object-oriented programming.</description>
-    </item>
-    
-    <item>
       <title>Stream API</title>
       <link>https://gersti.at/posts/stream-api/</link>
-      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/posts/stream-api/</guid>
       <description>A stream in a forest (Source: Pexels).
@@ -718,17 +718,6 @@ Pragmatic programmer schreibt in mehreren Kapiteln darüber. insbesondere auf se
     </item>
     
     <item>
-      <title>The Singleton Pattern - A code smell?</title>
-      <link>https://gersti.at/posts/singleton-pattern/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/posts/singleton-pattern/</guid>
-      <description>This blog post offers an explanation of Singleton Design Pattern by Gang of Four. The examples are written in Java.
-A comic depicting the Singleton Pattern (Source: Refactoring-Guru). Singleton ensures that there is only ONE single instance of an object. Clients may not even realize that they’re working with the same object all the time.
-Intent Link to heading The original GoF Design Pattern book defines the Singleton Pattern as follows: Ensure a class only has one instance, and provide a global point of access to it.</description>
-    </item>
-    
-    <item>
       <title>The State Pattern</title>
       <link>https://gersti.at/todo/state-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -789,6 +778,17 @@ Intent Link to heading The original GoF Design Pattern book defines the Singleto
       
       <guid>https://gersti.at/todo/yagni-principle/</guid>
       <description>Overview Link to heading With examples</description>
+    </item>
+    
+    <item>
+      <title>The Singleton Pattern - A code smell?</title>
+      <link>https://gersti.at/posts/singleton-pattern/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/singleton-pattern/</guid>
+      <description>This blog post offers an explanation of Singleton Design Pattern by Gang of Four. The examples are written in Java.
+A comic depicting the Singleton Pattern (Source: Refactoring-Guru). Singleton ensures that there is only ONE single instance of an object. Clients may not even realize that they’re working with the same object all the time.
+Intent Link to heading The original GoF Design Pattern book defines the Singleton Pattern as follows: Ensure a class only has one instance, and provide a global point of access to it.</description>
     </item>
     
     <item>

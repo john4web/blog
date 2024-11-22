@@ -41,19 +41,6 @@
                 href="https://gersti.at/posts/"
                 />
   </url><url>
-    <loc>https://gersti.at/posts/adapter-pattern/</loc>
-    <lastmod>2024-10-12T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/posts/adapter-pattern/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/posts/adapter-pattern/"
-                />
-  </url><url>
     <loc>https://gersti.at/posts/polymorphism/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -67,21 +54,21 @@
                 href="https://gersti.at/posts/polymorphism/"
                 />
   </url><url>
-    <loc>https://gersti.at/posts/strategy-pattern/</loc>
-    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
+    <loc>https://gersti.at/posts/adapter-pattern/</loc>
+    <lastmod>2024-07-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://gersti.at/de/posts/strategy-pattern/"
+                href="https://gersti.at/de/posts/adapter-pattern/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gersti.at/posts/strategy-pattern/"
+                href="https://gersti.at/posts/adapter-pattern/"
                 />
   </url><url>
     <loc>https://gersti.at/posts/liskov-substitution-principle/</loc>
-    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -93,8 +80,21 @@
                 href="https://gersti.at/posts/liskov-substitution-principle/"
                 />
   </url><url>
+    <loc>https://gersti.at/posts/strategy-pattern/</loc>
+    <lastmod>2024-04-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/posts/strategy-pattern/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/posts/strategy-pattern/"
+                />
+  </url><url>
     <loc>https://gersti.at/posts/stream-api/</loc>
-    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -304,19 +304,6 @@
     <loc>https://gersti.at/todo/service-layer-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/posts/singleton-pattern/</loc>
-    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/posts/singleton-pattern/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/posts/singleton-pattern/"
-                />
-  </url><url>
     <loc>https://gersti.at/todo/state-pattern/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -340,6 +327,19 @@
   </url><url>
     <loc>https://gersti.at/todo/yagni-principle/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/posts/singleton-pattern/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/posts/singleton-pattern/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/posts/singleton-pattern/"
+                />
   </url><url>
     <loc>https://gersti.at/about/</loc>
     <priority>0</priority>

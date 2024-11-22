@@ -17,19 +17,6 @@
     </item>
     
     <item>
-      <title>Das Adapter Pattern</title>
-      <link>https://gersti.at/de/posts/adapter-pattern/</link>
-      <pubDate>Sat, 12 Oct 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/de/posts/adapter-pattern/</guid>
-      <description>Dieser Blog Artikel erklärt das GoF Adapter Design Pattern. Die Beispiele wurden in Java verfasst.
-Visualisierung des Adapter-Patterns (Source: Refactoring-Guru)
-Definition Link to heading Das ursprüngliche GoF-Design-Pattern-Buch definiert das Adapter-Pattern wie folgt: &amp;ldquo;Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.&amp;rdquo;
-Mit anderen Worten: Das Adapter-Pattern macht zwei Schnittstellen kompatibel, die nicht kompatibel sind.
-Das Problem Link to heading Das Verhalten des Adaptees ist das eigentliche Verhalten, das ich haben möchte.</description>
-    </item>
-    
-    <item>
       <title>Polymorphie und dynamische Bindung</title>
       <link>https://gersti.at/de/posts/polymorphism/</link>
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
@@ -41,9 +28,31 @@ Statische Polymorphie (Compile-Time Polymorphism) Link to heading Das ist normal
     </item>
     
     <item>
+      <title>Das Adapter Pattern</title>
+      <link>https://gersti.at/de/posts/adapter-pattern/</link>
+      <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/de/posts/adapter-pattern/</guid>
+      <description>Dieser Blog Artikel erklärt das GoF Adapter Design Pattern. Die Beispiele wurden in Java verfasst.
+Visualisierung des Adapter-Patterns (Source: Refactoring-Guru)
+Definition Link to heading Das ursprüngliche GoF-Design-Pattern-Buch definiert das Adapter-Pattern wie folgt: &amp;ldquo;Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.&amp;rdquo;
+Mit anderen Worten: Das Adapter-Pattern macht zwei Schnittstellen kompatibel, die nicht kompatibel sind.
+Das Problem Link to heading Das Verhalten des Adaptees ist das eigentliche Verhalten, das ich haben möchte.</description>
+    </item>
+    
+    <item>
+      <title>Liskovsches Substitutionsprinzip und DbC im Detail</title>
+      <link>https://gersti.at/de/posts/liskov-substitution-principle/</link>
+      <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/de/posts/liskov-substitution-principle/</guid>
+      <description>Dieser Artikel ist derzeit leider nur auf Englisch verfügbar! 😅 Klicke hier.</description>
+    </item>
+    
+    <item>
       <title>Das Strategy Pattern</title>
       <link>https://gersti.at/de/posts/strategy-pattern/</link>
-      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/de/posts/strategy-pattern/</guid>
       <description>Dieser Blog Artikel erklärt das GoF Strategy Design Pattern. Die Beispiele wurden in Java verfasst.
@@ -52,18 +61,9 @@ Welches Problem löst das Strategy Pattern? Link to heading Angenommen, wir habe
     </item>
     
     <item>
-      <title>Liskovsches Substitutionsprinzip und DbC im Detail</title>
-      <link>https://gersti.at/de/posts/liskov-substitution-principle/</link>
-      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/de/posts/liskov-substitution-principle/</guid>
-      <description>Dieser Artikel ist derzeit leider nur auf Englisch verfügbar! 😅 Klicke hier.</description>
-    </item>
-    
-    <item>
       <title>Stream-API</title>
       <link>https://gersti.at/de/posts/stream-api/</link>
-      <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/de/posts/stream-api/</guid>
       <description>Dieser Artikel ist derzeit leider nur auf Englisch verfügbar! 😅 Klicke hier.</description>
@@ -72,7 +72,7 @@ Welches Problem löst das Strategy Pattern? Link to heading Angenommen, wir habe
     <item>
       <title>Das Singleton Pattern - Ein Code-Smell?</title>
       <link>https://gersti.at/de/posts/singleton-pattern/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/de/posts/singleton-pattern/</guid>
       <description>Dieser Blogbeitrag bietet eine Erklärung des Singleton-Entwurfsmusters der Gang of Four. Die Beispiele sind in Java geschrieben.

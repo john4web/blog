@@ -28,7 +28,7 @@ Animal myAnimal = new Dog();
 
 In this line, an object of the class `Dog` is created and stored in an object variable of type `Animal`. This is possible because the class Dog inherits from the class Animal. Accordingly, a Dog **IS** also an Animal, and the variable of type Animal can contain an object of type Dog. This is called polymorphism because the reference of the superclass type (Animal) points to an object of the subclass (Dog). Since `myAnimal` can be either a Dog object or a Cat object at runtime, it is polymorphic, meaning it has multiple forms.
 
-The following image illustrates the entire concept of dynamic polymorphism in a single picture created by me. Please note the colors used to underline the methods. They provide insight into where each method is called:
+The following image illustrates the entire concept of dynamic polymorphism in a single picture created by me. Please note the colors used to underline the methods. They provide insight into where which method is called:
 
 
 {{< figure src="/images/polymorphism/polymorphism.jpg" caption="Polymorphism at a glance.">}}

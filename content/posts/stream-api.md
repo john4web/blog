@@ -1,6 +1,6 @@
 +++
 title = "Stream API"
-date = "2024-09-11"
+date = "2024-02-11"
 description = "This blog post explains how the java stream api works and gives an overview on the most important methods."
 +++
 

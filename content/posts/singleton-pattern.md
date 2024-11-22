@@ -1,6 +1,6 @@
 +++
 title = "The Singleton Pattern - A code smell?"
-date = "2024-01-24"
+date = "2024-01-01"
 description = "Article explaining the Singleton Design Pattern by Gang of Four."
 +++
 

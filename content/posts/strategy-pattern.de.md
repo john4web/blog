@@ -1,6 +1,6 @@
 +++
 title = "Das Strategy Pattern"
-date = "2024-09-12"
+date = "2024-04-05"
 description = "Artikel, der das GoF Strategy Design Pattern erklärt."
 +++
 

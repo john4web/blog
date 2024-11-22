@@ -1,6 +1,6 @@
 +++
 title = "Liskov substitution principle and DbC in depth"
-date = "2024-09-11"
+date = "2024-06-03"
 description = "Article explaining the liskov substitution principle and Design by Contract in depth."
 +++
 

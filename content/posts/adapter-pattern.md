@@ -1,6 +1,6 @@
 +++
 title = "The Adapter Pattern"
-date = "2024-10-12"
+date = "2024-07-15"
 description = "Article explaining the Adapter Design Pattern by Gang of Four."
 +++
 

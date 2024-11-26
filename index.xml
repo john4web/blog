@@ -6,7 +6,21 @@
     <description>Recent content on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NULL: The Billion Dollar Mistake</title>
+      <link>https://gersti.at/todo/billion-dollar-mistake/</link>
+      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/billion-dollar-mistake/</guid>
+      <description>Overview Link to heading Zusammenfassung aus diesem Video schreiben: https://www.youtube.com/watch?v=o3aNJX7AP3M
+The billion dollar mistake (Tony Hoare) https://www.youtube.com/watch?v=YYkOWzrO3xg
+Article: https://www.yegor256.com/2014/05/13/why-null-is-bad.html
+https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/
+Tony Hoare introduced Null references in ALGOL W back in 1965 &amp;ldquo;simply because it was so easy to implement&amp;rdquo;, says Mr. Hoare. He talks about that decision considering it &amp;ldquo;my billion-dollar mistake&amp;rdquo;.
+Da passt auch recht gut das Kapitel &amp;ldquo;Dead programs tell no lies&amp;rdquo; dazu vom Buch &amp;ldquo;The pragmatic programmer&amp;rdquo;.</description>
+    </item>
+    
     <item>
       <title>CQS and CQRS Principles: Splitting the Read from the Write</title>
       <link>https://gersti.at/posts/cqrs/</link>
@@ -493,17 +507,6 @@ Inhalte vom Buch TDD vom Kent Beck hier einfließen lassen.</description>
       <description>an abstract factory is a set of factory methods. an abstract factory makes use of multiple factory methods.
 The single difference between the factory method pattern and the abstract factory pattern is that the factory method pattern constructs a single object and the abstract factory constructs multiple objects.
 Bei dem Factory Method Pattern erzeugt jede konkrete Factory jeweils nur ein Objekt. Das ist der Unterschied zum Abstract-Factory-Pattern. Beim Abstract-Factory-Pattern erzeugt jede konkrete Factory mehrere unterschiedliche Objekte.</description>
-    </item>
-    
-    <item>
-      <title>The Billion Dollar Mistake: NULL</title>
-      <link>https://gersti.at/todo/billion-dollar-mistake/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/todo/billion-dollar-mistake/</guid>
-      <description>Overview Link to heading Zusammenfassung aus diesem Video schreiben: https://www.youtube.com/watch?v=o3aNJX7AP3M
-The billion dollar mistake (Tony Hoare) https://www.youtube.com/watch?v=YYkOWzrO3xg
-Da passt auch recht gut das Kapitel &amp;ldquo;Dead programs tell no lies&amp;rdquo; dazu vom Buch &amp;ldquo;The pragmatic programmer&amp;rdquo;.</description>
     </item>
     
     <item>

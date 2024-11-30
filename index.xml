@@ -13,12 +13,7 @@
       <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/todo/billion-dollar-mistake/</guid>
-      <description>Overview Link to heading Zusammenfassung aus diesem Video schreiben: https://www.youtube.com/watch?v=o3aNJX7AP3M
-The billion dollar mistake (Tony Hoare) https://www.youtube.com/watch?v=YYkOWzrO3xg
-Article: https://www.yegor256.com/2014/05/13/why-null-is-bad.html
-https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/
-Tony Hoare introduced Null references in ALGOL W back in 1965 &amp;ldquo;simply because it was so easy to implement&amp;rdquo;, says Mr. Hoare. He talks about that decision considering it &amp;ldquo;my billion-dollar mistake&amp;rdquo;.
-Da passt auch recht gut das Kapitel &amp;ldquo;Dead programs tell no lies&amp;rdquo; dazu vom Buch &amp;ldquo;The pragmatic programmer&amp;rdquo;.</description>
+      <description>Overview Link to heading Dieser Blog Artikel handelt von etwas, das die meisten Programmierer tagtäglich verwenden: das Schlüsselwort NULL. Doch sollte man vielleicht nochmal überdenken, null referenzen in der eigenen Software zu verwenden? Ist es vielleicht sogar schlecht, wenn man das irgendwo im Code &amp;ldquo;Null&amp;rdquo; stehen hat? Dieser Artikel versucht Antworten auf diese Frage zu liefern. Doch dafür müssen wir zuerst einige Jahre zurückreisen in das Jahr 1965 als die Null-Referenz von einem Mann namens Tony Hoare erfunden wurde.</description>
     </item>
     
     <item>
@@ -802,6 +797,15 @@ Intent Link to heading The original GoF Design Pattern book defines the Singleto
       <guid>https://gersti.at/about/</guid>
       <description>Hello and welcome to my blog! 😄 Link to heading My name is Johannes Gerstbauer, and I am a passionate software developer from Vienna/Austria, with a special focus on object-oriented programming (OOP) in Java. For many years, I have been fascinated by the art of solving complex problems through elegant code, and I want to share this fascination with you here on my blog.
 My Job 🚀 Link to heading Currently, I work as a JVM Backend Developer at &amp;ldquo;Karriere.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gersti.at/todo/hofstadters-law/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/hofstadters-law/</guid>
+      <description>https://en.wikipedia.org/wiki/Hofstadter%27s_law</description>
     </item>
     
     <item>

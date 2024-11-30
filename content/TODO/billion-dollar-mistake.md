@@ -6,6 +6,29 @@ description = "The downsides of using NULL-References explained"
 
 ## Overview
 
+Dieser Blog Artikel handelt von etwas, das die meisten Programmierer tagtäglich verwenden: das Schlüsselwort NULL. Doch sollte man vielleicht nochmal überdenken, null referenzen in der eigenen Software zu verwenden? Ist es vielleicht sogar schlecht, wenn man das irgendwo im Code "Null" stehen hat? Dieser Artikel versucht Antworten auf diese Frage zu liefern. Doch dafür müssen wir zuerst einige Jahre zurückreisen in das Jahr 1965 als die Null-Referenz von einem Mann namens Tony Hoare erfunden wurde. Dies geschah, als Hoare an der Entwicklung der Programmiersprache ALGOL W arbeitete. In einem berühmten Vortrag im Jahr 2009, als er den Turing Award erhielt, bezeichnete Hoare die Einführung von Null-Referenzen als seinen "billion-dollar mistake" (Milliarden-Dollar-Fehler). Der Grund dafür ist, dass Null-Referenzen in der Softwareentwicklung häufig zu Fehlern führen, wie Nullpointer-Exceptions, die Systemabstürze und Sicherheitsprobleme verursachen können. Hoares Motivation für die Einführung war pragmatisch: Es schien ihm damals ein einfacher Weg zu sein, um anzuzeigen, dass eine Referenz keinen gültigen Wert hat. Leider hat diese Entscheidung über Jahrzehnte hinweg enorme Kosten in Form von Fehlerbehebung und komplexeren Code-Sicherheitsmechanismen verursacht. Er selbst hat später gesagt, dass er es bedauert, Null-Referenzen eingeführt zu haben, und dass er die Probleme, die dadurch entstehen würden, damals nicht vorhersehen konnte.
+
+> I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.<br>
+> — <cite>[Tony Hoare](https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony+Hoare)</cite>
+
+
+{{< figure src="/images/billion-dollar-mistake/oppenheimer.webp" caption="Robert Oppenheimer's regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare's regret over introducing the null reference (Source: Movie: Oppenheimer (2023) by Christoph Nolan).">}}
+
+Aber wer ist überhaupt Tony Hoare?
+Tony Hoare ist ein britischer Informatiker, der hohes ansehen erlangte durch seine Entwicklung des Quicksort-Algorithmus sowie des Hoare-Kalküls, durch den sich die Korrektheit von Algorithmen beweisen lässt. Außerdem entwickelte Hoare eine eigene Prozessalgebra, die zum Beispiel die Entwicklung der Programmiersprachen Ada, Occam und Go beeinflusst hat. 1980 wurde Hoare für die Definition und Design von Programmiersprachen mit dem [Turing Award](https://de.wikipedia.org/wiki/Turing_Award) ausgezeichnet, welche als die höchste Auszeichnung in der Informatik angesehen werden kann (vergleichbar dem Nobelpreis).
+
+> Null references have been a historically bad idea.<br>
+> <cite>- Tony Hoare</cite>
+
+Wenn so eine größe in der Informatiker-Community, der noch dazu die Null referenz selber eingeführt hat, sagt, dass es ein fehler war, dann hat das schon gewicht.
+
+Nicht nur Tony Hoare steht der Null referenz kritisch gegenüber. Wie Hoare 2009 in seiner berühmten [Turing-Award-Rede](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/) anmerkt, fand auch Edsger W. Dijkstra, dass Null-Referenzen eine schlechte Idee waren.
+
+> If you have a null reference, then every bachelor who you represent in your object structure will seem to be married polyamocursly to the same person Null.<br>
+> <cite>- Edsger W. Dijkstra</cite>
+
+Wenn man im Internet recherchiert, findet man viele Leute, welche die Verwendung von Null Referenzen als schlechten Coing-Style interpretieren. Einer davon ist [Yegor Bugayenko](https://www.yegor256.com/about-me.html).
+
 Zusammenfassung aus diesem Video schreiben:
 https://www.youtube.com/watch?v=o3aNJX7AP3M 
 
@@ -15,24 +38,16 @@ https://www.youtube.com/watch?v=YYkOWzrO3xg
 Article:
 https://www.yegor256.com/2014/05/13/why-null-is-bad.html
 
+https://www.yegor256.com/2016/03/22/try-finally-if-not-null.html
+
 https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/ 
 
-Tony Hoare introduced Null references in ALGOL W back in 1965 "simply because it was so easy to implement", says Mr. Hoare. He talks about that decision considering it "my billion-dollar mistake".
+Programming language designers should be responsible for the errors in programs written in that language.
 
 Da passt auch recht gut das Kapitel "Dead programs tell no lies" dazu vom Buch "The pragmatic programmer".
 
-"Null references have been a historically bad idea". - Tony Hoare
-
-Tony Hoare hat den Begriff der null reference (Null-Referenz) in der Programmierung eingeführt. Dies geschah, als er Anfang der 1960er Jahre an der Entwicklung der Programmiersprache ALGOL W arbeitete.
-
-In einem berühmten Vortrag im Jahr 2009, als er den Turing Award erhielt, bezeichnete Hoare die Einführung von Null-Referenzen als seinen "billion-dollar mistake" (Milliarden-Dollar-Fehler). Der Grund dafür ist, dass Null-Referenzen in der Softwareentwicklung häufig zu Fehlern führen, wie Nullpointer-Exceptions, die Systemabstürze und Sicherheitsprobleme verursachen können.
-
-Hoares Motivation für die Einführung war pragmatisch: Es schien ihm damals ein einfacher Weg zu sein, um anzuzeigen, dass eine Referenz keinen gültigen Wert hat. Leider hat diese Entscheidung über Jahrzehnte hinweg enorme Kosten in Form von Fehlerbehebung und komplexeren Code-Sicherheitsmechanismen verursacht.
-
-Er selbst hat später gesagt, dass er es bedauert, Null-Referenzen eingeführt zu haben, und dass er die Probleme, die dadurch entstehen würden, damals nicht vorhersehen konnte.
 
 
-Dijkstra: If you have a null reference, then every bachelor who you represent in your object structure will seem to be married polyamocursly to the same person Null.
 
 
 -------------------
@@ -199,7 +214,7 @@ There is only black and white. There is no grey color in between. If you use nul
 
 https://en.wikipedia.org/wiki/Tony_Hoare
 
-I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.
+
 
 
 
@@ -210,3 +225,4 @@ https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake
 
 https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485
 
+https://en.wikipedia.org/wiki/Null_object_pattern 

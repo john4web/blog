@@ -6,49 +6,36 @@ description = "The downsides of using NULL-References explained"
 
 ## Overview
 
-Dieser Blog Artikel handelt von etwas, das die meisten Programmierer tagtäglich verwenden: das Schlüsselwort NULL. Doch sollte man vielleicht nochmal überdenken, null referenzen in der eigenen Software zu verwenden? Ist es vielleicht sogar schlecht, wenn man das irgendwo im Code "Null" stehen hat? Dieser Artikel versucht Antworten auf diese Frage zu liefern. Doch dafür müssen wir zuerst einige Jahre zurückreisen in das Jahr 1965 als die Null-Referenz von einem Mann namens Tony Hoare erfunden wurde. Dies geschah, als Hoare an der Entwicklung der Programmiersprache ALGOL W arbeitete. In einem berühmten Vortrag im Jahr 2009, als er den Turing Award erhielt, bezeichnete Hoare die Einführung von Null-Referenzen als seinen "billion-dollar mistake" (Milliarden-Dollar-Fehler). Der Grund dafür ist, dass Null-Referenzen in der Softwareentwicklung häufig zu Fehlern führen, wie Nullpointer-Exceptions, die Systemabstürze und Sicherheitsprobleme verursachen können. Hoares Motivation für die Einführung war pragmatisch: Es schien ihm damals ein einfacher Weg zu sein, um anzuzeigen, dass eine Referenz keinen gültigen Wert hat. Leider hat diese Entscheidung über Jahrzehnte hinweg enorme Kosten in Form von Fehlerbehebung und komplexeren Code-Sicherheitsmechanismen verursacht. Er selbst hat später gesagt, dass er es bedauert, Null-Referenzen eingeführt zu haben, und dass er die Probleme, die dadurch entstehen würden, damals nicht vorhersehen konnte.
+This blog article explores the keyword `null`, a staple in every programmer's daily work. However, should we reconsider the use of null references in our software? Could encountering `null` in our code actually be harmful? This article aims to address these questions and provide insight into the implications of using `null`.
+
+To understand the issue, we must travel back to 1965, when the null reference was invented by Tony Hoare. In a renowned lecture in 2009, while accepting the Turing Award, Hoare famously referred to the creation of null references as his *"billion-dollar mistake"*:
 
 > I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.<br>
 > — <cite>[Tony Hoare](https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony+Hoare)</cite>
 
+Null references are a common source of software errors, such as null pointer exceptions, which can cause system crashes and security issues. When Tony Hoare introduced null references, his motivation was practical: it seemed like a simple way to indicate that a reference didn’t have a valid value. However, this seemingly straightforward choice has had lasting consequences, resulting in decades of costly bug fixes and the need for complex security measures. Looking back, Hoare expressed regret for his decision, admitting that he couldn’t have foreseen the problems it would create. Another famous quote from him: 
+
+> Null references have been a historically bad idea.<br>
+> — <cite>[Tony Hoare](https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony+Hoare)</cite>
 
 {{< figure src="/images/billion-dollar-mistake/oppenheimer.webp" caption="Robert Oppenheimer's regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare's regret over introducing the null reference (Source: Movie: Oppenheimer (2023) by Christoph Nolan).">}}
 
-Aber wer ist überhaupt Tony Hoare?
-Tony Hoare ist ein britischer Informatiker, der hohes ansehen erlangte durch seine Entwicklung des Quicksort-Algorithmus sowie des Hoare-Kalküls, durch den sich die Korrektheit von Algorithmen beweisen lässt. Außerdem entwickelte Hoare eine eigene Prozessalgebra, die zum Beispiel die Entwicklung der Programmiersprachen Ada, Occam und Go beeinflusst hat. 1980 wurde Hoare für die Definition und Design von Programmiersprachen mit dem [Turing Award](https://de.wikipedia.org/wiki/Turing_Award) ausgezeichnet, welche als die höchste Auszeichnung in der Informatik angesehen werden kann (vergleichbar dem Nobelpreis).
+## Who is Tony Hoare?  
 
-> Null references have been a historically bad idea.<br>
-> <cite>- Tony Hoare</cite>
+Tony Hoare is a British computer scientist who gained widespread recognition for his contributions to the field. He is best known for creating the _Quicksort algorithm_, one of the most efficient sorting methods, and _Hoare logic_, which allows the correctness of algorithms to be proven. He also developed a process algebra that influenced programming languages like Ada, Occam, and Go. In 1980, Hoare received the [Turing Award](https://de.wikipedia.org/wiki/Turing_Award), often referred to as the "Nobel Prize of Computer Science," for his work on the definition and design of programming languages. What do I wanna tell you with that? 
 
-Wenn so eine größe in der Informatiker-Community, der noch dazu die Null referenz selber eingeführt hat, sagt, dass es ein fehler war, dann hat das schon gewicht.
+When someone of his stature in the computer science world, and the very person who introduced null references, calls it a mistake, it’s a statement that carries significant weight.
 
-Nicht nur Tony Hoare steht der Null referenz kritisch gegenüber. Wie Hoare 2009 in seiner berühmten [Turing-Award-Rede](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/) anmerkt, fand auch Edsger W. Dijkstra, dass Null-Referenzen eine schlechte Idee waren.
+Tony Hoare is not the only famous person to view null references critically. As Hoare noted in his famous [2009 Turing Award lecture](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/), Edsger W. Dijkstra also regarded null references as a bad idea.
 
 > If you have a null reference, then every bachelor who you represent in your object structure will seem to be married polyamocursly to the same person Null.<br>
 > <cite>- Edsger W. Dijkstra</cite>
 
-Wenn man im Internet recherchiert, findet man viele Leute, welche die Verwendung von Null Referenzen als schlechten Coing-Style interpretieren. Einer davon ist [Yegor Bugayenko](https://www.yegor256.com/about-me.html).
+HIER DIESES ZITAT NOCH NÄHER ERKLÄREN
 
-Zusammenfassung aus diesem Video schreiben:
-https://www.youtube.com/watch?v=o3aNJX7AP3M 
+If you search the internet, you’ll find many people who view the use of null references as bad coding practice. One of them is [Yegor Bugayenko](https://www.yegor256.com/about-me.html).
 
-The billion dollar mistake (Tony Hoare)
-https://www.youtube.com/watch?v=YYkOWzrO3xg 
-
-Article:
-https://www.yegor256.com/2014/05/13/why-null-is-bad.html
-
-https://www.yegor256.com/2016/03/22/try-finally-if-not-null.html
-
-https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/ 
-
-Programming language designers should be responsible for the errors in programs written in that language.
-
-Da passt auch recht gut das Kapitel "Dead programs tell no lies" dazu vom Buch "The pragmatic programmer".
-
-
-
-
+In his [video on null references](https://www.youtube.com/watch?v=o3aNJX7AP3M), Yegor presents insightful, practical code examples that highlight the issues associated with working with null values, while also offering effective solutions. The following chapters summarize Yegor Bugayenko's video and his perspectives on null references:
 
 -------------------
 
@@ -102,6 +89,7 @@ return new Employee(id);
 }
 ```
 
+This also brings to mind the principle "Crash Early!" from the book *The Pragmatic Programmer* (page 120-121). The idea is that when your code encounters something that should have been impossible, the program is no longer reliable. Anything it does after that point becomes questionable, so it’s better to stop it as soon as possible. A program that has crashed typically causes less harm than one that continues to run in a broken state.
 
 2. Return a Null-Object instead of returning NULL.
 
@@ -226,3 +214,16 @@ https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake
 https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485
 
 https://en.wikipedia.org/wiki/Null_object_pattern 
+
+Zusammenfassung aus diesem Video schreiben:
+https://www.youtube.com/watch?v=o3aNJX7AP3M 
+
+The billion dollar mistake (Tony Hoare)
+https://www.youtube.com/watch?v=YYkOWzrO3xg 
+
+Article:
+https://www.yegor256.com/2014/05/13/why-null-is-bad.html
+
+https://www.yegor256.com/2016/03/22/try-finally-if-not-null.html
+
+https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/ 

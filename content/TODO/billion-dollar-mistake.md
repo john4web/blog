@@ -8,29 +8,29 @@ description = "The downsides of using NULL-References explained"
 
 This blog article explores the keyword `null`, a staple in every programmer's daily work. However, should we reconsider the use of null references in our software? Could encountering `null` in our code actually be harmful? This article aims to address these questions and provide insight into the implications of using `null`.
 
+{{< figure src="/images/billion-dollar-mistake/oppenheimer.webp" caption="Robert Oppenheimer's regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare's regret over introducing the null reference (Source: Movie: Oppenheimer (2023) by Christoph Nolan).">}}
+
 To understand why `null` exists at all, we must travel back to 1965, when the null reference was invented by Tony Hoare. In a renowned lecture in 2009, while accepting the Turing Award, Hoare famously referred to the creation of null references as his *"billion-dollar mistake"*:
 
 > I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.<br>
 > — <cite>[Tony Hoare](https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony+Hoare)</cite>
 
-Null references are a common source of software errors, such as null pointer exceptions, which can cause system crashes and security issues. When Tony Hoare introduced null references, his motivation was practical: it seemed like a simple way to indicate that a reference didn’t have a valid value. However, this seemingly straightforward choice has had lasting consequences, resulting in decades of costly bug fixes and the need for complex security measures. Looking back, Hoare expressed regret for his decision, admitting that he couldn’t have foreseen the problems it would create. Another famous quote from him: 
+Null references are a common source of software errors, such as null pointer exceptions, which can cause system crashes and security issues. When Tony Hoare introduced null references, his motivation was practical: it seemed like a simple way to indicate that a reference didn’t have a valid value. However, this seemingly straightforward choice has had lasting consequences, resulting in decades of costly bug fixes and the need for complex security measures. Looking back, Hoare expressed regret for his decision, admitting that he couldn’t have foreseen the problems it would create. 
 
 > Null references have been a historically bad idea.<br>
 > — <cite>[Tony Hoare](https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony+Hoare)</cite>
-
-{{< figure src="/images/billion-dollar-mistake/oppenheimer.webp" caption="Robert Oppenheimer's regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare's regret over introducing the null reference (Source: Movie: Oppenheimer (2023) by Christoph Nolan).">}}
 
 ## The luminaries opinion
 
 Who is Tony Hoare? Tony Hoare is a British computer scientist who gained widespread recognition for his contributions to the field. He is best known for creating the _Quicksort algorithm_, one of the most efficient sorting methods, and _Hoare logic_, which allows the correctness of algorithms to be proven. He also developed a process algebra that influenced programming languages like Ada, Occam, and Go. In 1980, Hoare received the [Turing Award](https://de.wikipedia.org/wiki/Turing_Award), often referred to as the "Nobel Prize of Computer Science," for his work on the definition and design of programming languages.
 
-BILD VON TONY HOARE
+{{< figure src="/images/billion-dollar-mistake/hoare.jpg" caption="Sir Charles Antony Richard Hoare" width="30%">}}
 
  Why do I mention all of this? Because when a luminary in computer science like Tony Hoare declares that null references are a bad idea, it carries significant weight — particularly given that he himself was the one who introduced them. And he is not alone in his opinion. As Hoare noted in his famous [2009 Turing Award lecture](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/), Edsger W. Dijkstra also regarded null references as a bad idea.
 
-{{< figure src="/images/billion-dollar-mistake/dijkstra.jpg" caption="Another luminary in the field of computer science: Edsger W. Dijkstra. He was a pioneer of structured programming and famous for the Dijkstra's algorithm. In 1972, he received the Turing Award as well." width="30%">}}
+{{< figure src="/images/billion-dollar-mistake/dijkstra.jpg" caption="Edsger Wybe Dijkstra" width="30%">}}
 
-Dijkstra used humor to illustrate the problem with null references in programming. In a metaphor, he described objects as bachelors and `null` as a person: _"If you have a null reference, then every bachelor who you represent in your object structure will seem to be married polyandrously to the same person Null"_.
+Dijkstra was another luminary in the field of computer science. He was a pioneer of structured programming and famous for the Dijkstra’s algorithm. In 1972, he received the Turing Award as well. Dijkstra used humor to illustrate the problem with null references in programming. In a metaphor, he described objects as bachelors and `null` as a person: _"If you have a null reference, then every bachelor who you represent in your object structure will seem to be married polyandrously to the same person Null"_.
 
 If you search the internet, you’ll find many people who view the use of null references as bad coding practice. One of them is [Yegor Bugayenko](https://www.yegor256.com/about-me.html). In his [video on null references](https://www.youtube.com/watch?v=o3aNJX7AP3M), Yegor presents insightful, practical code examples that highlight the issues associated with working with null values, while also offering effective solutions. The following chapters summarize Yegor Bugayenko's video and his perspectives on null references:
 

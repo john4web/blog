@@ -8,7 +8,7 @@ description = "The downsides of using NULL-References explained"
 
 This blog article explores the keyword `null`, a staple in every programmer's daily work. However, should we reconsider the use of null references in our software? Could encountering `null` in our code actually be harmful? This article aims to address these questions and provide insight into the implications of using `null`.
 
-To understand the issue, we must travel back to 1965, when the null reference was invented by Tony Hoare. In a renowned lecture in 2009, while accepting the Turing Award, Hoare famously referred to the creation of null references as his *"billion-dollar mistake"*:
+To understand why `null` exists at all, we must travel back to 1965, when the null reference was invented by Tony Hoare. In a renowned lecture in 2009, while accepting the Turing Award, Hoare famously referred to the creation of null references as his *"billion-dollar mistake"*:
 
 > I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.<br>
 > — <cite>[Tony Hoare](https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony+Hoare)</cite>
@@ -20,32 +20,24 @@ Null references are a common source of software errors, such as null pointer exc
 
 {{< figure src="/images/billion-dollar-mistake/oppenheimer.webp" caption="Robert Oppenheimer's regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare's regret over introducing the null reference (Source: Movie: Oppenheimer (2023) by Christoph Nolan).">}}
 
-## Who is Tony Hoare?  
+## The luminaries opinion
 
-Tony Hoare is a British computer scientist who gained widespread recognition for his contributions to the field. He is best known for creating the _Quicksort algorithm_, one of the most efficient sorting methods, and _Hoare logic_, which allows the correctness of algorithms to be proven. He also developed a process algebra that influenced programming languages like Ada, Occam, and Go. In 1980, Hoare received the [Turing Award](https://de.wikipedia.org/wiki/Turing_Award), often referred to as the "Nobel Prize of Computer Science," for his work on the definition and design of programming languages. What do I wanna tell you with that? 
+Who is Tony Hoare? Tony Hoare is a British computer scientist who gained widespread recognition for his contributions to the field. He is best known for creating the _Quicksort algorithm_, one of the most efficient sorting methods, and _Hoare logic_, which allows the correctness of algorithms to be proven. He also developed a process algebra that influenced programming languages like Ada, Occam, and Go. In 1980, Hoare received the [Turing Award](https://de.wikipedia.org/wiki/Turing_Award), often referred to as the "Nobel Prize of Computer Science," for his work on the definition and design of programming languages.
 
-When someone of his stature in the computer science world, and the very person who introduced null references, calls it a mistake, it’s a statement that carries significant weight.
+BILD VON TONY HOARE
 
-Tony Hoare is not the only famous person to view null references critically. As Hoare noted in his famous [2009 Turing Award lecture](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/), Edsger W. Dijkstra also regarded null references as a bad idea.
+ Why do I mention all of this? Because when a luminary in computer science like Tony Hoare declares that null references are a bad idea, it carries significant weight — particularly given that he himself was the one who introduced them. And he is not alone in his opinion. As Hoare noted in his famous [2009 Turing Award lecture](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/), Edsger W. Dijkstra also regarded null references as a bad idea.
 
-> If you have a null reference, then every bachelor who you represent in your object structure will seem to be married polyamocursly to the same person Null.<br>
-> <cite>- Edsger W. Dijkstra</cite>
+{{< figure src="/images/billion-dollar-mistake/dijkstra.jpg" caption="Another luminary in the field of computer science: Edsger W. Dijkstra. He was a pioneer of structured programming and famous for the Dijkstra's algorithm. In 1972, he received the Turing Award as well." width="30%">}}
 
-HIER DIESES ZITAT NOCH NÄHER ERKLÄREN
+Dijkstra used humor to illustrate the problem with null references in programming. In a metaphor, he described objects as bachelors and `null` as a person: _"If you have a null reference, then every bachelor who you represent in your object structure will seem to be married polyandrously to the same person Null"_.
 
-If you search the internet, you’ll find many people who view the use of null references as bad coding practice. One of them is [Yegor Bugayenko](https://www.yegor256.com/about-me.html).
+If you search the internet, you’ll find many people who view the use of null references as bad coding practice. One of them is [Yegor Bugayenko](https://www.yegor256.com/about-me.html). In his [video on null references](https://www.youtube.com/watch?v=o3aNJX7AP3M), Yegor presents insightful, practical code examples that highlight the issues associated with working with null values, while also offering effective solutions. The following chapters summarize Yegor Bugayenko's video and his perspectives on null references:
 
-In his [video on null references](https://www.youtube.com/watch?v=o3aNJX7AP3M), Yegor presents insightful, practical code examples that highlight the issues associated with working with null values, while also offering effective solutions. The following chapters summarize Yegor Bugayenko's video and his perspectives on null references:
+# Four reasons to avoid null references
 
--------------------
+The following code snippet shows a method that fetches an employee object from a database:
 
-Yegor Bugayenko
-
-Null references are really bad and they have to be avoided at all cost.
-
-What is a null reference?
-
-Example:
 ```java
 public Employee getByName(String name){
 int id = database.find(name);
@@ -56,56 +48,101 @@ return new Employee(id);
 }
 ```
 
-instead of returning an instance of employee, we return null. This is terribly wrong.
-Why?
-1. it may cause many nullpointer exceptions in the code
+If the database does not find the employee, the method returns null instead of returning an instance of employee.
+This is terribly wrong. Why?
+
+1. Because it may cause many nullpointer exceptions in the code
+
 For example:
 ```java
 getByName("Jeffrey").salary();
 ```
-If there is no employee with the name jeffrey in the database. then the above code throws a nullpointer exception.
+If there is no employee with the name "Jeffrey" in the database, then the above code throws a nullpointer exception.
 
-2. It will be technically difficult to trace the causes of these exceptions.
+2. Because it will be technically difficult to trace the causes of these exceptions.
 
+3. Because `null` was originally introduced for languages that used pointers like C for instance. But in Java, we are dealing with objects and references. In "Object-Thinking", you are not thinking about pointers and memory. You think about objects which are living organisms/creatures. "Object-Thinking" is about objects and calls to them and messages between them and their reaction to you - but null does not have any reaction since it is no object.
 
-3. null was introduced for languages that used pointers like C for instance. But in Java we are dealing with objects. In Object thinking you are not thinking about pointers and memory. You think about Objects which are living organisms/creatures. Object thinking is about Objects and calls to them and messages to them and their reaction to you - but null does not have any reaction since it is no object.
+4. A lot of viruses are designed to exploit null references. Those viruses hope, that some software forgets to check the null pointers and they can reach that part in the program.
 
+Yegor's conclusion: Null references are really bad and they have to be avoided at all cost.
 
-4. A lot of viruses are designed to exploit null references. That some software forgets to check the null pointers and they can go somewhere, where there is nothing in it. 
 
 # Three possible alternatives to null references
 
-1. Throw an Exception instead of returning NULL.
+1. Alternative #1: Throw an Exception instead of returning `null`:
 
 ```java
 public Employee getByName(String name){
-int id = database.find(name);
-if(id < 0){
-    throw new EmployeeNotFoundException(
-        "I'm sorry, but the employee is not found"
-    )
-}
-return new Employee(id);
+    int id = database.find(name);
+    if(id < 0){
+        throw new EmployeeNotFoundException(
+            "I'm sorry, but the employee is not found"
+        )
+    }
+    return new Employee(id);
 }
 ```
+Yegor's suggestion of throwing an exception also reminds me on the principle "Crash Early!" which was formulated in the book *The Pragmatic Programmer* (on page 120-121). When your code encounters something that should have been impossible, the program is no longer reliable. Anything it does after that point becomes questionable, so it’s better to stop it as soon as possible. A program that has crashed, typically causes less harm than one that continues to run in a broken state.
 
-This also brings to mind the principle "Crash Early!" from the book *The Pragmatic Programmer* (page 120-121). The idea is that when your code encounters something that should have been impossible, the program is no longer reliable. Anything it does after that point becomes questionable, so it’s better to stop it as soon as possible. A program that has crashed typically causes less harm than one that continues to run in a broken state.
-
-2. Return a Null-Object instead of returning NULL.
+2. Alternative #2: Return a Null-Object instead of returning `null`:
 
 ```java
 public Employee getByName(String name){
-int id = database.find(name);
-if(id < 0){
-    return new NoEmployee();
-}
-return new Employee(id);
+    int id = database.find(name);
+    if(id < 0){
+        return new NoEmployee();
+    }
+    return new Employee(id);
 }
 ```
 
-The class NoEmployee implements the same interface as Employee but in a different way.
+The class NoEmployee could implement the same interface as Employee but in a different way than the Employee. For example:
 
-3. Using Optionals
+```java
+public interface Employable {
+    double getSalary();
+    String getName() throws NameNotFoundException;
+}
+```
+
+```java
+public class Employee implements Employable {
+    ...
+    @Override
+    public double getSalary() {
+        return salary;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+    ...
+}
+```
+
+Maybe your software needs to return default values for Null Objects or throw exceptions:
+
+```java
+public class NoEmployee implements Employable {
+    ...
+    @Override
+    public double getSalary() {
+        return 0.0;
+    }
+
+    @Override
+    public String getName() throws NameNotFoundException {
+        throw new NameNotFoundException("Name not found for this non-existing employee.");
+    }
+    ...
+}
+```
+
+Maybe this example is not the best for explaining the advantages of not using null but you get the general idea. Null-Objects are used more in other situations. For Domain Entities like DTOs, they are only used in rare cases. You might ask yourself now: "Doesn't a null object just delay the failure?" Yes, definately! For instance when taking a look at the `getName()` method, we just delay the moment when the exception is thrown. But the advantage here is, that we can "control" the process in this way. And we can throw meaningful exceptions on our own. However in most situations Alternative#1 is the best solution: just throwing an exception immediately.
+
+3. Alternative #3: Using Optionals (`java.util.Optional`)
 
 ```java
 public Employee getByName(String name){

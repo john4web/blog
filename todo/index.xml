@@ -14,7 +14,7 @@
       
       <guid>https://gersti.at/todo/billion-dollar-mistake/</guid>
       <description>Overview Link to heading This blog article explores the keyword null, a staple in every programmer&amp;rsquo;s daily work. However, should we reconsider the use of null references in our software? Could encountering null in our code actually be harmful? This article aims to address these questions and provide insight into the implications of using null.
-To understand the issue, we must travel back to 1965, when the null reference was invented by Tony Hoare.</description>
+To understand why null exists at all, we must travel back to 1965, when the null reference was invented by Tony Hoare.</description>
     </item>
     
     <item>

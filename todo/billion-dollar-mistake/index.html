@@ -240,15 +240,14 @@ This is terribly wrong! Why?</p>
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
 </span></span></code></pre></div><p>Instead of encapsulating behavior, the caller has to manage an exceptional case (null) that ideally should have been handled inside the object.</p>
 <p><strong>6. Because null references are completely against the object oriented paradigm.</strong></p>
-<p>Null references breaks encapsulation and trust in objects. In OOP, objects should model Real-World Concepts. <code>Null</code> however, don’t represent anything meaningful in the real world. For instance, an object like Car represents a car, but <code>null</code> doesn’t represent &ldquo;no car&rdquo; in an intuitive way — it’s simply the absence of a reference. It even contradicts polymorphism which is a cornerstone of OOP. Polymorphism is allowing objects to define their behavior through interfaces and inheritance. Null references subvert polymorphism because null has no behavior. Developers can&rsquo;t rely on the polymorphic behavior of an object. When null is introduced, it often leads to procedural-style code, with if-statements checking for null scattered throughout the codebase. This undermines the OO principle of objects interacting through well-defined methods, making the code less modular and harder to maintain.</p>
+<p>Null references break encapsulation and the trust in objects. In OOP, objects should model Real-World Concepts. <code>Null</code> however, does not represent anything meaningful in the real world. For instance, an object like Car represents a car, but <code>null</code> doesn’t represent &ldquo;no car&rdquo; in an intuitive way — it’s simply the absence of a reference. It even contradicts polymorphism which is the cornerstone of OOP. Polymorphism is allowing objects to define their behavior through interfaces and inheritance. Null references subvert polymorphism because null has no behavior. Introducing <code>null</code> often leads to procedural-style code, with if-statements checking for null scattered throughout the codebase. This undermines the OO principle of objects interacting through well-defined methods, making the code less modular and harder to maintain.</p>
 <p><strong>7. Because <code>null</code> is an ancient concept that originated in low-level programming languages.</strong></p>
 <p><code>null</code> was originally introduced for languages that used pointers like <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29"  class="external-link" target="_blank" rel="noopener">C</a> for instance. However when programming in Java, we are not thinking about pointers and memory. Instead, we are dealing with objects and references. In <em>&ldquo;Object-Thinking&rdquo;</em>, you think about objects as &ldquo;living organisms&rdquo; or &ldquo;creatures&rdquo;. It is about objects and the messages you send to them and their reaction they send to you. But <code>null</code> does not have any reaction since it is no object!</p>
-<p><strong>8. Because a lot of viruses are designed to exploit null references.</strong></p>
+<p><strong>8. Because a lot of computer viruses are designed to exploit null references.</strong></p>
 <p>Those viruses hope, that some software forgets to check the null references and that they can reach that part in the program.</p>
 <p><strong>9. Because null spreads like a disease</strong></p>
-<p>It is a disease in the entire application. If we allow it to enter our software, then it grows and eventually will infect the entire code.
-There is only black and white. There is no grey color in between. If you use null, then the code is wrong and needs to be refactored. If you do not use null, then the code is clean.</p>
-<p><strong>Yegor&rsquo;s conclusion:</strong> <em>Null references are really bad and they have to be avoided at all cost</em>.</p>
+<p>Null behaves like a disease in our applications. If we allow it to enter our software, then it grows and eventually it will infect the entire code. For instance if a method returns null, you have to insert null-checks for it. These checks propagate as more methods interact with the null-returning method, leading to a domino effect. The need to guard against null infects every layer of the system. When one method allows null as a valid return value or parameter, others must follow suit.</p>
+<p>What does that tell us? When dealing with null, there is only black and white. There is no grey color in between. If you use null, then the code is wrong and needs to be refactored. If you do not use null, then the code is clean.</p>
 <h2 id="three-possible-alternatives-to-null-references">
   Three possible alternatives to null references
   <a class="heading-link" href="#three-possible-alternatives-to-null-references">
@@ -256,8 +255,15 @@ There is only black and white. There is no grey color in between. If you use nul
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>However what should we use instead of null references? Yegor presents three alternatives:</p>
-<p><strong>Alternative #1: Throw an Exception instead of returning <code>null</code>:</strong></p>
+<p>Null references are really bad and they have to be avoided at all cost. It&rsquo;s time to stop null from spreading. But how?</p>
+<p>What should we use instead of null references? Yegor presents three alternatives:</p>
+<h3 id="alternative-1-throw-a-custom-exception-instead-of-returning-null">
+  Alternative #1: Throw a custom Exception instead of returning <code>null</code>:
+  <a class="heading-link" href="#alternative-1-throw-a-custom-exception-instead-of-returning-null">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
 <p>Given the above example, you could simply throw your own exception:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Employee</span> <span class="nf">getByName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
@@ -269,7 +275,13 @@ There is only black and white. There is no grey color in between. If you use nul
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>Yegor&rsquo;s suggestion of throwing an exception also reminds me on the principle <em>&ldquo;Crash Early!&rdquo;</em>, which was formulated in the book <em><a href="https://en.wikipedia.org/wiki/The_Pragmatic_Programmer"  class="external-link" target="_blank" rel="noopener">The Pragmatic Programmer</a></em> (on page 120-121). When your code encounters something that should have been impossible, the program is no longer reliable. Anything it does after that point becomes questionable, so it’s better to stop it as soon as possible. A program that has crashed, typically causes less harm than one that continues to run in a broken state.</p>
-<p><strong>Alternative #2: Return a Null-Object instead of <code>null</code>:</strong></p>
+<h3 id="alternative-2-return-a-null-object-instead-of-null">
+  Alternative #2: Return a Null-Object instead of <code>null</code>:
+  <a class="heading-link" href="#alternative-2-return-a-null-object-instead-of-null">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
 <p>You could use the so-called <em>&ldquo;Null Object Design Pattern&rdquo;</em>. Given the above example, this solution could look like that:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Employee</span> <span class="nf">getByName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
@@ -302,15 +314,22 @@ There is only black and white. There is no grey color in between. If you use nul
 </span></span><span class="line"><span class="cl">        <span class="c1">// do nothing
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><p>wenn du gerade mit Animal Objekten arbeitest aber es gerade kein animal gibt, kannst du anstatt null einfach ein Null-Animal verwenden. Dieses repräsentiert the absence of the animal und macht einfach nichts (siehe methode makeSound()). Das hat den goßen vorteil, dass durch diesen code keine nullpointer exception ausgelöst wird. Nun könnte man natürlich auch in ind er Methode makeSound des NullAnimals eine custom exception werfen:</p>
+</span></span></code></pre></div><p>If you are currently working with Animal objects but there is no animal available, you can use a NullAnimal instead of null. This represents the absence of an animal and simply does nothing (see the makeSound() method). The big advantage is that this approach does not trigger a NullPointerException in your code. Of course, you could also throw a custom exception in the makeSound method of the NullAnimal:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NullAnimal</span> <span class="kd">implements</span> <span class="n">Animal</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">NullAnimalSoundException</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="n">NullAnimalSoundException</span><span class="o">(</span><span class="s">&#34;A NullAnimal cannot make any sound!&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">	<span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>In this situation you might ask yourself: &ldquo;Doesn&rsquo;t a null object just delay the failure to a later point in the code?&rdquo;. And the answer is: Yes, definately! In this case we just delay the moment when the exception is thrown. But the advantage here is, that we as software engineers can &ldquo;control&rdquo; the process in this way. And we can throw meaningful exceptions on our own. Exceptions that contain better information on the failure scenario.</p>
-<p><strong>⚠️ Using Optionals is not an alternative ⚠️</strong></p>
-<p>In Yegor&rsquo;s opinion, the use of <code>java.util.Optional</code> is not a solution at all.</p>
+<p><strong>These two alternatives (throwing custom exceptions and using Null-Objects) are the best ways to deal with null references!</strong></p>
+<h3 id="-using-optionals-is-not-an-alternative-">
+  ⚠️ Using Optionals is not an alternative ⚠️
+  <a class="heading-link" href="#-using-optionals-is-not-an-alternative-">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>In Yegor&rsquo;s opinion, the use of <code>java.util.Optional</code> is not a solution at all. Optionals would deal with the problem scenario in the following way:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Employee</span> <span class="nf">getByName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span><span class="o">(</span><span class="n">id</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">){</span>
@@ -329,22 +348,53 @@ There is only black and white. There is no grey color in between. If you use nul
 <p>To sum up:
 However in most situations probably Alternative#1 is the best solution: just throwing an exception immediately.
 However the first two options (Custom Exceptions and Null-Objects) are the perfect solutions to the null reference problem. In most scenarios, just throwing a custom exception would be the best way to deal with it.</p>
-<p>what does &ldquo;Null-Safe&rdquo; mean?</p>
-<p>Kotlin hat zumindest das Problem versucht zu lösen indem Variablen Nullable oder nicht nullable sein können. Durch das Fragezeichen sieht man dann sofort welchem Objekt man trauen kann und welchem Objekt man nicht trauen kann.</p>
-<h2 id="refutation-of-the-counterarguments">
+<h3 id="kotlins-solution">
+  Kotlin&rsquo;s solution
+  <a class="heading-link" href="#kotlins-solution">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Kotlin has attempted to solve the problem by making variables either nullable or non-nullable. Types are non-nullable by default. If you want a variable to hold a null value, you must explicitly declare it as nullable using <code>?</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Non-nullable variable
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">val</span> <span class="n">nonNullable</span><span class="o">:</span> <span class="n">String</span> <span class="o">=</span> <span class="s">&#34;Hello, Kotlin&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Nullable variable
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">val</span> <span class="n">nullable</span><span class="o">:</span> <span class="n">String</span><span class="o">?</span> <span class="o">=</span> <span class="kc">null</span>
+</span></span></code></pre></div><p>The advantage: The question mark immediately shows which object can be trusted and which object cannot. If you try to call a bethod on a nullable object, the compiler warns you and advises you to insert a null check.</p>
+<p>Kotlin introduced safe calls <code>?.</code> and the elvis operator <code>?:</code> as well:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// if nullable evaluates to null, then .length is not executed and null returned instead.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">val</span> <span class="n">length</span><span class="o">:</span> <span class="n">Int</span><span class="o">?</span> <span class="o">=</span> <span class="n">nullable</span><span class="o">?.</span><span class="na">length</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// provides the default value 0 when nullable?.length evaluates to null.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">val</span> <span class="n">defaultLength</span><span class="o">:</span> <span class="n">Int</span> <span class="o">=</span> <span class="n">nullable</span><span class="o">?.</span><span class="na">length</span> <span class="o">?:</span> <span class="mi">0</span>
+</span></span></code></pre></div><h2 id="refutation-of-the-counterarguments">
   Refutation of the counterarguments
   <a class="heading-link" href="#refutation-of-the-counterarguments">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Counter Argument #1</p>
-<p>Some classes are not suitable for making null object. for example the string class. it is final. When you have a method that is supposed to return a string, then you have no option to return a null class. Like a null string or something like that. In this case you have to either return a string or something else.</p>
-<p>Answer: This is a problem. It is not possible to use null objects everywhere. but if it is not possible - make it possible. for instance with a wrapper. You could wrap/decorate the String class. Introduce your own class &ldquo;Text&rdquo; for instance. For the representation of Null you could use your NoText class and for existing texts you could use the normal Text class.
-But never ever use Null. Just because you could use null it does not mean that you have to do it. Dont let the designers of the java language change your way to think about objects and clean code. Even if java encourage you to use null - dont do it. Be stronger than java!</p>
-<p>Counter Argument #2
-Null is fast and exceptions are slow (Regarding code performance)</p>
-<p>So the argument is that the first code snippet is way less performant than the second code snippet.</p>
+<p>There might be some counterarguments against the usage of <a href="#alternative-1-throw-a-custom-exception-instead-of-returning-null" >Alternative #1</a> and <a href="#alternative-2-return-a-null-object-instead-of-null" >Alternative #2</a> in your mind. Maybe this chapter can still convince you that they are good solutions. 😉</p>
+<h3 id="counter-argument-1">
+  Counter Argument #1:
+  <a class="heading-link" href="#counter-argument-1">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>Why throw a custom exception when we could just let the NullPointerException occur? In the end, the result is the same, right?</strong></p>
+<p>No! There is a big difference between a nullpointer exception raised by the system or a EmployeeNotFoundException thrown manually by us developers. The nullpointerexception is thrown by the JVM, which is outside of our developer&rsquo;s scope, which means we can&rsquo;t control it. But the EmployeeNotFoundException is thrown by our objects so we are in charge, we can control it, we encapsulate this behaviour. Our objects control it and not the java runtime environment. Furthermore, the EmployeeNotFoundException can contain a custom error message written by the developer which is alo important for understanding the whole situation.</p>
+<p>However, it is important that the program flow should not be controlled via exceptions! This is a trap, that developers often fall for.</p>
+<h3 id="counter-argument-2">
+  Counter Argument #2
+  <a class="heading-link" href="#counter-argument-2">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong><code>Null</code> is fast and exceptions are slow (regarding code performance)</strong></p>
+<p>The following two code snippets illustrate this argument. The argument is that the first code snippet is way less performant than the second code snippet.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">try</span><span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Employee</span> <span class="n">jeff</span> <span class="o">=</span> <span class="n">getByName</span><span class="o">(</span><span class="s">&#34;Jeffrey&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">print</span> <span class="n">jeff</span><span class="o">.</span><span class="na">salary</span><span class="o">();</span>
@@ -357,19 +407,21 @@ Null is fast and exceptions are slow (Regarding code performance)</p>
 </span></span><span class="line"><span class="cl"><span class="o">}</span><span class="k">else</span><span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">print</span> <span class="n">jeff</span><span class="o">.</span><span class="na">salary</span><span class="o">();</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><p>Answer:
-That is true. Every exception thrown is a lot of effort for the compiler/runtime. To collect information about what was the cause of the exception, where it was thrown, to build the stack trace, to prepare this information, to stop the program execution, to go to the exceptional flow, &hellip;</p>
-<p>However the speed of the application is way less important of a modern software than the maintainability of it.</p>
-<p>That is also exactly the thing that the Clean Architecture Book taught me. It is way more important to have a software that is easy to maintain, easy to understand, easy to form, easy to adapt, clean coded than the performance.</p>
-<p>Using null is in most cases way faster than using exceptions. Using null will make the life of the computer more easy but it makes the life of the developer more harder and complexer. For companies it costs way more money to deal with an unmaintainable application than to buy new hardware resources that are more efficient/performant.</p>
-<p>Counter Argument #4: Warum eine eigene Exception werfen wenn wir auch gleich die Nullpointerexception auftreten lassen können? Kommt ja auf das selbe raus, oder?</p>
-<p>Antwort: Nein!
-But whats the difference between a nullpointer exception raised by the system or a EmployeeNotFoundException thrown by us manually? There is a big dirreferenc ebecause the nullpointerexception is thrown by the machine by the jvm which is outside of our developer scope which means we cant control it. But the EmployeeNotFoundException is thrown by our objects so we are in charge, we can control it, we encapsulate this behaviour. Our objects control it and not the runtime environment. The EmployeeNotFoundException can contain a custom error message written by me which is alo important for understanding the whole situation. But it is important that you should not control the flow via exceptions! This is a trap that developers often fall for.</p>
+</span></span></code></pre></div><p>This is true. The second code snippet is way faster than the second one! Every exception thrown is a lot of effort for the compiler/runtime. The runtime has to collect information about what was the cause of the exception and where it was thrown, to build the stack trace, to prepare the information, to stop the program execution, to go to the exceptional flow, &hellip;</p>
+<p>However the speed of the application is way less important of a modern software than the maintainability of it is. It is way more important to have a software that is easy to maintain, easy to understand, easy to form, easy to adapt and clean coded than the performance of it.</p>
+<p>Using <code>null</code> is in most cases way faster than using exceptions. Using <code>null</code> will make the life of the computer more easy but it also makes the life of the developer harder and complexer. For companies it costs way more money to deal with an unmaintainable application than to buy new hardware resources that are more efficient/performant.</p>
+<p>Btw. this is also exactly the thing that the whole <a href="#books" >Clean Architecture Book</a> taught me. Even on the first 12 pages of the book, Robert C. Martin explains the importance of maintainability and shows diagrams on how much money companies have lost because their software was not maintainable.</p>
+<h3 id="counter-argument-3">
+  Counter Argument #3
+  <a class="heading-link" href="#counter-argument-3">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>Some classes are not suitable for creating a null object. For example the <code>String</code> class. it is final. When you have a method that is supposed to return a string, then you have no option to return a null class. Like a null string or something like that. In this case you have to either return a string or something else.</strong></p>
+<p>Answer: This is a problem. It is not possible to use null objects everywhere. but if it is not possible - make it possible. for instance with a wrapper. You could wrap/decorate the String class. Introduce your own class &ldquo;Text&rdquo; for instance. For the representation of Null you could use your NoText class and for existing texts you could use the normal Text class.
+But never ever use Null. Just because you could use null it does not mean that you have to do it. Dont let the designers of the java language change your way to think about objects and clean code. Even if java encourage you to use null - dont do it. Be stronger than java!</p>
 <hr>
-<p>So do I now have to define a null object for each domain entity in my system?</p>
-<p>Yegor says: yes in some cases we have that and in some not. It depends on the situation. There may be scenarios where you dont need a null representation of an object because it is always there.</p>
-<p>It is a disease in the entire application. If we allow it to enter our software, then it grows and eventually will infect the entire code.
-There is only black and white. There is no grey color in between. If you use null, then the code is wrong and needs to be refactored. If you do not use null, then the code is clean.</p>
 <p><a href="https://en.wikipedia.org/wiki/Tony_Hoare"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Tony_Hoare</a></p>
 <p><a href="https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6"  class="external-link" target="_blank" rel="noopener">https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6</a></p>
 <p><a href="https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef"  class="external-link" target="_blank" rel="noopener">https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef</a></p>
@@ -386,6 +438,21 @@ There is only black and white. There is no grey color in between. If you use nul
 <p><a href="https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony&#43;Hoare"  class="external-link" target="_blank" rel="noopener">https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony+Hoare</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Null_object_pattern#Java"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Null_object_pattern#Java</a></p>
 <p><a href="https://www.geeksforgeeks.org/null-object-design-pattern/"  class="external-link" target="_blank" rel="noopener">https://www.geeksforgeeks.org/null-object-design-pattern/</a></p>
+<h3 id="books">
+  Books
+  <a class="heading-link" href="#books">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Robert C. Martin: <em>Clean Architecture: A Craftsman&rsquo;s Guide to Software Structure and Design (Robert C. Martin Series)</em>, Publisher: Pearson, Year: 2017, ISBN: 0134494164</p>
+</li>
+<li>
+<p>Pragmatic Programmer</p>
+</li>
+</ul>
 
   </article>
 </section>

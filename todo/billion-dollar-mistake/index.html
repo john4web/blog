@@ -199,13 +199,13 @@
 
 <p>Dijkstra was another luminary in the field of computer science. He was a pioneer of structured programming and famous for the <em>Dijkstra&rsquo;s algorithm</em>. In 1972, he received the Turing Award as well. Dijkstra used humor to illustrate the problem with null references in programming. In a metaphor, he described objects as bachelors and <code>null</code> as a person: <em>&ldquo;If you have a null reference, then every bachelor who you represent in your object structure will seem to be married polyandrously to the same person Null&rdquo;</em>.</p>
 <p>If you search the internet, you&rsquo;ll find many people who view the use of null references as bad coding practice. One of them is <a href="https://www.yegor256.com/about-me.html"  class="external-link" target="_blank" rel="noopener">Yegor Bugayenko</a>. In his <a href="https://www.youtube.com/watch?v=o3aNJX7AP3M"  class="external-link" target="_blank" rel="noopener">video on null references</a>, Yegor presents insightful, practical code examples that highlight the issues associated with working with null values, while also offering effective solutions. The following chapters summarize Yegor Bugayenko&rsquo;s video and his perspectives on null references:</p>
-<h1 id="four-reasons-to-avoid-null-references">
-  Four reasons to avoid null references
-  <a class="heading-link" href="#four-reasons-to-avoid-null-references">
+<h2 id="nine-reasons-to-avoid-null-references">
+  Nine reasons to avoid null references
+  <a class="heading-link" href="#nine-reasons-to-avoid-null-references">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h1>
+</h2>
 <p>The following code snippet shows a method that fetches an employee object from a database:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Employee</span> <span class="nf">getByName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
@@ -222,21 +222,40 @@ This is terribly wrong! Why?</p>
 </span></span></code></pre></div><p>If there is no employee with the name &ldquo;Jeffrey&rdquo; in the database, then the above code throws a nullpointer exception.</p>
 <p>There is no such thing as:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kc">null</span><span class="o">.</span><span class="na">salary</span><span class="o">();</span>
-</span></span></code></pre></div><p><strong>2. Because it is technically difficult to trace the causes of these exceptions.</strong>
-Most of the time, there is a lack of context in stack traces. Usually, the stack trace points to the line where the exception happened but not to the specific variable or expression that was null.
-Modern programs with complex or nested code structures, delayed execution and lambdas make it even harder to debug.</p>
-<p><strong>3. Because <code>null</code> was originally introduced for languages that used pointers like <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29"  class="external-link" target="_blank" rel="noopener">C</a> for instance.</strong></p>
-<p>But in Java, we are dealing with objects and references. In <em>&ldquo;Object-Thinking&rdquo;</em>, you are not thinking about pointers and memory. Rather, you think about objects as &ldquo;living organisms&rdquo; or &ldquo;creatures&rdquo;. It is about objects and the messages you send to them and their reaction they send to you. But <code>null</code> does not have any reaction since it is no object!</p>
-<p><strong>4. Because a lot of viruses are designed to exploit null references.</strong></p>
+</span></span></code></pre></div><p><strong>2. Because it is technically difficult to trace the causes of nullpointer exceptions.</strong></p>
+<p>Most of the time, there is a lack of context in stack traces. Usually, the stack trace points to the line where the nullpointer exception happened but not to the specific variable or expression that was <code>null</code>. Modern programs with complex and nested code structures, with delayed execution and with lambdas make it even harder to debug.</p>
+<p><strong>3. Because null references destroy our trust to the objects we are working with.</strong></p>
+<p>When not using null in our code, we can trust, that objects will be objects. We can trust that they will look like objects and they will behave like objects. But when we are using null references in our code, then we cannot trust our objects anymore. We can not rely on objects to be self sufficient anymore.</p>
+<p>Let&rsquo;s assume, we have a method that claims to return an object. When we now call this method and suddenly it returns something that is not an object, then our entire thinking is changed. Then we don&rsquo;t know anymore what is <code>null</code> and what is not <code>null</code>. Then we start to suspect all the objects that they are not objects anymore, even though they might actually still be. We suspect all the variables and everything that we are working with that it is not good enough. We cannot know whether we can &ldquo;touch&rdquo; the variables or not because they could be <code>null</code> and then the code breaks if we try to access them. In this way objects are not real objects anymore and they are not following the contract we are expecting.</p>
+<p><strong>4. Because you have to insert countless null checks in your code.</strong></p>
+<p>The previously mentioned trust issues bring another disadvantage: You <strong>always</strong> have to check if variables are <code>null</code> before you can do something with them to avoid NullpointerExceptions. You have to add those null-checks <strong>everywhere</strong> to make sure that your program works reliable. In this way, the code base grows and grows and the methods and classes become longer and longer. The code becomes cluttered, unclear and hard to understand/maintain. This is the opposite of the &ldquo;Clean Code&rdquo; approach!</p>
+<p><strong>5. Because null references violate the core idea of encapsulation.</strong></p>
+<p>Null references violate encapsulation by exposing internal states indirectly and making external code responsible for handling the consequences. This undermines the very essence of objects being self-contained and reliable entities. With proper encapsulation, objects manage their behavior internally and provide meaningful defaults or throw specific exceptions if something goes wrong. Returning null avoids this responsibility, leaving the caller to guess what went wrong or what to do next.</p>
+<p>When a method can return null instead of an actual object, the calling code must explicitly check for null to avoid exceptions. This shifts the responsibility of managing the object&rsquo;s internal state to the external code. For example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">someMethod</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">obj</span><span class="o">.</span><span class="na">doSomething</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Handle null case
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span></code></pre></div><p>Instead of encapsulating behavior, the caller has to manage an exceptional case (null) that ideally should have been handled inside the object.</p>
+<p><strong>6. Because null references are completely against the object oriented paradigm.</strong></p>
+<p>Null references breaks encapsulation and trust in objects. In OOP, objects should model Real-World Concepts. <code>Null</code> however, don’t represent anything meaningful in the real world. For instance, an object like Car represents a car, but <code>null</code> doesn’t represent &ldquo;no car&rdquo; in an intuitive way — it’s simply the absence of a reference. It even contradicts polymorphism which is a cornerstone of OOP. Polymorphism is allowing objects to define their behavior through interfaces and inheritance. Null references subvert polymorphism because null has no behavior. Developers can&rsquo;t rely on the polymorphic behavior of an object. When null is introduced, it often leads to procedural-style code, with if-statements checking for null scattered throughout the codebase. This undermines the OO principle of objects interacting through well-defined methods, making the code less modular and harder to maintain.</p>
+<p><strong>7. Because <code>null</code> is an ancient concept that originated in low-level programming languages.</strong></p>
+<p><code>null</code> was originally introduced for languages that used pointers like <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29"  class="external-link" target="_blank" rel="noopener">C</a> for instance. However when programming in Java, we are not thinking about pointers and memory. Instead, we are dealing with objects and references. In <em>&ldquo;Object-Thinking&rdquo;</em>, you think about objects as &ldquo;living organisms&rdquo; or &ldquo;creatures&rdquo;. It is about objects and the messages you send to them and their reaction they send to you. But <code>null</code> does not have any reaction since it is no object!</p>
+<p><strong>8. Because a lot of viruses are designed to exploit null references.</strong></p>
 <p>Those viruses hope, that some software forgets to check the null references and that they can reach that part in the program.</p>
+<p><strong>9. Because null spreads like a disease</strong></p>
+<p>It is a disease in the entire application. If we allow it to enter our software, then it grows and eventually will infect the entire code.
+There is only black and white. There is no grey color in between. If you use null, then the code is wrong and needs to be refactored. If you do not use null, then the code is clean.</p>
 <p><strong>Yegor&rsquo;s conclusion:</strong> <em>Null references are really bad and they have to be avoided at all cost</em>.</p>
-<h1 id="three-possible-alternatives-to-null-references">
+<h2 id="three-possible-alternatives-to-null-references">
   Three possible alternatives to null references
   <a class="heading-link" href="#three-possible-alternatives-to-null-references">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h1>
+</h2>
 <p>However what should we use instead of null references? Yegor presents three alternatives:</p>
 <p><strong>Alternative #1: Throw an Exception instead of returning <code>null</code>:</strong></p>
 <p>Given the above example, you could simply throw your own exception:</p>
@@ -261,7 +280,12 @@ Modern programs with complex or nested code structures, delayed execution and la
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>In this case, the class NoEmployee could implement the same interface as Employee but in a different way than the Employee.</p>
 <p>So how does the null object pattern work?</p>
-<p>UML Bild</p>
+<figure><img src="/images/billion-dollar-mistake/null-pattern.svg"
+         alt="Components of Null Object Design Pattern. The Client depends on the DependencyBase. The Dependency and the NullDependency implement this interface in different ways. Source: geeksforgeeks.org"/><figcaption>
+            <p>Components of Null Object Design Pattern. The Client depends on the <code>DependencyBase</code>. The <code>Dependency</code> and the <code>NullDependency</code> implement this interface in different ways. Source: <a href="https://www.geeksforgeeks.org"  class="external-link" target="_blank" rel="noopener">geeksforgeeks.org</a></p>
+        </figcaption>
+</figure>
+
 <p>A code-example of this pattern in action:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
@@ -278,39 +302,13 @@ Modern programs with complex or nested code structures, delayed execution and la
 </span></span><span class="line"><span class="cl">        <span class="c1">// do nothing
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><p>For example:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Employable</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="nf">getSalary</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">NameNotFoundException</span><span class="o">;</span>
+</span></span></code></pre></div><p>wenn du gerade mit Animal Objekten arbeitest aber es gerade kein animal gibt, kannst du anstatt null einfach ein Null-Animal verwenden. Dieses repräsentiert the absence of the animal und macht einfach nichts (siehe methode makeSound()). Das hat den goßen vorteil, dass durch diesen code keine nullpointer exception ausgelöst wird. Nun könnte man natürlich auch in ind er Methode makeSound des NullAnimals eine custom exception werfen:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NullAnimal</span> <span class="kd">implements</span> <span class="n">Animal</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">NullAnimalSoundException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="n">NullAnimalSoundException</span><span class="o">(</span><span class="s">&#34;A NullAnimal cannot make any sound!&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Employee</span> <span class="kd">implements</span> <span class="n">Employable</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="o">...</span>
-</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getSalary</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">salary</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    <span class="o">...</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><p>Maybe your software needs to return default values for Null Objects or throw exceptions:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NoEmployee</span> <span class="kd">implements</span> <span class="n">Employable</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="o">...</span>
-</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getSalary</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mf">0.0</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">NameNotFoundException</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="n">NameNotFoundException</span><span class="o">(</span><span class="s">&#34;Name not found for this non-existing employee.&#34;</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    <span class="o">...</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><p>Maybe this example is not the best for explaining the advantages of not using null but you get the general idea. Null-Objects are used more in other situations. For Domain Entities like DTOs, they are only used in rare cases. You might ask yourself now: &ldquo;Doesn&rsquo;t a null object just delay the failure?&rdquo; Yes, definately! For instance when taking a look at the <code>getName()</code> method, we just delay the moment when the exception is thrown. But the advantage here is, that we can &ldquo;control&rdquo; the process in this way. And we can throw meaningful exceptions on our own. However in most situations Alternative#1 is the best solution: just throwing an exception immediately.</p>
+</span></span></code></pre></div><p>In this situation you might ask yourself: &ldquo;Doesn&rsquo;t a null object just delay the failure to a later point in the code?&rdquo;. And the answer is: Yes, definately! In this case we just delay the moment when the exception is thrown. But the advantage here is, that we as software engineers can &ldquo;control&rdquo; the process in this way. And we can throw meaningful exceptions on our own. Exceptions that contain better information on the failure scenario.</p>
 <p><strong>⚠️ Using Optionals is not an alternative ⚠️</strong></p>
 <p>In Yegor&rsquo;s opinion, the use of <code>java.util.Optional</code> is not a solution at all.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Employee</span> <span class="nf">getByName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
@@ -328,19 +326,18 @@ Modern programs with complex or nested code structures, delayed execution and la
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>An Optional is kind of a container including one or zero elements.</p>
 <p>Using Optionals is not a good idea. Why? Because it is not a solution for null references. It is the same as null references. The optional container is not an Object by itself. It is just a temporary memory structure which holds a real object. You still have to check if the optional contains an employee or if it has no employee. It is something that is presented as the solution of the null reference problem but actually it is not. Es verschiebt das problem nur an einen späteren Ort im Code.</p>
-<p>However the first two options (Custom Exceptions and Null-Objects) are the perfect solutions to the null reference problem. In most scenarios, just throwing a custom exception would be the best way to deal with it.</p>
-<p>Null references violate the entire idea of encapsulation and it breaks/destroys the trust to the objects we are working with. It is a disease in the entire application. If we allow it to enter our software, then it grows and eventually will infect the entire code. Null references are telling me that I should not trust my objects. By using the word trust, I mean that i can rely on them to be self sufficient. I can rely on them that they will be objects for me. They will look like objects and they will behave like objects. When I am getting something that is not an Object, then the entire thinking is changed. Then I don&rsquo;t know anymore what is null and what not. I start to suspect all the object, all the variables, everything that I am working with that they are not good enough. That they are not objects anymore. I cannot know whether i can touch the variables because it could be null and then it breaks if i try to access it. objects are not real objects. they are not following the contract I am expecting. So you always have to check if an object is null or not.
-So the code grows and the methods will become longer and longer because you have to check everywhere if an object is null before you can do something with it.
-Null References are completely against the Object oriented mentality/thinking/paradigm.</p>
+<p>To sum up:
+However in most situations probably Alternative#1 is the best solution: just throwing an exception immediately.
+However the first two options (Custom Exceptions and Null-Objects) are the perfect solutions to the null reference problem. In most scenarios, just throwing a custom exception would be the best way to deal with it.</p>
 <p>what does &ldquo;Null-Safe&rdquo; mean?</p>
 <p>Kotlin hat zumindest das Problem versucht zu lösen indem Variablen Nullable oder nicht nullable sein können. Durch das Fragezeichen sieht man dann sofort welchem Objekt man trauen kann und welchem Objekt man nicht trauen kann.</p>
-<h1 id="counter-arguments">
-  Counter Arguments
-  <a class="heading-link" href="#counter-arguments">
+<h2 id="refutation-of-the-counterarguments">
+  Refutation of the counterarguments
+  <a class="heading-link" href="#refutation-of-the-counterarguments">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h1>
+</h2>
 <p>Counter Argument #1</p>
 <p>Some classes are not suitable for making null object. for example the string class. it is final. When you have a method that is supposed to return a string, then you have no option to return a null class. Like a null string or something like that. In this case you have to either return a string or something else.</p>
 <p>Answer: This is a problem. It is not possible to use null objects everywhere. but if it is not possible - make it possible. for instance with a wrapper. You could wrap/decorate the String class. Introduce your own class &ldquo;Text&rdquo; for instance. For the representation of Null you could use your NoText class and for existing texts you could use the normal Text class.
@@ -371,7 +368,8 @@ But whats the difference between a nullpointer exception raised by the system or
 <hr>
 <p>So do I now have to define a null object for each domain entity in my system?</p>
 <p>Yegor says: yes in some cases we have that and in some not. It depends on the situation. There may be scenarios where you dont need a null representation of an object because it is always there.</p>
-<p>There is only black and white. There is no grey color in between. If you use null, then the code is wrong and needs to be refactored. If you do not use null, then the code is clean.</p>
+<p>It is a disease in the entire application. If we allow it to enter our software, then it grows and eventually will infect the entire code.
+There is only black and white. There is no grey color in between. If you use null, then the code is wrong and needs to be refactored. If you do not use null, then the code is clean.</p>
 <p><a href="https://en.wikipedia.org/wiki/Tony_Hoare"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Tony_Hoare</a></p>
 <p><a href="https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6"  class="external-link" target="_blank" rel="noopener">https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6</a></p>
 <p><a href="https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef"  class="external-link" target="_blank" rel="noopener">https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef</a></p>

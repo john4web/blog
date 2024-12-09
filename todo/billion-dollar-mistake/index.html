@@ -215,7 +215,7 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>If the database does not find the employee, the method returns <code>null</code> instead of returning an instance of <code>Employee</code>.
-This is terribly wrong! Why?</p>
+This is terribly wrong! <strong>But why?</strong> Here, I present you 9 reasons why this is terribly wrong:</p>
 <p><strong>1. Because it may cause many nullpointer exceptions in the code.</strong></p>
 <p>For example:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">getByName</span><span class="o">(</span><span class="s">&#34;Jeffrey&#34;</span><span class="o">).</span><span class="na">salary</span><span class="o">();</span>
@@ -225,29 +225,31 @@ This is terribly wrong! Why?</p>
 </span></span></code></pre></div><p><strong>2. Because it is technically difficult to trace the causes of nullpointer exceptions.</strong></p>
 <p>Most of the time, there is a lack of context in stack traces. Usually, the stack trace points to the line where the nullpointer exception happened but not to the specific variable or expression that was <code>null</code>. Modern programs with complex and nested code structures, with delayed execution and with lambdas make it even harder to debug.</p>
 <p><strong>3. Because null references destroy our trust to the objects we are working with.</strong></p>
-<p>When not using null in our code, we can trust, that objects will be objects. We can trust that they will look like objects and they will behave like objects. But when we are using null references in our code, then we cannot trust our objects anymore. We can not rely on objects to be self sufficient anymore.</p>
-<p>Let&rsquo;s assume, we have a method that claims to return an object. When we now call this method and suddenly it returns something that is not an object, then our entire thinking is changed. Then we don&rsquo;t know anymore what is <code>null</code> and what is not <code>null</code>. Then we start to suspect all the objects that they are not objects anymore, even though they might actually still be. We suspect all the variables and everything that we are working with that it is not good enough. We cannot know whether we can &ldquo;touch&rdquo; the variables or not because they could be <code>null</code> and then the code breaks if we try to access them. In this way objects are not real objects anymore and they are not following the contract we are expecting.</p>
+<p>When we do not use <code>null</code> in our code, we can trust, that objects will be objects. We can trust that objects will look like objects and that objects will behave like objects. However, when we introduce null references into our code, then we cannot trust our objects anymore. They are no longer reliable or self-sufficient.</p>
+<p>Let’s assume we have a method that claims to return an object. If this method unexpectedly returns something that isn’t an object, it disrupts our entire reasoning. We can no longer be certain about what is <code>null</code> and what is not <code>null</code>, leaving us in a state of uncertainty.</p>
+<p>Then we start to suspect all objects that they are no objects anymore, even though they might actually still be. We suspect all the variables and everything that we are working with that it is not good enough. We cannot know whether we can &ldquo;touch&rdquo; the variables or not because they could be <code>null</code> and then the code breaks if we try to access them. In this way objects are not real objects anymore and they are not following the contract we are expecting.</p>
 <p><strong>4. Because you have to insert countless null checks in your code.</strong></p>
-<p>The previously mentioned trust issues bring another disadvantage: You <strong>always</strong> have to check if variables are <code>null</code> before you can do something with them to avoid NullpointerExceptions. You have to add those null-checks <strong>everywhere</strong> to make sure that your program works reliable. In this way, the code base grows and grows and the methods and classes become longer and longer. The code becomes cluttered, unclear and hard to understand/maintain. This is the opposite of the &ldquo;Clean Code&rdquo; approach!</p>
+<p>The previously mentioned trust issues bring another disadvantage: You <strong>always</strong> have to check if variables are <code>null</code> before you can do something with them. You have to add those null-checks <strong>everywhere</strong> to make sure that your program works reliable and avoids NullpointerExceptions. In this way, the code base grows and grows and the methods/classes become longer and longer. The code becomes cluttered, unclear and hard to understand/maintain. This is the opposite of the &ldquo;Clean Code&rdquo; approach!</p>
 <p><strong>5. Because null references violate the core idea of encapsulation.</strong></p>
-<p>Null references violate encapsulation by exposing internal states indirectly and making external code responsible for handling the consequences. This undermines the very essence of objects being self-contained and reliable entities. With proper encapsulation, objects manage their behavior internally and provide meaningful defaults or throw specific exceptions if something goes wrong. Returning null avoids this responsibility, leaving the caller to guess what went wrong or what to do next.</p>
-<p>When a method can return null instead of an actual object, the calling code must explicitly check for null to avoid exceptions. This shifts the responsibility of managing the object&rsquo;s internal state to the external code. For example:</p>
+<p>When a method can return <code>null</code> instead of an actual object, the calling code must explicitly check for <code>null</code> to avoid exceptions. This shifts the responsibility of managing the object&rsquo;s internal state to the external code. For example:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">someMethod</span><span class="o">();</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">obj</span><span class="o">.</span><span class="na">doSomething</span><span class="o">();</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// Handle null case
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
-</span></span></code></pre></div><p>Instead of encapsulating behavior, the caller has to manage an exceptional case (null) that ideally should have been handled inside the object.</p>
+</span></span></code></pre></div><p>Instead of encapsulating behavior, the caller has to manage an exceptional case (<code>null</code>) that ideally should have been handled inside the object. In this way,null references violate encapsulation. Internal states are exposed and external code is forced to handle the consequences. This undermines the very essence of objects being self-contained and reliable entities. With proper encapsulation, objects manage their behavior internally and provide meaningful defaults or throw specific exceptions if something goes wrong. Returning <code>null</code> avoids this responsibility, leaving the caller to guess what went wrong or what to do next.</p>
 <p><strong>6. Because null references are completely against the object oriented paradigm.</strong></p>
-<p>Null references break encapsulation and the trust in objects. In OOP, objects should model Real-World Concepts. <code>Null</code> however, does not represent anything meaningful in the real world. For instance, an object like Car represents a car, but <code>null</code> doesn’t represent &ldquo;no car&rdquo; in an intuitive way — it’s simply the absence of a reference. It even contradicts polymorphism which is the cornerstone of OOP. Polymorphism is allowing objects to define their behavior through interfaces and inheritance. Null references subvert polymorphism because null has no behavior. Introducing <code>null</code> often leads to procedural-style code, with if-statements checking for null scattered throughout the codebase. This undermines the OO principle of objects interacting through well-defined methods, making the code less modular and harder to maintain.</p>
+<p>Null references break encapsulation and the trust in objects. In OOP, objects should model Real-World-Concepts. <code>Null</code> however, does not represent anything meaningful in the real world. For instance, an object like <code>Car</code> represents a car, but <code>null</code> doesn’t represent &ldquo;no car&rdquo; in an intuitive way — it’s simply the absence of a reference.</p>
+<p>In my opinion, polymorphism is <strong>the key principle of OOP</strong> (I explain why in <a href="https://gersti.at/posts/polymorphism/#the-pillars-of-oop"  class="external-link" target="_blank" rel="noopener">this</a> article). However <code>null</code> even contradicts polymorphism. Polymorphism lets objects define how they behave using interfaces and inheritance. Null references break this because <code>null</code> doesn&rsquo;t have any behavior. <code>Null</code> can&rsquo;t inherit! <code>Null</code> can&rsquo;t implement interfaces!</p>
+<p>Furthermore, introducing <code>null</code> often leads to procedural-style code, with if-statements checking for null scattered throughout the codebase. This undermines the OO principle of objects interacting through well-defined methods, making the code less modular and harder to maintain.</p>
 <p><strong>7. Because <code>null</code> is an ancient concept that originated in low-level programming languages.</strong></p>
-<p><code>null</code> was originally introduced for languages that used pointers like <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29"  class="external-link" target="_blank" rel="noopener">C</a> for instance. However when programming in Java, we are not thinking about pointers and memory. Instead, we are dealing with objects and references. In <em>&ldquo;Object-Thinking&rdquo;</em>, you think about objects as &ldquo;living organisms&rdquo; or &ldquo;creatures&rdquo;. It is about objects and the messages you send to them and their reaction they send to you. But <code>null</code> does not have any reaction since it is no object!</p>
+<p><code>Null</code> was originally introduced in languages that use pointers, like <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29"  class="external-link" target="_blank" rel="noopener">C</a> for instance. However, when programming in Java, we don&rsquo;t think about pointers or memory. Instead, we deal with objects and references. In <em>&ldquo;Object-Thinking&rdquo;</em>, we view objects as &ldquo;living organisms&rdquo; or &ldquo;creatures.&rdquo; The thinking is about objects, the messages you send to them, and the reactions they send back to us. But <code>null</code> doesn&rsquo;t have any reaction since it is not an object!</p>
 <p><strong>8. Because a lot of computer viruses are designed to exploit null references.</strong></p>
-<p>Those viruses hope, that some software forgets to check the null references and that they can reach that part in the program.</p>
-<p><strong>9. Because null spreads like a disease</strong></p>
-<p>Null behaves like a disease in our applications. If we allow it to enter our software, then it grows and eventually it will infect the entire code. For instance if a method returns null, you have to insert null-checks for it. These checks propagate as more methods interact with the null-returning method, leading to a domino effect. The need to guard against null infects every layer of the system. When one method allows null as a valid return value or parameter, others must follow suit.</p>
-<p>What does that tell us? When dealing with null, there is only black and white. There is no grey color in between. If you use null, then the code is wrong and needs to be refactored. If you do not use null, then the code is clean.</p>
+<p>Those viruses hope that some software forgets to check the null references and that they can reach that part in the program.</p>
+<p><strong>9. Because null spreads like a disease.</strong></p>
+<p><code>Null</code> behaves like a disease in our applications. If we allow it to enter our software, it grows and eventually infects the entire code. For instance, if a method returns null, you have to insert null-checks for it. These checks spread as more methods interact with the null-returning method, leading to a domino effect. The need to protect against <code>null</code> infects every layer of the system. When one method allows <code>null</code> as a valid return value or parameter, others must follow suit.</p>
+<p>What do these 9 reasons tell us? When it comes to <code>null</code>, there is no middle ground — it&rsquo;s either black or white. Using <code>null</code> means the code is flawed and needs refactoring. Avoiding <code>null</code> results in clean, reliable code.</p>
 <h2 id="three-possible-alternatives-to-null-references">
   Three possible alternatives to null references
   <a class="heading-link" href="#three-possible-alternatives-to-null-references">
@@ -255,10 +257,9 @@ This is terribly wrong! Why?</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Null references are really bad and they have to be avoided at all cost. It&rsquo;s time to stop null from spreading. But how?</p>
-<p>What should we use instead of null references? Yegor presents three alternatives:</p>
+<p>NNow we know, that null references are really bad and that they have to be avoided at all cost. But how? What should we use instead of null references? Yegor presents two alternatives:</p>
 <h3 id="alternative-1-throw-a-custom-exception-instead-of-returning-null">
-  Alternative #1: Throw a custom Exception instead of returning <code>null</code>:
+  Alternative #1: Throw a Custom Exception instead of returning <code>null</code>:
   <a class="heading-link" href="#alternative-1-throw-a-custom-exception-instead-of-returning-null">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
@@ -361,7 +362,7 @@ However the first two options (Custom Exceptions and Null-Objects) are the perfe
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Nullable variable
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">val</span> <span class="n">nullable</span><span class="o">:</span> <span class="n">String</span><span class="o">?</span> <span class="o">=</span> <span class="kc">null</span>
-</span></span></code></pre></div><p>The advantage: The question mark immediately shows which object can be trusted and which object cannot. If you try to call a bethod on a nullable object, the compiler warns you and advises you to insert a null check.</p>
+</span></span></code></pre></div><p>The advantage: The question mark immediately shows which object can be trusted and which object cannot. If you try to call a method on a nullable object, the compiler warns you and advises you to insert a null-check.</p>
 <p>Kotlin introduced safe calls <code>?.</code> and the elvis operator <code>?:</code> as well:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// if nullable evaluates to null, then .length is not executed and null returned instead.
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">val</span> <span class="n">length</span><span class="o">:</span> <span class="n">Int</span><span class="o">?</span> <span class="o">=</span> <span class="n">nullable</span><span class="o">?.</span><span class="na">length</span>
@@ -421,23 +422,21 @@ However the first two options (Custom Exceptions and Null-Objects) are the perfe
 <p><strong>Some classes are not suitable for creating a null object. For example the <code>String</code> class. it is final. When you have a method that is supposed to return a string, then you have no option to return a null class. Like a null string or something like that. In this case you have to either return a string or something else.</strong></p>
 <p>Answer: This is a problem. It is not possible to use null objects everywhere. but if it is not possible - make it possible. for instance with a wrapper. You could wrap/decorate the String class. Introduce your own class &ldquo;Text&rdquo; for instance. For the representation of Null you could use your NoText class and for existing texts you could use the normal Text class.
 But never ever use Null. Just because you could use null it does not mean that you have to do it. Dont let the designers of the java language change your way to think about objects and clean code. Even if java encourage you to use null - dont do it. Be stronger than java!</p>
-<hr>
-<p><a href="https://en.wikipedia.org/wiki/Tony_Hoare"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Tony_Hoare</a></p>
-<p><a href="https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6"  class="external-link" target="_blank" rel="noopener">https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6</a></p>
-<p><a href="https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef"  class="external-link" target="_blank" rel="noopener">https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef</a></p>
-<p><a href="https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485"  class="external-link" target="_blank" rel="noopener">https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Null_object_pattern"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Null_object_pattern</a></p>
-<p>Zusammenfassung aus diesem Video schreiben:
-<a href="https://www.youtube.com/watch?v=o3aNJX7AP3M"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=o3aNJX7AP3M</a></p>
-<p>The billion dollar mistake (Tony Hoare)
-<a href="https://www.youtube.com/watch?v=YYkOWzrO3xg"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YYkOWzrO3xg</a></p>
-<p>Article:
-<a href="https://www.yegor256.com/2014/05/13/why-null-is-bad.html"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/2014/05/13/why-null-is-bad.html</a></p>
-<p><a href="https://www.yegor256.com/2016/03/22/try-finally-if-not-null.html"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/2016/03/22/try-finally-if-not-null.html</a></p>
-<p><a href="https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/"  class="external-link" target="_blank" rel="noopener">https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/</a></p>
-<p><a href="https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony&#43;Hoare"  class="external-link" target="_blank" rel="noopener">https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony+Hoare</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Null_object_pattern#Java"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Null_object_pattern#Java</a></p>
-<p><a href="https://www.geeksforgeeks.org/null-object-design-pattern/"  class="external-link" target="_blank" rel="noopener">https://www.geeksforgeeks.org/null-object-design-pattern/</a></p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>I hope you enjoyed my article about null references. Whether you&rsquo;re a fan or a critic of <code>null</code>, I’d like to leave you with one final thought: I believe it’s incredibly important to question common development practices that we usually take for granted. Some things, like the use of <code>null</code>, are often accepted by developers as a given. But just because something exists and is used by a lot of people doesn’t automatically mean that it’s a good thing. So next time you’re at the office, grab a coffee and chat with your fellow programmers — even about the overlooked aspects of programming. ☕😊</p>
+<h2 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
 <h3 id="books">
   Books
   <a class="heading-link" href="#books">
@@ -450,8 +449,54 @@ But never ever use Null. Just because you could use null it does not mean that y
 <p>Robert C. Martin: <em>Clean Architecture: A Craftsman&rsquo;s Guide to Software Structure and Design (Robert C. Martin Series)</em>, Publisher: Pearson, Year: 2017, ISBN: 0134494164</p>
 </li>
 <li>
-<p>Pragmatic Programmer</p>
+<p>Andrew Hunt, David Thomas: <em>The Pragmatic Programmer: From Journeyman to Master</em>, Publisher: Addison-Wesley, Year: 2000, ISBN: 020161622X</p>
 </li>
+</ul>
+<h3 id="videos">
+  Videos
+  <a class="heading-link" href="#videos">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Zusammenfassung aus diesem Video schreiben:
+<a href="https://www.youtube.com/watch?v=o3aNJX7AP3M"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=o3aNJX7AP3M</a></p>
+<p>The billion dollar mistake (Tony Hoare)
+<a href="https://www.youtube.com/watch?v=YYkOWzrO3xg"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YYkOWzrO3xg</a></p>
+<h3 id="blog-articles">
+  Blog Articles
+  <a class="heading-link" href="#blog-articles">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><a href="https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6"  class="external-link" target="_blank" rel="noopener">https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6</a></p>
+<p><a href="https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef"  class="external-link" target="_blank" rel="noopener">https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef</a></p>
+<p><a href="https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485"  class="external-link" target="_blank" rel="noopener">https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485</a></p>
+<p><a href="https://www.yegor256.com/2014/05/13/why-null-is-bad.html"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/2014/05/13/why-null-is-bad.html</a></p>
+<p><a href="https://www.yegor256.com/2016/03/22/try-finally-if-not-null.html"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/2016/03/22/try-finally-if-not-null.html</a></p>
+<h3 id="websites">
+  Websites
+  <a class="heading-link" href="#websites">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><a href="https://en.wikipedia.org/wiki/Null_object_pattern"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Null_object_pattern</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Tony_Hoare"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Tony_Hoare</a></p>
+<p><a href="https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/"  class="external-link" target="_blank" rel="noopener">https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/</a></p>
+<p><a href="https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony&#43;Hoare"  class="external-link" target="_blank" rel="noopener">https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony+Hoare</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Null_object_pattern#Java"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Null_object_pattern#Java</a></p>
+<p><a href="https://www.geeksforgeeks.org/null-object-design-pattern/"  class="external-link" target="_blank" rel="noopener">https://www.geeksforgeeks.org/null-object-design-pattern/</a></p>
+<h3 id="ai">
+  AI
+  <a class="heading-link" href="#ai">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>ChatGPt</li>
 </ul>
 
   </article>

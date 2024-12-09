@@ -153,12 +153,12 @@ According to him, inheritance could also be practiced in C already (albeit with 
 > Using an OO language makes polymorphism trivial. That fact provides an enormous power that old C programmers could only dream of. On this basis, we can conclude that OO imposes discipline on indirect transfer of control.<br>
 > — <cite>Robert C. Martin | Clean Architecture S. 42</cite>
 
-Martin describes polymorphism as particularly powerful because it decouples dependencies between components and allows systems to be designed in a more modular and easily extendable way. The keyword here is "Plugin Architecture."
+Martin describes polymorphism as particularly powerful because it decouples dependencies between components and allows systems to be designed in a more modular and easily extendable way. The important keyword is "Plugin Architecture"!
 
 > OO is the ability, through the use of polymorphism, to gain absolute control over every source code dependency in the system. It allows the architect to create a plugin architecture, in which modules that contain high-level policies are independent of modules that contain low-level details. The low-level details are relegated to plugin modules that can be deployed and developed independently from the modules that contain high-level policies.<br>
 > — <cite>Robert C. Martin | Clean Architecture S. 47</cite>
 
-From this quote, I conclude that the ability to apply the Dependency Inversion Principle (DIP) in a straightforward way is the fundamental characteristic of object-oriented programming. This principle is based on the use of polymorphism. Without polymorphism, there is no DIP. Therefore, I would personally say that the most important foundational characteristic of OOP is polymorphism.
+From this quote, I conclude that the ability to apply the _Dependency Inversion Principle (DIP)_ in a straightforward way is the fundamental characteristic of object-oriented programming. This principle is based on the use of polymorphism. Without polymorphism, there is no _DIP_. Therefore, I would personally say that the most important foundational characteristic of OOP is polymorphism.
 
 ## Reference
 

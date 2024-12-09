@@ -49,7 +49,7 @@ public Employee getByName(String name){
 ```
 
 If the database does not find the employee, the method returns `null` instead of returning an instance of `Employee`.
-This is terribly wrong! Why?
+This is terribly wrong! **But why?** Here, I present you 9 reasons why this is terribly wrong:
 
 **1. Because it may cause many nullpointer exceptions in the code.**
 
@@ -70,19 +70,19 @@ Most of the time, there is a lack of context in stack traces. Usually, the stack
 
 **3. Because null references destroy our trust to the objects we are working with.**
 
-When not using null in our code, we can trust, that objects will be objects. We can trust that they will look like objects and they will behave like objects. But when we are using null references in our code, then we cannot trust our objects anymore. We can not rely on objects to be self sufficient anymore.  
+When we do not use `null` in our code, we can trust, that objects will be objects. We can trust that objects will look like objects and that objects will behave like objects. However, when we introduce null references into our code, then we cannot trust our objects anymore. They are no longer reliable or self-sufficient.
 
-Let's assume, we have a method that claims to return an object. When we now call this method and suddenly it returns something that is not an object, then our entire thinking is changed. Then we don't know anymore what is ``null`` and what is not ``null``. Then we start to suspect all the objects that they are not objects anymore, even though they might actually still be. We suspect all the variables and everything that we are working with that it is not good enough. We cannot know whether we can "touch" the variables or not because they could be `null` and then the code breaks if we try to access them. In this way objects are not real objects anymore and they are not following the contract we are expecting.
+Let’s assume we have a method that claims to return an object. If this method unexpectedly returns something that isn’t an object, it disrupts our entire reasoning. We can no longer be certain about what is ``null`` and what is not ``null``, leaving us in a state of uncertainty.
+
+Then we start to suspect all objects that they are no objects anymore, even though they might actually still be. We suspect all the variables and everything that we are working with that it is not good enough. We cannot know whether we can "touch" the variables or not because they could be `null` and then the code breaks if we try to access them. In this way objects are not real objects anymore and they are not following the contract we are expecting.
 
 **4. Because you have to insert countless null checks in your code.**
 
-The previously mentioned trust issues bring another disadvantage: You **always** have to check if variables are `null` before you can do something with them to avoid NullpointerExceptions. You have to add those null-checks **everywhere** to make sure that your program works reliable. In this way, the code base grows and grows and the methods and classes become longer and longer. The code becomes cluttered, unclear and hard to understand/maintain. This is the opposite of the "Clean Code" approach!
+The previously mentioned trust issues bring another disadvantage: You **always** have to check if variables are `null` before you can do something with them. You have to add those null-checks **everywhere** to make sure that your program works reliable and avoids NullpointerExceptions. In this way, the code base grows and grows and the methods/classes become longer and longer. The code becomes cluttered, unclear and hard to understand/maintain. This is the opposite of the "Clean Code" approach!
 
 **5. Because null references violate the core idea of encapsulation.**
 
-Null references violate encapsulation by exposing internal states indirectly and making external code responsible for handling the consequences. This undermines the very essence of objects being self-contained and reliable entities. With proper encapsulation, objects manage their behavior internally and provide meaningful defaults or throw specific exceptions if something goes wrong. Returning null avoids this responsibility, leaving the caller to guess what went wrong or what to do next.  
-
-When a method can return null instead of an actual object, the calling code must explicitly check for null to avoid exceptions. This shifts the responsibility of managing the object's internal state to the external code. For example:
+When a method can return ``null`` instead of an actual object, the calling code must explicitly check for ``null`` to avoid exceptions. This shifts the responsibility of managing the object's internal state to the external code. For example:
 
 ```java
 Object obj = someMethod();
@@ -93,33 +93,35 @@ if (obj != null) {
 }
 ```
 
-Instead of encapsulating behavior, the caller has to manage an exceptional case (null) that ideally should have been handled inside the object.
+Instead of encapsulating behavior, the caller has to manage an exceptional case (``null``) that ideally should have been handled inside the object. In this way,null references violate encapsulation. Internal states are exposed and external code is forced to handle the consequences. This undermines the very essence of objects being self-contained and reliable entities. With proper encapsulation, objects manage their behavior internally and provide meaningful defaults or throw specific exceptions if something goes wrong. Returning ``null`` avoids this responsibility, leaving the caller to guess what went wrong or what to do next.
 
 **6. Because null references are completely against the object oriented paradigm.**
 
-Null references break encapsulation and the trust in objects. In OOP, objects should model Real-World Concepts. `Null` however, does not represent anything meaningful in the real world. For instance, an object like Car represents a car, but `null` doesn’t represent "no car" in an intuitive way — it’s simply the absence of a reference. It even contradicts polymorphism which is the cornerstone of OOP. Polymorphism is allowing objects to define their behavior through interfaces and inheritance. Null references subvert polymorphism because null has no behavior. Introducing `null` often leads to procedural-style code, with if-statements checking for null scattered throughout the codebase. This undermines the OO principle of objects interacting through well-defined methods, making the code less modular and harder to maintain.
+Null references break encapsulation and the trust in objects. In OOP, objects should model Real-World-Concepts. `Null` however, does not represent anything meaningful in the real world. For instance, an object like ``Car`` represents a car, but `null` doesn’t represent "no car" in an intuitive way — it’s simply the absence of a reference. 
+
+In my opinion, polymorphism is **the key principle of OOP** (I explain why in [this](https://gersti.at/posts/polymorphism/#the-pillars-of-oop) article). However ``null`` even contradicts polymorphism. Polymorphism lets objects define how they behave using interfaces and inheritance. Null references break this because ``null`` doesn't have any behavior. ``Null`` can't inherit! ``Null`` can't implement interfaces!
+
+Furthermore, introducing `null` often leads to procedural-style code, with if-statements checking for null scattered throughout the codebase. This undermines the OO principle of objects interacting through well-defined methods, making the code less modular and harder to maintain.
 
 **7. Because `null` is an ancient concept that originated in low-level programming languages.**
 
-`null` was originally introduced for languages that used pointers like [C](https://en.wikipedia.org/wiki/C_(programming_language)) for instance. However when programming in Java, we are not thinking about pointers and memory. Instead, we are dealing with objects and references. In _"Object-Thinking"_, you think about objects as "living organisms" or "creatures". It is about objects and the messages you send to them and their reaction they send to you. But `null` does not have any reaction since it is no object!
+`Null` was originally introduced in languages that use pointers, like [C](https://en.wikipedia.org/wiki/C_(programming_language)) for instance. However, when programming in Java, we don't think about pointers or memory. Instead, we deal with objects and references. In _"Object-Thinking"_, we view objects as "living organisms" or "creatures." The thinking is about objects, the messages you send to them, and the reactions they send back to us. But ``null`` doesn't have any reaction since it is not an object!
 
 **8. Because a lot of computer viruses are designed to exploit null references.**
 
-Those viruses hope, that some software forgets to check the null references and that they can reach that part in the program.
+Those viruses hope that some software forgets to check the null references and that they can reach that part in the program.
 
-**9. Because null spreads like a disease** 
+**9. Because null spreads like a disease.** 
 
-Null behaves like a disease in our applications. If we allow it to enter our software, then it grows and eventually it will infect the entire code. For instance if a method returns null, you have to insert null-checks for it. These checks propagate as more methods interact with the null-returning method, leading to a domino effect. The need to guard against null infects every layer of the system. When one method allows null as a valid return value or parameter, others must follow suit. 
+``Null`` behaves like a disease in our applications. If we allow it to enter our software, it grows and eventually infects the entire code. For instance, if a method returns null, you have to insert null-checks for it. These checks spread as more methods interact with the null-returning method, leading to a domino effect. The need to protect against ``null`` infects every layer of the system. When one method allows ``null`` as a valid return value or parameter, others must follow suit. 
 
-What does that tell us? When dealing with null, there is only black and white. There is no grey color in between. If you use null, then the code is wrong and needs to be refactored. If you do not use null, then the code is clean.
+What do these 9 reasons tell us? When it comes to `null`, there is no middle ground — it's either black or white. Using `null` means the code is flawed and needs refactoring. Avoiding `null` results in clean, reliable code.
 
 ## Three possible alternatives to null references
 
-Null references are really bad and they have to be avoided at all cost. It's time to stop null from spreading. But how?
+NNow we know, that null references are really bad and that they have to be avoided at all cost. But how? What should we use instead of null references? Yegor presents two alternatives:
 
-What should we use instead of null references? Yegor presents three alternatives:
-
-### Alternative #1: Throw a custom Exception instead of returning `null`:
+### Alternative #1: Throw a Custom Exception instead of returning `null`:
 
 Given the above example, you could simply throw your own exception:
 
@@ -233,7 +235,7 @@ val nonNullable: String = "Hello, Kotlin"
 val nullable: String? = null
 ```
 
-The advantage: The question mark immediately shows which object can be trusted and which object cannot. If you try to call a bethod on a nullable object, the compiler warns you and advises you to insert a null check.
+The advantage: The question mark immediately shows which object can be trusted and which object cannot. If you try to call a method on a nullable object, the compiler warns you and advises you to insert a null-check.
 
 Kotlin introduced safe calls ``?.`` and the elvis operator ``?:`` as well:
 
@@ -296,19 +298,19 @@ Btw. this is also exactly the thing that the whole [Clean Architecture Book](#bo
 Answer: This is a problem. It is not possible to use null objects everywhere. but if it is not possible - make it possible. for instance with a wrapper. You could wrap/decorate the String class. Introduce your own class "Text" for instance. For the representation of Null you could use your NoText class and for existing texts you could use the normal Text class.
 But never ever use Null. Just because you could use null it does not mean that you have to do it. Dont let the designers of the java language change your way to think about objects and clean code. Even if java encourage you to use null - dont do it. Be stronger than java! 
 
+## Conclusion
 
+I hope you enjoyed my article about null references. Whether you're a fan or a critic of `null`, I’d like to leave you with one final thought: I believe it’s incredibly important to question common development practices that we usually take for granted. Some things, like the use of `null`, are often accepted by developers as a given. But just because something exists and is used by a lot of people doesn’t automatically mean that it’s a good thing. So next time you’re at the office, grab a coffee and chat with your fellow programmers — even about the overlooked aspects of programming. ☕😊
 
----------- 
+## Reference
 
-https://en.wikipedia.org/wiki/Tony_Hoare
+### Books
 
-https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6
+- Robert C. Martin: _Clean Architecture: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series)_, Publisher: Pearson, Year: 2017, ISBN: 0134494164
 
-https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef
+- Andrew Hunt, David Thomas: _The Pragmatic Programmer: From Journeyman to Master_, Publisher: Addison-Wesley, Year: 2000, ISBN: 020161622X
 
-https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485
-
-https://en.wikipedia.org/wiki/Null_object_pattern 
+### Videos
 
 Zusammenfassung aus diesem Video schreiben:
 https://www.youtube.com/watch?v=o3aNJX7AP3M 
@@ -316,10 +318,27 @@ https://www.youtube.com/watch?v=o3aNJX7AP3M
 The billion dollar mistake (Tony Hoare)
 https://www.youtube.com/watch?v=YYkOWzrO3xg 
 
-Article:
+
+### Blog Articles
+
+https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6
+
+https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef
+
+https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485
+
 https://www.yegor256.com/2014/05/13/why-null-is-bad.html
 
+
 https://www.yegor256.com/2016/03/22/try-finally-if-not-null.html
+
+
+### Websites
+
+https://en.wikipedia.org/wiki/Null_object_pattern 
+
+https://en.wikipedia.org/wiki/Tony_Hoare
+
 
 https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/ 
 
@@ -329,8 +348,6 @@ https://en.wikipedia.org/wiki/Null_object_pattern#Java
 
 https://www.geeksforgeeks.org/null-object-design-pattern/
 
-### Books
+### AI
 
-- Robert C. Martin: _Clean Architecture: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series)_, Publisher: Pearson, Year: 2017, ISBN: 0134494164
-
-- Pragmatic Programmer
+- ChatGPt

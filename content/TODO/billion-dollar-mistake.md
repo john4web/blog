@@ -8,7 +8,7 @@ description = "The downsides of using NULL-References explained"
 
 This blog article explores the keyword `null`, a staple in every programmer's daily work. Should we reconsider the use of null references in our software? Could encountering `null` in our code actually be harmful? This article aims to address these questions and provide insight into the implications of using `null`.
 
-{{< figure src="/images/billion-dollar-mistake/oppenheimer.webp" caption="Robert Oppenheimer's regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare's regret over introducing the null reference (Image-Source: Movie: [Oppenheimer (2023) by Christoph Nolan](https://en.wikipedia.org/wiki/Oppenheimer_(film))).">}}
+{{< figure src="/images/billion-dollar-mistake/oppenheimer.webp" width="80%" caption="Robert Oppenheimer's regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare's regret over introducing the null reference (Image-Source: Movie: [Oppenheimer (2023) by Christoph Nolan](https://en.wikipedia.org/wiki/Oppenheimer_(film))).">}}
 
 To understand why `null` exists at all, we must travel back to 1965, when the null reference was invented by Tony Hoare. In a renowned lecture in 2009, while accepting the Turing Award, Hoare famously referred to the creation of null references as his *"billion-dollar mistake"*:
 
@@ -251,7 +251,7 @@ val defaultLength: Int = nullable?.length ?: 0
 
 There might be some counterarguments against the usage of [Alternative #1](#alternative-1-throw-a-custom-exception-instead-of-returning-null) and [Alternative #2](#alternative-2-return-a-null-object-instead-of-null) in your mind. Maybe this chapter can still convince you that they are good solutions. 😉
 
-### Counter Argument #1:
+### Counterargument #1:
 
 **Why throw a custom exception when we could just let the NullPointerException occur? In the end, the result is the same, right?**
 
@@ -259,11 +259,11 @@ No! There is a big difference between a nullpointer exception raised by the syst
 
 However, it is important that the program flow should not be controlled via exceptions! This is a trap, that developers often fall for.
 
-### Counter Argument #2
+### Counterargument #2
 
-**`Null` is fast and exceptions are slow (regarding code performance)**
+**`Null` is fast and exceptions are slow (regarding code performance)!**
 
-The following two code snippets illustrate this argument. The argument is that the first code snippet is way less performant than the second code snippet.
+The following two code snippets illustrate this argument. The argument is that the first code snippet is significantly less performant than the second one.
 
 ```java
 try{
@@ -283,20 +283,17 @@ if(jeff == null){
 }
 ```
 
-This is true. The second code snippet is way faster than the second one! Every exception thrown is a lot of effort for the compiler/runtime. The runtime has to collect information about what was the cause of the exception and where it was thrown, to build the stack trace, to prepare the information, to stop the program execution, to go to the exceptional flow, ...
+This is true! The second code snippet is way faster than the first one! Every exception thrown requires significant effort from the compiler and runtime. The runtime must collect information about the cause of the exception and where it was thrown, build the stack trace, prepare the necessary details, halt the program's normal execution, and transition to the exceptional flow,...
 
-However the speed of the application is way less important of a modern software than the maintainability of it is. It is way more important to have a software that is easy to maintain, easy to understand, easy to form, easy to adapt and clean coded than the performance of it.  
+However, the speed of an application is far less important in modern software than its maintainability. It is much more important to have software that is easy to maintain, understand, modify, adapt, and cleanly coded than to focus on its performance.
 
-Using ``null`` is in most cases way faster than using exceptions. Using ``null`` will make the life of the computer more easy but it also makes the life of the developer harder and complexer. For companies it costs way more money to deal with an unmaintainable application than to buy new hardware resources that are more efficient/performant.
+Using ``null`` is, in most cases, much faster than using exceptions. While ``null`` makes the computer's job easier, it complicates the developer's work. For companies, it is far more expensive to deal with an unmaintainable application than to invest in new, more efficient hardware resources. This is also exactly the thing that the whole [Clean Architecture Book](#books) taught me. Even within the first 12 pages, Robert C. Martin emphasizes the importance of maintainability and provides diagrams illustrating how much money companies have lost due to unmaintainable software.
 
-Btw. this is also exactly the thing that the whole [Clean Architecture Book](#books) taught me. Even on the first 12 pages of the book, Robert C. Martin explains the importance of maintainability and shows diagrams on how much money companies have lost because their software was not maintainable.
+### Counterargument #3
 
-### Counter Argument #3
+**Some classes are not suitable for creating a null object. Consider the ``String`` class as an example. This is a ``final`` class which means it can't be extended or reimplemented by somebody else. In this case, the null object pattern is not applicable. When you have a method that is supposed to return a ``String``, you do not have the option to return a null class, such as a null string or something similar.**
 
-**Some classes are not suitable for creating a null object. For example the ``String`` class. it is final. When you have a method that is supposed to return a string, then you have no option to return a null class. Like a null string or something like that. In this case you have to either return a string or something else.**
-
-Answer: This is a problem. It is not possible to use null objects everywhere. but if it is not possible - make it possible. for instance with a wrapper. You could wrap/decorate the String class. Introduce your own class "Text" for instance. For the representation of Null you could use your NoText class and for existing texts you could use the normal Text class.
-But never ever use Null. Just because you could use null it does not mean that you have to do it. Dont let the designers of the java language change your way to think about objects and clean code. Even if java encourage you to use null - dont do it. Be stronger than java! 
+It is not possible to use null objects everywhere but if it is not possible, then make it possible. In this specific case you could wrap or decorate the ``String`` class. Introduce your own class ``Text`` for instance which internally uses a ``String``. For the representation of ``null`` you could use your ``NoText`` class and for existing texts you could use the normal ``Text`` class. But never ever use ``null``. There is always an alternative to that!
 
 ## Conclusion
 
@@ -312,10 +309,8 @@ I hope you enjoyed my article about null references. Whether you're a fan or a c
 
 ### Videos
 
-Zusammenfassung aus diesem Video schreiben:
 https://www.youtube.com/watch?v=o3aNJX7AP3M 
 
-The billion dollar mistake (Tony Hoare)
 https://www.youtube.com/watch?v=YYkOWzrO3xg 
 
 

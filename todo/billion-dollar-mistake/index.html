@@ -161,7 +161,7 @@
 </h2>
 <p>This blog article explores the keyword <code>null</code>, a staple in every programmer&rsquo;s daily work. Should we reconsider the use of null references in our software? Could encountering <code>null</code> in our code actually be harmful? This article aims to address these questions and provide insight into the implications of using <code>null</code>.</p>
 <figure><img src="/images/billion-dollar-mistake/oppenheimer.webp"
-         alt="Robert Oppenheimer&amp;rsquo;s regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare&amp;rsquo;s regret over introducing the null reference (Image-Source: Movie: Oppenheimer (2023) by Christoph Nolan)."/><figcaption>
+         alt="Robert Oppenheimer&amp;rsquo;s regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare&amp;rsquo;s regret over introducing the null reference (Image-Source: Movie: Oppenheimer (2023) by Christoph Nolan)." width="80%"/><figcaption>
             <p>Robert Oppenheimer&rsquo;s regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare&rsquo;s regret over introducing the null reference (Image-Source: Movie: <a href="https://en.wikipedia.org/wiki/Oppenheimer_%28film%29"  class="external-link" target="_blank" rel="noopener">Oppenheimer (2023) by Christoph Nolan</a>).</p>
         </figcaption>
 </figure>
@@ -377,9 +377,9 @@ However the first two options (Custom Exceptions and Null-Objects) are the perfe
   </a>
 </h2>
 <p>There might be some counterarguments against the usage of <a href="#alternative-1-throw-a-custom-exception-instead-of-returning-null" >Alternative #1</a> and <a href="#alternative-2-return-a-null-object-instead-of-null" >Alternative #2</a> in your mind. Maybe this chapter can still convince you that they are good solutions. 😉</p>
-<h3 id="counter-argument-1">
-  Counter Argument #1:
-  <a class="heading-link" href="#counter-argument-1">
+<h3 id="counterargument-1">
+  Counterargument #1:
+  <a class="heading-link" href="#counterargument-1">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
@@ -387,15 +387,15 @@ However the first two options (Custom Exceptions and Null-Objects) are the perfe
 <p><strong>Why throw a custom exception when we could just let the NullPointerException occur? In the end, the result is the same, right?</strong></p>
 <p>No! There is a big difference between a nullpointer exception raised by the system or a EmployeeNotFoundException thrown manually by us developers. The nullpointerexception is thrown by the JVM, which is outside of our developer&rsquo;s scope, which means we can&rsquo;t control it. But the EmployeeNotFoundException is thrown by our objects so we are in charge, we can control it, we encapsulate this behaviour. Our objects control it and not the java runtime environment. Furthermore, the EmployeeNotFoundException can contain a custom error message written by the developer which is alo important for understanding the whole situation.</p>
 <p>However, it is important that the program flow should not be controlled via exceptions! This is a trap, that developers often fall for.</p>
-<h3 id="counter-argument-2">
-  Counter Argument #2
-  <a class="heading-link" href="#counter-argument-2">
+<h3 id="counterargument-2">
+  Counterargument #2
+  <a class="heading-link" href="#counterargument-2">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
-<p><strong><code>Null</code> is fast and exceptions are slow (regarding code performance)</strong></p>
-<p>The following two code snippets illustrate this argument. The argument is that the first code snippet is way less performant than the second code snippet.</p>
+<p><strong><code>Null</code> is fast and exceptions are slow (regarding code performance)!</strong></p>
+<p>The following two code snippets illustrate this argument. The argument is that the first code snippet is significantly less performant than the second one.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">try</span><span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">Employee</span> <span class="n">jeff</span> <span class="o">=</span> <span class="n">getByName</span><span class="o">(</span><span class="s">&#34;Jeffrey&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">print</span> <span class="n">jeff</span><span class="o">.</span><span class="na">salary</span><span class="o">();</span>
@@ -408,20 +408,18 @@ However the first two options (Custom Exceptions and Null-Objects) are the perfe
 </span></span><span class="line"><span class="cl"><span class="o">}</span><span class="k">else</span><span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">print</span> <span class="n">jeff</span><span class="o">.</span><span class="na">salary</span><span class="o">();</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><p>This is true. The second code snippet is way faster than the second one! Every exception thrown is a lot of effort for the compiler/runtime. The runtime has to collect information about what was the cause of the exception and where it was thrown, to build the stack trace, to prepare the information, to stop the program execution, to go to the exceptional flow, &hellip;</p>
-<p>However the speed of the application is way less important of a modern software than the maintainability of it is. It is way more important to have a software that is easy to maintain, easy to understand, easy to form, easy to adapt and clean coded than the performance of it.</p>
-<p>Using <code>null</code> is in most cases way faster than using exceptions. Using <code>null</code> will make the life of the computer more easy but it also makes the life of the developer harder and complexer. For companies it costs way more money to deal with an unmaintainable application than to buy new hardware resources that are more efficient/performant.</p>
-<p>Btw. this is also exactly the thing that the whole <a href="#books" >Clean Architecture Book</a> taught me. Even on the first 12 pages of the book, Robert C. Martin explains the importance of maintainability and shows diagrams on how much money companies have lost because their software was not maintainable.</p>
-<h3 id="counter-argument-3">
-  Counter Argument #3
-  <a class="heading-link" href="#counter-argument-3">
+</span></span></code></pre></div><p>This is true! The second code snippet is way faster than the first one! Every exception thrown requires significant effort from the compiler and runtime. The runtime must collect information about the cause of the exception and where it was thrown, build the stack trace, prepare the necessary details, halt the program&rsquo;s normal execution, and transition to the exceptional flow,&hellip;</p>
+<p>However, the speed of an application is far less important in modern software than its maintainability. It is much more important to have software that is easy to maintain, understand, modify, adapt, and cleanly coded than to focus on its performance.</p>
+<p>Using <code>null</code> is, in most cases, much faster than using exceptions. While <code>null</code> makes the computer&rsquo;s job easier, it complicates the developer&rsquo;s work. For companies, it is far more expensive to deal with an unmaintainable application than to invest in new, more efficient hardware resources. This is also exactly the thing that the whole <a href="#books" >Clean Architecture Book</a> taught me. Even within the first 12 pages, Robert C. Martin emphasizes the importance of maintainability and provides diagrams illustrating how much money companies have lost due to unmaintainable software.</p>
+<h3 id="counterargument-3">
+  Counterargument #3
+  <a class="heading-link" href="#counterargument-3">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
-<p><strong>Some classes are not suitable for creating a null object. For example the <code>String</code> class. it is final. When you have a method that is supposed to return a string, then you have no option to return a null class. Like a null string or something like that. In this case you have to either return a string or something else.</strong></p>
-<p>Answer: This is a problem. It is not possible to use null objects everywhere. but if it is not possible - make it possible. for instance with a wrapper. You could wrap/decorate the String class. Introduce your own class &ldquo;Text&rdquo; for instance. For the representation of Null you could use your NoText class and for existing texts you could use the normal Text class.
-But never ever use Null. Just because you could use null it does not mean that you have to do it. Dont let the designers of the java language change your way to think about objects and clean code. Even if java encourage you to use null - dont do it. Be stronger than java!</p>
+<p><strong>Some classes are not suitable for creating a null object. Consider the <code>String</code> class as an example. This is a <code>final</code> class which means it can&rsquo;t be extended or reimplemented by somebody else. In this case, the null object pattern is not applicable. When you have a method that is supposed to return a <code>String</code>, you do not have the option to return a null class, such as a null string or something similar.</strong></p>
+<p>It is not possible to use null objects everywhere but if it is not possible, then make it possible. In this specific case you could wrap or decorate the <code>String</code> class. Introduce your own class <code>Text</code> for instance which internally uses a <code>String</code>. For the representation of <code>null</code> you could use your <code>NoText</code> class and for existing texts you could use the normal <code>Text</code> class. But never ever use <code>null</code>. There is always an alternative to that!</p>
 <h2 id="conclusion">
   Conclusion
   <a class="heading-link" href="#conclusion">
@@ -459,10 +457,8 @@ But never ever use Null. Just because you could use null it does not mean that y
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
-<p>Zusammenfassung aus diesem Video schreiben:
-<a href="https://www.youtube.com/watch?v=o3aNJX7AP3M"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=o3aNJX7AP3M</a></p>
-<p>The billion dollar mistake (Tony Hoare)
-<a href="https://www.youtube.com/watch?v=YYkOWzrO3xg"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YYkOWzrO3xg</a></p>
+<p><a href="https://www.youtube.com/watch?v=o3aNJX7AP3M"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=o3aNJX7AP3M</a></p>
+<p><a href="https://www.youtube.com/watch?v=YYkOWzrO3xg"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YYkOWzrO3xg</a></p>
 <h3 id="blog-articles">
   Blog Articles
   <a class="heading-link" href="#blog-articles">

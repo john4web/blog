@@ -747,6 +747,3 @@ IntStream.rangeClosed(1, 5)
 - Stack-Overflow Article: _Why does Stream#findAny() exist?_, URL: https://stackoverflow.com/questions/73235495/why-does-streamfindany-exist, Last Access: 13th September 2024.
 
 - Baeldung-Article: _Java Stream findFirst() vs. findAny()_, URL: https://www.baeldung.com/java-stream-findfirst-vs-findany, Last Access: 13th September 2024.
-
-## AI
-- ChatGPT helped me a lot to understand how each stream api method works and provided me some useful examples (which I also included in this blog post).

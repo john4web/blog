@@ -126,7 +126,3 @@ It is crucial to emphasize that CQRS is an architectural style, not a universal 
 - Wikipedia-Article: _Command–query separation_, URL: https://en.wikipedia.org/wiki/Command%E2%80%93query_separation, Last Access: 21st November 2024.
 
 - Wikipedia-Article: _Command-Query-Responsibility-Segregation_, URL: https://de.wikipedia.org/wiki/Command-Query-Responsibility-Segregation, Last Access: 21st November 2024.
-
-### AI
-
-- ChatGPt

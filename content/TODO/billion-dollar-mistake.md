@@ -309,31 +309,27 @@ I hope you enjoyed my article about null references. Whether you're a fan or a c
 
 ### Videos
 
-https://www.youtube.com/watch?v=o3aNJX7AP3M 
+- Video from Yegor Bugayenko: _What is Wrong About NULL in OOP? (webinar #3)_, URL: https://www.youtube.com/watch?v=o3aNJX7AP3M, Last Access: 15th December 2024.
 
-https://www.youtube.com/watch?v=YYkOWzrO3xg 
-
+- Speech from Tony Hoare: _Null References The Billion Dollar Mistake_, QCon London 2009, URL: https://www.youtube.com/watch?v=YYkOWzrO3xg, Last Access: 15th December 2024.
 
 ### Blog Articles
 
-https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6
+- Blog-Article from Maximiliano Contieri: _NULL: The Billion Dollar Mistake_, URL: https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6, Posted on April 14th 2020, Last Access: 15th December 2024.
 
-https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef
+- Blog-Article from Aphinya Dechalert: _How null references became the “Billion Dollar Mistake”_, URL: https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef, Posted on August 23rd 2023, Last Access: 15th December 2024.
 
-https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485
+- Blog-Article from Amanda Hinchman: _Null Pointer References: The Billion Dollar Mistake_, URL:https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485, Posted on April 2nd 2018, Last Access: 15th December 2024.
 
-https://www.yegor256.com/2014/05/13/why-null-is-bad.html
+- Blog-Article from Yegor Bugayenko: _Why NULL is Bad?_, URL: https://www.yegor256.com/2014/05/13/why-null-is-bad.html, Posted on May 13rd 2014, Last Access: 15th December 2024.
 
-
-https://www.yegor256.com/2016/03/22/try-finally-if-not-null.html
-
+- Blog-Article from Yegor Bugayenko: _Try. Finally. If. Not. Null._, URL: https://www.yegor256.com/2016/03/22/try-finally-if-not-null.html, Posted on March 22nd 2016, Last Access: 15th December 2024.
 
 ### Websites
 
 https://en.wikipedia.org/wiki/Null_object_pattern 
 
 https://en.wikipedia.org/wiki/Tony_Hoare
-
 
 https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/ 
 
@@ -342,7 +338,3 @@ https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/spe
 https://en.wikipedia.org/wiki/Null_object_pattern#Java
 
 https://www.geeksforgeeks.org/null-object-design-pattern/
-
-### AI
-
-- ChatGPt

@@ -169,7 +169,3 @@ Aus diesem Zitat schließe ich, dass die Möglichkeit zur Anwendung des Dependen
 - Video von "CodingWithJohn": _Upcasting and Downcasting in Java - Full Tutorial_, URL: https://www.youtube.com/watch?v=HpuH7n9VOYk, letzter Aufruf: 05.10.2024.
 
 - Video von Christopher Okhravi: _Downcasting Is A Code Smell | Code Walks 043_, URL: https://www.youtube.com/watch?v=ECTyHSZUv0c, letzter Aufruf: 05.10.2024.
-
-### AI
-
-- ChatGPt

@@ -173,7 +173,3 @@ From this quote, I conclude that the ability to apply the _Dependency Inversion 
 - Video from "CodingWithJohn": _Upcasting and Downcasting in Java - Full Tutorial_, URL: https://www.youtube.com/watch?v=HpuH7n9VOYk, Last access: 05.10.2024.
 
 - Video from Christopher Okhravi: _Downcasting Is A Code Smell | Code Walks 043_, URL: https://www.youtube.com/watch?v=ECTyHSZUv0c, Last access: 05.10.2024.
-
-### AI
-
-- ChatGPt

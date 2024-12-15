@@ -8,7 +8,7 @@ description = "The downsides of using NULL-References explained"
 
 This blog article explores the keyword `null`, a staple in every programmer's daily work. Should we reconsider the use of null references in our software? Could encountering `null` in our code actually be harmful? This article aims to address these questions and provide insight into the implications of using `null`.
 
-{{< figure src="/images/billion-dollar-mistake/oppenheimer.webp" width="80%" caption="Robert Oppenheimer's regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare's regret over introducing the null reference (Image-Source: Movie: [Oppenheimer (2023) by Christoph Nolan](https://en.wikipedia.org/wiki/Oppenheimer_(film))).">}}
+{{< figure src="/images/billion-dollar-mistake/oppenheimer.webp" width="80%" caption="Robert Oppenheimer's regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare's regret over introducing the null reference (Image-Source: Movie: [Oppenheimer (2023) by Christopher Nolan](https://en.wikipedia.org/wiki/Oppenheimer_(film))).">}}
 
 To understand why `null` exists at all, we must travel back to 1965, when the null reference was invented by Tony Hoare. In a renowned lecture in 2009, while accepting the Turing Award, Hoare famously referred to the creation of null references as his *"billion-dollar mistake"*:
 
@@ -115,11 +115,13 @@ Those viruses hope that some software forgets to check the null references and t
 
 ``Null`` behaves like a disease in our applications. If we allow it to enter our software, it grows and eventually infects the entire code. For instance, if a method returns null, you have to insert null-checks for it. These checks spread as more methods interact with the null-returning method, leading to a domino effect. The need to protect against ``null`` infects every layer of the system. When one method allows ``null`` as a valid return value or parameter, others must follow suit. 
 
+**Conclusion**
+
 What do these 9 reasons tell us? When it comes to `null`, there is no middle ground — it's either black or white. Using `null` means the code is flawed and needs refactoring. Avoiding `null` results in clean, reliable code.
 
 ## Three possible alternatives to null references
 
-NNow we know, that null references are really bad and that they have to be avoided at all cost. But how? What should we use instead of null references? Yegor presents two alternatives:
+Now we know, that null references are really bad and that they have to be avoided at all cost. But how? What should we use instead of null references? Yegor presents two alternatives:
 
 ### Alternative #1: Throw a Custom Exception instead of returning `null`:
 
@@ -162,35 +164,35 @@ A code-example of this pattern in action:
 
 ```java
 public interface Animal {
-	void makeSound();
+    void makeSound();
 }
 
 public class Dog implements Animal {
-	public void makeSound() {
-		System.out.println("woof!");
-	}
+    public void makeSound() {
+        System.out.println("woof!");
+    }
 }
 
 public class NullAnimal implements Animal {
-	public void makeSound() {
+    public void makeSound() {
         // do nothing
-	}
+    }
 }
 ```
 
-If you are currently working with Animal objects but there is no animal available, you can use a NullAnimal instead of null. This represents the absence of an animal and simply does nothing (see the makeSound() method). The big advantage is that this approach does not trigger a NullPointerException in your code. Of course, you could also throw a custom exception in the makeSound method of the NullAnimal:
+If you are currently working with ``Animal`` objects but there is no animal available, you can use a ``NullAnimal`` instead of ``null``. This represents the absence of an animal and simply does nothing (see the makeSound() method). The big advantage is that this approach does not trigger a NullPointerException in your code. Of course, you could also throw a custom exception in the makeSound() method of the ``NullAnimal``:
 
 ```java
 public class NullAnimal implements Animal {
-	public void makeSound() throws NullAnimalSoundException {
+    public void makeSound() throws NullAnimalSoundException {
         throw new NullAnimalSoundException("A NullAnimal cannot make any sound!");
-	}
+    }
 }
 ```
 
 In this situation you might ask yourself: "Doesn't a null object just delay the failure to a later point in the code?". And the answer is: Yes, definately! In this case we just delay the moment when the exception is thrown. But the advantage here is, that we as software engineers can "control" the process in this way. And we can throw meaningful exceptions on our own. Exceptions that contain better information on the failure scenario.
 
-**These two alternatives (throwing custom exceptions and using Null-Objects) are the best ways to deal with null references!**
+**These two alternatives (throwing custom exceptions and using Null-Objects) are the best ways to deal with null references!** In most situations probably ``Alternative#1`` is the best solution: just throwing an exception immediately.
 
 ### ⚠️ Using Optionals is not an alternative ⚠️
 
@@ -211,17 +213,13 @@ Optional<Employee> opt = getByName("Jeffrey");
 if(opt.has()){
     opt.get().salary();
 }else{
-    print "sorry"
+    System.out.println("sorry");
 }
 ```
 
 An Optional is kind of a container including one or zero elements.
 
-Using Optionals is not a good idea. Why? Because it is not a solution for null references. It is the same as null references. The optional container is not an Object by itself. It is just a temporary memory structure which holds a real object. You still have to check if the optional contains an employee or if it has no employee. It is something that is presented as the solution of the null reference problem but actually it is not. Es verschiebt das problem nur an einen späteren Ort im Code.
-
-To sum up:
-However in most situations probably Alternative#1 is the best solution: just throwing an exception immediately.
-However the first two options (Custom Exceptions and Null-Objects) are the perfect solutions to the null reference problem. In most scenarios, just throwing a custom exception would be the best way to deal with it.
+Using Optionals is not a good idea. Why? Because it is not a solution for null references. It is the same as null references. The optional container is not an Object by itself. It is just a temporary memory structure which holds a real object. You still have to check if the optional contains an employee or if it has no employee. It is something that is presented as the solution of the null reference problem but actually it is not.
 
 ### Kotlin's solution
 
@@ -255,7 +253,7 @@ There might be some counterarguments against the usage of [Alternative #1](#alte
 
 **Why throw a custom exception when we could just let the NullPointerException occur? In the end, the result is the same, right?**
 
-No! There is a big difference between a nullpointer exception raised by the system or a EmployeeNotFoundException thrown manually by us developers. The nullpointerexception is thrown by the JVM, which is outside of our developer's scope, which means we can't control it. But the EmployeeNotFoundException is thrown by our objects so we are in charge, we can control it, we encapsulate this behaviour. Our objects control it and not the java runtime environment. Furthermore, the EmployeeNotFoundException can contain a custom error message written by the developer which is alo important for understanding the whole situation.  
+No! There is a big difference between a NullpointerException raised by the system or a EmployeeNotFoundException thrown manually by us developers. The NullpointerException is thrown by the JVM, which is outside of our developer's scope, which means we can't control it. But the EmployeeNotFoundException is thrown by our objects so we are in charge, we can control it, we encapsulate this behaviour. Our objects control it and not the Java Runtime Environment. Furthermore, the EmployeeNotFoundException can contain a custom error message written by the developer which is alo important for understanding the whole situation.  
 
 However, it is important that the program flow should not be controlled via exceptions! This is a trap, that developers often fall for.
 
@@ -268,18 +266,18 @@ The following two code snippets illustrate this argument. The argument is that t
 ```java
 try{
     Employee jeff = getByName("Jeffrey");
-    print jeff.salary();
+    System.out.println(jeff.salary());
 }catch(EmployeeNotFoundException ex){
-    print "no jeffrey here"
+     System.out.println("no jeffrey here");
 }
 ```
 
 ```java
 Employee jeff = getByName("Jeffrey");
 if(jeff == null){
-    print "no jeffrey here"
+    System.out.println("no jeffrey here");
 }else{
-    print jeff.salary();
+    System.out.println(jeff.salary());
 }
 ```
 
@@ -319,7 +317,7 @@ I hope you enjoyed my article about null references. Whether you're a fan or a c
 
 - Blog-Article from Aphinya Dechalert: _How null references became the “Billion Dollar Mistake”_, URL: https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef, Posted on August 23rd 2023, Last Access: 15th December 2024.
 
-- Blog-Article from Amanda Hinchman: _Null Pointer References: The Billion Dollar Mistake_, URL:https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485, Posted on April 2nd 2018, Last Access: 15th December 2024.
+- Blog-Article from Amanda Hinchman: _Null Pointer References: The Billion Dollar Mistake_, URL: https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485, Posted on April 2nd 2018, Last Access: 15th December 2024.
 
 - Blog-Article from Yegor Bugayenko: _Why NULL is Bad?_, URL: https://www.yegor256.com/2014/05/13/why-null-is-bad.html, Posted on May 13rd 2014, Last Access: 15th December 2024.
 

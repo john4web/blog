@@ -120,7 +120,7 @@ Those viruses hope that some software forgets to check the null references and t
 
 What do these 9 reasons tell us? When it comes to `null`, there is no middle ground — it's either black or white. Using `null` means the code is flawed and needs refactoring. Avoiding `null` results in clean, reliable code.
 
-## Three possible alternatives to null references
+## Two good alternatives to null references
 
 Now we know, that null references are really bad and that they have to be avoided at all cost. But how? What should we use instead of null references? Yegor presents two alternatives:
 

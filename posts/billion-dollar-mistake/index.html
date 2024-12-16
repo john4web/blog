@@ -3,7 +3,7 @@
 
 <head>
   <title>
-  The Billion Dollar Mistake: NULL · gersti.at
+  NULL: The Billion Dollar Mistake · gersti.at
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,15 +17,15 @@
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The Billion Dollar Mistake: NULL"/>
+<meta name="twitter:title" content="NULL: The Billion Dollar Mistake"/>
 <meta name="twitter:description" content="The downsides of using NULL-References explained"/>
 
-<meta property="og:title" content="The Billion Dollar Mistake: NULL" />
+<meta property="og:title" content="NULL: The Billion Dollar Mistake" />
 <meta property="og:description" content="The downsides of using NULL-References explained" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gersti.at/posts/billion-dollar-mistake/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-01-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-01-24T00:00:00+00:00" />
+<meta property="article:published_time" content="2024-12-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-12-16T00:00:00+00:00" />
 
 
 
@@ -127,10 +127,8 @@
                 
               
               <li class="navigation-item">
-                <a href="/de/">🇩🇪</a>
+                <a href="/de/posts/billion-dollar-mistake/">🇩🇪</a>
               </li>
-            
-          
             
           
         
@@ -148,7 +146,7 @@
         <div class="post-title">
           <h1 class="title">
             <a class="title-link" href="https://gersti.at/posts/billion-dollar-mistake/">
-              The Billion Dollar Mistake: NULL
+              NULL: The Billion Dollar Mistake
             </a>
           </h1>
         </div>
@@ -156,13 +154,13 @@
           <div class="date">
             <span class="posted-on">
               <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime="2024-01-24T00:00:00Z">
-                January 24, 2024
+              <time datetime="2024-12-16T00:00:00Z">
+                December 16, 2024
               </time>
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              One-minute read
+              17-minute read
             </span>
           </div>
           
@@ -180,11 +178,359 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Zusammenfassung aus diesem Video schreiben:
-<a href="https://www.youtube.com/watch?v=o3aNJX7AP3M"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=o3aNJX7AP3M</a></p>
-<p>The billion dollar mistake (Tony Hoare)
-<a href="https://www.youtube.com/watch?v=YYkOWzrO3xg"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YYkOWzrO3xg</a></p>
-<p>Da passt auch recht gut das Kapitel &ldquo;Dead programs tell no lies&rdquo; dazu vom Buch &ldquo;The pragmatic programmer&rdquo;.</p>
+<p>This blog article explores the keyword <code>null</code>, a staple in every programmer&rsquo;s daily work. Should we reconsider the use of null references in our software? Could encountering <code>null</code> in our code actually be harmful? This article aims to address these questions and provide insight into the implications of using <code>null</code>.</p>
+<figure><img src="/images/billion-dollar-mistake/oppenheimer.webp"
+         alt="Robert Oppenheimer&amp;rsquo;s regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare&amp;rsquo;s regret over introducing the null reference (Image-Source: Movie: Oppenheimer (2023) by Christopher Nolan)." width="80%"/><figcaption>
+            <p>Robert Oppenheimer&rsquo;s regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare&rsquo;s regret over introducing the null reference (Image-Source: Movie: <a href="https://en.wikipedia.org/wiki/Oppenheimer_%28film%29"  class="external-link" target="_blank" rel="noopener">Oppenheimer (2023) by Christopher Nolan</a>).</p>
+        </figcaption>
+</figure>
+
+<p>To understand why <code>null</code> exists at all, we must travel back to 1965, when the null reference was invented by Tony Hoare. In a renowned lecture in 2009, while accepting the Turing Award, Hoare famously referred to the creation of null references as his <em>&ldquo;billion-dollar mistake&rdquo;</em>:</p>
+<blockquote>
+<p>I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn&rsquo;t resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.<!-- raw HTML omitted -->
+— <!-- raw HTML omitted --><a href="https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony&#43;Hoare"  class="external-link" target="_blank" rel="noopener">Tony Hoare</a><!-- raw HTML omitted --></p>
+</blockquote>
+<p>Null references are a common source of software errors, such as null pointer exceptions, which can cause system crashes and security issues. When Tony Hoare introduced null references, his motivation was practical: it seemed like a simple way to indicate that a reference didn&rsquo;t have a valid value. However, this seemingly straightforward choice has had lasting consequences, resulting in decades of costly bug fixes and the need for complex security measures. Looking back, Hoare expressed regret for his decision, admitting that he couldn&rsquo;t have foreseen the problems it would create. Today, his opinion on null references is clear:</p>
+<blockquote>
+<p>Null references have been a historically bad idea.<!-- raw HTML omitted -->
+— <!-- raw HTML omitted --><a href="https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare"  class="external-link" target="_blank" rel="noopener">Tony Hoare</a><!-- raw HTML omitted --></p>
+</blockquote>
+<h2 id="the-luminaries-opinion">
+  The luminaries opinion
+  <a class="heading-link" href="#the-luminaries-opinion">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Who is Tony Hoare? Tony Hoare is a British computer scientist who gained widespread recognition for his contributions to the field. He is best known for creating the <em>Quicksort algorithm</em>, one of the most efficient sorting methods, and <em>Hoare logic</em>, which allows the correctness of algorithms to be proven. He also developed a process algebra that influenced programming languages like Ada, Occam, and Go. In 1980, Hoare received the <a href="https://en.wikipedia.org/wiki/Turing_Award"  class="external-link" target="_blank" rel="noopener">Turing Award</a>, often referred to as the &ldquo;Nobel Prize of Computer Science&rdquo;, for his work on the definition and design of programming languages.</p>
+<figure><img src="/images/billion-dollar-mistake/hoare.jpg"
+         alt="Sir Charles Antony Richard Hoare" width="30%"/><figcaption>
+            <p>Sir Charles Antony Richard Hoare</p>
+        </figcaption>
+</figure>
+
+<p>Why do I mention all of this? Because when a luminary in computer science like Tony Hoare declares, that null references are a bad idea, it carries significant weight — particularly given that he himself was the one who introduced them. And he is not alone in his opinion. As Hoare noted in his <a href="https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/"  class="external-link" target="_blank" rel="noopener">Turing Award lecture</a>, Edsger W. Dijkstra also regarded null references as a bad idea.</p>
+<figure><img src="/images/billion-dollar-mistake/dijkstra.jpg"
+         alt="Edsger Wybe Dijkstra" width="30%"/><figcaption>
+            <p>Edsger Wybe Dijkstra</p>
+        </figcaption>
+</figure>
+
+<p>Dijkstra was another luminary in the field of computer science. He was a pioneer of structured programming and famous for the <em>Dijkstra&rsquo;s algorithm</em>. In 1972, he received the Turing Award as well. Dijkstra used humor to illustrate the problem with null references in programming. In a metaphor, he described objects as bachelors and <code>null</code> as a person: <em>&ldquo;If you have a null reference, then every bachelor who you represent in your object structure will seem to be married polyandrously to the same person Null&rdquo;</em>.</p>
+<p>If you search the internet, you&rsquo;ll find many people who view the use of null references as bad coding practice. One of them is <a href="https://www.yegor256.com/about-me.html"  class="external-link" target="_blank" rel="noopener">Yegor Bugayenko</a>. In his <a href="https://www.youtube.com/watch?v=o3aNJX7AP3M"  class="external-link" target="_blank" rel="noopener">video on null references</a>, Yegor presents insightful, practical code examples that highlight the issues associated with working with null values, while also offering effective solutions. The following chapters summarize Yegor Bugayenko&rsquo;s video and his perspectives on null references:</p>
+<h2 id="nine-reasons-to-avoid-null-references">
+  Nine reasons to avoid null references
+  <a class="heading-link" href="#nine-reasons-to-avoid-null-references">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The following code snippet shows a method that fetches an employee object from a database:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Employee</span> <span class="nf">getByName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="o">(</span><span class="n">id</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>If the database does not find the employee, the method returns <code>null</code> instead of returning an instance of <code>Employee</code>.
+This is terribly wrong! <strong>But why?</strong> Here are 9 reasons:</p>
+<p><strong>1. Because it may cause many nullpointer exceptions in the code.</strong></p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">getByName</span><span class="o">(</span><span class="s">&#34;Jeffrey&#34;</span><span class="o">).</span><span class="na">salary</span><span class="o">();</span>
+</span></span></code></pre></div><p>If there is no employee with the name &ldquo;Jeffrey&rdquo; in the database, then the above code throws a NullpointerException.</p>
+<p>There is no such thing as:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kc">null</span><span class="o">.</span><span class="na">salary</span><span class="o">();</span>
+</span></span></code></pre></div><p><strong>2. Because it is technically difficult to trace the causes of nullpointer exceptions.</strong></p>
+<p>Most of the time, there is a lack of context in stack traces. Usually, the stack trace points to the line where the NullpointerException happened but not to the specific variable or expression that was <code>null</code>. Modern programs with complex and nested code structures, with delayed execution and with lambdas make it even harder to debug.</p>
+<p><strong>3. Because null references destroy our trust to the objects we are working with.</strong></p>
+<p>When we do not use <code>null</code> in our code, we can trust, that objects will be objects. We can trust that objects will look like objects and that objects will behave like objects. However, when we introduce null references into our code, then we cannot trust our objects anymore. They are no longer reliable or self-sufficient.</p>
+<p>Let’s assume we have a method that claims to return an object. If this method unexpectedly returns something that isn’t an object, it disrupts our entire reasoning. We can no longer be certain about what is <code>null</code> and what is not <code>null</code>, leaving us in a state of uncertainty.</p>
+<p>Then we start to suspect all objects that they are no objects anymore, even though they might actually still be. We suspect all the variables and everything that we are working with that it is not good enough. We cannot know whether we can &ldquo;touch&rdquo; the variables or not because they could be <code>null</code> and then the code breaks if we try to access them. In this way objects are not real objects anymore and they are not following the contract we are expecting.</p>
+<p><strong>4. Because you have to insert countless null checks in your code.</strong></p>
+<p>The previously mentioned trust issues bring another disadvantage: You <strong>always</strong> have to check if variables are <code>null</code> before you can do something with them. You have to add those null-checks <strong>everywhere</strong> to make sure that your program works reliable and avoids NullpointerExceptions. In this way, the code base grows and grows and the methods/classes become longer and longer. The code becomes cluttered, unclear and hard to understand/maintain. This is the opposite of the &ldquo;Clean Code&rdquo; approach!</p>
+<p><strong>5. Because null references violate the core idea of encapsulation.</strong></p>
+<p>When a method can return <code>null</code> instead of an actual object, the calling code must explicitly check for <code>null</code> to avoid exceptions. This shifts the responsibility of managing the internal state of software entities to the external code. For example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">anotherObject</span><span class="o">.</span><span class="na">someMethod</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">obj</span><span class="o">.</span><span class="na">doSomething</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Handle null case
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span></code></pre></div><p>Instead of encapsulating behavior, the caller has to manage an exceptional case (<code>null</code>) that ideally should have been handled inside the method <code>someMethod()</code>. In this way, null references violate encapsulation. Internal states are exposed and external code is forced to handle the consequences. This undermines the very essence of objects being self-contained and reliable entities. In the code example above, the object <code>anotherObject</code> is not self-contained. With proper encapsulation, objects manage their behavior internally and provide meaningful defaults or throw specific exceptions if something goes wrong. Returning <code>null</code> avoids this responsibility, leaving the caller to guess what went wrong or what to do next.</p>
+<p><strong>6. Because null references are completely against the object oriented paradigm.</strong></p>
+<p>Null references break encapsulation and the trust in objects. In OOP, objects should model Real-World-Concepts. <code>Null</code> however, does not represent anything meaningful in the real world. For instance, an object like <code>Car</code> represents a car, but <code>null</code> doesn’t represent &ldquo;no car&rdquo; in an intuitive way — it’s simply the absence of a reference.</p>
+<p>In my opinion, polymorphism is <strong>the key principle of OOP</strong> (I explain why in <a href="https://gersti.at/posts/polymorphism/#the-pillars-of-oop"  class="external-link" target="_blank" rel="noopener">this article</a>). However <code>null</code> even contradicts polymorphism. Polymorphism lets objects define how they behave using interfaces and inheritance. Null references break this because <code>null</code> doesn&rsquo;t have any behavior. <code>Null</code> can&rsquo;t inherit from classes! <code>Null</code> can&rsquo;t implement interfaces!</p>
+<p>Furthermore, introducing <code>null</code> often leads to procedural-style code, with if-statements checking for <code>null</code> scattered throughout the codebase. This undermines the OO principle of objects interacting through well-defined methods, making the code less modular and harder to maintain.</p>
+<p><strong>7. Because <code>null</code> is an ancient concept that originated in low-level programming languages.</strong></p>
+<p><code>Null</code> was originally introduced in languages that use pointers, like <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29"  class="external-link" target="_blank" rel="noopener">C</a> for instance. However, when programming in Java, we don&rsquo;t think about pointers or memory. Instead, we deal with objects and references. In <em>&ldquo;Object-Thinking&rdquo;</em>, we view objects as &ldquo;living organisms&rdquo; or &ldquo;creatures.&rdquo; The thinking is about objects, the messages you send to them, and the reactions they send back to us. But <code>null</code> doesn&rsquo;t have any reaction since it is not an object!</p>
+<p><strong>8. Because a lot of computer viruses are designed to exploit null references.</strong></p>
+<p>Those viruses hope that some software forgets to check the null references and that they can reach that part in the program.</p>
+<p><strong>9. Because null spreads like a disease.</strong></p>
+<p><code>Null</code> behaves like a disease in our applications. If we allow it to enter our software, it grows and eventually infects the entire code. For instance, if a method returns <code>null</code>, you have to insert null-checks for it. These checks spread as more methods interact with the null-returning method, leading to a domino effect. The need to protect against <code>null</code> infects every layer of the system. When one method allows <code>null</code> as a valid return value or parameter, others must follow suit.</p>
+<p><strong>Conclusion</strong></p>
+<p>What do these 9 reasons tell us? When it comes to <code>null</code>, there is no middle ground — it&rsquo;s either black or white. Using <code>null</code> means the code is flawed and needs refactoring. Avoiding <code>null</code> results in clean, reliable code.</p>
+<h2 id="three-possible-alternatives-to-null-references">
+  Three possible alternatives to null references
+  <a class="heading-link" href="#three-possible-alternatives-to-null-references">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Now we know, that null references are really bad and that they have to be avoided at all cost. But how? What should we use instead of null references? Yegor presents two alternatives:</p>
+<h3 id="alternative-1-throw-a-custom-exception-instead-of-returning-null">
+  Alternative #1: Throw a Custom Exception instead of returning <code>null</code>:
+  <a class="heading-link" href="#alternative-1-throw-a-custom-exception-instead-of-returning-null">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Given the above example, you could simply throw your own exception:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Employee</span> <span class="nf">getByName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="o">(</span><span class="n">id</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="n">EmployeeNotFoundException</span><span class="o">(</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34;I&#39;m sorry, but the employee is not found&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Yegor&rsquo;s suggestion of throwing an exception also reminds me on the principle <em>&ldquo;Crash Early!&rdquo;</em>, which was formulated in the book <em><a href="https://en.wikipedia.org/wiki/The_Pragmatic_Programmer"  class="external-link" target="_blank" rel="noopener">The Pragmatic Programmer</a></em> (on page 120-121). When your code encounters something that should have been impossible, the program is no longer reliable. Anything it does after that point becomes questionable, so it’s better to stop it as soon as possible. A program that has crashed, typically causes less harm than one that continues to run in a broken state.</p>
+<h3 id="alternative-2-return-a-null-object-instead-of-null">
+  Alternative #2: Return a Null-Object instead of <code>null</code>:
+  <a class="heading-link" href="#alternative-2-return-a-null-object-instead-of-null">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>You could use the so-called <em>&ldquo;Null Object Design Pattern&rdquo;</em>. Given the above example, this solution could look like that:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Employee</span> <span class="nf">getByName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="o">(</span><span class="n">id</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">NoEmployee</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>In this case, the class <code>NoEmployee</code> could implement the same interface as <code>Employee</code> but in a different way than the <code>Employee</code>.</p>
+<p>So how does the null object pattern work?</p>
+<figure><img src="/images/billion-dollar-mistake/null-pattern.svg"
+         alt="Components of Null Object Design Pattern. The Client depends on the DependencyBase. The Dependency and the NullDependency implement this interface in different ways. Source: geeksforgeeks.org"/><figcaption>
+            <p>Components of Null Object Design Pattern. The Client depends on the <code>DependencyBase</code>. The <code>Dependency</code> and the <code>NullDependency</code> implement this interface in different ways. Source: <a href="https://www.geeksforgeeks.org"  class="external-link" target="_blank" rel="noopener">geeksforgeeks.org</a></p>
+        </figcaption>
+</figure>
+
+<p>A code-example of this pattern in action (<em>Source: <a href="https://en.wikipedia.org/wiki/Null_object_pattern#Java"  class="external-link" target="_blank" rel="noopener">Wikipedia</a></em>):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="n">Animal</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;woof!&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NullAnimal</span> <span class="kd">implements</span> <span class="n">Animal</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// do nothing
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>If you are currently working with <code>Animal</code> objects but there is no animal available, you can use a <code>NullAnimal</code> instead of <code>null</code>. This represents the absence of an animal and simply does nothing (see the <code>makeSound()</code> method). The big advantage is that this approach does not trigger a NullPointerException in your code. Of course, you could also throw a custom exception in the <code>makeSound()</code> method of the <code>NullAnimal</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NullAnimal</span> <span class="kd">implements</span> <span class="n">Animal</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">NullAnimalSoundException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="n">NullAnimalSoundException</span><span class="o">(</span><span class="s">&#34;A NullAnimal cannot make any sound!&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>In this situation you might ask yourself: <em>&ldquo;Doesn&rsquo;t a null object just delay the failure to a later point in the code?&rdquo;</em>. And the answer is: <em>Yes, definately!</em> In this case we just delay the moment when the exception is thrown. But the advantage here is, that we as software engineers can &ldquo;control&rdquo; the process in this way. And we can throw meaningful exceptions on our own. Exceptions that contain better information on the failure scenario.</p>
+<p><strong>These two alternatives (throwing custom exceptions and using Null-Objects) are the best ways to deal with null references!</strong> In most situations probably <code>Alternative#1</code> is the best solution: just throwing an exception immediately.</p>
+<h3 id="-using-optionals-is-not-an-alternative-">
+  ⚠️ Using Optionals is not an alternative ⚠️
+  <a class="heading-link" href="#-using-optionals-is-not-an-alternative-">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>In Yegor&rsquo;s opinion, the use of <code>java.util.Optional</code> is not a solution at all. Optionals would deal with the problem scenario in the following way:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Employee</span> <span class="nf">getByName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="o">(</span><span class="n">id</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">new</span> <span class="n">Optional</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="k">new</span> <span class="n">Optional</span><span class="o">(</span><span class="n">Employee</span><span class="o">(</span><span class="n">id</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">&gt;</span> <span class="n">opt</span> <span class="o">=</span> <span class="n">getByName</span><span class="o">(</span><span class="s">&#34;Jeffrey&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="o">(</span><span class="n">opt</span><span class="o">.</span><span class="na">has</span><span class="o">()){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">opt</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">salary</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span><span class="k">else</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;sorry&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>An Optional is kind of a container including one or zero elements.</p>
+<p>Using Optionals is not a good idea. Why? Because it is not a solution for null references — it is the same as null references. The optional container is not an object by itself. It is just a temporary memory structure which holds a real object. You still have to check if the optional contains an <code>Employee</code> or if it has no <code>Employee</code>. It is something that is presented as the solution of the null reference problem but actually it is not.</p>
+<h3 id="excursus-kotlins-solution">
+  Excursus: Kotlin&rsquo;s solution
+  <a class="heading-link" href="#excursus-kotlins-solution">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Kotlin has attempted to solve the problem by making variables either nullable or non-nullable. Types are non-nullable by default. If you want a variable to hold a null value, you must explicitly declare it as nullable using <code>?</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Non-nullable variable
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">val</span> <span class="n">nonNullable</span><span class="o">:</span> <span class="n">String</span> <span class="o">=</span> <span class="s">&#34;Hello, Kotlin&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Nullable variable
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">val</span> <span class="n">nullable</span><span class="o">:</span> <span class="n">String</span><span class="o">?</span> <span class="o">=</span> <span class="kc">null</span>
+</span></span></code></pre></div><p>The advantage: The question mark immediately shows which object can be trusted and which object cannot. If you try to call a method on a nullable object, the compiler warns you and advises you to insert a null-check.</p>
+<p>Kotlin introduced safe calls <code>?.</code> and the elvis operator <code>?:</code> as well:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// if nullable evaluates to null, then .length is not executed and null returned instead.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">val</span> <span class="n">length</span><span class="o">:</span> <span class="n">Int</span><span class="o">?</span> <span class="o">=</span> <span class="n">nullable</span><span class="o">?.</span><span class="na">length</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// provides the default value 0 when nullable?.length evaluates to null.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">val</span> <span class="n">defaultLength</span><span class="o">:</span> <span class="n">Int</span> <span class="o">=</span> <span class="n">nullable</span><span class="o">?.</span><span class="na">length</span> <span class="o">?:</span> <span class="mi">0</span>
+</span></span></code></pre></div><h2 id="refutation-of-the-counterarguments">
+  Refutation of the counterarguments
+  <a class="heading-link" href="#refutation-of-the-counterarguments">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>There might be some counterarguments against the usage of <a href="#alternative-1-throw-a-custom-exception-instead-of-returning-null" >Alternative #1</a> and <a href="#alternative-2-return-a-null-object-instead-of-null" >Alternative #2</a> in your mind. Maybe this chapter can still convince you that they are good solutions. 😉</p>
+<h3 id="counterargument-1">
+  Counterargument #1:
+  <a class="heading-link" href="#counterargument-1">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>Why throw a custom exception when we could just let the NullPointerException occur? In the end, the result is the same, right?</strong></p>
+<p>No! There is a big difference between a NullpointerException raised by the system or a EmployeeNotFoundException thrown manually by us developers. The NullpointerException is thrown by the JVM, which is outside of our developer&rsquo;s scope, which means we can&rsquo;t control it. But the EmployeeNotFoundException is thrown by our objects so we are in charge, we can control it, we encapsulate this behaviour. Our objects control it and not the Java Runtime Environment. Furthermore, the EmployeeNotFoundException can contain a custom error message written by the developer which is also important for understanding the whole situation.</p>
+<p>However, it is important that the program flow should not be controlled via exceptions! This is a trap, that developers often fall for.</p>
+<h3 id="counterargument-2">
+  Counterargument #2
+  <a class="heading-link" href="#counterargument-2">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong><code>Null</code> is fast and exceptions are slow (regarding code performance)!</strong></p>
+<p>The following two code snippets illustrate this argument. The argument is that the first code snippet is significantly less performant than the second one.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">try</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Employee</span> <span class="n">jeff</span> <span class="o">=</span> <span class="n">getByName</span><span class="o">(</span><span class="s">&#34;Jeffrey&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">jeff</span><span class="o">.</span><span class="na">salary</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">EmployeeNotFoundException</span> <span class="n">ex</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;no jeffrey here&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Employee</span> <span class="n">jeff</span> <span class="o">=</span> <span class="n">getByName</span><span class="o">(</span><span class="s">&#34;Jeffrey&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="o">(</span><span class="n">jeff</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;no jeffrey here&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span><span class="k">else</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">jeff</span><span class="o">.</span><span class="na">salary</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>This is true! The second code snippet is way faster than the first one! Every exception thrown requires significant effort from the compiler and runtime. The runtime must collect information about the cause of the exception and where it was thrown, build the stack trace, prepare the necessary details, halt the program&rsquo;s normal execution, and transition to the exceptional flow,&hellip;</p>
+<p>However, the speed of an application is far less important in modern software than its maintainability. It is much more important to have software that is easy to maintain, understand, modify, adapt, and cleanly coded than to focus on its performance.</p>
+<p>Using <code>null</code> is, in most cases, much faster than using exceptions. While <code>null</code> makes the computer&rsquo;s job easier, it complicates the developer&rsquo;s work. For companies, it is far more expensive to deal with an unmaintainable application than to invest in new, more efficient hardware resources. This is also exactly the thing that the whole <a href="#books" >Clean Architecture Book</a> taught me. Even within the first 12 pages, Robert C. Martin emphasizes the importance of maintainability and provides diagrams illustrating how much money companies have lost due to unmaintainable software.</p>
+<h3 id="counterargument-3">
+  Counterargument #3
+  <a class="heading-link" href="#counterargument-3">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>Some classes are not suitable for creating a null object. Consider the <code>String</code> class as an example. This is a <code>final</code> class which means it can&rsquo;t be extended or reimplemented by somebody else. In this case, the null object pattern is not applicable. When you have a method that is supposed to return a <code>String</code>, you do not have the option to return a null class, such as a null string or something similar.</strong></p>
+<p>It is not possible to use null objects everywhere but if it is not possible, then make it possible! In this specific case you could wrap or decorate the <code>String</code> class. Introduce your own class <code>Text</code> for instance which internally uses a <code>String</code>. For the representation of <code>null</code> you could use your <code>NoText</code> class and for existing texts you could use the normal <code>Text</code> class. But never ever use <code>null</code>. There is always an alternative to that!</p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>I hope you enjoyed my article about null references. Whether you&rsquo;re a fan or a critic of <code>null</code>, I’d like to leave you with one final thought: I believe it’s incredibly important to question common development practices that we usually take for granted. Some things, like the use of <code>null</code>, are often accepted by developers as a given. But just because something exists and is used by a lot of people doesn’t automatically mean that it’s a good thing. So next time you’re at the office, grab a coffee and chat with your fellow programmers — even about the overlooked aspects of programming. ☕😊</p>
+<h2 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="books">
+  Books
+  <a class="heading-link" href="#books">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Robert C. Martin: <em>Clean Architecture: A Craftsman&rsquo;s Guide to Software Structure and Design (Robert C. Martin Series)</em>, Publisher: Pearson, Year: 2017, ISBN: 0134494164</p>
+</li>
+<li>
+<p>Andrew Hunt, David Thomas: <em>The Pragmatic Programmer: From Journeyman to Master</em>, Publisher: Addison-Wesley, Year: 2000, ISBN: 020161622X</p>
+</li>
+</ul>
+<h3 id="videos">
+  Videos
+  <a class="heading-link" href="#videos">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Video from Yegor Bugayenko: <em>What is Wrong About NULL in OOP? (webinar #3)</em>, URL: <a href="https://www.youtube.com/watch?v=o3aNJX7AP3M"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=o3aNJX7AP3M</a>, Last Access: 15th December 2024.</p>
+</li>
+<li>
+<p>Speech from Tony Hoare: <em>Null References The Billion Dollar Mistake</em>, QCon London 2009, URL: <a href="https://www.youtube.com/watch?v=YYkOWzrO3xg"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YYkOWzrO3xg</a>, Last Access: 15th December 2024.</p>
+</li>
+</ul>
+<h3 id="blog-articles">
+  Blog Articles
+  <a class="heading-link" href="#blog-articles">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Blog-Article from Maximiliano Contieri: <em>NULL: The Billion Dollar Mistake</em>, URL: <a href="https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6"  class="external-link" target="_blank" rel="noopener">https://hackernoon.com/null-the-billion-dollar-mistake-8t5z32d6</a>, Posted on April 14th 2020, Last Access: 15th December 2024.</p>
+</li>
+<li>
+<p>Blog-Article from Aphinya Dechalert: <em>How null references became the “Billion Dollar Mistake”</em>, URL: <a href="https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef"  class="external-link" target="_blank" rel="noopener">https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef</a>, Posted on August 23rd 2023, Last Access: 15th December 2024.</p>
+</li>
+<li>
+<p>Blog-Article from Amanda Hinchman: <em>Null Pointer References: The Billion Dollar Mistake</em>, URL: <a href="https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485"  class="external-link" target="_blank" rel="noopener">https://hinchman-amanda.medium.com/null-pointer-references-the-billion-dollar-mistake-1e616534d485</a>, Posted on April 2nd 2018, Last Access: 15th December 2024.</p>
+</li>
+<li>
+<p>Blog-Article from Yegor Bugayenko: <em>Why NULL is Bad?</em>, URL: <a href="https://www.yegor256.com/2014/05/13/why-null-is-bad.html"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/2014/05/13/why-null-is-bad.html</a>, Posted on May 13rd 2014, Last Access: 15th December 2024.</p>
+</li>
+<li>
+<p>Blog-Article from Yegor Bugayenko: <em>Try. Finally. If. Not. Null.</em>, URL: <a href="https://www.yegor256.com/2016/03/22/try-finally-if-not-null.html"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/2016/03/22/try-finally-if-not-null.html</a>, Posted on March 22nd 2016, Last Access: 15th December 2024.</p>
+</li>
+</ul>
+<h3 id="websites">
+  Websites
+  <a class="heading-link" href="#websites">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Wikipedia-Article: <em>Null object pattern</em>, URL: <a href="https://en.wikipedia.org/wiki/Null_object_pattern"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Null_object_pattern</a>, Last Access: 16th December 2024.</p>
+</li>
+<li>
+<p>Wikipedia-Article: <em>Tony Hoare</em>, URL: <a href="https://en.wikipedia.org/wiki/Tony_Hoare"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Tony_Hoare</a>, Last Access: 16th December 2024.</p>
+</li>
+<li>
+<p>Presentation from Tony Hoare at QCon London (2009): <em>Null References: The Billion Dollar Mistake</em>, URL: <a href="https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/"  class="external-link" target="_blank" rel="noopener">https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/</a>, Last Access: 16th December 2024.</p>
+</li>
+<li>
+<p>Archive of Tony Hoare&rsquo;s Presentation (QCon London 2009): <em>Null References: The Billion Dollar Mistake</em>, URL: <a href="https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony&#43;Hoare"  class="external-link" target="_blank" rel="noopener">https://web.archive.org/web/20090628071208/http://qconlondon.com/london-2009/speaker/Tony+Hoare</a>, Last Access: 16th December 2024.</p>
+</li>
+<li>
+<p>GeeksforGeeks-Article: <em>Null Object Design Pattern</em>, URL: <a href="https://www.geeksforgeeks.org/null-object-design-pattern/"  class="external-link" target="_blank" rel="noopener">https://www.geeksforgeeks.org/null-object-design-pattern/</a>, Last Access: 16th December 2024.</p>
+</li>
+</ul>
 
       </div>
 

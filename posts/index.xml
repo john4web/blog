@@ -6,7 +6,17 @@
     <description>Recent content in Posts on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NULL: The Billion Dollar Mistake</title>
+      <link>https://gersti.at/posts/billion-dollar-mistake/</link>
+      <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/billion-dollar-mistake/</guid>
+      <description>Overview Link to heading This blog article explores the keyword null, a staple in every programmer&amp;rsquo;s daily work. Should we reconsider the use of null references in our software? Could encountering null in our code actually be harmful? This article aims to address these questions and provide insight into the implications of using null.
+Robert Oppenheimer&amp;rsquo;s regret over inventing the atomic bomb serves as a fitting analogy for Tony Hoare&amp;rsquo;s regret over introducing the null reference (Image-Source: Movie: Oppenheimer (2023) by Christopher Nolan).</description>
+    </item>
+    
     <item>
       <title>CQS and CQRS Principles: Splitting the Read from the Write</title>
       <link>https://gersti.at/posts/cqrs/</link>

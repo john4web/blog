@@ -3,7 +3,8 @@
 My name is Johannes Gerstbauer, and I am a passionate software developer from Vienna/Austria, with a special focus on object-oriented programming (OOP) in Java. For many years, I have been fascinated by the art of solving complex problems through elegant code, and I want to share this fascination with you here on my blog.
 
 ## My Job 🚀
-Currently, I work as a JVM Backend Developer at ["Karriere.at"](https://karriere.at), an Austrian career portal and online job board. The tech stack I work with includes Kotlin, Java, Spring Boot, and MySQL.
+Currently, I work as a Java Backend Developer at [ÖBB](https://oebb.at/en), the Austrian Federal Railways.🚆  
+The tech stack I work with includes Java, Micronaut, and SQL, among others.
 
 ## My Background 🎓
 My journey into the world of software development began in 2014 when I first designed a Java application in school. Since then, I have continuously educated myself and deepened my knowledge in full-stack web development. During my Bachelor’s degree in "Media Technology" and my Master’s degree in "Interactive Media," I dealt with various technologies in the frontend and backend of web applications (Java, Spring, PHP, Laravel, JavaScript, Vue.js, HTML, CSS, ...). After my studies, I focused more on backend development, and currently, Java and OOP form the core of my work.

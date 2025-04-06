@@ -4,7 +4,8 @@
 Mein Name ist Johannes Gerstbauer, und ich bin leidenschaftlicher Softwareentwickler aus Wien/Österreich mit einem besonderen Fokus auf objektorientierte Programmierung (OOP) in der Programmiersprache Java. Seit vielen Jahren fasziniert mich die Kunst, komplexe Probleme durch eleganten Code zu lösen, und genau diese Faszination möchte ich hier auf meinem Blog mit dir teilen.
 
 ## Mein Job 🚀
-Akuelle arbeite ich als JVM Backend-Developer bei der Firma ["Karriere.at"](https://karriere.at), ein österreichisches Karriereportal und Online-Jobbörse. Der Tech-Stack, mit dem ich tagtäglich arbeite, besteht aus Kotlin, Java, Spring Boot und MySQL.
+Derzeit arbeite ich als Java-Backend-Entwickler bei der [ÖBB](https://oebb.at), den Österreichischen Bundesbahnen.🚆
+  Der Tech-Stack, mit dem ich tagtäglich arbeite, umfasst unter anderem Java, Micronaut und SQL.
 
 ## Mein Hintergrund 🎓
 Meine Reise in die Welt der Softwareentwicklung begann im Jahr 2014, als ich zum ersten Mal in der Schule eine Java-Applikation entworfen habe. Seitdem habe ich mich kontinuierlich weitergebildet und mein Wissen in Fullstack Web Development vertieft. Während meiner Absolvierung des Bachelorstudiengangs "Medientechnik" sowie des Masterstudiengangs "Interactive Media" habe ich mich mit verschiedensten Technologien im Frontend und Backend von Webapplikationen auseinandergesetzt (Java, Spring, PHP, Laravel, JavaScript, Vue.js, HTML, CSS, ...). Nach dem Studium habe ich mich vermehrt im Bereich Backend vertieft und aktuell bilden Java und OOP das Herzstück meiner Arbeit.

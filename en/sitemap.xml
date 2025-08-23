@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gersti.at/</loc>
-    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -14,6 +14,12 @@
                 hreflang="en"
                 href="https://gersti.at/"
                 />
+  </url><url>
+    <loc>https://gersti.at/todo/</loc>
+    <lastmod>2025-05-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/todo/code-reviews/</loc>
+    <lastmod>2025-05-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/posts/billion-dollar-mistake/</loc>
     <lastmod>2024-12-16T00:00:00+00:00</lastmod>
@@ -152,6 +158,9 @@
     <loc>https://gersti.at/todo/divide-and-conquer/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gersti.at/todo/docker/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gersti.at/todo/domain-driven-design/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -183,6 +192,9 @@
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/todo/kiss-principle/</loc>
+    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/todo/kubernetes/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/todo/later/</loc>
@@ -321,9 +333,6 @@
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/todo/visitor-pattern/</loc>
-    <lastmod>2024-01-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gersti.at/todo/</loc>
     <lastmod>2024-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/todo/tracer-bullets/</loc>

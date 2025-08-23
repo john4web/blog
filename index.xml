@@ -6,7 +6,17 @@
     <description>Recent content on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Code Reviews Are Absolutely Essential</title>
+      <link>https://gersti.at/todo/code-reviews/</link>
+      <pubDate>Thu, 08 May 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/code-reviews/</guid>
+      <description>Why Code Reviews Are Essential for Every Development Team Link to heading If you’re writing code and not doing code reviews, you’re doing it wrong.
+That may sound harsh—but it’s true. Code reviews are one of the most powerful tools available to software development teams, and skipping them is a shortcut to technical debt, bugs, burnout, and bad habits. Whether you&amp;rsquo;re a junior developer just starting out or a senior engineer leading a project, embracing code reviews is not optional—it&amp;rsquo;s essential.</description>
+    </item>
+    
     <item>
       <title>NULL: The Billion Dollar Mistake</title>
       <link>https://gersti.at/posts/billion-dollar-mistake/</link>
@@ -190,6 +200,16 @@ https://www.youtube.com/watch?v=SeN1s65tRHY</description>
     </item>
     
     <item>
+      <title>Docker Cheat-Sheet</title>
+      <link>https://gersti.at/todo/docker/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/docker/</guid>
+      <description>Basics Link to heading What is Docker? Docker is a virtualization software that makes developing and deploying applications easier. Docker is written in the GO programming language.
+Before docker was invented, every developer had to install and configure all services directly on their operating system on their local machine. However, the installation process is different on different operating systems. Furthermore, many steps are required where something can go wrong.</description>
+    </item>
+    
+    <item>
       <title>Domain Driven Design (DDD)</title>
       <link>https://gersti.at/todo/domain-driven-design/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -295,6 +315,15 @@ Reference Link to heading https://www.</description>
       
       <guid>https://gersti.at/todo/kiss-principle/</guid>
       <description>Overview Link to heading With examples</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes Cheat-Sheet</title>
+      <link>https://gersti.at/todo/kubernetes/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/kubernetes/</guid>
+      <description></description>
     </item>
     
     <item>

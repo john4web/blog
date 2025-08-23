@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Docker Cheat-Sheet · gersti.at
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Johannes Gerstbauer">
+<meta name="description" content="Basics Link to heading What is Docker? Docker is a virtualization software that makes developing and deploying applications easier. Docker is written in the GO programming language.
+Before docker was invented, every developer had to install and configure all services directly on their operating system on their local machine. However, the installation process is different on different operating systems. Furthermore, many steps are required where something can go wrong.">
+<meta name="keywords" content="blog, developer, software, engineer">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker Cheat-Sheet"/>
+<meta name="twitter:description" content="Basics Link to heading What is Docker? Docker is a virtualization software that makes developing and deploying applications easier. Docker is written in the GO programming language.
+Before docker was invented, every developer had to install and configure all services directly on their operating system on their local machine. However, the installation process is different on different operating systems. Furthermore, many steps are required where something can go wrong."/>
+
+<meta property="og:title" content="Docker Cheat-Sheet" />
+<meta property="og:description" content="Basics Link to heading What is Docker? Docker is a virtualization software that makes developing and deploying applications easier. Docker is written in the GO programming language.
+Before docker was invented, every developer had to install and configure all services directly on their operating system on their local machine. However, the installation process is different on different operating systems. Furthermore, many steps are required where something can go wrong." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gersti.at/todo/docker/" /><meta property="article:section" content="TODO" />
+<meta property="article:published_time" content="2024-01-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-24T00:00:00+00:00" />
+
+
+
+
+<link rel="canonical" href="https://gersti.at/todo/docker/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      gersti.at
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/de/">🇩🇪</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://gersti.at/todo/docker/">
+          Docker Cheat-Sheet
+        </a>
+      </h1>
+    </header>
+
+    <h2 id="basics">
+  Basics
+  <a class="heading-link" href="#basics">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>What is Docker? Docker is a virtualization software that makes developing and deploying applications easier. Docker is written in the GO programming language.</p>
+<p>Before docker was invented, every developer had to install and configure all services directly on their operating system on their local machine. However, the installation process is different on different operating systems. Furthermore, many steps are required where something can go wrong.</p>
+<p>When using docker, one is working with containers. A container is an isolated environment. E.g. Postgres in a specific version can be packaged with all dependencies and configs inside a container.</p>
+<p>the following command fetches a container package from the internet and starts it on your computer.</p>
+<p>&ldquo;docker run postgres&rdquo;</p>
+<p>Advantages:</p>
+<ul>
+<li>command is the same for all operating systems</li>
+<li>command is the same for all services</li>
+</ul>
+<p>With Docker, the old problem of <em>“It only works on my machine”</em> is gone.
+Each piece of software runs inside its own container, completely separate from your local system. A container will run the same way everywhere — on your laptop, on a server, or in the cloud.
+All dependencies (libraries, tools, configurations) are already included inside the container.</p>
+<p>This also avoids version conflicts — for example, if two projects need different versions of Python or Node.js, they can each run in their own container without interfering with each other.</p>
+<h2 id="docker-vs-vms">
+  Docker vs. VMs
+  <a class="heading-link" href="#docker-vs-vms">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Do you know virtual machines? I mean the thing where you can run for instance the windows operating system on a MacOS apple device:</p>
+<figure><img src="/images/docker/vm.png"
+         alt="With a virtual machine you can run a windows OS on MacOS" width="50%"/><figcaption>
+            <p>With a virtual machine you can run a windows OS on MacOS</p>
+        </figcaption>
+</figure>
+
+<p>Docker is something like a VM. Aber mit feinen Unterschieden.</p>
+<p>Im folgenden Bild sieht man den Aufbau eines Betriebssystems:</p>
+<figure><img src="/images/docker/os_architecture.svg"
+         alt="Architecture of an Operating System"/><figcaption>
+            <p>Architecture of an Operating System</p>
+        </figcaption>
+</figure>
+
+<p>Layers explained:</p>
+<ul>
+<li>Hardware-Layer (=the actual machine) CPU, Speicher, Festplatten, Netzwerk, Geräte</li>
+<li>OS-Application-Layer (= die Ebene, auf der Programme laufen, die der Benutzer direkt verwendet)</li>
+<li>OS Kernel Layer – Kern des Betriebssystems (Prozessverwaltung, Speicherverwaltung, Treiber, Systemaufrufe). The kernel interacts with hardware and apps (= Middleman)</li>
+</ul>
+<p>What is now the difference between a VM and Docker?
+A VM virtualizes the whole OS. It has its own application layer and its own Kernel. Docker on the other hand only virtualizes the OS-Application-Layer. That means when comparing docker to a traditional vm:</p>
+<ul>
+<li>
+<p>Docker is more lightweight and saves disk-space because it only has 1 OS-Layer instead of 2.</p>
+</li>
+<li>
+<p>Docker is much faster because 1 layer boots faster than 2 layers.</p>
+</li>
+</ul>
+<p>Another difference: You can run a Linux VM on a windows machine. You cannot do that with docker. Docker is only compatible with Linux distros.</p>
+<figure><img src="/images/docker/not_working.svg"
+         alt="Linux based docker images cannot use windows kernel"/><figcaption>
+            <p>Linux based docker images cannot use windows kernel</p>
+        </figcaption>
+</figure>
+
+<p>The solution: Docker introduced &ldquo;Docker Desktop&rdquo; which uses a &ldquo;Hypervisor Layer&rdquo; with a lightweight linux distro to provide a Linux-Kernel for MacOS and Windows.</p>
+<p>For local development you have to install docker desktop on your mac or windows laptop to run linux based images!</p>
+<h2 id="docker-architecture">
+  Docker Architecture
+  <a class="heading-link" href="#docker-architecture">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Docker Daemon, Docker Client und Docker Registries erklären.</p>
+<p><a href="https://docs.docker.com/get-started/docker-overview/"  class="external-link" target="_blank" rel="noopener">https://docs.docker.com/get-started/docker-overview/</a></p>
+<h2 id="container-basics">
+  Container-Basics
+  <a class="heading-link" href="#container-basics">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Container starten, stoppen, löschen</p>
+<p>Arbeiten mit Images (docker pull, docker build, docker rmi)</p>
+<p>DockerHub und Private Registries (nur Überblick)</p>
+<p>Interaktive Container (Shell starten mit docker exec)</p>
+<p>Persistenz mit Volumes und Bind Mounts (Grundprinzip verstehen)</p>
+<h2 id="docker-images">
+  Docker Images
+  <a class="heading-link" href="#docker-images">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Aufbau eines Images (Union File System, Layers – nur grob verstehen)</p>
+<p>Dockerfile verstehen und schreiben (Grundlagen: FROM, RUN, COPY, CMD, EXPOSE)</p>
+<p>Basis-Images vs. Scratch-Image (nur Konzept)</p>
+<p>Image Tagging und Versionierung (:latest, :1.0)</p>
+<p>(Best Practices &amp; Multi-Stage-Builds kannst du überspringen, das kommt später bei Bedarf.)</p>
+<h2 id="netzwerke">
+  Netzwerke
+  <a class="heading-link" href="#netzwerke">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Container-Netzwerke (bridge)</p>
+<p>Ports exposen und weiterleiten (-p 8080:80)</p>
+<p>Container miteinander verbinden (z. B. App + DB im selben Network)</p>
+<p>DNS-Auflösung innerhalb von Docker-Netzwerken (nur Überblick)</p>
+<p>(Custom Networks erstellen = nice-to-have, aber kein Muss für Kubernetes-Basis.)</p>
+<h2 id="storage--volumes">
+  Storage &amp; Volumes
+  <a class="heading-link" href="#storage--volumes">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Unterschied Volumes vs. Bind Mounts</p>
+<p>Named Volumes (nur Konzept)</p>
+<p>Persistenz-Prinzip verstehen (damit du in Kubernetes später PersistentVolumes verstehst)</p>
+<h2 id="docker-compose-optional-nur-überblick">
+  Docker Compose (optional, nur Überblick)
+  <a class="heading-link" href="#docker-compose-optional-nur-%c3%bcberblick">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Einführung in docker-compose.yml</p>
+<p>Mehrere Container orchestrieren (z. B. App + DB)</p>
+<p>Umgebungsvariablen und .env-Dateien</p>
+<p>👉 Compose brauchst du nicht in der Tiefe, aber ein kurzer Überblick hilft dir, den Schritt zu Kubernetes zu verstehen.</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2025
+     Johannes Gerstbauer 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

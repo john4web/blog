@@ -6,19 +6,27 @@ description = ""
 
 ## Basics
 
-What is Docker? Docker is a virtualization software that makes developing and deploying applications easier. Docker is written in the GO programming language.
+What is Docker? 
 
-Before docker was invented, every developer had to install and configure all services directly on their operating system on their local machine. However, the installation process is different on different operating systems. Furthermore, many steps are required where something can go wrong.
+Docker is a virtualization tool that makes developing and deploying applications much easier.
 
-When using docker, one is working with containers. A container is an isolated environment. E.g. Postgres in a specific version can be packaged with all dependencies and configs inside a container.
+Before Docker existed, developers had to install and configure all required services directly on their local machines. This process could be tricky because:
 
-the following command fetches a container package from the internet and starts it on your computer.
+- Installation steps differ between operating systems.
+- Many steps are required, and errors can easily occur.
 
-"docker run postgres"
+With Docker, you work with containers. A container is an isolated environment that includes everything a service needs to run.
 
-Advantages:
-- command is the same for all operating systems
-- command is the same for all services
+For example, you can package Postgres in a container with a specific version, along with all its dependencies and configuration. You can then start it on your computer with a single command:
+
+```bash
+docker run postgres
+```
+
+Advantage of Docker:
+
+- The same commands work across all operating systems.
+- The same commands work for all services.
 
 With Docker, the old problem of _“It only works on my machine”_ is gone.
 Each piece of software runs inside its own container, completely separate from your local system. A container will run the same way everywhere — on your laptop, on a server, or in the cloud.
@@ -29,32 +37,41 @@ This also avoids version conflicts — for example, if two projects need differe
 
 ## Docker vs. VMs
 
-Do you know virtual machines? I mean the thing where you can run for instance the windows operating system on a MacOS apple device:
 
-{{< figure src="/images/docker/vm.png" caption="With a virtual machine you can run a windows OS on MacOS" width="50%">}}
+Do you know virtual machines?
 
-Docker is something like a VM. Aber mit feinen Unterschieden.
+A virtual machine (VM) allows you to run an operating system, like Windows, on a different host system, like MacOS:
 
-Im folgenden Bild sieht man den Aufbau eines Betriebssystems:
+{{< figure src="/images/docker/vm.png" caption="With a virtual machine you can run a Windows OS on MacOS" width="50%">}}
+
+Docker is similar to a VM — but with some important differences.
+
+Here’s a look at the structure of an operating system:
 
 {{< figure src="/images/docker/os_architecture.svg" caption="Architecture of an Operating System" >}}
 
-Layers explained:
-- Hardware-Layer (=the actual machine) CPU, Speicher, Festplatten, Netzwerk, Geräte
-- OS-Application-Layer (= die Ebene, auf der Programme laufen, die der Benutzer direkt verwendet)
-- OS Kernel Layer – Kern des Betriebssystems (Prozessverwaltung, Speicherverwaltung, Treiber, Systemaufrufe). The kernel interacts with hardware and apps (= Middleman)
 
-What is now the difference between a VM and Docker?
-A VM virtualizes the whole OS. It has its own application layer and its own Kernel. Docker on the other hand only virtualizes the OS-Application-Layer. That means when comparing docker to a traditional vm:
+- Hardware Layer: The actual machine — CPU, memory, storage, network, devices
 
-- Docker is more lightweight and saves disk-space because it only has 1 OS-Layer instead of 2.
+- OS Application Layer: Where user programs run
 
-- Docker is much faster because 1 layer boots faster than 2 layers.
+- OS Kernel Layer: Core of the OS — manages processes, memory, drivers, and system calls. The kernel acts as a middleman between hardware and applications.
+
+
+A VM virtualizes the entire OS. It has its own kernel and application layer.
+
+However Docker only virtualizes the OS Application Layer.
+
+
+Implications:
+
+- Docker is lighter and uses less disk space because it shares the host OS kernel (it only has one OS-Layer instead of two).
+
+- Docker starts faster because it boots only one layer instead of two.
 
 Another difference: You can run a Linux VM on a windows machine. You cannot do that with docker. Docker is only compatible with Linux distros.
 
 {{< figure src="/images/docker/not_working.svg" caption="Linux based docker images cannot use windows kernel" >}}
-
 
 The solution: Docker introduced "Docker Desktop" which uses a "Hypervisor Layer" with a lightweight linux distro to provide a Linux-Kernel for MacOS and Windows.
 
@@ -67,6 +84,46 @@ Docker Daemon, Docker Client und Docker Registries erklären.
 
 https://docs.docker.com/get-started/docker-overview/ 
 
+
+## Docker Images
+
+A Docker image is an executable artifact. It is a ready-to-run package that contains everything an application needs to work.
+
+It includes:
+
+- Application source code (e.g., a JavaScript app)
+- Dependencies and services (e.g., Node.js, npm)
+- OS layer (usually Linux)
+- Configuration such as environment variables, directories, and files
+
+Docker images are usually downloaded from DockerHub, making it easy to run applications without manually setting up the environment.
+
+## Docker Containers
+
+We need to start the image somewhere --> in a container!
+
+A container is where a Docker image actually runs.
+- It starts and executes the application from the image.
+- A container is essentially a running instance of an image.
+- You can run multiple containers from the same image at the same time.
+
+## CD 💿 and CD-Player 📻
+
+You can think of a Docker image like a CD:
+
+The CD contains all the content you need — the music, album art, and instructions for playing.
+
+Similarly, a Docker image contains everything an application needs — code, dependencies, configuration, and the OS layer.
+
+A Docker container is like a CD playing in a CD player:
+
+The CD itself doesn’t do anything until it’s in the player.
+
+Once the CD is in the player, the music starts playing — just like a container runs the application from the image.
+
+You can put the same CD in multiple CD players and play it simultaneously, just like you can run multiple containers from the same image.
+
+This analogy makes it easy to see the difference: image = static package, container = running instance.
 
 ## Container-Basics
 

@@ -171,6 +171,16 @@ CRP: The Common Reuse Principle Link to heading CCP: The Common Closure Principl
     </item>
     
     <item>
+      <title>Defining REST-Endpoints - The right way!</title>
+      <link>https://gersti.at/todo/endpoints/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/endpoints/</guid>
+      <description>Darüber schreiben: https://martinfowler.com/articles/richardsonMaturityModel.html
+https://blog.restcase.com/4-maturity-levels-of-rest-api-design/</description>
+    </item>
+    
+    <item>
       <title>Dependency Inversion Principle</title>
       <link>https://gersti.at/todo/dependency-inversion-principle/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Apache Maven in Depth · gersti.at
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Johannes Gerstbauer">
+<meta name="description" content="https://www.youtube.com/watch?v=uAQs-YXnY-U
+What is Maven? Link to heading Maven&hellip;
+Maven is a build tool Link to heading ✅ it creates deployable artifacts of source code ✅ it facilitates automated/repeatable builds ✅ it facilitates deploying artifacts on servers Maven is a dependency management tool Link to heading ✅ it can download project dependencies from centralized repositories ( e.g. [mvnrepository](https://www.mvnrepository.com)) ✅ it can automatically resolve the libraries required by project dependencies ✅ it can do &quot;Dependency Scoping&quot; (e.">
+<meta name="keywords" content="blog, developer, software, engineer">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Apache Maven in Depth"/>
+<meta name="twitter:description" content="https://www.youtube.com/watch?v=uAQs-YXnY-U
+What is Maven? Link to heading Maven&hellip;
+Maven is a build tool Link to heading ✅ it creates deployable artifacts of source code ✅ it facilitates automated/repeatable builds ✅ it facilitates deploying artifacts on servers Maven is a dependency management tool Link to heading ✅ it can download project dependencies from centralized repositories ( e.g. [mvnrepository](https://www.mvnrepository.com)) ✅ it can automatically resolve the libraries required by project dependencies ✅ it can do &quot;Dependency Scoping&quot; (e."/>
+
+<meta property="og:title" content="Apache Maven in Depth" />
+<meta property="og:description" content="https://www.youtube.com/watch?v=uAQs-YXnY-U
+What is Maven? Link to heading Maven&hellip;
+Maven is a build tool Link to heading ✅ it creates deployable artifacts of source code ✅ it facilitates automated/repeatable builds ✅ it facilitates deploying artifacts on servers Maven is a dependency management tool Link to heading ✅ it can download project dependencies from centralized repositories ( e.g. [mvnrepository](https://www.mvnrepository.com)) ✅ it can automatically resolve the libraries required by project dependencies ✅ it can do &quot;Dependency Scoping&quot; (e." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gersti.at/todo/apache-maven-in-depth/" /><meta property="article:section" content="TODO" />
+
+
+
+
+
+
+<link rel="canonical" href="https://gersti.at/todo/apache-maven-in-depth/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      gersti.at
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/de/">🇩🇪</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://gersti.at/todo/apache-maven-in-depth/">
+          Apache Maven in Depth
+        </a>
+      </h1>
+    </header>
+
+    <p><a href="https://www.youtube.com/watch?v=uAQs-YXnY-U"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=uAQs-YXnY-U</a></p>
+<h2 id="what-is-maven">
+  What is Maven?
+  <a class="heading-link" href="#what-is-maven">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Maven&hellip;</p>
+<h3 id="maven-is-a-build-tool">
+  Maven is a build tool
+  <a class="heading-link" href="#maven-is-a-build-tool">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<pre><code>✅ it creates deployable artifacts of source code 
+
+
+✅ it facilitates automated/repeatable builds
+
+
+✅ it facilitates deploying artifacts on servers
+</code></pre>
+<h3 id="maven-is-a-dependency-management-tool">
+  Maven is a dependency management tool
+  <a class="heading-link" href="#maven-is-a-dependency-management-tool">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<pre><code>✅ it can download project dependencies from centralized repositories ( e.g. [mvnrepository](https://www.mvnrepository.com))
+
+
+✅ it can automatically resolve the libraries required by project dependencies
+
+
+✅ it can do &quot;Dependency Scoping&quot; (e.g. it ensures that a dependency is only used during integration tests and not in production).
+</code></pre>
+<h3 id="maven-is-a-project-management-tool">
+  Maven is a project management tool
+  <a class="heading-link" href="#maven-is-a-project-management-tool">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<pre><code>✅ Artifact Versioning
+
+✅ Change Logs
+
+✅ Documentation
+
+✅ JavaDocs
+
+✅ Reports
+</code></pre>
+<h3 id="maven-is-a-standardized-approach-to-building-software">
+  Maven is a standardized approach to building software
+  <a class="heading-link" href="#maven-is-a-standardized-approach-to-building-software">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<pre><code>✅ Uniformity across projects through patterns (e.g. standard directory structure: it dictates the structure of your project - which is nice)
+
+
+✅ Maven ist „Opinionated“ (= Maven has strong opinions about how projects should be structured and built).
+
+
+✅ Convention over Configuration
+
+
+✅ Consistent Path for all projects
+
+
+✅ [philosophy-of-maven](https://maven.apache.org/background/philosophy-of-maven.html)
+</code></pre>
+<h3 id="maven-is-a-command-line-tool">
+  Maven is a Command line tool
+  <a class="heading-link" href="#maven-is-a-command-line-tool">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<pre><code>✅ you can communicate with maven via the command line (e.g. `mvn install`)
+</code></pre>
+<h2 id="project-object-model-pom">
+  Project Object Model (POM)
+  <a class="heading-link" href="#project-object-model-pom">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Pasted Graphic.png</p>
+<p><em>Repositories:</em></p>
+<p>= Collection of artifacts or dependencys that can be local or remote.</p>
+<p>Local repositories: hat man lokal am laptop (kann man sich wie einen lokalen Cache vorstellen - The default location of the local repository is the . m2/repository/ directory under the user&rsquo;s home directory)
+Remote repositories: z.b. mvnrepository.com
+Wenn man eine remote repository runterlädt, wird sie im lokalen repository abgelegt.
+Das lokale Repository hat bei der Auflösung von Abhängigkeiten Vorrang -&gt; es wird also immer zuerst das lokal gespeicherte hergenommen.</p>
+<p><em>Plugins and Goals:</em></p>
+<p>Plugins kann man von remote repositories runterladen. Ein Plugin ist eine Collection of Goals.</p>
+<p>Goals perform the actions in maven builds -&gt; all work is done via plugins and goals. they are called independently or as part of a lifecycle phase.</p>
+<p>Kann man sich besser so vorstellen:</p>
+<p>Eine Analogie zu Java-Klassen wäre, dass ein Plugin  eine Klasse ist und die dazugehörigen goals sind Methoden in dieser Klasse.</p>
+<p>Beispiel:</p>
+<p>Das Maven Compiler Plugin hat zwei Goals:</p>
+<p>compile source
+compile test</p>
+<p>goals are operations that we are performing against our codebase to  build a product. All the work that we do with maven is done through plugins and goals.</p>
+<p>Each plugin and its goals can bind to a particular phase in a lifecycle.</p>
+<p><em>Lifecycle and Phases</em>:</p>
+<p>Maven has 3 Lifecycles: Clean, default and site</p>
+<p>Phases are executed sequentially and executing a phase executes all previous phases. Default is by far the largest lifecycle (it has about 23 phases in it).</p>
+<p>z.b. as we execute the default lifecycle and we enter into the compile phase we are going to kick of the compile sources goal on our compiler plugin.</p>
+<p><em>Maven Technical Overview</em>:</p>
+<p>executing the install phase on maven:</p>
+<p>„mvn install“</p>
+<p>dann passiert folgendes:</p>
+<p>Pasted Graphic 1.png</p>
+<p>maven examines pom.xml file (it looks for project information, dependencies and plugins)
+in order to obtain those dependencies/plugins, maven uses its dependency manager. The dependency manager looks at the dependencies and plugins listed in the pom and then pulls (downloads) it from the different repositories (maven central, nexus, etc…)
+Now we have the dependencies/plugins available locally. Once they are available, the lifecycle will begin.
+Weil wir die install-Phase aufgerufen haben, beginnen wir mit der Ausführung der compile-Phase. Dafür müssen wir alle Phasen ausführen, die der install-Phase vorausgehen.</p>
+<p>POM.xml structure:</p>
+<p><!-- raw HTML omitted --> —&gt; root tag of all pom.xml files</p>
+<p><!-- raw HTML omitted -->  —&gt; indicate what version of the object model this pom is using. For Maven 2 and Maven 3 this model version is always „4.0.0“ (this does not change very often).</p>
+<p><!-- raw HTML omitted --> —&gt; this is the name of the artifact we are going to generate with our project</p>
+<p><!-- raw HTML omitted -->  —&gt; indicates the unique identifier of the organization or the group that is creating the project.</p>
+<p>artifactId and groupId are used to pull down plugins and dependencies. This is the adress or coordinate system of maven.</p>
+<p><!-- raw HTML omitted --> —&gt; version number of the project. When we work on a project that is under development, this is usually suffixed with „SNAPSHOT“. Sometimes RELEASE is used as suffix when a release is put out for general availability. This version almost serves as a timestamp of the application.</p>
+<p><!-- raw HTML omitted --> —&gt; indicates the type of packaging that we will use for the type of artifact we will produce. z.B. jar, war, etc. the default of this element is „jar“. So if you do not specify this packaging tag, it is automatically set to jar. you can leave it out.</p>
+<p>More tags for additional information:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>——————————</p>
+<p>Beispiel:</p>
+<p>mvn package. —&gt; execute the package phase within the default lifecycle. This phase will create a jar file which contains the contents of our project. Jede Phase, die der package-Phase vorausgeht – wie zum Beispiel compile und test –, wird ausgeführt, wenn wir die package-Phase ausführen.</p>
+<p>——————————————</p>
+<p><em>Standard directory structure</em></p>
+<p>Wenn ich mvn compile ausführe, dann kompiliert maven das File Application1.java zu Application1.class:</p>
+<p>Pasted Graphic 2.png</p>
+<p>Aber woher weiß maven, wo Application1.java liegt? Es wurde ja nirgends im Pom-file angegeben. (think)</p>
+<p>Answer:</p>
+<p>Maven relies on Convention over Configuration!</p>
+<p>Instead of specifying the location of our source files, we simply place our java source files within a pre defined location that maven uses as a standard. This is known as the maven standard directory layout. There are several other directorys specified by maven: <a href="https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html"  class="external-link" target="_blank" rel="noopener">https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html</a></p>
+<p>Theoretisch könnte man diese struktur überschreiben, indem man folgendes ins pom.xml schreibt:</p>
+<p>Pasted Graphic 3.png</p>
+<p>aber das sollte man niemals machen!!! Es ist nicht recommended!!</p>
+<p><em>Inheritance</em></p>
+<p>In java können klassen voneinander erben. Dasselbe Konzept gibt es auch in Maven. In Maven können POM.xml files voneinander erben. The configuration of the parent pom is then carried over to the child pom. In the child pom, we can then override some of the configuration specified in the parent pom. Similarly to java inheritance where every class inherits from the Object class —&gt; Every pom file inherits from a super pom file.</p>
+<p>If you wanna see the entire pom (the child pom + inherited super pom), you have to execute the command „mvn help:effective-pom“.</p>
+<p>So lässt man zwei pom.xml files voneinander erben:</p>
+<p>man erstellt zwei projekte mit jeweils eigenen pom.xml files:
+Pasted Graphic 5.png</p>
+<p>im child-pom pezifiziert man dann einen  <!-- raw HTML omitted --> tag in dem die coordinates von jenem pom file sind, von dem man erben möchte. z.B.:</p>
+<p>Pasted Graphic 6.png</p>
+<p>dann kann man im parent projekt „mvn install“ ausführen, damit das maven parent pom in das lokale repository gelegt wird.</p>
+<p>wenn man jetzt im child projekt „mvn help:effective-pom“ ausführt, dann sieht man, wie die Vererbung funktioniert hat.</p>
+<p><em>Profiles</em>:
+Maven Profiles allow us to build our projects for different environments. It gives us a mechanism to customize our builds depending upon the environment we are targeting. So within our pom file, we are able to specify a profile which will define an alternative set of configuration for any particular environment.</p>
+<p>Beispiel: Wir haben ein pom file, in dem definiert wird, dass das jar file nach dem builden der Applikation in einem speziellen Ordner abgespeichert wird. Nun kann man mit profiles definieren, dass in den unterschiedlichen environments das jar file in unterschiedlichen ordnern abgelegt werden:</p>
+<p>Pasted Graphic 7.png</p>
+<p>(Man kann aber natürlich nicht nur den build tag wie in dem beispiel in profiles definieren sondern alle anderen Sachen auch.)</p>
+<p>Beim ausführen der commands kann man dann das profil mit -P „mitgeben“: „mvn -Pproduction package“. Wenn man das so ausführt, dann wird das file in den production ordner gelegt und nicht in den development ordner.</p>
+<p>Activator:</p>
+<p>We dont always want to define the profile we’d like to apply by using this command line flag when accessing a goal. Sometimes it is not possible to hand over the flag. For this case, activators come into play. An activator is a mechanism to look at something else than this flag. For instance an environment variable. So in the following example, the profile is set based on an environment variable:</p>
+<p>Pasted Graphic 8.png</p>
+<p>you also have to specify the path variable name (<!-- raw HTML omitted -->) and the path variable value (<!-- raw HTML omitted -->). Also hier wird entschieden welches profil hergenommen wird basierend darauf, was in der environment variable steht.</p>
+<p>dann muss man nur mehr die environment variable am computer anlegen und „mvn package“ ausführen.</p>
+<p>ℹ️ there are 5 different activators we can apply:</p>
+<p>activeByDefault —-&gt; set a profile as active by default</p>
+<p>file. —-&gt; looks if a specific file is available or not</p>
+<p>jdk —&gt; considers what version of java you are using to build with</p>
+<p>os —&gt; decides based on the operating system you are working on</p>
+<p>property —-&gt; decides based on environment variables</p>
+<p>———————————————————————</p>
+<p>Maven Archetype Plugin</p>
+<p>mvn archetype:generate</p>
+<p>Archetype = pre defined projects (templates that you can use to build your own project)</p>
+<p>is used to create new maven projects very fast.</p>
+<hr>
+<p><em>dependency management</em></p>
+<p>dependency management is pulling in the different libraries that you need for your applications from a repository.</p>
+<ol>
+<li>pom file specify coordinates of a dependency</li>
+<li>maven looks into the local repository and sees if it exists</li>
+<li>if not it pulls down the dependency from a remote repository and caches it in the local repository</li>
+</ol>
+<p>im pom file gehören die dependencys in den dependencies tag. z.B.:</p>
+<!-- raw HTML omitted -->
+<p>execute the copy-dependencies goal on the dependency plugin:</p>
+<p>mvn dependency:copy-dependencies</p>
+<p>this will tell maven to pull down the dependencies for our project and place them within our local repository.</p>
+<h2 id="versionsnummern-in-propertys-auslagern">
+  versionsnummern in propertys auslagern
+  <a class="heading-link" href="#versionsnummern-in-propertys-auslagern">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>man kann versionsnummern auch in propertys auslagern. z.b. so:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="keine-version-angeben">
+  keine version angeben
+  <a class="heading-link" href="#keine-version-angeben">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Die 3 möglichen Fälle:</p>
+<p>1️⃣ Version kommt aus dem <!-- raw HTML omitted --> eines Parent-POMs</p>
+<p>Das ist der Standard- und empfohlene Fall:</p>
+<!-- raw HTML omitted -->
+<p>Dann kannst du in einem Kind-POM schreiben:</p>
+<!-- raw HTML omitted -->
+<p>✅ Maven weiß, dass die Version 2.0.13 aus dem dependencyManagement kommt.
+Das ist der einzige saubere Weg, um eine Dependency ohne Version zu deklarieren.</p>
+<p>2️⃣ Version kommt aus einem „BOM“ (Bill of Materials)</p>
+<p>Das ist eine moderne Variante (z. B. bei Spring Boot oder Micronaut):</p>
+<!-- raw HTML omitted -->
+<p>Dann kannst du alle Micronaut-Dependencies ohne Version definieren:</p>
+<!-- raw HTML omitted -->
+<p>✅ Maven holt sich die Version aus der BOM, die über <!-- raw HTML omitted --> importiert wurde.</p>
+<p>3️⃣ Es gibt keine Quelle für die Version</p>
+<p>Wenn du das machst:</p>
+<!-- raw HTML omitted -->
+<p>&hellip;und nirgendwo (kein Parent, kein BOM, kein <!-- raw HTML omitted -->) eine Version definiert ist, dann:</p>
+<p>🚫 Baut Maven nicht.</p>
+<p>Du bekommst einen Fehler wie:</p>
+<p>[ERROR] &lsquo;dependencies.dependency.version&rsquo; for org.slf4j:slf4j-api:jar is missing.</p>
+<p>Spring Boot nutzt genau diesen BOM-Mechanismus aus 2️⃣.
+Das Spring Boot Parent-POM bringt ein BOM mit, das alle Versionen vorgibt.</p>
+<h2 id="transitive-dependencies">
+  Transitive Dependencies:
+  <a class="heading-link" href="#transitive-dependencies">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The dependencies of dependencies are called transitive dependencies. This can go infinate. maven pulls in all the dependencies of dependencys of dependencys etc. it is like a dependency tree.</p>
+<h2 id="other-remote-repositorys">
+  Other remote repositorys
+  <a class="heading-link" href="#other-remote-repositorys">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>we can tell maven about other remote repositorys that it can use. This can be convenient, when we need a dependency that cannot be found in the maven central repository.</p>
+<p>To do this, we need to edit our settings.xml file. Go to the directory where maven is installed. then go to the conf folder. this folder holds all the configuration. in this folder, the settings.xml file should be. changes in there will affect all the maven instances installed on the machine.</p>
+<p>place a new profile into the profiles section and activate it:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Now, maven can work with the spring remote repository as well.</p>
+<h2 id="was-ist-ein-classpath">
+  Was ist ein classpath?
+  <a class="heading-link" href="#was-ist-ein-classpath">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Der Classpath ist einfach gesagt der Suchpfad, den die Java Virtual Machine (JVM) benutzt, um Klassen und Ressourcen zu finden (also .class-Dateien, Konfigurationsdateien, Properties, usw.).</p>
+<p>Wenn dein Java-Programm läuft und du z. B. schreibst:</p>
+<p>import org.slf4j.Logger;</p>
+<p>…dann muss die JVM wissen, wo diese Klasse org.slf4j.Logger liegt.
+Genau das steht im Classpath.</p>
+<h2 id="scopes">
+  Scopes:
+  <a class="heading-link" href="#scopes">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>dependency scope tells us about when a dependency will be available during mavens lifecycle.</p>
+<p>in each dependency you can define a scope:</p>
+<!-- raw HTML omitted -->
+<p>if you do not specify any scope tag in a dependency, then the scope is &ldquo;compile&rdquo;. So &ldquo;compile&rdquo; is the default scope.</p>
+<p><strong>compile</strong> scope means:
+dependencies are available on all classpaths. so they are available both when we build the application and at runtime. they are available during the build-, test- and run-phases of our project.</p>
+<p><strong>test</strong> scope means:
+the dependency is not required for building or executing the project. it is required for executing our unit test. Only when we execute our unit tests, then we will see these dependencies on our classpath.</p>
+<p><strong>provided</strong> scope means:
+when you expect the dependency to be provided by sth. like the JDK or the container you are using. The dependency will be available for the build and test phases but when we deploy (or &ldquo;jar-up&rdquo;) our application, those dependency will not be available in that package because something else will be providing them.</p>
+<p><strong>runtime</strong> scope means:
+dependency is available when we execute the system or when we test the application. But NOT when we compile the application. An example for that is the jdbc driver implementation. it is not needed until you actually run the application.</p>
+<p><strong>system</strong> scope means:
+dependency will be provided by the file system. you place your jar files in a folder on the file system and maven goes out and finds the dependency on a file path that you specify. This can be really dicey because there are different paths on different machines. It makes your application rigid and normally is not recommended.</p>
+<p><strong>import</strong> scope means:
+import indicates that this dependency should be replaced with all effective dependencies declared in its POM. The import scope is rarily used.</p>
+<h2 id="transitive-dependency-conflict-resolution">
+  Transitive Dependency Conflict Resolution
+  <a class="heading-link" href="#transitive-dependency-conflict-resolution">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>it is not uncommon that you have a dependency, that has transitive dependencies which conflict with another dependency&rsquo;s transitive dependencies.</p>
+<p>weiterschauen bei: 2:07:00</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2025
+     Johannes Gerstbauer 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

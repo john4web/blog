@@ -766,5 +766,16 @@ Pragmatic programmer schreibt in mehreren Kapiteln darüber. insbesondere auf se
 H1 Link to heading H2 Link to heading H3 Link to heading H4 Link to heading H5 Link to heading H6 Link to heading Paragraph Link to heading Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur?</description>
     </item>
     
+    <item>
+      <title>Apache Maven in Depth</title>
+      <link>https://gersti.at/todo/apache-maven-in-depth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/apache-maven-in-depth/</guid>
+      <description>https://www.youtube.com/watch?v=uAQs-YXnY-U
+What is Maven? Link to heading Maven&amp;hellip;
+Maven is a build tool Link to heading ✅ it creates deployable artifacts of source code ✅ it facilitates automated/repeatable builds ✅ it facilitates deploying artifacts on servers Maven is a dependency management tool Link to heading ✅ it can download project dependencies from centralized repositories ( e.g. [mvnrepository](https://www.mvnrepository.com)) ✅ it can automatically resolve the libraries required by project dependencies ✅ it can do &amp;quot;Dependency Scoping&amp;quot; (e.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -13,20 +13,17 @@
 
 
 <meta name="author" content="Johannes Gerstbauer">
-<meta name="description" content="https://www.youtube.com/watch?v=uAQs-YXnY-U
-What is Maven? Link to heading Maven&hellip;
+<meta name="description" content="What is Maven? Link to heading Maven&hellip;
 Maven is a build tool Link to heading ✅ it creates deployable artifacts of source code ✅ it facilitates automated/repeatable builds ✅ it facilitates deploying artifacts on servers Maven is a dependency management tool Link to heading ✅ it can download project dependencies from centralized repositories ( e.g. [mvnrepository](https://www.mvnrepository.com)) ✅ it can automatically resolve the libraries required by project dependencies ✅ it can do &quot;Dependency Scoping&quot; (e.">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Apache Maven in Depth"/>
-<meta name="twitter:description" content="https://www.youtube.com/watch?v=uAQs-YXnY-U
-What is Maven? Link to heading Maven&hellip;
+<meta name="twitter:description" content="What is Maven? Link to heading Maven&hellip;
 Maven is a build tool Link to heading ✅ it creates deployable artifacts of source code ✅ it facilitates automated/repeatable builds ✅ it facilitates deploying artifacts on servers Maven is a dependency management tool Link to heading ✅ it can download project dependencies from centralized repositories ( e.g. [mvnrepository](https://www.mvnrepository.com)) ✅ it can automatically resolve the libraries required by project dependencies ✅ it can do &quot;Dependency Scoping&quot; (e."/>
 
 <meta property="og:title" content="Apache Maven in Depth" />
-<meta property="og:description" content="https://www.youtube.com/watch?v=uAQs-YXnY-U
-What is Maven? Link to heading Maven&hellip;
+<meta property="og:description" content="What is Maven? Link to heading Maven&hellip;
 Maven is a build tool Link to heading ✅ it creates deployable artifacts of source code ✅ it facilitates automated/repeatable builds ✅ it facilitates deploying artifacts on servers Maven is a dependency management tool Link to heading ✅ it can download project dependencies from centralized repositories ( e.g. [mvnrepository](https://www.mvnrepository.com)) ✅ it can automatically resolve the libraries required by project dependencies ✅ it can do &quot;Dependency Scoping&quot; (e." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gersti.at/todo/apache-maven-in-depth/" /><meta property="article:section" content="TODO" />
@@ -158,8 +155,7 @@ Maven is a build tool Link to heading ✅ it creates deployable artifacts of sou
       </h1>
     </header>
 
-    <p><a href="https://www.youtube.com/watch?v=uAQs-YXnY-U"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=uAQs-YXnY-U</a></p>
-<h2 id="what-is-maven">
+    <h2 id="what-is-maven">
   What is Maven?
   <a class="heading-link" href="#what-is-maven">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -452,15 +448,35 @@ dependency is available when we execute the system or when we test the applicati
 dependency will be provided by the file system. you place your jar files in a folder on the file system and maven goes out and finds the dependency on a file path that you specify. This can be really dicey because there are different paths on different machines. It makes your application rigid and normally is not recommended.</p>
 <p><strong>import</strong> scope means:
 import indicates that this dependency should be replaced with all effective dependencies declared in its POM. The import scope is rarily used.</p>
-<h2 id="transitive-dependency-conflict-resolution">
-  Transitive Dependency Conflict Resolution
-  <a class="heading-link" href="#transitive-dependency-conflict-resolution">
+<h2 id="excluding-transitive-dependencies-in-maven">
+  Excluding transitive dependencies in Maven
+  <a class="heading-link" href="#excluding-transitive-dependencies-in-maven">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>it is not uncommon that you have a dependency, that has transitive dependencies which conflict with another dependency&rsquo;s transitive dependencies.</p>
-<p>weiterschauen bei: 2:07:00</p>
+<p>At its core, to exclude Maven dependency means to prevent a specific transitive dependency from being included in your project&rsquo;s classpath. When you declare a dependency in your pom.xml, Maven automatically pulls in not only that direct dependency but also all its own dependencies, and so on, creating a dependency tree. While usually beneficial, this can lead to issues:</p>
+<ol>
+<li>
+<p>Dependency Conflicts: Different versions of the same library being pulled in by various transitive paths, leading to runtime errors or unpredictable behavior. It is not uncommon that you have a dependency, that has transitive dependencies which conflict with another dependency&rsquo;s transitive dependencies.</p>
+</li>
+<li>
+<p>Project Bloat: Unnecessary libraries being included, increasing JAR size and potentially impacting application startup time or memory footprint.</p>
+</li>
+<li>
+<p>Security Vulnerabilities: Including vulnerable versions of libraries through transitive paths that are not directly needed.</p>
+</li>
+</ol>
+<p>Here’s a common example of how to exclude Maven dependency within a pom.xml:</p>
+<!-- raw HTML omitted -->
+<p>In this snippet, parent-library might transitively bring in unwanted-transitive-dependency. By using the  tag, we explicitly tell Maven to prevent this specific transitive dependency from being included</p>
+<p>It&rsquo;s also possible to exclude Maven dependency specifically within Maven plugins. This is useful when a plugin itself introduces an undesirable dependency. The syntax is similar, but it resides within the plugin&rsquo;s configuration:</p>
+<!-- raw HTML omitted -->
+<p>weiterschauen bei: 2:12:00</p>
+<p>Quellen:</p>
+<p><a href="https://www.vervecopilot.com/interview-questions/how-can-mastering-how-to-exclude-maven-dependency-elevate-your-professional-interviews"  class="external-link" target="_blank" rel="noopener">https://www.vervecopilot.com/interview-questions/how-can-mastering-how-to-exclude-maven-dependency-elevate-your-professional-interviews</a></p>
+<p><a href="https://www.youtube.com/watch?v=uAQs-YXnY-U"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=uAQs-YXnY-U</a></p>
+<p><a href="https://www.baeldung.com/maven-dependency-scopes"  class="external-link" target="_blank" rel="noopener">https://www.baeldung.com/maven-dependency-scopes</a></p>
 
   </article>
 </section>

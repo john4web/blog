@@ -869,8 +869,7 @@ H1 Link to heading H2 Link to heading H3 Link to heading H4 Link to heading H5 L
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/todo/apache-maven-in-depth/</guid>
-      <description>https://www.youtube.com/watch?v=uAQs-YXnY-U
-What is Maven? Link to heading Maven&amp;hellip;
+      <description>What is Maven? Link to heading Maven&amp;hellip;
 Maven is a build tool Link to heading ✅ it creates deployable artifacts of source code ✅ it facilitates automated/repeatable builds ✅ it facilitates deploying artifacts on servers Maven is a dependency management tool Link to heading ✅ it can download project dependencies from centralized repositories ( e.g. [mvnrepository](https://www.mvnrepository.com)) ✅ it can automatically resolve the libraries required by project dependencies ✅ it can do &amp;quot;Dependency Scoping&amp;quot; (e.</description>
     </item>
     

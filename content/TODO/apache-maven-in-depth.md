@@ -4,8 +4,6 @@ date = ""
 description = ""
 +++
 
-https://www.youtube.com/watch?v=uAQs-YXnY-U 
-
 
 ## What is Maven?
 
@@ -542,8 +540,68 @@ dependency will be provided by the file system. you place your jar files in a fo
 **import** scope means:
 import indicates that this dependency should be replaced with all effective dependencies declared in its POM. The import scope is rarily used.
 
-## Transitive Dependency Conflict Resolution
 
-it is not uncommon that you have a dependency, that has transitive dependencies which conflict with another dependency's transitive dependencies.
 
-weiterschauen bei: 2:07:00
+## Excluding transitive dependencies in Maven
+
+At its core, to exclude Maven dependency means to prevent a specific transitive dependency from being included in your project's classpath. When you declare a dependency in your pom.xml, Maven automatically pulls in not only that direct dependency but also all its own dependencies, and so on, creating a dependency tree. While usually beneficial, this can lead to issues:
+
+1. Dependency Conflicts: Different versions of the same library being pulled in by various transitive paths, leading to runtime errors or unpredictable behavior. It is not uncommon that you have a dependency, that has transitive dependencies which conflict with another dependency's transitive dependencies.
+
+2. Project Bloat: Unnecessary libraries being included, increasing JAR size and potentially impacting application startup time or memory footprint.
+
+3. Security Vulnerabilities: Including vulnerable versions of libraries through transitive paths that are not directly needed.
+
+
+Here’s a common example of how to exclude Maven dependency within a pom.xml:
+
+<dependency>
+    <groupid>com.example</groupid>
+    <artifactid>parent-library</artifactid>
+    <version>1.0</version>
+    <exclusions>
+        <exclusion>
+            <groupid>com.unwanted</groupid>
+            <artifactid>unwanted-transitive-dependency</artifactid>
+        </exclusion>
+    </exclusions>
+</dependency>
+
+In this snippet, parent-library might transitively bring in unwanted-transitive-dependency. By using the  tag, we explicitly tell Maven to prevent this specific transitive dependency from being included 
+
+It's also possible to exclude Maven dependency specifically within Maven plugins. This is useful when a plugin itself introduces an undesirable dependency. The syntax is similar, but it resides within the plugin's configuration:
+
+<build>
+    <plugins>
+        <plugin>
+            <groupid>org.apache.maven.plugins</groupid>
+            <artifactid>maven-compiler-plugin</artifactid>
+            <version>3.8.1</version>
+            <dependencies>
+                <dependency>
+                    <groupid>org.apache.maven.shared</groupid>
+                    <artifactid>maven-shared-utils</artifactid>
+                    <version>0.2</version>
+                    <exclusions>
+                        <exclusion>
+                            <groupid>commons-io</groupid>
+                            <artifactid>commons-io</artifactid>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+            </dependencies>
+        </plugin>
+    </plugins>
+</build>
+
+
+weiterschauen bei: 2:12:00
+
+
+Quellen:
+
+https://www.vervecopilot.com/interview-questions/how-can-mastering-how-to-exclude-maven-dependency-elevate-your-professional-interviews
+
+https://www.youtube.com/watch?v=uAQs-YXnY-U 
+
+https://www.baeldung.com/maven-dependency-scopes

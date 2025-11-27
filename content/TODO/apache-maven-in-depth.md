@@ -347,7 +347,7 @@ is used to create new maven projects very fast.
 
 -----------------------------------------------
 
-*dependency management*
+## maven's dependency management
 
 dependency management is pulling in the different libraries that you need for your applications from a repository.
 
@@ -594,8 +594,194 @@ It's also possible to exclude Maven dependency specifically within Maven plugins
     </plugins>
 </build>
 
+## Snapshot Versions
 
-weiterschauen bei: 2:12:00
+e.g. <version>1.0.0-SNAPSHOT</version>
+
+A snapshot version in Maven is one that has not been released.
+
+The idea is that before a 1.0 release (or any other release) is done, there exists a 1.0-SNAPSHOT. That version is what might become 1.0. It's basically "1.0 under development". This might be close to a real 1.0 release, or pretty far (right after the 0.9 release, for example).
+
+The difference between a "real" version and a snapshot version is that snapshots might get updates. That means that downloading 1.0-SNAPSHOT today might give a different file than downloading it yesterday or tomorrow.
+
+Usually, snapshot dependencies should only exist during development and no released version (i.e. no non-snapshot) should have a dependency on a snapshot version.
+
+When you build an application, Maven will search for dependencies in the local repository. If a stable version is not found there, it will search the remote repositories (defined in settings.xml or pom.xml) to retrieve this dependency. Then, it will copy it into the local repository, to make it available for the next builds.
+
+For example, a foo-1.0.jar library is considered as a stable version, and if Maven finds it in the local repository, it will use this one for the current build.
+
+Now, if you need a foo-1.0-SNAPSHOT.jar library, Maven will know that this version is not stable and is subject to changes. That's why Maven will try to find a newer version in the remote repositories, even if a version of this library is found on the local repository. However, this check is made only once per day. That means that if you have a foo-1.0-20110506.110000-1.jar (i.e. this library has been generated on 2011/05/06 at 11:00:00) in your local repository, and if you run the Maven build again the same day, Maven will not check the repositories for a newer version.
+
+Maven provides you a way to change this update policy in your repository definition:
+
+// Source - https://stackoverflow.com/a
+// Posted by Romain Linsolas, modified by community. See post 'Timeline' for change history
+// Retrieved 2025-11-27, License - CC BY-SA 4.0
+
+<repository>
+    <id>foo-repository</id>
+    <url>...</url>
+    <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>XXX</updatePolicy>
+    </snapshots>
+</repository>
+
+where XXX can be:
+
+    always: Maven will check for a newer version on every build;
+    daily, the default value;
+    interval:XXX: an interval in minutes (XXX)
+    never: Maven will never try to retrieve another version. It will do that only if it doesn't exist locally. With the configuration, SNAPSHOT version will be handled as the stable libraries.
+
+also: snapshot version bedeutet: es wird ständig geschaut, ob es neuen code gibt, der in dieser version drinnen ist. Das heißt bei snapshot versionen kann sich der code ständig updaten. 
+
+## Maven <dependencyManagement> vs. <dependencies> Tags
+
+<dependencyManagement> allows to consolidate and centralize the management of dependency versions without adding dependencies which are inherited by all children. This is especially useful when you have a set of projects (i.e. more than one) that inherits a common parent.
+
+Another extremely important use case of dependencyManagement is the control of versions of artifacts used in transitive dependencies. 
+
+Hier eine genaue Erklärung: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html
+
+## Cyclic Dependencies
+
+In Maven bezeichnet “cyclic dependency” (zyklische Abhängigkeit) eine Situation, in der sich zwei oder mehr Module gegenseitig direkt oder indirekt als Abhängigkeit benötigen – ein Abhängigkeitskreis.
+
+🔄 Beispiel für eine direkte zyklische Abhängigkeit
+
+Modul A hängt von B ab
+
+Modul B hängt von A ab
+
+→ A → B → A
+
+🔄 Beispiel für eine indirekte zyklische Abhängigkeit
+
+A hängt von B ab
+
+B hängt von C ab
+
+C hängt wiederum von A ab
+
+→ A → B → C → A
+
+❗ Warum ist das ein Problem?
+
+Maven kann solche Kreise nicht auflösen, weil es die Reihenfolge nicht bestimmen kann, in der die Artefakte gebaut werden müssen.
+
+Das Build bricht normalerweise ab mit einer Fehlermeldung wie “Failed to collect dependencies…”.
+
+Es führt zu schwer wartbaren und stark gekoppelten Modulen.
+
+
+## Lifecycles and Phases
+
+a lifecycle helps us when we build, test or distribute an artifact. The lifecycle consists of a set of steps or stages that we go through as we build our artifact. These stages/steps are referred to as phases. Within maven, there are 3 built in lifecycles.
+- default
+- clean
+- site
+
+these lifecycles have their own particular phases. When a lifecycle is executed, then a goal will bind to a particular phase. In general a goal is an action that is going to be taken. A goal is like a method that performs some kind of action against our project. 
+
+execute the clean phase of the **clean lifecycle**: "mvn clean"
+what will happen is that the clean phase will be invoked as well as every phase that precedes the clean phase within the clean lifecycle.
+
+Der Clean-Lifecycle von Maven besteht aus genau drei Phasen:
+
+1. pre-clean
+2. clean
+3. post-clean
+
+Wenn du mvn clean ausführst, wird die Phase clean sowie alle ihr vorausgehenden Phasen im Clean-Lifecycle ausgeführt.
+
+➡️ Ausgeführt werden also: pre-clean und clean.
+
+Die Phase post-clean wird nicht ausgeführt, weil sie nach clean kommt.
+
+Give us some information about the clean phase:
+"mvn help:describe -Dcmd=clean"
+
+**default lifecycle** is one of the most important lifecycles. It has 23 phases and it will adjust itself depending upon the package you specify within your pom.xml file ( <packaging>jar</packaging> ).
+
+Give us some information about the deploy phase:
+"mvn help:describe -Dcmd=deploy"
+
+These are some of the most important phases out of the 23 default lifecycle phases:
+
+- compile
+- test-compile
+- test
+- package
+- install
+- deploy
+
+let's take a look at them in detail:
+
+**Compile Phase** (compile the source code of the project)
+the compile phase is going to compile all of the source code within our "src/main/java" directory and then it turns our java files into .class files which we then can execute via the jvm.
+
+**Test-Compile phase** (compile the test source code into the test destination directory)
+Diese Phase funktioniert ähnlich wie die compile phase nur dass sie diesmal unsere unit tests unter "src/test/java" compiled.
+
+**test phase** (Run tests using a suitable unit testing framework. These tests should not require the code be packaged or deployed)
+
+This phase is used when we are running our particular unit tests. This phase is going to kick off those tests. By default maven will stop the build if any of the tests fails but it can be configured to ignore failures or to skip unit tests all together.
+
+for example: pom.xml konfiguration to turn off tests within maven:
+<build>
+    <plugins> 
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+                <testFailureIgnore>true</testFailureIgnore>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+**package phase** (take the compiled code and package it in its distribute format, such as a JAR)
+
+This phase is when we take our compiled code and we build that artifact that we are going to distribute. So we are talking about the JARs and WARs. Those items that have our code packaged up that we can then deploy to a server or we can use within another code-base. The package phase will create exactly this artifact.
+
+**install phase** (install the package into the local repository, for use as a dependency in other projects locally)
+
+takes the artifact that is created within the package phase and places it within the local repository. That allows other maven projects to depend on that project or we can reference that new artifact using the coordinates in a variety of other ways.
+
+**deploy phase** (Done in an integration or release environment, copies the final package to the remote repository for sharing with other developers and projects)
+
+This phase is about working across the environments. You can have a remote repository (e.g. maven central) or maybe your organization has created its own remote repository. When we deploy, we basically push our artifact to that remote repository that can be used for integration purposes amongst developers.
+
+## Plugins and goals
+
+Goals perform tasks that are ran against our projects in order for something to happen. Goals are like methods in a class. 
+
+Plugins are comprised of a number of goals. A plugin is like a class that has methods. So a plugin has many goals. 
+
+Syntax for executing a plugin:
+mvn [pluginName]:[goal]
+
+e.g. mvn compile:compile
+
+where do these plugins come from? Because Plugins are available even if i do not specify them in my pom.xml file.
+Answer: those plugins come from the Super-POM.
+
+wenn man sich das effective pom ansieht, dann kann man die ganzen plugins sehen:
+mvn help:effective-pom
+
+Folgendes zeigt nähere Informationen über das compiler plugin an:
+
+mvn help:describe -Dplugin=compiler
+
+## Plugin Properties
+
+
+
+## Annotation processors
+## Dependency Mediation
+
+## Optional Dependencies
 
 
 Quellen:
@@ -605,3 +791,7 @@ https://www.vervecopilot.com/interview-questions/how-can-mastering-how-to-exclud
 https://www.youtube.com/watch?v=uAQs-YXnY-U 
 
 https://www.baeldung.com/maven-dependency-scopes
+
+https://stackoverflow.com/questions/5901378/what-exactly-is-a-maven-snapshot-and-why-do-we-need-it
+
+https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Dependency_Management

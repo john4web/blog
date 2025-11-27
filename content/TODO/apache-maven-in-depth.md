@@ -776,7 +776,56 @@ mvn help:describe -Dplugin=compiler
 
 ## Plugin Properties
 
+we can change the behaviour of a plugin goal by specifying some arguments. Each plugin goal has some properties. And these properties allow us to adjust how the goal behaves. 
+If we wanna see the different properties that can be used on a particular plugin goal, we can use the help plugin:
 
+mvn help:describe -Dcmd=compiler:compile -Ddetail
+
+we then get a list of different properties we can set for this goal.
+
+How can we set those properties?
+
+1. We can set it via commandline:
+for example setting the verbose property on the compile goal of the compiler plugin:
+mvn compiler:compile -Dmaven.compiler.verbose=true 
+
+2. We can set it via plugin configuration in pom.xml file:
+in this case, the properties will be applied when we invoke the plugin goal directly or when the goal is invoked by a lifecycle phase. This is a better way to capture the behaviour that we would like our project build to perform:
+
+<build>
+    <pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <verbose>true</verbose>
+                </configuration>
+            </plugin>
+        </plugins>
+    </pluginManagement>
+</build>
+
+when we then execute the compile goal on the compiler plugin:
+
+mvn compiler:compile
+
+it will execute the verbose flag as a trigger
+
+## Creating your own maven custom plugins
+
+use the archetype plugin to create a project for our custom plugin. You also have to tell the plugin which groupId and artifactId the new plugin should have. 
+
+mvn archetype:create 
+    -DgroupId=com.infiniteskills.maven
+    -DartifactId=first-custom
+    -DarchetypeArtifactId=maven-archetype-mojo
+    -DarchetypeGroupId=org-apache.maven.archetypes
+
+Archetype create is deprecated! Use Archetype:generate instead!
+
+weitermachen bei 2:40:00
 
 ## Annotation processors
 ## Dependency Mediation

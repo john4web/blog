@@ -625,6 +625,41 @@ mvn help:effective-pom</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<p>we can change the behaviour of a plugin goal by specifying some arguments. Each plugin goal has some properties. And these properties allow us to adjust how the goal behaves.
+If we wanna see the different properties that can be used on a particular plugin goal, we can use the help plugin:</p>
+<p>mvn help:describe -Dcmd=compiler:compile -Ddetail</p>
+<p>we then get a list of different properties we can set for this goal.</p>
+<p>How can we set those properties?</p>
+<ol>
+<li>
+<p>We can set it via commandline:
+for example setting the verbose property on the compile goal of the compiler plugin:
+mvn compiler:compile -Dmaven.compiler.verbose=true</p>
+</li>
+<li>
+<p>We can set it via plugin configuration in pom.xml file:
+in this case, the properties will be applied when we invoke the plugin goal directly or when the goal is invoked by a lifecycle phase. This is a better way to capture the behaviour that we would like our project build to perform:</p>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<p>when we then execute the compile goal on the compiler plugin:</p>
+<p>mvn compiler:compile</p>
+<p>it will execute the verbose flag as a trigger</p>
+<h2 id="creating-your-own-maven-custom-plugins">
+  Creating your own maven custom plugins
+  <a class="heading-link" href="#creating-your-own-maven-custom-plugins">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>use the archetype plugin to create a project for our custom plugin. You also have to tell the plugin which groupId and artifactId the new plugin should have.</p>
+<p>mvn archetype:create
+-DgroupId=com.infiniteskills.maven
+-DartifactId=first-custom
+-DarchetypeArtifactId=maven-archetype-mojo
+-DarchetypeGroupId=org-apache.maven.archetypes</p>
+<p>Archetype create is deprecated! Use Archetype:generate instead!</p>
+<p>weitermachen bei 2:40:00</p>
 <h2 id="annotation-processors">
   Annotation processors
   <a class="heading-link" href="#annotation-processors">

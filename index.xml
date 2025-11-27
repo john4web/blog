@@ -276,6 +276,17 @@ https://www.youtube.com/watch?v=OMPfEXIlTVE</description>
     </item>
     
     <item>
+      <title>Feature Toggle</title>
+      <link>https://gersti.at/todo/feature-toggle/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/feature-toggle/</guid>
+      <description>Overview Link to heading https://de.wikipedia.org/wiki/Feature_Toggle
+https://martinfowler.com/articles/feature-toggles.html
+https://martinfowler.com/bliki/FeatureFlag.html</description>
+    </item>
+    
+    <item>
       <title>Heisenbug!</title>
       <link>https://gersti.at/todo/heisenbug/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>

@@ -1,5 +1,5 @@
 +++
-title = "Finalizing local variables"
+title = "Immutalizing EVERYTHING?"
 date = "2024-01-24"
 description = ""
 +++

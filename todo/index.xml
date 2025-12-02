@@ -211,6 +211,15 @@ https://martinfowler.com/bliki/FeatureFlag.html</description>
     </item>
     
     <item>
+      <title>Finalizing local variables</title>
+      <link>https://gersti.at/todo/finalizing-local-variables/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/finalizing-local-variables/</guid>
+      <description>Darüber schreiben was es für Vorteile hat, wenn man in Projekten komplett streng jede Variable als final deklariert.</description>
+    </item>
+    
+    <item>
       <title>Heisenbug!</title>
       <link>https://gersti.at/todo/heisenbug/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>

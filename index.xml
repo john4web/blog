@@ -287,25 +287,6 @@ https://martinfowler.com/bliki/FeatureFlag.html</description>
     </item>
     
     <item>
-      <title>Finalizing local variables</title>
-      <link>https://gersti.at/todo/finalizing-local-variables/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/todo/finalizing-local-variables/</guid>
-      <description>Darüber schreiben was es für Vorteile hat, wenn man in Projekten komplett streng jede Variable als final deklariert.
-Buch Effective Java von Joshua Bloch: Thema 17: Bevorzugen sie unveränderliche Klassen (S. 84) dieses Kapitel komplett durchlesen
-https://www.youtube.com/watch?v=p7m7_iiqaHI
-https://www.youtube.com/watch?v=PVvLQGnyDrQ
-https://www.youtube.com/watch?v=9lbxz6VaRKc
-Absatz 4 (He is immutable): https://www.yegor256.com/2014/11/20/seven-virtues-of-good-object.html
-https://www.yegor256.com/2014/11/07/how-immutability-helps.html
-https://www.yegor256.com/2016/09/07/gradients-of-immutability.html
-https://www.yegor256.com/2014/12/22/immutable-objects-not-dumb.html
-https://www.yegor256.com/2014/06/09/objects-should-be-immutable.html
-https://www.yegor256.com/pdf/2020/kes20.pdf The Impact of Object Immutability on the Java Class Size Yegor Bugayenko*a, Sergey Zykov 24th International Conference on Knowledge-Based and Intelligent Information &amp;amp; Engineering Systems</description>
-    </item>
-    
-    <item>
       <title>Heisenbug!</title>
       <link>https://gersti.at/todo/heisenbug/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
@@ -326,6 +307,25 @@ This is what a classic Heisenbug looks like (Source: The Daily Omnivore).</descr
 auch den ganzen prozess mit JIT compilation und interpretiert vs kompiliert und übersetzung in class files und jar files etc.
 https://medium.com/@code.chandrashekhar/java-jvm-architecture-overview-1c263cda5da0
 Also explain how kotlin gets compiled to java class files</description>
+    </item>
+    
+    <item>
+      <title>Immutalizing EVERYTHING?</title>
+      <link>https://gersti.at/todo/immutalizing-everything/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/immutalizing-everything/</guid>
+      <description>Darüber schreiben was es für Vorteile hat, wenn man in Projekten komplett streng jede Variable als final deklariert.
+Buch Effective Java von Joshua Bloch: Thema 17: Bevorzugen sie unveränderliche Klassen (S. 84) dieses Kapitel komplett durchlesen
+https://www.youtube.com/watch?v=p7m7_iiqaHI
+https://www.youtube.com/watch?v=PVvLQGnyDrQ
+https://www.youtube.com/watch?v=9lbxz6VaRKc
+Absatz 4 (He is immutable): https://www.yegor256.com/2014/11/20/seven-virtues-of-good-object.html
+https://www.yegor256.com/2014/11/07/how-immutability-helps.html
+https://www.yegor256.com/2016/09/07/gradients-of-immutability.html
+https://www.yegor256.com/2014/12/22/immutable-objects-not-dumb.html
+https://www.yegor256.com/2014/06/09/objects-should-be-immutable.html
+https://www.yegor256.com/pdf/2020/kes20.pdf The Impact of Object Immutability on the Java Class Size Yegor Bugayenko*a, Sergey Zykov 24th International Conference on Knowledge-Based and Intelligent Information &amp;amp; Engineering Systems</description>
     </item>
     
     <item>

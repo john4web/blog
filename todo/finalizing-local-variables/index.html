@@ -13,15 +13,45 @@
 
 
 <meta name="author" content="Johannes Gerstbauer">
-<meta name="description" content="Darüber schreiben was es für Vorteile hat, wenn man in Projekten komplett streng jede Variable als final deklariert.">
+<meta name="description" content="Darüber schreiben was es für Vorteile hat, wenn man in Projekten komplett streng jede Variable als final deklariert.
+Buch Effective Java von Joshua Bloch: Thema 17: Bevorzugen sie unveränderliche Klassen (S. 84) dieses Kapitel komplett durchlesen
+https://www.youtube.com/watch?v=p7m7_iiqaHI
+https://www.youtube.com/watch?v=PVvLQGnyDrQ
+https://www.youtube.com/watch?v=9lbxz6VaRKc
+Absatz 4 (He is immutable): https://www.yegor256.com/2014/11/20/seven-virtues-of-good-object.html
+https://www.yegor256.com/2014/11/07/how-immutability-helps.html
+https://www.yegor256.com/2016/09/07/gradients-of-immutability.html
+https://www.yegor256.com/2014/12/22/immutable-objects-not-dumb.html
+https://www.yegor256.com/2014/06/09/objects-should-be-immutable.html
+https://www.yegor256.com/pdf/2020/kes20.pdf The Impact of Object Immutability on the Java Class Size Yegor Bugayenko*a, Sergey Zykov 24th International Conference on Knowledge-Based and Intelligent Information &amp; Engineering Systems">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Finalizing local variables"/>
-<meta name="twitter:description" content="Darüber schreiben was es für Vorteile hat, wenn man in Projekten komplett streng jede Variable als final deklariert."/>
+<meta name="twitter:description" content="Darüber schreiben was es für Vorteile hat, wenn man in Projekten komplett streng jede Variable als final deklariert.
+Buch Effective Java von Joshua Bloch: Thema 17: Bevorzugen sie unveränderliche Klassen (S. 84) dieses Kapitel komplett durchlesen
+https://www.youtube.com/watch?v=p7m7_iiqaHI
+https://www.youtube.com/watch?v=PVvLQGnyDrQ
+https://www.youtube.com/watch?v=9lbxz6VaRKc
+Absatz 4 (He is immutable): https://www.yegor256.com/2014/11/20/seven-virtues-of-good-object.html
+https://www.yegor256.com/2014/11/07/how-immutability-helps.html
+https://www.yegor256.com/2016/09/07/gradients-of-immutability.html
+https://www.yegor256.com/2014/12/22/immutable-objects-not-dumb.html
+https://www.yegor256.com/2014/06/09/objects-should-be-immutable.html
+https://www.yegor256.com/pdf/2020/kes20.pdf The Impact of Object Immutability on the Java Class Size Yegor Bugayenko*a, Sergey Zykov 24th International Conference on Knowledge-Based and Intelligent Information &amp; Engineering Systems"/>
 
 <meta property="og:title" content="Finalizing local variables" />
-<meta property="og:description" content="Darüber schreiben was es für Vorteile hat, wenn man in Projekten komplett streng jede Variable als final deklariert." />
+<meta property="og:description" content="Darüber schreiben was es für Vorteile hat, wenn man in Projekten komplett streng jede Variable als final deklariert.
+Buch Effective Java von Joshua Bloch: Thema 17: Bevorzugen sie unveränderliche Klassen (S. 84) dieses Kapitel komplett durchlesen
+https://www.youtube.com/watch?v=p7m7_iiqaHI
+https://www.youtube.com/watch?v=PVvLQGnyDrQ
+https://www.youtube.com/watch?v=9lbxz6VaRKc
+Absatz 4 (He is immutable): https://www.yegor256.com/2014/11/20/seven-virtues-of-good-object.html
+https://www.yegor256.com/2014/11/07/how-immutability-helps.html
+https://www.yegor256.com/2016/09/07/gradients-of-immutability.html
+https://www.yegor256.com/2014/12/22/immutable-objects-not-dumb.html
+https://www.yegor256.com/2014/06/09/objects-should-be-immutable.html
+https://www.yegor256.com/pdf/2020/kes20.pdf The Impact of Object Immutability on the Java Class Size Yegor Bugayenko*a, Sergey Zykov 24th International Conference on Knowledge-Based and Intelligent Information &amp; Engineering Systems" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gersti.at/todo/finalizing-local-variables/" /><meta property="article:section" content="TODO" />
 <meta property="article:published_time" content="2024-01-24T00:00:00+00:00" />
@@ -153,6 +183,36 @@
     </header>
 
     <p>Darüber schreiben was es für Vorteile hat, wenn man in Projekten komplett streng jede Variable als final deklariert.</p>
+<p>Buch Effective Java von Joshua Bloch:
+Thema 17: Bevorzugen sie unveränderliche Klassen (S. 84)
+dieses Kapitel komplett durchlesen</p>
+<p><a href="https://www.youtube.com/watch?v=p7m7_iiqaHI"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=p7m7_iiqaHI</a></p>
+<p><a href="https://www.youtube.com/watch?v=PVvLQGnyDrQ"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=PVvLQGnyDrQ</a></p>
+<p><a href="https://www.youtube.com/watch?v=9lbxz6VaRKc"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=9lbxz6VaRKc</a></p>
+<p>Absatz 4 (He is immutable):
+<a href="https://www.yegor256.com/2014/11/20/seven-virtues-of-good-object.html"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/2014/11/20/seven-virtues-of-good-object.html</a></p>
+<p><a href="https://www.yegor256.com/2014/11/07/how-immutability-helps.html"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/2014/11/07/how-immutability-helps.html</a></p>
+<p><a href="https://www.yegor256.com/2016/09/07/gradients-of-immutability.html"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/2016/09/07/gradients-of-immutability.html</a></p>
+<p><a href="https://www.yegor256.com/2014/12/22/immutable-objects-not-dumb.html"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/2014/12/22/immutable-objects-not-dumb.html</a></p>
+<p><a href="https://www.yegor256.com/2014/06/09/objects-should-be-immutable.html"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/2014/06/09/objects-should-be-immutable.html</a></p>
+<p><a href="https://www.yegor256.com/pdf/2020/kes20.pdf"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/pdf/2020/kes20.pdf</a>
+The Impact of Object Immutability on the Java Class Size
+Yegor Bugayenko*a, Sergey Zykov
+24th International Conference on Knowledge-Based and Intelligent Information &amp; Engineering
+Systems</p>
+<p><a href="https://www.yegor256.com/pdf/2020/iccsit20.pdf"  class="external-link" target="_blank" rel="noopener">https://www.yegor256.com/pdf/2020/iccsit20.pdf</a>
+The Impact of Object Immutability on Some Class
+Cohesion Metrics
+Yegor Bugayenko
+Sergey Zykov</p>
+<p><a href="https://dev.to/moaxcp/marking-parameters-and-local-variables-as-final-2i4e"  class="external-link" target="_blank" rel="noopener">https://dev.to/moaxcp/marking-parameters-and-local-variables-as-final-2i4e</a></p>
+<p><a href="https://sg.wantedly.com/companies/bebit/post_articles/366756"  class="external-link" target="_blank" rel="noopener">https://sg.wantedly.com/companies/bebit/post_articles/366756</a></p>
+<p><a href="https://www.romanenco.com/final-local-variables-in-java.some-intentions-matter"  class="external-link" target="_blank" rel="noopener">https://www.romanenco.com/final-local-variables-in-java.some-intentions-matter</a></p>
+<p><a href="https://www.baeldung.com/java-lambda-effectively-final-local-variables"  class="external-link" target="_blank" rel="noopener">https://www.baeldung.com/java-lambda-effectively-final-local-variables</a></p>
+<p><a href="https://brytecode.be/articles/use-of-the-final-keyword-in-java/"  class="external-link" target="_blank" rel="noopener">https://brytecode.be/articles/use-of-the-final-keyword-in-java/</a></p>
+<p><a href="https://medium.com/@aarontharris/final-a-java-keyword-1710fb8f1d8f"  class="external-link" target="_blank" rel="noopener">https://medium.com/@aarontharris/final-a-java-keyword-1710fb8f1d8f</a></p>
+<p><a href="https://dev.to/kylec32/effective-java-tuesday-minimize-mutability-55db"  class="external-link" target="_blank" rel="noopener">https://dev.to/kylec32/effective-java-tuesday-minimize-mutability-55db</a></p>
+<p><a href="https://mishadoff.com/blog/effective-java/"  class="external-link" target="_blank" rel="noopener">https://mishadoff.com/blog/effective-java/</a></p>
 
   </article>
 </section>

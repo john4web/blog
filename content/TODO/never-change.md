@@ -8,9 +8,29 @@ Darüber schreiben warum die redewendung "never change a running system" die sch
 
 Meine Devise: Wenn man etwas ändert und nicht aufpasst, kann es schonmal sein, dass plötzlich etwas nicht mehr funktioniert. Aber das ist das Risiko des angreifens wert! Es ist viel schlimmer wenn man sich nicht mehr traut ein system anzugreifen und es dadurch "unwartbar" wird. Früher oder später wird man sowieso dazu gezwungen ein System anzugreifen. Also um das angreifen kommt man nicht hinweg! Nichts in der Software entwicklung ist schlimmer als Stillstand! 
 
+
+
+
+
 The only constant in software engineering is change!
 
 The Only Constant is Change - Heraclitus
+
+Ich bin nicht der einzige, der dieses Zitat in Verbindung mit Software Engineering bringt. Bekannte Software-Größen, die diesen Gedanken immer wieder betonen (wenn auch nicht unbedingt wörtlich), sind u. a.:
+
+Kent Beck – Vater von Extreme Programming; betont stark iterative, evolutionäre Entwicklung.
+
+Martin Fowler – spricht oft über “continuous change”, Refactoring und evolutionäre Architekturen.
+
+Grady Booch – erläutert in seinen Vorträgen häufig die Notwendigkeit, Systeme so zu gestalten, dass sie Veränderung tolerieren.
+
+Robert C. Martin (Uncle Bob) – thematisiert häufig, dass Software-Anforderungen sich ständig ändern.
+
+Dave Thomas & Andy Hunt (The Pragmatic Programmer) – legen großen Wert auf Anpassungsfähigkeit und kontinuierliches Lernen.
+
+Keiner dieser Entwickler beansprucht das Zitat für sich aber sie nutzen es eher als Grundprinzip oder Philosophie, die zur Software passt.
+
+
 
 Eventuell auch jokes zu banken oder flughafensoftware einbauen.
 

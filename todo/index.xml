@@ -664,6 +664,18 @@ Pragmatic programmer schreibt in mehreren Kapiteln darüber. insbesondere auf se
     </item>
     
     <item>
+      <title>The Myth of ‘Never Change a Running System’</title>
+      <link>https://gersti.at/todo/never-change/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/never-change/</guid>
+      <description>Darüber schreiben warum die redewendung &amp;ldquo;never change a running system&amp;rdquo; die schlimmste ansicht ist, die es in der softwareentwicklung gibt. in diesem artikel möchte ich viele argumente liefern, warum es sehr wichtig ist software immer zu ändern oder zumindest ändern zu können. Welchen titel soll der blog artikel haben?
+“Why ‘Never Change’ Is Killing Your Software”
+“The Most Dangerous Idea in Software: ‘Don’t Touch It’”
+“Stability Isn’t Safety: Change Your Software”</description>
+    </item>
+    
+    <item>
       <title>The Observer Pattern</title>
       <link>https://gersti.at/todo/observer-pattern/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>

@@ -597,11 +597,9 @@ Bei dem Factory Method Pattern erzeugt jede konkrete Factory jeweils nur ein Obj
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/todo/broken-windows/</guid>
-      <description>Wird im Buch &amp;ldquo;Pragmatic Programmer&amp;rdquo; erklärt.
-In software development, later is the day that never comes.
-Fixing stuff later in Software Engineering (Source: Twitter Post from Vlad Mihalcea).
-Hier auch über &amp;ldquo;boiled frogs&amp;rdquo; vom Buch &amp;ldquo;Pragmatic Programmer&amp;rdquo; schreiben. (S. 4 bis 9) und (S. 224 bis 225)
-Auch drüber schreiben, dass man &amp;ldquo;Fenster&amp;rdquo;, die man nicht sofort fixen kann, auch mit einem TODO kommentar versehen kann. Also ein &amp;ldquo;Achtung&amp;rdquo; schild markiert, das anzeigt dass es bald gefixt wird.</description>
+      <description>Foto by Tim Arterbury on Unsplash
+When I read the book The Pragmatic Programmer, one particular image wouldn’t leave my mind: broken window panes. In the chapter “Software Entropy”, Andrew Hunt and David Thomas describe a phenomenon that also applies to software development — the famous “broken windows theory”.
+In this blog post, I will explain what this theory is all about and how it can help protect software from slowly decaying over time.</description>
     </item>
     
     <item>

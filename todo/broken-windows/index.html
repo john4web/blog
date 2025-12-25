@@ -14,19 +14,19 @@
 
 <meta name="author" content="Johannes Gerstbauer">
 <meta name="description" content="Foto by Tim Arterbury on Unsplash
-When I read the book The Pragmatic Programmer, one particular image wouldn’t leave my mind: broken window panes. In the chapter “Software Entropy”, Andrew Hunt and David Thomas describe a phenomenon that also applies to software development — the famous “broken windows theory”.
+When I read the book The Pragmatic Programmer, one particular image wouldn’t leave my mind: broken window panes. In the chapter “Software Entropy”, Andrew Hunt and David Thomas describe a phenomenon that also applies to software engineering — the famous “broken windows theory”.
 In this blog post, I will explain what this theory is all about and how it can help protect software from slowly decaying over time.">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The Broken Windows Theory in Software Engineering"/>
 <meta name="twitter:description" content="Foto by Tim Arterbury on Unsplash
-When I read the book The Pragmatic Programmer, one particular image wouldn’t leave my mind: broken window panes. In the chapter “Software Entropy”, Andrew Hunt and David Thomas describe a phenomenon that also applies to software development — the famous “broken windows theory”.
+When I read the book The Pragmatic Programmer, one particular image wouldn’t leave my mind: broken window panes. In the chapter “Software Entropy”, Andrew Hunt and David Thomas describe a phenomenon that also applies to software engineering — the famous “broken windows theory”.
 In this blog post, I will explain what this theory is all about and how it can help protect software from slowly decaying over time."/>
 
 <meta property="og:title" content="The Broken Windows Theory in Software Engineering" />
 <meta property="og:description" content="Foto by Tim Arterbury on Unsplash
-When I read the book The Pragmatic Programmer, one particular image wouldn’t leave my mind: broken window panes. In the chapter “Software Entropy”, Andrew Hunt and David Thomas describe a phenomenon that also applies to software development — the famous “broken windows theory”.
+When I read the book The Pragmatic Programmer, one particular image wouldn’t leave my mind: broken window panes. In the chapter “Software Entropy”, Andrew Hunt and David Thomas describe a phenomenon that also applies to software engineering — the famous “broken windows theory”.
 In this blog post, I will explain what this theory is all about and how it can help protect software from slowly decaying over time." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gersti.at/todo/broken-windows/" /><meta property="article:section" content="TODO" />
@@ -164,7 +164,7 @@ In this blog post, I will explain what this theory is all about and how it can h
         </figcaption>
 </figure>
 
-<p>When I read the book <em><a href="https://en.wikipedia.org/wiki/The_Pragmatic_Programmer"  class="external-link" target="_blank" rel="noopener">The Pragmatic Programmer</a></em>, one particular image wouldn’t leave my mind: <em>broken window panes</em>. In the chapter “Software Entropy”, Andrew Hunt and David Thomas describe a phenomenon that also applies to software development — the famous “broken windows theory”.</p>
+<p>When I read the book <em><a href="https://en.wikipedia.org/wiki/The_Pragmatic_Programmer"  class="external-link" target="_blank" rel="noopener">The Pragmatic Programmer</a></em>, one particular image wouldn’t leave my mind: <em>broken window panes</em>. In the chapter “Software Entropy”, Andrew Hunt and David Thomas describe a phenomenon that also applies to software engineering — the famous “broken windows theory”.</p>
 <p>In this blog post, I will explain what this theory is all about and how it can help protect software from slowly decaying over time.</p>
 <h2 id="software-entropy">
   Software Entropy
@@ -173,7 +173,14 @@ In this blog post, I will explain what this theory is all about and how it can h
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>The word &ldquo;Entropy&rdquo; originates from physics and describes the level of disorder within a system. According to the laws of thermodynamics, this disorder naturally tends to increase over time. Entropy also manifests itself in software development. Just as in physical systems, disorder naturally grows over time, gradually causing software to decay. This is commonly known as “software rot”.</p>
+<p>The word &ldquo;Entropy&rdquo; originates from physics and describes the level of disorder within a system. According to the laws of thermodynamics, this disorder naturally tends to increase over time.</p>
+<figure><img src="/images/broken-windows/entropy.jpg"
+         alt="The entropy of a closed system always increases. The system constantly tends toward maximum disorder. Just like the disorder in software." width="40%"/><figcaption>
+            <p>The entropy of a closed system always increases. The system constantly tends toward maximum disorder. Just like the disorder in software.</p>
+        </figcaption>
+</figure>
+
+<p>Entropy also manifests itself in software development. Just as in physical systems, disorder naturally grows over time, gradually causing software to decay. This is commonly known as “software rot”.</p>
 <p>Many factors can lead to software rot, but the most crucial one appears to be the psychology/mindset/culture, shaping the project. No matter how well a project is planned or how skilled the team, it can still fall into decay over time. Still, there are projects that, even in the face of major obstacles and persistent setbacks, succeed in defying the natural pull toward disorder and come out strong. But how?</p>
 <h2 id="broken-windows">
   Broken Windows
@@ -185,7 +192,7 @@ In this blog post, I will explain what this theory is all about and how it can h
 <p>In city neighborhoods, some buildings stay well-maintained and inviting, while others slowly crumble and fall apart. What causes this difference? Studies on urban decay and crime have identified a surprisingly small but powerful trigger that can turn a perfectly fine building into a neglected, abandoned structure in no time. The culprit? <strong>A single broken window</strong>.</p>
 <p>Even one broken window, if left unfixed for a while, sends a powerful message to the building’s occupants: <em>&ldquo;No one cares about this place!&rdquo;</em>.
 That small signal often sets off a chain reaction: more windows get damaged, trash starts piling up, graffiti appears, and structural problems begin to develop. In a surprisingly short time, the building can deteriorate to the point where repair seems pointless, and neglect becomes a reality.</p>
-<p>The same thing applys to software! If you leave “broken windows” (bad designs, poor decisions, or sloppy code) unrepaired, the software will rot in no time!</p>
+<p>The same thing applys to software! If you leave “broken windows” (bad designs, poor decisions, or sloppy code) unrepaired, the software will rot in no time! Software-Developers then think: <em>&ldquo;If this code is already written bad, I might as well do it the same way. It doesn’t matter — no one cares anyway.”</em></p>
 <p>Wenn die software immer mehr dahinrottet wird das instandhalten und warten mit der zeit so mühsam, dass man irgendwann dann sagt: es rentiert sich nicht mehr die software zu verbessern. Man muss sie neu bauen. Aber passiert das dann? Meistens nicht! Weil es mit enormen Kosten verbunden wäre. Weil sich kein entwickler die Mühe antun will das alles neu zu bauen. Oft handelt es sich dabei um riesengroße applikationen, wo man jahrelang braucht, um die Applikation von grund auf neu zu bauen. Oder der Kunde will einen Neubau der Applikation gar nicht erst bezahlen. In den Augen des Kunden funktioniert die software ja. Wenn dann eine winzige Änderung der Software ewig dauert und dadurch viel kostet, dann stört es den Kunden nicht so sehr - ja klar - er weiß ja nicht wie schnell ein neues Feature umgesetzt werden könnte, wenn die Software schön geschrieben wäre. Und so plagt man sich immer und immer weiter mit der verrotteten Software ab. Zum Leid der armen Entwickler, die sich dann mit fürchterlichem Code abplagen müssen, nichts mehr dazulernen, neuwertige features in verrotteten code einbauen müssen und letztenendes reputation verlieren, weil sie ewig dafür brauchen um kleinste Arbeiten umzusetzen. Und auch zum Leid der Firma selbst: So verliert die Firma immer mehr an Reputation und Geld usw.</p>
 <p>Sehen sie meinen Punkt? So steuert man langsam aber doch auf einen abgrund zu. Sie denken sich jetzt vielleicht, dass ich nur schwarz male - aber das beschriebene Szenario ist für viele Firmen Realität! Es gibt firmen, denen genau das tag für tag passiert. Und am Anfang stand immer ein einziges zerbrochenes Fenster.</p>
 <h2 id="criminology">
@@ -232,6 +239,21 @@ That small signal often sets off a chain reaction: more windows get damaged, tra
 <p>A pretty extreme case, to be sure, but that’s the way it must be with software. One broken window—a badly designed piece of code, a poor management decision that the team must live with for the duration of the project—is all it takes to start the decline. If you find yourself working on a project with quite a few broken windows, it’s all too easy to slip into the mindset of “All the rest of this code is crap, I’ll just follow suit.” It doesn’t matter if the project has been fine up to this point.</p>
 <p>In the original experiment leading to the “Broken Window Theory,” an abandoned car sat for a week untouched. But once a single window was broken, the car was stripped and turned upside down within hours.</p>
 <p>By the same token, if you find yourself on a team and a project where the code is pristinely beautiful—cleanly written, well designed, and elegant—you will likely take extra special care not to mess it up, just like the firefighters. Even if there’s a fire raging (deadline, release date, trade show demo, etc.), you don’t want to be the first one to make a mess.</p>
+<p>Das Haus symbolisiert saubere, gut gepflegte Software. Alles ist durchdacht, ordentlich und wertvoll – es lohnt sich, es zu erhalten.</p>
+<p>Wortwörtlich: Ein Wandteppich fängt Feuer, die Feuerwehr kommt.
+Metapher für Software: Ein plötzliches Problem oder eine Krise tritt auf (z. B. ein Bug, ein kritischer Fehler oder eine knappe Deadline).</p>
+<p>Wortwörtlich: Die Feuerwehr schützt zuerst den teuren Teppich, bevor sie das Feuer löscht.
+Metapher: Die Leute kümmern sich mehr um die „Ästhetik“ oder Ordnung, als um die unmittelbare Problemlösung.
+Übertragung auf Software: Entwickler und Teams achten oft darauf, dass bestehender, sauberer Code nicht beschädigt wird, auch wenn sie unter Druck arbeiten. Sie versuchen, das „Haus“ sauber zu halten, während sie das „Feuer“ bekämpfen.
+Gute Software motiviert zu sorgfältigem Arbeiten, selbst in Krisen.
+Bedeutung: Ein kleiner Fehler oder eine schlechte Entscheidung im Projekt kann die gesamte Codebasis gefährden.</p>
+<p>„Broken window“: Wie in der berühmten Broken-Window-Theorie: Ein einzelnes zerbrochenes Fenster signalisiert Vernachlässigung – und führt zu weiteren Schäden.</p>
+<p>Kernaussage:</p>
+<p>Schlechte Software zieht schlechte Software nach sich.</p>
+<p>Guter, sauberer Code motiviert zu noch besserem Arbeiten.</p>
+<p>Frühzeitiges Aufräumen und Pflegen ist entscheidend, um langfristigen Verfall zu verhindern.</p>
+<p>Merksatz-Metapher:</p>
+<p>„Ein Feuer löscht man besser, ohne das Haus zu zerstören – und saubere Software inspiriert die Entwickler, sorgfältig zu bleiben.“</p>
 <h2 id="refutation-of-the-counterarguments">
   Refutation of the counterarguments
   <a class="heading-link" href="#refutation-of-the-counterarguments">
@@ -240,52 +262,53 @@ That small signal often sets off a chain reaction: more windows get damaged, tra
   </a>
 </h2>
 <ul>
-<li>
-<p>keiner hat die zeit ständig kaputte fenster in projekten zu fixen
-Antwort: Aber hat man später dann die Zeit für den Mehraufwand wenn man neue Features einbauen will und man braucht ewig dafür?</p>
-</li>
-<li>
-<p>keiner hat bock ständig kaputte fenster in projekten zu fixen
-Antwort1: Aber das ist genau deine Arbeit als Software Engineer
-Antwort2: das kostet dich sicher weniger Mühe, als später eine komplett verrottete Applikation warten zu müssen.</p>
-</li>
-<li>
-<p>es rentiert sich nicht das anzugreifen: das muss irgendwann mal sowieso von grund auf neu geschrieben werden. &ldquo;Das Haus nicht sanieren sondern gleich neu bauen&rdquo;.</p>
-</li>
-<li>
-<p>„Es funktioniert ja sowieso noch.“</p>
-</li>
+<li>keiner hat die zeit ständig kaputte fenster in projekten zu fixen
+Meinung dahinter: XXXX</li>
 </ul>
-<p>Argument: Solange der Fehler die Funktionalität nicht direkt beeinträchtigt, ist es Zeitverschwendung, ihn jetzt zu beheben.</p>
+<p>Realität: Aber hat man später dann die Zeit für den Mehraufwand wenn man neue Features einbauen will und man braucht ewig dafür?</p>
+<ul>
+<li>keiner hat bock ständig kaputte fenster in projekten zu fixen
+Meinung dahinter: XXX</li>
+</ul>
+<p>Realität: Aber das ist genau deine Arbeit als Software Engineer. Lebe damit! Außerdem kostet dich das sicher weniger Mühe, als später eine komplett verrottete Applikation warten zu müssen.</p>
+<ul>
+<li>es rentiert sich nicht das anzugreifen: das muss irgendwann mal sowieso von grund auf neu geschrieben werden. &ldquo;Das Haus nicht sanieren sondern gleich neu bauen&rdquo;.
+Meinung dahinter: XXXXXX</li>
+</ul>
+<p>Realität: XXXXX</p>
+<ul>
+<li>„Es funktioniert ja sowieso noch.“
+Meinung dahinter: Solange der Fehler die Funktionalität nicht direkt beeinträchtigt, ist es Zeitverschwendung, ihn jetzt zu beheben.</li>
+</ul>
 <p>Realität: Auch kleine Probleme können sich summieren und später schwerwiegende Fehler verursachen („Software-Rot“).</p>
 <ul>
-<li>„Ich habe gerade keine Zeit dafür.“</li>
+<li>„Ich habe gerade keine Zeit dafür.“
+Meinung dahinter: Andere Aufgaben oder Deadlines haben Vorrang.</li>
 </ul>
-<p>Argument: Andere Aufgaben oder Deadlines haben Vorrang.</p>
 <p>Realität: Aufgeschobene kleine Fehler werden oft später teurer und aufwendiger zu beheben.</p>
 <ul>
-<li>„Das stört doch niemanden.“</li>
+<li>„Das stört doch niemanden.“
+Meinung dahinter: Fehler in weniger genutzten Modulen oder Bereichen sind irrelevant.</li>
 </ul>
-<p>Argument: Fehler in weniger genutzten Modulen oder Bereichen sind irrelevant.</p>
 <p>Realität: Über Zeit beeinflussen solche „kleinen Fenster“ die Codequalität, erschweren Wartung und erhöhen das Risiko von Bugs.</p>
 <ul>
-<li>„Ich will den Code nicht jetzt anfassen, ich plane größere Refactorings.“</li>
+<li>„Ich will den Code nicht jetzt anfassen, ich plane größere Refactorings.“
+Meinung dahinter: Beheben würde später sowieso wieder überschrieben werden.</li>
 </ul>
-<p>Argument: Beheben würde später sowieso wieder überschrieben werden.</p>
 <p>Realität: Kleine Verbesserungen stören selten größere Umbauten und verhindern, dass sich schlechte Gewohnheiten festsetzen.</p>
 <ul>
-<li>„Es ist nicht mein Problem.“</li>
+<li>„Es ist nicht mein Problem.“
+Meinung dahinter: Fehler liegen außerhalb des eigenen Verantwortungsbereichs.</li>
 </ul>
-<p>Argument: Fehler liegen außerhalb des eigenen Verantwortungsbereichs.</p>
 <p>Realität: Softwareprojekte leben von gemeinsamer Verantwortung; Ignorierte Fehler belasten das Team langfristig.</p>
-<h2 id="wie-zerbrochene-fenster-fixen">
-  Wie zerbrochene Fenster fixen?
-  <a class="heading-link" href="#wie-zerbrochene-fenster-fixen">
+<h2 id="how-to-fix-broken-windows-1">
+  How to Fix Broken Windows?
+  <a class="heading-link" href="#how-to-fix-broken-windows-1">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Im folgenden Kapitel gehe ich darauf ein, was man beim fixen von zerbrochenen Fenstern beachten muss und wie man dabei vorgehen soll:</p>
+<p>Alright! We are now clear that broken windows must be repaired without objection or doubt. But what is the best way to do this? In the following chapter, I will discuss what to keep in mind when fixing broken windows and how to go about it.</p>
 <h3 id="later-is-the-day-that-never-comes">
   Later is the Day that never comes
   <a class="heading-link" href="#later-is-the-day-that-never-comes">
@@ -313,11 +336,12 @@ Antwort2: das kostet dich sicher weniger Mühe, als später eine komplett verrot
 <p>In software development, later is the day that never comes.</p>
 </blockquote>
 <p>Es ist immer dasselbe: wenn man in der Software-Entwicklung etwas nicht sofort macht, dann macht man es nie.</p>
-<p>Ich hab es so oft in der Arbeit erlebt:
-&ldquo;Das machen wir später, wenn wir besser Zeit dafür haben&rdquo;
+<p>Ich habe das schon so oft in der Arbeit erlebt:
+&ldquo;Das machen wir später, wenn wir besser Zeit dafür haben!&rdquo;
 ist ein Synonym für
-&ldquo;Dieses Problem ist gerade unangenehm und schwierig zu lösen: wir machen es nie&rdquo;.</p>
-<p>Man geht davon aus, dass das Problem in Zukunft leichter zu lösen ist als jetzt. Aber das ist oft ein Trugschluss. Man weiß also gar nicht ob es in Zukunft einen besseren Zeitpunkt gibt. Aus Erfahrung weiß ich: in Zukunft wird das Problem immer schwieriger werden. Wie die Entropie besagt: Chaos nimmt von natur aus zu. Alles wird immer komplizierter, wenn sich software weiterentwickelt. Wenn über das Hütchen bereits drüberzementiert wurde. Warum nicht gleich jetzt fixen? Auf später verschieben bringt nichts, denn es wird nie den perfekten Zeitpunkt geben um das Problem zu fixen. &ldquo;The best time to start is now!&rdquo;</p>
+&ldquo;Dieses Problem ist gerade unangenehm und schwierig zu lösen. Wir machen es nie!&rdquo;.</p>
+<p>Man geht davon aus, dass das Problem in Zukunft leichter zu lösen ist als jetzt. Aber das ist oft ein Trugschluss. Man weiß gar nicht ob es in Zukunft einen besseren Zeitpunkt dafür gibt. Aus Erfahrung weiß ich: in Zukunft wird das Problem immer schwieriger werden. Wie die Entropie besagt: Chaos nimmt von natur aus zu. Alles wird immer komplizierter, wenn sich software weiterentwickelt. Wenn über das Hütchen bereits drüberzementiert wurde (Siehe Bild).</p>
+<p>Warum also nicht gleich jetzt fixen? Auf später verschieben bringt nichts, denn es wird nie den perfekten Zeitpunkt geben um das Problem zu fixen. &ldquo;The best time to start is now!&rdquo;</p>
 <p>Ich weiß - in der Praxis ist es oft nicht so leicht Sachen sofort zu fixen. Und oft kommen einem wirklich Sachen dazwischen und etwas anderes ist gerade wichtiger zu machen. z.B. Critical Bugs in production. Wenn man wirklich einen triftigen Grund hat, das Fenster gerade nicht zu fixen, hat man immer noch die Möglichkeit ein &ldquo;Achtung-Schild&rdquo; aufzustellen!</p>
 <h3 id="das-achtung-schild">
   Das Achtung Schild
@@ -327,8 +351,12 @@ ist ein Synonym für
   </a>
 </h3>
 <p>Vor kurzem war ich am wiener Westbahnhof unterwegs und habe etwas gesehen, das mich sehr an dieses ganz Thema erinnert hat. Auf dem Weg zur Ubahn sah ich direkt vor einer Starbucks-Filiale folgendes:</p>
-<p>BILD EINFÜGEN
-[Ein &ldquo;Achtung-Rutschgefahr&rdquo; Schild auf einer Pfütze verschüttetem Kaffee]</p>
+<figure><img src="/images/broken-windows/sign.jpg"
+         alt="Ein &amp;lsquo;Achtung-Rutschgefahr&amp;rsquo; Schild auf einer Pfütze verschüttetem Kaffee. Der Kaffe scheint schon etwas eingetrocknet zu sein. Das Schild dürfte also schon eine Weile dort stehen. 😅" width="400"/><figcaption>
+            <p>Ein &lsquo;Achtung-Rutschgefahr&rsquo; Schild auf einer Pfütze verschüttetem Kaffee. Der Kaffe scheint schon etwas eingetrocknet zu sein. Das Schild dürfte also schon eine Weile dort stehen. 😅</p>
+        </figcaption>
+</figure>
+
 <p>Da hat scheinbar jemand seinen Kaffee verschüttet. Und ein Mitarbeiter:in hat das scheinbar gesehen. Anstatt es aber gleich wegzuputzen, hat der mitarbeiter einfach dieses &ldquo;Achtung Rutschgefahr&rdquo; Schild draufgestellt. Vielleicht hat der Mitarbeiter gerade etwas anderes zu tun gehabt und hatte keine Zeit es gleich wegzuputzen. Vielleicht musste er kunden bedienen. Vielleicht hat der Mitarbeiter sich aber auch gedacht &ldquo;Der Kaffee wurde nicht am Boden der Starbucks-Filiale verschüttet sondern am Bahnhofsboden - ich bin nicht zuständig dafür. Da sollen sich gefälligst die Bahnhofs-Putzfrauen drum kümmern!&rdquo;. Was auch immer der Grund war - wir werden es nie erfahren. Aber eines ist schonmal klar: Es ist gut, dass die Person das Schild überhaupt aufgestellt hat! Viel besser wäre es natürlich gewesen, wenn er den Fleck ohne zu zögern gleich weggeputzt hätte. Aber es wäre viel viel Viel schlimmer gewesen, wenn der Mitarbeiter gesehen hätte wie der Kaffee ausgeschüttet wird, es aber einfach ignoriert hätte. Also es ist schonmal gut dass er überhaupt reagiert hat. Fehler Klar zu benennen, anzusprechen und zu markieren hilft immer!</p>
 <p>Das Schild bedeutet: Aufpassen! Gebt Acht! Hier ist ganz klar etwas schief gelaufen! Das Problem gehört schnellstmöglich behoben!</p>
 <p>Umgemünzt auf die Software-Entwicklung ist es genauso! Wenn man ein zerbrochenes Fenster, einen Kaffeefleck, einen Programmfehler oder wie man es auch immer nennen möchte sieht, sollte man es sofort fixen. Wenn man aber keine Zeit hat es zu fixen, muss man zumindest sofort reagieren und ein &ldquo;Achtung-Schild&rdquo; aufstellen. Nur ist es sehr wichtig was auf diesem Schild draufsteht (Message is Key)! Aber was sollte man da drauf schreiben? Der nächste Abschnitt versucht das zu erklären:</p>
@@ -417,6 +445,10 @@ Auch das Diagramm von S. 29 vom buch atomic habits einbauen. Da kann ich dann sa
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<p>Schlechter, unordentlicher Code oder schlechte Entscheidungen wirken wie ein „zerbrochenes Fenster“.</p>
+<p>Wenn man kleine Probleme ignoriert, verschlechtert sich das gesamte Projekt schnell – jeder im Team denkt „Wenn das hier schon schlecht ist, kann ich es auch so machen“. Menschen passen sich dem Umfeld an.</p>
+<p>Umgekehrt motiviert sauberer, eleganter Code das Team, sorgfältig zu arbeiten, selbst unter Druck (Deadlines, Releases etc.).</p>
+<p>Kernidee: Qualität zieht Qualität an, Schlampigkeit zieht Schlampigkeit an.</p>
 <p>vorgehen beim fixen von zerbrochenen Fenstern:</p>
 <ol>
 <li>

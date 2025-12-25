@@ -608,7 +608,7 @@ Bei dem Factory Method Pattern erzeugt jede konkrete Factory jeweils nur ein Obj
       
       <guid>https://gersti.at/todo/broken-windows/</guid>
       <description>Foto by Tim Arterbury on Unsplash
-When I read the book The Pragmatic Programmer, one particular image wouldn’t leave my mind: broken window panes. In the chapter “Software Entropy”, Andrew Hunt and David Thomas describe a phenomenon that also applies to software development — the famous “broken windows theory”.
+When I read the book The Pragmatic Programmer, one particular image wouldn’t leave my mind: broken window panes. In the chapter “Software Entropy”, Andrew Hunt and David Thomas describe a phenomenon that also applies to software engineering — the famous “broken windows theory”.
 In this blog post, I will explain what this theory is all about and how it can help protect software from slowly decaying over time.</description>
     </item>
     

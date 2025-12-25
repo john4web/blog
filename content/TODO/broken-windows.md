@@ -110,57 +110,150 @@ Argument: Fehler liegen außerhalb des eigenen Verantwortungsbereichs.
 Realität: Softwareprojekte leben von gemeinsamer Verantwortung; Ignorierte Fehler belasten das Team langfristig.
 
 
-
-
-
-
-
-
-
-In software development, later is the day that never comes.
-
-{{< figure src="/images/broken-windows/later.jpeg" caption="Fixing stuff later in Software Engineering (Source: [Twitter Post from Vlad Mihalcea](https://x.com/vlad_mihalcea/status/1802901724362887580))." width="400">}}
-
-Hier auch über "boiled frogs" vom Buch "Pragmatic Programmer" schreiben.
-(S. 4 bis 9) und (S. 224 bis 225)
-
-Auch drüber schreiben, dass man "Fenster", die man nicht sofort fixen kann, auch mit einem TODO kommentar versehen kann. Also ein "Achtung" schild markiert, das anzeigt dass es bald gefixt wird. Aber: nur todo kommentare mit Ticketnummern sind erlaubt. 
-
-Hier die analogie einfügen mit der Rettung:
-
-Wenn jemand auf der straße zusammenbricht, gehen alle leute vorbei und keiner fühlt sich zustänndig. Jeder der vorbeigeht denkt sich "das wird schon jemand anderer sehen bzw. da wird schon jemand anderer dafür verantwortlich sein diesem menschen zu helfen". Aber weil sich das jeder denkt, wird ihm niemand helfen.
-
-Dasselbe ist in folgendem szenario: stell dir vor jemand bricht zusammen und hat einen herz-kreislauf stillstand. Dann geht jemand hin und macht CPR. Ebendiese Person screit dann "ruft die rettung"! Das ist das schlechteste was man machen kann. Wenn man alle rundherum gleichermaßen anspricht, dann fühlt sich wieder keine person zuständig und jeder denkt sich "wird schon jemand anderer machen". Eine bessere Methode wäre, eine dezidierte Person, welche in der Nähe rumsteht auszuwählen und sie direkt ansprechen. "Hey du! Du rufst jetzt die Rettung und sagst dem Disponent dass es sich um einen Herz-Kreislauf Stillstand handelt!". Dadurch fühlt sich eine Person direkt angesprochen und wird viel wahrscheinlicher handeln. Warum bringe ich jetzt diese Beispiele? Weil es bei dem reparieren von kaputten Fenstern genau das gleiche ist.
-
-Am besten markiert man ein kaputtes fenster, das man nicht sofort fixen kann, mit einem todo kommentar.
-Also ein "Achtung" schild, das anzeigt dass es bald gefixt wird. Ein Schild hinzustellen, das darauf aufmerksam macht, dass hier etwas nicht mit rechten dingen zugeht ist besser als gar nichts zu machen und es zu ignorieren. Fehler Klar zu benennen, anzusprechen und zu markieren hilft immer! ABER: Solche Todo kommentare sind nur erlaubt, wenn folgendes zutrifft:
-1. es wurde bereits ein Jira-Ticket erstellt, in dem das Problem genau beschrieben wurde.
-2. Im ToDo Kommentar steht die Ticketnummer dieses Tickets z.B. // ToDo: this bug will be fixed in Jira Ticket AB-12345.
-3. Diesem Jira-Ticket wurde bereits ein dezidierter Software Engineer zugewiesen, der sich dafür verantwortlich fühlt, diesen Bug zu fixen.
-
-
-
-
--------------------------------------
-
 ## Wie zerbrochene Fenster fixen?
 
-Eigene Notizen:
+Im folgenden Kapitel gehe ich darauf ein, was man beim fixen von zerbrochenen Fenstern beachten muss und wie man dabei vorgehen soll:
 
-1. Wenn man ein nuees Feature im Code einbaut, sollte man "on the fly" bewusst nach einem zerbrochenem Fenster suchen und es fixen. Man sollte sich denken "was kann ich in diesem Projekt finden, das ich verbessern kann?". Fällt mir ein zerbrochenes Fenster schon während dem umsetzen des neuen Features auf? Umso besser - dann kann man es gleich fixen! Wenn man in seinem eigenen Haus ein neues Zimmer dazubaut und einem dabei ein zerbrochenes Fenster auffällt - warum dann nicht auch gleich das Fenster fixen? Das Werkzeug hat man schon heraußen - dann geht es gleich in einem. Jetzt ist man schon im Code "drinnen" und muss sich nicht mehr zusätzlich einlesen. Später ist es wieder schwieriger in die Marterie reinzukommen...
+### Later is the Day that never comes
+
+Welche Regeln sollte man beim fixen von zerbrochenen Fenstern beachten? Nun, hierbei verhält es sich ähnlich wie bei FightClub (ich hoffe ihr habt den Film gesehen):
+
+Die erste Regel beim fixen von zerbrochenen Fenstern lautet:
+
+> Zerbrochene Fenster gehören immer sofort gefixt!
+
+Die zweite Regel beim fixen von zerbrochenen Fenstern lautet:
+
+> Zerbrochene Fenster gehören immer sofort gefixt!
+
+Warum ist das so wichtig? Nun - ein Bild sagt mehr als tausend Worte:
+
+{{< figure src="/images/broken-windows/later.png" caption="Fixing stuff later in Software Engineering (Source: [Twitter Post from Vlad Mihalcea](https://x.com/vlad_mihalcea/status/1802901724362887580))." width="400">}}
+
+> In software development, later is the day that never comes.
+
+Es ist immer dasselbe: wenn man in der Software-Entwicklung etwas nicht sofort macht, dann macht man es nie.
+
+Ich hab es so oft in der Arbeit erlebt:
+"Das machen wir später, wenn wir besser Zeit dafür haben"
+ist ein Synonym für
+"Dieses Problem ist gerade unangenehm und schwierig zu lösen: wir machen es nie".
+
+Man geht davon aus, dass das Problem in Zukunft leichter zu lösen ist als jetzt. Aber das ist oft ein Trugschluss. Man weiß also gar nicht ob es in Zukunft einen besseren Zeitpunkt gibt. Aus Erfahrung weiß ich: in Zukunft wird das Problem immer schwieriger werden. Wie die Entropie besagt: Chaos nimmt von natur aus zu. Alles wird immer komplizierter, wenn sich software weiterentwickelt. Wenn über das Hütchen bereits drüberzementiert wurde. Warum nicht gleich jetzt fixen? Auf später verschieben bringt nichts, denn es wird nie den perfekten Zeitpunkt geben um das Problem zu fixen. "The best time to start is now!"
+
+Ich weiß - in der Praxis ist es oft nicht so leicht Sachen sofort zu fixen. Und oft kommen einem wirklich Sachen dazwischen und etwas anderes ist gerade wichtiger zu machen. z.B. Critical Bugs in production. Wenn man wirklich einen triftigen Grund hat, das Fenster gerade nicht zu fixen, hat man immer noch die Möglichkeit ein "Achtung-Schild" aufzustellen!
+
+### Das Achtung Schild
+
+Vor kurzem war ich am wiener Westbahnhof unterwegs und habe etwas gesehen, das mich sehr an dieses ganz Thema erinnert hat. Auf dem Weg zur Ubahn sah ich direkt vor einer Starbucks-Filiale folgendes:
+
+BILD EINFÜGEN
+[Ein "Achtung-Rutschgefahr" Schild auf einer Pfütze verschüttetem Kaffee]
+
+Da hat scheinbar jemand seinen Kaffee verschüttet. Und ein Mitarbeiter:in hat das scheinbar gesehen. Anstatt es aber gleich wegzuputzen, hat der mitarbeiter einfach dieses "Achtung Rutschgefahr" Schild draufgestellt. Vielleicht hat der Mitarbeiter gerade etwas anderes zu tun gehabt und hatte keine Zeit es gleich wegzuputzen. Vielleicht musste er kunden bedienen. Vielleicht hat der Mitarbeiter sich aber auch gedacht "Der Kaffee wurde nicht am Boden der Starbucks-Filiale verschüttet sondern am Bahnhofsboden - ich bin nicht zuständig dafür. Da sollen sich gefälligst die Bahnhofs-Putzfrauen drum kümmern!". Was auch immer der Grund war - wir werden es nie erfahren. Aber eines ist schonmal klar: Es ist gut, dass die Person das Schild überhaupt aufgestellt hat! Viel besser wäre es natürlich gewesen, wenn er den Fleck ohne zu zögern gleich weggeputzt hätte. Aber es wäre viel viel Viel schlimmer gewesen, wenn der Mitarbeiter gesehen hätte wie der Kaffee ausgeschüttet wird, es aber einfach ignoriert hätte. Also es ist schonmal gut dass er überhaupt reagiert hat. Fehler Klar zu benennen, anzusprechen und zu markieren hilft immer!
+
+Das Schild bedeutet: Aufpassen! Gebt Acht! Hier ist ganz klar etwas schief gelaufen! Das Problem gehört schnellstmöglich behoben! 
+
+Umgemünzt auf die Software-Entwicklung ist es genauso! Wenn man ein zerbrochenes Fenster, einen Kaffeefleck, einen Programmfehler oder wie man es auch immer nennen möchte sieht, sollte man es sofort fixen. Wenn man aber keine Zeit hat es zu fixen, muss man zumindest sofort reagieren und ein "Achtung-Schild" aufstellen. Nur ist es sehr wichtig was auf diesem Schild draufsteht (Message is Key)! Aber was sollte man da drauf schreiben? Der nächste Abschnitt versucht das zu erklären:
+
+### CPR und Rettungssanitäter
+
+Als ich  meine Oberstufe abgeschlossen hatte, habe ich 9 Monate beim Österreichischen roten Kreuz als Rettungssanitäter verbracht. Dort habe ich gelernt, wie man erste Hilfe leistet und Personen in akuten Notsituationen rettet. Bei der dazugehörigen Rettungssanitäter-Ausbildung ist mir ein Kommentar von einem Ausbildner im Kopf hängen geblieben.
+
+Stellen sie sich folgendes Szenario vor: 
+Wenn jemand auf der straße zusammenbricht, gehen alle leute vorbei und keiner fühlt sich zustänndig. Jeder der vorbeigeht denkt sich "das wird schon jemand anderer sehen bzw. da wird schon jemand anderer dafür verantwortlich sein diesem menschen zu helfen". Aber weil sich das jeder denkt, wird ihm niemand helfen. Wenn alle verantwortlich sind, dann fühlt sich wiederrum gar keiner verantwortlich.
+
+Dasselbe ist in folgendem szenario: stell dir vor jemand bricht zusammen und hat einen herz-kreislauf stillstand. Dann geht jemand hin und macht CPR. Ebendiese Person screit dann "ruft die rettung"! Das ist das schlechteste was man machen kann. Wenn man alle rundherum gleichermaßen anspricht, dann fühlt sich wieder keine person zuständig und jeder denkt sich "wird schon jemand anderer machen". Eine bessere Methode wäre, eine dezidierte Person, welche in der Nähe rumsteht auszuwählen und sie direkt ansprechen. Mit dem Finger auf sie zeigen! Und dann rufen "Hey du! Du rufst jetzt die Rettung und sagst dem Disponent dass es sich um einen Herz-Kreislauf Stillstand handelt!". Dadurch fühlt sich eine Person direkt angesprochen und wird viel wahrscheinlicher handeln. Wichtig: man muss die angesprochene Person dazu bringen sich verantwortlich zu fühlen! Sonst passiert nichts. 
+
+Warum bringe ich jetzt diese Beispiele? Weil es bei dem reparieren von kaputten Fenstern genau das gleiche ist. Wenn man ein "Achtung-Schild" aufsteht, darf es nicht untergehen oder ignoriert werden. Die verantwortlichen Personen müssen klar definiert sein.
+
+
+wie wir in dem obigen Twitter Post von Vlad Mihalcea bereits gesehen haben, ist folgendes ein schlechtes Beispiel für ein "Achtung-Schild":
+
+
+// ToDo: Fix later
+    boolean isValid = false;
+    if(isValid == true){
+        System.out.println("do something");
+    }
+
+
+Es ist viel zu ungenau, man sieht nicht gleich auf den ersten Blick was das Problem ist, es wurde kein Bezug und keine dringlichkeit geschaffen. Das Kommentar ist genauso schlampig wie der Code selber.
+
+
+Gute Message:
+
+/*
+ToDo: Remove unnecessary boolean comparison
+Comment by: John Doe (j.d@example.com)
+Noticed on: 2025-01-13
+Reason: isValid == true is redundant
+Ticket: ABC-215 https://jira.at/browse/ABC-215
+Person in charge: Johannes Gerstbauer (j.g@example.com)
+*/
+    boolean isValid = false;
+    if(isValid == true){
+        System.out.println("do something");
+    }
+
+Wie sieht dieses "Achtung-Schild" hingegen aus?
+1. ToDo: Remove unnecessary boolean comparison
+Hier wird erklärt, dass es einen Handlungsbedarf und kurz beschrieben was hhier nicht mit rechten dingen zugeht.
+
+2. Comment by: John Doe (j.d@example.com)
+Hier hat sich diejenige Person verewigt, die das "Achtung-Schild" aufgestellt hat. Wichtig um evtl. nochmal nachfragen zu können was sich die Person dabei gedahct hat.
+
+3. Noticed on: 2025-01-13
+Hier wurde das Datum hinzugefügt, wann das "Achtung-Schild" aufgestellt wurde. Wichtig für die Nachverfolgung. Un hoffentlich bekommt man auch dann ein schlechtes Gewissen, wenn das Datum recht weit zurückliegt und das zerbrochene Fenster noch immer nicht gefixt wurde.
+
+4. Reason: isValid == true is redundant
+Hier kann das zugrundeliegende Problem nochmal etwas genauer beschrieben werden.
+
+5. Ticket: ABC-215 https://jira.at/browse/ABC-215
+Dieser Schritt ist ganz wichtig! Damit auch Produktverantwortliche bescheid wissen, sollte ein JIRA-Bug-Ticket für den Task erstellt werden. In dem Jira-Ticket sollte im Description Feld möglichst detailliert beschrieben werden, was das Problem ist. Dem Ticket sollte dann auch gleich in Jira ein Software-Engineer zugewiesen werden, der das Ticket umsetzt. Dann kann evtl. der Task in Scrum-Sprints eingeplant werden. Außerdem ist dann das Problem viel greifbarer, nachvollziehbarer und dokumentiert. Es wird im Team aktiv darüber gesprochen und diskutiert. Und dadurch ist auch die Wahrscheinlichkeit geringer, dass das Thema vergessen wird.
+
+6. Person in charge: Johannes Gerstbauer (j.g@example.com)
+Dies ist nun das Rettungs-Thema: Es muss klar definiert werden, wer das zerbrochene Fenster fixt. Wenn man das nicht macht, fühlt sich niemand verantwortlich und das Thema wird vergessen. Es muss nicht immer automatisch jemand anderer bestimmt werden. Es kann auch gleich im vorhinein bestimmt werden, dass die Person, die das Schild aufstellt, später auch das Problem löst. Das ist in den meisten Fällen sogar am besten weil die Person, die das Schild aufstellt, auch gleich am besten weiß was das Problem ist.
+
+Jetzt hab ich euch gezeigt wie man am besten solche ToDo: Kommentare hinterlässt. Ich hoffe dieser Guideline hilft euch!
+
+Jeder andere entwickler, der nun dieses Achtung-Schild sieht, kann dann bei der "Person in charge" nachfragen - "wurde das schon gefixt"? "Warum wurde das noch nicht gefixt"? "Was ist der Plan"? "Wann wird das gefixt"? Wird das noch gefixt? "Ist das Thema untergegangen"?
+
+So werden auch keine zerbrochenen Fenster mehr vergessen.
+
+### Die 1%-Regel
+
+Wenn man ein nuees Feature im Code einbaut, sollte man "on the fly" bewusst nach einem zerbrochenem Fenster suchen und es fixen. Man sollte sich denken "was kann ich in diesem Projekt finden, das ich verbessern kann?". Fällt mir ein zerbrochenes Fenster schon während dem umsetzen des neuen Features auf? Umso besser - dann kann man es gleich fixen! Wenn man in seinem eigenen Haus ein neues Zimmer dazubaut und einem dabei ein zerbrochenes Fenster auffällt - warum dann nicht auch gleich das Fenster fixen? Das Werkzeug hat man schon heraußen - dann geht es gleich in einem. Jetzt ist man schon im Code "drinnen" und muss sich nicht mehr extra reindenken. Später ist es wieder schwieriger sich einzulesen/reinzudenken, in die Marterie reinzukommen...
 
 Das auch mit dem Atomic habits buch argumentieren:
 Auch das Diagramm von S. 29 vom buch atomic habits einbauen. Da kann ich dann sagen: Bei Software ist es nochmal drastischer weil man - im vergleich zu menschen - davon ausgehen kann dass man wenn man software gar nicht anrührt, sie schon von haus aus jeden Tag schlechter wird und altert. Wenn menschen nix tun, dann bleiben die Ergebnisse auf der gestrichelten Linie. Aber wenn man bei Software nix tut, gibt es einen Rückgang von X%. Außerdem tendiert software von natur aus chaotisch zu werden wie wir im Kapitel "Entropie" besprochen haben. Deswegen ist es umso wichtiger, Software regelmäßig zu pflegen, bewusst anzugreifen und zu verbessern.
 
 Es ist viel besser jeden Tag um 1% besser zu werden anstatt alles auf einmal machen zu wollen. Es ist viel besser die Applikation jeden Tag, konsequent, stetig mit jedem task, mit vielen kleinen einzelnen verbesserungen besser zu machen als zu denken, die gesamte applikation auf einmal in einem großen Task verbessern zu müssen. Hie und da mal ein Fenster fixen, den Müll auf der Straße loswerden, etc. Und die Psychologie/die Kultur/das Umfeld wird gleich besser und die Applikation wird besser! Es gibt kein "Perfekt" deswegen ist ein cycle an stetigem refactorn, verbessern, updaten und software am laufenden und aktuellen stand halten so notwendig um gute software zu entwickeln!
 
-Ach ein weiterr Vorteil davon wenn man hin- und wieder mal kleine zerbrochene fenster on the fly fixt: man lernt kleine Ausschnitte von Applikationen immer besser kennen und man weiß dann, was sie machen.
+Ach ein weiterr Vorteil davon wenn man hin- und wieder mal kleine zerbrochene fenster on the fly fixt: man lernt kleine Ausschnitte von Applikationen immer besser kennen und man weiß dann, was sie machen. So wird man zu einem besseren und wertvollerem Software Engineer.
+
+----------------------------------------------------------------------
+
+Hier auch über "boiled frogs" vom Buch "Pragmatic Programmer" schreiben.
+(S. 4 bis 9) und (S. 224 bis 225)
+
+-------------------------------------
+
+## Fazit
+
+vorgehen beim fixen von zerbrochenen Fenstern:
+
+1. sofort fixen
+2. wenn man gerade keine Zeit hat, dann ein "Achtung-Schild" aufstellen und eine verantwortliche Person klar definieren.
+3. Man sollte bei jedem neuen Feature gezielt nach zerbrochenen Fenstern suchen und diese fixen. Pro neuem Feature 1 zerbrochenes Fenster!
 
 2. Wenn einem ein zerbrochenes Fenster auffällt, dann SOFORT fixen!
 
 3. Wenn einem ein zerbrochenes Fenster auffällt und man hat gerade keine Zeit/Möglichkeit es zu fixen, dann gleich ein ToDo Kommentar mit jira ticket und vernatwortlichen anlegen. (Hier die CPR-Rettung geschichte von vorher erzählen)
 
 
+## Reference
 
-
------------------------------------------------
+- Atomic Habits Buch
+- Pragmatic Programmer Buch
+- https://x.com/vlad_mihalcea/status/1802901724362887580

@@ -103,6 +103,16 @@ Streams do all the heavy lifting for you.</description>
     </item>
     
     <item>
+      <title>A guide on naming things</title>
+      <link>https://gersti.at/todo/naming-things/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/naming-things/</guid>
+      <description>There are only two hard things in Computer Science: cache invalidation and naming things. &amp;ndash; Phil Karlton (Netscape)
+in diesem Artikel will ich darauf eingehen was schlechte namen sind und was gute namen sind und tipps geben wie man gute namen für variablen etc. hat.</description>
+    </item>
+    
+    <item>
       <title>Arrange - Act - Assert</title>
       <link>https://gersti.at/todo/arrange-act-assert/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>

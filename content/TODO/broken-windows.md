@@ -30,9 +30,10 @@ That small signal often sets off a chain reaction: more windows get damaged, tra
 
 The same thing applys to software! If you leave “broken windows” (bad designs, poor decisions, or sloppy code) unrepaired, the software will rot in no time! Software-Developers then think: _"If this code is already written bad, I might as well do it the same way. It doesn’t matter — no one cares anyway.”_
 
-Wenn die software immer mehr dahinrottet wird das instandhalten und warten mit der zeit so mühsam, dass man irgendwann dann sagt: es rentiert sich nicht mehr die software zu verbessern. Man muss sie neu bauen. Aber passiert das dann? Meistens nicht! Weil es mit enormen Kosten verbunden wäre. Weil sich kein entwickler die Mühe antun will das alles neu zu bauen. Oft handelt es sich dabei um riesengroße applikationen, wo man jahrelang braucht, um die Applikation von grund auf neu zu bauen. Oder der Kunde will einen Neubau der Applikation gar nicht erst bezahlen. In den Augen des Kunden funktioniert die software ja. Wenn dann eine winzige Änderung der Software ewig dauert und dadurch viel kostet, dann stört es den Kunden nicht so sehr - ja klar - er weiß ja nicht wie schnell ein neues Feature umgesetzt werden könnte, wenn die Software schön geschrieben wäre. Und so plagt man sich immer und immer weiter mit der verrotteten Software ab. Zum Leid der armen Entwickler, die sich dann mit fürchterlichem Code abplagen müssen, nichts mehr dazulernen, neuwertige features in verrotteten code einbauen müssen und letztenendes reputation verlieren, weil sie ewig dafür brauchen um kleinste Arbeiten umzusetzen. Und auch zum Leid der Firma selbst: So verliert die Firma immer mehr an Reputation und Geld usw.
+What are the consequences?
+If software continues to deteriorate, maintaining and supporting it eventually becomes so arduous that at some point people say: _"It’s no longer worth improving the software - it has to be rebuilt entirely."_ But does that actually happen? Usually not! Why?Because it would involve enormous costs. Because no developer wants to take on the effort of rebuilding everything from scratch. Often, it’s about huge applications that would take years to rebuild from the ground up. Or the customer simply doesn’t want to pay for a complete rewrite of the application. From the customer’s point of view, the software does it's job. And when a tiny change to the software takes forever and therefore costs a lot, it doesn’t bother the customer all that much — of course — because the customer doesn’t know how quickly a new feature could be implemented if the software were well written. And so people keep struggling with the rotting software over and over again. To the detriment of the poor developers, who then have to wrestle with dreadful code, can’t learn anything new anymore, have to shoehorn modern features in decayed code, and ultimately lose reputation because they take forever to deliver even the smallest tasks. And also to the detriment of the company itself: the company loses more and more money, reputation, etc.
 
-Sehen sie meinen Punkt? So steuert man langsam aber doch auf einen abgrund zu. Sie denken sich jetzt vielleicht, dass ich nur schwarz male - aber das beschriebene Szenario ist für viele Firmen Realität! Es gibt firmen, denen genau das tag für tag passiert. Und am Anfang stand immer ein einziges zerbrochenes Fenster.
+Do you see my point? This is how you slowly but surely head toward disaster. You may think that I am just painting a bleak picture, but the scenario described is reality for so many companies! There are companies where this is exactly what happens day after day. And it always started with a single broken window.
 
 ## Criminology
 
@@ -43,57 +44,21 @@ According to Wikipedia:
 > In criminology, the broken windows theory states that visible signs of crime, antisocial behavior and civil disorder create an urban environment that encourages further crime and disorder, including serious crimes. The theory suggests that policing methods that target minor crimes, such as vandalism, loitering, public drinking and fare evasion, help to create an atmosphere of order and lawfulness<br>
 > — <cite>[Wikipedia](https://en.wikipedia.org/wiki/Broken_windows_theory)</cite>
 
-
-## How to fix Broken Windows
-----------------------------------------------------------------
--- ab hier bis zum schluss: UMFORMULIEREN!!
------------------------------------------------------------------------
-
-Rule #1: Don’t leave “broken windows” (bad designs, wrong decisions, or poor code) unrepaired. Fix each one as soon as it is discovered.
-
-Rule #2: If there is insufficient time to fix it properly, then board it up. Perhaps you can comment out the offending code, or display a "Not Implemented" message, or substitute dummy data instead. Take some action to prevent further damage and to show that you’re on top of the situation.
-
-We’ve seen clean, functional systems deteriorate pretty quickly once windows start breaking. There are other factors that can contribute to software rot, but neglect accelerates the rot faster than any other factor.
-
-
-Don’t let entropy win. If it wins, then you’d better plan on moving to another neighborhood
-
 ## Putting Out Fires
 
-By contrast, there’s the story of an obscenely rich acquaintance of Andy’s. His house was immaculate, beautiful, loaded with priceless antiques, objets d’art, and so on. One day, a tapestry that was hanging a little too close to his living room fireplace caught on fire. The fire department rushed in to save the day—and his house. But before they dragged their big, dirty hoses into the house, they stopped—with the fire raging—to roll out a mat between the front door and the source of the fire.
+In _The Pragmatic Programmer_, another analogy is mentioned that fits this situation quite well:
 
-They didn’t want to mess up the carpet.
+A beautiful, flawless house with very expensive furnishings suddenly catches fire because a curtain in the living room ignites. When the firefighters arrive, they first lay a mat on the expensive wooden floor before stepping inside with their dirty shoes and dragging in the grimy water hoses to put out the fire. Why? Because they don’t want to damage or dirty the floor.
 
-A pretty extreme case, to be sure, but that’s the way it must be with software. One broken window—a badly designed piece of code, a poor management decision that the team must live with for the duration of the project—is all it takes to start the decline. If you find yourself working on a project with quite a few broken windows, it’s all too easy to slip into the mindset of “All the rest of this code is crap, I’ll just follow suit.” It doesn’t matter if the project has been fine up to this point.
+It may sound absurd, but that’s exactly how developers should handle software.
 
-In the original experiment leading to the “Broken Window Theory,” an abandoned car sat for a week untouched. But once a single window was broken, the car was stripped and turned upside down within hours.
+In this story, the house symbolizes clean, well-maintained software. Everything is well thought out, organized, and valuable — it’s worth taking care of. The fire, on the other hand, represents a problem: a critical bug in production, tight deadlines, launches, etc.
 
-By the same token, if you find yourself on a team and a project where the code is pristinely beautiful—cleanly written, well designed, and elegant—you will likely take extra special care not to mess it up, just like the firefighters. Even if there’s a fire raging (deadline, release date, trade show demo, etc.), you don’t want to be the first one to make a mess.
+Good developers make sure that existing code isn’t damaged, even when working under pressure. They try to keep the “house” clean while fighting the “fire.” Good software motivates careful work, even in a crisis.
 
-Das Haus symbolisiert saubere, gut gepflegte Software. Alles ist durchdacht, ordentlich und wertvoll – es lohnt sich, es zu erhalten.
+When you’re on a team working on a project with code that’s perfectly crafted—clean, well-designed, and elegant — you will likely take extra special care not to mess it up, just like the firefighters. Even if there’s a fire raging!
 
-Wortwörtlich: Ein Wandteppich fängt Feuer, die Feuerwehr kommt.
-Metapher für Software: Ein plötzliches Problem oder eine Krise tritt auf (z. B. ein Bug, ein kritischer Fehler oder eine knappe Deadline).
-
-Wortwörtlich: Die Feuerwehr schützt zuerst den teuren Teppich, bevor sie das Feuer löscht.
-Metapher: Die Leute kümmern sich mehr um die „Ästhetik“ oder Ordnung, als um die unmittelbare Problemlösung.
-Übertragung auf Software: Entwickler und Teams achten oft darauf, dass bestehender, sauberer Code nicht beschädigt wird, auch wenn sie unter Druck arbeiten. Sie versuchen, das „Haus“ sauber zu halten, während sie das „Feuer“ bekämpfen.
-Gute Software motiviert zu sorgfältigem Arbeiten, selbst in Krisen.
-Bedeutung: Ein kleiner Fehler oder eine schlechte Entscheidung im Projekt kann die gesamte Codebasis gefährden.
-
-„Broken window“: Wie in der berühmten Broken-Window-Theorie: Ein einzelnes zerbrochenes Fenster signalisiert Vernachlässigung – und führt zu weiteren Schäden.
-
-Kernaussage:
-
-Schlechte Software zieht schlechte Software nach sich.
-
-Guter, sauberer Code motiviert zu noch besserem Arbeiten.
-
-Frühzeitiges Aufräumen und Pflegen ist entscheidend, um langfristigen Verfall zu verhindern.
-
-Merksatz-Metapher:
-
-„Ein Feuer löscht man besser, ohne das Haus zu zerstören – und saubere Software inspiriert die Entwickler, sorgfältig zu bleiben.“
+> Professionals put out a fire without destroying the house in the process — and elegant code makes developers want to tread carefully.
 
 ## Refutation of the counterarguments
 
@@ -137,40 +102,43 @@ Meinung dahinter: Fehler liegen außerhalb des eigenen Verantwortungsbereichs.
 
 Realität: Softwareprojekte leben von gemeinsamer Verantwortung; Ignorierte Fehler belasten das Team langfristig.
 
-
 ## How to Fix Broken Windows?
 Alright! We are now clear that broken windows must be repaired without objection or doubt. But what is the best way to do this? In the following chapter, I will discuss what to keep in mind when fixing broken windows and how to go about it.
 
 ### Later is the Day that never comes
 
-Welche Regeln sollte man beim fixen von zerbrochenen Fenstern beachten? Nun, hierbei verhält es sich ähnlich wie bei FightClub (ich hoffe ihr habt den Film gesehen):
+What rules should you follow when fixing broken windows? Similar to _Fight Club_:
 
-Die erste Regel beim fixen von zerbrochenen Fenstern lautet:
+The first rule of fixing broken windows is:
 
-> Zerbrochene Fenster gehören immer sofort gefixt!
+> Broken windows must always be fixed immediately!
 
-Die zweite Regel beim fixen von zerbrochenen Fenstern lautet:
+The second rule of fixing broken windows is:
 
-> Zerbrochene Fenster gehören immer sofort gefixt!
+> BROKEN WINDOWS MUST ALWAYS BE FIXED IMMEDIATELY!!!
 
-Warum ist das so wichtig? Nun - ein Bild sagt mehr als tausend Worte:
+Never leave ‘broken windows’ — bad designs, wrong decisions, or flawed code — unfixed! Deal with them as soon as you notice them!
+
+Why is this so important? Well – a picture is worth more than a thousand words:
 
 {{< figure src="/images/broken-windows/later.png" caption="Fixing stuff later in Software Engineering (Source: [Twitter Post from Vlad Mihalcea](https://x.com/vlad_mihalcea/status/1802901724362887580))." width="400">}}
 
 > In software development, later is the day that never comes.
 
-Es ist immer dasselbe: wenn man in der Software-Entwicklung etwas nicht sofort macht, dann macht man es nie.
+It’s always the same: in software development, if you don’t do something immediately, you’ll never do it!
 
-Ich habe das schon so oft in der Arbeit erlebt:
-"Das machen wir später, wenn wir besser Zeit dafür haben!"
-ist ein Synonym für
-"Dieses Problem ist gerade unangenehm und schwierig zu lösen. Wir machen es nie!".
+I’ve seen this happen so many times at work:
+- _"We’ll do it later, when we have more time!"_
+is just another way of saying:
+- _"This problem is uncomfortable and hard to solve right now. We’ll never do it!"_
 
-Man geht davon aus, dass das Problem in Zukunft leichter zu lösen ist als jetzt. Aber das ist oft ein Trugschluss. Man weiß gar nicht ob es in Zukunft einen besseren Zeitpunkt dafür gibt. Aus Erfahrung weiß ich: in Zukunft wird das Problem immer schwieriger werden. Wie die Entropie besagt: Chaos nimmt von natur aus zu. Alles wird immer komplizierter, wenn sich software weiterentwickelt. Wenn über das Hütchen bereits drüberzementiert wurde (Siehe Bild).
+People assume that a problem will be easier to solve in the future than it is now. But that’s an illusion! You can’t know if there will ever be a better time to solve it than now. From experience, I’ve learned that problems only get harder over time. As entropy dictates, chaos naturally increases. Everything gets more complicated as software evolves — especially when little traffic cones were simply cemented over rather than cleared away beforehand (see image).
 
 Warum also nicht gleich jetzt fixen? Auf später verschieben bringt nichts, denn es wird nie den perfekten Zeitpunkt geben um das Problem zu fixen. "The best time to start is now!"
 
-Ich weiß - in der Praxis ist es oft nicht so leicht Sachen sofort zu fixen. Und oft kommen einem wirklich Sachen dazwischen und etwas anderes ist gerade wichtiger zu machen. z.B. Critical Bugs in production. Wenn man wirklich einen triftigen Grund hat, das Fenster gerade nicht zu fixen, hat man immer noch die Möglichkeit ein "Achtung-Schild" aufzustellen!
+So why not fix it right now? Putting it off won’t help, because there will never be a perfect time to solve the problem. *“The best time to start is now!”*
+
+I know — in practice, it’s often not so easy to fix things immediately. And sometimes, other urgent matters really do get in the way, like critical bugs in production. If you genuinely have a valid reason not to fix a “window” right away, you still have the option to put up a “warning sign”!
 
 ### Das Achtung Schild
 
@@ -182,7 +150,11 @@ Da hat scheinbar jemand seinen Kaffee verschüttet. Und ein Mitarbeiter:in hat d
 
 Das Schild bedeutet: Aufpassen! Gebt Acht! Hier ist ganz klar etwas schief gelaufen! Das Problem gehört schnellstmöglich behoben! 
 
-Umgemünzt auf die Software-Entwicklung ist es genauso! Wenn man ein zerbrochenes Fenster, einen Kaffeefleck, einen Programmfehler oder wie man es auch immer nennen möchte sieht, sollte man es sofort fixen. Wenn man aber keine Zeit hat es zu fixen, muss man zumindest sofort reagieren und ein "Achtung-Schild" aufstellen. Nur ist es sehr wichtig was auf diesem Schild draufsteht (Message is Key)! Aber was sollte man da drauf schreiben? Der nächste Abschnitt versucht das zu erklären:
+Umgemünzt auf die Software-Entwicklung ist es genauso! Wenn man ein zerbrochenes Fenster, einen Kaffeefleck, einen Programmfehler oder wie man es auch immer nennen möchte sieht, sollte man es sofort fixen. Wenn man aber keine Zeit hat es zu fixen, muss man zumindest sofort reagieren und ein "Achtung-Schild" aufstellen.
+
+Rule #2: If there is insufficient time to fix it properly, then board it up. Perhaps you can comment out the offending code, or display a "Not Implemented" message, or substitute dummy data instead. Take some action to prevent further damage and to show that you’re on top of the situation.
+
+ Nur ist es sehr wichtig was auf diesem Schild draufsteht (Message is Key)! Aber was sollte man da drauf schreiben? Der nächste Abschnitt versucht das zu erklären:
 
 ### CPR und Rettungssanitäter
 
@@ -286,6 +258,11 @@ vorgehen beim fixen von zerbrochenen Fenstern:
 2. Wenn einem ein zerbrochenes Fenster auffällt, dann SOFORT fixen!
 
 3. Wenn einem ein zerbrochenes Fenster auffällt und man hat gerade keine Zeit/Möglichkeit es zu fixen, dann gleich ein ToDo Kommentar mit jira ticket und vernatwortlichen anlegen. (Hier die CPR-Rettung geschichte von vorher erzählen)
+
+
+We’ve seen clean, functional systems deteriorate pretty quickly once windows start breaking. There are other factors that can contribute to software rot, but neglect accelerates the rot faster than any other factor.
+
+Don’t let entropy win. If it wins, then you’d better plan on moving to another neighborhood
 
 
 ## Reference

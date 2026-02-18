@@ -6,15 +6,18 @@
     <description>Recent content in TODoes on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/todo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/de/todo/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CQS und CQRS: Trennung von Lesen und Schreiben</title>
-      <link>https://gersti.at/de/todo/cqrs/</link>
-      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <title>Deep Work</title>
+      <link>https://gersti.at/de/todo/deep-work/</link>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://gersti.at/de/todo/cqrs/</guid>
-      <description>CQS und REST Endpoints Link to heading Man kann dieses Konzept auch sehr gut auf die Arbeit mit REST-Endpoints ummünzen. Man könnte sagen, dass man sich an folgende Konvention hält: Man definiert nur Endpoints, die entweder eine query operation oder eine command operation ausführt aber nicht beides zusammen. Wenn man an CRUD-Funktionalitäten denkt, sind CREATE, UPDATE und DELETE Command Operationen. Hingegen wäre READ eine Query-Operation.
-Man könnte auch sagen, dass bei den folgenden HTTP-Methoden von REST</description>
+      <guid>https://gersti.at/de/todo/deep-work/</guid>
+      <description>Deep Work Link to heading Ich habe 14 Stunden mit diesem Buch verbracht um es zu lesen und genau zu verstehen. Hier möchte ich die wichtigsten Erkenntnisse teilen, die ich aus diesem Buch gewonnen habe.
+Cal Newport ist Informatiker weshalb das Buch nochmal interessanter für mich erscheint.
+Die deutsche Fassung des Buches &amp;lsquo;Deep Work&amp;rsquo; von Cal Newport. Quelle: Thalia
+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; Teil 1 ist hier noch nicht angegangen worden
+Teil 1: Die Deep-Work Idee Link to heading Deep-Work: Berufliche Aktivitäten, die in einem Zustand ablenkungsfreier Konzentration ausgeübt werden und Ihre geistigen Kapazitäten an ihre Grenze bringen.</description>
     </item>
     
   </channel>

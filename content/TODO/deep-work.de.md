@@ -4,7 +4,6 @@ date = "2026-02-16"
 description = ""
 +++
 
-
 # Deep Work
 
 Ich habe mich mit diesem Buch beschäftigt, um rauszufinden, wie man das meiste aus seiner Arbeit rausholt. Wie man perfekt konzentriert Arbeitet um die meiste Leistung zu erbringen.

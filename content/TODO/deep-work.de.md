@@ -7,16 +7,17 @@ description = ""
 
 # Deep Work
 
+Ich habe mich mit diesem Buch beschäftigt, um rauszufinden, wie man das meiste aus seiner Arbeit rausholt. Wie man perfekt konzentriert Arbeitet um die meiste Leistung zu erbringen.
+
 Ich habe 14 Stunden mit diesem Buch verbracht um es zu lesen und genau zu verstehen. Hier möchte ich die wichtigsten Erkenntnisse teilen, die ich aus diesem Buch gewonnen habe.
 
-Cal Newport ist Informatiker weshalb das Buch nochmal interessanter für mich erscheint.
+Im Folgenden ist die Essenz aus dem Buch zusammengefasst und mit persönlichen Meinungen angereichert.
+
+Der Author Cal Newport ist Informatiker weshalb das Buch nochmal interessanter für mich erscheint.
 
 
 {{< figure src="/images/deep-work/deep-work.jpg" caption="Die deutsche Fassung des Buches 'Deep Work' von Cal Newport. [Quelle: Thalia](https://www.thalia.at/shop/home/artikeldetails/A1043055225?ProvID=11010473&gad_source=1&gad_campaignid=18314731113&gclid=EAIaIQobChMIrqnV6I3ekgMVTUdBAh1t5wgnEAQYAyABEgJRT_D_BwE)" width="300px">}}
 
-
-
--------------------------- Teil 1 ist hier noch nicht angegangen worden
 
 ## Teil 1: Die Deep-Work Idee
 
@@ -26,19 +27,100 @@ _**Shallow-Work:** Kognitiv anspruchslose, logistikorientierte Aufgaben, die hä
 
 _**Die Deep-Work-Hypothese:** Die Fähigkeit zu Deep-Work ist zunehmend selten und gleichzeitig zunehmend wertvoll in unserem wirtschaftlichen Umfeld. Infolgedessen gehört der Erfolg den Wenigen, die diese Fähigkeit kultivieren und zum Kern ihrer beruflichen Tätigkeit machen._
 
+
+Leute, die viel erreichen, setzen auf ablenkungsfreie, extrem konzentrierte Arbeit (= Deep-Work). Zum Beispiel hat sich Carl Gustav Jung zum deep-worken extra einen Steinturm im Wald gebaut. Michel de Montaigne, Mark Twain, Woody Allen, Peter Higgs, J.K. Rowling und Bill Gates sind nur ein paar Leute, die Ihren Erfolg der ablenkungsfreien und konzentrierten Arbeit zu verdanken haben.
+
+Networking Tools wie Smartphone, Social Media, E-Mails, etc. fördern Ablenkung und führen zu "Shallow-Work". Sie haben einen negativen Einfluss auf Deep-Work und dadurch verliert man dauerhaft die Fähigkeit konzentriert zu arbeiten.
+
+Um komplexes zu lernen muss man deep-worken. Deep-Worken fördert den eigenen Marktwert = Wert für die Gesellschaft = Karriere.
+
+Heutzutage muss man in der Lage sein, rasch komplizierte dinge zu lernen. Das erfordert Deep-Work. Wer diese Fähigkeit nicht kultiviert, wird mit den Entwicklungen der Technologie nicht Schritt halten können.
+
+Um Erfolg zu haben, muss man das absolut beste bieten, das man bieten kann - eine Aufgabe die hohe Konzentration erfordert.
+
+Heutzutage wird jeder aussortiert, der sein Geld nicht wert ist. Mit Deep-Work setzt man sich in der weltweiten, wettbewerbsstarken Informationsgesellschaft durch.
+
+Ziel des Buches ist: Tiefgang statt Oberflächlichkeit in Arbeiten zu erreichen.
+
 ### Deep Work ist wertvoll!
+
+Deep-Work ist heutzutage selten. Das bedeutet: Wenn ich deepworken kann, bringt mir das einen entscheidenden Vorteil allen Anderen gegenüber.
+
+Maschinen übernehmen immer mehr unserer Tätigkeiten -> deshalb sind in Zukunft nur mehr die absolut besten am Arbeitsmarkt gefragt. (Das Buch kam im Jahr 2017 raus. Seitdem hat sich durch KI nochmal einiges verändert und dieses Statement ist meiner Meinung nach wichtiger denn je.) In Zukunft wird auf neue Maschinen statt auf neue Mitarbeiter zurückgegriffen. Gewinner sind also z.b. nicht die, die Social Media verwenden, sondern die, die Social Media entwickeln. 
+
+In der neuen Wirtschaft gibt es genau 2 Gewinner-Gruppen:
+
+1. Menschen, die gut und kreativ mit intelligenten Maschinen arbeiten können (hochqualifizierte Arbeitskräfte)  
+
+2. Menschen, die in ihrer Tätigkeit die besten sind (Nur diejenigen an der Spitze des Marktes gewinnen, der Rest verliert)  
+
+Das Ziel ist es, zu einer der beiden Gruppen zu gehören. Ohne Konzentration und Deep-Work, ist dieses Ziel aber unerreichbar!
+
+Die beiden notwendigen Kernfähigkeiten, um zu einer der Gruppe zu gehören:
+1. Die Fähigkeit rasch schwierige Herausforderungen zu bewältigen
+2. Die Fähigkeit, Leistungen auf hohem Niveau zu erbringen, sowohl in Hinsicht auf die Qualität als auch auf die Geschwindigkeit.
+
+Diese beiden Kernfähigkeiten sind abhängig von der Konzentrationsfähigkeit, also Deep-Work!
+
+Technologien verändern sich rapide und sind kompliziert. Man muss immer und immer wieder in der Lage sein diese schwierigen neuen Sachen zu lernen.
+
+Konzentration=Key, Ablenkung=Schlecht
+
+Fähigkeit verbessern = mehr Myelin rund um Neuronen aufbauen -> durch Deep-Work.
+
+Myelin ist eine Fettschicht und legt sich um die Neuronen herum wie eine Art Isolationsbeschichtung und ermöglicht es den Zellen, Signale schneller und Präziser zu übertragen. Durch Vermeidung von Ablenkung und intensive fokussierung auf Aufgaben, also durch Deep-Work, wird die Produktion von Myelin angeregt. Dadurch wird die Myelin-Fettschicht dicker, Schaltkreise werden stärker und kleine Pfade werden zu großen Autobahnen im Hirn.
+
+- Mit Deep-Work lernt man schwierige Dinge schnell
+- Mit Deep-Work erbringt man Leistungen auf höherem Niveau
+
+Antonin-Dalmace Sertillanges: Verstand wie eine Linse zur Bündelung der Aufmerksamkeit nutzen!
+
+Deepwork = Leistung auf hohem Niveau. Für Deepwork ist Isolation und Abschottung wichtig!
+
+Hochwertig geleistete Arbeit = Zeitaufwand x Intensität der Konzentration
+
+Wenn man aus einer Arbeit plötzlich "rausgerissen" wird und dann eine andere Arbeit machen muss, resultiert das in mangelhafter Leistung. Es wirkt sich also schädlich auf die Leistungsfähigkeit aus! Das zeigt eine Studie von Sophie Leroy namens _"Why is it so hard to do my work?"_
+
+Aber warum gibt es dann z.B. auch stark abgelenkte Menschen, die erfolgreich sind (wie z.B. Jack Dorsey = mitbegründer von Twitter)?
+Jack Dorsey ist ein CEO! Konzentriert nachdenken über ein einziges Problem steht nicht in seiner Stellenbeschreibung. Deep-Work wäre bei ihm kontraproduktiv. Er ist gerade deswegen erfolgreich, weil er ständig abrufbereit ist. Aber das ist nur bei sehr sehr wenigen Jobs der Fall! Und in Zukunft wird es immer weniger Jobs geben, wo Deep-Work kontraproduktiv ist.
 
 ### Deep Work ist selten!
 
+In manchen Bereichen unseres Wirtschaftssystems wird Deep-Work nicht wertgeschätzt: Im Büro muss man z.B. immer abrufbereit sein.
+Business-Trends arbeiten gegen Deep-Work und Deep-Work ist in heutigen Unternehmen selten anzutreffen. Wieso? Aus vier Gründen:
+
+1. Das metrische schwarze loch:
+Der Gewinn, den Unternehmen aus Deep-Work schlagen können ist schwer messbar und deswegen sehen Firmen den Vorteil nicht schwarz auf weiß.
+
+2. Das Prinzip des geringsten Widerstands:
+
+Menschen neigen zu dem Verhalten, das im Moment das einfachste ist. Und Deep-Work ist meistens nicht einfach/angenehm. Deshalb wird es vermieden. Insbesondere, wenn man kein Feedback über die Vorteile von Deep-Work erhält (Siehe "metrisches schwarzes Loch"). Die "Erreichbarkeitskultur" wird als "einfacher" angesehen. 
+
+3. Geschäftigkeit als Stellvertreter für Produktivität
+
+Wenn man oft auf's Handy schaut, Mails beantwortet, Meetings plant, etc. lässt einen das nach "außen" hin "geschäftig" wirken. Damit will man andere davon überzeugen, dass man seine Arbeit gut macht. Aber Geschäftigkeit als Stellvertreter für Produktivität nutzen ist falsch! Sich abzuschotten und Deep-Work machen ist das Gegenteil von "Geschäftigkeit"!
+
+4. Kultur des Internets
+
+Man denkt, dass eine mit dem Internet zusammenhängende Verhaltensweise prinzipiell etwas gutes sei. Alles was mit dem Internet zu tun hat wird in den Himmel gehoben und wird als gut und modern angesehen. Jeder muss z.B. auf Twitter aktiv sein und sich davon ablenken lassen weil man sonst "unsichtbar" ist.
+
 ### Deep Work ist bedeutsam!
 
--------------------------- Teil 1 ist hier noch nicht angegangen worden
+ Unser Gehirn konstruiert unsere Weltansicht basierend auf dem, was wir unsere Aufmerksamkeit schenken. Bei Shallow-Work wird unsere Aufmerksamkeit meistens auf was nerviges gelenkt (z.B. Spam-Mails, etc.)
 
+Wie das Buch "Flow" bestätigt, macht einem der Flow-Zustand glücklich. Deep-Work ist Flow!
 
+ESM-Studien belegen: der Mensch fühlt sich am wohlsten und ist am glücklichsten, wenn er sich tief in eine anspruchsvolle Aufgabe versenken kann. Arbeit ist wie ein "Handwerk". Wenn man die eigenen Fähigkeiten mit Sorgfalt nutzt, kann man aus den täglichen Mühen Sinn schöpfen. Und Sinn macht glücklich. Die Sinnhaftigkeit entsteht durch die Tätigkeit selbst und nicht durch das Ergebnis, was rauskommt. "Ein hölzernes Rad ist nichts edles - aber die Herstellung kann es sein. Deep-Work verwandelt eine ermüdende Verpflichtung in ein edles Handwerk. Deep Work kann in der Informationswirtschaft ebenso viel Befriedigung schaffen, wie es das im Handwerk so offensichtlich tut.
 
+Winnifried Gallagher sagte: "Ich werde ein fokussiertes Leben führen, denn das ist das Beste, was es gibt."
 
+Ein fokussiertes Leben ist ein gutes Leben - egal wie sie es betrachten.
 
+Ein Leben mit Tiefgang ist nicht nur ein wirtschaftlich lukratives, sondern auch ein erfüllendes Leben.
 
+Deep-Work bringt Ernsthaftigkeit und Bedeutsamkeit mit sich (Egal ob ein Schmied ein Schwert schmiedet oder ein Programmierer einen Algorithmus entwickelt).
+
+"Ein schöner Code ist kurz und präzise, und wenn man diesen Code einem anderen Programmierer gäbe, würde er sagen: Oh das ist gut geschriebener Code. Es ist so, als würde man ein Gedicht schreiben. - Santiago Gonzalez (14-jähriger Programmierer) (https://www.youtube.com/watch?v=DBXZWB_dNsw)
 
 ## Teil 2: Die Deep-Work Regeln
 
@@ -189,29 +271,134 @@ Dieser vorher genannte Punktestand muss wöchentlich überprüft werden. Dann ka
 
 Nicht abschalten zu können, gefährdet die Deep-Work Strategie, weil Konzentration eine endliche Ressource ist!
 
-_"Lösen Sie sich am Ende des Arbeitstages von beruflichen Problemstellungen"_ --> Die Gedanken müssen wirklich **komplett frei** sein von Arbeit.
+_"Lösen Sie sich am Ende des Arbeitstages von beruflichen Problemstellungen!"_ --> Die Gedanken müssen wirklich **komplett frei** sein von Arbeit.
 
-##### Auszeiten schaffen Einsichten
+##### Auszeiten schaffen Einsichten!
 
-Die _Theorie des unbewussten Denkens (UTT)_ besagt, dass sich bei Entscheidungen, die große Mengen an Information und zahlreiche ungewisse Einschränkungen umschließen, sich das unbewusste Denken gut eignet, um die Aufgabe zu lösen. Ruhezeiten für den _"bewussten Verstand"_ ermöglichen dem _"unbewussten Verstand"_ sich rasch durch die kompliziertesten beruflichen Aufgabenstellungen durchzuarbeiten.
+Die _Theorie des unbewussten Denkens (UTT)_ besagt folgendes:  
+Bei menschlichen Entscheidungen, die große Mengen an Information und zahlreiche ungewisse Einschränkungen umschließen, eigent sich das unbewusste Denken gut, um die Aufgabe zu lösen. Ruhezeiten für den _"bewussten Verstand"_ ermöglichen dem _"unbewussten Verstand"_, sich rasch durch die kompliziertesten beruflichen Aufgabenstellungen durchzuarbeiten.
 
-##### Auszeiten füllen die für Deep-Work notwendigen Energiereserven auf
+##### Auszeiten füllen die für Deep-Work notwendigen Energiereserven auf!
+
+Die _"Attention Restauration Theory"_ besagt folgendes:  
+Um sich konzentrieren zu können, benötigt man _"gelenkte Aufmerksamkeit"_. Diese Ressource ist endlich - also wenn sie aufgebraucht ist, fällt das Konzentrieren schwer. Die _ART_ belegt in Studien, dass sich die gelenkte Aufmerksamkeit z.B. beim **Spazieren in der Natur** regeneriert. Warum? Weil die Kombination aus wenigen Aufgaben (in diesem Fall entspanntes herumgehen) und genügend interessanten Reizen, erneuert die Konzentrationsressourcen! Ein Beispiel für diese interessanten Reize könnte z.B. sein, dass man den Sonnenuntergang sieht oder Vögel beobachtet.  
+
+Im Gegenteil dazu verringert ein **Spaziergang in der Stadt** die Konzentrationsressourcen, weil hierfür gelenkte Aufmerksamkeit verbraucht wird (z.B. muss man auf den Verkehr achten, Straßen überqueren, auf entgegenkommende Leute achten, etc.). Daher sollten solche Spaziergänge in der Stadt vermieden werden, weil sie eher auslaugen als entspannen.
+
+Um die gelenkte Aufmerksamkeit zu regenerieren, eignet sich aber nicht nur ein Spaziergang in der Natur sondern auch alles Andere, das der Fähigkeit der Aufmerksamkeitslenkung eine Pause gönnt. Diese entspannenden Aktivitäten sollten frei von gelenkter Konzentration sein und _inhärent faszinierende Reize_ beinhalten. Eine persönliche Recherche zu dem Thema zeigte mir, dass sich folgende _"Soft Fascination Activities"_ besonders gut anbieten:
+- Naturgeräusche hören
+- Aus dem Zimmerfenster sehen
+- Beim Zug-Fahren aus dem Fenster sehen
+- Stadtlichter beobachten
+- "Ambient-Music" hören
+- Kerzenflamme oder Kaminfeuer/Lagerfeuer beobachten
+- Regen beobachten und das Regengeräusch hören
+- Wolken beobachten
+- Auch belanglose Aktivitäten wie z.B. eine Teezeremonie können entspannen
+
+Auf gar keinen Fall sollte man den Feierabend noch unterbrechen mit E-Mails checken, Nachrichten beantworten, etc. Dann kann sich nämlich die gelenkte Aufmerksamkeit nicht regenerieren. Nur die Gewissheit, dass man bis zum nächsten Tag die Arbeit ruhen lässt, kann das Hirn davon überzeugen, so weit herunterzufahren, dass es mit dem Aufladen für den nächsten Tag beginnen kann. Wenn man versucht, noch ein bisschen Arbeit aus dem Feierabend herauszuquetschen, könnte das die persönliche Effektivität am nächsten Tag so weit verringern, dass man letztlich weniger erledigt bekommt, als wenn man den Feierabend respektiert hätte.
 
 ##### Die Arbeit, die den Feierabend ersetzt, ist nicht so wichtig!
 
+Die Deep-Work Kapazitäten eines Menschen sind pro Tag begrenzt. Die Kapazitätsgrenze erreicht man im Laufe des Tages. Deswegen kann man am Abend nicht mehr konzentriert arbeiten, da das Kontingent bereits erschöpft ist. Jede Tätigkeit in den Nachtstunden wird die Karriere nicht voranbringen, weil sie unkonzentrierte "Shallow-Work" ohne viel Wert ist. Man verpasst also nichts, wenn man getrost in den Feierabend geht! Daher ist es wichtig nach Feierabend nicht einmal den geringsten Gedanken an Arbeit zu verschwenden. Man muss komplett abschalten. Dabei können _"Feierabendrituale"_ helfen (z.B. kann man alles, was nicht erledigt werden konnte, auf einen Zettel aufschreiben und das dann erst morgen erledigen - dann kann man das "Arbeiten" in der "Arbeit" lassen, dort wo es hingehört.). 
+
 ### Regel Nr.2: Langeweile zulassen!
 
-#### 2.2.1 Internetphasen definieren
+Die meisten Menschen lenken sich beim kleinsten Anzeichen von Langeweile sofort mit dem Smartphone ab (z.B. im Wartezimmer beim Arzt). Einfach nur zu warten und sich zu langweilen ist im heutigen Leben zu einer neuartigen Erfahrung geworden, aber aus der Perspektive des Konzentrationstrainings ist es von unschätzbarem Wert.
 
-#### Roosevelt-Energieblitze
+Deep-Work ist eine extreme und ernsthafte Disziplin. Es ist intensivstes Gehirntraining und erfordert viel Übung. Deep-Work baut "mentale Muskulatur" auf. Sich intensiv zu konzentrieren muss trainiert werden.
 
-#### Produktives meditieren
+> Ungestörte Konzentration ist wie die Verwendung von Zahnseide – man weiß wie es geht und man weiß, dass es einem gut tut aber man hat es aufgrund mangelnder Motivation vernachlässigt.<br>
+> — <cite>Cal Newport</cite>
 
-#### Sich ein Kartendeck merken
+Deep-Work benötigt eine innere Verpflichtung, die Fähigkeit des konzentrierens regelmäßig zu trainieren, damit man sie nicht verlernt. Daran wird man aber gehindert durch unsere _"Ablenkungssucht"_. Wir möchten mittlerweile schon den kleinsten Anzeichen von Langeweile entgehen und greifen zum Handy, Laptop, etc. Aber Langeweile ist etwas Gutes!
+
+Studien von _Clifford Nass_ ergaben, dass der ständige Wechsel der Aufmerksamkeit online einen dauerhaften, negativen Einfluss auf das Gehirn hat. Diese chronisch abgelenkten Menschen können irrelevantes nicht mehr herausfiltern. Sie haben Denkgewohnheiten etabliert, die es ihnen unmöglich machen, sich total zu fokussieren.
+
+Zusammengefasst bedeutet das: Wenn man jeden Moment potenzieller Langeweile im Leben (z.B. wenn man 5 min. in einer Warteschlange steht oder im Restaurant auf die Freundin wartet) nur durch einen Blick auf das Smartphone erleichtern kann, ist das Gehirn so weit "neu verknüpft", dass es nicht mehr für Deep-Work bereit ist - auch wenn man es versucht. Selbst wenn man regelmäßig Zeit einplant, um konzentriert zu arbeiten - es geht nicht mehr. Deshalb muss man den Verstand von der Ablenkungssucht befreien. Das Gehirn muss dazu neu programmiert werden. Und zwar mit den folgenden vier Strategien:
+
+#### 2.2.1 Strategie Nr. 1: Internetphasen definieren
+
+**Strategie:**  
+_Planen Sie im Voraus, mann Sie das Internet nutzen wollen, und meiden Sie es außerhalb dieser Zeiten **vollständig**! Das gilt sowohl für die Arbeitszeit, als auch für die Freizeit._
+
+**Umsetzung:**  
+Einen Zettel neben den Laptop bzw. neben das Smartphone legen und darauf den nächsten Zeitpunkt schreiben, zu dem man es wieder nutzen darf.
+
+Das funktioniert auch für Berufe, die eine Menge Internetnutzung verlangen. Das bedeutet lediglich, dass die Internetphasen zahlreicher sein werden, als bei Leuten mit anderen Berufen. Die Gesamtdauer der Phasen ist nicht so wichtig, wie dafür zu sorgen, dass die Integrität der Offlinephasen gewahrt bleibt.
+
+Egal, wie die Internetphasen geplant sind - man darf das Internat außerhalb dieser Phasen **absolut nicht** nutzen! Auch wenn man es unbedingt benötigt, sollte man es nicht nutzen, sondern stattdessen auf die nächste "Onlinephase" warten. Dadurch entkoppelt man das Gefühl online gehen zu wollen von der Belohnung durch die tatsächliche Umsetzung dieses Wunsches.
+
+#### Strategie Nr. 2: Roosevelt-Energieblitze
+
+Hier legt man eine anspruchsvolle Aufgabe fest, schätzt ab wie lange man normalerweise dafür brauchen würde und setzt sich dann eine enge Frist, die diesen Zeitraum **drastisch** verringert. Die auferlegte Frist sollte man sich dann genau am Rande der Machbarkeit setzen.
+
+Optional kann man sich dabei auch noch gut sichtbar eine Uhr aufstellen, damit man sieht, wie die Zeit abläuft. Oder die "Deadline" öffentlich machen bzw. jemand anderem sagen. Dann verspürt man mehr Druck es wirklich zu machen bzw. in der Zeit zu schaffen.
+
+Roosevelt-Endergieblitze sind ein "Intervalltraining für die Aufmerksamkeitszentren des Gehirns". Außerdem kann man sie nur ohne Ablenkungen (z.B. Smartphone, etc.) erledigen.
+
+#### Strategie Nr. 3: Produktives meditieren
+
+Ziel des produktiven meditierens ist es, einen Zeitraum auszuwählen, in dem Sie körperlich, aber nicht mental beschäftigt sind (beim Gehen, Joggen, Autofahren, Duschen, im Gym, beim U-Bahn fahren, etc.), und Ihre Aufmerksamkeit auf ein einzelnes, genau umrissenes berufliches Problem (z.B. einen neuen Blogartikel verfassen) zu richten. Damit übt man das Konzentrieren und ist während belanglosen, körperlichen Aktivitäten auch noch produktiv. So findet man z.B. Lösungen für verzwickte Probleme, wenn man zu Fuß unterwegs ist.
+
+Der Grund, warum man produktiv meditieren sollte, ist, weil das die Konzentrationsfähigkeit rapide verbessern kann. Indem Sie der Ablenkung widerstehen und Ihre Aufmerksamkeit wiederholt auf ein fest umrissenes Problem zurücklenken, stärken Sie ihre Ablenkungsresistenz, und indem Sie sich immer enger auf ein einzelnes Problem fokussieren, schärfen Sie Ihre Konzentration. Das erfordert aber viel Übung.
+
+Zum Beispiel muss man gegen Ablenkungen und Gedankenschleifen ankämpfen. Wenn Sie merken, dass Ihre Aufmerksamkeit von dem gegebenen Problem weggleitet, erinnern Sie sich sanft daran, dass Sie später zu diesem Gedanken zurückkehren können, und lenken Sie Ihre Aufmerksamkeit wieder zurück. Das Gehirn möchte evolutionsbedingt das tiefere Eindringen in Problemstellungen (die man mit Konzentration lösen möchte) vermeiden, da es einen übermäßigen Aufwand an Energie vermeiden will. Stattdessen wiederholt es in Gedankenschleifen Sachen, die man sowieso schon weiß. Wenn Sie bemerken in einer Gedankenschleife zu sein, lenken Sie Ihre Aufmerksamkeit wieder auf den nächsten Schritt.
+
+Die Konzentrationsfähigkeit wird auch erhöht, wenn man die Gedanken **strukturiert**: 
+
+1. Gedanken in Variablen speichern
+2. Frage festlegen, die mit den Variablen beantwortet wird
+3. Zusammenfassen der Erkenntnisse
+
+#### Strategie Nr. 4: Sich ein Kartendeck merken
+
+Sich ein Kartendeck zu merken ist ein weiteres Training zur Aufmerksamkeits- und Konzentrationssteigerung. Aber nicht nur Karten merken, sondern generell jeder strukturierte Prozess, der ungeteilte Aufmerksamkeit erfordert, kann einen ähnlichen Effekt haben. Zum Beispiel der Versuch, aus dem Gedächtnis einen Song auf der Gitarre nachzuspielen. Oder eine Partie Schach (vorausgesetzt es ist eine Partie, die mental fordernd ist).
+
+Schritte, um sich ein Kartendeck zu merken:
+
+1. Mentales Bild erstellen, wie ich durch 5 Räume meines Hauses gehe. Wichtig: klare Bilder hervorrufen, was ich sehe.
+
+2. In meinem Gedächtnis eine Auswahl von 10 Gegenständen pro Raum verankern. Die Gegenstände sollten groß und "erinnerungswürdig" sein.
+
+3. Eine Reihenfolge festlegen, in der ich mir diese Gegenstände in den Zimmern ansehe.
+
+4. Der Rundgang durch die Räume und das Betrachten der Gegenstände in jedem Raum in einer festgelegten Reihenfolge üben.
+
+5. Eine denkwürdige Person oder einen Gegenstand mit jeder der 52 Karten assoziieren. Dazu irgendeine logische Verbindung zwischen den Karten und den dazugehörigen Bildern herstellen. Zum Beispiel könnte man Donald Trum mit Karo-König verknüpfen, weil die Karoform an Diamanten erinnert und diese für Reichtum stehen. Diese Assoziationen müssen dann so lange eingeübt werden, bis ich eine beliebige Karte aus dem Spiel ziehen und sofort das damit verbundene Bild aufrufen kann.
+
+6. Diese ersten 5 Schritte sond vorbereitende Schritte und müssen nur einmal durchgeführt werden. Einmal gemacht, funktioniert es für immer.
+
+7. Nun die Hauptaufgabe: Sich die Reihenfolge der 52 Karten merken.Dazu blättert man das Kartendeck der Reihe nach durch und macht analog dazu den mentalen Rundgang durch's Haus. Dabei stellt man sich bei jeder Karte vor, wie die dazugehörige, eingeprägte Person etwas erinnerungswertes nahe diesem Gegenstand tut. Beispiel: Erste Gegenstand im Raum ist Türmatte und erste Karte ist Karo-König -> Donald Trump putzt sich an der Türmatte die Schuhe ab.
 
 ### Regel Nr.3: Die digitalen sozialen Netzwerke verlassen!
 
+Beliebte Gründe, warum Social-Media verwendet wird:
+1. Unterhaltung: _"Ich kann auf Social-Media sehen was Freunde machen, usw."_
+2. Freundschaften: _"Ich kann auf Social-Media neue Freundschaften schließen."_
+3. Kontakt: _"Auf Facebook sind noch einige Leute aus meiner Highschool und ich will den Kontakt halten."_
+
+Diese Gründe sind aber überraschend unbedeutend:
+1. Ohne Social-Media kann man auch unterhalten werden. Es gibt viel bessere Möglichkeiten der Unterhaltung!
+2. Die Freundschaften auf Social-Media sind eher oberflächlicher Natur. Sie stellen nicht den Mittelpunkt des sozialen Lebens dar.
+3. Den Kontakt zu alten Highschool-Freeunden zu halten ist nett, aber kaum entscheidend für ein zufriednees, soziales Leben.
+
+Ein paar Fakten:
+- Man fühlt sich weniger unter Druck, wenn man Neuigkeiten nicht erfährt (also wenn man Social Media verlässt).
+- Social Media verringert unsere Konzentrationsfähigkeit.
+- Ablenkungsintensive Apps und Browsertabs hindern uns an Deep-Work.
+- Social-Media ist darauf ausgelegt, süchtig zu machen.
+- Social-Media kann schädlich sein
+- Social Media zieht Zeit und Aufmerksamkeit von Aktivitäten ab, die berufliche und persönliche Ziele unterstützen
+
 #### Werkzeugauswahl nach Handwerksart
+
+Social Media bzw. Netzwerk-Tools sind Werkzeuge (Wie Hammer und Schraubenzieher). Man muss eine sorgfältige Entscheidung treffen, ob sich diese digitalen Werkzeuge eignen, um die eigenen Ziele zu erreichen. Ähnlich wie ein Landwirt, der entscheidet, ob eine Heumaschine sich lohnt oder ihn eher an der Arbeit hindert, weil es sich besser rentiert, das Heu zuzukaufen. Man muss also sorgfältig die Vor- und Nachteile abwägen. Natürlich bringt jedes Tool siene eigenen Vor- und Nachteile mit sich. Wichtig ist, eine bewusste Entscheidung zu treffen, ob man das Tool auswählt (weil die Vorteile überwiegen) oder ob man es bleiben lässt (weil die Nahteile überwiegen).
+
+Die Werkzeugsauswahl nach Handwerksart funktioniert folgendermaßen:
+
+> Bestimmen Sie die Kernfaktoren, die Erfolg und Zufriedenheit für ihr berufliches und persönliches Leben ausmachen. Wählen Sie ein Tool nur dann aus, wenn seine positiven Auswirkungen auf diese Faktoren eindeutig die negativen Folgen überwiegen.
+
 
 #### Das Pareto-Prinzip
 
@@ -238,14 +425,3 @@ Die _Theorie des unbewussten Denkens (UTT)_ besagt, dass sich bei Entscheidungen
 ##### Tipp Nr.3: Nicht antworten!
 
 ### Fazit
-
-
-## Persönlicher Deep-Work-Tag
-
-Hier ein Plan für einen persönlichen Deep-Work Tag
-
-*man kann nur maximal 4 Stunden konzentriert Deep-Work betreiben.
-
-## Erholsamer Schlaf
-
-Dieser Teil befindet sich zwar nicht in dem Buch Deep-Work, ist mir aber trotzdem wichtig an dieser Stelle zu nennen. Wenn man tägliche Bestleistungen verbringen möchte, ist es immens wichtig, in der Nacht erholsam zu schlafen. Die folgenden Tipps helfen, um dies zu erreichen:

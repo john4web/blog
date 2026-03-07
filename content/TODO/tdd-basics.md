@@ -4,6 +4,10 @@ date = "2024-01-24"
 description = ""
 +++
 
+Hier auch das Diagramm von Clean Architecture einbauen, in dem gezeigt wird, dass man mit TDD viel schneller ist!
+
+TDD Basics
+
 1. First make it work (you are out of business if it does not work)
 
 2. Then make it right (refactor the code so that you and others can understand it and evolve it as needs change or are better understood)

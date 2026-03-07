@@ -636,6 +636,185 @@ where XXX can be:
 
 also: snapshot version bedeutet: es wird ständig geschaut, ob es neuen code gibt, der in dieser version drinnen ist. Das heißt bei snapshot versionen kann sich der code ständig updaten. 
 
+## Milestone-Versions
+
+z.B. 4.0.0-M1
+
+In Maven (bzw. im allgemeinen SemVer-Umfeld) bedeutet eine Version wie 4.0.0-M1, dass es sich um eine Milestone-Version handelt.
+
+Bedeutung der Bestandteile:
+
+4.0.0 → geplante finale Hauptversion
+
+M1 → Milestone 1 (also ein früher Entwicklungs-/Test-Meilenstein vor der endgültigen Version)
+
+Einordnung innerhalb der Release-Phasen:
+
+Typische Vorab-Versionen können sein:
+
+alpha (frühe Entwicklungsphase)
+
+beta (funktional weitgehend komplett, aber noch instabil)
+
+M oder Milestone (geplante, benannte Zwischenschritte auf dem Weg zum Release)
+
+RC (Release Candidate)
+
+Final / GA (General Availability)
+
+Praktische Bedeutung:
+
+Eine Version wie 4.0.0-M1 ist:
+
+nicht produktionsreif
+
+für Tests gedacht
+
+API/Verhalten kann sich noch ändern
+
+wird in Maven als vor dem finalen 4.0.0 einsortiert (niedrigere Priorität im Versionsvergleich)
+
+## Milestone-Versions
+In Maven (bzw. im allgemeinen SemVer-Umfeld) bedeutet eine Version wie 4.0.0-M1, dass es sich um eine Milestone-Version handelt.
+
+Bedeutung der Bestandteile:
+
+4.0.0 → geplante finale Hauptversion
+
+M1 → Milestone 1 (also ein früher Entwicklungs-/Test-Meilenstein vor der endgültigen Version)
+
+Einordnung innerhalb der Release-Phasen:
+
+Typische Vorab-Versionen können sein:
+
+alpha (frühe Entwicklungsphase)
+
+beta (funktional weitgehend komplett, aber noch instabil)
+
+M oder Milestone (geplante, benannte Zwischenschritte auf dem Weg zum Release)
+
+RC (Release Candidate)
+
+Final / GA (General Availability)
+
+Praktische Bedeutung:
+
+Eine Version wie 4.0.0-M1 ist:
+
+nicht produktionsreif
+
+für Tests gedacht
+
+API/Verhalten kann sich noch ändern
+
+wird in Maven als vor dem finalen 4.0.0 einsortiert (niedrigere Priorität im Versionsvergleich)
+
+## Maven Qualifiers
+
+In Maven-Versionen (bzw. im Maven-Artifact/Versioning-System) gibt es eine Reihe üblicher Qualifiers neben SNAPSHOT und Milestone (M). Einige sind klar definiert, andere sind nur Konventionen, werden aber von Maven sinnvoll sortiert.
+
+Hier ist eine Übersicht der gängigsten Qualifier, in typischer zeitlicher Reihenfolge:
+
+✅ Vorveröffentlichungen
+SNAPSHOT
+
+Entwicklungsstand aus dem aktuellen Branch
+
+Wird vom Repository automatisch neu aufgelöst (dynamisch)
+
+Niedrigste Stabilität
+
+alpha / a
+
+Sehr frühe Vorabversion
+
+Funktional nicht vollständig
+Beispiele: 1.0.0-alpha, 1.0.0-a1
+
+beta / b
+
+Funktional weitgehend vollständig
+
+Noch nicht stabil
+Beispiele: 1.0.0-beta, 1.0.0-b2
+
+Milestone (M)
+
+Geplanter Entwicklungs-Meilenstein
+
+Zwischenstand, stabiler als Beta? (je nach Projekt)
+Beispiele: 1.0.0-M1, 1.0.0-M2
+
+RC / CR / rc / cr
+
+(Release Candidate)
+
+Fast final
+
+Nur noch Fehlerbehebungen
+Beispiele: 1.0.0-RC1, 1.0.0-cr2
+
+🔁 Stabile / finale Versionen
+RELEASE
+
+Veraltet — früher synonym zu einer finalen Version
+
+Heute: praktisch nie mehr benutzt
+
+Maven 3 ignoriert es weitgehend
+
+FINAL / GA
+
+Finaler, produktionsreifer Release
+
+Wird gleichwertig zu keiner Qualifier behandelt
+Beispiele: 1.0.0.Final, 1.0.0.GA
+
+(ohne Qualifier)
+
+Der de-facto Standard für eine stabile Version
+
+1.0.0 ist final
+
+🔧 Projekt-spezifische Qualifier
+
+Viele Projekte verwenden eigene Schemata, Maven ist tolerant:
+
+dev, preview, canary, pre, early-access
+
+rc2-final, sp1, patch
+
+JDK17, jdk8, usw.
+
+Maven sortiert sie lexikographisch nach internen Regeln:
+
+Bekannte Qualifier → spezielle Reihenfolge
+
+Unbekannte Qualifier → alphabetische Sortierung
+
+📚 Maven-spezifische Sortierreihenfolge (vereinfacht)
+
+Maven kennt einige Qualifier als „bekannt“. Nach Stabilität sortiert:
+
+*SNAPSHOT*
+
+alpha, a
+
+beta, b
+
+milestone, m
+
+rc, cr
+
+(keiner)
+
+final
+
+ga
+
+sp (Service Pack)
+
+
 ## Maven <dependencyManagement> vs. <dependencies> Tags
 
 <dependencyManagement> allows to consolidate and centralize the management of dependency versions without adding dependencies which are inherited by all children. This is especially useful when you have a set of projects (i.e. more than one) that inherits a common parent.

@@ -490,10 +490,11 @@ also write about database replication (this is a kind of cqrs)</description>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/todo/tdd-basics/</guid>
-      <description>First make it work (you are out of business if it does not work)
+      <description>Hier auch das Diagramm von Clean Architecture einbauen, in dem gezeigt wird, dass man mit TDD viel schneller ist!
+TDD Basics
+First make it work (you are out of business if it does not work)
 Then make it right (refactor the code so that you and others can understand it and evolve it as needs change or are better understood)
-Then make it fast (Refactor the code for needed performance)
-Inhalte vom Buch TDD vom Kent Beck hier einfließen lassen.</description>
+Then make it fast (Refactor the code for needed performance)</description>
     </item>
     
     <item>
@@ -809,12 +810,55 @@ Meine Devise: Wenn man etwas ändert und nicht aufpasst, kann es schonmal sein, 
     
     <item>
       <title></title>
+      <link>https://gersti.at/todo/hugo-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/hugo-tutorial/</guid>
+      <description>https://www.youtube.com/watch?v=_QSr2_pxIJs</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gersti.at/todo/job-questions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/job-questions/</guid>
+      <description>Hier sollte ich die meistgefragtesten technischen Fragen im Bewerbungsgespräch auflisten.
+Was ist DRY, KISS, YAGNI?
+GoF Design Patterns und deren Einteilung in Kategorien
+SOLID Principles
+Testing
+Spring Annotations, was kann welche version?
+Threads?
+final, finalize, finally
+sachen aus neuen Java versionen
+unterschied zwischen relationalen Datenbanken (wie mysql) und NoSQL (wie mongodb)
+Was ist Spring?
+monolith vs. microservices
+try with resources
+input, output, readbuffer, ..
+arten von dependency injection in spring</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://gersti.at/todo/markdown-rules/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://gersti.at/todo/markdown-rules/</guid>
       <description>Markdown Blog Article Rules
 H1 Link to heading H2 Link to heading H3 Link to heading H4 Link to heading H5 Link to heading H6 Link to heading Paragraph Link to heading Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur?</description>
+    </item>
+    
+    <item>
+      <title>Anforderungen an den Arbeitgeber</title>
+      <link>https://gersti.at/todo/employer-requirements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/todo/employer-requirements/</guid>
+      <description>Bei Vorstellungsgesprächen bewirbt sich nicht nur der Software-Entwickler bei einer Firma sondern auch die Firma bei dem jeweiligen Software-Entwickler. Wichtig ist herauszufinden, ob die Firma zu einem Passt.
+Damit kein böses Erwachen entsteht, nachdem man eine Stelle angenommen hat, sollte man sich die Folgenden Fragen Stellen und mit dem Arbeitgeber klären:
+Tätigkeitsbereich Link to heading Kann ich dort die Technologien verwenden, die ich verwenden möchte? Java? Kubernetes? Devops? Clean-Code? Architektur? Muss ich dort Tätigkeiten verrichten, die mir keinen Spaß machen?</description>
     </item>
     
     <item>

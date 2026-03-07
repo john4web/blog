@@ -505,6 +505,117 @@ interval:XXX: an interval in minutes (XXX)
 never: Maven will never try to retrieve another version. It will do that only if it doesn't exist locally. With the configuration, SNAPSHOT version will be handled as the stable libraries.
 </code></pre>
 <p>also: snapshot version bedeutet: es wird ständig geschaut, ob es neuen code gibt, der in dieser version drinnen ist. Das heißt bei snapshot versionen kann sich der code ständig updaten.</p>
+<h2 id="milestone-versions">
+  Milestone-Versions
+  <a class="heading-link" href="#milestone-versions">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>z.B. 4.0.0-M1</p>
+<p>In Maven (bzw. im allgemeinen SemVer-Umfeld) bedeutet eine Version wie 4.0.0-M1, dass es sich um eine Milestone-Version handelt.</p>
+<p>Bedeutung der Bestandteile:</p>
+<p>4.0.0 → geplante finale Hauptversion</p>
+<p>M1 → Milestone 1 (also ein früher Entwicklungs-/Test-Meilenstein vor der endgültigen Version)</p>
+<p>Einordnung innerhalb der Release-Phasen:</p>
+<p>Typische Vorab-Versionen können sein:</p>
+<p>alpha (frühe Entwicklungsphase)</p>
+<p>beta (funktional weitgehend komplett, aber noch instabil)</p>
+<p>M oder Milestone (geplante, benannte Zwischenschritte auf dem Weg zum Release)</p>
+<p>RC (Release Candidate)</p>
+<p>Final / GA (General Availability)</p>
+<p>Praktische Bedeutung:</p>
+<p>Eine Version wie 4.0.0-M1 ist:</p>
+<p>nicht produktionsreif</p>
+<p>für Tests gedacht</p>
+<p>API/Verhalten kann sich noch ändern</p>
+<p>wird in Maven als vor dem finalen 4.0.0 einsortiert (niedrigere Priorität im Versionsvergleich)</p>
+<h2 id="milestone-versions-1">
+  Milestone-Versions
+  <a class="heading-link" href="#milestone-versions-1">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In Maven (bzw. im allgemeinen SemVer-Umfeld) bedeutet eine Version wie 4.0.0-M1, dass es sich um eine Milestone-Version handelt.</p>
+<p>Bedeutung der Bestandteile:</p>
+<p>4.0.0 → geplante finale Hauptversion</p>
+<p>M1 → Milestone 1 (also ein früher Entwicklungs-/Test-Meilenstein vor der endgültigen Version)</p>
+<p>Einordnung innerhalb der Release-Phasen:</p>
+<p>Typische Vorab-Versionen können sein:</p>
+<p>alpha (frühe Entwicklungsphase)</p>
+<p>beta (funktional weitgehend komplett, aber noch instabil)</p>
+<p>M oder Milestone (geplante, benannte Zwischenschritte auf dem Weg zum Release)</p>
+<p>RC (Release Candidate)</p>
+<p>Final / GA (General Availability)</p>
+<p>Praktische Bedeutung:</p>
+<p>Eine Version wie 4.0.0-M1 ist:</p>
+<p>nicht produktionsreif</p>
+<p>für Tests gedacht</p>
+<p>API/Verhalten kann sich noch ändern</p>
+<p>wird in Maven als vor dem finalen 4.0.0 einsortiert (niedrigere Priorität im Versionsvergleich)</p>
+<h2 id="maven-qualifiers">
+  Maven Qualifiers
+  <a class="heading-link" href="#maven-qualifiers">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In Maven-Versionen (bzw. im Maven-Artifact/Versioning-System) gibt es eine Reihe üblicher Qualifiers neben SNAPSHOT und Milestone (M). Einige sind klar definiert, andere sind nur Konventionen, werden aber von Maven sinnvoll sortiert.</p>
+<p>Hier ist eine Übersicht der gängigsten Qualifier, in typischer zeitlicher Reihenfolge:</p>
+<p>✅ Vorveröffentlichungen
+SNAPSHOT</p>
+<p>Entwicklungsstand aus dem aktuellen Branch</p>
+<p>Wird vom Repository automatisch neu aufgelöst (dynamisch)</p>
+<p>Niedrigste Stabilität</p>
+<p>alpha / a</p>
+<p>Sehr frühe Vorabversion</p>
+<p>Funktional nicht vollständig
+Beispiele: 1.0.0-alpha, 1.0.0-a1</p>
+<p>beta / b</p>
+<p>Funktional weitgehend vollständig</p>
+<p>Noch nicht stabil
+Beispiele: 1.0.0-beta, 1.0.0-b2</p>
+<p>Milestone (M)</p>
+<p>Geplanter Entwicklungs-Meilenstein</p>
+<p>Zwischenstand, stabiler als Beta? (je nach Projekt)
+Beispiele: 1.0.0-M1, 1.0.0-M2</p>
+<p>RC / CR / rc / cr</p>
+<p>(Release Candidate)</p>
+<p>Fast final</p>
+<p>Nur noch Fehlerbehebungen
+Beispiele: 1.0.0-RC1, 1.0.0-cr2</p>
+<p>🔁 Stabile / finale Versionen
+RELEASE</p>
+<p>Veraltet — früher synonym zu einer finalen Version</p>
+<p>Heute: praktisch nie mehr benutzt</p>
+<p>Maven 3 ignoriert es weitgehend</p>
+<p>FINAL / GA</p>
+<p>Finaler, produktionsreifer Release</p>
+<p>Wird gleichwertig zu keiner Qualifier behandelt
+Beispiele: 1.0.0.Final, 1.0.0.GA</p>
+<p>(ohne Qualifier)</p>
+<p>Der de-facto Standard für eine stabile Version</p>
+<p>1.0.0 ist final</p>
+<p>🔧 Projekt-spezifische Qualifier</p>
+<p>Viele Projekte verwenden eigene Schemata, Maven ist tolerant:</p>
+<p>dev, preview, canary, pre, early-access</p>
+<p>rc2-final, sp1, patch</p>
+<p>JDK17, jdk8, usw.</p>
+<p>Maven sortiert sie lexikographisch nach internen Regeln:</p>
+<p>Bekannte Qualifier → spezielle Reihenfolge</p>
+<p>Unbekannte Qualifier → alphabetische Sortierung</p>
+<p>📚 Maven-spezifische Sortierreihenfolge (vereinfacht)</p>
+<p>Maven kennt einige Qualifier als „bekannt“. Nach Stabilität sortiert:</p>
+<p><em>SNAPSHOT</em></p>
+<p>alpha, a</p>
+<p>beta, b</p>
+<p>milestone, m</p>
+<p>rc, cr</p>
+<p>(keiner)</p>
+<p>final</p>
+<p>ga</p>
+<p>sp (Service Pack)</p>
 <h2 id="maven-dependencymanagement-vs-dependencies-tags">
   Maven <!-- raw HTML omitted --> vs. <!-- raw HTML omitted --> Tags
   <a class="heading-link" href="#maven-dependencymanagement-vs-dependencies-tags">

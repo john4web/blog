@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Einführung in Kubernetes · gersti.at
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Johannes Gerstbauer">
+<meta name="description" content="Im Folgenden werden die Erkenntnisse aus dem Buch &ldquo;Kubernetes: Eine kompakte Einführung&rdquo; simpel zusammengefasst.
+Warum verwendet man Kubernetes? Link to heading Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die folgenden 3 Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert.
+Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infrastruktur. Was bedeutet das?
+Anstatt ein bestehendes System zu verändern (z.">
+<meta name="keywords" content="blog, developer, software, engineer">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Einführung in Kubernetes"/>
+<meta name="twitter:description" content="Im Folgenden werden die Erkenntnisse aus dem Buch &ldquo;Kubernetes: Eine kompakte Einführung&rdquo; simpel zusammengefasst.
+Warum verwendet man Kubernetes? Link to heading Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die folgenden 3 Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert.
+Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infrastruktur. Was bedeutet das?
+Anstatt ein bestehendes System zu verändern (z."/>
+
+<meta property="og:title" content="Einführung in Kubernetes" />
+<meta property="og:description" content="Im Folgenden werden die Erkenntnisse aus dem Buch &ldquo;Kubernetes: Eine kompakte Einführung&rdquo; simpel zusammengefasst.
+Warum verwendet man Kubernetes? Link to heading Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die folgenden 3 Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert.
+Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infrastruktur. Was bedeutet das?
+Anstatt ein bestehendes System zu verändern (z." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gersti.at/todo/k8s/" /><meta property="article:section" content="TODO" />
+
+
+
+
+
+
+<link rel="canonical" href="https://gersti.at/todo/k8s/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      gersti.at
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/de/">🇩🇪</a>
+              </li>
+            
+          
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://gersti.at/todo/k8s/">
+          Einführung in Kubernetes
+        </a>
+      </h1>
+    </header>
+
+    <p>Im Folgenden werden die Erkenntnisse aus dem Buch &ldquo;Kubernetes: Eine kompakte Einführung&rdquo; simpel zusammengefasst.</p>
+<h2 id="warum-verwendet-man-kubernetes">
+  Warum verwendet man Kubernetes?
+  <a class="heading-link" href="#warum-verwendet-man-kubernetes">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die folgenden 3 Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert.</p>
+<h3 id="immutabilität">
+  Immutabilität
+  <a class="heading-link" href="#immutabilit%c3%a4t">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Kubernetes folgt dem Prinzip der immutablen Infrastruktur. Was bedeutet das?</p>
+<p>Anstatt ein bestehendes System zu verändern (z.B. durch Updates), wird einfach ein neues System gebaut und das alte System durch das neue System ersetzt.</p>
+<p>Sobald ein Artifakt einmal im System erzeugt wurde, ändert es sich nicht mehr durch die Anwender. Es gibt keine inkrementellen Änderungen.</p>
+<p>Beispiel:
+Eine laufende Instanz (z. B. Container, VM, Pod) wird nicht nachträglich verändert. Wenn sich etwas ändern muss (neue Version, Konfiguration, Bugfix), erstellt man ein neues Image
+und ersetzt die alte Instanz komplett. Statt auf einem Server ein Update zu installieren, wird ein neues Container-Image gebaut und neue Pods werden gestartet.</p>
+<p>Vorteile der immutabilität:</p>
+<ol>
+<li>Durch erstellen eines neuen Artifaktes, sieht man genau, was sich im Vergleich zum letzten Artifakt verändert hat (z.B. via Git-Commit)</li>
+<li>Das Bauen eines neuen Images anstatt ein bestehendes zu verändern sorgt dafür, dass das alte Image immer noch verfügbar ist. Wenn plötzlich etwas nicht mehr funktioniert, kann man einfach wieder das alte Image verwenden. Dadurch vermeidet man komplizierte Reparaturen am laufenden System!</li>
+</ol>
+<p>Immutable Container-Images bilden den Kern von allem, was man in Kubernetes baut.
+Moderne Cloud-Systeme sind stabiler und einfacher zu betreiben, wenn man laufende Systeme nicht verändert, sondern immer neu erzeugt und ersetzt!</p>
+<h3 id="deklarative-konfiguration">
+  Deklarative Konfiguration
+  <a class="heading-link" href="#deklarative-konfiguration">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>current state: ich hab 5 Instanzen eines Microservices
+desired state: ich will 15 Instanzen eines Microservices haben</p>
+<ol>
+<li>imperative style
+ich habe aktuell 5 instanzen und gebe ein &ldquo;command&rdquo; &ldquo;add 10 instances&rdquo;</li>
+</ol>
+<p>Hier wird der gewünschte Status der Anwendung durch das Ausführen einer Folge von Anweisungen hergestellt.</p>
+<ol start="2">
+<li>declarative style
+you specify the <strong>end state</strong> only. you tell the tool, that you wanna have 15 instances at the end.
+das tool checkt den current state, sieht dass aktuell 5 instances da sind und fügt 10 Instanzen hinzu</li>
+</ol>
+<p>Kubernetes funktioniert im deklarativen Stil. Alles in Kubernetes ist ein <em>&ldquo;deklaratives Konfigurations-Objekt&rdquo;</em>, das den gewünschten Status des Systems repräsentiert. Es ist dann die Aufgabe von Kubernetes, dass der aktuelle Status der Wirklichkeit mit dem gewünschten Status übereinstimmt.</p>
+<p>z.B. in kubernetes erstellt man ein declarative configuration yaml file
+you only say: i wanna have 15 instances in production. you will not worry about how many instances are currently live. kubernetes will handle it on its own. Kubernetes vergleicht den desired state und den actual state, findet den Unterschied raus und führt die commands aus um den end state zu erreichen.</p>
+<p>Während imperative Befehle aktionen definieren, defineiren deklarative Konfigurationen einen Status.</p>
+<p>Beispiel einer Aufgabe: 3 Instanzen erzeugen
+Imperatives Vorgehen: &ldquo;Füre A aus!&rdquo;, &ldquo;Führe B aus!&rdquo;, &ldquo;Führe C aus!&rdquo;
+Deklaratives Vorgehen: &ldquo;Anzahl an Instanzen gleich 3&rdquo;</p>
+<p>Vorteile der deklarativen Konfiguration:</p>
+<ul>
+<li>weniger Fehleranfällig, weil die Auswirkungen einer deklarativen Konfiguration auch ohne Ausführung verstanden werden können.</li>
+<li>es können Versionsverwaltung, Code-Reviews und Unit-Tests verwendet werden. (deklarative Konfiguration in Versionsverwaltung wird als &ldquo;Infrastructure as Code&rdquo; bezeichnet)</li>
+<li>Rollback von änderungen sind einfach</li>
+</ul>
+<h3 id="self-healing-systems">
+  Self-Healing Systems
+  <a class="heading-link" href="#self-healing-systems">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Prinzip: Ein System sollte Fehler automatisch erkennen und selbst beheben, ohne dass ein Mensch eingreifen muss.</p>
+<p>Kubernetes achtet kontinuierlich darauf, dass der aktuelle Status und der gewünschte Status weiterhin übereinstimmt. Das Bedeutet Kubernetes initialisiert nicht nur das System sondern schützt es auch vor Fehlern oder Störungen, die es eventuell destabilisieren oder die Zuverlässigkeit beeinträchtigen können.</p>
+<p>Hätte man das nicht, müsste das ein Mensch manuell machen, der mitten in der Nacht aufgeweckt wird, langsamer reagiert, weniger zuverlässig ist und auch dafür bezahlt werden muss.</p>
+<p>Beispiel: Aktuell laufen 3 Instanzen. Kubernetes legt nicht nur diese Instanzen an, sondern stellt auch sicher, dass es immer genau 3 Instanzen gibt. Erstellt man manuell eine vierte, wird Kubernetes eine zerstören, um die Anzahl wieder auf 3 zu verringern. Beendet man manuell eine Instanz, erzeugt Kubernetes eine, um den gewünschten Status zu erreichen.</p>
+<p>Self-Healing Systems verbessern die Developer-Geschwindigkeit, weil keine Zeit und Energie mehr für das Warten der Sytse</p>
+<h3 id="service--team-skalieren">
+  Service &amp; Team Skalieren
+  <a class="heading-link" href="#service--team-skalieren">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>Entkoppeln</strong>
+Kubernetes nutzt eine <em>&ldquo;entkoppelte Architektur&rdquo;</em>. Komponenten eines Systems sollen möglichst unabhängig voneinander funktionieren, sodass Änderungen oder Ausfälle einer Komponente nicht direkt andere Komponenten beeinflussen.</p>
+<p>Jede Komponente ist von anderen Komponenten durch definierte APIs und Service-Load-Balancer getrennt. APIs und Load Balancer isolieren jedes Teil des Systems von den anderen. APIs dienen als Puffer zwischen dem Implementierer und dem Konsumenten und die Load Balancer liefern den Puffer zwischen den laufenden Instanzen jedes Service.</p>
+<p>Mit &ldquo;Puffer&rdquo; ist eine Zwischenschicht gemeint, die zwei Systemteile voneinander isoliert, damit Änderungen oder Ausfälle nicht direkt weitergegeben werden.</p>
+<p>Diese entkoppelte Architektur erleichtert die Skalierung des Systems und des Developer-Teams.</p>
+<p><strong>2</strong>
+<strong>3</strong>
+<strong>4</strong></p>
+<h3 id="infrastruktur-abstrahieren">
+  Infrastruktur abstrahieren
+  <a class="heading-link" href="#infrastruktur-abstrahieren">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h3 id="effizienz">
+  Effizienz
+  <a class="heading-link" href="#effizienz">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><a href="https://www.youtube.com/watch?v=67E2JRk8_bg"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=67E2JRk8_bg</a></p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2026
+     Johannes Gerstbauer 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

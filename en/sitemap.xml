@@ -434,6 +434,8 @@
                 href="https://gersti.at/categories/"
                 />
   </url><url>
+    <loc>https://gersti.at/todo/k8s/</loc>
+  </url><url>
     <loc>https://gersti.at/series/</loc>
     <xhtml:link
                 rel="alternate"

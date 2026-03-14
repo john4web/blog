@@ -6,19 +6,20 @@ description = ""
 
 # Deep Work
 
-Ich habe mich mit diesem Buch beschäftigt, um rauszufinden, wie man das meiste aus seiner Arbeit rausholt. Wie man perfekt konzentriert Arbeitet um die meiste Leistung zu erbringen.
-
-Ich habe 14 Stunden mit diesem Buch verbracht um es zu lesen und genau zu verstehen. Den Inhalt habe ich hier auf einen Blog-Artikel zusammengefasst, der 29 Minuten zu lesen dauert. Hier möchte ich die wichtigsten Erkenntnisse teilen, die ich aus diesem Buch gewonnen habe.
-
-Im Folgenden ist die Essenz aus dem Buch zusammengefasst und mit persönlichen Meinungen angereichert.
-
-Der Author Cal Newport ist Informatiker weshalb das Buch nochmal interessanter für mich erscheint.
-Cal Newport formuliert das Ziel des Buches folgendermaßen: _"Tiefgang statt Oberflächlichkeit bei der Arbeit zu erreichen"_.
+Vor kurzem habe ich mich der Frage gewidmet, wie man das meiste aus seiner Arbeit rausholen kann. Wie kann man in einer Welt voller Ablenkungen konzentriert arbeiten, um tagtäglich Bestleistungen zu erbringen? Das Buch "Deep-Work" von Cal Newport hat mir einige Antworten auf diese Fragen gegeben.
 
 {{< figure src="/images/deep-work/deep-work.jpg" caption="Die deutsche Fassung des Buches 'Deep Work' von Cal Newport. [Quelle: Thalia](https://www.thalia.at/shop/home/artikeldetails/A1043055225?ProvID=11010473&gad_source=1&gad_campaignid=18314731113&gclid=EAIaIQobChMIrqnV6I3ekgMVTUdBAh1t5wgnEAQYAyABEgJRT_D_BwE)" width="300px">}}
 
+Insgesamt habe ich 14 Stunden damit verbracht, das Buch zu lesen und genau zu verstehen. Den Inhalt habe ich in diesem Blog-Artikel zusammengefasst, für den man im Durchschnitt 29 Minuten braucht zu lesen. Im Folgenden möchte ich die wichtigsten Erkenntnisse teilen, die ich aus diesem Buch gewonnen habe.
+
+Der Author _Cal Newport_ ist übrigens Informatiker, weshalb das Buch nochmals interessanter für mich erschien, da ich ja auch Software-Entwickler bin.
+
+Cal Newport formuliert das Ziel seines Buches folgendermaßen: _"Tiefgang statt Oberflächlichkeit bei der Arbeit zu erreichen"_.
+
 
 ## Teil 1: Die Deep-Work Idee
+
+Zu allererst möchte ich ein paar Definitionen von Begriffen teilen, die im Folgenden öfters vorkommen:
 
 _**Deep-Work:** Berufliche Aktivitäten, die in einem Zustand ablenkungsfreier Konzentration ausgeübt werden und Ihre geistigen Kapazitäten an ihre Grenze bringen. Diese Leistung schafft neuen Wert, verbessert ihre Fähigkeiten und ist schwer zu kopieren._
 
@@ -26,62 +27,62 @@ _**Shallow-Work:** Kognitiv anspruchslose, logistikorientierte Aufgaben, die hä
 
 _**Die Deep-Work-Hypothese:** Die Fähigkeit zu Deep-Work ist zunehmend selten und gleichzeitig zunehmend wertvoll in unserem wirtschaftlichen Umfeld. Infolgedessen gehört der Erfolg den Wenigen, die diese Fähigkeit kultivieren und zum Kern ihrer beruflichen Tätigkeit machen._
 
-Leute, die viel erreichen, setzen auf ablenkungsfreie, extrem konzentrierte Arbeit (= Deep-Work). Zum Beispiel hat sich Carl Gustav Jung zum deep-worken extra in einen Steinturm im Wald zurückgezogen. Michel de Montaigne, Mark Twain, Woody Allen, Peter Higgs, J.K. Rowling und Bill Gates sind nur ein paar Leute, die Ihren Erfolg der ablenkungsfreien und konzentrierten Arbeit zu verdanken haben.
+Leute, die viel erreichen, setzen auf ablenkungsfreie, extrem konzentrierte Arbeit (= Deep-Work). Zum Beispiel hat sich [Carl Gustav Jung](https://de.wikipedia.org/wiki/Carl_Gustav_Jung) zum "deep-worken" extra in einen Steinturm im Wald zurückgezogen. [Michel de Montaigne](https://de.wikipedia.org/wiki/Michel_de_Montaigne), [Mark Twain](https://de.wikipedia.org/wiki/Mark_Twain), [Woody Allen](https://de.wikipedia.org/wiki/Woody_Allen), [Peter Higgs](https://de.wikipedia.org/wiki/Peter_Higgs), [J.K. Rowling](https://de.wikipedia.org/wiki/Joanne_K._Rowling) und [Bill Gates](https://de.wikipedia.org/wiki/Bill_Gates) sind nur ein paar Leute, die Ihren Erfolg der ablenkungsfreien und konzentrierten Arbeit zu verdanken haben.  
 
-Networking Tools wie Smartphone, Social Media, E-Mails, etc. fördern Ablenkung und führen zu "Shallow-Work". Sie haben einen negativen Einfluss auf Deep-Work und durch sie verliert man dauerhaft die Fähigkeit konzentriert zu arbeiten.
+Networking Tools wie Smartphones, Social Media, E-Mails, etc. fördern Ablenkung und führen zu _"Shallow-Work"_. Sie haben einen negativen Einfluss auf Deep-Work und durch sie verliert man dauerhaft die Fähigkeit konzentriert zu arbeiten.  
 
-Um komplexes zu lernen muss man deep-worken. Deep-Worken fördert den eigenen Marktwert = Wert für die Gesellschaft = Karriere.
+Um komplexes zu lernen, muss man "deep-worken". Deep-Work fördert den eigenen Marktwert.
 
-Heutzutage muss man in der Lage sein, rasch komplizierte dinge zu lernen. Das erfordert Deep-Work. Wer diese Fähigkeit nicht kultiviert, wird mit den Entwicklungen der Technologie nicht Schritt halten können.
+Marktwert = Wert für die Gesellschaft = Karriere  
 
-Um Erfolg zu haben, muss man das absolut beste bieten, das man bieten kann - eine Aufgabe die hohe Konzentration erfordert.
+Heutzutage muss man in der Lage sein, rasch komplizierte Dinge zu lernen. Das erfordert Deep-Work. Wer diese Fähigkeit nicht kultiviert, wird mit den Entwicklungen der Technologie nicht Schritt halten können.
 
-Heutzutage wird jeder aussortiert, der sein Geld nicht wert ist. Mit Deep-Work setzt man sich in der weltweiten, wettbewerbsstarken Informationsgesellschaft durch.
+Um Erfolg zu haben, muss man das absolut Beste bieten, das man bieten kann - eine Aufgabe die hohe Konzentration erfordert.
+
+Heutzutage wird jede Person aussortiert, die ihr Geld nicht wert ist. Mit Deep-Work setzt man sich in der weltweiten, wettbewerbsstarken Informationsgesellschaft durch.
 
 ### Deep Work ist wertvoll!
 
 Deep-Work ist heutzutage selten. Das bedeutet: Wenn ich deepworken kann, bringt mir das einen entscheidenden Vorteil allen Anderen gegenüber.
 
-Maschinen übernehmen immer mehr unserer Tätigkeiten -> deshalb sind in Zukunft nur mehr die absolut besten am Arbeitsmarkt gefragt. (Das Buch kam im Jahr 2017 raus. Seitdem hat sich durch KI nochmal einiges verändert und dieses Statement ist meiner Meinung nach wichtiger denn je.) In Zukunft wird auf neue Maschinen statt auf neue Mitarbeiter zurückgegriffen. Gewinner sind also z.b. nicht die, die Social Media verwenden, sondern die, die Social Media entwickeln. 
+Maschinen übernehmen immer mehr unserer Tätigkeiten -> deshalb sind in Zukunft nur mehr die absolut Besten am Arbeitsmarkt gefragt _(Anmerkung meinerseits: Das Buch kam im Jahr 2017 raus. Seitdem hat sich durch KI nochmal einiges verändert und dieses Statement ist meiner Meinung nach wichtiger denn je!)_. In Zukunft wird auf neue Maschinen statt auf neue Mitarbeiter zurückgegriffen. Gewinner sind also z.B. nicht jene, die Social Media verwenden, sondern jene, die Social Media entwickeln. 
 
-In der neuen Wirtschaft gibt es genau 2 Gewinner-Gruppen:
+In der heutigen Wirtschaft gibt es genau 2 Gewinner-Gruppen:
 
 1. Menschen, die gut und kreativ mit intelligenten Maschinen arbeiten können (hochqualifizierte Arbeitskräfte)  
 
-2. Menschen, die in ihrer Tätigkeit die besten sind (Nur diejenigen an der Spitze des Marktes gewinnen, der Rest verliert)  
+2. Menschen, die in ihrer Tätigkeit die Besten sind (nur diejenigen an der Spitze des Marktes gewinnen, der Rest verliert)  
 
-Das Ziel ist es, zu einer der beiden Gruppen zu gehören. Ohne Konzentration und Deep-Work, ist dieses Ziel aber unerreichbar!
+Das Ziel ist es, zu einer der beiden Gruppen zu gehören (ohne Konzentration und Deep-Work, ist dieses Ziel aber unerreichbar)!
 
-Die beiden notwendigen Kernfähigkeiten, um zu einer der Gruppe zu gehören:
-1. Die Fähigkeit rasch schwierige Herausforderungen zu bewältigen
-2. Die Fähigkeit, Leistungen auf hohem Niveau zu erbringen, sowohl in Hinsicht auf die Qualität als auch auf die Geschwindigkeit.
+Die beiden notwendigen Kernfähigkeiten, um zu einer der beiden Gruppe zu gehören, sind:
+1. Die Fähigkeit rasch schwierige Herausforderungen zu bewältigen  
+2. Die Fähigkeit, Leistungen auf hohem Niveau zu erbringen, sowohl in Hinsicht auf die Qualität als auch auf die Geschwindigkeit.  
 
 Diese beiden Kernfähigkeiten sind abhängig von der Konzentrationsfähigkeit (=Deep-Work)!
 
 Technologien verändern sich rapide und sind kompliziert. Man muss immer und immer wieder in der Lage sein diese schwierigen neuen Sachen zu lernen.
 
-Konzentration=Key, Ablenkung=Schlecht
+- Konzentration ist der Schlüssel!  
+- Ablenkung ist schlecht!  
 
-Fähigkeit verbessern = mehr Myelin rund um Neuronen aufbauen -> durch Deep-Work.
+Wenn ein Mensch Fähigkeiten verbessert bzw. neue Sachen lernt (z.B. durch Deep-Work), dann wird "Myelin" rund um die Neuronen im Gehirn aufgebaut. Myelin ist eine Fettschicht und legt sich um die Neuronen herum wie eine Art Isolationsbeschichtung und ermöglicht es den Zellen, Signale schneller und präziser zu übertragen. Durch Vermeidung von Ablenkung und intensive Fokussierung auf Aufgaben, also durch Deep-Work, wird die Produktion von Myelin angeregt. Dadurch wird die Myelin-Fettschicht dicker, Schaltkreise werden stärker und kleine _"Wissens-Pfade"_ werden zu großen _"Wissens-Autobahnen"_ im Hirn.
 
-Myelin ist eine Fettschicht und legt sich um die Neuronen herum wie eine Art Isolationsbeschichtung und ermöglicht es den Zellen, Signale schneller und Präziser zu übertragen. Durch Vermeidung von Ablenkung und intensive Fokussierung auf Aufgaben, also durch Deep-Work, wird die Produktion von Myelin angeregt. Dadurch wird die Myelin-Fettschicht dicker, Schaltkreise werden stärker und kleine _"Wissens-Pfade"_ werden zu großen _"Wissens-Autobahnen"_ im Hirn.
-
-{{< figure src="/images/deep-work/myelin.webp" caption="https://www.simplypsychology.org/myelin-sheath.html" width="300px">}}
-
+{{< figure src="/images/deep-work/myelin.webp" caption="Myelin wickelt sich um die Neuronen im Hirn herum. Quelle: [SimplyPsychology](https://www.simplypsychology.org/myelin-sheath.html)" width="300px">}}
 
 - Mit Deep-Work lernt man schwierige Dinge schnell
 - Mit Deep-Work erbringt man Leistungen auf höherem Niveau
 
-Antonin-Dalmace Sertillanges: Verstand wie eine Linse zur Bündelung der Aufmerksamkeit nutzen!
+Für Deepwork ist Isolation und Abschottung wichtig!
 
-Deepwork = Leistung auf hohem Niveau. Für Deepwork ist Isolation und Abschottung wichtig!
+Es gilt folgende Formel:
+> Hochwertig geleistete Arbeit = Zeitaufwand x Intensität der Konzentration
 
-Hochwertig geleistete Arbeit = Zeitaufwand x Intensität der Konzentration
+Wenn man aus einer Arbeit plötzlich "rausgerissen" wird und dann eine andere Arbeit machen muss, resultiert das in mangelhafter Leistung. Es wirkt sich also schädlich auf die Leistungsfähigkeit aus! Das zeigt eine Studie von Sophie Leroy namens ["Why is it so hard to do my work?"](https://www.sciencedirect.com/science/article/abs/pii/S0749597809000399)
 
-Wenn man aus einer Arbeit plötzlich "rausgerissen" wird und dann eine andere Arbeit machen muss, resultiert das in mangelhafter Leistung. Es wirkt sich also schädlich auf die Leistungsfähigkeit aus! Das zeigt eine Studie von Sophie Leroy namens _"Why is it so hard to do my work?"_
+{{< figure src="/images/deep-work/brennglaseffekt.jpg" caption="Die Philosophin [Antonin-Dalmace Sertillanges](https://en.wikipedia.org/wiki/Antonin_Sertillanges) formulierte es folgendermaßen: Man sollte den Verstand wie eine Linse zur Bündelung der Aufmerksamkeit nutzen! Quelle: [Lumeno.de](https://www.lumeno.de/blogs/wissen/die-lupe-als-brennglas)" width="300px">}}
 
-Aber warum gibt es dann z.B. auch stark abgelenkte Menschen, die erfolgreich sind (wie z.B. Jack Dorsey = mitbegründer von Twitter)?
-Jack Dorsey ist ein CEO! Konzentriert nachdenken über ein einziges Problem steht nicht in seiner Stellenbeschreibung. Deep-Work wäre bei ihm kontraproduktiv. Er ist gerade deswegen erfolgreich, weil er ständig abrufbereit ist. Aber das ist nur bei sehr sehr wenigen Jobs der Fall! Und in Zukunft wird es immer weniger Jobs geben, wo Deep-Work kontraproduktiv ist.
+Aber wenn das alles stimmt - warum gibt es dann auch stark abgelenkte Menschen, die erfolgreich sind (wie z.B. Jack Dorsey - Mitbegründer von Twitter)? Jack Dorsey ist ein CEO! Konzentriert nachdenken über ein einziges Problem steht nicht in seiner Stellenbeschreibung. Deep-Work wäre bei ihm sogar kontraproduktiv. Er ist gerade deswegen erfolgreich, weil er ständig abrufbereit ist. Aber das ist nur bei sehr sehr wenigen Jobs der Fall! Und in Zukunft wird es immer weniger Jobs geben, wo Deep-Work kontraproduktiv ist.
 
 ### Deep Work ist selten!
 
@@ -90,38 +91,36 @@ Business-Trends arbeiten gegen Deep-Work und Deep-Work ist in heutigen Unternehm
 
 **1. Das metrische schwarze Loch:**
 
-Der Gewinn, den Unternehmen aus Deep-Work schlagen können ist schwer messbar und deswegen sehen Firmen den Vorteil von Deep-Work nicht "Schwarz auf Weiß" vor sich liegen.
+Der Gewinn, den Unternehmen aus Deep-Work schlagen können, ist schwer messbar und deswegen sehen Firmen den Vorteil von Deep-Work nicht "Schwarz auf Weiß" vor sich liegen.
 
 **2. Das Prinzip des geringsten Widerstands:**
 
-Menschen neigen zu dem Verhalten, das im Moment das einfachste ist. Und Deep-Work ist meistens nicht einfach/angenehm. Deshalb wird es vermieden. Insbesondere, wenn man kein Feedback über die Vorteile von Deep-Work erhält (Siehe "metrisches schwarzes Loch").  
-Die "Erreichbarkeitskultur" wird hingegen als "einfacher" angesehen. 
+Menschen neigen zu dem Verhalten, das im Moment das einfachste ist. Und Deep-Work ist meistens nicht einfach/angenehm. Deshalb wird es vermieden. Insbesondere dann, wenn man kein Feedback über die Vorteile von Deep-Work erhält (Siehe "metrisches schwarzes Loch"). Die "Erreichbarkeitskultur" wird hingegen als "einfacher" angesehen. 
 
 **3. Geschäftigkeit als Stellvertreter für Produktivität:**
 
-Wenn man oft auf's Handy schaut, Mails beantwortet, Meetings plant, etc. lässt einen das nach "außen" hin "geschäftig" und "fleißeig" wirken. Damit will man andere Leute davon überzeugen, dass man seine Arbeit gut macht. Aber Geschäftigkeit als Stellvertreter für Produktivität zu nutzen ist falsch! Sich abzuschotten und Deep-Work machen ist das Gegenteil von "Geschäftigkeit"!
+Wenn man oft auf's Handy schaut, Mails beantwortet, Meetings plant, etc. lässt das einen nach "Außen" hin "geschäftig" und "fleißig" wirken. Damit will man andere Leute davon überzeugen, dass man seine Arbeit gut macht. Aber Geschäftigkeit als Stellvertreter für Produktivität zu nutzen ist falsch! Sich abzuschotten und Deep-Work machen ist das Gegenteil von "Geschäftigkeit"!
 
 **4. Kultur des Internets:**
 
-Man denkt, dass eine mit dem Internet zusammenhängende Verhaltensweise prinzipiell etwas gutes sei. Alles was mit dem Internet zu tun hat wird in den Himmel gehoben und wird als gut und modern angesehen. Jeder muss z.B. auf Twitter aktiv sein und sich davon ablenken lassen weil man sonst gesellschaftlich _"unsichtbar"_ und _"altmodisch"_ ist.
+Man denkt, dass eine mit dem Internet zusammenhängende Verhaltensweise prinzipiell etwas gutes sei. Alles was mit dem Internet zu tun hat, wird in den Himmel gehoben und wird als gut und "modern" angesehen. Jeder muss z.B. auf Twitter aktiv sein und sich davon jeden Tag ablenken lassen, weil man sonst gesellschaftlich _"unsichtbar"_ und _"altmodisch"_ wirkt wenn man das nicht macht.
 
 ### Deep Work ist bedeutsam!
 
- Unser Gehirn konstruiert unsere Weltansicht basierend auf dem, wo wir unsere Aufmerksamkeit hinlenken. Bei Shallow-Work wird unsere Aufmerksamkeit meistens auf etwas nerviges gelenkt (z.B. Spam-Mails, etc.)
+Unser Gehirn konstruiert unsere Weltansicht basierend auf dem, wo wir unsere Aufmerksamkeit hinlenken. Bei Shallow-Work wird unsere Aufmerksamkeit meistens auf etwas Nerviges gelenkt (z.B. Spam-Mails, etc.)
 
-Wie das Buch "Flow" bestätigt, macht einem der Flow-Zustand glücklich. Deep-Work ist Flow!
+Wie das Buch _"Flow: The Psychology of Optimal Experience"_ von Mihaly Csikszentmihalyi bestätigt, macht der Flow-Zustand glücklich. Deep-Work ist "Flow"!
 
-ESM-Studien belegen: der Mensch fühlt sich am wohlsten und ist am glücklichsten, wenn er sich tief in eine anspruchsvolle Aufgabe versenken kann. Arbeit ist wie ein "Handwerk". Wenn man die eigenen Fähigkeiten mit Sorgfalt nutzt, kann man aus den täglichen Mühen Sinn schöpfen. Und Sinn macht glücklich. Die Sinnhaftigkeit entsteht durch die Tätigkeit selbst und nicht durch das Ergebnis, was rauskommt. "Ein hölzernes Rad ist nichts edles - aber die Herstellung kann es sein. Deep-Work verwandelt eine ermüdende Verpflichtung in ein edles Handwerk. Deep Work kann in der Informationswirtschaft ebenso viel Befriedigung schaffen, wie es das im Handwerk so offensichtlich tut.
+ESM-Studien _(Experience Sampling Method)_ belegen: Der Mensch fühlt sich am wohlsten und ist am glücklichsten, wenn er sich tief in eine anspruchsvolle Aufgabe versenken kann. Arbeit ist wie ein "Handwerk". Wenn man die eigenen Fähigkeiten mit Sorgfalt nutzt, kann man aus den täglichen Mühen Sinn schöpfen. Und Sinn macht glücklich. Die Sinnhaftigkeit entsteht durch die Tätigkeit selbst und nicht durch das Ergebnis, das rauskommt. Deep-Work verwandelt eine ermüdende Verpflichtung in ein edles Handwerk. Deep Work kann in der Informationswirtschaft ebenso viel Befriedigung schaffen, wie es das im Handwerk so offensichtlich tut.
 
-Winnifried Gallagher sagte: "Ich werde ein fokussiertes Leben führen, denn das ist das Beste, was es gibt."
+Ein fokussiertes Leben ist ein gutes Leben - egal wie Sie es betrachten!
 
-Ein fokussiertes Leben ist ein gutes Leben - egal wie sie es betrachten.
+Ein Leben mit Tiefgang ist nicht nur ein wirtschaftlich lukratives, sondern auch ein erfüllendes Leben!
 
-Ein Leben mit Tiefgang ist nicht nur ein wirtschaftlich lukratives, sondern auch ein erfüllendes Leben.
+Deep-Work bringt Ernsthaftigkeit und Bedeutsamkeit mit sich (Egal ob ein Schmied ein Schwert schmiedet oder ein Programmierer einen Algorithmus entwickelt):
 
-Deep-Work bringt Ernsthaftigkeit und Bedeutsamkeit mit sich (Egal ob ein Schmied ein Schwert schmiedet oder ein Programmierer einen Algorithmus entwickelt).
-
-"Ein schöner Code ist kurz und präzise, und wenn man diesen Code einem anderen Programmierer gäbe, würde er sagen: Oh das ist gut geschriebener Code. Es ist so, als würde man ein Gedicht schreiben. - Santiago Gonzalez (14-jähriger Programmierer) (https://www.youtube.com/watch?v=DBXZWB_dNsw)
+> "Ein schöner Code ist kurz und präzise, und wenn man diesen Code einem anderen Programmierer gäbe, würde er sagen: Oh das ist gut geschriebener Code. Es ist so, als würde man ein Gedicht schreiben.<br>
+> — <cite>[Santiago Gonzalez (ein 14-jähriger Programmierer)](https://www.youtube.com/watch?v=DBXZWB_dNsw)</cite>
 
 ## Teil 2: Die Deep-Work Regeln
 
@@ -131,7 +130,7 @@ Dieser Teil befasst sich mit den Regeln, an die man sich halten sollte, um Deep-
 
 Im Folgenden finden sich Ratschläge, wie man am besten konzentriert arbeitet.
 
-#### 2.1.1 Die Eudaimonia-Maschine
+#### Die Eudaimonia-Maschine
 
 _Was ist der perfekte Ort für Deep-Work?_   
 
@@ -154,17 +153,17 @@ Dieser Raum ist für oberflächliche Arbeiten da. Er enthält z.B. Whiteboard un
 **5. Deep-Work-Kammern:**  
 Dieser Raum entält mehrere Kammern zur totalen Isolation. Jede Kammer ist 2x3 Meter groß. An den Wänden ist 45cm dicke Schall-Isolation angebracht. Der Plan ist, 90 Minuten in einer Kammer mit Deep-Work zu verbringen und anschließend 90 Minuten Pause zu machen. Das wiederholt man dann 2- bis 3-Mal.
 
-#### 2.1.2 Ablenkungen und Willenskraft
+#### Ablenkungen und Willenskraft
 
 Jeder Mensch besitzt einen endlichen Vorrat an Willenskraft, den täglichen Ablenkungen wie dem Smartphone, dem Fernseher, etc. zu widerstehen. Dieser Vorrat erschöpft sich mit seiner Verwendung. Deshalb sind Routineabläufe und Gewohnheiten so wichtig! Ein Beispiel für eine Routine, die beim Deep-Worken hilft, wäre folgende: Jeden Tag morgens zur selben Zeit aufstehen und arbeiten. Das hilft enorm! Einige solcher Routinen/Rituale zur Maximierung von Deep-Work werden in diesem Blogartikel noch näher besprochen.
 
-#### 2.1.3 Die mönchische Deep-Work Philosophie
+#### 1. Die mönchische Deep-Work Philosophie
 
 Diese Philosophie versucht die Bestrebungen zur Konzentration zu maximieren, indem "Shallow-Work" radikal minimiert wird. Zum Beispiel: E-Mail-Adressen löschen, Postadresse geheim halten, von allen Social-Media-Kanälen abmelden, alles konzentrationsstörende eliminieren, etc. Die mönchische Deep-Work Philosophie räumt Deep-Work den höchsten Stellenwert ein und eliminiert/minimiert alle anderen Arten der Arbeit. Das Ziel davon ist, Die Ablenkung und Oberflächlichkeit komplett aus dem Leben zu verbannen.
 
 Leute, die diese Philosophie anwenden sind z.B.: der Informatiker _Donald Knuth_ oder der Science-Fiction-Author _Neal Stephenson_.
 
-#### 2.1.4 Die bimodale Deep-Work Philosophie
+#### 2. Die bimodale Deep-Work Philosophie
 
 Herangehensweise: Zeit aufteilen in Deep-Work Phasen und Shallow-Work Phasen. 
 "Sie widmen einige klar festgelegte Abschnitte dem konzentrierten Arbeiten und lassen den Rest offen für alles übrige."
@@ -173,19 +172,19 @@ Während der Deep-Work Abschnitte hat man mönchshafte, intensive und unterbrech
 Diese Philosophie wendete z.B.: _Carl Gustav Jung_ (Begründer der analytischen Psychologie) an. Er sperrte sich in einem Steinturm im Wald ein, aber arbeitete daneben noch normal in seiner Praxis in Zürich und in Kaffeehäusern.  
 _Adam Grant_ (Amerikanischer Autor, Psychologe und Professor) ist ein "moderner" Vertreter dieser Philosophie.
 
-#### 2.1.5 Die rhythmische Deep-Work Philosophie
+#### 3. Die rhythmische Deep-Work Philosophie
 
 Deep-Work Sitzungen in einfache, regelmäßige Gewohnheit umzuwandeln. Ziel: Einen Rhythmus für die Tätigkeiten erzeugen. Das eliminiert die Notwendigkeit Deep-Work Phasen zu planen etc.
 
 Anwender: _Brian Chappell_ (ein unbekannter, vielbeschäftigter Doktorand). Er schaffte z.B. die Routine jeden Tag in der Früh vor dem Arbeiten 90 Minuten lang Deep-Work zu machen.
 
-#### 2.1.6 Die journalistische Deep-Work Philosophie
+#### 4. Die journalistische Deep-Work Philosophie
 
 Vorgehensweise, bei der man Deep-Work spontan in den Tagesplan einfügt, wann immer es sich einrichten lässt. Wenn man zwischendurch mal freie Zeitfenster hat, nutzt man sie für Deep-Work.
 
 Anwender: _Walter Isaacson_ (Schriftsteller und Biograph)
 
-#### 2.1.7 Rituale schaffen
+#### Rituale schaffen
 
 Wenn man Deep-Work praktiziert, sollte man sich über folgendes Gedanken machen:
 
@@ -202,7 +201,7 @@ Man sollte z.B. definieren, was man während einer Deep-Work-Sitzung darf und wa
 **4. Wie die Arbeit unterstützen?**   
 Man kann z.B. am Vortag schon "Meal-Preppen", sodass man sich beim Arbeiten mit Essen stärken kann oder man kann sich Arbeitsmaterialien bereitlegen, um die Arbeit zu unterstützen oder spazieren gehen, um Energie zu tanken oder das Arbeiten mit einer Tasse Tee starten und immer schauen, dass genügend Studentenfutter griffbereit ist, etc.
 
-#### 2.1.8 Große Gesten machen
+#### Große Gesten machen
 
 **Beispiel 1:**  
 J. K. Rowling zog extra in ein teures 5-Sterne-Luxus-Hotel, um den letzten Teil der Harry Potter Reihe zu vollenden. Warum? Weil Sie zu Hause zu sehr abgelenkt wurde. 
@@ -222,7 +221,7 @@ Peter Shankman buchte einen Flug nach Tokio und sofort wieder zurück, nur um w�
 **Was sollen alle diese Beispiele verdeutlichen?**  
 Durch einen radikalen Wechsel der normalen Umgebung (evtl. verbunden mit einer erheblichen Investition von Mühen oder Geld) wird die wahrgenommene Bedeutsamkeit der Aufgabe erhöht. Diese gesteigerte Wichtigkeit mindert den inneren Instinkt der Prokrastination und verleiht einen Motivations-Energieschub!
 
-#### 2.1.9 Alleine arbeiten vs. gemeinsam arbeiten
+#### Alleine arbeiten vs. gemeinsam arbeiten
  
 Ein Großraumbüro ist immens ablenkungsintensiv. Nachdenken und konzentriert arbeiten ist hier sehr schwierig. Aber aus der zufälligen Begegnung von Menschen entstehen neue Ideen (= _Theroie der zufälligen Kreativität_).  
 Im Gebäude 20 des MIT wurden Leute aus ganz verschiedenen Branchen beherbergt: Kernphysiker, Linguistiker, Elektroniker, Klavierbauer, etc. Die zufälligen Begegnungen der Leute dort führte zu einem _"Geist des Erfindertums"_, wodurch viele bahnbrechende Erfindungen entstanden sind. Ein einsamer Wissenschaftler in einem Steinturm hätte das nicht geschafft. Auf der anderen Seite sind solche Orte auch extrem ablenkungsintensiv.
@@ -239,7 +238,7 @@ _"Öffnen Sie sich regelmäßig für Ideen in Netzwerken, aber bewahren Sie sich
 **Whiteboard-Effekt:**  
 Bei manchen Arten von Problemen, kann die Zusammenarbeit mit jemand anderem am sprichwörtlichen gemeinsamen Whiteboard weiter führen, als wenn sie sich alleine damit beschäftigen.
 
-#### 2.1.10 Die 4 Disziplinen der Umsetzung
+#### Die 4 Disziplinen der Umsetzung
 
 ##### Disziplin Nr. 1: Konzentrieren Sie sich auf das allerwichtigste
 Beim Deep-Work sollte man sich auf die wichtigsten Ziele fokussieren!
@@ -268,7 +267,7 @@ Dieser vorher genannte Punktestand muss wöchentlich überprüft werden. Dann ka
 - Was hat zu schlechten Wochen geführt?
 - Wie kann ich für die nächste Woche eine gute Punktezahl gewährleisten?
 
-#### 2.1.11 Auszeiten sind wichtig!
+#### Auszeiten sind wichtig!
 
 Nicht abschalten zu können, gefährdet die Deep-Work Strategie, weil Konzentration eine endliche Ressource ist!
 
@@ -303,7 +302,7 @@ Auf gar keinen Fall sollte man den Feierabend noch unterbrechen mit E-Mails chec
 
 Die Deep-Work Kapazitäten eines Menschen sind pro Tag begrenzt. Die Kapazitätsgrenze erreicht man im Laufe des Tages. Deswegen kann man am Abend nicht mehr konzentriert arbeiten, da das Kontingent bereits erschöpft ist. Jede Tätigkeit in den Nachtstunden wird die Karriere nicht voranbringen, weil sie unkonzentrierte "Shallow-Work" ohne viel Wert ist. Man verpasst also nichts, wenn man getrost in den Feierabend geht! Daher ist es wichtig nach Feierabend nicht einmal den geringsten Gedanken an Arbeit zu verschwenden. Man muss komplett abschalten. Dabei können _"Feierabendrituale"_ helfen (z.B. kann man alles, was nicht erledigt werden konnte, auf einen Zettel aufschreiben und das dann erst morgen erledigen - dann kann man das "Arbeiten" in der "Arbeit" lassen, dort wo es hingehört.). 
 
-### Regel Nr.2: Langeweile zulassen!
+### Regel Nr. 2: Langeweile zulassen!
 
 Die meisten Menschen lenken sich beim kleinsten Anzeichen von Langeweile sofort mit dem Smartphone ab (z.B. im Wartezimmer beim Arzt). Einfach nur zu warten und sich zu langweilen ist im heutigen Leben zu einer neuartigen Erfahrung geworden, aber aus der Perspektive des Konzentrationstrainings ist es von unschätzbarem Wert.
 
@@ -372,7 +371,7 @@ Schritte, um sich ein Kartendeck zu merken:
 
 7. Nun die Hauptaufgabe: Sich die Reihenfolge der 52 Karten merken.Dazu blättert man das Kartendeck der Reihe nach durch und macht analog dazu den mentalen Rundgang durch's Haus. Dabei stellt man sich bei jeder Karte vor, wie die dazugehörige, eingeprägte Person etwas erinnerungswertes nahe diesem Gegenstand tut. Beispiel: Erste Gegenstand im Raum ist Türmatte und erste Karte ist Karo-König -> Donald Trump putzt sich an der Türmatte die Schuhe ab.
 
-### Regel Nr.3: Die digitalen sozialen Netzwerke verlassen!
+### Regel Nr. 3: Die digitalen sozialen Netzwerke verlassen!
 
 Beliebte Gründe, warum Social-Media verwendet wird:
 1. Unterhaltung: _"Ich kann auf Social-Media sehen was Freunde machen, usw."_
@@ -424,7 +423,7 @@ Man sollte das Internet nicht zur Unterhaltung nutzen. Die Zeit außerhalb der A
 Die Lösung:
 Freizeit bewusster gestalten und schon "vorplanen" was man jeden Tag in der Freizeit macht. Füllt man freie Zeiten mit etwas wertvollem, verfällt man nicht in Langeweile, die durch Websites gefüllt werden muss. Es ist entscheidend, dass man sich schon im Voraus überlegt, was man an den Abenden und Wochenenden macht, noch ehe sie begonnen haben. Z.B. geregelte Hobbies sind gut! Die Freizeit sollte mit qualitativ hochwertigen Sachen verbracht werden und entspannend sein. Social Media mit "Brainrot-Content" usw. ist das nicht! Wenn man das macht, wird man erfahren, was es bedeutet zu leben und nicht bloß zu existieren.
 
-### Regel Nr.4: "Seichtigkeit" reduzieren!
+### Regel Nr. 4: "Seichtigkeit" reduzieren!
 
 Unternehmensmitgründer Jason Fried führte für seine Firma die 4-Tage-Woche ein (4x8h statt 5x8h).
 Warum?

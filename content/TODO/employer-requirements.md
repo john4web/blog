@@ -84,3 +84,4 @@ Kann man sich gegenseitig um Hilfe fragen oder ist man auf sich alleine Gestellt
 - Gibt es Afterworks und/oder Teambuilding events, die den Team-Zusammenhalt stärken?
 - Arbeiten Leute zusammen an den gleichen Projekten oder arbeitet jeder isoliert alleine an eigenen Projekten?
 - Bekommt man Untertützung von Arbeitskolleg:innen, wenn man sich wo nicht auskennt?
+- Sind die Leute im selben Alter und sind die Themen im Leben die gleichen oder fühlt man sich nicht verbunden weil der Altersunterschied so groß ist?

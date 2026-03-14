@@ -5,9 +5,6 @@
     <loc>https://gersti.at/de/posts/deep-work/</loc>
     <lastmod>2026-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gersti.at/de/todo/deep-work/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://gersti.at/de/</loc>
     <lastmod>2026-02-16T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -32,19 +29,6 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://gersti.at/de/posts/"
-                />
-  </url><url>
-    <loc>https://gersti.at/de/todo/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/todo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/todo/"
                 />
   </url><url>
     <loc>https://gersti.at/de/posts/billion-dollar-mistake/</loc>
@@ -212,6 +196,18 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://gersti.at/de/tags/"
+                />
+  </url><url>
+    <loc>https://gersti.at/de/todo/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/todo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/todo/"
                 />
   </url>
 </urlset>

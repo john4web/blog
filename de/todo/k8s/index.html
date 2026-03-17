@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <title>
@@ -14,29 +14,29 @@
 
 <meta name="author" content="Johannes Gerstbauer">
 <meta name="description" content="Im Folgenden werden die Erkenntnisse aus dem Buch &ldquo;Kubernetes: Eine kompakte Einführung&rdquo; simpel zusammengefasst.
-Warum verwendet man Kubernetes? Link to heading Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert. ..hier auch noch die anderen überschriften erwähnen&hellip;
-Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infrastruktur. Was bedeutet das?">
+Warum verwendet man Kubernetes? Link to heading Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit (mit der zuverlässig Software deployed werden kann) radikal verbessert. Auch die Agilität und Effizienz wird erhöht. Mehr dazu im Folgenden:
+Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infrastruktur.">
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Einführung in Kubernetes"/>
 <meta name="twitter:description" content="Im Folgenden werden die Erkenntnisse aus dem Buch &ldquo;Kubernetes: Eine kompakte Einführung&rdquo; simpel zusammengefasst.
-Warum verwendet man Kubernetes? Link to heading Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert. ..hier auch noch die anderen überschriften erwähnen&hellip;
-Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infrastruktur. Was bedeutet das?"/>
+Warum verwendet man Kubernetes? Link to heading Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit (mit der zuverlässig Software deployed werden kann) radikal verbessert. Auch die Agilität und Effizienz wird erhöht. Mehr dazu im Folgenden:
+Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infrastruktur."/>
 
 <meta property="og:title" content="Einführung in Kubernetes" />
 <meta property="og:description" content="Im Folgenden werden die Erkenntnisse aus dem Buch &ldquo;Kubernetes: Eine kompakte Einführung&rdquo; simpel zusammengefasst.
-Warum verwendet man Kubernetes? Link to heading Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert. ..hier auch noch die anderen überschriften erwähnen&hellip;
-Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infrastruktur. Was bedeutet das?" />
+Warum verwendet man Kubernetes? Link to heading Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit (mit der zuverlässig Software deployed werden kann) radikal verbessert. Auch die Agilität und Effizienz wird erhöht. Mehr dazu im Folgenden:
+Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infrastruktur." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gersti.at/todo/k8s/" /><meta property="article:section" content="TODO" />
+<meta property="og:url" content="https://gersti.at/de/todo/k8s/" /><meta property="article:section" content="TODO" />
+<meta property="article:published_time" content="2026-03-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-03-17T00:00:00+00:00" /><meta property="og:site_name" content="gersti.at" />
 
 
 
 
-
-
-<link rel="canonical" href="https://gersti.at/todo/k8s/">
+<link rel="canonical" href="https://gersti.at/de/todo/k8s/">
 
 
 <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
@@ -101,7 +101,7 @@ Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infra
   <main class="wrapper">
     <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="/">
+    <a class="navigation-title" href="/de">
       gersti.at
     </a>
     
@@ -113,11 +113,11 @@ Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infra
         
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/posts/">Blog</a>
+              <a class="navigation-link" href="/de/posts/">Blog</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/about/">About</a>
+              <a class="navigation-link" href="/de/about/">Über mich</a>
             </li>
           
         
@@ -133,7 +133,7 @@ Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infra
                 
               
               <li class="navigation-item">
-                <a href="/de/todo/k8s/">🇩🇪</a>
+                <a href="/todo/k8s/">🇬🇧</a>
               </li>
             
           
@@ -150,7 +150,7 @@ Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infra
   <article>
     <header>
       <h1 class="title">
-        <a class="title-link" href="https://gersti.at/todo/k8s/">
+        <a class="title-link" href="https://gersti.at/de/todo/k8s/">
           Einführung in Kubernetes
         </a>
       </h1>
@@ -164,7 +164,7 @@ Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infra
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert. ..hier auch noch die anderen überschriften erwähnen&hellip;</p>
+<p>Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit (mit der zuverlässig Software deployed werden kann) radikal verbessert. Auch die Agilität und Effizienz wird erhöht. Mehr dazu im Folgenden:</p>
 <h3 id="immutabilität">
   Immutabilität
   <a class="heading-link" href="#immutabilit%c3%a4t">
@@ -194,13 +194,13 @@ Das Bauen eines neuen Images anstatt ein bestehendes zu verändern sorgt dafür,
 <p>Um den desired state zu erreichen, gibt es nun 2 verschiedene Herangehensweisen:</p>
 <ol>
 <li>
-<p>imperative style
+<p><strong>imperative style</strong><br>
 Ich habe aktuell 5 instanzen und gebe den Befehl <em>&ldquo;add 10 instances&rdquo;</em><br>
 Hier wird der gewünschte Status der Anwendung durch das Ausführen einer Folge von Anweisungen hergestellt.</p>
 </li>
 <li>
-<p>declarative style
-Man spezifiziert nur den &ldquo;desired state&rdquo;. Man sagt dem Tool, dass man am Ende 15 Instanzen haben möchte.
+<p><strong>declarative style</strong><br>
+Man spezifiziert nur den <em>&ldquo;desired state&rdquo;</em>. Man sagt dem Tool, dass man am Ende 15 Instanzen haben möchte.
 Das tool checkt dann den current state, sieht dass aktuell 5 Instanzen da sind und fügt 10 Instanzen hinzu.</p>
 </li>
 </ol>
@@ -236,19 +236,19 @@ Deklaratives Vorgehen: &ldquo;Anzahl an Instanzen gleich 3&rdquo;</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
-<p><strong>Entkoppeln</strong>
+<p><strong>1. Entkoppeln</strong><br>
 Kubernetes nutzt eine <em>&ldquo;entkoppelte Architektur&rdquo;</em>. Komponenten eines Systems sollen möglichst unabhängig voneinander funktionieren, sodass Änderungen oder Ausfälle einer Komponente nicht direkt andere Komponenten beeinflussen.</p>
 <p>Jede Komponente ist von anderen Komponenten durch definierte APIs und Service-Load-Balancer getrennt. APIs und Load Balancer isolieren jedes Teil des Systems von den anderen. APIs dienen als Puffer zwischen dem Implementierer und dem Konsumenten und die Load Balancer liefern den Puffer zwischen den laufenden Instanzen jedes Service.</p>
 <p>Mit &ldquo;Puffer&rdquo; ist eine Zwischenschicht gemeint, die zwei Systemteile voneinander isoliert, damit Änderungen oder Ausfälle nicht direkt weitergegeben werden.</p>
 <p>Diese entkoppelte Architektur erleichtert die Skalierung des Systems und des Developer-Teams.</p>
-<p><strong>Einfaches Skalieren</strong></p>
+<p><strong>2. Einfaches Skalieren</strong></p>
 <p>Anwendungen und Cluster können super skaliert werden, weil:</p>
 <ul>
 <li>Anzahl an Instanzen sind einfach eine Zahl in der deklarativen Konfiguration!</li>
 <li>Es gibt soetwas wie &ldquo;Autoscaling&rdquo;, das alles automatisch macht!</li>
 <li>Hinzufügen von Ressourcen ist einfacher durch Kubernetes!</li>
 </ul>
-<p><strong>Microservices</strong></p>
+<p><strong>3. Microservices</strong></p>
 <p>Microservices wurden zu einem defacto Standard in der Softwareentwicklung. Meistens sind die Entwicklerteams in Unternehmen so zusammengestellt, dass jedes Team jeweils einen Microservice betreut. Mit Kubernetes ist es sehr leicht das Zusammenspiel von Microservices zu managen und dadurch kann man auch Teams besser skalieren.</p>
 <p>Kubernetes stellt eine Reihe von Abstraktionen und APIs bereit, die es leicht machen, diese entkoppelte Microservice-Architektur zu bauen:</p>
 <ol>
@@ -265,7 +265,8 @@ Kubernetes nutzt eine <em>&ldquo;entkoppelte Architektur&rdquo;</em>. Komponente
 <p><strong>Ingress-Objekte:</strong> Dienen als einfach zu nutzendes Frontend, das mehrere Microservices zu einer einzelnen, externalisierten API kombinieren kann.</p>
 </li>
 </ol>
-<p><strong>Seperation of Concerns</strong></p>
+<p><strong>4. Seperation of Concerns</strong></p>
+<p>Kubernetes teilt das System bewusst in viele kleine, klar abgegrenzte Komponenten auf. Jede Komponente hat genau eine Aufgabe. Das sorgt für hohe Konsistenz und ermöglicht, dass ein kleines Team, das einen Kubernetes-Cluster betreut, für die Unterstützung tausender von Teams - welche ihre Anwendungen in diesem Cluster laufen lassen - verantwortlich sein kann.</p>
 <h3 id="infrastruktur-abstrahieren">
   Infrastruktur abstrahieren
   <a class="heading-link" href="#infrastruktur-abstrahieren">
@@ -273,6 +274,7 @@ Kubernetes nutzt eine <em>&ldquo;entkoppelte Architektur&rdquo;</em>. Komponente
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
+<p>Durch ein Aufbauen auf Kubernetes&rsquo; anwendungsorientierter Abstraktion wird sichergestellt, dass die Aufwände für das Bauen, Deployen und Managen der Anwendung über einen großen Bereich von Umgebungen hinweg <strong>portabel</strong> sind.</p>
 <h3 id="effizienz">
   Effizienz
   <a class="heading-link" href="#effizienz">
@@ -280,6 +282,7 @@ Kubernetes nutzt eine <em>&ldquo;entkoppelte Architektur&rdquo;</em>. Komponente
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
+<p>Durch Kubernetes lassen sich die Aufgaben von mehreren Anwendungen enger auf wenigen Maschinen zusammenfassen. Dadurch wird weniger Energie bzw. Rechenleistung verbraucht. Kosten für Serverbetrieb und Personal werden gespart. Auch das Deployen und testen von Anwendungen wird effizienter und günstiger.</p>
 <h2 id="quellen">
   Quellen:
   <a class="heading-link" href="#quellen">
@@ -308,7 +311,7 @@ Kubernetes nutzt eine <em>&ldquo;entkoppelte Architektur&rdquo;</em>. Komponente
      Johannes Gerstbauer 
     ·
     
-    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    Gestaltet mit <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
     
   </section>
 </footer>

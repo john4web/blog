@@ -2,6 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gersti.at/de/todo/k8s/</loc>
+    <lastmod>2026-03-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/todo/k8s/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/todo/k8s/"
+                />
+  </url><url>
+    <loc>https://gersti.at/de/</loc>
+    <lastmod>2026-03-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/"
+                />
+  </url><url>
+    <loc>https://gersti.at/de/todo/</loc>
+    <lastmod>2026-03-17T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://gersti.at/todo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://gersti.at/de/todo/"
+                />
+  </url><url>
     <loc>https://gersti.at/de/posts/deep-work/</loc>
     <lastmod>2026-02-16T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -13,19 +52,6 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://gersti.at/de/posts/deep-work/"
-                />
-  </url><url>
-    <loc>https://gersti.at/de/</loc>
-    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/"
                 />
   </url><url>
     <loc>https://gersti.at/de/posts/</loc>
@@ -206,18 +232,6 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://gersti.at/de/tags/"
-                />
-  </url><url>
-    <loc>https://gersti.at/de/todo/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/todo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/todo/"
                 />
   </url>
 </urlset>

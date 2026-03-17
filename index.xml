@@ -985,9 +985,8 @@ Maven is a build tool Link to heading ✅ it creates deployable artifacts of sou
       
       <guid>https://gersti.at/todo/k8s/</guid>
       <description>Im Folgenden werden die Erkenntnisse aus dem Buch &amp;ldquo;Kubernetes: Eine kompakte Einführung&amp;rdquo; simpel zusammengefasst.
-Warum verwendet man Kubernetes? Link to heading Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die folgenden 3 Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert.
-Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infrastruktur. Was bedeutet das?
-Anstatt ein bestehendes System zu verändern (z.</description>
+Warum verwendet man Kubernetes? Link to heading Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert. ..hier auch noch die anderen überschriften erwähnen&amp;hellip;
+Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infrastruktur. Was bedeutet das?</description>
     </item>
     
   </channel>

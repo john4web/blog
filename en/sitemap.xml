@@ -447,18 +447,6 @@
                 href="https://gersti.at/categories/"
                 />
   </url><url>
-    <loc>https://gersti.at/todo/k8s/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://gersti.at/de/todo/k8s/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://gersti.at/todo/k8s/"
-                />
-  </url><url>
     <loc>https://gersti.at/series/</loc>
     <xhtml:link
                 rel="alternate"

@@ -871,16 +871,5 @@ Tätigkeitsbereich Link to heading Kann ich dort die Technologien verwenden, die
 Maven is a build tool Link to heading ✅ it creates deployable artifacts of source code ✅ it facilitates automated/repeatable builds ✅ it facilitates deploying artifacts on servers Maven is a dependency management tool Link to heading ✅ it can download project dependencies from centralized repositories ( e.g. [mvnrepository](https://www.mvnrepository.com)) ✅ it can automatically resolve the libraries required by project dependencies ✅ it can do &amp;quot;Dependency Scoping&amp;quot; (e.</description>
     </item>
     
-    <item>
-      <title>Einführung in Kubernetes</title>
-      <link>https://gersti.at/todo/k8s/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/todo/k8s/</guid>
-      <description>Im Folgenden werden die Erkenntnisse aus dem Buch &amp;ldquo;Kubernetes: Eine kompakte Einführung&amp;rdquo; simpel zusammengefasst.
-Warum verwendet man Kubernetes? Link to heading Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert. ..hier auch noch die anderen überschriften erwähnen&amp;hellip;
-Immutabilität Link to heading Kubernetes folgt dem Prinzip der immutablen Infrastruktur. Was bedeutet das?</description>
-    </item>
-    
   </channel>
 </rss>

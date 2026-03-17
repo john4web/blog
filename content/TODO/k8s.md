@@ -3,12 +3,11 @@ title = "Einführung in Kubernetes"
 description = ""
 +++
 
-
 Im Folgenden werden die Erkenntnisse aus dem Buch "Kubernetes: Eine kompakte Einführung" simpel zusammengefasst.
 
 ## Warum verwendet man Kubernetes?
 
-Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die folgenden 3 Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert.
+Kubernetes vereinfacht das Bauen, Deployen und Warten verteilter Systeme radikal. Durch die Konzepte (Immutabilität, deklarative Konfiguration und selbstheilende systeme) wird die Schnelligkeit, mit der zuverlässig Software deployed werden kann, radikal verbessert. ..hier auch noch die anderen überschriften erwähnen...
 
 ### Immutabilität
 
@@ -18,64 +17,57 @@ Anstatt ein bestehendes System zu verändern (z.B. durch Updates), wird einfach 
 
 Sobald ein Artifakt einmal im System erzeugt wurde, ändert es sich nicht mehr durch die Anwender. Es gibt keine inkrementellen Änderungen.
 
-Beispiel:
-Eine laufende Instanz (z. B. Container, VM, Pod) wird nicht nachträglich verändert. Wenn sich etwas ändern muss (neue Version, Konfiguration, Bugfix), erstellt man ein neues Image
+**Beispiel:**  
+Eine laufende Instanz (z. B. Container, VM, Pod) wird nicht nachträglich verändert. Wenn sich etwas ändern muss (z.B. neue Version, Konfiguration, Bugfix), erstellt man ein neues Image
 und ersetzt die alte Instanz komplett. Statt auf einem Server ein Update zu installieren, wird ein neues Container-Image gebaut und neue Pods werden gestartet.
 
-Vorteile der immutabilität:
-1. Durch erstellen eines neuen Artifaktes, sieht man genau, was sich im Vergleich zum letzten Artifakt verändert hat (z.B. via Git-Commit)
-2. Das Bauen eines neuen Images anstatt ein bestehendes zu verändern sorgt dafür, dass das alte Image immer noch verfügbar ist. Wenn plötzlich etwas nicht mehr funktioniert, kann man einfach wieder das alte Image verwenden. Dadurch vermeidet man komplizierte Reparaturen am laufenden System!
+**Vorteil der immutabilität:**
+Das Bauen eines neuen Images anstatt ein bestehendes zu verändern sorgt dafür, dass das alte Image immer noch verfügbar ist. Wenn plötzlich etwas nicht mehr funktioniert, kann man einfach wieder das alte Image verwenden. Dadurch vermeidet man komplizierte Reparaturen am laufenden System!
 
-Immutable Container-Images bilden den Kern von allem, was man in Kubernetes baut.
-Moderne Cloud-Systeme sind stabiler und einfacher zu betreiben, wenn man laufende Systeme nicht verändert, sondern immer neu erzeugt und ersetzt!
-
+Immutable Container-Images bilden den Kern von allem, was man in Kubernetes baut. Moderne Cloud-Systeme sind stabiler und einfacher zu betreiben, wenn man laufende Systeme nicht verändert, sondern immer neu erzeugt und ersetzt!
 
 ### Deklarative Konfiguration
 
-current state: ich hab 5 Instanzen eines Microservices
-desired state: ich will 15 Instanzen eines Microservices haben
+Gehen wir von folgendem Fall aus:
+**current state:** ich habe 5 Instanzen eines Microservices.
+**desired state:** ich will 15 Instanzen eines Microservices haben.
+
+Um den desired state zu erreichen, gibt es nun 2 verschiedene Herangehensweisen:
 
 1. imperative style
-ich habe aktuell 5 instanzen und gebe ein "command" "add 10 instances"
-
+Ich habe aktuell 5 instanzen und gebe den Befehl _"add 10 instances"_  
 Hier wird der gewünschte Status der Anwendung durch das Ausführen einer Folge von Anweisungen hergestellt.
 
-
 2. declarative style
-you specify the **end state** only. you tell the tool, that you wanna have 15 instances at the end.
-das tool checkt den current state, sieht dass aktuell 5 instances da sind und fügt 10 Instanzen hinzu
+Man spezifiziert nur den "desired state". Man sagt dem Tool, dass man am Ende 15 Instanzen haben möchte.
+Das tool checkt dann den current state, sieht dass aktuell 5 Instanzen da sind und fügt 10 Instanzen hinzu.
 
-Kubernetes funktioniert im deklarativen Stil. Alles in Kubernetes ist ein _"deklaratives Konfigurations-Objekt"_, das den gewünschten Status des Systems repräsentiert. Es ist dann die Aufgabe von Kubernetes, dass der aktuelle Status der Wirklichkeit mit dem gewünschten Status übereinstimmt.
+Kubernetes funktioniert im **deklarativen Stil**! Alles in Kubernetes ist ein _"deklaratives Konfigurations-Objekt"_, das den gewünschten Status des Systems repräsentiert. Es ist dann die Aufgabe von Kubernetes, dass der aktuelle Status der Wirklichkeit mit dem gewünschten Status übereinstimmt.
 
-z.B. in kubernetes erstellt man ein declarative configuration yaml file
-you only say: i wanna have 15 instances in production. you will not worry about how many instances are currently live. kubernetes will handle it on its own. Kubernetes vergleicht den desired state und den actual state, findet den Unterschied raus und führt die commands aus um den end state zu erreichen.
+In Kubernetes erstellt man ein deklaratives _"configuration yaml file"_.
+Darin sagt man nur: ich möchte 15 Instanzen in Production haben. Man macht sich keine Gedanken drüber wie viele Instanzen aktuell live sind. Kubernetes regelt das selber. Kubernetes vergleicht den "desired state" mit dem "current state", findet den Unterschied raus und führt die Befehle aus, um den "desired state" zu erreichen.
 
-
-
-Während imperative Befehle aktionen definieren, defineiren deklarative Konfigurationen einen Status.
-
-Beispiel einer Aufgabe: 3 Instanzen erzeugen
+Während imperative Befehle "Aktionen" definieren, definieren deklarative Konfigurationen einen Status.
+**Beispiel einer Aufgabe: 3 Instanzen erzeugen**
 Imperatives Vorgehen: "Füre A aus!", "Führe B aus!", "Führe C aus!"
 Deklaratives Vorgehen: "Anzahl an Instanzen gleich 3"
 
-
-Vorteile der deklarativen Konfiguration:
+**Vorteile der deklarativen Konfiguration:**
 - weniger Fehleranfällig, weil die Auswirkungen einer deklarativen Konfiguration auch ohne Ausführung verstanden werden können.
 - es können Versionsverwaltung, Code-Reviews und Unit-Tests verwendet werden. (deklarative Konfiguration in Versionsverwaltung wird als "Infrastructure as Code" bezeichnet)
-- Rollback von änderungen sind einfach
-
+- Rollback von Änderungen sind einfach.
 
 ### Self-Healing Systems
 
-Prinzip: Ein System sollte Fehler automatisch erkennen und selbst beheben, ohne dass ein Mensch eingreifen muss.
+**Prinzip:** Ein System sollte Fehler automatisch erkennen und selbst beheben, ohne dass ein Mensch eingreifen muss.
 
-Kubernetes achtet kontinuierlich darauf, dass der aktuelle Status und der gewünschte Status weiterhin übereinstimmt. Das Bedeutet Kubernetes initialisiert nicht nur das System sondern schützt es auch vor Fehlern oder Störungen, die es eventuell destabilisieren oder die Zuverlässigkeit beeinträchtigen können. 
+Kubernetes achtet kontinuierlich darauf, dass der aktuelle Status und der gewünschte Status weiterhin übereinstimmt. Das bedeutet Kubernetes initialisiert nicht nur das System sondern schützt es auch vor Fehlern oder Störungen, die es eventuell destabilisieren oder die Zuverlässigkeit beeinträchtigen können. 
 
 Hätte man das nicht, müsste das ein Mensch manuell machen, der mitten in der Nacht aufgeweckt wird, langsamer reagiert, weniger zuverlässig ist und auch dafür bezahlt werden muss.
 
-Beispiel: Aktuell laufen 3 Instanzen. Kubernetes legt nicht nur diese Instanzen an, sondern stellt auch sicher, dass es immer genau 3 Instanzen gibt. Erstellt man manuell eine vierte, wird Kubernetes eine zerstören, um die Anzahl wieder auf 3 zu verringern. Beendet man manuell eine Instanz, erzeugt Kubernetes eine, um den gewünschten Status zu erreichen.
+**Beispiel:** Aktuell laufen 3 Instanzen. Kubernetes legt nicht nur diese Instanzen an, sondern stellt auch sicher, dass es immer genau 3 Instanzen gibt. Erstellt man manuell eine vierte, wird Kubernetes eine zerstören, um die Anzahl wieder auf 3 zu verringern. Beendet man manuell eine Instanz, erzeugt Kubernetes eine, um den gewünschten Status zu erreichen.
 
-Self-Healing Systems verbessern die Developer-Geschwindigkeit, weil keine Zeit und Energie mehr für das Warten der Sytse
+"Self-Healing Systems" verbessern die Developer-Geschwindigkeit, weil weniger Zeit und Energie mehr für das Warten der Systeme aufgewendet werden muss.
 
 ### Service & Team Skalieren
 
@@ -88,14 +80,35 @@ Mit "Puffer" ist eine Zwischenschicht gemeint, die zwei Systemteile voneinander 
 
 Diese entkoppelte Architektur erleichtert die Skalierung des Systems und des Developer-Teams.
 
-**2**
-**3**
-**4**
+**Einfaches Skalieren**
+
+Anwendungen und Cluster können super skaliert werden, weil:
+
+- Anzahl an Instanzen sind einfach eine Zahl in der deklarativen Konfiguration!
+- Es gibt soetwas wie "Autoscaling", das alles automatisch macht!
+- Hinzufügen von Ressourcen ist einfacher durch Kubernetes!
+
+**Microservices**
+
+Microservices wurden zu einem defacto Standard in der Softwareentwicklung. Meistens sind die Entwicklerteams in Unternehmen so zusammengestellt, dass jedes Team jeweils einen Microservice betreut. Mit Kubernetes ist es sehr leicht das Zusammenspiel von Microservices zu managen und dadurch kann man auch Teams besser skalieren.
+
+Kubernetes stellt eine Reihe von Abstraktionen und APIs bereit, die es leicht machen, diese entkoppelte Microservice-Architektur zu bauen:
+
+1. **Pods:** Sind Gruppen von (Docker-)Containern. Sie können von verschiedenen Teams entwickelte Container-Images zu einer einzelnen deploybaren Einheit verbinden.
+
+2. **Kubernetes-Services:** Bieten "Load-Balancing", Naming und Discovery, um einen Microservice von anderen zu isolieren.
+
+3. **Namensräume:** Bieten Isolation und Zugriffskontrolle, sodass jeder Microservice steuern kann, inwieweit andere Services mit ihm interagieren können.
+
+4. **Ingress-Objekte:** Dienen als einfach zu nutzendes Frontend, das mehrere Microservices zu einer einzelnen, externalisierten API kombinieren kann.
+
+**Seperation of Concerns**
 
 ### Infrastruktur abstrahieren
 
 ### Effizienz
 
 
+## Quellen:
 
-https://www.youtube.com/watch?v=67E2JRk8_bg
+- https://www.youtube.com/watch?v=67E2JRk8_bg

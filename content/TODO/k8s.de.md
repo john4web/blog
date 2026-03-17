@@ -114,6 +114,16 @@ Durch ein Aufbauen auf Kubernetes' anwendungsorientierter Abstraktion wird siche
 ### Effizienz
 Durch Kubernetes lassen sich die Aufgaben von mehreren Anwendungen enger auf wenigen Maschinen zusammenfassen. Dadurch wird weniger Energie bzw. Rechenleistung verbraucht. Kosten für Serverbetrieb und Personal werden gespart. Auch das Deployen und testen von Anwendungen wird effizienter und günstiger.
 
+## Container erstellen und ausführen
+
+Im folgenden wird folgendes erklärt:
+- Wie eine Anwendung mithilfe des Docker-Image-Formats verpackt wird
+- Wie eine Anwendung mit der Docker-Container-Runtime gestartet wird
+
+### Container-Images
+
+...
+
 ## Quellen:
 
 - https://www.youtube.com/watch?v=67E2JRk8_bg

@@ -3,7 +3,7 @@
 
 <head>
   <title>
-  Docker Cheat-Sheet · gersti.at
+  Docker Basics · gersti.at
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,13 +20,13 @@ Installation steps differ between operating systems. Many steps are required, an
 <meta name="keywords" content="blog, developer, software, engineer">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Docker Cheat-Sheet"/>
+<meta name="twitter:title" content="Docker Basics"/>
 <meta name="twitter:description" content="Basics Link to heading What is Docker?
 Docker is a virtualization tool that makes developing and deploying applications much easier.
 Before Docker existed, developers had to install and configure all required services directly on their local machines. This process could be tricky because:
 Installation steps differ between operating systems. Many steps are required, and errors can easily occur. With Docker, you work with containers. A container is an isolated environment that includes everything a service needs to run."/>
 
-<meta property="og:title" content="Docker Cheat-Sheet" />
+<meta property="og:title" content="Docker Basics" />
 <meta property="og:description" content="Basics Link to heading What is Docker?
 Docker is a virtualization tool that makes developing and deploying applications much easier.
 Before Docker existed, developers had to install and configure all required services directly on their local machines. This process could be tricky because:
@@ -156,7 +156,7 @@ Installation steps differ between operating systems. Many steps are required, an
     <header>
       <h1 class="title">
         <a class="title-link" href="https://gersti.at/todo/docker/">
-          Docker Cheat-Sheet
+          Docker Basics
         </a>
       </h1>
     </header>
@@ -295,63 +295,17 @@ All dependencies (libraries, tools, configurations) are already included inside 
 <p>Once the CD is in the player, the music starts playing — just like a container runs the application from the image.</p>
 <p>You can put the same CD in multiple CD players and play it simultaneously, just like you can run multiple containers from the same image.</p>
 <p>This analogy makes it easy to see the difference: image = static package, container = running instance.</p>
-<h2 id="container-basics">
-  Container-Basics
-  <a class="heading-link" href="#container-basics">
+<h2 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>Container starten, stoppen, löschen</p>
-<p>Arbeiten mit Images (docker pull, docker build, docker rmi)</p>
-<p>DockerHub und Private Registries (nur Überblick)</p>
-<p>Interaktive Container (Shell starten mit docker exec)</p>
-<p>Persistenz mit Volumes und Bind Mounts (Grundprinzip verstehen)</p>
-<h2 id="docker-images-1">
-  Docker Images
-  <a class="heading-link" href="#docker-images-1">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>Aufbau eines Images (Union File System, Layers – nur grob verstehen)</p>
-<p>Dockerfile verstehen und schreiben (Grundlagen: FROM, RUN, COPY, CMD, EXPOSE)</p>
-<p>Basis-Images vs. Scratch-Image (nur Konzept)</p>
-<p>Image Tagging und Versionierung (:latest, :1.0)</p>
-<p>(Best Practices &amp; Multi-Stage-Builds kannst du überspringen, das kommt später bei Bedarf.)</p>
-<h2 id="netzwerke">
-  Netzwerke
-  <a class="heading-link" href="#netzwerke">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>Container-Netzwerke (bridge)</p>
-<p>Ports exposen und weiterleiten (-p 8080:80)</p>
-<p>Container miteinander verbinden (z. B. App + DB im selben Network)</p>
-<p>DNS-Auflösung innerhalb von Docker-Netzwerken (nur Überblick)</p>
-<p>(Custom Networks erstellen = nice-to-have, aber kein Muss für Kubernetes-Basis.)</p>
-<h2 id="storage--volumes">
-  Storage &amp; Volumes
-  <a class="heading-link" href="#storage--volumes">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>Unterschied Volumes vs. Bind Mounts</p>
-<p>Named Volumes (nur Konzept)</p>
-<p>Persistenz-Prinzip verstehen (damit du in Kubernetes später PersistentVolumes verstehst)</p>
-<h2 id="docker-compose-optional-nur-überblick">
-  Docker Compose (optional, nur Überblick)
-  <a class="heading-link" href="#docker-compose-optional-nur-%c3%bcberblick">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>Einführung in docker-compose.yml</p>
-<p>Mehrere Container orchestrieren (z. B. App + DB)</p>
-<p>Umgebungsvariablen und .env-Dateien</p>
-<p>👉 Compose brauchst du nicht in der Tiefe, aber ein kurzer Überblick hilft dir, den Schritt zu Kubernetes zu verstehen.</p>
+<p><a href="https://www.youtube.com/watch?v=zFa9_K8BS8I"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=zFa9_K8BS8I</a>
+<a href="https://www.youtube.com/watch?v=8vXoMqWgbQQ"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=8vXoMqWgbQQ</a>
+<a href="https://www.youtube.com/watch?v=pg19Z8LL06w&amp;t"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=pg19Z8LL06w&t</a>
+<a href="https://www.youtube.com/watch?v=3c-iBn73dDE&amp;t=118s"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=3c-iBn73dDE&t=118s</a></p>
 
   </article>
 </section>

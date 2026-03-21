@@ -1,5 +1,5 @@
 +++
-title = "Docker Cheat-Sheet"
+title = "Docker Basics"
 date = "2024-01-24"
 description = ""
 +++
@@ -125,56 +125,11 @@ You can put the same CD in multiple CD players and play it simultaneously, just 
 
 This analogy makes it easy to see the difference: image = static package, container = running instance.
 
-## Container-Basics
 
-Container starten, stoppen, löschen
 
-Arbeiten mit Images (docker pull, docker build, docker rmi)
+## Reference
 
-DockerHub und Private Registries (nur Überblick)
-
-Interaktive Container (Shell starten mit docker exec)
-
-Persistenz mit Volumes und Bind Mounts (Grundprinzip verstehen)
-
-## Docker Images
-
-Aufbau eines Images (Union File System, Layers – nur grob verstehen)
-
-Dockerfile verstehen und schreiben (Grundlagen: FROM, RUN, COPY, CMD, EXPOSE)
-
-Basis-Images vs. Scratch-Image (nur Konzept)
-
-Image Tagging und Versionierung (:latest, :1.0)
-
-(Best Practices & Multi-Stage-Builds kannst du überspringen, das kommt später bei Bedarf.)
-
-## Netzwerke
-
-Container-Netzwerke (bridge)
-
-Ports exposen und weiterleiten (-p 8080:80)
-
-Container miteinander verbinden (z. B. App + DB im selben Network)
-
-DNS-Auflösung innerhalb von Docker-Netzwerken (nur Überblick)
-
-(Custom Networks erstellen = nice-to-have, aber kein Muss für Kubernetes-Basis.)
-
-## Storage & Volumes
-
-Unterschied Volumes vs. Bind Mounts
-
-Named Volumes (nur Konzept)
-
-Persistenz-Prinzip verstehen (damit du in Kubernetes später PersistentVolumes verstehst)
-
-## Docker Compose (optional, nur Überblick)
-
-Einführung in docker-compose.yml
-
-Mehrere Container orchestrieren (z. B. App + DB)
-
-Umgebungsvariablen und .env-Dateien
-
-👉 Compose brauchst du nicht in der Tiefe, aber ein kurzer Überblick hilft dir, den Schritt zu Kubernetes zu verstehen.
+https://www.youtube.com/watch?v=zFa9_K8BS8I
+https://www.youtube.com/watch?v=8vXoMqWgbQQ
+https://www.youtube.com/watch?v=pg19Z8LL06w&t
+https://www.youtube.com/watch?v=3c-iBn73dDE&t=118s

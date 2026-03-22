@@ -129,7 +129,7 @@ This analogy makes it easy to see the difference: image = static package, contai
 
 ## Reference
 
-https://www.youtube.com/watch?v=zFa9_K8BS8I
-https://www.youtube.com/watch?v=8vXoMqWgbQQ
-https://www.youtube.com/watch?v=pg19Z8LL06w&t
-https://www.youtube.com/watch?v=3c-iBn73dDE&t=118s
+- https://www.youtube.com/watch?v=zFa9_K8BS8I
+- https://www.youtube.com/watch?v=8vXoMqWgbQQ
+- https://www.youtube.com/watch?v=pg19Z8LL06w&t
+- https://www.youtube.com/watch?v=3c-iBn73dDE

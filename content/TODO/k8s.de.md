@@ -116,14 +116,89 @@ Durch Kubernetes lassen sich die Aufgaben von mehreren Anwendungen enger auf wen
 
 ## Container erstellen und ausführen
 
-Im folgenden wird folgendes erklärt:
+Im folgenden wird erklärt:
 - Wie eine Anwendung mithilfe des Docker-Image-Formats verpackt wird
 - Wie eine Anwendung mit der Docker-Container-Runtime gestartet wird
 
-### Container-Images
+### Docker-Images
 
-...
+Ein Container-Image ist ein Binary-Paket. Es fasst alle Dateien zusammen, die für das Ausführen eines Programms in einem OS-Container notwendig sind. Das Image ist keine einzelne Datei, sondern eher eine Spezifikation für ein manifest-file, das auf andere Dateien verweist.
+
+Das verbreitetste Format für Container-Images ist das _Docker Image Format_. Es wurde für das verpacken, verteilen und ausführen von Containern entwickelt. Es besteht aus einer Reihe von Schichten (Dateisystem-Layer). Jeder Layer übernimmt den vorherigen Layer und passt ihn an:
+
+.
+├── Container A: nur Basis-Betriebssystem, wie z.B. Debian
+│   ├── Container B: baut auf A auf, fügt Ruby v2.1.10 hinzu
+        └── Container D: baut auf B auf, fügt Rails v4.2.6 hinzu
+        └── Container E: baut auf B auf, fügt Rails v3.2.x hinzu
+
+Ein neuer Layer wird in Docker immer dann erzeugt, wenn eine Anweisung im Dockerfile ausgeführt wird, die das Dateisystem verändert. Die meisten Dockerfile-Instuktionen (wie z.B. RUN, COPY, ADD, etc.) erzeugen jeweils einen neuen Layer. 
+
+Es gibt zwei Arten von Container:
+
+1. **System-Container**  
+Diese Container versuchen VMs nachzubilden. Sie beinhalten eine Reihe von Systemdiensten (z.B. ssh, cron und syslog). Mit der Zeit wurde das aber "Bad Practice" und man verwendete dann eher "Anwendungscontainer" stattdessen.
+
+2. **Anwendungs-Container**  
+Diese Container lassen nur ein einzelnes Programm in sich laufen. Das ist eine gute Design-Philosophie und eignet sich gut für das Zusammenstellen skalierbarer Anwendungen.
+
+Ein Dockerfile wird dafür genutzt, das Erstellen eines Image zu automatisieren. Das Dockerfile ist ein "Rezept" für das Bauen eines Images.
+
+Bei Images sollte man darauf achten, dass man die Image-Größe optimiert und auch bei der Image-Sicherheit keine Abstriche macht. Es sollten niemals Container gebaut werden, in denen Passwörter enthalten sind. Secrets und Images sollten niemals vermischt werden! Und Achtung: das Löschen einer Datei in dem einen Layer entfernt die Datei nicht aus vorigen Layern!
+
+Wie Docker-Files aufgebaut sind und wie man images baut und ausführt, ist in meinem anderen Blogpost zum Thema Docker genau erklärt!
+
+#### Multistage Image Builds
+
+Große images entstehen z.B. wenn das Kompilieren des Programms Teil der Konstruktion des Container-Images ist. Damit verbleiben aber unnötigerweise alle Entwicklungstools im finalen Image/Container und blasen es auf. Um dieses Problem zu lösen gibt es docker multistage-builds. Dabei wird aus einem Dockerfile nicht einfach ein einzelnes Image erstellt sondern mehrere. Jedes image wird als Stage angesehen und Artefakte können aus vorigen Stages in den aktuellen Stage kopiert werden. Dadurch kann die Größe des Image um hunderte von Megabytes verkleinert und die Deploy-Zeit drastisch verkürzt werden.
+
+#### Images in Remote-Registry ablegen
+
+_Was nützt einem ein Image, wenn es nur auf einem Rechner verfügbar ist?_
+
+Deshalb pusht man es in ein Repository. Es gibt öffentliche Repositories (wie z.B. DockerHub) oder private Repositories (wie z.B. JFrog Artifactory oder Sonatype Nexus).
+
+#### Container-Ressourcen begrenzen
+
+Mit docker kann man auch die Ressourcen begrenzen, die von Anwendungen genutzt werden können. Dazu nutzt es die cgroup-Technologie des Linux-Kernels.
+
+Im Folgenden wird mit den Flags --memory und --memory-swap ein container auf 200MB Speicher und 1GB Swap-Speicher begrenzt. Nutzt das Programm zu viel Speicher, wird es beendet:
+
+```docker
+docker run -d \
+  --name my-container \
+  --publish 8080:8080 \
+  --memory 200m \
+  --memory-swap 1G \
+  <image-name>
+```
+
+Die CPU kann man mit dem --cpu-shares flag einschränken:
+
+```docker
+docker run -d \
+  --name my-container \
+  --publish 8080:8080 \
+  --memory 200m \
+  --memory-swap 1G \
+  --cpu-shares 1024 \
+  <image-name>
+```
+
+#### Aufräumen
+
+Um Docker Images aus dem lokalen Repository zu löschen, wird der Befehl "docker rmi" verwendet:
+
+```bash
+docker rmi <tag-name>
+```
+
+oder
+
+```bash
+docker rmi <image-id>
+```
+
+Mit dem Befehl "docker images" kann man sich die auf dem Rechner verfügbaren images anzeigen lassen.
 
 ## Quellen:
-
-- https://www.youtube.com/watch?v=67E2JRk8_bg

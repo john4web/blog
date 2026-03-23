@@ -164,7 +164,7 @@ Mit docker kann man auch die Ressourcen begrenzen, die von Anwendungen genutzt w
 
 Im Folgenden wird mit den Flags --memory und --memory-swap ein container auf 200MB Speicher und 1GB Swap-Speicher begrenzt. Nutzt das Programm zu viel Speicher, wird es beendet:
 
-```docker
+```bash
 docker run -d \
   --name my-container \
   --publish 8080:8080 \
@@ -175,7 +175,7 @@ docker run -d \
 
 Die CPU kann man mit dem --cpu-shares flag einschränken:
 
-```docker
+```bash
 docker run -d \
   --name my-container \
   --publish 8080:8080 \

@@ -352,21 +352,21 @@ Diese Container lassen nur ein einzelnes Programm in sich laufen. Das ist eine g
 </h4>
 <p>Mit docker kann man auch die Ressourcen begrenzen, die von Anwendungen genutzt werden können. Dazu nutzt es die cgroup-Technologie des Linux-Kernels.</p>
 <p>Im Folgenden wird mit den Flags &ndash;memory und &ndash;memory-swap ein container auf 200MB Speicher und 1GB Swap-Speicher begrenzt. Nutzt das Programm zu viel Speicher, wird es beendet:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-docker" data-lang="docker"><span class="line"><span class="cl">docker run -d <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name my-container <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  --publish 8080:8080 <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  --memory 200m <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  --memory-swap 1G <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  &lt;image-name&gt;<span class="err">
-</span></span></span></code></pre></div><p>Die CPU kann man mit dem &ndash;cpu-shares flag einschränken:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-docker" data-lang="docker"><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  &lt;image-name&gt;
+</span></span></code></pre></div><p>Die CPU kann man mit dem &ndash;cpu-shares flag einschränken:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name my-container <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  --publish 8080:8080 <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  --memory 200m <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  --memory-swap 1G <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  --cpu-shares <span class="m">1024</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  &lt;image-name&gt;<span class="err">
-</span></span></span></code></pre></div><h4 id="aufräumen">
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  &lt;image-name&gt;
+</span></span></code></pre></div><h4 id="aufräumen">
   Aufräumen
   <a class="heading-link" href="#aufr%c3%a4umen">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>

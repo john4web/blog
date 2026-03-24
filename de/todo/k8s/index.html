@@ -366,9 +366,9 @@ Diese Container lassen nur ein einzelnes Programm in sich laufen. Das ist eine g
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  --memory-swap 1G <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  --cpu-shares <span class="m">1024</span> <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  &lt;image-name&gt;
-</span></span></code></pre></div><h4 id="aufräumen">
-  Aufräumen
-  <a class="heading-link" href="#aufr%c3%a4umen">
+</span></span></code></pre></div><h4 id="images-aufräumen">
+  Images Aufräumen
+  <a class="heading-link" href="#images-aufr%c3%a4umen">
     <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
@@ -378,6 +378,155 @@ Diese Container lassen nur ein einzelnes Programm in sich laufen. Das ist eine g
 </span></span></code></pre></div><p>oder</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rmi &lt;image-id&gt;
 </span></span></code></pre></div><p>Mit dem Befehl &ldquo;docker images&rdquo; kann man sich die auf dem Rechner verfügbaren images anzeigen lassen.</p>
+<h2 id="basic-kubernetes-components">
+  Basic Kubernetes Components
+  <a class="heading-link" href="#basic-kubernetes-components">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>ToDo:
+Bilder einfügen</p>
+<h3 id="node">
+  Node
+  <a class="heading-link" href="#node">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Ein Node (oder auch oft Worker-Node genannt) ist ein einfacher Server (also eine physische oder virtuelle Maschine).</p>
+<h3 id="pod">
+  Pod
+  <a class="heading-link" href="#pod">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><em>&ldquo;Smallest unit of Kubernetes&rdquo;</em></p>
+<p>Ein Pod ist eine Abstraktion über einem Container (also ein zusätzlicher layer über dem container)</p>
+<p>Warum gibt es diese Pods? Weil Kubernetes die Container-Runtime abstrahieren möchte -&gt; diese kann dann zum Beispiel ausgetauscht werden. Außerdem muss man sich als Kubernetes-Entwickler nicht mehr mit Containern beschäftigen, sondern man muss sich nur mehr um Pods kümmern.</p>
+<p>Normalerweise läuft in jedem Pod immer genau 1 Docker Container. Es ist zwar möglich, mehrere Container in einem Pod auszuführen, aber das ist unüblich.</p>
+<p>Kubernetes stellt ein virtuelles Netzwerk bereit, was bedeutet, dass jeder Pod seine eigene IP-Adresse erhält (nicht der Container, sondern der Pod erhält die IP-Adresse!). Jeder Pod kann über diese IP-Adresse mit anderen Pods kommunizieren.</p>
+<p>Aber Pods sind &ldquo;ephemeral&rdquo; – also sie können sehr leicht &ldquo;sterben&rdquo;. Wenn ein Container stirbt, weil die Anwendung darin abgestürzt ist, stirbt der Pod und ein neuer Pod wird an seiner Stelle erstellt. Dabei wird dem neuen Pod eine neue IP-Adresse zugewiesen.</p>
+<p>In diesem Fall müsste man die IP-Adresse jedes Mal anpassen, wenn der Pod neu startet. Weil die Pods ja über ihre IP-Adressen miteinander kommunizieren und wenn sich die Adresse plötzlich ändert, muss man die Adresse in den anderen Pods anpassen. Das ist sehr umständlich. Deshalb gibt es die Kubernetes-Komponente „Service“.</p>
+<h3 id="service">
+  Service
+  <a class="heading-link" href="#service">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Ein Service ist im Grunde genommen eine statische/permanente IP-Adresse mit einem DNS-Namen, die an jeden Pod angehängt werden kann. Wenn der Pod stirbt, bleiben der Service und seine IP-Adresse bestehen, sodass man die IP-Adresse nicht anpassen muss, wenn ein Pod neu erstellt wird. Pods kommunizieren über über diese Services. Ein Service fungiert übrigens auch als Load-Balancer</p>
+<h3 id="ingress">
+  Ingress
+  <a class="heading-link" href="#ingress">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Man möchte ja, dass die Applikationen öffentlich aufrufbar sind. Zum Beispiel, wenn in einem Pod eine REST-API steckt, will man ja dass diese öffentlich unter einer URL verfügbar ist. Und die URL soll auch einen schönen Domain-Name haben und z.B. auch ein sicheres Protokoll (https) verwenden. Genau dafür gibt es die Ingress-Komponente. Wenn von Außen ein Request an die REST-API eingeht, dann geht dieser zuerst an den Ingress und dieser Ingress leitet den Request weiter zum Service und dieser leitet den Request weiter an den Pod usw.</p>
+<p>Ingress ist also dazu da, HTTP/HTTPS-Anfragen von außen in den eigenen Cluster zu steuern - also quasi ein intelligenter Einstiegspunkt für Web-Traffic. Er leitet externe Anfragen (z.B. von Browsern, etc.) an die richtigen Services im Cluster weiter und ermöglicht Routing basierend auf Hostnamen oder URLs.</p>
+<h3 id="configmap">
+  ConfigMap
+  <a class="heading-link" href="#configmap">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Man stelle sich folgendes Beispiel vor:<br>
+Man hat einen Pod, der eine Applikation beinhaltet und einen Pod, der eine DB beinhaltet. Die Applikation muss auf die DB zugreifen. Die Kommunikation läuft dabei über Services ab. Normalerweise hat man in der Applikation im application.yml file die JDBC-URL zur Datenbank drinnen. Also die JDBC-URL ist innerhalb des gebauten images der Applikation enthalten. Würde sich diese JDBC-URL ändern, müsste man das im application.yml file ändern, die Applikation mit einer neuen Version rebuilden, das image zum Repo pushen, in den Pod pullen und das ganze restarten. Das ist umständlich! Dafür gibt es ConfigMaps! Eine ConfigMap ist eine externe Konfiguration für die Applikation. In diesem Fall würde in der ConfigMap die JDBC-Url drinnenstehen und die ConfigMap ist dann mit dem Pod verknüpft, sodass der Pod die Daten aus der ConfigMap bekommt. Wenn man in diesem Fall die JDBC-URL ändern möchte, braucht man die URL nur in der ConfigMap ändern und das war&rsquo;s! In der Applikation selber kann man auf die Einträge der ConfigMap dann z.B. via Environment-Variables oder ein property-file zugreifen.
+Achtung! Datenbank-Passwort, Username oder andere &ldquo;Credentials&rdquo; sollte man keinesfalls in ConfigMaps geben. Dafür gibt es nämlich eine andere Komponente namens &ldquo;Secret&rdquo;.</p>
+<h3 id="secret">
+  Secret
+  <a class="heading-link" href="#secret">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Die Secret-Komponente funktioniert genauso wie die ConfigMap-Komponente, nur mit dem Unterschied, dass es verwendet wird um geheime Daten zu speichern. Die darin gespeicherten Credentials sind base64 encoded. Passwörter, Zertifikate, usw. sind Beispiele für Daten, die man hier reinlegen sollte.</p>
+<h3 id="volumes">
+  Volumes
+  <a class="heading-link" href="#volumes">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Wenn man z.B. einen Pod mit einer Datenbank drinnen hat, und der Pod restarted wird, sind die Daten weg, weil der Pod &ldquo;ephemeral&rdquo; ist. Das ist ein Problem weil man will die Daten ja behalten. Und das macht man via Volumes.</p>
+<p>Volumes binden einen physischen Speicher auf einer Festplatte an den Pod. Dieser Speicher kann sich auf einer lokalen Maschine befinden (auf demselben Worker-Node, auf dem der Pod läuft) oder auf einem externen Speicher außerhalb des Kubernetes-Clusters (Cloud-Speicher, eigener On-Premises-Speicher usw.).</p>
+<p>Storage sollte man sich immer als externes hard-drive plug-in im Kubernetes-Cluster vorstellen. Weil Kubernetes kümmert sich explizit NICHT um Datenpersistenz! Der Kubernetes-Administrator ist selber dafür verantwortlich, ein Backup der Daten anzulegen, die Daten zu replizieren und zu managen, und schauen dass sie sicher sind.</p>
+<h3 id="deployments">
+  Deployments
+  <a class="heading-link" href="#deployments">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Wenn z.B. eine Applikation crasht und der Pod restarted wird, hat man eine &ldquo;Down-Time&rdquo;, in der die Applikation nicht erreichbar ist. Das sollte (vor allem in Production) niemals passieren! Um das zu vermeiden, repliziert man alles auf verschiedenen Workernodes. Also man klont den gesamten workernode als &ldquo;Replica&rdquo;. Das &ldquo;Replica&rdquo; ist dann mit dem selben service verbunden! Services sind auch load-balancer. Der service ist also mit mehreren Pods aus verschiedenen WorkerNodes verbunden und leitet die Requests dann an jene Pods weiter, die am wenigsten mit Anfragen beschäftigt sind. Wenn also ein Pod stirbt, leitet der Service die Anfrage an einen anderen Pod weiter.</p>
+<p>Um ein &ldquo;Replica&rdquo; zu erstellen, erstellt man aber nicht einfach den Pod doppelt sondern man definiert eine &ldquo;Blaupause&rdquo; für einen bestimmten Pod und spezifiziert darin die Anzahl der Replicas. Und genau diese Blaupause ist die Deployment-Komponente.</p>
+<p>Ein Deployment ist also eine Blaupause für einen bestimmten Pod. In der Praxis erstellt man keine Pods sondern Deployments. Darin kann man viele Sachen für den Pod einstellen.</p>
+<ul>
+<li>Ein Pod ist eine Abstraktion über einem Container</li>
+<li>Ein Deployment ist eine Abstraktion über Pods</li>
+</ul>
+<p>Deployments machen es einfach, die Pods zu konfigurieren. In der Praxis arbeitet man also mit Deployments statt Pods.</p>
+<h3 id="stateful-sets">
+  Stateful Sets
+  <a class="heading-link" href="#stateful-sets">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Auch für Datenbanken müssen Replicas angelegt werden. Weil wenn ein DB-Pod down ist, muss eine andere stattdessen verfügbar sein.
+ABER: Datenbanken können nicht via &ldquo;Deployments&rdquo; repliziert werden. Warum? Weil Datenbanken einen &ldquo;State&rdquo; haben (der State sind die Daten in der DB). Die Replicas müssen ja jeweils dieselben Daten ausliefern und den selben State haben, damit das funktioniert. Sie müssen alle auf denselben shared data storage zugreifen. Dafür braucht man einen Mechanismus, der managt, welche Pods gerade auf diesen Storage schreiben und welche gerade von diesem Storage lesen um Dateninkonsistenzen zu vermeiden. Dieser Mechanismus wird von der Stateful-Sets Komponente angeboten. StatefulSets werden für Statful Applications verwendet wie z.B. Datenbanken aller Art, ElasticSearch, oder irgendwelche anderen Applikationen, die einen State aufweisen. Diese Unterscheidung ist sehr wichtig! Für stateless Applications werden &ldquo;Deployments&rdquo; verwendet und für stateful Applications werden &ldquo;Stateful Sets&rdquo; verwendet.</p>
+<p>StatefulSets kümmern sich – ähnlich wie Deployments – um die Replikation der Pods und deren Hoch- oder Herunterskalierung, stellen dabei jedoch sicher, dass Lese- und Schreibvorgänge der Datenbank synchronisiert werden, sodass keine Inkonsistenzen in der Datenbank entstehen.</p>
+<p>Das ist übrigens ziemlich schwer zu managen weshalb es auch eine common practice ist, die Datenbanken außerhalb vom Kubernetes Cluster zu hosten und nur stateless applications innerhalb vom Kubernetes Cluster zu haben.</p>
+<h3 id="namespaces">
+  Namespaces
+  <a class="heading-link" href="#namespaces">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Innerhalb eines Kubernetes-Clusters kann man Ressourcen in Namespaces organisieren. In einem Cluster kann man mehrere Namespaces haben. Namespaces kann man sich wie einen virtuellen Cluster in einem Cluster vorstellen.</p>
+<p>Kubernetes liefert 4 Default-Namespaces out of the box:</p>
+<ul>
+<li><strong>kube-system</strong>: darin sollte man nichts erstellen oder modifizieren. Darin sind Systemprozesse drinnen.</li>
+<li><strong>kube-public</strong>: Enthält die öffentlich zugängliche Daten und Cluster informationen</li>
+<li><strong>kube-node-lease</strong>: Enthält Informationen zum &ldquo;Herzschlag&rdquo; von Nodes und bestimmt die Verfügbarkeit von Nodes.</li>
+<li><strong>default</strong>: Ressourcen, die man am Anfang erstellt, landen hier. Man kann aber auch eigene namespaces erstellen.</li>
+</ul>
+<p>Namespaces verwendet man, um den Überblick im Kubernetes Cluster zu behalten, indem man Ressourcen gruppiert.</p>
+<h2 id="kubernetes-architecture">
+  Kubernetes Architecture
+  <a class="heading-link" href="#kubernetes-architecture">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>ToDo:
+mit bildern erklären
+<a href="https://www.youtube.com/watch?v=umXEmn3cMWY"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=umXEmn3cMWY</a>
+<a href="https://www.youtube.com/watch?v=TlHvYWVUZyc"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=TlHvYWVUZyc</a>
+<a href="https://www.youtube.com/watch?v=vmCuNJiNzfg"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=vmCuNJiNzfg</a>
+<a href="https://www.youtube.com/watch?v=8C_SCDbUJTg"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=8C_SCDbUJTg</a></p>
+<h2 id="kubernetes-client">
+  Kubernetes Client
+  <a class="heading-link" href="#kubernetes-client">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>ToDo:
+Inhalte vom Buch einfügen</p>
+<h2 id="cluster-componenten">
+  Cluster Componenten
+  <a class="heading-link" href="#cluster-componenten">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>ToDo:
+Inhalte vom Buch einfügen</p>
 <h2 id="quellen">
   Quellen:
   <a class="heading-link" href="#quellen">
@@ -385,6 +534,8 @@ Diese Container lassen nur ein einzelnes Programm in sich laufen. Das ist eine g
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<p><a href="https://www.youtube.com/watch?v=Krpb44XR0bk"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Krpb44XR0bk</a>
+<a href="https://www.youtube.com/watch?v=K3jNo4z5Jx8"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=K3jNo4z5Jx8</a></p>
 
   </article>
 </section>

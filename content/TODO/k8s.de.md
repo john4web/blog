@@ -185,7 +185,7 @@ docker run -d \
   <image-name>
 ```
 
-#### Aufräumen
+#### Images Aufräumen
 
 Um Docker Images aus dem lokalen Repository zu löschen, wird der Befehl "docker rmi" verwendet:
 
@@ -201,4 +201,107 @@ docker rmi <image-id>
 
 Mit dem Befehl "docker images" kann man sich die auf dem Rechner verfügbaren images anzeigen lassen.
 
+## Basic Kubernetes Components
+ToDo: 
+Bilder einfügen
+
+### Node
+Ein Node (oder auch oft Worker-Node genannt) ist ein einfacher Server (also eine physische oder virtuelle Maschine).
+
+### Pod
+_"Smallest unit of Kubernetes"_
+
+Ein Pod ist eine Abstraktion über einem Container (also ein zusätzlicher layer über dem container)
+
+Warum gibt es diese Pods? Weil Kubernetes die Container-Runtime abstrahieren möchte -> diese kann dann zum Beispiel ausgetauscht werden. Außerdem muss man sich als Kubernetes-Entwickler nicht mehr mit Containern beschäftigen, sondern man muss sich nur mehr um Pods kümmern.
+
+Normalerweise läuft in jedem Pod immer genau 1 Docker Container. Es ist zwar möglich, mehrere Container in einem Pod auszuführen, aber das ist unüblich.
+
+Kubernetes stellt ein virtuelles Netzwerk bereit, was bedeutet, dass jeder Pod seine eigene IP-Adresse erhält (nicht der Container, sondern der Pod erhält die IP-Adresse!). Jeder Pod kann über diese IP-Adresse mit anderen Pods kommunizieren.
+
+Aber Pods sind "ephemeral" – also sie können sehr leicht "sterben". Wenn ein Container stirbt, weil die Anwendung darin abgestürzt ist, stirbt der Pod und ein neuer Pod wird an seiner Stelle erstellt. Dabei wird dem neuen Pod eine neue IP-Adresse zugewiesen.
+
+In diesem Fall müsste man die IP-Adresse jedes Mal anpassen, wenn der Pod neu startet. Weil die Pods ja über ihre IP-Adressen miteinander kommunizieren und wenn sich die Adresse plötzlich ändert, muss man die Adresse in den anderen Pods anpassen. Das ist sehr umständlich. Deshalb gibt es die Kubernetes-Komponente „Service“.
+
+### Service
+Ein Service ist im Grunde genommen eine statische/permanente IP-Adresse mit einem DNS-Namen, die an jeden Pod angehängt werden kann. Wenn der Pod stirbt, bleiben der Service und seine IP-Adresse bestehen, sodass man die IP-Adresse nicht anpassen muss, wenn ein Pod neu erstellt wird. Pods kommunizieren über über diese Services. Ein Service fungiert übrigens auch als Load-Balancer
+
+### Ingress
+Man möchte ja, dass die Applikationen öffentlich aufrufbar sind. Zum Beispiel, wenn in einem Pod eine REST-API steckt, will man ja dass diese öffentlich unter einer URL verfügbar ist. Und die URL soll auch einen schönen Domain-Name haben und z.B. auch ein sicheres Protokoll (https) verwenden. Genau dafür gibt es die Ingress-Komponente. Wenn von Außen ein Request an die REST-API eingeht, dann geht dieser zuerst an den Ingress und dieser Ingress leitet den Request weiter zum Service und dieser leitet den Request weiter an den Pod usw.
+
+Ingress ist also dazu da, HTTP/HTTPS-Anfragen von außen in den eigenen Cluster zu steuern - also quasi ein intelligenter Einstiegspunkt für Web-Traffic. Er leitet externe Anfragen (z.B. von Browsern, etc.) an die richtigen Services im Cluster weiter und ermöglicht Routing basierend auf Hostnamen oder URLs.
+
+### ConfigMap
+
+Man stelle sich folgendes Beispiel vor:  
+Man hat einen Pod, der eine Applikation beinhaltet und einen Pod, der eine DB beinhaltet. Die Applikation muss auf die DB zugreifen. Die Kommunikation läuft dabei über Services ab. Normalerweise hat man in der Applikation im application.yml file die JDBC-URL zur Datenbank drinnen. Also die JDBC-URL ist innerhalb des gebauten images der Applikation enthalten. Würde sich diese JDBC-URL ändern, müsste man das im application.yml file ändern, die Applikation mit einer neuen Version rebuilden, das image zum Repo pushen, in den Pod pullen und das ganze restarten. Das ist umständlich! Dafür gibt es ConfigMaps! Eine ConfigMap ist eine externe Konfiguration für die Applikation. In diesem Fall würde in der ConfigMap die JDBC-Url drinnenstehen und die ConfigMap ist dann mit dem Pod verknüpft, sodass der Pod die Daten aus der ConfigMap bekommt. Wenn man in diesem Fall die JDBC-URL ändern möchte, braucht man die URL nur in der ConfigMap ändern und das war's! In der Applikation selber kann man auf die Einträge der ConfigMap dann z.B. via Environment-Variables oder ein property-file zugreifen.
+Achtung! Datenbank-Passwort, Username oder andere "Credentials" sollte man keinesfalls in ConfigMaps geben. Dafür gibt es nämlich eine andere Komponente namens "Secret".
+
+### Secret
+
+Die Secret-Komponente funktioniert genauso wie die ConfigMap-Komponente, nur mit dem Unterschied, dass es verwendet wird um geheime Daten zu speichern. Die darin gespeicherten Credentials sind base64 encoded. Passwörter, Zertifikate, usw. sind Beispiele für Daten, die man hier reinlegen sollte. 
+
+### Volumes
+
+Wenn man z.B. einen Pod mit einer Datenbank drinnen hat, und der Pod restarted wird, sind die Daten weg, weil der Pod "ephemeral" ist. Das ist ein Problem weil man will die Daten ja behalten. Und das macht man via Volumes. 
+
+Volumes binden einen physischen Speicher auf einer Festplatte an den Pod. Dieser Speicher kann sich auf einer lokalen Maschine befinden (auf demselben Worker-Node, auf dem der Pod läuft) oder auf einem externen Speicher außerhalb des Kubernetes-Clusters (Cloud-Speicher, eigener On-Premises-Speicher usw.).
+
+Storage sollte man sich immer als externes hard-drive plug-in im Kubernetes-Cluster vorstellen. Weil Kubernetes kümmert sich explizit NICHT um Datenpersistenz! Der Kubernetes-Administrator ist selber dafür verantwortlich, ein Backup der Daten anzulegen, die Daten zu replizieren und zu managen, und schauen dass sie sicher sind.  
+
+### Deployments
+
+Wenn z.B. eine Applikation crasht und der Pod restarted wird, hat man eine "Down-Time", in der die Applikation nicht erreichbar ist. Das sollte (vor allem in Production) niemals passieren! Um das zu vermeiden, repliziert man alles auf verschiedenen Workernodes. Also man klont den gesamten workernode als "Replica". Das "Replica" ist dann mit dem selben service verbunden! Services sind auch load-balancer. Der service ist also mit mehreren Pods aus verschiedenen WorkerNodes verbunden und leitet die Requests dann an jene Pods weiter, die am wenigsten mit Anfragen beschäftigt sind. Wenn also ein Pod stirbt, leitet der Service die Anfrage an einen anderen Pod weiter.
+
+Um ein "Replica" zu erstellen, erstellt man aber nicht einfach den Pod doppelt sondern man definiert eine "Blaupause" für einen bestimmten Pod und spezifiziert darin die Anzahl der Replicas. Und genau diese Blaupause ist die Deployment-Komponente.
+
+Ein Deployment ist also eine Blaupause für einen bestimmten Pod. In der Praxis erstellt man keine Pods sondern Deployments. Darin kann man viele Sachen für den Pod einstellen.
+
+- Ein Pod ist eine Abstraktion über einem Container
+- Ein Deployment ist eine Abstraktion über Pods
+
+Deployments machen es einfach, die Pods zu konfigurieren. In der Praxis arbeitet man also mit Deployments statt Pods.
+
+### Stateful Sets
+
+Auch für Datenbanken müssen Replicas angelegt werden. Weil wenn ein DB-Pod down ist, muss eine andere stattdessen verfügbar sein. 
+ABER: Datenbanken können nicht via "Deployments" repliziert werden. Warum? Weil Datenbanken einen "State" haben (der State sind die Daten in der DB). Die Replicas müssen ja jeweils dieselben Daten ausliefern und den selben State haben, damit das funktioniert. Sie müssen alle auf denselben shared data storage zugreifen. Dafür braucht man einen Mechanismus, der managt, welche Pods gerade auf diesen Storage schreiben und welche gerade von diesem Storage lesen um Dateninkonsistenzen zu vermeiden. Dieser Mechanismus wird von der Stateful-Sets Komponente angeboten. StatefulSets werden für Statful Applications verwendet wie z.B. Datenbanken aller Art, ElasticSearch, oder irgendwelche anderen Applikationen, die einen State aufweisen. Diese Unterscheidung ist sehr wichtig! Für stateless Applications werden "Deployments" verwendet und für stateful Applications werden "Stateful Sets" verwendet.
+
+StatefulSets kümmern sich – ähnlich wie Deployments – um die Replikation der Pods und deren Hoch- oder Herunterskalierung, stellen dabei jedoch sicher, dass Lese- und Schreibvorgänge der Datenbank synchronisiert werden, sodass keine Inkonsistenzen in der Datenbank entstehen.
+
+Das ist übrigens ziemlich schwer zu managen weshalb es auch eine common practice ist, die Datenbanken außerhalb vom Kubernetes Cluster zu hosten und nur stateless applications innerhalb vom Kubernetes Cluster zu haben.
+
+### Namespaces
+
+Innerhalb eines Kubernetes-Clusters kann man Ressourcen in Namespaces organisieren. In einem Cluster kann man mehrere Namespaces haben. Namespaces kann man sich wie einen virtuellen Cluster in einem Cluster vorstellen.
+
+Kubernetes liefert 4 Default-Namespaces out of the box:
+- **kube-system**: darin sollte man nichts erstellen oder modifizieren. Darin sind Systemprozesse drinnen.
+- **kube-public**: Enthält die öffentlich zugängliche Daten und Cluster informationen
+- **kube-node-lease**: Enthält Informationen zum "Herzschlag" von Nodes und bestimmt die Verfügbarkeit von Nodes.
+- **default**: Ressourcen, die man am Anfang erstellt, landen hier. Man kann aber auch eigene namespaces erstellen.
+
+Namespaces verwendet man, um den Überblick im Kubernetes Cluster zu behalten, indem man Ressourcen gruppiert.
+
+## Kubernetes Architecture
+
+ToDo:
+mit bildern erklären
+https://www.youtube.com/watch?v=umXEmn3cMWY
+https://www.youtube.com/watch?v=TlHvYWVUZyc
+https://www.youtube.com/watch?v=vmCuNJiNzfg
+https://www.youtube.com/watch?v=8C_SCDbUJTg
+
+## Kubernetes Client
+ToDo:
+Inhalte vom Buch einfügen
+
+## Cluster Componenten
+ToDo:
+Inhalte vom Buch einfügen
+
+
 ## Quellen:
+
+https://www.youtube.com/watch?v=Krpb44XR0bk
+https://www.youtube.com/watch?v=K3jNo4z5Jx8

@@ -134,7 +134,7 @@ Im Folgenden finden sich Ratschläge, wie man am besten konzentriert arbeitet.
 
 _Was ist der perfekte Ort für Deep-Work?_   
 
-David Dewane (Architekt und Unternehmer) versuchte eine Antwort auf diese Frage zu finden und entwarf die "Eudaimonia-Maschine". Das ist ein Office, das nur dem einzigen Zweck dient, das tiefstmögliche "Deep-Work" zu ermöglichen. Die Räume sind so angeordnet, dass man zuerst jeden Raum durchqueren muss, um in den nächsten gelangen zu können.
+David Dewane (Architekt und Unternehmer) versuchte eine Antwort auf diese Frage zu finden und entwarf die "Eudaimonia-Maschine". Das ist ein Office, das nur dem einzigen Zweck dient, das beste/tiefste "Deep-Work" zu ermöglichen. Die Räume sind so angeordnet, dass man zuerst jeden Raum durchqueren muss, um in den nächsten zu gelangen.
 
 {{< figure src="/images/deep-work/eudaimonia.jpg" caption="Office Layout der Eudaimonia Machine. [Quelle: Fentress Incorporated](https://blog.fentress.com/blog/the-eudaimonia-machine-a-space-concept-for-the-21st-century)">}}
 
@@ -151,34 +151,34 @@ Dieser Raum ist zur Lagerung aller erzeugten Arbeiten da. Er ist die "Festplatte
 Dieser Raum ist für oberflächliche Arbeiten da. Er enthält z.B. Whiteboard und Schreibtisch.
 
 **5. Deep-Work-Kammern:**  
-Dieser Raum entält mehrere Kammern zur totalen Isolation. Jede Kammer ist 2x3 Meter groß. An den Wänden ist 45cm dicke Schall-Isolation angebracht. Der Plan ist, 90 Minuten in einer Kammer mit Deep-Work zu verbringen und anschließend 90 Minuten Pause zu machen. Das wiederholt man dann 2- bis 3-Mal.
+Dieser Raum entält mehrere Kammern zur totalen Isolation. Jede Kammer ist 2x3 Meter groß. An den Wänden ist 45cm dicke Schall-Isolation angebracht. Der Plan ist, 90 Minuten in einer Kammer mit Deep-Work zu verbringen und anschließend 90 Minuten Pause zu machen. Dies wiederholt man dann 2- bis 3-Mal.
 
 #### Ablenkungen und Willenskraft
 
-Jeder Mensch besitzt einen endlichen Vorrat an Willenskraft, den täglichen Ablenkungen wie dem Smartphone, dem Fernseher, etc. zu widerstehen. Dieser Vorrat erschöpft sich mit seiner Verwendung. Deshalb sind Routineabläufe und Gewohnheiten so wichtig! Ein Beispiel für eine Routine, die beim Deep-Worken hilft, wäre folgende: Jeden Tag morgens zur selben Zeit aufstehen und arbeiten. Das hilft enorm! Einige solcher Routinen/Rituale zur Maximierung von Deep-Work werden in diesem Blogartikel noch näher besprochen.
+Jeder Mensch besitzt einen endlichen Vorrat an Willenskraft, um den täglichen Ablenkungen (wie dem Smartphone, dem Fernseher, etc.) zu widerstehen. Dieser Vorrat erschöpft sich mit seiner Verwendung. Deshalb sind Routineabläufe und Gewohnheiten so wichtig! Ein Beispiel für eine Routine, die beim Deep-Worken hilft, wäre folgende: Jeden Tag morgens zur selben Zeit aufstehen und arbeiten. Das hilft enorm! Einige solcher Routinen/Rituale zur Maximierung von Deep-Work werden in diesem Blogartikel noch näher besprochen.
 
-#### 1. Die mönchische Deep-Work Philosophie
+#### Die mönchische Deep-Work Philosophie
 
 Diese Philosophie versucht die Bestrebungen zur Konzentration zu maximieren, indem "Shallow-Work" radikal minimiert wird. Zum Beispiel: E-Mail-Adressen löschen, Postadresse geheim halten, von allen Social-Media-Kanälen abmelden, alles konzentrationsstörende eliminieren, etc. Die mönchische Deep-Work Philosophie räumt Deep-Work den höchsten Stellenwert ein und eliminiert/minimiert alle anderen Arten der Arbeit. Das Ziel davon ist, Die Ablenkung und Oberflächlichkeit komplett aus dem Leben zu verbannen.
 
 Leute, die diese Philosophie anwenden sind z.B.: der Informatiker _Donald Knuth_ oder der Science-Fiction-Author _Neal Stephenson_.
 
-#### 2. Die bimodale Deep-Work Philosophie
+#### Die bimodale Deep-Work Philosophie
 
-Herangehensweise: Zeit aufteilen in Deep-Work Phasen und Shallow-Work Phasen. 
-"Sie widmen einige klar festgelegte Abschnitte dem konzentrierten Arbeiten und lassen den Rest offen für alles übrige."
-Während der Deep-Work Abschnitte hat man mönchshafte, intensive und unterbrechungsfreie Konzentration. Während "Shallow-Work" Phasen nicht.
+Herangehensweise: Zeit aufteilen in Deep-Work Phasen und Shallow-Work Phasen.  
+Bei der bimodalen Deep-Work Philosophie widmet maneinige klar festgelegte Abschnitte dem konzentrierten Arbeiten und lässt den Rest offen für alles übrige. Während der Deep-Work Abschnitte hat man "mönchshafte", intensive und unterbrechungsfreie Konzentration. Während "Shallow-Work" Phasen hingegen nicht.
 
-Diese Philosophie wendete z.B.: _Carl Gustav Jung_ (Begründer der analytischen Psychologie) an. Er sperrte sich in einem Steinturm im Wald ein, aber arbeitete daneben noch normal in seiner Praxis in Zürich und in Kaffeehäusern.  
+Diese Philosophie wendete z.B.: _Carl Gustav Jung_ (Begründer der analytischen Psychologie) an. Er sperrte sich zum deep-worken in einem Steinturm im Wald ein, aber arbeitete daneben noch normal in seiner Praxis in Zürich und in Kaffeehäusern.  
 _Adam Grant_ (Amerikanischer Autor, Psychologe und Professor) ist ein "moderner" Vertreter dieser Philosophie.
 
-#### 3. Die rhythmische Deep-Work Philosophie
+#### Die rhythmische Deep-Work Philosophie
 
-Deep-Work Sitzungen in einfache, regelmäßige Gewohnheit umzuwandeln. Ziel: Einen Rhythmus für die Tätigkeiten erzeugen. Das eliminiert die Notwendigkeit Deep-Work Phasen zu planen etc.
+Herangehensweise: Deep-Work Sitzungen in eine einfache und regelmäßige Gewohnheit umwandeln.  
+Ziel: Einen Rhythmus für die Tätigkeiten erzeugen. Das eliminiert die Notwendigkeit Deep-Work Phasen zu planen etc.
 
-Anwender: _Brian Chappell_ (ein unbekannter, vielbeschäftigter Doktorand). Er schaffte z.B. die Routine jeden Tag in der Früh vor dem Arbeiten 90 Minuten lang Deep-Work zu machen.
+Anwender: _Brian Chappell_ (ein unbekannter, vielbeschäftigter Doktorand). Er etablierte für sich z.B. die Routine, jeden Tag in der Früh vor dem Arbeiten 90 Minuten lang Deep-Work zu machen.
 
-#### 4. Die journalistische Deep-Work Philosophie
+#### Die journalistische Deep-Work Philosophie
 
 Vorgehensweise, bei der man Deep-Work spontan in den Tagesplan einfügt, wann immer es sich einrichten lässt. Wenn man zwischendurch mal freie Zeitfenster hat, nutzt man sie für Deep-Work.
 
@@ -196,10 +196,10 @@ Es ist wichtig, von vornherein einen Zeitrahmen zu definieren, damit die Deep-Wo
 
 **3. Wie arbeiten?**  
 Regeln, Prozesse und Struktur sind wichtig!
-Man sollte z.B. definieren, was man während einer Deep-Work-Sitzung darf und was nicht (z.B. kein Internet verwenden, kein Smartphone, etc.). Das muss man aber schon im vorhinein definieren, damit man sich nicht erst während dem Arbeiten Gedanken darüber machen muss.
+Man sollte z. B. definieren, was man während einer Deep-Work-Sitzung darf und was nicht (z. B. kein Internet verwenden, kein Smartphone, etc.). Das muss man aber schon im vorhinein definieren, damit man sich nicht erst während dem Arbeiten Gedanken darüber machen muss.
 
 **4. Wie die Arbeit unterstützen?**   
-Man kann z.B. am Vortag schon "Meal-Preppen", sodass man sich beim Arbeiten mit Essen stärken kann oder man kann sich Arbeitsmaterialien bereitlegen, um die Arbeit zu unterstützen oder spazieren gehen, um Energie zu tanken oder das Arbeiten mit einer Tasse Tee starten und immer schauen, dass genügend Studentenfutter griffbereit ist, etc.
+Man kann z. B. am Vortag schon "Meal-Preppen", sodass man sich beim Arbeiten mit Essen stärken kann oder man kann sich Arbeitsmaterialien bereitlegen, um die Arbeit zu unterstützen oder spazieren gehen, um Energie zu tanken oder das Arbeiten mit einer Tasse Tee starten und immer schauen, dass genügend Studentenfutter griffbereit ist, etc.
 
 #### Große Gesten machen
 
@@ -281,9 +281,9 @@ Bei menschlichen Entscheidungen, die große Mengen an Information und zahlreiche
 ##### Auszeiten füllen die für Deep-Work notwendigen Energiereserven auf!
 
 Die _"Attention Restauration Theory"_ besagt folgendes:  
-Um sich konzentrieren zu können, benötigt man _"gelenkte Aufmerksamkeit"_. Diese Ressource ist endlich - also wenn sie aufgebraucht ist, fällt das Konzentrieren schwer. Die _ART_ belegt in Studien, dass sich die gelenkte Aufmerksamkeit z.B. beim **Spazieren in der Natur** regeneriert. Warum? Weil die Kombination aus wenigen Aufgaben (in diesem Fall entspanntes herumgehen) und genügend interessanten Reizen, erneuert die Konzentrationsressourcen! Ein Beispiel für diese interessanten Reize könnte z.B. sein, dass man den Sonnenuntergang sieht oder Vögel beobachtet.  
+Um sich konzentrieren zu können, benötigt man _"gelenkte Aufmerksamkeit"_. Diese Ressource ist endlich - also wenn sie aufgebraucht ist, fällt das Konzentrieren schwer. Die _ART_ belegt in Studien, dass sich die gelenkte Aufmerksamkeit z. B. beim **Spazieren in der Natur** regeneriert. Warum? Weil die Kombination aus wenigen Aufgaben (in diesem Fall entspanntes herumgehen) und genügend interessanten Reizen, erneuert die Konzentrationsressourcen! Ein Beispiel für diese interessanten Reize könnte z. B. sein, dass man den Sonnenuntergang sieht oder Vögel beobachtet.  
 
-Im Gegenteil dazu verringert ein **Spaziergang in der Stadt** die Konzentrationsressourcen, weil hierfür gelenkte Aufmerksamkeit verbraucht wird (z.B. muss man auf den Verkehr achten, Straßen überqueren, auf entgegenkommende Leute achten, etc.). Daher sollten solche Spaziergänge in der Stadt vermieden werden, weil sie eher auslaugen als entspannen.
+Im Gegenteil dazu verringert ein **Spaziergang in der Stadt** die Konzentrationsressourcen, weil hierfür gelenkte Aufmerksamkeit verbraucht wird (z. B. muss man auf den Verkehr achten, Straßen überqueren, auf entgegenkommende Leute achten, etc.). Daher sollten solche Spaziergänge in der Stadt vermieden werden, weil sie eher auslaugen als entspannen.
 
 Um die gelenkte Aufmerksamkeit zu regenerieren, eignet sich aber nicht nur ein Spaziergang in der Natur sondern auch alles Andere, das der Fähigkeit der Aufmerksamkeitslenkung eine Pause gönnt. Diese entspannenden Aktivitäten sollten frei von gelenkter Konzentration sein und _inhärent faszinierende Reize_ beinhalten. Eine persönliche Recherche zu dem Thema zeigte mir, dass sich folgende _"Soft Fascination Activities"_ besonders gut anbieten:
 - Naturgeräusche hören
@@ -294,17 +294,17 @@ Um die gelenkte Aufmerksamkeit zu regenerieren, eignet sich aber nicht nur ein S
 - Kerzenflamme oder Kaminfeuer/Lagerfeuer beobachten
 - Regen beobachten und das Regengeräusch hören
 - Wolken beobachten
-- Auch belanglose Aktivitäten wie z.B. eine Teezeremonie können entspannen
+- Auch belanglose Aktivitäten wie z. B. eine Teezeremonie können entspannen
 
 Auf gar keinen Fall sollte man den Feierabend noch unterbrechen mit E-Mails checken, Nachrichten beantworten, etc. Dann kann sich nämlich die gelenkte Aufmerksamkeit nicht regenerieren. Nur die Gewissheit, dass man bis zum nächsten Tag die Arbeit ruhen lässt, kann das Hirn davon überzeugen, so weit herunterzufahren, dass es mit dem Aufladen für den nächsten Tag beginnen kann. Wenn man versucht, noch ein bisschen Arbeit aus dem Feierabend herauszuquetschen, könnte das die persönliche Effektivität am nächsten Tag so weit verringern, dass man letztlich weniger erledigt bekommt, als wenn man den Feierabend respektiert hätte.
 
 ##### Die Arbeit, die den Feierabend ersetzt, ist nicht so wichtig!
 
-Die Deep-Work Kapazitäten eines Menschen sind pro Tag begrenzt. Die Kapazitätsgrenze erreicht man im Laufe des Tages. Deswegen kann man am Abend nicht mehr konzentriert arbeiten, da das Kontingent bereits erschöpft ist. Jede Tätigkeit in den Nachtstunden wird die Karriere nicht voranbringen, weil sie unkonzentrierte "Shallow-Work" ohne viel Wert ist. Man verpasst also nichts, wenn man getrost in den Feierabend geht! Daher ist es wichtig nach Feierabend nicht einmal den geringsten Gedanken an Arbeit zu verschwenden. Man muss komplett abschalten. Dabei können _"Feierabendrituale"_ helfen (z.B. kann man alles, was nicht erledigt werden konnte, auf einen Zettel aufschreiben und das dann erst morgen erledigen - dann kann man das "Arbeiten" in der "Arbeit" lassen, dort wo es hingehört.). 
+Die Deep-Work Kapazitäten eines Menschen sind pro Tag begrenzt. Die Kapazitätsgrenze erreicht man im Laufe des Tages. Deswegen kann man am Abend nicht mehr konzentriert arbeiten, da das Kontingent bereits erschöpft ist. Jede Tätigkeit in den Nachtstunden wird die Karriere nicht voranbringen, weil sie unkonzentrierte "Shallow-Work" ohne viel Wert ist. Man verpasst also nichts, wenn man getrost in den Feierabend geht! Daher ist es wichtig nach Feierabend nicht einmal den geringsten Gedanken an Arbeit zu verschwenden. Man muss komplett abschalten. Dabei können _"Feierabendrituale"_ helfen (z. B. kann man alles, was nicht erledigt werden konnte, auf einen Zettel aufschreiben und das dann erst morgen erledigen - dann kann man das "Arbeiten" in der "Arbeit" lassen, dort wo es hingehört.). 
 
 ### Regel Nr. 2: Langeweile zulassen!
 
-Die meisten Menschen lenken sich beim kleinsten Anzeichen von Langeweile sofort mit dem Smartphone ab (z.B. im Wartezimmer beim Arzt). Einfach nur zu warten und sich zu langweilen ist im heutigen Leben zu einer neuartigen Erfahrung geworden, aber aus der Perspektive des Konzentrationstrainings ist es von unschätzbarem Wert.
+Die meisten Menschen lenken sich beim kleinsten Anzeichen von Langeweile sofort mit dem Smartphone ab (z. B. im Wartezimmer beim Arzt). Einfach nur zu warten und sich zu langweilen ist im heutigen Leben zu einer neuartigen Erfahrung geworden, aber aus der Perspektive des Konzentrationstrainings ist es von unschätzbarem Wert.
 
 Deep-Work ist eine extreme und ernsthafte Disziplin. Es ist intensivstes Gehirntraining und erfordert viel Übung. Deep-Work baut "mentale Muskulatur" auf. Sich intensiv zu konzentrieren muss trainiert werden.
 
@@ -315,7 +315,7 @@ Deep-Work benötigt eine innere Verpflichtung, die Fähigkeit des konzentrierens
 
 Studien von _Clifford Nass_ ergaben, dass der ständige Wechsel der Aufmerksamkeit online einen dauerhaften, negativen Einfluss auf das Gehirn hat. Diese chronisch abgelenkten Menschen können irrelevantes nicht mehr herausfiltern. Sie haben Denkgewohnheiten etabliert, die es ihnen unmöglich machen, sich total zu fokussieren.
 
-Zusammengefasst bedeutet das: Wenn man jeden Moment potenzieller Langeweile im Leben (z.B. wenn man 5 min. in einer Warteschlange steht oder im Restaurant auf die Freundin wartet) nur durch einen Blick auf das Smartphone erleichtern kann, ist das Gehirn so weit "neu verknüpft", dass es nicht mehr für Deep-Work bereit ist - auch wenn man es versucht. Selbst wenn man regelmäßig Zeit einplant, um konzentriert zu arbeiten - es geht nicht mehr. Deshalb muss man den Verstand von der Ablenkungssucht befreien. Das Gehirn muss dazu neu programmiert werden. Und zwar mit den folgenden vier Strategien:
+Zusammengefasst bedeutet das: Wenn man jeden Moment potenzieller Langeweile im Leben (z. B. wenn man 5 min. in einer Warteschlange steht oder im Restaurant auf die Freundin wartet) nur durch einen Blick auf das Smartphone erleichtern kann, ist das Gehirn so weit "neu verknüpft", dass es nicht mehr für Deep-Work bereit ist - auch wenn man es versucht. Selbst wenn man regelmäßig Zeit einplant, um konzentriert zu arbeiten - es geht nicht mehr. Deshalb muss man den Verstand von der Ablenkungssucht befreien. Das Gehirn muss dazu neu programmiert werden. Und zwar mit den folgenden vier Strategien:
 
 #### 2.2.1 Strategie Nr. 1: Internetphasen definieren
 
@@ -335,11 +335,11 @@ Hier legt man eine anspruchsvolle Aufgabe fest, schätzt ab wie lange man normal
 
 Optional kann man sich dabei auch noch gut sichtbar eine Uhr aufstellen, damit man sieht, wie die Zeit abläuft. Oder die "Deadline" öffentlich machen bzw. jemand anderem sagen. Dann verspürt man mehr Druck es wirklich zu machen bzw. in der Zeit zu schaffen.
 
-Roosevelt-Endergieblitze sind ein "Intervalltraining für die Aufmerksamkeitszentren des Gehirns". Außerdem kann man sie nur ohne Ablenkungen (z.B. Smartphone, etc.) erledigen.
+Roosevelt-Endergieblitze sind ein "Intervalltraining für die Aufmerksamkeitszentren des Gehirns". Außerdem kann man sie nur ohne Ablenkungen (z. B. Smartphone, etc.) erledigen.
 
 #### Strategie Nr. 3: Produktives meditieren
 
-Ziel des produktiven meditierens ist es, einen Zeitraum auszuwählen, in dem Sie körperlich, aber nicht mental beschäftigt sind (beim Gehen, Joggen, Autofahren, Duschen, im Gym, beim U-Bahn fahren, etc.), und Ihre Aufmerksamkeit auf ein einzelnes, genau umrissenes berufliches Problem (z.B. einen neuen Blogartikel verfassen) zu richten. Damit übt man das Konzentrieren und ist während belanglosen, körperlichen Aktivitäten auch noch produktiv. So findet man z.B. Lösungen für verzwickte Probleme, wenn man zu Fuß unterwegs ist.
+Ziel des produktiven meditierens ist es, einen Zeitraum auszuwählen, in dem Sie körperlich, aber nicht mental beschäftigt sind (beim Gehen, Joggen, Autofahren, Duschen, im Gym, beim U-Bahn fahren, etc.), und Ihre Aufmerksamkeit auf ein einzelnes, genau umrissenes berufliches Problem (z. B. einen neuen Blogartikel verfassen) zu richten. Damit übt man das Konzentrieren und ist während belanglosen, körperlichen Aktivitäten auch noch produktiv. So findet man z. B. Lösungen für verzwickte Probleme, wenn man zu Fuß unterwegs ist.
 
 Der Grund, warum man produktiv meditieren sollte, ist, weil das die Konzentrationsfähigkeit rapide verbessern kann. Indem Sie der Ablenkung widerstehen und Ihre Aufmerksamkeit wiederholt auf ein fest umrissenes Problem zurücklenken, stärken Sie ihre Ablenkungsresistenz, und indem Sie sich immer enger auf ein einzelnes Problem fokussieren, schärfen Sie Ihre Konzentration. Das erfordert aber viel Übung.
 
@@ -418,10 +418,10 @@ Social Media bedeutet: "Ich beachte das, was du sagst, wenn du das beachtest, wa
 
 #### Das Internet nicht zur Unterhaltung verwenden!
 
-Man sollte das Internet nicht zur Unterhaltung nutzen. Die Zeit außerhalb der Arbeit sollte man gezielt nutzen. Unterhaltungsorientierte Websites (z.B. Reddit, etc.) erzielen maximale Aufmerksamkeit und sind oberflächlich. Das ist sehr gefährlich weil das ansehen dieser Seiten kann man sehr schnell zwischendurch machen und man muss sich nicht an/abmelden wie bei Social Media.
+Man sollte das Internet nicht zur Unterhaltung nutzen. Die Zeit außerhalb der Arbeit sollte man gezielt nutzen. Unterhaltungsorientierte Websites (z. B. Reddit, etc.) erzielen maximale Aufmerksamkeit und sind oberflächlich. Das ist sehr gefährlich weil das ansehen dieser Seiten kann man sehr schnell zwischendurch machen und man muss sich nicht an/abmelden wie bei Social Media.
 
 Die Lösung:
-Freizeit bewusster gestalten und schon "vorplanen" was man jeden Tag in der Freizeit macht. Füllt man freie Zeiten mit etwas wertvollem, verfällt man nicht in Langeweile, die durch Websites gefüllt werden muss. Es ist entscheidend, dass man sich schon im Voraus überlegt, was man an den Abenden und Wochenenden macht, noch ehe sie begonnen haben. Z.B. geregelte Hobbies sind gut! Die Freizeit sollte mit qualitativ hochwertigen Sachen verbracht werden und entspannend sein. Social Media mit "Brainrot-Content" usw. ist das nicht! Wenn man das macht, wird man erfahren, was es bedeutet zu leben und nicht bloß zu existieren.
+Freizeit bewusster gestalten und schon "vorplanen" was man jeden Tag in der Freizeit macht. Füllt man freie Zeiten mit etwas wertvollem, verfällt man nicht in Langeweile, die durch Websites gefüllt werden muss. Es ist entscheidend, dass man sich schon im Voraus überlegt, was man an den Abenden und Wochenenden macht, noch ehe sie begonnen haben. Zum Beispiel geregelte Hobbies sind gut! Die Freizeit sollte mit qualitativ hochwertigen Sachen verbracht werden und entspannend sein. Social Media mit "Brainrot-Content" usw. ist das nicht! Wenn man das macht, wird man erfahren, was es bedeutet zu leben und nicht bloß zu existieren.
 
 ### Regel Nr. 4: "Seichtigkeit" reduzieren!
 
@@ -461,11 +461,11 @@ Die künstliche Beschränkung des Arbeitstags kann helfen, sich auf das wesentli
 
 #### Seien Sie schwer erreichbar
 
-E-Mails sind oberflächlich und bieten einen ständigen Strom von "speziell an Sie gerichtete Ablenkungen". Ich persönlich zähle da aber auch Messenger wie z.B. Whatsapp dazu.
+E-Mails sind oberflächlich und bieten einen ständigen Strom von "speziell an Sie gerichtete Ablenkungen". Ich persönlich zähle da aber auch Messenger wie z. B. Whatsapp dazu.
 
 ##### Tipp Nr.1: Absenderfilter
 
-Um im E-Mail Posteingang nur mehr wichtige Mails und keine oberflächlichen mehr zu erhalten, kann man einen "Absenderfilter" einrichten. Z.B. auf der Webseite eine andere Mail-Adresse angeben, die als automatische Antwort eingestellt hat:_"Bitte schreiben Sie mir nur wichtige Themen. Wenn Sie mir nichts oberflächliches schicken möchten, senden sie es an: - hier echte mail adresse einfügen - "._
+Um im E-Mail Posteingang nur mehr wichtige Mails und keine oberflächlichen mehr zu erhalten, kann man einen "Absenderfilter" einrichten. Zum Beispiel auf der Webseite eine andere Mail-Adresse angeben, die als automatische Antwort eingestellt hat:_"Bitte schreiben Sie mir nur wichtige Themen. Wenn Sie mir nichts oberflächliches schicken möchten, senden sie es an: - hier echte mail adresse einfügen - "._
 
 ##### Tipp Nr.2: Prozessorientierter Mail-Ansatz
 
@@ -486,6 +486,6 @@ _"Machen Sie es sich zur Gewohnheit, kleine unangenehme Dinge geschehen zu lasse
 
 ### Fazit
 
-Die Konzentrationsfähigkeit ist eine Qualifikation, mit der sich wertvolle Dinge erledigen lassen. Deep-Work ist nicht wichtig, weil die Ablenkung etwas böses ist, sondern weil es z.B. Bill Gates dazu verholfen aht, in weniger als einem Semester eine milliardenschwere Branche ins Leben zu rufen. Deep-Work ist mächtig!
+Die Konzentrationsfähigkeit ist eine Qualifikation, mit der sich wertvolle Dinge erledigen lassen. Deep-Work ist nicht wichtig, weil die Ablenkung etwas böses ist, sondern weil es z. B. Bill Gates dazu verholfen aht, in weniger als einem Semester eine milliardenschwere Branche ins Leben zu rufen. Deep-Work ist mächtig!
 
 Deep-Work bedeutet, den Verstand an seine äußersten Grenzen zu bringen, um wesentliches zu schaffen.

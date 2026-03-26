@@ -213,7 +213,7 @@ Bill Gates zog sich zu "Denkwochen" mit Büchern in eine Hütte zurück.
 Alan Lightman (MIT Physiker) zieht sich jeden Sommer auf eine winzige Insel ohne Internet und Telefon zurück, um ungestört arbeiten zu können.
 
 **Beispiel 4:**  
-Dan Pink und Michael Pollan errichteten eigene "Schreibhütten" auf ihren Grundstücken, nur um sich dahin zum Schreiben zurückziehen zu können. Der Entwurf und Bau dieser Hütten waren sehr Kosten- und Zeit-Intensiv und waren daher eine "große Geste".
+Dan Pink und Michael Pollan errichteten eigene "Schreibhütten" auf ihren Grundstücken, nur um sich dahin zum Schreiben zurückziehen zu können. Der Entwurf und Bau dieser Hütten waren zeitintensiv und mit großen Kosten verbunden. Das war daher eine "große Geste".
 
 **Beispiel 5:**  
 Peter Shankman buchte einen Flug nach Tokio und sofort wieder zurück, nur um während des Fluges ungestört Deep-Work machen zu können. Die 4000-Dollar-Reise war sehr teuer, aufwändig und daher eine "große Geste".
@@ -224,7 +224,7 @@ Durch einen radikalen Wechsel der normalen Umgebung (evtl. verbunden mit einer e
 #### Alleine arbeiten vs. gemeinsam arbeiten
  
 Ein Großraumbüro ist immens ablenkungsintensiv. Nachdenken und konzentriert arbeiten ist hier sehr schwierig. Aber aus der zufälligen Begegnung von Menschen entstehen neue Ideen (= _Theroie der zufälligen Kreativität_).  
-Im Gebäude 20 des MIT wurden Leute aus ganz verschiedenen Branchen beherbergt: Kernphysiker, Linguistiker, Elektroniker, Klavierbauer, etc. Die zufälligen Begegnungen der Leute dort führte zu einem _"Geist des Erfindertums"_, wodurch viele bahnbrechende Erfindungen entstanden sind. Ein einsamer Wissenschaftler in einem Steinturm hätte das nicht geschafft. Auf der anderen Seite sind solche Orte auch extrem ablenkungsintensiv.
+Im "Gebäude 20" des MIT wurden Leute aus ganz verschiedenen Branchen beherbergt: Kernphysiker, Linguistiker, Elektroniker, Klavierbauer, etc. Die zufälligen Begegnungen der Leute dort führte zu einem _"Geist des Erfindertums"_, wodurch viele bahnbrechende Erfindungen entstanden sind. Ein einsamer Wissenschaftler in einem Steinturm hätte das nicht geschafft. Auf der anderen Seite sind solche Orte auch extrem ablenkungsintensiv.
 
 **Es braucht beides:**  
 
@@ -236,13 +236,13 @@ Im Gebäude 20 des MIT wurden Leute aus ganz verschiedenen Branchen beherbergt: 
 _"Öffnen Sie sich regelmäßig für Ideen in Netzwerken, aber bewahren Sie sich einen Rückzugsort, in dem Sie das vertiefen können, dem sie begegnet sind!"_
 
 **Whiteboard-Effekt:**  
-Bei manchen Arten von Problemen, kann die Zusammenarbeit mit jemand anderem am sprichwörtlichen gemeinsamen Whiteboard weiter führen, als wenn sie sich alleine damit beschäftigen.
+Bei manchen Arten von Problemen, kann die Zusammenarbeit mit jemand anderem am sprichwörtlichen gemeinsamen Whiteboard weiter führen, als wenn man sich alleine damit beschäftigt.
 
 #### Die 4 Disziplinen der Umsetzung
 
 ##### Disziplin Nr. 1: Konzentrieren Sie sich auf das allerwichtigste
 Beim Deep-Work sollte man sich auf die wichtigsten Ziele fokussieren!
-Anstatt viele Ziele festzulegen, die nicht so wichtig sind, ist es besser, wenn man wenige Ziele festlegt, die dafür ambitioniert und wichtig sind!
+Anstatt viele Ziele festzulegen, die nicht so wichtig sind, ist es besser, wenige Ziele festzulegen, die aber dafür ambitioniert und wichtig sind!
 
  _"Fokussiertes Arbeiten für ehrgeizige Ziele!"_
 
@@ -269,7 +269,7 @@ Dieser vorher genannte Punktestand muss wöchentlich überprüft werden. Dann ka
 
 #### Auszeiten sind wichtig!
 
-Nicht abschalten zu können, gefährdet die Deep-Work Strategie, weil Konzentration eine endliche Ressource ist!
+Nicht abschalten zu können gefährdet die Deep-Work Strategie, weil Konzentration eine endliche Ressource ist!
 
 _"Lösen Sie sich am Ende des Arbeitstages von beruflichen Problemstellungen!"_ --> Die Gedanken müssen wirklich **komplett frei** sein von Arbeit.
 
@@ -281,7 +281,7 @@ Bei menschlichen Entscheidungen, die große Mengen an Information und zahlreiche
 ##### Auszeiten füllen die für Deep-Work notwendigen Energiereserven auf!
 
 Die _"Attention Restauration Theory"_ besagt folgendes:  
-Um sich konzentrieren zu können, benötigt man _"gelenkte Aufmerksamkeit"_. Diese Ressource ist endlich - also wenn sie aufgebraucht ist, fällt das Konzentrieren schwer. Die _ART_ belegt in Studien, dass sich die gelenkte Aufmerksamkeit z. B. beim **Spazieren in der Natur** regeneriert. Warum? Weil die Kombination aus wenigen Aufgaben (in diesem Fall entspanntes herumgehen) und genügend interessanten Reizen, erneuert die Konzentrationsressourcen! Ein Beispiel für diese interessanten Reize könnte z. B. sein, dass man den Sonnenuntergang sieht oder Vögel beobachtet.  
+Um sich konzentrieren zu können, benötigt man _"gelenkte Aufmerksamkeit"_. Diese Ressource ist endlich - also wenn sie aufgebraucht ist, fällt das Konzentrieren schwer. Die _ART_ belegt in Studien, dass sich die gelenkte Aufmerksamkeit z. B. beim **Spazieren in der Natur** regeneriert. Warum? Weil die Kombination aus wenigen Aufgaben (in diesem Fall entspanntes herumgehen) und genügend interessanten Reizen (in diesem Fall Sonnenuntergang sehen bzw. Vögel beobachten), die Konzentrationsressourcen erneuert!
 
 Im Gegenteil dazu verringert ein **Spaziergang in der Stadt** die Konzentrationsressourcen, weil hierfür gelenkte Aufmerksamkeit verbraucht wird (z. B. muss man auf den Verkehr achten, Straßen überqueren, auf entgegenkommende Leute achten, etc.). Daher sollten solche Spaziergänge in der Stadt vermieden werden, weil sie eher auslaugen als entspannen.
 
@@ -304,28 +304,28 @@ Die Deep-Work Kapazitäten eines Menschen sind pro Tag begrenzt. Die Kapazitäts
 
 ### Regel Nr. 2: Langeweile zulassen!
 
-Die meisten Menschen lenken sich beim kleinsten Anzeichen von Langeweile sofort mit dem Smartphone ab (z. B. im Wartezimmer beim Arzt). Einfach nur zu warten und sich zu langweilen ist im heutigen Leben zu einer neuartigen Erfahrung geworden, aber aus der Perspektive des Konzentrationstrainings ist es von unschätzbarem Wert.
+Die meisten Menschen lenken sich beim kleinsten Anzeichen von Langeweile sofort mit dem Smartphone ab (z. B. im Wartezimmer beim Arzt). Einfach nur zu warten und sich zu langweilen ist im heutigen Leben zu einer neuartigen Erfahrung geworden - aber aus der Perspektive des Konzentrationstrainings ist genau das von unschätzbarem Wert.
 
 Deep-Work ist eine extreme und ernsthafte Disziplin. Es ist intensivstes Gehirntraining und erfordert viel Übung. Deep-Work baut "mentale Muskulatur" auf. Sich intensiv zu konzentrieren muss trainiert werden.
 
 > Ungestörte Konzentration ist wie die Verwendung von Zahnseide – man weiß wie es geht und man weiß, dass es einem gut tut aber man hat es aufgrund mangelnder Motivation vernachlässigt.<br>
 > — <cite>Cal Newport</cite>
 
-Deep-Work benötigt eine innere Verpflichtung, die Fähigkeit des konzentrierens regelmäßig zu trainieren, damit man sie nicht verlernt. Daran wird man aber gehindert durch unsere _"Ablenkungssucht"_. Wir möchten mittlerweile schon den kleinsten Anzeichen von Langeweile entgehen und greifen zum Handy, Laptop, etc. Aber Langeweile ist etwas Gutes!
+Deep-Work benötigt eine innere Verpflichtung, die Fähigkeit des konzentrierens regelmäßig zu trainieren, damit man sie nicht verlernt. Daran wird man aber gehindert durch die _"Ablenkungssucht"_, die sich in unserer Gesellschaft etabliert hat. Wir möchten mittlerweile schon den kleinsten Anzeichen von Langeweile entgehen und greifen in solchen Situationen zum Handy, Laptop, etc. Aber Langeweile ist etwas Gutes!
 
 Studien von _Clifford Nass_ ergaben, dass der ständige Wechsel der Aufmerksamkeit online einen dauerhaften, negativen Einfluss auf das Gehirn hat. Diese chronisch abgelenkten Menschen können irrelevantes nicht mehr herausfiltern. Sie haben Denkgewohnheiten etabliert, die es ihnen unmöglich machen, sich total zu fokussieren.
 
 Zusammengefasst bedeutet das: Wenn man jeden Moment potenzieller Langeweile im Leben (z. B. wenn man 5 min. in einer Warteschlange steht oder im Restaurant auf die Freundin wartet) nur durch einen Blick auf das Smartphone erleichtern kann, ist das Gehirn so weit "neu verknüpft", dass es nicht mehr für Deep-Work bereit ist - auch wenn man es versucht. Selbst wenn man regelmäßig Zeit einplant, um konzentriert zu arbeiten - es geht nicht mehr. Deshalb muss man den Verstand von der Ablenkungssucht befreien. Das Gehirn muss dazu neu programmiert werden. Und zwar mit den folgenden vier Strategien:
 
-#### 2.2.1 Strategie Nr. 1: Internetphasen definieren
+#### Strategie Nr. 1: Internetphasen definieren
 
 **Strategie:**  
-_Planen Sie im Voraus, mann Sie das Internet nutzen wollen, und meiden Sie es außerhalb dieser Zeiten **vollständig**! Das gilt sowohl für die Arbeitszeit, als auch für die Freizeit._
+_Planen Sie im Voraus, wann Sie das Internet nutzen wollen, und meiden Sie es außerhalb dieser Zeiten **vollständig**! Das gilt sowohl für die Arbeitszeit, als auch für die Freizeit._
 
 **Umsetzung:**  
-Einen Zettel neben den Laptop bzw. neben das Smartphone legen und darauf den nächsten Zeitpunkt schreiben, zu dem man es wieder nutzen darf.
+Einen Zettel neben den Laptop bzw. neben das Smartphone legen und darauf den nächsten Zeitpunkt schreiben, zu dem man das Internet wieder nutzen darf.
 
-Das funktioniert auch für Berufe, die eine Menge Internetnutzung verlangen. Das bedeutet lediglich, dass die Internetphasen zahlreicher sein werden, als bei Leuten mit anderen Berufen. Die Gesamtdauer der Phasen ist nicht so wichtig, wie dafür zu sorgen, dass die Integrität der Offlinephasen gewahrt bleibt.
+Das funktioniert auch für Berufe, die eine Menge Internetnutzung verlangen. Denn in diesem Fall bedeutet das lediglich, dass die Internetphasen zahlreicher sein werden als bei Leuten mit anderen Berufen. Die Gesamtdauer der Phasen ist nicht so wichtig, wie dafür zu sorgen, dass die Integrität der Offlinephasen gewahrt bleibt.
 
 Egal, wie die Internetphasen geplant sind - man darf das Internat außerhalb dieser Phasen **absolut nicht** nutzen! Auch wenn man es unbedingt benötigt, sollte man es nicht nutzen, sondern stattdessen auf die nächste "Onlinephase" warten. Dadurch entkoppelt man das Gefühl online gehen zu wollen von der Belohnung durch die tatsächliche Umsetzung dieses Wunsches.
 
@@ -333,19 +333,19 @@ Egal, wie die Internetphasen geplant sind - man darf das Internat außerhalb die
 
 Hier legt man eine anspruchsvolle Aufgabe fest, schätzt ab wie lange man normalerweise dafür brauchen würde und setzt sich dann eine enge Frist, die diesen Zeitraum **drastisch** verringert. Die auferlegte Frist sollte man sich dann genau am Rande der Machbarkeit setzen.
 
-Optional kann man sich dabei auch noch gut sichtbar eine Uhr aufstellen, damit man sieht, wie die Zeit abläuft. Oder die "Deadline" öffentlich machen bzw. jemand anderem sagen. Dann verspürt man mehr Druck es wirklich zu machen bzw. in der Zeit zu schaffen.
+Optional kann man sich dabei auch noch gut sichtbar eine Uhr aufstellen, damit man sieht, wie die Zeit abläuft. Oder jemand anderem versprechen, dass die Aufgabe zu der gesetzten "Deadline" fertig ist. Dann verspürt man mehr "Druck" es wirklich zu machen bzw. es in der Zeit zu schaffen.
 
 Roosevelt-Endergieblitze sind ein "Intervalltraining für die Aufmerksamkeitszentren des Gehirns". Außerdem kann man sie nur ohne Ablenkungen (z. B. Smartphone, etc.) erledigen.
 
 #### Strategie Nr. 3: Produktives meditieren
 
-Ziel des produktiven meditierens ist es, einen Zeitraum auszuwählen, in dem Sie körperlich, aber nicht mental beschäftigt sind (beim Gehen, Joggen, Autofahren, Duschen, im Gym, beim U-Bahn fahren, etc.), und Ihre Aufmerksamkeit auf ein einzelnes, genau umrissenes berufliches Problem (z. B. einen neuen Blogartikel verfassen) zu richten. Damit übt man das Konzentrieren und ist während belanglosen, körperlichen Aktivitäten auch noch produktiv. So findet man z. B. Lösungen für verzwickte Probleme, wenn man zu Fuß unterwegs ist.
+Ziel des produktiven meditierens ist es, sich einen Zeitraum auszuwählen, in dem man körperlich, aber nicht mental beschäftigt ist (z. B. beim Gehen, Joggen, Autofahren, Duschen, im Gym, beim U-Bahn fahren, etc.). Und dann versucht man in diesem Zeitraum die Aufmerksamkeit auf ein einzelnes, genau umrissenes berufliches Problem (z. B. einen neuen Blogartikel verfassen) zu richten. Damit übt man das Konzentrieren und ist während belanglosen, körperlichen Aktivitäten auch noch produktiv. So findet man z. B. Lösungen für verzwickte Probleme, wenn man in die Arbeit spaziert.
 
-Der Grund, warum man produktiv meditieren sollte, ist, weil das die Konzentrationsfähigkeit rapide verbessern kann. Indem Sie der Ablenkung widerstehen und Ihre Aufmerksamkeit wiederholt auf ein fest umrissenes Problem zurücklenken, stärken Sie ihre Ablenkungsresistenz, und indem Sie sich immer enger auf ein einzelnes Problem fokussieren, schärfen Sie Ihre Konzentration. Das erfordert aber viel Übung.
+Der Grund, warum man produktiv meditieren sollte, ist, weil das die Konzentrationsfähigkeit rapide verbessern kann. Indem man der Ablenkung widerstehen und die Aufmerksamkeit wiederholt auf ein fest umrissenes Problem zurücklenkt, stärkt man die Ablenkungsresistenz. Und indem man sich immer enger auf ein einzelnes Problem fokussiert, schärft man die Konzentration. Das zu können erfordert aber viel Übung.
 
-Zum Beispiel muss man gegen Ablenkungen und Gedankenschleifen ankämpfen. Wenn Sie merken, dass Ihre Aufmerksamkeit von dem gegebenen Problem weggleitet, erinnern Sie sich sanft daran, dass Sie später zu diesem Gedanken zurückkehren können, und lenken Sie Ihre Aufmerksamkeit wieder zurück. Das Gehirn möchte evolutionsbedingt das tiefere Eindringen in Problemstellungen (die man mit Konzentration lösen möchte) vermeiden, da es einen übermäßigen Aufwand an Energie vermeiden will. Stattdessen wiederholt es in Gedankenschleifen Sachen, die man sowieso schon weiß. Wenn Sie bemerken in einer Gedankenschleife zu sein, lenken Sie Ihre Aufmerksamkeit wieder auf den nächsten Schritt.
+Zum Beispiel muss man gegen Ablenkungen und Gedankenschleifen immer wieder ankämpfen. Wenn man merkt, dass die Aufmerksamkeit von dem gegebenen Problem weggleitet, sollte man sich sanft daran erinnern, dass man sowieso später wieder zu diesem ablenkenden Gedanken zurückkehren kann, aber jetzt die Aufmerksamkeit wieder zu dem gegebenen Problem zurückgelenkt werden muss. Das Gehirn möchte evolutionsbedingt das tiefere Eindringen in Problemstellungen vermeiden, da es einen übermäßigen Aufwand an Energie vermeiden will. Stattdessen wiederholt es in Gedankenschleifen Sachen, die man sowieso schon weiß. Wenn man es bemerkt, in einer Gedankenschleife zu sein, sollte man die Aufmerksamkeit wieder auf den nächsten Schritt lenken.
 
-Die Konzentrationsfähigkeit wird auch erhöht, wenn man die Gedanken **strukturiert**: 
+Die Konzentrationsfähigkeit wird auch erhöht, wenn man die Gedanken **strukturiert**. Die Vorgehensweise ist hierbei folgendermaßen:  
 
 1. Gedanken in Variablen speichern
 2. Frage festlegen, die mit den Variablen beantwortet wird

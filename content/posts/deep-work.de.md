@@ -355,7 +355,7 @@ Die Konzentrationsfähigkeit wird auch erhöht, wenn man die Gedanken **struktur
 
 Sich ein Kartendeck zu merken ist ein weiteres Training zur Aufmerksamkeits- und Konzentrationssteigerung. Aber nicht nur Karten merken, sondern generell jeder strukturierte Prozess, der ungeteilte Aufmerksamkeit erfordert, kann einen ähnlichen Effekt haben. Zum Beispiel der Versuch, aus dem Gedächtnis einen Song auf der Gitarre nachzuspielen. Oder eine Partie Schach (vorausgesetzt es ist eine Partie, die mental fordernd ist).
 
-Schritte, um sich ein Kartendeck zu merken:
+Dies ist ein Anleitung, wie man sich ein Kartendeck am besten merken kann. Dies ist wie gesagt eine gute Übung zur Konzentrationssteigerung:
 
 1. Mentales Bild erstellen, wie ich durch 5 Räume meines Hauses gehe. Wichtig: klare Bilder hervorrufen, was ich sehe.
 
@@ -363,13 +363,14 @@ Schritte, um sich ein Kartendeck zu merken:
 
 3. Eine Reihenfolge festlegen, in der ich mir diese Gegenstände in den Zimmern ansehe.
 
-4. Der Rundgang durch die Räume und das Betrachten der Gegenstände in jedem Raum in einer festgelegten Reihenfolge üben.
+4. Den Rundgang durch die Räume und das Betrachten der Gegenstände in jedem Raum in einer festgelegten Reihenfolge üben.
 
 5. Eine denkwürdige Person oder einen Gegenstand mit jeder der 52 Karten assoziieren. Dazu irgendeine logische Verbindung zwischen den Karten und den dazugehörigen Bildern herstellen. Zum Beispiel könnte man Donald Trum mit Karo-König verknüpfen, weil die Karoform an Diamanten erinnert und diese für Reichtum stehen. Diese Assoziationen müssen dann so lange eingeübt werden, bis ich eine beliebige Karte aus dem Spiel ziehen und sofort das damit verbundene Bild aufrufen kann.
 
-6. Diese ersten 5 Schritte sond vorbereitende Schritte und müssen nur einmal durchgeführt werden. Einmal gemacht, funktioniert es für immer.
+6. Diese ersten 5 Schritte sind vorbereitende Schritte und müssen nur einmal durchgeführt werden. Einmal gemacht, funktioniert es für immer.
 
-7. Nun die Hauptaufgabe: Sich die Reihenfolge der 52 Karten merken.Dazu blättert man das Kartendeck der Reihe nach durch und macht analog dazu den mentalen Rundgang durch's Haus. Dabei stellt man sich bei jeder Karte vor, wie die dazugehörige, eingeprägte Person etwas erinnerungswertes nahe diesem Gegenstand tut. Beispiel: Erste Gegenstand im Raum ist Türmatte und erste Karte ist Karo-König -> Donald Trump putzt sich an der Türmatte die Schuhe ab.
+7. Nun die Hauptaufgabe: Sich die Reihenfolge der 52 Karten merken. Dazu blättert man das Kartendeck der Reihe nach durch und macht analog dazu den mentalen Rundgang durch's Haus. Dabei stellt man sich bei jeder Karte vor, wie die dazugehörige, eingeprägte Person etwas erinnerungswertes nahe diesem Gegenstand tut.  
+Beispiel: Wenn der erste Gegenstand im Raum eine Türmatte ist und die erste Karte der Karo-König ist, könnte man sich vorstellen wie sich Donald Trump an der Türmatte die Schuhe abputzt.
 
 ### Regel Nr. 3: Die digitalen sozialen Netzwerke verlassen!
 

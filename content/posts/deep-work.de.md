@@ -478,7 +478,8 @@ Um im E-Mail Posteingang nur mehr wichtige Mails und keine oberflächlichen mehr
 
 ##### Tipp Nr. 2: Prozessorientierter Mail-Ansatz
 
-Das Ziel: Die Anzahl der erhaltenen Nachrichten minimieren und auch die mentale Anstrengung, die sie mit sich bringen. Dadurch bleiben mehr Ressourcen für Deep-Work. Das macht man, indem man Nachrichten so formuliert, dass bereits in der ersten Nachricht alles so konkret formuliert ist, dass kein "Antwort-Ping-Pong" entsteht. Weil dieses oberflächliche Ping-Pong sollte vermieden werden, weil es unnötige Ressourcen frisst. Nach einer oder möglichst wenigen Antworten sollte schon alles geklärt sein, dass die Konversation beendet werden kann.
+Das Ziel:  
+Die Anzahl der erhaltenen Nachrichten minimieren und auch die mentale Anstrengung, die diese mit sich bringen. Dadurch bleiben mehr Ressourcen für Deep-Work. Das macht man, indem man Nachrichten so formuliert, dass bereits in der ersten Nachricht alles so konkret formuliert ist, dass kein "Antwort-Ping-Pong" entsteht. Weil dieses oberflächliche Ping-Pong sollte vermieden werden, weil es unnötig Ressourcen frisst. Nach einer (oder möglichst wenigen) Antworten sollte schon alles geklärt sein, sodass die Konversation beendet werden kann.
 
 ##### Tipp Nr. 3: Nicht antworten!
 
@@ -490,11 +491,11 @@ Antworten Sie nicht auf E-Mails, wenn einer der folgenden Punkte zutrifft:
 
 - Wenn Sie antworten, passiert nichts wirklich gutes und wenn Sie nicht antworten, passiert nichts wirklich schlimmes.
 
-Manche Leute werden verärgert sein. Aber das ist in Ordnung so, weil:
+Manche Leute werden verärgert sein wenn man nicht mehr antwortet. Aber das ist in Ordnung so, weil:
 _"Machen Sie es sich zur Gewohnheit, kleine unangenehme Dinge geschehen zu lassen. Tun Sie das nicht, finden Sie niemals die Zeit für die lebensverändernden großen Dinge"_ - Tim Ferriss
 
 ### Fazit
 
-Die Konzentrationsfähigkeit ist eine Qualifikation, mit der sich wertvolle Dinge erledigen lassen. Deep-Work ist nicht wichtig, weil die Ablenkung etwas böses ist, sondern weil es z. B. Bill Gates dazu verholfen aht, in weniger als einem Semester eine milliardenschwere Branche ins Leben zu rufen. Deep-Work ist mächtig!
+Die Konzentrationsfähigkeit ist eine Qualifikation, mit der sich wertvolle Dinge erledigen lassen. Deep-Work ist nicht deshalb so wichtig, weil Ablenkung etwas "böses" ist, sondern weil es z. B. Bill Gates dazu verholfen hat (in weniger als einem Semester!) eine milliardenschwere Branche ins Leben zu rufen. Das zeigt: Deep-Work ist mächtig!
 
-Deep-Work bedeutet, den Verstand an seine äußersten Grenzen zu bringen, um wesentliches zu schaffen.
+**Deep-Work bedeutet, den Verstand an seine äußersten Grenzen zu bringen, um wesentliches zu schaffen!**

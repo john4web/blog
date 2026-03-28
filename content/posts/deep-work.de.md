@@ -434,53 +434,53 @@ Freizeit bewusster gestalten und schon "vorplanen" was man jeden Tag in der Frei
 
 ### Regel Nr. 4: "Seichtigkeit" reduzieren!
 
-Unternehmensmitgründer Jason Fried führte für seine Firma die 4-Tage-Woche ein (4x8h statt 5x8h).
-Warum?
-Zitat: _"Weniger offizielle Arbeitsstunden pressen das Fett aus einer typischen Arbeitswoche. Sobald jeder weniger Zeit hat, seine Aufgaben erledigt zu bekommen, respektiert er diese Zeit deutlich mehr. Die Leute werden knauserig mit ihrer Zeit, und das ist gut so. Sie verschwenden sie nicht mit unwichtigem. Wenn man weniger Stunden zur Verfügung hat, nutzt man sie im allgemeinen klüger."_
+Unternehmensmitgründer _Jason Fried_ führte für seine Firma die 4-Tage-Woche ein (also 4x8 Stunden statt 5x8 Stunden Arbeit pro Woche).  
+Warum?  
+Weil Zitat: _"Weniger offizielle Arbeitsstunden pressen das "Fett" aus einer typischen Arbeitswoche. Sobald jeder weniger Zeit hat, seine Aufgaben erledigt zu bekommen, respektiert er diese Zeit deutlich mehr. Die Leute werden knauserig mit ihrer Zeit, und das ist gut so. Sie verschwenden sie nicht mit unwichtigem. Wenn man weniger Stunden zur Verfügung hat, nutzt man sie im allgemeinen klüger."_
 
 Shallow-Work-Tätigkeiten, welche die Aufmerksamkeit dominieren, sind weniger entscheidend, als sie im Moment häufig zu sein scheinen. Man muss also gnadenlos die Oberflächlichkeiten im Zeitplan aufspüren und auf ein Mindestmaß reduzieren.
 Studien haben herausgefunden: Man kann als Erwachsener, versierter Anwender von Deep-Work nicht mehr als 4 Stunden pro Tag in tiefer Konzentration zubringen. Danach ist man so ausgelaugt, dass man sich nicht mehr konzentrieren kann. Deep-Work ist also auf maximal 4 Stunden begrenzt.
 
 #### Planen Sie jede Minute ihres Tages
-Wir verschwenden mehr Zeit mit gewissen Sachen, als wir glauben. Wir denken nicht viel darüber nach, was wir mit unserer Zeit anstellen. Und das ist ein Problem! Man muss vermeiden, dass die "Seichtigkeit" in jeden Winkel des Zeitplans hineinkriecht. Ohne Tagesstruktur gleitet die Zeit leicht ins "Seichte" ab: Handy, E-Mails, Social-Media, Internetsurfen, etc.
+Wir verschwenden mehr Zeit mit gewissen Sachen, als wir glauben. Wir denken nicht viel darüber nach, was wir mit unserer Zeit anstellen. Und das ist ein Problem! Man muss vermeiden, dass die _"Seichtigkeit"_ in jeden Winkel des Zeitplans _"hineinkriecht"_. Ohne Tagesstruktur gleitet die Zeit leicht in's _"Seichte"_ ab: Handy, E-Mails, Social-Media, Internetsurfen, etc.
 
-Strategie: 
+Strategie:  
 Jeden Tag in der Früh in einem Notizbuch notieren, was man an diesem Tag machen möchte und dann die Stunden in (Arbeits-) Blöcke gruppieren. Das gilt nicht nur für Arbeit sondern auch für Erholung, Essen, Kochen, Freizeit, etc. In einem linierten Notizblock könnte man so jede Linie als Stunde ansehen und dann die Linien gruppieren.
-Was tun, wenn man während der Umsetzung draufkommt, dass man mehr Zeit für einen Block braucht, oder etwas anderes wichtiges dazwischenkommt und den Block unterbricht? -> Das ist in Ordnung! Dann sollte man einen überarbeiteten Plan für die übrigen Stunden erstellen. Das Ziel ist nämlich nicht, um jeden Preis an einem vorgegebenen Plan festhalten, sondern jederzeit einen bewussten Überblick darüber zu haben, was man mit seiner Zeit anfängt (auch auch wenn sich das über den Tag hinweg ändert). Man soll sich jeden Tag fragen _"Was kann ich sinnvolles mit der mir verbleibenden Zeit anstellen?"_ 
+Was tun, wenn man während der Umsetzung draufkommt, dass man mehr Zeit für einen Block braucht, oder etwas anderes wichtiges dazwischenkommt und den Block unterbricht? -> Das ist in Ordnung! Dann sollte man einen überarbeiteten Plan für die übrigen Stunden erstellen. Das Ziel ist nämlich nicht, um jeden Preis an einem vorgegebenen Plan festhalten, sondern jederzeit einen bewussten Überblick darüber zu haben, was man mit seiner Zeit anfängt (auch wenn sich das über den Tag hinweg ändert). Man soll sich jeden Tag fragen _"Was kann ich sinnvolles mit der mir verbleibenden Zeit anstellen?"_ 
 
 #### Messen Sie die Tiefe jeder Tätigkeit
 
-Man sollte pro Tag also möglichst viel tiefgründige Aktivitäten machen und möglichst wenig oberflächliches.Aber was oberflächliche Arbeiten sind, ist nicht immer ganz eindeutig. Um herauszufinden was oberflächlich ist und was nicht bzw. um ein Maß der Oberflächlichkeit zu definieren, kann man sich die folgende Frage stellen:
+Man sollte pro Tag also möglichst viel tiefgründige Aktivitäten machen und möglichst wenig oberflächliches. Aber welche Arbeiten "oberflächlich" sind, ist nicht immer ganz eindeutig. Um herauszufinden was oberflächlich ist und was nicht bzw. um ein "Maß der Oberflächlichkeit" zu definieren, kann man sich die folgende Frage stellen:
 
-_"Wie lange würde es dauern (in Monaten), um einen intelligenten frisch gebackenen Hochschulabgänger ohne spezielle Ausbildung in meinem Bereich so einzuarbeiten, dass er diese Aufgabe erfüllen könnte?"_
+_"Wie lange würde es dauern (in Monaten), um einen intelligenten, frisch gebackenen Hochschulabgänger ohne spezielle Ausbildung in meinem Bereich so einzuarbeiten, dass er diese Aufgabe erfüllen könnte?"_
 
-Tiefgründige Seep-Work Aufgaben haben einen doppelten Nutzen: Ihr Ertrag ist im Verhältnis zur aufgewendeten Zeit höher und ich trainiere meine Leistungsfähigkeit und mache sie dadurch besser.
+Tiefgründige Deep-Work Aufgaben haben einen doppelten Nutzen: Ihr Ertrag ist im Verhältnis zur aufgewendeten Zeit höher und ich trainiere meine Leistungsfähigkeit und mache sie dadurch besser.
 
 #### Bitten Sie Ihren Chef um ein Budget für Shallow-Work
 
 Eine Strategie wäre, den Chef mit der Frage zu konfrontieren:
 
-_"Wie viel Prozent meiner Zeit sollte ich mit "Shallow-Work" verbringen?"_
+_"Wie viel Prozent meiner Arbeitszeit sollte ich mit "Shallow-Work" verbringen?"_
 
-Dann einigt man sich auf eine bestimmte Antwort und hält sich daran. Warum wird diese Strategie empfohlen? Weil man dann shallow-Work Arbeiten ablehnen kann und sich dabei darauf berufen kann, dass man sich das so mit dem Chef ausgemacht hat. Wenn der Chef aber eine Antwort gibt, die signalisiert, dass Deep-Work in diesem Arbeitsplatz nicht unterstützt wird, sollte man zu einem Arbeitsplatz wechseln, an dem Tiefgang wertgeschätzt wird. Ansonsten kann man sich nicht weiterentwicklen.
+Dann einigt man sich auf eine bestimmte Antwort und hält sich anschließend daran. Warum wird diese Strategie empfohlen? Weil man dann Shallow-Work Arbeiten leichter ablehnen kann und sich dabei darauf berufen kann, dass man sich das so mit dem Chef ausgemacht hat. Wenn der Chef aber eine Antwort gibt, die signalisiert, dass Deep-Work in diesem Arbeitsplatz nicht unterstützt wird, sollte man zu einem Arbeitsplatz wechseln, an dem Tiefgang wertgeschätzt wird. Ansonsten kann man sich nicht weiterentwicklen.
 
 #### Legen Sie um 17:30 Uhr die Arbeit nieder
 
-Die künstliche Beschränkung des Arbeitstags kann helfen, sich auf das wesentliche zu fokussieren. Diese "Planmäßige Produktivität" führt dazu, dass man auch mal "Nein" zu gewissen oberflächlichen Arbeiten sagt, die einem von anderen Leuten aufgeschwätzt werden.
+Die künstliche Beschränkung des Arbeitstags kann helfen, sich auf das Wesentliche zu fokussieren. Diese _"Planmäßige Produktivität"_ führt dazu, dass man auch mal "Nein" zu gewissen oberflächlichen Arbeiten sagt, die einem von anderen Leuten aufgeschwätzt werden.
 
 #### Seien Sie schwer erreichbar
 
-E-Mails sind oberflächlich und bieten einen ständigen Strom von "speziell an Sie gerichtete Ablenkungen". Ich persönlich zähle da aber auch Messenger wie z. B. Whatsapp dazu.
+E-Mails sind oberflächlich und bieten einen ständigen Strom von "speziell an Sie gerichtete Ablenkungen". Ich persönlich zähle da aber auch Messenger wie z. B. Whatsapp dazu. Im Folgenden finden sich Tipps, wie man diese Ablenkungen minimiert.
 
-##### Tipp Nr.1: Absenderfilter
+##### Tipp Nr. 1: Absenderfilter
 
-Um im E-Mail Posteingang nur mehr wichtige Mails und keine oberflächlichen mehr zu erhalten, kann man einen "Absenderfilter" einrichten. Zum Beispiel auf der Webseite eine andere Mail-Adresse angeben, die als automatische Antwort eingestellt hat:_"Bitte schreiben Sie mir nur wichtige Themen. Wenn Sie mir nichts oberflächliches schicken möchten, senden sie es an: - hier echte mail adresse einfügen - "._
+Um im E-Mail Posteingang nur mehr wichtige Mails und keine oberflächlichen mehr zu erhalten, kann man einen "Absenderfilter" einrichten. Zum Beispiel kann man auf der Webseite eine andere Mail-Adresse angeben, die als automatische Antwort eingestellt hat: _"Bitte schreiben Sie mir nur wichtige Themen. Wenn Sie mir nichts oberflächliches schicken möchten, senden sie es an: [hier echte mail adresse einfügen] "._
 
-##### Tipp Nr.2: Prozessorientierter Mail-Ansatz
+##### Tipp Nr. 2: Prozessorientierter Mail-Ansatz
 
 Das Ziel: Die Anzahl der erhaltenen Nachrichten minimieren und auch die mentale Anstrengung, die sie mit sich bringen. Dadurch bleiben mehr Ressourcen für Deep-Work. Das macht man, indem man Nachrichten so formuliert, dass bereits in der ersten Nachricht alles so konkret formuliert ist, dass kein "Antwort-Ping-Pong" entsteht. Weil dieses oberflächliche Ping-Pong sollte vermieden werden, weil es unnötige Ressourcen frisst. Nach einer oder möglichst wenigen Antworten sollte schon alles geklärt sein, dass die Konversation beendet werden kann.
 
-##### Tipp Nr.3: Nicht antworten!
+##### Tipp Nr. 3: Nicht antworten!
 
 Antworten Sie nicht auf E-Mails, wenn einer der folgenden Punkte zutrifft:
 

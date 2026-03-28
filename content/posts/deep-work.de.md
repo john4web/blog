@@ -500,3 +500,8 @@ _"Machen Sie es sich zur Gewohnheit, kleine unangenehme Dinge geschehen zu lasse
 Die Konzentrationsfähigkeit ist eine Qualifikation, mit der sich wertvolle Dinge erledigen lassen. Deep-Work ist nicht deshalb so wichtig, weil Ablenkung etwas "böses" ist, sondern weil es z. B. Bill Gates dazu verholfen hat (in weniger als einem Semester!) eine milliardenschwere Branche ins Leben zu rufen. Das zeigt: Deep-Work ist mächtig!
 
 **Deep-Work bedeutet, den Verstand an seine äußersten Grenzen zu bringen, um wesentliches zu schaffen!**
+
+## Quellen
+
+### Buch
+- Cal Newport: _Konzentriert arbeiten: Regeln für eine Welt voller Ablenkungen_, Herausgeber: Redline Verlag, Jahr: 2017, ISBN: 978-3868816570

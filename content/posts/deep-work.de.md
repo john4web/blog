@@ -355,9 +355,9 @@ Die Konzentrationsfähigkeit wird auch erhöht, wenn man die Gedanken **struktur
 
 Sich ein Kartendeck zu merken ist ein weiteres Training zur Aufmerksamkeits- und Konzentrationssteigerung. Aber nicht nur Karten merken, sondern generell jeder strukturierte Prozess, der ungeteilte Aufmerksamkeit erfordert, kann einen ähnlichen Effekt haben. Zum Beispiel der Versuch, aus dem Gedächtnis einen Song auf der Gitarre nachzuspielen. Oder eine Partie Schach (vorausgesetzt es ist eine Partie, die mental fordernd ist).
 
-Dies ist ein Anleitung, wie man sich ein Kartendeck am besten merken kann. Dies ist wie gesagt eine gute Übung zur Konzentrationssteigerung:
+Da das Kartendeck merken so ein gutes Training der Konzentrationssteigerung ist, findet sich im folgenden eine Anleitung, wie man das am besten macht:
 
-1. Mentales Bild erstellen, wie ich durch 5 Räume meines Hauses gehe. Wichtig: klare Bilder hervorrufen, was ich sehe.
+1. Ein Mentales Bild erstellen, wie ich durch 5 Räume meines Hauses gehe. Wichtig: klare Bilder hervorrufen, was ich sehe.
 
 2. In meinem Gedächtnis eine Auswahl von 10 Gegenständen pro Raum verankern. Die Gegenstände sollten groß und "erinnerungswürdig" sein.
 
@@ -369,32 +369,33 @@ Dies ist ein Anleitung, wie man sich ein Kartendeck am besten merken kann. Dies 
 
 6. Diese ersten 5 Schritte sind vorbereitende Schritte und müssen nur einmal durchgeführt werden. Einmal gemacht, funktioniert es für immer.
 
-7. Nun die Hauptaufgabe: Sich die Reihenfolge der 52 Karten merken. Dazu blättert man das Kartendeck der Reihe nach durch und macht analog dazu den mentalen Rundgang durch's Haus. Dabei stellt man sich bei jeder Karte vor, wie die dazugehörige, eingeprägte Person etwas erinnerungswertes nahe diesem Gegenstand tut.  
+7. Nun die Hauptaufgabe: Sich die Reihenfolge der 52 Karten merken.  
+Dazu blättert man das Kartendeck der Reihe nach durch und macht analog dazu den mentalen Rundgang durch's Haus. Dabei stellt man sich bei jeder Karte vor, wie die dazugehörige, eingeprägte Person etwas erinnerungswertes nahe diesem Gegenstand tut.  
 Beispiel: Wenn der erste Gegenstand im Raum eine Türmatte ist und die erste Karte der Karo-König ist, könnte man sich vorstellen wie sich Donald Trump an der Türmatte die Schuhe abputzt.
 
 ### Regel Nr. 3: Die digitalen sozialen Netzwerke verlassen!
 
 Beliebte Gründe, warum Social-Media verwendet wird:
-1. Unterhaltung: _"Ich kann auf Social-Media sehen was Freunde machen, usw."_
+1. Unterhaltung: _"Ich kann auf Social-Media sehen was Freunde machen."_
 2. Freundschaften: _"Ich kann auf Social-Media neue Freundschaften schließen."_
-3. Kontakt: _"Auf Facebook sind noch einige Leute aus meiner Highschool und ich will den Kontakt halten."_
+3. Kontakt: _"Auf Facebook sind noch einige Leute aus meiner Schulzeit und ich will den Kontakt halten."_
 
 Diese Gründe sind aber überraschend unbedeutend:
 1. Ohne Social-Media kann man auch unterhalten werden. Es gibt viel bessere Möglichkeiten der Unterhaltung!
 2. Die Freundschaften auf Social-Media sind eher oberflächlicher Natur. Sie stellen nicht den Mittelpunkt des sozialen Lebens dar.
-3. Den Kontakt zu alten Highschool-Freeunden zu halten ist nett, aber kaum entscheidend für ein zufriednees, soziales Leben.
+3. Den Kontakt zu alten Schulfreunden zu halten ist nett, aber kaum entscheidend für ein zufriedenes, soziales Leben.
 
 Ein paar Fakten:
 - Man fühlt sich weniger unter Druck, wenn man Neuigkeiten nicht erfährt (also wenn man Social Media verlässt).
 - Social Media verringert unsere Konzentrationsfähigkeit.
 - Ablenkungsintensive Apps und Browsertabs hindern uns an Deep-Work.
 - Social-Media ist darauf ausgelegt, süchtig zu machen.
-- Social-Media kann schädlich sein
-- Social Media zieht Zeit und Aufmerksamkeit von Aktivitäten ab, die berufliche und persönliche Ziele unterstützen
+- Social-Media kann schädlich sein.
+- Social Media zieht Zeit und Aufmerksamkeit von Aktivitäten ab, die berufliche und persönliche Ziele unterstützen.
 
 #### Werkzeugauswahl nach Handwerksart
 
-Social Media bzw. Netzwerk-Tools sind Werkzeuge (Wie Hammer und Schraubenzieher). Man muss eine sorgfältige Entscheidung treffen, ob sich diese digitalen Werkzeuge eignen, um die eigenen Ziele zu erreichen. Ähnlich wie ein Landwirt, der entscheidet, ob eine Heumaschine sich lohnt oder ihn eher an der Arbeit hindert, weil es sich besser rentiert, das Heu zuzukaufen. Man muss also sorgfältig die Vor- und Nachteile abwägen. Natürlich bringt jedes Tool siene eigenen Vor- und Nachteile mit sich. Wichtig ist, eine bewusste Entscheidung zu treffen, ob man das Tool auswählt (weil die Vorteile überwiegen) oder ob man es bleiben lässt (weil die Nahteile überwiegen).
+Social Media bzw. Netzwerk-Tools sind Werkzeuge (Wie Hammer und Schraubenzieher). Man muss eine sorgfältige Entscheidung treffen, ob sich diese digitalen Werkzeuge dazu eignen, um die eigenen Ziele zu erreichen. Man muss also sorgfältig die Vor- und Nachteile abwägen. Natürlich bringt jedes Tool siene eigenen Vor- und Nachteile mit sich. Wichtig ist, eine bewusste Entscheidung zu treffen, ob man das Tool verwendet (weil die Vorteile überwiegen) oder ob man es bleiben lässt (weil die Nahteile überwiegen).
 
 Die Werkzeugsauswahl nach Handwerksart funktioniert folgendermaßen:
 
@@ -403,26 +404,33 @@ Die Werkzeugsauswahl nach Handwerksart funktioniert folgendermaßen:
 
 #### Das Pareto-Prinzip
 
-In vielen Fällen beruhen 80% eines gegebenen Effekts auf nur 20% der möglichen Ursachen. Beispiele:
+_In vielen Fällen beruhen 80% eines gegebenen Effekts auf nur 20% der möglichen Ursachen._
+
+Beispiele:
 - 80% des Gewinns eines Unternehmens werden durch nur 20% seiner Kunden generiert.
 - 80% der Computerabstürze werden durch nur 20% der bekannten Bugs hervorgerufen.
+
 Diese 80-20 Aufteilung kommt oft in der wirklichen Welt vor.
 
-Umgemünzt auf Social-Media:
-Wenn man Tätigkeiten mit geringem Nutzen nachgeht, nimmt man Zeit weg, die man Aktivitäten mit höherem Nutzen widmen könnte. Social-Media unterstützt nicht die 20% der Aktivitäten, die den Großteil des eigenen Karriere-Erfolgs ausmachen. Wenn 80% Ergebnis auf nur 20% der Aktivitäten beruhen, muss man sich gut überlegen, welche Aktivitäten man in den kleinen Rahmen von 20% reinnimmt. Es sollten nur die besten sein. Und keine Doom-Scrolling-Zeitverschwendung.
+Umgemünzt auf Social-Media:  
+Wenn man Tätigkeiten nachgeht, die einen geringen Nutzen haben, hat man weniger Zeit für Aktivitäten mit höherem Nutzen. Social-Media zählt nicht zu den 20% der Aktivitäten, die den Großteil des eigenen Karriere-Erfolgs ausmachen. Wenn also 80% Ergebnis auf nur 20% der Aktivitäten beruhen, muss man sich gut überlegen, welche Aktivitäten man in den kleinen Rahmen von 20% reinnimmt. Es sollten nur die besten sein. Und keine Doom-Scrolling-Zeitverschwendung.
 
 #### Auf Social Media verzichten!
 
-Eine weitere Strategie: Social-Media-Apps 30 Tage lang nicht nutzen. Davon aber niemandem erzählen und das geheim halten.Danach fragt man sich, ob die letzten 30 Tage mit den Apps besser gewesen wären und ob es überhaupt jemanden gekümmert hat, dass man die Apps nicht verwendet hat. Social Media hat enormes Suchtpotential und fügt der Konzentration großen Schaden zu.
+Eine weitere Strategie: Social-Media-Apps 30 Tage lang nicht nutzen. Danach fragt man sich, ob die letzten 30 Tage mit den Apps besser gewesen wären und ob es überhaupt jemanden gekümmert hat, dass man die Apps nicht verwendet hat. Bei dieser Strategie sollte man aber niemandem davon erzählen, dass man die Apps nicht mehr nutzt sonst wird man beeinflusst.
 
-Social Media bedeutet: "Ich beachte das, was du sagst, wenn du das beachtest, was ich sage - unabhängig von seinem Wert.". Das verleiht jedem eine scheinbare Wichtigkeit, ohne große Bemühungen zu erfordern.
+Social Media hat enormes Suchtpotential und fügt der Konzentration großen Schaden zu.
+
+Social Media bedeutet:  
+_"Ich beachte das, was du sagst, wenn du das beachtest, was ich sage - unabhängig von seinem Wert."_  
+Das verleiht jedem eine scheinbare Wichtigkeit, ohne große Bemühungen zu erfordern.
 
 #### Das Internet nicht zur Unterhaltung verwenden!
 
-Man sollte das Internet nicht zur Unterhaltung nutzen. Die Zeit außerhalb der Arbeit sollte man gezielt nutzen. Unterhaltungsorientierte Websites (z. B. Reddit, etc.) erzielen maximale Aufmerksamkeit und sind oberflächlich. Das ist sehr gefährlich weil das ansehen dieser Seiten kann man sehr schnell zwischendurch machen und man muss sich nicht an/abmelden wie bei Social Media.
+Man sollte das Internet nicht zur Unterhaltung nutzen. Die Zeit außerhalb der Arbeit sollte man gezielt nutzen. Unterhaltungsorientierte Websites (z. B. Reddit, etc.) erzielen maximale Aufmerksamkeit und sind oberflächlich. Das ist sehr gefährlich weil das ansehen dieser Seiten kann man sehr schnell zwischendurch machen und man muss sich nicht einmal dafür an- oder abmelden wie bei Social Media.
 
-Die Lösung:
-Freizeit bewusster gestalten und schon "vorplanen" was man jeden Tag in der Freizeit macht. Füllt man freie Zeiten mit etwas wertvollem, verfällt man nicht in Langeweile, die durch Websites gefüllt werden muss. Es ist entscheidend, dass man sich schon im Voraus überlegt, was man an den Abenden und Wochenenden macht, noch ehe sie begonnen haben. Zum Beispiel geregelte Hobbies sind gut! Die Freizeit sollte mit qualitativ hochwertigen Sachen verbracht werden und entspannend sein. Social Media mit "Brainrot-Content" usw. ist das nicht! Wenn man das macht, wird man erfahren, was es bedeutet zu leben und nicht bloß zu existieren.
+Die Lösung:  
+Freizeit bewusster gestalten und schon "vorplanen" was man jeden Tag in der Freizeit macht. Füllt man freie Zeiten mit etwas wertvollem, verfällt man nicht in Langeweile, die durch Websites gefüllt werden muss. Es ist entscheidend, dass man sich schon im Voraus überlegt, was man an den Abenden und Wochenenden macht, noch ehe sie begonnen haben. Zum Beispiel geregelte Hobbies sind gut! Die Freizeit sollte mit qualitativ hochwertigen Sachen verbracht werden und entspannend sein. Social Media mit "Brainrot-Content" ist das z. B. nicht! Wenn man das macht, wird man erfahren, was es bedeutet zu _"leben"_ und nicht bloß zu _"existieren"_.
 
 ### Regel Nr. 4: "Seichtigkeit" reduzieren!
 

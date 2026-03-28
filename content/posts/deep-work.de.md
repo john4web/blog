@@ -14,7 +14,8 @@ Insgesamt habe ich 14 Stunden damit verbracht, das Buch zu lesen und im Detail z
 
 Der Author _Cal Newport_ ist übrigens Informatiker, weshalb das Buch nochmals interessanter für mich erschien, da ich ja auch Software-Entwickler bin.
 
-Cal Newport formuliert das Ziel seines Buches folgendermaßen: **_"Tiefgang statt Oberflächlichkeit bei der Arbeit zu erreichen"_**.
+Cal Newport formuliert das Ziel seines Buches folgendermaßen:  
+"_**Bei der Arbeit Tiefgang statt Oberflächlichkeit zu erreichen**_".
 
 
 ## Teil 1: Die Deep-Work Idee

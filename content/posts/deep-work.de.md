@@ -6,15 +6,15 @@ description = ""
 
 # Deep Work
 
-Vor kurzem habe ich mich der Frage gewidmet, wie man das meiste aus seiner Arbeit rausholen kann. Wie kann man in einer Welt voller Ablenkungen konzentriert arbeiten, um tagtäglich Bestleistungen zu erbringen? Das Buch "Deep-Work" von Cal Newport hat mir einige Antworten auf diese Fragen gegeben.
+Vor kurzem habe ich mich der Frage gewidmet, wie man das Meiste aus seiner Arbeit rausholen kann. Wie kann man in einer Welt voller Ablenkungen konzentriert arbeiten, um tagtäglich Bestleistungen zu erbringen? Das Buch _"Deep-Work"_ vom Author _Cal Newport_ hat mir einige Antworten auf diese Fragen gegeben.
 
 {{< figure src="/images/deep-work/deep-work.jpg" caption="Die deutsche Fassung des Buches 'Deep Work' von Cal Newport. [Quelle: Thalia](https://www.thalia.at/shop/home/artikeldetails/A1043055225?ProvID=11010473&gad_source=1&gad_campaignid=18314731113&gclid=EAIaIQobChMIrqnV6I3ekgMVTUdBAh1t5wgnEAQYAyABEgJRT_D_BwE)" width="300px">}}
 
-Insgesamt habe ich 14 Stunden damit verbracht, das Buch zu lesen und genau zu verstehen. Den Inhalt habe ich in diesem Blog-Artikel zusammengefasst, für den man im Durchschnitt 29 Minuten braucht zu lesen. Im Folgenden möchte ich die wichtigsten Erkenntnisse teilen, die ich aus diesem Buch gewonnen habe.
+Insgesamt habe ich 14 Stunden damit verbracht, das Buch zu lesen und im Detail zu verstehen. Den Inhalt habe ich in diesem Blog-Artikel in meinen Worten leicht verständlich zusammengefasst. Im Durchschnitt braucht man 30 Minuten um ihn zu lesen. Im Folgenden möchte ich die wichtigsten Erkenntnisse teilen, die ich aus diesem Buch gewonnen habe.
 
 Der Author _Cal Newport_ ist übrigens Informatiker, weshalb das Buch nochmals interessanter für mich erschien, da ich ja auch Software-Entwickler bin.
 
-Cal Newport formuliert das Ziel seines Buches folgendermaßen: _"Tiefgang statt Oberflächlichkeit bei der Arbeit zu erreichen"_.
+Cal Newport formuliert das Ziel seines Buches folgendermaßen: **_"Tiefgang statt Oberflächlichkeit bei der Arbeit zu erreichen"_**.
 
 
 ## Teil 1: Die Deep-Work Idee

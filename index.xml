@@ -6,7 +6,19 @@
     <description>Recent content on gersti.at</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://gersti.at/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Basics</title>
+      <link>https://gersti.at/posts/docker/</link>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/docker/</guid>
+      <description>Basics Link to heading This article explains the basics of docker.
+What is Docker? Link to heading Docker is a virtualization software, that makes developing and deploying applications much easier.
+Before Docker: Link to heading Before Docker existed, every developer in the team had to install and configure all required services directly on their operating system (on their local machine). This process was tricky because:
+Installation process differs between operating systems (Mac vs.</description>
+    </item>
+    
     <item>
       <title>Deep Work</title>
       <link>https://gersti.at/posts/deep-work/</link>
@@ -230,18 +242,6 @@ https://www.youtube.com/watch?v=SeN1s65tRHY</description>
       
       <guid>https://gersti.at/todo/divide-and-conquer/</guid>
       <description>Evtl. mit merge Sort erklären</description>
-    </item>
-    
-    <item>
-      <title>Docker Basics</title>
-      <link>https://gersti.at/todo/docker/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/todo/docker/</guid>
-      <description>Basics Link to heading What is Docker?
-Docker is a virtualization tool that makes developing and deploying applications much easier.
-Before Docker existed, developers had to install and configure all required services directly on their local machines. This process could be tricky because:
-Installation steps differ between operating systems. Many steps are required, and errors can easily occur. With Docker, you work with containers. A container is an isolated environment that includes everything a service needs to run.</description>
     </item>
     
     <item>

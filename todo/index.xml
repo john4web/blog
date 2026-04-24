@@ -147,18 +147,6 @@ https://www.youtube.com/watch?v=SeN1s65tRHY</description>
     </item>
     
     <item>
-      <title>Docker Basics</title>
-      <link>https://gersti.at/todo/docker/</link>
-      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://gersti.at/todo/docker/</guid>
-      <description>Basics Link to heading What is Docker?
-Docker is a virtualization tool that makes developing and deploying applications much easier.
-Before Docker existed, developers had to install and configure all required services directly on their local machines. This process could be tricky because:
-Installation steps differ between operating systems. Many steps are required, and errors can easily occur. With Docker, you work with containers. A container is an isolated environment that includes everything a service needs to run.</description>
-    </item>
-    
-    <item>
       <title>Domain Driven Design (DDD)</title>
       <link>https://gersti.at/todo/domain-driven-design/</link>
       <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>

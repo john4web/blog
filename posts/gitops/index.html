@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  What is GitOps? · gersti.at
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Johannes Gerstbauer">
+<meta name="description" content="In the following article, i try to explain what GitOps is and why it is so important for modern infrastructure management.
+What is the problem that GitOps solves? Link to heading Kubernetes uses a declarative configuration approach. What does that mean?
+Assume the following scenario:
+Current state: I currently have 5 instances of a microservice.
+Desired state: I want to have 15 instances of a microservice.
+In Kubernetes, you only specify the &ldquo;desired state.">
+<meta name="keywords" content="blog, developer, software, engineer">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="What is GitOps?"/>
+<meta name="twitter:description" content="In the following article, i try to explain what GitOps is and why it is so important for modern infrastructure management.
+What is the problem that GitOps solves? Link to heading Kubernetes uses a declarative configuration approach. What does that mean?
+Assume the following scenario:
+Current state: I currently have 5 instances of a microservice.
+Desired state: I want to have 15 instances of a microservice.
+In Kubernetes, you only specify the &ldquo;desired state."/>
+
+<meta property="og:title" content="What is GitOps?" />
+<meta property="og:description" content="In the following article, i try to explain what GitOps is and why it is so important for modern infrastructure management.
+What is the problem that GitOps solves? Link to heading Kubernetes uses a declarative configuration approach. What does that mean?
+Assume the following scenario:
+Current state: I currently have 5 instances of a microservice.
+Desired state: I want to have 15 instances of a microservice.
+In Kubernetes, you only specify the &ldquo;desired state." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gersti.at/posts/gitops/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-05-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-05-10T00:00:00+00:00" />
+
+
+
+
+<link rel="canonical" href="https://gersti.at/posts/gitops/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      gersti.at
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/de/">🇩🇪</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://gersti.at/posts/gitops/">
+              What is GitOps?
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-05-10T00:00:00Z">
+                May 10, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              10-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <figure><img src="/images/gitops/gitops.png"/>
+</figure>
+
+<p>In the following article, i try to explain what GitOps is and why it is so important for modern infrastructure management.</p>
+<h2 id="what-is-the-problem-that-gitops-solves">
+  What is the problem that GitOps solves?
+  <a class="heading-link" href="#what-is-the-problem-that-gitops-solves">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Kubernetes uses a declarative configuration approach. What does that mean?</p>
+<p>Assume the following scenario:</p>
+<p><strong>Current state:</strong> I currently have 5 instances of a microservice.<br>
+<strong>Desired state:</strong> I want to have 15 instances of a microservice.</p>
+<p>In Kubernetes, you only specify the <strong>&ldquo;desired state.&rdquo;</strong>
+You tell kubernetes that, in the end, you want 15 instances. Kubernetes then checks the current state, sees that there are currently 5 instances running, and adds 10 more instances. Everything in Kubernetes is a <strong>declarative configuration object</strong> that represents the desired state of the system. It is Kubernetes’ responsibility to ensure that the actual state of reality matches the desired state.</p>
+<blockquote>
+<p>Kubernetes compares the <strong>desired state</strong> with the <strong>current state</strong>, determines the difference, and executes the necessary actions to achieve the desired state.</p>
+</blockquote>
+<p>When working with Kubernetes, you typically work with declarative configuration YAML files (deployment.yaml, service.yaml, ingress.yaml, etc.). When you change something in those files, you need to apply the changes to the cluster so Kubernetes can compare the desired state defined in the YAML files with the current state of the cluster and determine what needs to be updated.</p>
+<p>This is usually done with the command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl apply -f ./deployment.yaml
+</span></span></code></pre></div><p>Kubernetes then reconciles the current state with the desired state by creating, updating, or removing resources as necessary.</p>
+<p>In a typical team development workflow, developers commit, push, and review changes to Kubernetes configuration YAML files. When everything is correct, they merge it into the main branch.</p>
+<p>Without additional automation, someone would then still need to manually run the previously mentioned <code>kubectl apply</code> command <strong>after every main-branch-merge</strong> in order to apply those changes to the production cluster.</p>
+<p>This approach is both tedious and error-prone.</p>
+<p>For example:</p>
+<ul>
+<li>What if someone accidentally breaks something while manually applying changes to production?</li>
+<li>What if the kubectl apply command is forgotten?</li>
+<li>What if the actual cluster state slowly drifts away from the configuration stored in Git?</li>
+</ul>
+<p>In this setup, there is no technical guarantee that the YAML files in the Git repository exactly represent the current state of the cluster — even though ideally they should.</p>
+<p>What we really want is:</p>
+<blockquote>
+<p>After changes are merged into Git, the Kubernetes cluster should automatically reconcile itself to match the configuration stored in the repository.</p>
+</blockquote>
+<p>And this is exactly where GitOps comes into play. With GitOps, the Git repository becomes the <strong>single source of truth</strong> for the desired state of the environment. When changes are merged into main, a tool like <code>Argo CD</code> automatically ensures that the Kubernetes configuration changes are applied and synchronized with the cluster.</p>
+<h2 id="infrastructure-as-code-iac">
+  Infrastructure as Code (IaC)
+  <a class="heading-link" href="#infrastructure-as-code-iac">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The short explanation/definition of GitOps is:</p>
+<blockquote>
+<p><strong>&ldquo;infrastructure as code&rdquo; done right - with all the best practices</strong></p>
+</blockquote>
+<p>The <em>&ldquo;infrastructure as code&rdquo; (IaC)</em> concept is when you define your infrastructure as code instead of manually creating it. That means: Instead of manually executing commands in a terminal, the infrastructure is described in configuration files that can be versioned, reviewed, and automatically applied. An example of that would be: typing docker commands into the terminal vs. writing a docker compose yaml file.</p>
+<p>This makes our infrastructure much easier to reproduce and replicate! Everyone on the team can immediately see, for example, exactly what changes were made.</p>
+<p>However it&rsquo;s not only about infrastructure anymore. Infrastructure as code actually evolved into defining not only &ldquo;infrastructure&rdquo; but also network, policy, configuration, etc. as code:</p>
+<ul>
+<li><strong>network</strong> as code</li>
+<li><strong>policy</strong> as code</li>
+<li><strong>configuration</strong> as code</li>
+</ul>
+<p>Some people also refer to this pattern as “X as Code”, where “X” can be replaced with different domains such as infrastructure, configuration, or policies. For example, instead of manually creating Kubernetes clusters with certain components, you define all of this in Kubernetes manifest files. And then you end up with a set of YAML files (or other definition files) that describe your infrastructure, platform, and configuration in a declarative way.</p>
+<h2 id="iac-done-the-wrong-way-">
+  IaC done the wrong way ❌
+  <a class="heading-link" href="#iac-done-the-wrong-way-">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Imagine you as a DevOps engineer create a Git repository for your <em>&ldquo;infrastructure as code&rdquo;</em> and store all these files centrally on Git where other team members can fetch the code as well and collaborate. So far so good! However you have the following problems:</p>
+<ul>
+<li>Team-Members are committing directly into the Main-Branch</li>
+<li>No Pull-Requests (Merge-Requests)</li>
+<li>No Code-Reviews and therefore no team-collaboration on the changes</li>
+<li>No automated tests</li>
+</ul>
+<p>When you make any changes to the code, you may not have a defined review/approval process. You may just have a main branch and when you or your team-mates change the code, it is committed directly into the main branch. So no code reviews, no pull-requests and no collaboration on the changes. Also when you commit your infrastructure code changes into the repository, <strong>no automated tests</strong> are running to test these code changes.</p>
+<p>Without automated tests for your &ldquo;infrastructure as code&rdquo;-files, you will additionally have the following possible problems:</p>
+<ul>
+<li>You committed invalid yaml files</li>
+<li>You committed typos in yaml files (e.g. wrong attribute name)</li>
+<li>Your Code-Changes will break infrastructure</li>
+<li>Your Code-Changes will break application environment</li>
+</ul>
+<p>So how are a team member’s changes applied to the actual infrastructure/platform after the commit? <strong>Infrastructure Updates are not automated!</strong> Therefore, the team member has to do this manually by running the <code>kubectl apply</code> command.</p>
+<p>To execute the code changes, each team member must access the Kubernetes cluster and apply changes there from their local machine. This arises the following problems:</p>
+<ul>
+<li>Everyone in the team needs direct access/permission to the infrastructure (e.g. kubernetes cluster).</li>
+<li>It is hard to trace who executed what on the remote servers</li>
+<li>No history of changes applied to the infrastructure is available</li>
+<li>If mistakes are made in the code (wrong configuration, wrong attributes, etc.) you will see these errors only after you applied them to the cluster.</li>
+</ul>
+<p>So even though you have an &ldquo;infrastructure as code&rdquo; which already has lots of benefits, your process is still mostly manual and inefficient in this example.</p>
+<h2 id="gitops-to-the-rescue-">
+  GitOps to the rescue! 🦸
+  <a class="heading-link" href="#gitops-to-the-rescue-">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>So that&rsquo;s where the GitOps concept comes in to basically treat the infrastructure as code <strong>the same way as software engineers treat the application code</strong>.</p>
+<p>So in GitOps practice, we have a separate repository for the &ldquo;infrastructure as code&rdquo; project and a full DevOps pipeline for it.</p>
+<h3 id="the-gitops-workflow">
+  The GitOps Workflow
+  <a class="heading-link" href="#the-gitops-workflow">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>With GitOps, &ldquo;infrastructure as code&rdquo; is hosted on a Git repository.</p>
+<ul>
+<li>it&rsquo;s version controlled through Git!</li>
+<li>it allows team collaboration through code-reviews and pull-requests!</li>
+</ul>
+<p>Instead of just pushing to the main branch directly, devops-engineers go through the same pull request process as software engineers do for application code. Anyone in the team can create a pull request, make changes to the code and collaborate with other team members on that pull request. For every change that&rsquo;s pushed to the repository, a CI-Pipeline validates and tests the changed kubernetes-files. Other experienced team members can then approve the final changes. This way you have a tested, well-reviewed infrastructure changes before they get applied in any environment. Only after that, changes will be merged back into the main branch and through a CD-Pipeline get deployed to the environment. In this way, you have an automated process which is more transparent and produces high quality infrastructure code where multiple people collaborate on the change and things get tested rather than one engineer doing all the stuff from the laptop manually that others don&rsquo;t see or can&rsquo;t review.</p>
+<p><strong>To summarize, the GitOps-Workflow looks like the following:</strong></p>
+<ol>
+<li>
+<p>A DevOps-Engineer creates a new branch in the repository and commits some changes on it.</p>
+</li>
+<li>
+<p>Every push to the repository triggeres a CI-Pipeline that validates and tests the changed (e.g. kubernetes-) files.</p>
+</li>
+<li>
+<p>After the task is finished, the devops engineer creates a pull-request (merge-request).</p>
+</li>
+<li>
+<p>Another devops engineer does a code-review and approves the pull-request if the changes are correct.</p>
+</li>
+<li>
+<p>After approval, the changes of the pull-request are then merged into the main-branch.</p>
+</li>
+<li>
+<p>The merge into the main-branch triggers a CD-Pipeline, that automatically applies those changes to the infrastructure (e.g. to the kubernetes cluster).</p>
+</li>
+</ol>
+<figure><img src="/images/gitops/gitops-flow.png"
+         alt="The GitOps Workflow: &amp;lsquo;Infrastructure as Code&amp;rsquo; is treated the same way as &amp;lsquo;application code&amp;rsquo;during the development process!"/><figcaption>
+            <p>The GitOps Workflow: &lsquo;Infrastructure as Code&rsquo; is treated the same way as &lsquo;application code&rsquo;during the development process!</p>
+        </figcaption>
+</figure>
+
+<h2 id="cd-pipeline-push-vs-pull-model">
+  CD-Pipeline: Push vs. Pull Model
+  <a class="heading-link" href="#cd-pipeline-push-vs-pull-model">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Now let&rsquo;s take a deeper look into <strong>Step 6</strong> of this GitOps-Workflow. Once merged into the main branch, the changes will be automatically applied to the infrastructure through a CD pipeline. In GitOps, there are two ways of applying those changes:</p>
+<ul>
+<li>push-based deployments</li>
+<li>pull-based deployments</li>
+</ul>
+<h3 id="push-based-deployments">
+  Push-based deployments
+  <a class="heading-link" href="#push-based-deployments">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>Push-based deployments</strong> is what we traditionally know from the application pipeline on Jenkins. For example a Java-Application is built and the pipeline executes a command to deploy the new application version into the environment. When working with kubernetes, this CD pipeline uses <code>kubectl apply</code> or similar tools to deploy the changes directly to the Kubernetes cluster.</p>
+<figure><img src="/images/gitops/push.png"
+         alt="In push-based deployments, the pipeline applies the changesto the kubernetes cluster in a traditional way. Source: Aviator" width="80%"/><figcaption>
+            <p>In push-based deployments, the pipeline applies the changesto the kubernetes cluster in a traditional way. Source: <a href="https://www.aviator.co/blog/choosing-between-pull-vs-push-based-gitops/"  class="external-link" target="_blank" rel="noopener">Aviator</a></p>
+        </figcaption>
+</figure>
+
+<h3 id="pull-based-deployments">
+  Pull-based deployments
+  <a class="heading-link" href="#pull-based-deployments">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>Pull-based deployments</strong> work the other way around. Here you have an agent installed in the Kubernetes cluster, that actively pulls the changes from the Git repository itself. This agent will check regularly what is the state of the infrastructure code in the repository and compare it to the actual state in the kubernetes cluster where it&rsquo;s running. If it sees there is a difference in the repository, it will pull and apply these changes to get the environment from the actual state to the desired state defined in the repository. In this way, the repository and the kubernetes cluster stays in sync everytime! Examples of GitOps tools that work with the pull-based model are <strong>Flux CD</strong> and <strong>Argo CD</strong>, which run inside the Kubernetes cluster and sync the changes from the Git repository to the cluster.</p>
+<figure><img src="/images/gitops/pull.png"
+         alt="In pull-based deployments, a tool like &amp;lsquo;Argo CD&amp;rsquo; syncs the changes from the Git repository automatically to the kubernetes cluster. Source: Aviator" width="80%"/><figcaption>
+            <p>In pull-based deployments, a tool like &lsquo;Argo CD&rsquo; syncs the changes from the Git repository automatically to the kubernetes cluster. Source: <a href="https://www.aviator.co/blog/choosing-between-pull-vs-push-based-gitops/"  class="external-link" target="_blank" rel="noopener">Aviator</a></p>
+        </figcaption>
+</figure>
+
+<h2 id="easy-rollback">
+  Easy Rollback
+  <a class="heading-link" href="#easy-rollback">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Another big advantage: When the changes in the repository are automatically synced to the kubernetes cluster, you can easily roll back your environment to any previous state in your code.</p>
+<p>If you make changes that break something in the kubernetes-cluster, you can just do git revert to undo the latest changes and get the environment back to the last working state.</p>
+<h2 id="git-single-source-of-truth">
+  Git: Single Source of Truth
+  <a class="heading-link" href="#git-single-source-of-truth">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Overall, this means that instead of spreading your infrastructure as code in different places and machines and basically having those files just lying around on your computer, everything is stored centrally in a git repository and the environment/cluster is always synced with what&rsquo;s defined in that repository.
+And this means that the git repository becomes <strong>the single source of truth</strong> for your environment. And of course, this makes managing your infrastructure or your platform way easier.</p>
+<h2 id="increasing-security">
+  Increasing Security
+  <a class="heading-link" href="#increasing-security">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Another big advantage: GitOps increases security!</p>
+<p>With GitOps, you don&rsquo;t have to give everyone in the team direct access to the kubernetes cluster to execute the changes because it&rsquo;s the CD pipeline that deploys the changes, not individual team members from their laptops.</p>
+<p>However anyone on the team can propose changes to the infrastructure in the git repository through pull requests! As a result, you have less permissions to manage and a more secure environment.</p>
+<h2 id="summary">
+  Summary
+  <a class="heading-link" href="#summary">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>GitOps = infrastructure as code + version control + pull requests + CI-CD pipeline</p>
+<p>The CD pipeline automatically applies changes to the kubernetes-cluster. Tools like Argo CD can be used to synchronize the git repository with the kubernetes cluster.</p>
+<p>I hope this article helped you understanding GitOps! 😊</p>
+<h2 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Video from &ldquo;TechWorld with Nana&rdquo;: What is GitOps, How GitOps works and Why it&rsquo;s so useful.<br>
+<a href="https://www.youtube.com/watch?v=f5EpcWp0THw"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=f5EpcWp0THw</a></p>
+<p>Aviator: &ldquo;Choosing Between Pull vs. Push-Based GitOps&rdquo;<br>
+<a href="https://www.aviator.co/blog/choosing-between-pull-vs-push-based-gitops/"  class="external-link" target="_blank" rel="noopener">https://www.aviator.co/blog/choosing-between-pull-vs-push-based-gitops/</a></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2026
+     Johannes Gerstbauer 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

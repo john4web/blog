@@ -2,11 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gersti.at/posts/docker/</loc>
-    <lastmod>2026-04-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://gersti.at/</loc>
-    <lastmod>2026-04-24T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -19,7 +16,7 @@
                 />
   </url><url>
     <loc>https://gersti.at/posts/</loc>
-    <lastmod>2026-04-24T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -30,6 +27,12 @@
                 hreflang="en"
                 href="https://gersti.at/posts/"
                 />
+  </url><url>
+    <loc>https://gersti.at/posts/gitops/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gersti.at/posts/docker/</loc>
+    <lastmod>2026-04-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gersti.at/posts/deep-work/</loc>
     <lastmod>2026-02-16T00:00:00+00:00</lastmod>

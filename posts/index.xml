@@ -22,6 +22,19 @@ In Kubernetes, you only specify the &amp;ldquo;desired state.</description>
     </item>
     
     <item>
+      <title>Docker Roadmap</title>
+      <link>https://gersti.at/posts/docker-roadmap/</link>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://gersti.at/posts/docker-roadmap/</guid>
+      <description>Docker Learning Roadmap Link to heading In this article, I explain the topics that are necessary to learn in order to master docker.
+1. Which problem is docker solving? Link to heading “It works on my machine” is a thing of the past!
+Example: A Node.js application runs locally (on a laptop) with Node v14.4.0, but the production server is running Node v16.16.0.
+Result:
+The application runs perfectly on the laptop but not on the server!</description>
+    </item>
+    
+    <item>
       <title>Docker Basics</title>
       <link>https://gersti.at/posts/docker/</link>
       <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>

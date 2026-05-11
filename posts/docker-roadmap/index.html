@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Docker Roadmap · gersti.at
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Johannes Gerstbauer">
+<meta name="description" content="Docker Learning Roadmap Link to heading In this article, I explain the topics that are necessary to learn in order to master docker.
+1. Which problem is docker solving? Link to heading “It works on my machine” is a thing of the past!
+Example: A Node.js application runs locally (on a laptop) with Node v14.4.0, but the production server is running Node v16.16.0.
+Result:
+The application runs perfectly on the laptop but not on the server!">
+<meta name="keywords" content="blog, developer, software, engineer">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker Roadmap"/>
+<meta name="twitter:description" content="Docker Learning Roadmap Link to heading In this article, I explain the topics that are necessary to learn in order to master docker.
+1. Which problem is docker solving? Link to heading “It works on my machine” is a thing of the past!
+Example: A Node.js application runs locally (on a laptop) with Node v14.4.0, but the production server is running Node v16.16.0.
+Result:
+The application runs perfectly on the laptop but not on the server!"/>
+
+<meta property="og:title" content="Docker Roadmap" />
+<meta property="og:description" content="Docker Learning Roadmap Link to heading In this article, I explain the topics that are necessary to learn in order to master docker.
+1. Which problem is docker solving? Link to heading “It works on my machine” is a thing of the past!
+Example: A Node.js application runs locally (on a laptop) with Node v14.4.0, but the production server is running Node v16.16.0.
+Result:
+The application runs perfectly on the laptop but not on the server!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gersti.at/posts/docker-roadmap/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-05-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-05-05T00:00:00+00:00" />
+
+
+
+
+<link rel="canonical" href="https://gersti.at/posts/docker-roadmap/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      gersti.at
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/de/">🇩🇪</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://gersti.at/posts/docker-roadmap/">
+              Docker Roadmap
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-05-05T00:00:00Z">
+                May 5, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              17-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h2 id="docker-learning-roadmap">
+  Docker Learning Roadmap
+  <a class="heading-link" href="#docker-learning-roadmap">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In this article, I explain the topics that are necessary to learn in order to master docker.</p>
+<h3 id="1-which-problem-is-docker-solving">
+  1. Which problem is docker solving?
+  <a class="heading-link" href="#1-which-problem-is-docker-solving">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong><em>“It works on my machine”</em> is a thing of the past!</strong></p>
+<p><strong>Example:</strong> <br>
+A Node.js application runs locally (on a laptop) with Node v14.4.0, but the production server is running Node v16.16.0.</p>
+<p><strong>Result:</strong><br>
+The application runs perfectly on the laptop but not on the server!</p>
+<p><strong>Docker&rsquo;s solution:</strong><br>
+Docker solves this problem by packaging the application together with its entire environment (dependencies, configurations, etc.) into a container. This container runs exactly the same everywhere Docker is installed! With Docker, an application runs the same way on Local-, Development-, Testing-, and Production-Environment!</p>
+<p><strong>Summary:</strong></p>
+<ul>
+<li>With Docker, making apps work the same everywhere</li>
+<li>Docker packages everything an application needs</li>
+</ul>
+<h3 id="2-public-images-and-repository">
+  2. Public images and repository
+  <a class="heading-link" href="#2-public-images-and-repository">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Almost every major software service already has a docker image. These images can be found in repositories (e.g. DockerHub). DockerHub is like GitHub (except it hosts container images instead of code). Everyone can pull those images and use them in their applications without the need of configuring everything.</p>
+<p>With the <code>docker run</code> command, for example, you can have a running MySQL database within seconds (regardless of the development environment).</p>
+<h3 id="3-basic-docker-commands">
+  3. Basic Docker Commands
+  <a class="heading-link" href="#3-basic-docker-commands">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Pull an image from DockerHub:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker pull nginx
+</span></span></code></pre></div><hr>
+<p>Run a container from an image:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run nginx
+</span></span></code></pre></div><hr>
+<p>Run a container and assign a custom name to the container:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run --name hello nginx
+</span></span></code></pre></div><hr>
+<p>Run a container from an image in detached mode (starts the container in the &ldquo;background&rdquo; -&gt; terminal is not blocked):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d nginx
+</span></span></code></pre></div><hr>
+<p>Run a container from an image in detached mode with configured port-forwarding:</p>
+<ul>
+<li>host-port: 8080</li>
+<li>container-port: 80</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d -p 8080:80 nginx
+</span></span></code></pre></div><p>When creating a container image, the <code>EXPOSE</code> instruction is used to indicate the packaged application will use the specified port. These ports aren&rsquo;t published by default. With the <code>-P</code> flag, you can automatically publish all exposed ports to ephemeral ports.For example, the following command will publish all of the exposed ports configured in the Dockerfile:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -P nginx
+</span></span></code></pre></div><p>If you run <code>docker run -P</code>, then Docker will publish all exposed <strong>container ports</strong> on to random host ports.</p>
+<hr>
+<p>List running containers:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker ps
+</span></span></code></pre></div><p>Show the disk usage by container:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker ps -s
+</span></span></code></pre></div><p>Show only the container-ids:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker ps -q
+</span></span></code></pre></div><hr>
+<p>Lists all running and not running containers (= a list of running and stopped containers)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker ps -a
+</span></span></code></pre></div><hr>
+<p>Stop a running container:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker stop <span class="o">[</span>container-id<span class="o">]</span>
+</span></span></code></pre></div><p>For example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker stop a3f2c9d8b7e1
+</span></span></code></pre></div><p>Btw. if there is only one container which has an id that starts with &ldquo;a&rdquo;, then you could also run the command with the beginning of the container-id:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker stop a
+</span></span></code></pre></div><hr>
+<p>Starts a stopped container again:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker start <span class="o">[</span>container-id<span class="o">]</span>
+</span></span></code></pre></div><hr>
+<p>Restarts a container:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker restart <span class="o">[</span>container-id<span class="o">]</span>
+</span></span></code></pre></div><hr>
+<p>Kills one or more containers. Sends SIGKILL to main process inside the
+container:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">kill</span> <span class="o">[</span>container-id<span class="o">]</span>
+</span></span></code></pre></div><hr>
+<p>Remove a container:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rm <span class="o">[</span>container-id<span class="o">]</span>
+</span></span></code></pre></div><p><code>-f</code> means &ldquo;force&rdquo; in this case. It tells Docker to ignore restrictions and do the action anyway. This stops the container if it’s running and then remove it immediately without requiring it to be stopped first:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rm -f <span class="o">[</span>container-id<span class="o">]</span>
+</span></span></code></pre></div><p>This deletes every container on your docker system (running containers + stopped containers):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rm -f <span class="k">$(</span>docker ps -qa<span class="k">)</span>
+</span></span></code></pre></div><hr>
+<p>List all the existing images on your local machine:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker images
+</span></span></code></pre></div><hr>
+<p>Delete an image from your local machine:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker image rm <span class="o">[</span>image-id<span class="o">]</span>
+</span></span></code></pre></div><hr>
+<p>Show the the build history of a docker image. This command displays how an image was created, layer by layer. It shows the layered build steps that created this docker image:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">history</span> <span class="o">[</span>image-name<span class="o">]</span>
+</span></span></code></pre></div><hr>
+<p>Shows the logs, that the container is producing inside the container (this is the output you would see when you are in the terminal inside the container):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker logs <span class="o">[</span>container-id<span class="o">]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker logs <span class="o">[</span>container-name<span class="o">]</span>
+</span></span></code></pre></div><p>The <code>-f</code> or <code>--follow</code> flag shows all the following lines (the new ones):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker logs -f <span class="o">[</span>container-name<span class="o">]</span>
+</span></span></code></pre></div><p>Only show the last 100 lines of the logs:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker logs -n <span class="m">100</span> <span class="o">[</span>container-name<span class="o">]</span>
+</span></span></code></pre></div><p>Show me the logs (in following mode) of a container whose container-id starts with 7:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker logs -f <span class="m">7</span>
+</span></span></code></pre></div><hr>
+<p>Show detailed, low-level information about a docker container. It returns a full JSON configuration dump:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker inspect <span class="o">[</span>container-id<span class="o">]</span>
+</span></span></code></pre></div><p>Show only the runtime status of this container:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker inspect <span class="o">[</span>container-id<span class="o">]</span> <span class="p">|</span> jq <span class="s1">&#39;.[].State&#39;</span>
+</span></span></code></pre></div><hr>
+<p>Get the terminal of a running container. In this case the bash. With this command, you can get <strong>inside</strong> of the container. Here, you can navigate through the virtual file system of the container and so on. It could happen, that some containers do not have &ldquo;bash&rdquo; installed - in this case use &ldquo;/bin/sh&rdquo; instead! Every container has either bash or sh installed! Btw. the flag <code>-it</code> stands for &ldquo;interactive terminal&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it <span class="o">[</span>container-id<span class="o">]</span> /bin/bash
+</span></span></code></pre></div><p>when you are inside the container, you can run the plain linux command <code>ps aux</code> to show the processes running inside of the container. These processes are the ones that actually keep the container alive. For example the main process is <code>PID 1</code>.</p>
+<p>What is a <strong>PID</strong>? -&gt; This is the process ID of linux. Every process in linux has it&rsquo;s unique ID.</p>
+<p>ℹ️ if you have a &ldquo;naked&rdquo; linux container like <code>alpine</code>, you don&rsquo;t even need exec - in this case -it is sufficient:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -it alpine
+</span></span></code></pre></div><p><code>alpine</code> is a linux derivative!</p>
+<hr>
+<p>Attaching to the container&rsquo;s main process (useful for interacting with the primary process directly).</p>
+<p>ℹ️ This command is rarely used.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker attach <span class="o">[</span>container-id<span class="o">]</span>
+</span></span></code></pre></div><p>Use the key sequence CTRL-p CTRL-q to detach from a container without stopping it.</p>
+<p>What is the difference to <code>docker exec -it</code>?<br>
+&ldquo;exec&rdquo; runs a new process inside the container (typically used for interactive shells). &ldquo;attach&rdquo; connects the terminal to the main process (PID1) live inside the container.</p>
+<hr>
+<p>Login to a private repository (Login-Mechanism depends on the type of repository - e.g. Nexus, Artifactory, AWS, &hellip;):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker login
+</span></span></code></pre></div><hr>
+<p>Push an image to a private repository:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker push <span class="o">[</span>registry<span class="o">]</span>/<span class="o">[</span>repository<span class="o">]</span>:<span class="o">[</span>tag<span class="o">]</span>
+</span></span></code></pre></div><hr>
+<p>This command is renaming a local image. A copy of the image with the new name is created locally.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker tag <span class="o">[</span>locally-built-image-name<span class="o">]</span> <span class="o">[</span>private-registry-adress<span class="o">]</span>/<span class="o">[</span>repository-name<span class="o">]</span>:<span class="o">[</span>optional-version-tag<span class="o">]</span>
+</span></span></code></pre></div><h3 id="4-dockerfiles">
+  4. Dockerfiles
+  <a class="heading-link" href="#4-dockerfiles">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>Dockerfiles:</strong>
+Build your own Docker-Images and run them as containers!</p>
+<ul>
+<li>Dockerfile = Blueprint of images</li>
+<li>Dockerfile = A recipe used by Docker to build images</li>
+</ul>
+<p>Example of a Dockerfile:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> node:14-alpine</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /app</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> package*.json ./<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> npm install<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 3000</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;npm&#34;</span><span class="p">,</span> <span class="s2">&#34;start&#34;</span><span class="p">]</span><span class="err">
+</span></span></span></code></pre></div><p>Each Dockerfile instruction that changes the image state (in most cases) creates a new layer in the image.</p>
+<h4 id="from-instruction">
+  FROM instruction
+  <a class="heading-link" href="#from-instruction">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The <code>FROM</code> instruction specifies the base image you are building your own docker image on. E.g. the application needs node <code>v.14.0.0</code> to run. Other examples would be:</p>
+<ul>
+<li><code>FROM python:3.11-alpine</code></li>
+<li><code>FROM openjdk:21</code></li>
+</ul>
+<p>You could also use <code>FROM scratch</code>. Docker then creates an image starting from an empty filesystem, without using any base image.</p>
+<h4 id="workdir-instruction">
+  WORKDIR instruction
+  <a class="heading-link" href="#workdir-instruction">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The <code>WORKDIR</code> instruction sets the default working directory <strong>inside the image</strong> for subsequent instructions during build and also defines the default working directory when a container starts.</p>
+<p>⚠️ <code>WORKDIR</code> may, under certain circumstances, create a new layer. It changes into a directory, but if this directory does not exist, it will be created. This results in a new layer.</p>
+<h4 id="copy-instruction">
+  COPY instruction
+  <a class="heading-link" href="#copy-instruction">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Moves files from your machine into the image.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">COPY <span class="o">[</span>src<span class="o">]</span> <span class="o">[</span>dest<span class="o">]</span>
+</span></span></code></pre></div><ul>
+<li>[src] = source path (on your host, within the build context)</li>
+<li>[dest] = destination path inside the image (container filesystem)</li>
+</ul>
+<h4 id="run-instruction">
+  RUN instruction
+  <a class="heading-link" href="#run-instruction">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The <code>RUN</code> instruction executes any linux-commands inside the container when building the image. This creates a new layer in the image.</p>
+<h4 id="expose-instruction">
+  EXPOSE instruction
+  <a class="heading-link" href="#expose-instruction">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The <code>EXPOSE</code> instruction documents on which <strong>container-port</strong> the container is listening. It does not publish the port. It only serves as information for the user of the container. If you run <code>docker run -P</code>, then Docker will publish all exposed <strong>container ports</strong> on to random host ports.</p>
+<h4 id="cmd-instruction">
+  CMD instruction
+  <a class="heading-link" href="#cmd-instruction">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The <code>CMD</code> instruction defines what command should be executed when the container starts.</p>
+<h4 id="dockerfile-at-a-glance">
+  Dockerfile at a glance
+  <a class="heading-link" href="#dockerfile-at-a-glance">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The following picture shows an example of a Dockerfile:</p>
+<figure><img src="/images/docker-roadmap/dockerfile.jpg"
+         alt="Dockerfile at a glance." width="80%"/><figcaption>
+            <p>Dockerfile at a glance.</p>
+        </figcaption>
+</figure>
+
+<h4 id="building-an-image">
+  Building an image
+  <a class="heading-link" href="#building-an-image">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>With this Dockerfile, you can now build an image. To do that, use the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build -t myApp .
+</span></span></code></pre></div><p>When executing this command, a container image is built from the Dockerfile. After running the command, the image is stored in the local Docker registry of the machine.</p>
+<ul>
+<li><code>myApp</code> specifies the name of the image</li>
+<li><code>.</code> specifies the build-context.</li>
+</ul>
+<h4 id="what-is-the-docker-build-context">
+  What is the docker build context?
+  <a class="heading-link" href="#what-is-the-docker-build-context">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The build context is the directory that Docker uses when building the image. Everything inside it is sent to the Docker daemon. Docker can only copy files from this context into the image (<code>COPY</code>). The Dockerfile must be located within this build context. Therefore, the <code>.</code> can also be seen as the file path to the Dockerfile.</p>
+<p>By default docker searches for a file named <code>Dockerfile</code> in the root of the context. You can configure a different file with option <code>-f</code>. Here, you have to specify the path to the Dockerfile you wanna use:</p>
+<p><code>docker build -t myApp -f docker/Dockerfile-prod .</code></p>
+<h4 id="running-the-image">
+  Running the image
+  <a class="heading-link" href="#running-the-image">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>With the following command, you can then run the docker image. This starts a new container from the image:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -p 8080:80 myApp
+</span></span></code></pre></div><ul>
+<li>Port outside the container: 8080</li>
+<li>Port inside the container: 80</li>
+</ul>
+<p>This container is then reachable via <code>http://localhost:8080</code>.</p>
+<h3 id="5-docker-networking">
+  5. Docker Networking
+  <a class="heading-link" href="#5-docker-networking">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Dockerfiles are great for defining individual containers. But real-world applications rely on multiple containers working together!</p>
+<figure><img src="/images/docker-roadmap/network.png"
+         alt="You have multiple containers, that need to communicate with each other!" width="80%"/><figcaption>
+            <p>You have multiple containers, that need to communicate with each other!</p>
+        </figcaption>
+</figure>
+
+<p>Docker networking allows containers to run in the same virtual network, that docker creates in order to communicate simply with each other using just the container-name (you don&rsquo;t need hostname, portnumber, etc.). This is especially important in a microservice-architecture!</p>
+<figure><img src="/images/docker-roadmap/virtual_network.png"
+         alt="Containers run in the same virtual network to communicate with each other!" width="50%"/><figcaption>
+            <p>Containers run in the same virtual network to communicate with each other!</p>
+        </figcaption>
+</figure>
+
+<h4 id="networking-example">
+  Networking-Example:
+  <a class="heading-link" href="#networking-example">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>In this example, a Frontend-Container and a Backend-Container in a virtual network have to communicate with each other.</p>
+<figure><img src="/images/docker-roadmap/network_example.png"
+         alt="The frontend-container and backend-container are communicating in a virtual network called &amp;lsquo;my-network&amp;rsquo;." width="30%"/><figcaption>
+            <p>The frontend-container and backend-container are communicating in a virtual network called &lsquo;my-network&rsquo;.</p>
+        </figcaption>
+</figure>
+
+<p>To create this network, the following commands are necessary:</p>
+<p><strong>Step 1:</strong> Create a new network</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network create my-network
+</span></span></code></pre></div><p><strong>Step 2:</strong> Run the Backend-Container in the network</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d --name backend --network my-network <span class="o">[</span>my-backend-image<span class="o">]</span>
+</span></span></code></pre></div><p><strong>Step 3:</strong> Run the Frontend-Container in the same network</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d --name frontend --network my-network -p 8080:80 <span class="o">[</span>my-frontend-image<span class="o">]</span>
+</span></span></code></pre></div><p>The port forwarding is only needed for the frontend so that you can access it from the host browser.</p>
+<p>ℹ️ Kubernetes provides its own networking model, which replaces traditional Docker networking in many deployments. Some people would say: docker networks have become obsolete with the adoption of Kubernetes.</p>
+<p>⚠️ Docker containers communicate with each other <strong>unencrypted</strong> within a Docker network.</p>
+<h3 id="6-docker-compose">
+  6. Docker Compose
+  <a class="heading-link" href="#6-docker-compose">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Typing all those docker commands over and over again can become repetitive and error-prone and in production environment may not be the most optimal to use. This is where the power of Docker Compose comes in!</p>
+<p><em>Define all the services you want to run in a single file and start them with a single Docker command.</em></p>
+<p>Docker Compose allows you to define multiple container configurations that should run in the same network in one place in code.</p>
+<p>Docker Compose provides a simple, declarative way to define and orchestrate multi-container applications.</p>
+<p>Docker Compose illustrates the transition from “manually typing commands” to “Configuration as Code,” where multiple commands are defined as code in a single file. This is part of the fundamental DevOps practice of &ldquo;codifying&rdquo; everything to make things repeatable and consistent. Btw.: Kubernetes uses the same principle of declarative configuration files.</p>
+<h4 id="example-of-a-docker-compose-file">
+  Example of a docker-compose file:
+  <a class="heading-link" href="#example-of-a-docker-compose-file">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>We define the configuration for all containers in a single file.<br>
+We can then start all of these containers with a simple <code>docker compose up -d</code> command.<br>
+To stop and remove everything, you only need to run <code>docker compose down</code>.</p>
+<figure><img src="/images/docker-roadmap/compose.png"
+         alt="Docker Compose file at a glance." width="100%"/><figcaption>
+            <p>Docker Compose file at a glance.</p>
+        </figcaption>
+</figure>
+
+<h3 id="7-docker-volumes">
+  7. Docker Volumes
+  <a class="heading-link" href="#7-docker-volumes">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>For example: I start a MySQL-Container and store some data into that database. Then I delete the container and restart it again. Then the data is of course gone because the data is stored <strong>inside the container</strong> (in the &ldquo;container file system&rdquo;).</p>
+<p>Docker Containers are &ldquo;ephemeral&rdquo;, which means they need to be very easily replacable and you should be able to remove one very simply and create a new one. Containers are designed to be temporary.</p>
+<blockquote>
+<p>Containers = Temporary by Design!</p>
+</blockquote>
+<p>How to ensure, that data is saved/persisted even when containers are destroyed/removed from the host and recreated again?</p>
+<p>The Solution: Docker Volumes provide the ability to persist data outside the container (on the host machine). The reference to the data location is then linked to the container.</p>
+<p>The following command creates a &ldquo;Storage-Area&rdquo; on the host-machine:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker volume create my-data
+</span></span></code></pre></div><p>To use the volume with a container, execute the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d --name mysql -v my-data:/var/lib/mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>password mysql
+</span></span></code></pre></div><p>This connects the storage-area with a special location inside the container.</p>
+<p>The data between the host and the container is mirrored. If the container is deleted and restarted, it can immediately be linked to the volume again and will then regain access to the data. The container is temporary, while the data on the host is permanent.</p>
+<h3 id="8-best-practices-for-production">
+  8. Best Practices for Production
+  <a class="heading-link" href="#8-best-practices-for-production">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The following shows some performance optimizations and security guidelines you should use when working with docker.</p>
+<h4 id="use-specific-image-tags">
+  Use specific image tags!
+  <a class="heading-link" href="#use-specific-image-tags">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Do not use the &ldquo;latest&rdquo; tag in production! Use specific image-tags instead! You have to explicitly pin the version!</p>
+<p>❌ Wrong:
+<code>node:latest</code></p>
+<p>✅ Correct:
+<code>node:18.17-alpine</code></p>
+<p><strong>Why not use <code>latest</code>?</strong><br>
+Because when a new image is available and you run your docker container again, you get a completely new image version and suddenly the application crashes because over night the base image was updated with some breaking changes. The <code>latest</code> tag is just a default tag! It just points to an image, that was named by the maintainer as <code>latest</code>.</p>
+<p>⚠️ Always use exact version tags! When you use <code>latest</code>, the image can change anytime without a warning!</p>
+<p>Alternatively, you could also use docker image digests:</p>
+<blockquote>
+<p>A Docker image digest is a unique, cryptographic identifier (SHA-256 hash) representing the content of a Docker image. Unlike tags, which can be reused or changed, a digest is immutable and ensures that the exact same image is pulled every time. This guarantees consistency across different environments and deployments.</p>
+</blockquote>
+<h4 id="layer-collapsing-combine-run-commands-with-">
+  Layer Collapsing (Combine Run-Commands with &amp;&amp;)
+  <a class="heading-link" href="#layer-collapsing-combine-run-commands-with-">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Each layer in your image adds an extra weight to your container! This makes your image bigger and slower! Combining related commands makes it lighter, faster and reduces cyber-attack surface because the more unnecessary tools installed in the container, the more stuff is there that hackers can exploit! Take a look at the examples:</p>
+<p>❌ Wrong Dockerfile:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> debian</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt-get update<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt-get install -y nginx<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt-get clean<span class="err">
+</span></span></span></code></pre></div><p>Each <code>RUN</code> instruction in the Dockerfile above creates a seperate layer!</p>
+<p>✅ Correct Dockerfile:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> debian</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt-get update <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="o">&amp;&amp;</span> apt-get install -y nginx <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="o">&amp;&amp;</span> apt-get clean<span class="err">
+</span></span></span></code></pre></div><p>The Dockerfile above combines related commands with &amp;&amp;</p>
+<h4 id="use-multi-stage-builds">
+  Use multi-stage builds!
+  <a class="heading-link" href="#use-multi-stage-builds">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>This can shrink image-sizes dramatically! Sometimes from 1GB down to less than 100MB! It is important to keep the size of your image as small as possible!</p>
+<p>Smaller images:</p>
+<ul>
+<li>deploy faster</li>
+<li>cost less to store</li>
+<li>fewer security issues</li>
+</ul>
+<p>Example: When building java-based applications, JDK is needed to compile the java source-code. But JDK is not needed to run the java-application itself. In addition, you might be using tools like Maven or Gradle to build the java application. But those tools are also not needed in the final image to run the java application! So how do we separate the build-stage from the runtime-stage? How do we exclude the &ldquo;build-dependencies&rdquo; from the final image?<br>
+&ndash;&gt; For that you can use multi-stage builds!</p>
+<p><strong>How do multi-stage builds work?</strong> <br>
+Docker uses multiple temporary images during the build-process but keeps only the latest image as the final artifact.</p>
+<p>Example of a Dockerfile with two build-stages:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> maven AS build</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /app</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> myapp /app<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> mvn package<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">FROM</span><span class="s"> tomcat</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>build /app/target/file.war /usr/local/tomcat...<span class="err">
+</span></span></span></code></pre></div><p>Use multiple FROM-instructions in your dockerfile. Each could use a different base image and each of them begins a new stage. You can copy artifacts from one stage to another, leaving behind everything you don&rsquo;t want in the final image. The docker container is only based on what comes after the last FROM instruction.</p>
+<figure><img src="/images/docker-roadmap/multistagebuilds.png"
+         alt="Multi-Stage-Builds at a glance."/><figcaption>
+            <p>Multi-Stage-Builds at a glance.</p>
+        </figcaption>
+</figure>
+
+<h4 id="dont-run-containers-as-root">
+  Don&rsquo;t run containers as root!
+  <a class="heading-link" href="#dont-run-containers-as-root">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Always add a USER and switch to that user!</p>
+<p>❌ Wrong Dockerfiles:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">RUN</span> apk add --no-cache curl<span class="err">
+</span></span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">RUN</span> apk add --no-cache curl<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="s"> root</span><span class="err">
+</span></span></span></code></pre></div><p>The snippets above give <strong>admin priviliges</strong> to all the code inside the container! If a hacker breaks into the container, then the hacker has the key to EVERYTHING!</p>
+<p>Instead, create a dedicated user in the dockerfile! This is safe!</p>
+<p>✅ Correct Dockerfile:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">RUN</span> addgroup -S appgroup <span class="o">&amp;&amp;</span> adduser -S appuser -G appgroup<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="s"> appuser</span><span class="err">
+</span></span></span></code></pre></div><h4 id="scan-your-images-regularly-for-vulnerabilities">
+  Scan your images regularly for vulnerabilities!
+  <a class="heading-link" href="#scan-your-images-regularly-for-vulnerabilities">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>There are tools that can run an image security scan in an CI/CD pipeline when building images.</p>
+<p>Examples are:</p>
+<ul>
+<li>Docker Scout</li>
+<li>Docker Hub Vulnerability Scanning</li>
+<li>Snyk.io</li>
+<li>Anchore</li>
+<li>Clair</li>
+<li>JFrog Xray</li>
+</ul>
+<h4 id="dont-store-any-secrets-in-images">
+  Don&rsquo;t store any secrets in images!
+  <a class="heading-link" href="#dont-store-any-secrets-in-images">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Password, API keys, private keys, etc. must never be part of the Dockerfile! They could be exposed by simply running <code>docker history</code> or using more advanced image inspection tooling.</p>
+<h4 id="remove-setuid-and-setgid-permissions">
+  Remove setuid and setgid permissions
+  <a class="heading-link" href="#remove-setuid-and-setgid-permissions">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Setuid is a special permission in Unix which permits a user to execute certain programs with elevated privileges. When an executable file&rsquo;s setuid permission is set, users may execute that program with a level of access that matches the user who owns the file.</p>
+<h4 id="linux-capabilities">
+  Linux capabilities
+  <a class="heading-link" href="#linux-capabilities">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Capabilities are attributes in the linux kernel that grant processes that are normally reserved for processed with UID 0.</p>
+<ul>
+<li>CAP_CHOWN: allows to change a file&rsquo;s UID and GID</li>
+<li>CAP_SETUID: allow usage of setuid features</li>
+<li>CAP_NET_ADMIN: manage network interface configuration</li>
+</ul>
+<p>When using Docker, you should remove all unnecessary Linux capabilities for security reasons and grant a container only the minimum required privileges.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d --cap-drop audit_write app-image
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d --cap-drop all --cap-add setuid app-image
+</span></span></code></pre></div><h4 id="use-dockerignore-files">
+  Use <code>.dockerignore</code> files!
+  <a class="heading-link" href="#use-dockerignore-files">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Keep the size of your images as small as possible!</p>
+<ul>
+<li>Don&rsquo;t let unneded files get into your images (i.e. <code>COPY . /app</code>)</li>
+<li>Don&rsquo;t install unneeded packages</li>
+<li>Choose the smallest base image that fits your needs</li>
+</ul>
+<p>Dockerignore-Files are a good way to prevent copying useless files into your image!</p>
+<p>The Dockerignore file is important for <code>COPY</code> and <code>ADD</code> instructions in the Dockerfile because it allows you to control which files should be ignored during copying. This is important to keep images small, since unnecessary files and garbage are not copied into the container.</p>
+<p>When using the COPY instruction in a Dockerfile, you define the build context. You can exclude specific files from that context by using a <code>.dockerignore</code> file. It lists a set of globs that will not be sent to the docker daemon as part of the context.</p>
+<p>As a minimal requirement, you should put <code>.dockerignore</code> and <code>Dockerfile</code> always into the .dockerignore-file! For security-reasons and optimization reasons!</p>
+<h4 id="use-the---no-cache-flag">
+  Use the <code>--no-cache</code> flag!
+  <a class="heading-link" href="#use-the---no-cache-flag">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>When using <code>apk add</code> in Docker images, you should generally use <code>--no-cache</code> to avoid storing unnecessary package cache files and keep the image smaller.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">RUN</span> apk add --no-cache nginx<span class="err">
+</span></span></span></code></pre></div><h4 id="use-layer-caching">
+  Use Layer Caching!
+  <a class="heading-link" href="#use-layer-caching">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Docker reuses old layers if nothing has changed.</p>
+<p>Layers build on top of each other. Each layer only contains the changes (delta) compared to the layer below it. This is where layer caching can be utilized.</p>
+<p>On subsequent builds, Docker checks whether a layer can be reused from the cache. If so, the cached layer is used and the instruction does not need to be executed again.</p>
+<p>Since every layer depends on the layer below it, this means: if the base layer changes, all layers on top of it must also be rebuilt. That is why the order of Dockerfile instructions matters. You should therefore think carefully about which layers change frequently and which remain mostly unchanged.</p>
+<p>Example:</p>
+<p>❌ Unoptimized Dockerfile:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> alpine</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> src/ /var/www/html<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apk add --no-cache nginx<span class="err">
+</span></span></span></code></pre></div><p><code>nginx</code> in Alpine will probably not change very often (for example every 3–4 weeks). However, the src directory in the COPY instruction may change many times per hour because rebuilding the application changes those files. Since the layer created by the COPY instruction changes frequently, Docker must also rebuild the RUN layer on top of it. Therefore, if you execute docker build twice in a row with the Dockerfile above, the RUN instruction will also be executed twice.</p>
+<p>In the following example, Docker can reuse the first two lines from the cache. Only the layer created by the COPY instruction needs to be rebuilt:</p>
+<p>✅ Optimized Dockerfile:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> alpine</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apk add --no-cache nginx<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> src/ /var/www/html<span class="err">
+</span></span></span></code></pre></div><h3 id="9-orchestration-tools">
+  9. Orchestration Tools
+  <a class="heading-link" href="#9-orchestration-tools">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The next stept would be to learn container Orchestration tools like <code>Kubernetes</code>. However this is a topic for another blog article.</p>
+<h2 id="summary">
+  Summary
+  <a class="heading-link" href="#summary">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>I hope this docker learning roadmap gave you a short overview of the topics that are important to learn to understand docker in detail. 😄</p>
+<h2 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=zFa9_K8BS8I"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=zFa9_K8BS8I</a></li>
+<li><a href="https://www.youtube.com/watch?v=8vXoMqWgbQQ"  class="external-link" target="_blank" rel="noopener">https://www.youtube.com/watch?v=8vXoMqWgbQQ</a></li>
+<li><a href="https://docs.docker.com/dhi/core-concepts/digests/"  class="external-link" target="_blank" rel="noopener">https://docs.docker.com/dhi/core-concepts/digests/</a></li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2026
+     Johannes Gerstbauer 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

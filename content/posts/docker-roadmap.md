@@ -1,14 +1,12 @@
 +++
-title = "Docker Roadmap"
-date = "2026-05-05"
+title = "Docker Learning Roadmap"
+date = "2026-05-11"
 description = ""
 +++
 
-## Docker Learning Roadmap
-
 In this article, I explain the topics that are necessary to learn in order to master docker. 
 
-### 1. Which problem is docker solving?
+## 1. Which problem is docker solving?
 
 **_“It works on my machine”_ is a thing of the past!**  
 
@@ -25,13 +23,13 @@ Docker solves this problem by packaging the application together with its entire
 - With Docker, making apps work the same everywhere
 - Docker packages everything an application needs
 
-### 2. Public images and repository
+## 2. Public images and repository
 
 Almost every major software service already has a docker image. These images can be found in repositories (e.g. DockerHub). DockerHub is like GitHub (except it hosts container images instead of code). Everyone can pull those images and use them in their applications without the need of configuring everything.  
 
 With the `docker run` command, for example, you can have a running MySQL database within seconds (regardless of the development environment).
 
-### 3. Basic Docker Commands
+## 3. Basic Docker Commands
 
 Pull an image from DockerHub:
 
@@ -297,7 +295,7 @@ This command is renaming a local image. A copy of the image with the new name is
 docker tag [locally-built-image-name] [private-registry-adress]/[repository-name]:[optional-version-tag]
 ```
 
-### 4. Dockerfiles
+## 4. Dockerfiles
 
 **Dockerfiles:**
 Build your own Docker-Images and run them as containers!
@@ -323,7 +321,7 @@ CMD ["npm", "start"]
 
 Each Dockerfile instruction that changes the image state (in most cases) creates a new layer in the image.
 
-#### FROM instruction
+### FROM instruction
 
 The ``FROM`` instruction specifies the base image you are building your own docker image on. E.g. the application needs node ``v.14.0.0`` to run. Other examples would be:
 - ``FROM python:3.11-alpine``
@@ -331,13 +329,13 @@ The ``FROM`` instruction specifies the base image you are building your own dock
 
 You could also use ``FROM scratch``. Docker then creates an image starting from an empty filesystem, without using any base image.
 
-#### WORKDIR instruction
+### WORKDIR instruction
 
 The ``WORKDIR`` instruction sets the default working directory **inside the image** for subsequent instructions during build and also defines the default working directory when a container starts.
 
 ⚠️ `WORKDIR` may, under certain circumstances, create a new layer. It changes into a directory, but if this directory does not exist, it will be created. This results in a new layer.
 
-#### COPY instruction
+### COPY instruction
 
 Moves files from your machine into the image.
 
@@ -347,25 +345,25 @@ COPY [src] [dest]
 - [src] = source path (on your host, within the build context)
 - [dest] = destination path inside the image (container filesystem)
 
-#### RUN instruction
+### RUN instruction
 
 The ``RUN`` instruction executes any linux-commands inside the container when building the image. This creates a new layer in the image.
 
-#### EXPOSE instruction
+### EXPOSE instruction
 
 The ``EXPOSE`` instruction documents on which **container-port** the container is listening. It does not publish the port. It only serves as information for the user of the container. If you run ``docker run -P``, then Docker will publish all exposed **container ports** on to random host ports.
 
-#### CMD instruction
+### CMD instruction
 
 The ``CMD`` instruction defines what command should be executed when the container starts.
 
-#### Dockerfile at a glance
+### Dockerfile at a glance
 
 The following picture shows an example of a Dockerfile:
 
 {{< figure src="/images/docker-roadmap/dockerfile.jpg" width="80%" caption="Dockerfile at a glance." >}}
 
-#### Building an image
+### Building an image
 
 With this Dockerfile, you can now build an image. To do that, use the following command:
 
@@ -378,7 +376,7 @@ When executing this command, a container image is built from the Dockerfile. Aft
 - ``myApp`` specifies the name of the image
 - ``.`` specifies the build-context.
 
-#### What is the docker build context?
+### What is the docker build context?
 
 The build context is the directory that Docker uses when building the image. Everything inside it is sent to the Docker daemon. Docker can only copy files from this context into the image (``COPY``). The Dockerfile must be located within this build context. Therefore, the `.` can also be seen as the file path to the Dockerfile.
 
@@ -386,7 +384,7 @@ By default docker searches for a file named ``Dockerfile`` in the root of the co
 
 ``docker build -t myApp -f docker/Dockerfile-prod .``
 
-#### Running the image
+### Running the image
 
 With the following command, you can then run the docker image. This starts a new container from the image:
 
@@ -398,7 +396,7 @@ docker run -p 8080:80 myApp
 
 This container is then reachable via `http://localhost:8080`.
 
-### 5. Docker Networking
+## 5. Docker Networking
 
 Dockerfiles are great for defining individual containers. But real-world applications rely on multiple containers working together!
 
@@ -408,7 +406,7 @@ Docker networking allows containers to run in the same virtual network, that doc
 
 {{< figure src="/images/docker-roadmap/virtual_network.png" width="50%" caption="Containers run in the same virtual network to communicate with each other!" >}}
 
-#### Networking-Example:
+### Networking-Example:
 
 In this example, a Frontend-Container and a Backend-Container in a virtual network have to communicate with each other.
 
@@ -437,7 +435,7 @@ The port forwarding is only needed for the frontend so that you can access it fr
 
 ⚠️ Docker containers communicate with each other **unencrypted** within a Docker network.
 
-### 6. Docker Compose
+## 6. Docker Compose
 
 Typing all those docker commands over and over again can become repetitive and error-prone and in production environment may not be the most optimal to use. This is where the power of Docker Compose comes in!
 
@@ -449,7 +447,7 @@ Docker Compose provides a simple, declarative way to define and orchestrate mult
 
 Docker Compose illustrates the transition from “manually typing commands” to “Configuration as Code,” where multiple commands are defined as code in a single file. This is part of the fundamental DevOps practice of "codifying" everything to make things repeatable and consistent. Btw.: Kubernetes uses the same principle of declarative configuration files.
 
-#### Example of a docker-compose file:
+### Example of a docker-compose file:
 
 We define the configuration for all containers in a single file.  
 We can then start all of these containers with a simple `docker compose up -d` command.  
@@ -457,7 +455,7 @@ To stop and remove everything, you only need to run `docker compose down`.
 
 {{< figure src="/images/docker-roadmap/compose.png" width="100%" caption="Docker Compose file at a glance." >}}
 
-### 7. Docker Volumes
+## 7. Docker Volumes
 
 For example: I start a MySQL-Container and store some data into that database. Then I delete the container and restart it again. Then the data is of course gone because the data is stored **inside the container** (in the "container file system").
 
@@ -485,11 +483,11 @@ This connects the storage-area with a special location inside the container.
 
 The data between the host and the container is mirrored. If the container is deleted and restarted, it can immediately be linked to the volume again and will then regain access to the data. The container is temporary, while the data on the host is permanent.
 
-### 8. Best Practices for Production
+## 8. Best Practices for Production
 
 The following shows some performance optimizations and security guidelines you should use when working with docker.
 
-#### Use specific image tags!
+### Use specific image tags!
 
 Do not use the "latest" tag in production! Use specific image-tags instead! You have to explicitly pin the version!
 
@@ -507,7 +505,7 @@ Because when a new image is available and you run your docker container again, y
 Alternatively, you could also use docker image digests: 
 > A Docker image digest is a unique, cryptographic identifier (SHA-256 hash) representing the content of a Docker image. Unlike tags, which can be reused or changed, a digest is immutable and ensures that the exact same image is pulled every time. This guarantees consistency across different environments and deployments.
 
-#### Layer Collapsing (Combine Run-Commands with &&)
+### Layer Collapsing (Combine Run-Commands with &&)
 
 Each layer in your image adds an extra weight to your container! This makes your image bigger and slower! Combining related commands makes it lighter, faster and reduces cyber-attack surface because the more unnecessary tools installed in the container, the more stuff is there that hackers can exploit! Take a look at the examples:
 
@@ -532,7 +530,7 @@ RUN apt-get update \
 ```
 The Dockerfile above combines related commands with &&
 
-#### Use multi-stage builds!
+### Use multi-stage builds!
 
 This can shrink image-sizes dramatically! Sometimes from 1GB down to less than 100MB! It is important to keep the size of your image as small as possible!
 
@@ -563,7 +561,7 @@ Use multiple FROM-instructions in your dockerfile. Each could use a different ba
 
 {{< figure src="/images/docker-roadmap/multistagebuilds.png" caption="Multi-Stage-Builds at a glance." >}}
 
-#### Don't run containers as root!
+### Don't run containers as root!
 
 Always add a USER and switch to that user!
 
@@ -589,7 +587,7 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
 ```
 
-#### Scan your images regularly for vulnerabilities!
+### Scan your images regularly for vulnerabilities!
 
 There are tools that can run an image security scan in an CI/CD pipeline when building images.
 
@@ -602,15 +600,15 @@ Examples are:
 - Clair
 - JFrog Xray
 
-#### Don't store any secrets in images!
+### Don't store any secrets in images!
 
 Password, API keys, private keys, etc. must never be part of the Dockerfile! They could be exposed by simply running `docker history` or using more advanced image inspection tooling.
 
-#### Remove setuid and setgid permissions
+### Remove setuid and setgid permissions
 
 Setuid is a special permission in Unix which permits a user to execute certain programs with elevated privileges. When an executable file's setuid permission is set, users may execute that program with a level of access that matches the user who owns the file.
 
-#### Linux capabilities
+### Linux capabilities
 
 Capabilities are attributes in the linux kernel that grant processes that are normally reserved for processed with UID 0.
 
@@ -628,7 +626,7 @@ docker run -d --cap-drop audit_write app-image
 docker run -d --cap-drop all --cap-add setuid app-image
 ```
 
-#### Use ``.dockerignore`` files!
+### Use ``.dockerignore`` files!
 
 Keep the size of your images as small as possible!
 
@@ -644,7 +642,7 @@ When using the COPY instruction in a Dockerfile, you define the build context. Y
 
 As a minimal requirement, you should put `.dockerignore` and `Dockerfile` always into the .dockerignore-file! For security-reasons and optimization reasons!
 
-#### Use the ``--no-cache`` flag!
+### Use the ``--no-cache`` flag!
 When using ``apk add`` in Docker images, you should generally use ``--no-cache`` to avoid storing unnecessary package cache files and keep the image smaller.
 
 Example:
@@ -653,7 +651,7 @@ Example:
 RUN apk add --no-cache nginx
 ```
 
-#### Use Layer Caching!
+### Use Layer Caching!
 
 Docker reuses old layers if nothing has changed.
 
@@ -683,7 +681,7 @@ RUN apk add --no-cache nginx
 COPY src/ /var/www/html
 ```
 
-### 9. Orchestration Tools
+## 9. Orchestration Tools
 
 The next stept would be to learn container Orchestration tools like ``Kubernetes``. However this is a topic for another blog article.
 
